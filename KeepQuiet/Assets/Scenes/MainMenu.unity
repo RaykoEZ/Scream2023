@@ -338,6 +338,8 @@ GameObject:
   - component: {fileID: 1173902923}
   - component: {fileID: 1173902925}
   - component: {fileID: 1173902924}
+  - component: {fileID: 1173902926}
+  - component: {fileID: 1173902927}
   m_Layer: 5
   m_Name: bg_base
   m_TagString: Untagged
@@ -385,7 +387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5851656727c216a46a4c743c899e47e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -403,6 +405,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173902922}
   m_CullTransparentMesh: 1
+--- !u!114 &1173902926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173902922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0e1a1a8b84d20498bd63c697d22296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_loopOnStart: 1
+  m_anim: {fileID: 1173902927}
+  m_toPlay: {fileID: 7400000, guid: 19c6b08051caaf0488d59e1c2d33e52c, type: 2}
+  m_maxDelayPerLoop: 5
+  m_minDelayPerLoop: 2
+--- !u!95 &1173902927
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173902922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d21bba96b4f7f714a869486222056f54, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1667059648
 GameObject:
   m_ObjectHideFlags: 0
