@@ -905,7 +905,7 @@ MonoBehaviour:
   m_loopOnStart: 1
   m_anim: {fileID: 1173902927}
   m_toPlay: {fileID: 7400000, guid: 19c6b08051caaf0488d59e1c2d33e52c, type: 2}
-  m_maxDelayPerLoop: 4
+  m_maxDelayPerLoop: 3
   m_minDelayPerLoop: 0.1
 --- !u!95 &1173902927
 Animator:
