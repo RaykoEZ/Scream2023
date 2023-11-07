@@ -13,5 +13,10 @@ namespace Curry.Explore
         {
             GetComponent<Animator>()?.SetBool("Show", false);
         }
+        public virtual void Toggle() 
+        {
+            bool current = GetComponent<Animator>().GetBool("Show");
+            GetComponent<Animator>()?.SetBool("Show", !current);
+        }
     }
 }
