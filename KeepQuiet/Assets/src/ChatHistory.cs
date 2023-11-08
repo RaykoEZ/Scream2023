@@ -29,7 +29,7 @@ public class ChatHistory
     {
         m_log.AddRange(append);
     }
-    public void Append (TextMessage append) 
+    public void Append(TextMessage append) 
     {
         m_log.Add(append);
     }
