@@ -4,6 +4,7 @@ using UnityEngine;
 public class ChatManager : MonoBehaviour 
 {
     [SerializeField] Transform m_messageParent = default;
+    [SerializeField] DialogueTreeManager m_dialogueTree = default;
     Dictionary<string, ChatHistory> m_histories = new Dictionary<string, ChatHistory>();
     string m_chattingWith;
     ChatHistory m_current;
@@ -20,29 +21,38 @@ public class ChatManager : MonoBehaviour
     { 
     
     }
-    public void OnNpcReply() { }
-    public void PromptChoice() { }
-    public void OnPlayerChosen() { }
+
 }
-// A class to traverse and to keep the state of Dialogue nodes
-[Serializable]
-public class DialogueTree 
-{
-    [SerializeField] DialogueNode m_startNode = default;
-    // If no replies, this dialogue tree ends
-    public List<Reply> Next() 
-    {
-        List<Reply> ret = new List<Reply>();
-        return ret;
-    }
-    public void LoadNewTree(DialogueNode newStart) 
-    {
-        m_startNode = newStart;
-    }
-}
+public delegate void OnDialogueEnd(int lastIndex);
 // Need a node-network for dialogue states & decisions
 public class DialogueTreeManager : MonoBehaviour
 {
-    [SerializeField] DialogueTree m_dialogueTree = default;
-
+    [SerializeField] DialogueCollection m_dialogueTree = default;
+    DialogueNode m_current;
+    public event OnDialogueEnd OnEnd;
+    public void StartDialogue(string chattingWith, int lastMessageIndex = 0) 
+    {
+        m_current = m_dialogueTree.GetNode(chattingWith, lastMessageIndex);
+        if(m_current != null) 
+        { 
+            // display dialogue and prompt option if available
+        }
+        else 
+        {
+            OnEnd?.Invoke(lastMessageIndex);
+            return;
+        }
+    }
+    public void OnNextDialogue() 
+    { 
+    
+    }
+    public void PromptChoice()
+    { 
+    
+    }
+    public void OnPlayerChosen() 
+    { 
+    
+    }
 }

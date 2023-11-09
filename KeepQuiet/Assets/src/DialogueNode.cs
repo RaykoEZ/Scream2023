@@ -12,15 +12,24 @@ public class Reply
     [SerializeField] string m_reply;
     [SerializeField] DialogueNode m_next;
 }
-
 // A node class for storing NPC text message, player reply options, and the next npc dialogue
-[CreateAssetMenu(fileName = "DialogueNode_", menuName ="Dialogue Node", order = 0)]
-public class DialogueNode : ScriptableObject
+[CreateAssetMenu(fileName = "DialogueNode_", menuName ="Dialogue/Node", order = 0)]
+public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
 {
+    public string WhoSpoke => m_whoSpoke;
     // NPC's message value
-    public string Value => m_value;
+    public string Content => m_content;
     // Leaves for possible next Dialogue Nodes and their reply text
     public List<Reply> ReplyOptions => m_replyOptions;
-    [SerializeField] string m_value = "";
-    [SerializeField] List<Reply> m_replyOptions = new List<Reply>();
+    [SerializeField] string m_whoSpoke = default;
+    [SerializeField] string m_content = default;
+    [SerializeField] List<Reply> m_replyOptions = default;
+    bool IEquatable<DialogueNode>.Equals(DialogueNode other)
+    {
+        if (other == null) return false;
+
+        return
+            WhoSpoke == other.WhoSpoke &&
+            Content == other.Content;
+    }
 }

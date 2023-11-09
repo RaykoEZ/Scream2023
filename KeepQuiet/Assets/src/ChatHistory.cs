@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-public struct TextMessage
+public class TextMessage
 {
     public static readonly string s_playerName = "You";
-    public string SenderName;
+    public DialogueNode Dialogue;
     public string Content;
 }
 public class ChatHistory
