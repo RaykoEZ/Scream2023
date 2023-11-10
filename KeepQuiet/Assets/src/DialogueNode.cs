@@ -3,27 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Reply
+public struct Dialogue 
 {
-    public string ReplyValue => m_reply;
-    // Points to the next Dialogue
-    public DialogueNode Next => m_next;
-    [TextArea]
-    [SerializeField] string m_reply;
-    [SerializeField] DialogueNode m_next;
+    public string WhoSpoke;
+    public string Content;
 }
+
+[Serializable]
 // A node class for storing NPC text message, player reply options, and the next npc dialogue
-[CreateAssetMenu(fileName = "DialogueNode_", menuName ="Dialogue/Node", order = 0)]
+[CreateAssetMenu(fileName = "DialogueNode_", menuName = "Dialogue/Node", order = 0)]
 public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
 {
-    public string WhoSpoke => m_whoSpoke;
+    [SerializeField] Dialogue m_dialogue = default;
+    [SerializeField] List<DialogueNode> m_replyOptions = default;
+    public static readonly string s_playerName = "You";
+    public Dialogue Dialogue => m_dialogue;
+    public string WhoSpoke => Dialogue.WhoSpoke;
     // NPC's message value
-    public string Content => m_content;
+    public string Content => Dialogue.Content;
     // Leaves for possible next Dialogue Nodes and their reply text
-    public List<Reply> ReplyOptions => m_replyOptions;
-    [SerializeField] string m_whoSpoke = default;
-    [SerializeField] string m_content = default;
-    [SerializeField] List<Reply> m_replyOptions = default;
+    // If option count > 1, player chooses a reply
+    public List<DialogueNode> Options => m_replyOptions;
+
+
     bool IEquatable<DialogueNode>.Equals(DialogueNode other)
     {
         if (other == null) return false;

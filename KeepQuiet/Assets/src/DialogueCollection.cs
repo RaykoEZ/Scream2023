@@ -8,7 +8,7 @@ public class DialogueTree
     // All dialogue nodes reachable in the tree, do not mix unreachable nodes
     [SerializeField] List<DialogueNode> m_dialogueNodes = default;
     public string ChattingWith => m_chattingWith;
-    public IReadOnlyList<DialogueNode> DialogueNodes => m_dialogueNodes;
+    public List<DialogueNode> DialogueNodes => m_dialogueNodes;
 
 }
 // A class to traverse and to keep the state of Dialogue nodes
@@ -34,5 +34,15 @@ public class DialogueCollection : ScriptableObject
         // range check
         if (messageIndex >= nodes.Count) return null;
         return nodes[messageIndex];
+    }
+    public int GetNodeIndex(string chattingWith, DialogueNode node) 
+    {
+        if (node == null) return -1;
+        DialogueTree tree = GetTree(chattingWith);
+        if (tree == null) return -1;
+        return tree.DialogueNodes.FindIndex(0, 
+            (other) => { 
+                return other.Equals(node); 
+            });
     }
 }
