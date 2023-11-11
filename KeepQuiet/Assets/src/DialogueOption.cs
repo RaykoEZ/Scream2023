@@ -10,7 +10,7 @@ public class DialogueOption : HideableUI
     public void Init(DialogueNode optVal)
     {
         m_optionValue = optVal;
-        m_optionText.text = m_optionValue.Content;
+        m_optionText.text = m_optionValue.Dialogues[0].Content;
     }
     public void Choose() 
     {
