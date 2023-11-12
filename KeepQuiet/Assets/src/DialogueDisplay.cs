@@ -19,6 +19,7 @@ public class DialogueDisplay : HideableUI
     public void Init(ChatHistory history)
     {
         m_history = history;
+        m_currentNode = history.LastDialogue;
         foreach (var logEntry in m_history.Log)
         {
             // Display all previous messages

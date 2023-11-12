@@ -1,14 +1,20 @@
 ﻿using Curry.Explore;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+
 public class ChatManager : MonoBehaviour 
 {
-    [SerializeField] HideableUI m_ui = default;
     [SerializeField] DialogueHandler m_dialogueTree = default;
+    [SerializeField] List<ChatHistoryContainer> m_historyCollection = default;
+    Dictionary<string, ChatHistory> m_histories = new Dictionary<string, ChatHistory>();
     private void Start()
     {
         m_dialogueTree.OnEnd += OnChatEnd;
+        foreach(var history in m_historyCollection) 
+        {
+            m_histories.Add(history.Username, history.History);
+        }
+        m_dialogueTree.PrepareDialogueBoxes(m_histories);
     }
     private void OnDestroy()
     {
@@ -22,5 +28,6 @@ public class ChatManager : MonoBehaviour
     }
     void OnChatEnd() 
     { 
+
     }
 }

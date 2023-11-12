@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
   m_Name: Node_Aria_0
   m_EditorClassIdentifier: 
-  m_whoSpoke: 
+  m_whoSpoke: Aria
   m_dialogues:
-  - WhoSpoke: 
-    Content: 
-  - WhoSpoke: 
-    Content: 
+  - WhoSpoke: Aria
+    Content: boop
   m_replyOptions:
   - {fileID: 11400000, guid: a30428e3343be6d42bb39372e63e6ea3, type: 2}
   - {fileID: 11400000, guid: c7eb9b544ef046541b2f8e4177da194a, type: 2}

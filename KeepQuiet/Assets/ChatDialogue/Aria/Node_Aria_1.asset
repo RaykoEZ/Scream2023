@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
   m_Name: Node_Aria_1
   m_EditorClassIdentifier: 
-  m_whoSpoke: 
-  m_dialogues: []
+  m_whoSpoke: Aria
+  m_dialogues:
+  - WhoSpoke: Aria
+    Content: cool, can you unlock the door?
   m_replyOptions: []

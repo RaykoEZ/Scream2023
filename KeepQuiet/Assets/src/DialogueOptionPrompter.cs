@@ -14,6 +14,7 @@ public class DialogueOptionPrompter : MonoBehaviour
         for (int i = 0; i < m_maxOptions; ++i) 
         {
             DialogueOption instance = Instantiate(m_optionPrefab, m_contentParent);
+            instance.Hide();
             m_options.Add(instance);
         }
     }
@@ -21,6 +22,7 @@ public class DialogueOptionPrompter : MonoBehaviour
     public void PromptOption(List<DialogueNode> options) 
     {
         if (options.Count == 0) return;
+        HideAll();
         int numOptions = Mathf.Clamp(options.Count, 1, m_maxOptions);
         for (int i = 0; i < numOptions; ++i) 
         {
@@ -30,12 +32,16 @@ public class DialogueOptionPrompter : MonoBehaviour
         }
     }
     void OnOptionChosen(DialogueNode chosen) 
-    { 
-        foreach(var opt in m_options) 
+    {
+        HideAll();
+        OnChosen?.Invoke(chosen);
+    }
+    void HideAll()
+    {
+        foreach (var opt in m_options)
         {
             opt.OnChosen -= OnOptionChosen;
-            opt?.Hide();
+            opt.Hide();
         }
-        OnChosen?.Invoke(chosen);
     }
 }

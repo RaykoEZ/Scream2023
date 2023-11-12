@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
-using Unity.VisualScripting;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
+[Serializable]
 public class ChatHistory
 {
     public DialogueNode LastDialogue => m_lastDialogue;
     public List<Dialogue> Log => m_log;
-    DialogueNode m_lastDialogue;
-    List<Dialogue> m_log;
+    [SerializeField] DialogueNode m_lastDialogue;
+    [SerializeField] List<Dialogue> m_log;
 
     public ChatHistory() 
     {

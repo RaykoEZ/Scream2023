@@ -43,8 +43,8 @@ public class DialogueHandler : MonoBehaviour
             kvp.Value.OnPrompt -= OnPromptChoice;
             kvp.Value.OnEnd -= EndDialogue;
             Destroy(kvp.Value);
-            m_spawnedDialogueBoxes.Remove(kvp.Key);
         }
+        m_spawnedDialogueBoxes.Clear();
     }
     public void StartDialogue(string chattingWith) 
     {
@@ -61,6 +61,7 @@ public class DialogueHandler : MonoBehaviour
         m_currentDisplay = result;
         // Display the preloaded ui for chatting with this NPC
         m_currentDisplay.Show();
+        m_currentDisplay.ResumeChat();
     }
     void EndDialogue() 
     {

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
   m_Name: Node_Reply_0
   m_EditorClassIdentifier: 
-  m_whoSpoke: 
-  m_dialogues: []
+  m_whoSpoke: You
+  m_dialogues:
+  - WhoSpoke: You
+    Content: no
   m_replyOptions:
   - {fileID: 11400000, guid: 2cc7b006d88e0a145be4b1abb663dc99, type: 2}
