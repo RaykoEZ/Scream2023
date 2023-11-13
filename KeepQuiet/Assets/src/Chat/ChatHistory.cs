@@ -5,15 +5,21 @@ using UnityEngine;
 [Serializable]
 public class ChatHistory
 {
-    public DialogueNode LastDialogue => m_lastDialogue;
-    public List<Dialogue> Log => m_log;
     [SerializeField] DialogueNode m_lastDialogue;
     [SerializeField] List<Dialogue> m_log;
+    public DialogueNode LastDialogue => m_lastDialogue;
+    public List<Dialogue> Log => m_log;
+
 
     public ChatHistory() 
     {
         m_lastDialogue = null;
         m_log = new List<Dialogue>();
+    }
+    public ChatHistory(ChatHistory copy) 
+    {
+        m_lastDialogue = copy.m_lastDialogue;
+        m_log = new List<Dialogue>(copy.Log);
     }
     public ChatHistory(DialogueNode lastDialogue, List<Dialogue> log) 
     {

@@ -44,3 +44,6 @@ TagManager:
   - name: Gameplay
     uniqueID: 3841037015
     locked: 0
+  - name: FX
+    uniqueID: 167786507
+    locked: 0

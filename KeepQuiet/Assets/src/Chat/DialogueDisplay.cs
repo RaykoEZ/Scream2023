@@ -18,8 +18,8 @@ public class DialogueDisplay : HideableUI
     public ChatHistory History => m_history; 
     public void Init(ChatHistory history)
     {
-        m_history = history;
-        m_currentNode = history.LastDialogue;
+        m_history = new ChatHistory(history);
+        m_currentNode = m_history.LastDialogue;
         foreach (var logEntry in m_history.Log)
         {
             // Display all previous messages
@@ -64,7 +64,7 @@ public class DialogueDisplay : HideableUI
     {
         OnEnd?.Invoke();
     }
-    IEnumerator ContinueChat(List<Dialogue> dialogues, bool isNpc = true)
+    IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues, bool isNpc = true)
     {
         foreach (var line in dialogues)
         {

@@ -1,5 +1,6 @@
 ﻿using Curry.Explore;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 
 public class ChatManager : MonoBehaviour 
@@ -10,6 +11,7 @@ public class ChatManager : MonoBehaviour
     private void Start()
     {
         m_dialogueTree.OnEnd += OnChatEnd;
+        // instantiate history logs and store them here for record keeping if needed
         foreach(var history in m_historyCollection) 
         {
             m_histories.Add(history.Username, history.History);

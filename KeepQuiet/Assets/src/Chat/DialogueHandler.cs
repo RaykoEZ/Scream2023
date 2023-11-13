@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-public delegate void OnPromptDialogueOption(List<DialogueNode> options);
+public delegate void OnPromptDialogueOption(IReadOnlyList<DialogueNode> options);
 public delegate void OnDialogueEnd();
 // Need a node-network for dialogue states & decisions
 public class DialogueHandler : MonoBehaviour
@@ -67,7 +67,7 @@ public class DialogueHandler : MonoBehaviour
     {
         OnEnd?.Invoke();
     }
-    void OnPromptChoice(List<DialogueNode> options)
+    void OnPromptChoice(IReadOnlyList<DialogueNode> options)
     {
         m_optionPrompt.PromptOption(options);
     }

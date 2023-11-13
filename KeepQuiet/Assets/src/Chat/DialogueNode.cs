@@ -18,13 +18,11 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
     [SerializeField] List<Dialogue> m_dialogues = default;
     [SerializeField] List<DialogueNode> m_replyOptions = default;
     public static readonly string s_playerName = "You";
-    public List<Dialogue> Dialogues => m_dialogues;
+    public IReadOnlyList<Dialogue> Dialogues => m_dialogues;
     public string WhoSpoke => m_whoSpoke;
     // Leaves for possible next Dialogue Nodes and their reply text
     // If option count > 1, player chooses a reply
-    public List<DialogueNode> Options => m_replyOptions;
-
-
+    public IReadOnlyList<DialogueNode> Options => m_replyOptions;
     bool IEquatable<DialogueNode>.Equals(DialogueNode other)
     {
         if (other == null) return false;

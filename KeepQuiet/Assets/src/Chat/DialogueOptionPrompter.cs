@@ -19,7 +19,7 @@ public class DialogueOptionPrompter : MonoBehaviour
         }
     }
     
-    public void PromptOption(List<DialogueNode> options) 
+    public void PromptOption(IReadOnlyList<DialogueNode> options) 
     {
         if (options.Count == 0) return;
         HideAll();

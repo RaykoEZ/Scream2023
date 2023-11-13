@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_username: Aria
   m_history:
-    m_lastDialogue: {fileID: 11400000, guid: 2cc7b006d88e0a145be4b1abb663dc99, type: 2}
+    m_lastDialogue: {fileID: 11400000, guid: 18130edef88487942b78483e8df81774, type: 2}
     m_log:
     - WhoSpoke: Aria
       Content: I'm here
