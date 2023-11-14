@@ -3,20 +3,46 @@ using System.Collections.Generic;
 using UnityEngine.Playables;
 using UnityEngine;
 using TMPro;
+using Curry.Explore;
+
+public class IncomingCallHandler: HideableUI 
+{
+    [SerializeField] TextMeshProUGUI m_incomingNumber = default;
+    string m_currentCallerNumber = "";
+    public event OnIncomingCall OnCallAccept;
+    public event OnIncomingCall OnCallDeny;
+    public void CallPhone(string callerNumber) 
+    {
+        m_currentCallerNumber = callerNumber;
+        Show();
+    }
+    public void Accept() 
+    {
+        OnCallAccept?.Invoke(m_currentCallerNumber);
+        Hide();
+       
+    }
+    public void Deny()
+    {
+        OnCallDeny?.Invoke(m_currentCallerNumber);
+        Hide();
+    }
+}
+public delegate void OnIncomingCall(string callerNumber);
 public delegate void OnCallCanceled(string dialed, string extension);
 public delegate void OnCallFinish(string dialed, string extension);
 public delegate void OnDialed(string dialed);
-public class DialHandler : MonoBehaviour 
+public class CallHandler : MonoBehaviour 
 {
     [SerializeField] int m_characterLimit = default;
     [SerializeField] Animator m_anim = default;
+    [SerializeField] IncomingCallHandler m_incoming = default;
     [SerializeField] TextMeshProUGUI m_display = default;
     [SerializeField] PlayableDirector m_director = default;
     [SerializeField] List<DialResult> m_results = default;
     public event OnCallCanceled OnCallCancel;
     public event OnCallFinish OnCallEnd;
     public event OnDialed OnDial;
-
     Dictionary<string, DialEvent> m_eventSet = new Dictionary<string, DialEvent>();
     string m_confirmedInput = "";
     string m_extensionInput = "";
@@ -26,10 +52,23 @@ public class DialHandler : MonoBehaviour
 
     private void Start()
     {
-        foreach(var result in m_results) 
+        m_incoming.OnCallAccept += OnIncomingCallAccept;
+        foreach (var result in m_results) 
         {
             m_eventSet.Add(result.Sequence, result.EventToTrigger);
         }
+    }
+    void OnIncomingCallAccept(string incoming) 
+    {
+        // maybe choose to interrupt current call?
+        if (m_calling) return;
+        m_confirmedInput = incoming;
+        ConfirmInput();
+    }
+    public void CallPhone(string incomingNumber) 
+    {
+        if (m_calling) return;
+        m_incoming.CallPhone(incomingNumber);
     }
     public void Dial(string val) 
     { 

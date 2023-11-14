@@ -951,7 +951,6 @@ GameObject:
   - component: {fileID: 200674728}
   - component: {fileID: 200674727}
   - component: {fileID: 200674729}
-  - component: {fileID: 200674730}
   m_Layer: 6
   m_Name: P_IncomingCall
   m_TagString: Untagged
@@ -1031,18 +1030,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &200674730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200674725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &200674731
 Animator:
   serializedVersion: 4
@@ -9508,7 +9495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: xxx
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
