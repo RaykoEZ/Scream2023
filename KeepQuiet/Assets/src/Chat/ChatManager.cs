@@ -1,8 +1,7 @@
 ﻿using Curry.Explore;
 using System.Collections.Generic;
-using System.Dynamic;
 using UnityEngine;
-
+// Notifies player when message comes
 public class ChatManager : MonoBehaviour 
 {
     [SerializeField] DialogueHandler m_dialogueTree = default;

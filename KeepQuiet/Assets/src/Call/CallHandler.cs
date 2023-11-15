@@ -3,40 +3,42 @@ using System.Collections.Generic;
 using UnityEngine.Playables;
 using UnityEngine;
 using TMPro;
-using Curry.Explore;
 
-public class IncomingCallHandler: HideableUI 
+public class IncomingCall : IncomingNotificationHandler 
 {
     [SerializeField] TextMeshProUGUI m_incomingNumber = default;
-    string m_currentCallerNumber = "";
-    public event OnIncomingCall OnCallAccept;
-    public event OnIncomingCall OnCallDeny;
-    public void CallPhone(string callerNumber) 
+    string m_currentCaller = "";
+    public event OnIncomingNotify OnCallAccept;
+    public event OnIncomingNotify OnCallDeny;
+    public override void Trigger(string callerNumber, bool loopRingTone = false, string alias = "")
     {
-        m_currentCallerNumber = callerNumber;
+        m_currentCaller = string.IsNullOrEmpty(alias) ? callerNumber : alias;
+        m_incomingNumber.text = m_currentCaller;
         Show();
     }
-    public void Accept() 
+    public void Accept()
     {
-        OnCallAccept?.Invoke(m_currentCallerNumber);
+        OnCallAccept?.Invoke(m_currentCaller);
         Hide();
-       
     }
     public void Deny()
     {
-        OnCallDeny?.Invoke(m_currentCallerNumber);
+        OnCallDeny?.Invoke(m_currentCaller);
         Hide();
     }
 }
-public delegate void OnIncomingCall(string callerNumber);
+
+public delegate void OnIncomingNotify(string callerNumber);
 public delegate void OnCallCanceled(string dialed, string extension);
 public delegate void OnCallFinish(string dialed, string extension);
 public delegate void OnDialed(string dialed);
 public class CallHandler : MonoBehaviour 
 {
     [SerializeField] int m_characterLimit = default;
+    [SerializeField] PhoneSettings m_setting = default;
     [SerializeField] Animator m_anim = default;
-    [SerializeField] IncomingCallHandler m_incoming = default;
+    [SerializeField] AudioSource m_callAudio = default;
+    [SerializeField] IncomingCall m_incoming = default;
     [SerializeField] TextMeshProUGUI m_display = default;
     [SerializeField] PlayableDirector m_director = default;
     [SerializeField] List<DialResult> m_results = default;
@@ -52,6 +54,7 @@ public class CallHandler : MonoBehaviour
 
     private void Start()
     {
+        m_callAudio.volume = m_setting.Volume;
         m_incoming.OnCallAccept += OnIncomingCallAccept;
         foreach (var result in m_results) 
         {
@@ -68,7 +71,7 @@ public class CallHandler : MonoBehaviour
     public void CallPhone(string incomingNumber) 
     {
         if (m_calling) return;
-        m_incoming.CallPhone(incomingNumber);
+        m_incoming.Trigger(incomingNumber);
     }
     public void Dial(string val) 
     { 
