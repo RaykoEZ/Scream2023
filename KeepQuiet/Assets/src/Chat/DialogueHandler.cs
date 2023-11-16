@@ -29,8 +29,6 @@ public class DialogueHandler : MonoBehaviour
         {
             DialogueDisplay instance = Instantiate(m_dialogueBoxToSpawn, m_dialogueBoxParent);
             instance.Init(kvp.Value);
-            instance.OnPrompt += OnPromptChoice;
-            instance.OnEnd += EndDialogue;
             m_spawnedDialogueBoxes.Add(kvp.Key, instance);
         }
     }
@@ -40,8 +38,6 @@ public class DialogueHandler : MonoBehaviour
         // shutdown all message boxes
         foreach (var kvp in m_spawnedDialogueBoxes) 
         {
-            kvp.Value.OnPrompt -= OnPromptChoice;
-            kvp.Value.OnEnd -= EndDialogue;
             Destroy(kvp.Value);
         }
         m_spawnedDialogueBoxes.Clear();
@@ -59,12 +55,18 @@ public class DialogueHandler : MonoBehaviour
             kvp.Value.Hide();
         }
         m_currentDisplay = result;
+        // listen to dialogue update events
+        m_currentDisplay.OnPrompt += OnPromptChoice;
+        m_currentDisplay.OnEnd += EndDialogue;
         // Display the preloaded ui for chatting with this NPC
         m_currentDisplay.Show();
         m_currentDisplay.ResumeChat();
     }
     void EndDialogue() 
     {
+        // unlisten dialogue events
+        m_currentDisplay.OnPrompt -= OnPromptChoice;
+        m_currentDisplay.OnEnd -= EndDialogue;
         OnEnd?.Invoke();
     }
     void OnPromptChoice(IReadOnlyList<DialogueNode> options)

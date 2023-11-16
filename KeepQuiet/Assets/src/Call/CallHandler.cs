@@ -4,35 +4,11 @@ using UnityEngine.Playables;
 using UnityEngine;
 using TMPro;
 
-public class IncomingCall : IncomingNotificationHandler 
-{
-    [SerializeField] TextMeshProUGUI m_incomingNumber = default;
-    string m_currentCaller = "";
-    public event OnIncomingNotify OnCallAccept;
-    public event OnIncomingNotify OnCallDeny;
-    public override void Trigger(string callerNumber, bool loopRingTone = false, string alias = "")
-    {
-        m_currentCaller = string.IsNullOrEmpty(alias) ? callerNumber : alias;
-        m_incomingNumber.text = m_currentCaller;
-        Show();
-    }
-    public void Accept()
-    {
-        OnCallAccept?.Invoke(m_currentCaller);
-        Hide();
-    }
-    public void Deny()
-    {
-        OnCallDeny?.Invoke(m_currentCaller);
-        Hide();
-    }
-}
-
 public delegate void OnIncomingNotify(string callerNumber);
 public delegate void OnCallCanceled(string dialed, string extension);
 public delegate void OnCallFinish(string dialed, string extension);
 public delegate void OnDialed(string dialed);
-public class CallHandler : MonoBehaviour 
+public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
 {
     [SerializeField] int m_characterLimit = default;
     [SerializeField] PhoneSettings m_setting = default;
@@ -54,7 +30,8 @@ public class CallHandler : MonoBehaviour
 
     private void Start()
     {
-        m_callAudio.volume = m_setting.Volume;
+        m_setting.Listen(this);
+        m_callAudio.volume = m_setting.GetVolume();
         m_incoming.OnCallAccept += OnIncomingCallAccept;
         foreach (var result in m_results) 
         {
@@ -142,5 +119,9 @@ public class CallHandler : MonoBehaviour
         OnCallEnd?.Invoke(m_confirmedInput, m_extensionInput);
         m_calling = false;
         m_anim.SetBool("Calling", false);
+    }
+    public void OnUpdate(PhoneSettings updated)
+    {
+        m_callAudio.volume = updated.GetVolume();
     }
 }

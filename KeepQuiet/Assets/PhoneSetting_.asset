@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 681897a2037d001479377fb0d6b81103, type: 3}
-  m_Name: Dial_123
+  m_Script: {fileID: 11500000, guid: 8d43ca95f2be0f44093fc0cbc84502fd, type: 3}
+  m_Name: PhoneSetting_
   m_EditorClassIdentifier: 
-  m_sequence: 123
-  m_eventToTrigger:
-    m_playThis: {fileID: 11400000, guid: 26859439d6574ad468723b1d2e1efeb0, type: 2}
+  m_volume: 0.8
+  m_ringtone: {fileID: 8300000, guid: 6b955e476c4e75649b3de490ef059a8c, type: 3}
+  m_wallPaper: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
