@@ -1,18 +1,9 @@
 ﻿using Curry.Explore;
 using System.Collections.Generic;
 using UnityEngine;
-public class IncomingMessage : HideableUI
-{
-    // Redirect to ContactList screen
-    public void Trigger(string callerNumber, string alias = "")
-    {
-        throw new System.NotImplementedException();
-    }
-}
 // Notifies player when message comes
 public class ChatManager : MonoBehaviour 
 {
-    [SerializeField] IncomingMessage m_incoming = default;
     [SerializeField] DialogueHandler m_dialogueTree = default;
     [SerializeField] List<ChatHistoryContainer> m_historyCollection = default;
     Dictionary<string, ChatHistory> m_histories = new Dictionary<string, ChatHistory>();
@@ -37,9 +28,9 @@ public class ChatManager : MonoBehaviour
         m_dialogueTree?.StartDialogue(name);
     }
     // Redirect to ContactList
-    public void OnNewMessage(string incomingNumber) 
-    { 
-    
+    public void OnNewMessage(DialogueNode newDialogue) 
+    {
+        m_dialogueTree.IncomingDialogue(newDialogue);
     }
     // TODO: End chat, hide
     void OnChatEnd() 

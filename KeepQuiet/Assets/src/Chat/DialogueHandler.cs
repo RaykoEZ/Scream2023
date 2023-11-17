@@ -16,7 +16,7 @@ public class DialogueHandler : MonoBehaviour
     public event OnDialogueEnd OnEnd;
     private void Start()
     {
-        m_optionPrompt.OnChosen += OnPlayerChosen;
+        m_optionPrompt.OnChosen += OnNewDialogue;
     }
     private void OnDestroy()
     {
@@ -34,7 +34,7 @@ public class DialogueHandler : MonoBehaviour
     }
     public void Shutdown() 
     {
-        m_optionPrompt.OnChosen -= OnPlayerChosen;
+        m_optionPrompt.OnChosen -= OnNewDialogue;
         // shutdown all message boxes
         foreach (var kvp in m_spawnedDialogueBoxes) 
         {
@@ -42,6 +42,7 @@ public class DialogueHandler : MonoBehaviour
         }
         m_spawnedDialogueBoxes.Clear();
     }
+    // Start dialogue with npc
     public void StartDialogue(string chattingWith) 
     {
         if (!m_spawnedDialogueBoxes.TryGetValue(chattingWith, out DialogueDisplay result)) 
@@ -50,17 +51,44 @@ public class DialogueHandler : MonoBehaviour
             return; 
         }
         m_title.text = chattingWith;
-        foreach (var kvp in m_spawnedDialogueBoxes) 
+        HideAll();
+        m_currentDisplay = result;
+        StartCurrentChat();
+    }
+
+    // Start a new dialogue tree from a sender
+    public void IncomingDialogue(DialogueNode newDialogue) 
+    {
+        string chatting = newDialogue.WhoSpoke;
+        if (!m_spawnedDialogueBoxes.TryGetValue(chatting, out DialogueDisplay result))
+        {
+            OnEnd?.Invoke();
+            return;
+        }
+        m_title.text = chatting;
+        HideAll();
+        m_currentDisplay = result;
+        // Set current dialogue to the incoming dialogue
+        m_currentDisplay.UpdateCurrentDialogue(newDialogue);
+        // play dialogue from the new dialogue node
+        StartCurrentChat();
+    }
+
+    void HideAll() 
+    {
+        foreach (var kvp in m_spawnedDialogueBoxes)
         {
             kvp.Value.Hide();
         }
-        m_currentDisplay = result;
+    }
+    void StartCurrentChat() 
+    {
         // listen to dialogue update events
         m_currentDisplay.OnPrompt += OnPromptChoice;
         m_currentDisplay.OnEnd += EndDialogue;
         // Display the preloaded ui for chatting with this NPC
         m_currentDisplay.Show();
-        m_currentDisplay.ResumeChat();
+        m_currentDisplay.StartChat();
     }
     void EndDialogue() 
     {
@@ -73,9 +101,10 @@ public class DialogueHandler : MonoBehaviour
     {
         m_optionPrompt.PromptOption(options);
     }
-    void OnPlayerChosen(DialogueNode chosen) 
+    // A new dialogue is chosen for the current display
+    void OnNewDialogue(DialogueNode chosen) 
     {
-        m_currentDisplay.UpdateDialogueNode(chosen);
-        m_currentDisplay.ResumeChat();
+        m_currentDisplay.UpdateCurrentDialogue(chosen);
+        m_currentDisplay.StartChat();
     }
 }

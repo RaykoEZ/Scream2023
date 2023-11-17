@@ -35,14 +35,14 @@ public class DialogueDisplay : HideableUI
         }
         else if (m_currentNode.Options.Count == 1)
         {
-            UpdateDialogueNode(m_currentNode.Options[0]);
-            ResumeChat();
+            UpdateCurrentDialogue(m_currentNode.Options[0]);
+            StartChat();
         }
     }
     // Display a new message
     void DisplayMessage(Dialogue toDisplay, bool isNpc = true) 
     {
-        // TODO: display in box, choose between player and npc message box prefab reference
+        // Instntiate a message box for the message
         MessageBox instance = isNpc? 
             Instantiate(m_npcBoxPrefab, m_messageParent) : 
             Instantiate(m_playerBoxPrefab, m_messageParent);
@@ -51,12 +51,14 @@ public class DialogueDisplay : HideableUI
         instance.Show();
     }
     // Append a dialogue to history
-    public void UpdateDialogueNode(DialogueNode result) 
+    public void UpdateCurrentDialogue(DialogueNode result) 
     {
         m_currentNode = result;
         m_history.Append(m_currentNode);
     }
-    public void ResumeChat() 
+    // start displaying dialogues of current node
+    // and continue until the end of the dialogue tree
+    public void StartChat() 
     {
         m_chatting = StartCoroutine(ContinueChat(m_currentNode.Dialogues, m_currentNode.WhoSpoke != DialogueNode.s_playerName));
     }
