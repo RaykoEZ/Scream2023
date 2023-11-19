@@ -6,7 +6,6 @@ public class PhoneAlertHandler : MonoBehaviour
     [SerializeField] Animator m_toggleAnim = default;
     [SerializeField] AudioSource m_ring = default;
     [SerializeField] PhoneSettings m_setting = default;
-    [SerializeField] Toggle m_phoneToggle = default;
     [SerializeField] Image m_toggleIcon = default;
     [SerializeField] Sprite m_callAlert = default;
     [SerializeField] Sprite m_messageAlert = default;

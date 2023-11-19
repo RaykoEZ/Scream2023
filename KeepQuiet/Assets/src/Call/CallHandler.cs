@@ -5,8 +5,8 @@ using UnityEngine;
 using TMPro;
 
 public delegate void OnIncomingNotify(string callerNumber);
-public delegate void OnCallCanceled(string dialed, string extension);
-public delegate void OnCallFinish(string dialed, string extension);
+public delegate void OnCallCanceled(string dialed);
+public delegate void OnCallFinish(string dialed);
 public delegate void OnDialed(string dialed);
 public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
 {
@@ -23,11 +23,8 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     public event OnDialed OnDial;
     Dictionary<string, DialEvent> m_eventSet = new Dictionary<string, DialEvent>();
     string m_confirmedInput = "";
-    string m_extensionInput = "";
     bool m_calling = false;
     public bool Calling => m_calling;
-    public string ExtensionInput => m_extensionInput;
-
     private void Start()
     {
         m_setting.Listen(this);
@@ -59,14 +56,13 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
             return; 
         }
         m_display.text += val;
-        DialExtension(val);
     }
     public void CancelCall()
     {
         StopResultPlayback();
         m_calling = false;
         m_anim.SetBool("Calling", false);
-        OnCallCancel?.Invoke(m_confirmedInput, m_extensionInput);
+        OnCallCancel?.Invoke(m_confirmedInput);
     }
     // Start Call, check puzzle phone book for results 
     public void ConfirmInput()
@@ -83,18 +79,10 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
             StartCoroutine(PlayResultSequence(result.PlayThis));
         }
     }
-    public void ClearDial() 
+    public void ClearDial()
     {
         m_display.text = "";
         m_confirmedInput = "";
-        m_extensionInput = "";
-    }
-    void DialExtension(string val) 
-    {
-        if (m_calling) 
-        {
-            m_extensionInput += val;
-        }
     }
     void StopResultPlayback() 
     { 
@@ -116,7 +104,7 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
         yield return new WaitForSeconds(Random.Range(0.8f, 3f));
         m_director.Play();
         yield return new WaitForSeconds((float)sequence.duration + 0.5f);
-        OnCallEnd?.Invoke(m_confirmedInput, m_extensionInput);
+        OnCallEnd?.Invoke(m_confirmedInput);
         m_calling = false;
         m_anim.SetBool("Calling", false);
     }
