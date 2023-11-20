@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
 using Curry.Explore;
-
 public class IncomingCall : HideableUI
 {
     [SerializeField] TextMeshProUGUI m_incomingNumber = default;

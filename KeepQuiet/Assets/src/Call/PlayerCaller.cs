@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PhoneAlertHandler : MonoBehaviour 
+public class PlayerCaller : MonoBehaviour
 {
     [SerializeField] Animator m_toggleAnim = default;
     [SerializeField] AudioSource m_ring = default;
@@ -11,19 +11,18 @@ public class PhoneAlertHandler : MonoBehaviour
     [SerializeField] Sprite m_messageAlert = default;
     [SerializeField] CallHandler m_call = default;
     [SerializeField] ChatManager m_chat = default;
-
     Sprite m_defaultSprite;
     private void Start()
     {
         m_defaultSprite = m_toggleIcon.sprite;
     }
     // If phone rings when phone isn't toggled on, alert player with animated toggle icon
-    public void Call(string incomingNumber) 
+    public void Call(string incomingNumber, DialEvent onAccept) 
     {
         m_toggleIcon.sprite = m_callAlert;
         // Start glowing / animating
         AnimateAlertIcon();
-        m_call.CallPhone(incomingNumber);
+        m_call.CallPhone(incomingNumber, onAccept);
     }
     public void Message(DialogueNode newDialogue) 
     {

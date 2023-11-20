@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Playables;
 using UnityEngine;
 using TMPro;
+using System.Text;
 
 public delegate void OnIncomingNotify(string callerNumber);
 public delegate void OnCallCanceled(string dialed);
@@ -17,6 +18,7 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     [SerializeField] IncomingCall m_incoming = default;
     [SerializeField] TextMeshProUGUI m_display = default;
     [SerializeField] PlayableDirector m_director = default;
+    [SerializeField] NpcManager m_npc = default;
     [SerializeField] List<DialResult> m_results = default;
     public event OnCallCanceled OnCallCancel;
     public event OnCallFinish OnCallEnd;
@@ -24,27 +26,38 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     Dictionary<string, DialEvent> m_eventSet = new Dictionary<string, DialEvent>();
     string m_confirmedInput = "";
     bool m_calling = false;
+    Npc m_callingWith;
+    DialEvent m_latestIncomingCall;
     public bool Calling => m_calling;
     private void Start()
     {
         m_setting.Listen(this);
         m_callAudio.volume = m_setting.GetVolume();
         m_incoming.OnCallAccept += OnIncomingCallAccept;
+        m_incoming.OnCallDeny += CallDenied;
         foreach (var result in m_results) 
         {
             m_eventSet.Add(result.Sequence, result.EventToTrigger);
         }
     }
+    void CallDenied(string incoming) 
+    {
+        // triggernpc deny event
+        Npc denied = m_npc.Find(incoming);
+        denied?.OnCallDenied();
+    }
     void OnIncomingCallAccept(string incoming) 
     {
         // maybe choose to interrupt current call?
         if (m_calling) return;
-        m_confirmedInput = incoming;
-        ConfirmInput();
+        Npc accepted = m_npc.Find(incoming);
+        accepted?.OnCallAccepted();
+        BeginCall(incoming, m_latestIncomingCall);
     }
-    public void CallPhone(string incomingNumber) 
+    public void CallPhone(string incomingNumber, DialEvent onAccept) 
     {
         if (m_calling) return;
+        m_latestIncomingCall = onAccept;
         m_incoming.Trigger(incomingNumber);
     }
     public void Dial(string val) 
@@ -59,6 +72,7 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     }
     public void CancelCall()
     {
+        m_callingWith?.OnPlayerCallCanceled();
         StopResultPlayback();
         m_calling = false;
         m_anim.SetBool("Calling", false);
@@ -69,15 +83,21 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     {
         // TODO: Need a short dial waiting/ringtone sfx + animation
         // Find valid result and output event wioth audio + subtitle (maybe?)
-        m_confirmedInput = m_display.text;
         if(m_eventSet.TryGetValue(m_confirmedInput, out var result)) 
         {
-            OnDial?.Invoke(m_confirmedInput);
-            m_calling = true;
-            //TODO: trigger audio response here + subtitle is needed
-            m_anim.SetBool("Calling", true);
-            StartCoroutine(PlayResultSequence(result.PlayThis));
+            BeginCall(m_display.text, result);
         }
+    }
+    void BeginCall(string callDisplay, DialEvent result) 
+    {
+        m_confirmedInput = callDisplay;
+        m_callingWith = m_npc.Find(m_confirmedInput);
+        m_callingWith?.OnPlayerDialed();
+        OnDial?.Invoke(m_confirmedInput);
+        m_calling = true;
+        //TODO: trigger audio response here + subtitle is needed
+        m_anim.SetBool("Calling", true);
+        StartCoroutine(PlayResultSequence(result.PlayThis));
     }
     public void ClearDial()
     {
@@ -107,6 +127,7 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
         OnCallEnd?.Invoke(m_confirmedInput);
         m_calling = false;
         m_anim.SetBool("Calling", false);
+        m_callingWith?.OnPlayerCallFinished();
     }
     public void OnUpdate(PhoneSettings updated)
     {

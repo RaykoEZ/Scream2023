@@ -10,6 +10,7 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_title = default;
     [SerializeField] DialogueOptionPrompter m_optionPrompt = default;
     [SerializeField] DialogueDisplay m_dialogueBoxToSpawn = default;
+    [SerializeField] NpcManager m_npc = default;
     Dictionary<string, DialogueDisplay> m_spawnedDialogueBoxes = new Dictionary<string, DialogueDisplay>();
     // all dialogues displayed before ending dialogue
     DialogueDisplay m_currentDisplay;
@@ -73,7 +74,6 @@ public class DialogueHandler : MonoBehaviour
         // play dialogue from the new dialogue node
         StartCurrentChat();
     }
-
     void HideAll() 
     {
         foreach (var kvp in m_spawnedDialogueBoxes)
