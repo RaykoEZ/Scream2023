@@ -38,6 +38,10 @@ public class DialogueDisplay : HideableUI
             UpdateCurrentDialogue(m_currentNode.Options[0]);
             StartChat();
         }
+        else 
+        {
+            EndDialogue();
+        }
     }
     // Display a new message
     void DisplayMessage(Dialogue toDisplay, bool isNpc = true) 

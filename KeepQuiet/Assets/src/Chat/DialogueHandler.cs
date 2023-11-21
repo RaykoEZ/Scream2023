@@ -15,6 +15,7 @@ public class DialogueHandler : MonoBehaviour
     // all dialogues displayed before ending dialogue
     DialogueDisplay m_currentDisplay;
     public event OnDialogueEnd OnEnd;
+    Npc m_chattingWith;
     private void Start()
     {
         m_optionPrompt.OnChosen += OnNewDialogue;
@@ -83,6 +84,7 @@ public class DialogueHandler : MonoBehaviour
     }
     void StartCurrentChat() 
     {
+        m_chattingWith = m_npc.Find(m_currentDisplay.History.LastDialogue.WhoSpoke);
         // listen to dialogue update events
         m_currentDisplay.OnPrompt += OnPromptChoice;
         m_currentDisplay.OnEnd += EndDialogue;
@@ -95,6 +97,7 @@ public class DialogueHandler : MonoBehaviour
         // unlisten dialogue events
         m_currentDisplay.OnPrompt -= OnPromptChoice;
         m_currentDisplay.OnEnd -= EndDialogue;
+        m_npc.OnChatFinished(m_currentDisplay.History.LastDialogue);
         OnEnd?.Invoke();
     }
     void OnPromptChoice(IReadOnlyList<DialogueNode> options)
@@ -102,8 +105,9 @@ public class DialogueHandler : MonoBehaviour
         m_optionPrompt.PromptOption(options);
     }
     // A new dialogue is chosen for the current display
-    void OnNewDialogue(DialogueNode chosen) 
+    void OnNewDialogue(DialogueNode chosen, int choiceIndex)
     {
+        m_chattingWith?.OnPlayerDecided(chosen, choiceIndex);
         m_currentDisplay.UpdateCurrentDialogue(chosen);
         m_currentDisplay.StartChat();
     }

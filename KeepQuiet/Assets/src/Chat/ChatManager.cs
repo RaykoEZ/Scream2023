@@ -9,17 +9,12 @@ public class ChatManager : MonoBehaviour
     Dictionary<string, ChatHistory> m_histories = new Dictionary<string, ChatHistory>();
     private void Start()
     {
-        m_dialogueTree.OnEnd += OnChatEnd;
         // instantiate history logs and store them here for record keeping if needed
         foreach(var history in m_historyCollection) 
         {
             m_histories.Add(history.Username, history.History);
         }
         m_dialogueTree.PrepareDialogueBoxes(m_histories);
-    }
-    private void OnDestroy()
-    {
-        m_dialogueTree.OnEnd -= OnChatEnd;
     }
     // load chat of the person in question
     public void BeginChat(string name) 
@@ -31,10 +26,5 @@ public class ChatManager : MonoBehaviour
     public void OnNewMessage(DialogueNode newDialogue) 
     {
         m_dialogueTree.IncomingDialogue(newDialogue);
-    }
-    // TODO: End chat, hide
-    void OnChatEnd() 
-    { 
-
     }
 }

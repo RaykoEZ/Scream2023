@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-public delegate void OnPlayerChosen(DialogueNode chosen);
+public delegate void OnPlayerChosen(DialogueNode chosen, int choiceIndex);
 public class DialogueOptionPrompter : MonoBehaviour
 {
     [SerializeField] int m_maxOptions = 3;
@@ -31,10 +31,10 @@ public class DialogueOptionPrompter : MonoBehaviour
             m_options[i].Show();
         }
     }
-    void OnOptionChosen(DialogueNode chosen) 
+    void OnOptionChosen(DialogueOption chosen)
     {
         HideAll();
-        OnChosen?.Invoke(chosen);
+        OnChosen?.Invoke(chosen.OptionValue, m_options.IndexOf(chosen));
     }
     void HideAll()
     {

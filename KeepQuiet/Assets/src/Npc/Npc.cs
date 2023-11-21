@@ -9,7 +9,17 @@ public abstract class Npc : MonoBehaviour
     public abstract void OnCallDenied();
     public abstract void OnCallAccepted();
     public abstract void OnPlayerDialed();
-    public abstract void OnPlayerCallFinished();
-    public abstract void OnPlayerChatFinished();
-    public abstract void OnPlayerDecided(DialogueNode chosen);
+    public abstract void OnCallFinished();
+    public abstract void OnChatFinished();
+    // npc can react to player choice on a decision
+    public abstract void OnPlayerDecided(DialogueNode chosen, int choiceIndex);
+    // NPC's interaction features with player
+    protected virtual void CallPlayer(DialEvent onAccept)
+    {
+        m_caller?.CallPlayer(m_phoneNumber, onAccept);
+    }
+    protected virtual void MessagePlayer(DialogueNode newDialogue) 
+    {
+        m_caller?.MessagePlayer(newDialogue);
+    }
 }

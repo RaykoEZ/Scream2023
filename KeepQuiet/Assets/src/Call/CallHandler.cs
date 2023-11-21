@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.Playables;
 using UnityEngine;
 using TMPro;
-using System.Text;
 
 public delegate void OnIncomingNotify(string callerNumber);
 public delegate void OnCallCanceled(string dialed);
@@ -127,7 +126,7 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
         OnCallEnd?.Invoke(m_confirmedInput);
         m_calling = false;
         m_anim.SetBool("Calling", false);
-        m_callingWith?.OnPlayerCallFinished();
+        m_npc.OnCallFinished(m_confirmedInput);
     }
     public void OnUpdate(PhoneSettings updated)
     {

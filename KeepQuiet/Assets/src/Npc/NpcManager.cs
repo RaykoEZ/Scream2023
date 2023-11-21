@@ -12,4 +12,18 @@ public class NpcManager : MonoBehaviour
                 return npc.PhoneNumber == phoneNumber; 
             });
     }
+    public void OnCallFinished(string whoCalled) 
+    {
+        foreach (var npc in m_npcInScene) 
+        {
+            npc.OnCallFinished();
+        }
+    }
+    public void OnChatFinished(DialogueNode lastDialogue) 
+    {
+        foreach (var npc in m_npcInScene)
+        {
+            npc.OnChatFinished();
+        }
+    }
 }
