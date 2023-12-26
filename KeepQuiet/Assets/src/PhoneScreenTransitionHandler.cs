@@ -4,7 +4,6 @@ using Curry.Explore;
 public class PhoneScreenTransitionHandler : MonoBehaviour
 {
     [SerializeField] HideableUITrigger m_home = default;
-    [SerializeField] HideableUITrigger m_settings = default;
     [SerializeField] HideableUITrigger m_contact = default;
     [SerializeField] HideableUITrigger m_chat = default;
     [SerializeField] HideableUITrigger m_call = default;
@@ -18,10 +17,6 @@ public class PhoneScreenTransitionHandler : MonoBehaviour
     public void ToHome() 
     {
         TransitionTo(m_home);
-    }
-    public void ToSettings() 
-    {
-        TransitionTo(m_settings);
     }
     public void ToContact()
     {
