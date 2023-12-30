@@ -926,6 +926,7 @@ MonoBehaviour:
   m_lighting: {fileID: 809772652}
   m_vfx: {fileID: 642929162}
   m_background: {fileID: 1465261650}
+  m_postProcessVolumeProfile: {fileID: 11400000, guid: c5e55d45008b3f14daf73e1db982a658, type: 2}
 --- !u!1 &200674725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,6 +2979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fade: {fileID: 1884570903}
+  m_postProcess: {fileID: 1539457609}
   m_outsideCam: {fileID: 172971999}
   m_outsideAria: {fileID: 1072763294}
   m_insideCafe: {fileID: 1610518091}
@@ -3106,6 +3108,7 @@ MonoBehaviour:
   m_lighting: {fileID: 1423802251}
   m_vfx: {fileID: 0}
   m_background: {fileID: 2143934019}
+  m_postProcessVolumeProfile: {fileID: 11400000, guid: f9dba9c51dd9894479d8935fa92a9cc7, type: 2}
 --- !u!1 &502853387
 GameObject:
   m_ObjectHideFlags: 0
@@ -7513,6 +7516,7 @@ MonoBehaviour:
   m_lighting: {fileID: 1777828740}
   m_vfx: {fileID: 1914714372}
   m_background: {fileID: 714918329}
+  m_postProcessVolumeProfile: {fileID: 11400000, guid: 40385910d1684204da69229de7fd89eb, type: 2}
 --- !u!1 &1088365744
 GameObject:
   m_ObjectHideFlags: 0
@@ -10867,7 +10871,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: f9dba9c51dd9894479d8935fa92a9cc7, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 40385910d1684204da69229de7fd89eb, type: 2}
 --- !u!4 &1539457610
 Transform:
   m_ObjectHideFlags: 0
@@ -11782,6 +11786,7 @@ MonoBehaviour:
   m_lighting: {fileID: 536124996}
   m_vfx: {fileID: 0}
   m_background: {fileID: 1850945471}
+  m_postProcessVolumeProfile: {fileID: 11400000, guid: 84caaea35c25cb946becc0136b6abe8a, type: 2}
 --- !u!1 &1645881428
 GameObject:
   m_ObjectHideFlags: 0
@@ -12875,6 +12880,7 @@ MonoBehaviour:
   m_lighting: {fileID: 1909045279}
   m_vfx: {fileID: 0}
   m_background: {fileID: 69931359}
+  m_postProcessVolumeProfile: {fileID: 11400000, guid: 9b1ecfdd68fd82c40b2a08d8dbf2f71e, type: 2}
 --- !u!1 &1835042949
 GameObject:
   m_ObjectHideFlags: 0
