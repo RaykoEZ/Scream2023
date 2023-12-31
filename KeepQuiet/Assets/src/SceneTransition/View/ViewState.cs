@@ -15,8 +15,8 @@ public abstract class ViewState : MonoBehaviour
 
     public virtual void SetVisual(bool isOn)
     {
-        Lighting.gameObject.SetActive(isOn);
-        Vfx.gameObject.SetActive(isOn);
-        Background.gameObject.SetActive(isOn);
+        Lighting?.gameObject.SetActive(isOn);
+        Vfx?.gameObject.SetActive(isOn);
+        Background?.gameObject.SetActive(isOn);
     }
 }

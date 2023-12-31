@@ -13,6 +13,15 @@ public class ViewStateManager : MonoBehaviour
     [SerializeField] protected ViewState m_roomLeft = default;
     [SerializeField] protected ViewState m_roomRight = default;
     ViewState m_currentView;
+    private void Start()
+    {
+        //Hide all view first
+        m_outsideCam?.SetVisual(false);
+        m_outsideAria?.SetVisual(false);
+        m_insideCafe?.SetVisual(false);
+        m_roomLeft?.SetVisual(false);
+        m_roomRight?.SetVisual(false);
+    }
     public void ChangeView(ViewState newView) 
     {
         if (newView == null) return;
