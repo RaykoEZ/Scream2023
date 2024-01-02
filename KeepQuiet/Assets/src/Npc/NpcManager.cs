@@ -4,7 +4,7 @@ using UnityEngine;
 public class NpcManager : MonoBehaviour 
 {
     [SerializeField] List<Npc> m_npcInScene = default;
-    public Npc Find(string phoneNumber) 
+    public Npc Get(string phoneNumber) 
     {
         return m_npcInScene.Find(
             (npc) => 

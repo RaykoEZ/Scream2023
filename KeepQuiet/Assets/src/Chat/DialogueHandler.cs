@@ -84,7 +84,7 @@ public class DialogueHandler : MonoBehaviour
     }
     void StartCurrentChat() 
     {
-        m_chattingWith = m_npc.Find(m_currentDisplay.History.LastDialogue.WhoSpoke);
+        m_chattingWith = m_npc.Get(m_currentDisplay.History.LastDialogue.WhoSpoke);
         // listen to dialogue update events
         m_currentDisplay.OnPrompt += OnPromptChoice;
         m_currentDisplay.OnEnd += EndDialogue;

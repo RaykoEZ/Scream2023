@@ -42,14 +42,14 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     void CallDenied(string incoming) 
     {
         // triggernpc deny event
-        Npc denied = m_npc.Find(incoming);
+        Npc denied = m_npc.Get(incoming);
         denied?.OnCallDenied();
     }
     void OnIncomingCallAccept(string incoming) 
     {
         // maybe choose to interrupt current call?
         if (m_calling) return;
-        Npc accepted = m_npc.Find(incoming);
+        Npc accepted = m_npc.Get(incoming);
         accepted?.OnCallAccepted();
         BeginCall(incoming, m_latestIncomingCall);
     }
@@ -90,7 +90,7 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     void BeginCall(string callDisplay, DialEvent result) 
     {
         m_confirmedInput = callDisplay;
-        m_callingWith = m_npc.Find(m_confirmedInput);
+        m_callingWith = m_npc.Get(m_confirmedInput);
         m_callingWith?.OnPlayerDialed();
         OnDial?.Invoke(m_confirmedInput);
         m_calling = true;
