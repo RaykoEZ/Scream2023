@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 // handles behaviours for a view
@@ -12,8 +14,13 @@ public class ViewStateManager : MonoBehaviour
     [SerializeField] protected ViewState m_insideCafe = default;
     [SerializeField] protected ViewState m_roomLeft = default;
     [SerializeField] protected ViewState m_roomRight = default;
+    Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
     private void Start()
+    {
+
+    }
+    public void Init(List<ViewStateSaveData> saved)
     {
         //Hide all view first
         m_outsideCam?.SetVisual(false);
@@ -21,6 +28,14 @@ public class ViewStateManager : MonoBehaviour
         m_insideCafe?.SetVisual(false);
         m_roomLeft?.SetVisual(false);
         m_roomRight?.SetVisual(false);
+        m_views = new Dictionary<string, ViewState>
+        {
+            {m_outsideCam.Name, m_outsideCam},
+            {m_outsideAria.Name, m_outsideAria},
+            {m_insideCafe.Name, m_insideCafe},
+            {m_roomLeft.Name, m_roomLeft},
+            {m_roomRight.Name, m_roomRight}
+        };
     }
     public void ChangeView(ViewState newView) 
     {
