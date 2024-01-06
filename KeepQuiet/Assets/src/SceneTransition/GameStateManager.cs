@@ -7,7 +7,7 @@ public class ViewStateSaveData
     public string LocationName;
     public bool IsLightOn;
     public bool IsUnlocked;
-    public Dictionary<string, bool> itemsToSpawn;
+    public Dictionary<string, bool> cluessToSpawn;
 }
 
 public class GameStateManager : MonoBehaviour
