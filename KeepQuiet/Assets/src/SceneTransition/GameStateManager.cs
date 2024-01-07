@@ -13,9 +13,11 @@ public class ViewStateSaveData
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] ViewStateManager m_view = default;
+
     // Read Meta File states and Locations to update game state
     void EvaluateGameState() { }
-    void SetupViewStats() { }
+    void SaveGameStates() { }
+    void LoadGameStates() { }
     void SetupAriaState() { }
 }
 

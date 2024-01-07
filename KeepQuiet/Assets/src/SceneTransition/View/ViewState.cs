@@ -12,7 +12,9 @@ public abstract class ViewState : MonoBehaviour
     public Transform Vfx => m_vfx;
     public Transform Background => m_background;
     public VolumeProfile PostProcessVolumeProfile => m_postProcessVolumeProfile;
-
+    public virtual void SetupState(ViewStateSaveData saveData) 
+    {
+    }
     public virtual void SetVisual(bool isOn)
     {
         Lighting?.gameObject.SetActive(isOn);
