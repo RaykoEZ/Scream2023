@@ -15,10 +15,6 @@ public class ViewStateManager : MonoBehaviour
     [SerializeField] protected ViewState m_roomRight = default;
     Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
-    private void Start()
-    {
-
-    }
     public void Init(GameStateSaveData saved)
     {
         //Hide all view first
@@ -35,6 +31,10 @@ public class ViewStateManager : MonoBehaviour
             {m_roomLeft.Name, m_roomLeft},
             {m_roomRight.Name, m_roomRight}
         };
+        foreach (var item in m_views)
+        {
+            item.Value.InitState(saved);
+        }
     }
     public void ChangeView(ViewState newView) 
     {

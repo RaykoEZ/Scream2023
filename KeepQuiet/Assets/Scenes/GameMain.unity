@@ -1063,17 +1063,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1323951158285202498, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
   m_PrefabInstance: {fileID: 107169118}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &107169120 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4733669060842668505, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
-  m_PrefabInstance: {fileID: 107169118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bb95ddd36660b64f9ebbcb45287db4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &162141628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1245,9 @@ MonoBehaviour:
   m_vfx: {fileID: 642929162}
   m_background: {fileID: 1465261650}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: c5e55d45008b3f14daf73e1db982a658, type: 2}
+  IsLit: 1
+  m_blink: {fileID: 0}
+  m_noAria: {fileID: 0}
 --- !u!1 &200674725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,14 +3584,13 @@ MonoBehaviour:
   m_vfx: {fileID: 2066361721}
   m_background: {fileID: 2143934019}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: f9dba9c51dd9894479d8935fa92a9cc7, type: 2}
+  IsLit: 0
   m_darkness: {fileID: 2111064247}
   m_doorControl: {fileID: 488005685}
   m_calendar: {fileID: 1879728349}
   m_clock: {fileID: 1036254820}
   m_door: {fileID: 748699818}
-  m_doorLight: {fileID: 1121190852}
   m_bat: {fileID: 1500065153}
-  m_vent: {fileID: 107169120}
   m_screen: {fileID: 2133128638}
 --- !u!1 &502853387
 GameObject:
@@ -9080,6 +9071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_view: {fileID: 451893988}
+  m_aria: {fileID: 0}
 --- !u!1001 &1070705327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9371,6 +9363,7 @@ MonoBehaviour:
   m_vfx: {fileID: 1914714372}
   m_background: {fileID: 714918329}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: 40385910d1684204da69229de7fd89eb, type: 2}
+  IsLit: 1
 --- !u!1 &1088365744
 GameObject:
   m_ObjectHideFlags: 0
@@ -9726,17 +9719,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1323951158285202498, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
   m_PrefabInstance: {fileID: 1121190850}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1121190852 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4733669060842668505, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
-  m_PrefabInstance: {fileID: 1121190850}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bb95ddd36660b64f9ebbcb45287db4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1124083441
 GameObject:
   m_ObjectHideFlags: 0
@@ -12725,7 +12707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1465261650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13793,7 +13775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1555745943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14430,6 +14412,7 @@ MonoBehaviour:
   m_vfx: {fileID: 852939241}
   m_background: {fileID: 1850945471}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: 84caaea35c25cb946becc0136b6abe8a, type: 2}
+  IsLit: 1
 --- !u!1 &1645881428
 GameObject:
   m_ObjectHideFlags: 0
@@ -15661,6 +15644,7 @@ MonoBehaviour:
   m_vfx: {fileID: 1968032667}
   m_background: {fileID: 69931359}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: 9b1ecfdd68fd82c40b2a08d8dbf2f71e, type: 2}
+  IsLit: 1
   m_darkness: {fileID: 1118311341}
 --- !u!95 &1816601716
 Animator:
@@ -17392,7 +17376,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916076697}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -18169,7 +18153,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084210669}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -19269,7 +19253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2143934019
 RectTransform:
   m_ObjectHideFlags: 0

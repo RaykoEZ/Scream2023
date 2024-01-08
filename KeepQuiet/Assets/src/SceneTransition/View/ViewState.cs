@@ -21,8 +21,18 @@ public abstract class ViewState : MonoBehaviour
         }
     }
     protected virtual void InitStateInternal(GameStateSaveData gamestate, ViewStateSaveData viewState) 
-    { 
+    {
+        if (gamestate.AriaStatus.CurrentLocation != Name)
+        {
+            OnAriaExit();
+        }
+        else
+        {
+            OnAriaEnter();
+        }
     }
+    public virtual void OnAriaEnter() { }
+    public virtual void OnAriaExit() { }
     public virtual void SetVisual(bool isOn)
     {
         Lighting?.gameObject.SetActive(isOn);
