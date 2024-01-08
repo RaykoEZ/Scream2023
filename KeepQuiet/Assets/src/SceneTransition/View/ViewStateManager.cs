@@ -19,7 +19,7 @@ public class ViewStateManager : MonoBehaviour
     {
 
     }
-    public void Init(List<ViewStateSaveData> saved)
+    public void Init(GameStateSaveData saved)
     {
         //Hide all view first
         m_outsideCam?.SetVisual(false);

@@ -24,7 +24,28 @@ public class RoomLeftView : ViewState
     public DoorState DoorState => m_doorState;
     public void SetViewDarkness(bool isLit) 
     {
-        m_darkness.alpha = isLit ? 0f : 1f;
+        IsLit = isLit;
+        m_darkness.alpha = IsLit ? 0f : 1f;
+    }
+    protected override void InitStateInternal(GameStateSaveData saveData, ViewStateSaveData viewState)
+    {
+        // darkness adjust
+        SetViewDarkness(viewState.IsLit);
+        // Set door state
+        ChangeDoorState(saveData.RoomLeftDoorState);
+        // hide clues?
+        if (viewState.CluesToHide.Contains(m_clock.name))
+        {
+            m_clock.Hide();
+        }
+        if (viewState.CluesToHide.Contains(m_door.name))
+        {
+            m_door.Hide();
+        }
+        if (viewState.CluesToHide.Contains(m_bat.name))
+        {
+            m_bat.Hide();
+        }
     }
     // Change door state and trheir visuals
     public void ChangeDoorState(DoorState newState) 

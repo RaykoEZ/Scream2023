@@ -7,13 +7,21 @@ public abstract class ViewState : MonoBehaviour
     [SerializeField] private Transform m_vfx = default;
     [SerializeField] private Transform m_background = default;
     [SerializeField] VolumeProfile m_postProcessVolumeProfile = default;
+    public bool IsLit = true;
     public abstract string Name { get; }
     public Transform Lighting => m_lighting;
     public Transform Vfx => m_vfx;
     public Transform Background => m_background;
     public VolumeProfile PostProcessVolumeProfile => m_postProcessVolumeProfile;
-    public virtual void SetupState(ViewStateSaveData saveData) 
+    public void InitState(GameStateSaveData saveData) 
     {
+        if (saveData.TryGetViewState(Name, out ViewStateSaveData result))
+        {
+            InitStateInternal(saveData, result);
+        }
+    }
+    protected virtual void InitStateInternal(GameStateSaveData gamestate, ViewStateSaveData viewState) 
+    { 
     }
     public virtual void SetVisual(bool isOn)
     {
