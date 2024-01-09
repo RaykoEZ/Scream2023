@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.XR;
+
 [Serializable]
 public class ViewStateSaveData
 {
@@ -44,6 +47,9 @@ public class GameStateManager : MonoBehaviour
         m_aria?.Init(newSave.AriaStatus);
     }
 
-    void SaveStates() { }
+    void SaveStates() 
+    { 
+    
+    }
 }
 
