@@ -11,10 +11,11 @@ public class ViewStateManager : MonoBehaviour
     [SerializeField] protected ViewState m_outsideCam = default;
     [SerializeField] protected ViewState m_outsideAria = default;
     [SerializeField] protected ViewState m_insideCafe = default;
-    [SerializeField] protected ViewState m_roomLeft = default;
+    [SerializeField] protected RoomLeftView m_roomLeft = default;
     [SerializeField] protected ViewState m_roomRight = default;
     Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
+    public DoorState LeftRoomDoor => m_roomLeft.DoorState;
     public void Init(GameStateSaveData saved)
     {
         //Hide all view first
@@ -35,6 +36,18 @@ public class ViewStateManager : MonoBehaviour
         {
             item.Value.InitState(saved);
         }
+    }
+    public List<ViewStateSaveData> GetCurrentViewState() 
+    {
+        List<ViewStateSaveData> ret = new List<ViewStateSaveData>
+        {
+            m_outsideCam.GetCurrentState(),
+            m_outsideAria.GetCurrentState(),
+            m_insideCafe.GetCurrentState(),
+            m_roomLeft.GetCurrentState(),
+            m_roomRight.GetCurrentState()
+        };
+        return ret;
     }
     public void ChangeView(ViewState newView) 
     {

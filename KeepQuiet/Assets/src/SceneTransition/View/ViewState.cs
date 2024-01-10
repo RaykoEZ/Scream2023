@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Rendering;
 // Stores info about a view (e.g. currently viewing? visible clues, clue/puzzle states)
 public abstract class ViewState : MonoBehaviour
@@ -30,6 +31,10 @@ public abstract class ViewState : MonoBehaviour
         {
             OnAriaEnter();
         }
+    }
+    public virtual ViewStateSaveData GetCurrentState() 
+    {
+        return new ViewStateSaveData(true, Name, new List<string>(), new List<string>());
     }
     public virtual void OnAriaEnter() { }
     public virtual void OnAriaExit() { }
