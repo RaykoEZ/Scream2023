@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
+
 [Serializable]
 public class AriaState
 {
@@ -44,6 +46,7 @@ public class Aria : Npc
     public void Init(AriaState state) 
     {
         m_current = state;
+
     }   
     public void OnGameIntro() 
     {
