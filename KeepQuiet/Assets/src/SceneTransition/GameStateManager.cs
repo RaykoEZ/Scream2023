@@ -30,14 +30,22 @@ public class GameStateSaveData
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public DoorState RoomLeftDoorState;
+    public int NewGameCount = 0;
+    public int CrashCount = 0;
+    // Where is the player looking at
+    public string CurrentlyViewing;
     public AriaState AriaStatus;
     public List<ViewStateSaveData> ViewStates;
     public GameStateSaveData(
-        DoorState roomLeftDoorState, 
+        DoorState roomLeftDoorState,
+        int newGameCount,
+        int crashes,
         AriaState ariaStatus, 
         List<ViewStateSaveData> viewStates)
     {
         RoomLeftDoorState = roomLeftDoorState;
+        NewGameCount = newGameCount;
+        CrashCount = crashes;
         AriaStatus = ariaStatus;
         ViewStates = viewStates;
     }
@@ -64,7 +72,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] Aria m_aria = default;
     // State to load upon first load
     [SerializeField] GameStateSaveData m_defaultState = default;
-    GameStateSaveData m_lastSnapshot;
+    GameStateSaveData m_current;
     static string s_gamestatePath = "saves/gamestate.json";
     private void Start()
     {
@@ -73,9 +81,9 @@ public class GameStateManager : MonoBehaviour
     // init the game upon first load
     protected void FreshState() 
     {
-        m_lastSnapshot = m_defaultState;
-        m_view?.Init(m_lastSnapshot);
-        m_aria?.Init(m_lastSnapshot.AriaStatus);
+        m_current = m_defaultState;
+        m_view?.Init(m_current);
+        m_aria?.Init(m_current);
     }
     // Read Meta File states and Locations to update game state
     protected void LoadStates() 
@@ -90,16 +98,19 @@ public class GameStateManager : MonoBehaviour
         {
             string json = r.ReadToEnd();
             GameStateSaveData loaded = JsonConvert.DeserializeObject<GameStateSaveData>(json);
-            m_lastSnapshot = loaded;
+            m_current = loaded;
             // Before Start of game, init states from scratch or local files
-            m_view?.Init(m_lastSnapshot);
-            m_aria?.Init(m_lastSnapshot.AriaStatus);
+            m_view?.Init(m_current);
+            m_aria?.Init(m_current);
         }       
     }
-    protected void SaveStates() 
+    protected void SaveStates(bool ending = false, bool crash = false) 
     {
+        int crashCount = crash ? ++m_current.CrashCount : m_current.CrashCount;
+        // if we are saving after finish an ending, increment new gamw counter
+        int newGameCount = ending ? ++m_current.NewGameCount : m_current.NewGameCount;
         GameStateSaveData newSave = new GameStateSaveData(
-            m_view.LeftRoomDoor, m_aria.Current, m_view.GetCurrentViewState());
+            m_view.LeftRoomDoor, newGameCount, crashCount, m_aria.Current, m_view.GetCurrentViewState());
         string json = JsonConvert.SerializeObject(newSave);
         FileUtil.RawTextTo(FileUtil.s_gamestateSavePath, "saves","gamestate.json", new string[] { json });
     }

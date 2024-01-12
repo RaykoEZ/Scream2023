@@ -23,14 +23,6 @@ public abstract class ViewState : MonoBehaviour
     }
     protected virtual void InitStateInternal(GameStateSaveData gamestate, ViewStateSaveData viewState) 
     {
-        if (gamestate.AriaStatus.CurrentLocation != Name)
-        {
-            OnAriaExit();
-        }
-        else
-        {
-            OnAriaEnter();
-        }
     }
     public virtual ViewStateSaveData GetCurrentState() 
     {

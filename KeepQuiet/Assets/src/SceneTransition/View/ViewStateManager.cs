@@ -36,6 +36,7 @@ public class ViewStateManager : MonoBehaviour
         {
             item.Value.InitState(saved);
         }
+        ChangeView(m_views[saved.CurrentlyViewing]);
     }
     public List<ViewStateSaveData> GetCurrentViewState() 
     {

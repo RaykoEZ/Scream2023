@@ -11,12 +11,10 @@ public class RoomLeftView : ViewState
     // Controls doors, light/dark
     [SerializeField] CanvasGroup m_darkness = default;
     [SerializeField] Animator m_doorControl = default;
-    // All possible clues in this view
-    [SerializeField] Clue m_calendar = default;
+    // All switchable clues in this view
     [SerializeField] Clue m_clock = default;
     [SerializeField] Clue m_door = default;
     [SerializeField] Clue m_bat = default;
-    [SerializeField] Clue m_screen = default;
     public override string Name => "RoomLeft";
     private DoorState m_doorState = DoorState.Closed;
     public DoorState DoorState => m_doorState;
