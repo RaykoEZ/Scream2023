@@ -1,12 +1,25 @@
 ﻿using UnityEngine;
 
-public class AriaPositionController : MonoBehaviour 
+public class AriaDisplayController : MonoBehaviour 
 {
     [SerializeField] ViewState m_outsideCam = default;
     [SerializeField] Animator m_cafePoses = default;
     [SerializeField] AriaCloseupHandler m_cafeCloseup = default;
     [SerializeField] Animator m_roomLeftPeek = default;
     [SerializeField] AriaCloseupHandler m_roomLeftCloseup = default;
+    AriaPosition m_current = AriaPosition.None;
+    public AriaPosition Current => m_current;
+    public bool IsPossessed { get; set; } = false;
+
+    public bool Surprise { get; set; } = false;
+
+    public void MoveTo(int newLocation) 
+    {
+        AriaPosition newPos = (AriaPosition) newLocation;
+        var prev = Current;
+        m_current = newPos;
+        MoveTo(Current, prev);
+    }
     public void MoveTo(AriaPosition newLocation, AriaPosition previous) 
     {
         Hide(previous);
@@ -30,9 +43,11 @@ public class AriaPositionController : MonoBehaviour
             case AriaPosition.InsideCafe_Closeup:
                 m_cafeCloseup.EnterScene();
                 break;
-            case AriaPosition.RoomLeft_Peaking:
+            case AriaPosition.RoomLeft_Peeking:
                 m_roomLeftPeek.ResetTrigger("peek");
                 m_roomLeftPeek.SetTrigger("peek");
+                m_roomLeftPeek.SetBool("surprise", Surprise);
+                m_roomLeftPeek.SetBool("possessed", IsPossessed);
                 break;
             case AriaPosition.RoomLeft_CloseUp:
                 m_roomLeftCloseup.EnterScene();
@@ -63,7 +78,7 @@ public class AriaPositionController : MonoBehaviour
             case AriaPosition.InsideCafe_Closeup:
                 m_cafeCloseup.ExitScene();
                 break;
-            case AriaPosition.RoomLeft_Peaking:
+            case AriaPosition.RoomLeft_Peeking:
                 m_roomLeftPeek.ResetTrigger("exit");
                 m_roomLeftPeek.SetTrigger("exit");
                 break;
@@ -74,14 +89,8 @@ public class AriaPositionController : MonoBehaviour
                 break;
         }
     }
-    public void HideAll() 
+    public void HideCurrent() 
     {
-        m_outsideCam?.OnAriaExit();
-        m_cafePoses.ResetTrigger("hide");
-        m_cafePoses.SetTrigger("hide");
-        m_cafeCloseup.ExitScene();
-        m_roomLeftPeek.ResetTrigger("exit");
-        m_roomLeftPeek.SetTrigger("exit");
-        m_roomLeftCloseup.ExitScene();
+        Hide(Current);
     }
 }

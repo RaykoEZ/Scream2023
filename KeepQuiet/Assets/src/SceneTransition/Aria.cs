@@ -2,22 +2,19 @@
 using Newtonsoft.Json;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
-using Unity.VisualScripting;
-using UnityEngine.UIElements;
 
 [Serializable]
 public enum AriaPosition
 { 
-    OutsideCam,
-    OutsideFirstPerson,
-    InsideCafe_Entrance,
-    InsideCafe_Counter,
-    InsideCafe_Sit,
-    InsideCafe_Closeup,
-    RoomLeft_Peaking,
-    RoomLeft_CloseUp,
-    None
+    OutsideCam = 0,
+    OutsideFirstPerson = 1,
+    InsideCafe_Entrance = 2,
+    InsideCafe_Counter = 3,
+    InsideCafe_Sit = 4,
+    InsideCafe_Closeup = 5,
+    RoomLeft_Peeking = 6,
+    RoomLeft_CloseUp = 7,
+    None = -1
 }
 [Serializable]
 public class AriaState
@@ -48,53 +45,11 @@ public class AriaState
         CurrentLocation = currentLocation;
     }
 }
-// Handles Aria's internal states i.e. sanity, movement, affection, memory and dialogue options
-[Serializable]
-public class AriaStateManager
-{
-    [SerializeField] AriaPositionController m_position = default;
-    AriaState m_current;
-    public AriaState Current => m_current;
-    public void InitState(GameStateSaveData change) 
-    {
-        m_current = change.AriaStatus;
-    }
-    public void AffectionDown(int val)
-    {
-        Current.Affection -= val;
-        if (Current.Affection < -10)
-        {
-            // If affecton is low, leave the player
-            Leave();
-        }
-    }
-    public void OnDenied()
-    {
-        Current.NumDenied++;
-        if (Current.NumDenied > 3)
-        {
-            AffectionDown(1);
-        }
-    }
-    public void Leave()
-    {
-        AriaPosition prev = Current.CurrentLocation;
-        Current.CurrentLocation = AriaPosition.None;
-        m_position.MoveTo(AriaPosition.None, prev);
-
-    }
-    public void MoveTo(AriaPosition newLocation)
-    {
-        AriaPosition prev = Current.CurrentLocation;
-        Current.CurrentLocation = newLocation;
-        m_position.MoveTo(newLocation, prev);
-    }
-}
 public delegate void OnAriaMove(AriaPosition newLocation);
 public delegate void OnAriaLeaveGame();
 public class Aria : Npc 
 {
-    [SerializeField] AriaPositionController m_position = default;
+    [SerializeField] AriaDisplayController m_position = default;
     [SerializeField] DialogueNode m_introFirstLoad = default;
     [SerializeField] AriaStateManager m_stateManager = default;
     public AriaState Current => m_stateManager.Current;
