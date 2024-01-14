@@ -9,9 +9,30 @@ public class AriaDisplayController : MonoBehaviour
     [SerializeField] AriaCloseupHandler m_roomLeftCloseup = default;
     AriaPosition m_current = AriaPosition.None;
     public AriaPosition Current => m_current;
-    public bool IsPossessed { get; set; } = false;
 
-    public bool Surprise { get; set; } = false;
+    private bool m_isPossessed = false;
+    private bool m_surprise = false;
+
+    public bool GetIsPossessed()
+    {
+        return m_isPossessed;
+    }
+
+    public void SetIsPossessed(bool value)
+    {
+        m_isPossessed = value;
+    }
+
+
+    public bool GetSurprise()
+    {
+        return m_surprise;
+    }
+
+    public void SetSurprise(bool value)
+    {
+        m_surprise = value;
+    }
 
     public void MoveTo(int newLocation) 
     {
@@ -46,8 +67,8 @@ public class AriaDisplayController : MonoBehaviour
             case AriaPosition.RoomLeft_Peeking:
                 m_roomLeftPeek.ResetTrigger("peek");
                 m_roomLeftPeek.SetTrigger("peek");
-                m_roomLeftPeek.SetBool("surprise", Surprise);
-                m_roomLeftPeek.SetBool("possessed", IsPossessed);
+                m_roomLeftPeek.SetBool("surprise", GetSurprise());
+                m_roomLeftPeek.SetBool("possessed", GetIsPossessed());
                 break;
             case AriaPosition.RoomLeft_CloseUp:
                 m_roomLeftCloseup.EnterScene();
