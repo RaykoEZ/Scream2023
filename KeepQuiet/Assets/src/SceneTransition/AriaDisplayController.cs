@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class AriaDisplayController : MonoBehaviour 
 {
     [SerializeField] ViewState m_outsideCam = default;
@@ -11,27 +10,28 @@ public class AriaDisplayController : MonoBehaviour
     public AriaPosition Current => m_current;
 
     private bool m_isPossessed = false;
-    private bool m_surprise = false;
 
     public bool GetIsPossessed()
     {
         return m_isPossessed;
     }
-
-    public void SetIsPossessed(bool value)
+    public void TriggerPossessed(bool value)
     {
         m_isPossessed = value;
+        m_roomLeftPeek.ResetTrigger("possessed");
+        if (m_isPossessed) 
+        {
+            m_roomLeftPeek.SetTrigger("possessed");
+        }
+        else 
+        {
+            m_roomLeftPeek.SetTrigger("exit");
+        }
     }
-
-
-    public bool GetSurprise()
+    public void TriggerSurprise()
     {
-        return m_surprise;
-    }
-
-    public void SetSurprise(bool value)
-    {
-        m_surprise = value;
+        m_roomLeftPeek.ResetTrigger("surprise");
+        m_roomLeftPeek.SetTrigger("surprise");
     }
 
     public void MoveTo(int newLocation) 
@@ -67,8 +67,6 @@ public class AriaDisplayController : MonoBehaviour
             case AriaPosition.RoomLeft_Peeking:
                 m_roomLeftPeek.ResetTrigger("peek");
                 m_roomLeftPeek.SetTrigger("peek");
-                m_roomLeftPeek.SetBool("surprise", GetSurprise());
-                m_roomLeftPeek.SetBool("possessed", GetIsPossessed());
                 break;
             case AriaPosition.RoomLeft_CloseUp:
                 m_roomLeftCloseup.EnterScene();
