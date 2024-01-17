@@ -8,8 +8,6 @@ public enum DoorState
 }
 public class RoomLeftView : ViewState 
 {
-    // Controls doors, light/dark
-    [SerializeField] CanvasGroup m_darkness = default;
     [SerializeField] Animator m_doorControl = default;
     // All switchable clues in this view
     [SerializeField] Clue m_clock = default;
@@ -18,28 +16,21 @@ public class RoomLeftView : ViewState
     public override string Name => "RoomLeft";
     private DoorState m_doorState = DoorState.Closed;
     public DoorState DoorState => m_doorState;
-    public void SetViewDarkness(bool isLit) 
+    protected override void InitStateInternal(GameStateSaveData saveData, ViewStateSaveData selfState)
     {
-        IsLit = isLit;
-        m_darkness.alpha = IsLit ? 0f : 1f;
-    }
-    protected override void InitStateInternal(GameStateSaveData saveData, ViewStateSaveData viewState)
-    {
-        base.InitStateInternal(saveData, viewState);
-        // darkness adjust
-        SetViewDarkness(viewState.IsLit);
+        base.InitStateInternal(saveData, selfState);
         // Set door state
         ChangeDoorState(saveData.RoomLeftDoorState);
         // hide clues?
-        if (viewState.CluesToHide.Contains(m_clock.name))
+        if (selfState.CluesToHide.Contains(m_clock.name))
         {
             m_clock.Hide();
         }
-        if (viewState.CluesToHide.Contains(m_door.name))
+        if (selfState.CluesToHide.Contains(m_door.name))
         {
             m_door.Hide();
         }
-        if (viewState.CluesToHide.Contains(m_bat.name))
+        if (selfState.CluesToHide.Contains(m_bat.name))
         {
             m_bat.Hide();
         }

@@ -1,73 +1,9 @@
-﻿using Newtonsoft.Json.Converters;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 using UnityEngine;
 using System.IO;
-
-[Serializable]
-public class ViewStateSaveData
-{
-    public bool IsLit;
-    public string LocationName;
-    public List<string> CluesToHide;
-    // If player added something here, put it here
-    public List<string> CluesToAdd;
-
-    public ViewStateSaveData(
-        bool isLit, 
-        string locationName, 
-        List<string> cluesToHide, List<string> cluesToAdd)
-    {
-        IsLit = isLit;
-        LocationName = locationName;
-        CluesToHide = cluesToHide;
-        CluesToAdd = cluesToAdd;
-    }
-}
-[Serializable]
-public class GameStateSaveData
-{
-    [JsonConverter(typeof(StringEnumConverter))]
-    public DoorState RoomLeftDoorState;
-    public int NewGameCount = 0;
-    public int CrashCount = 0;
-    // Where is the player looking at
-    public string CurrentlyViewing;
-    public AriaState AriaStatus;
-    public List<ViewStateSaveData> ViewStates;
-    public GameStateSaveData(
-        DoorState roomLeftDoorState,
-        int newGameCount,
-        int crashes,
-        AriaState ariaStatus, 
-        List<ViewStateSaveData> viewStates)
-    {
-        RoomLeftDoorState = roomLeftDoorState;
-        NewGameCount = newGameCount;
-        CrashCount = crashes;
-        AriaStatus = ariaStatus;
-        ViewStates = viewStates;
-    }
-
-    public Dictionary<string, ViewStateSaveData> GetViewStateCollection() 
-    {
-        var ret = new Dictionary<string, ViewStateSaveData>();
-        foreach (var item in ViewStates) 
-        {
-            ret.Add(item.LocationName, item);
-        }
-        return ret;           
-    }
-    public bool TryGetViewState(string locationName, out ViewStateSaveData result) 
-    {
-        var collection = GetViewStateCollection();
-        return collection.TryGetValue(locationName, out result);
-    }
-}
-
 public class GameStateManager : MonoBehaviour
 {
+    [SerializeField] CutsceneHandler m_cutscene = default;
     [SerializeField] ViewStateManager m_view = default;
     [SerializeField] Aria m_aria = default;
     // State to load upon first load
@@ -84,6 +20,7 @@ public class GameStateManager : MonoBehaviour
         m_current = m_defaultState;
         m_view?.Init(m_current);
         m_aria?.Init(m_current);
+        m_cutscene.PlayIntro();
     }
     // Read Meta File states and Locations to update game state
     protected void LoadStates() 

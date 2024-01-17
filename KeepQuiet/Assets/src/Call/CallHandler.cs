@@ -49,8 +49,6 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     {
         // maybe choose to interrupt current call?
         if (m_calling) return;
-        Npc accepted = m_npc.Get(incoming);
-        accepted?.OnCallAccepted();
         BeginCall(incoming, m_latestIncomingCall);
     }
     public void CallPhone(string incomingNumber, DialEvent onAccept) 
@@ -126,7 +124,6 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
         OnCallEnd?.Invoke(m_confirmedInput);
         m_calling = false;
         m_anim.SetBool("Calling", false);
-        m_npc.OnCallFinished(m_confirmedInput);
     }
     public void OnUpdate(PhoneSettings updated)
     {

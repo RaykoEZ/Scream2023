@@ -97,7 +97,6 @@ public class DialogueHandler : MonoBehaviour
         // unlisten dialogue events
         m_currentDisplay.OnPrompt -= OnPromptChoice;
         m_currentDisplay.OnEnd -= EndDialogue;
-        m_npc.OnChatFinished(m_currentDisplay.History.LastDialogue);
         OnEnd?.Invoke();
     }
     void OnPromptChoice(IReadOnlyList<DialogueNode> options)

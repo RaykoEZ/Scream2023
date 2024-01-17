@@ -49,7 +49,6 @@ public delegate void OnAriaMove(AriaPosition newLocation);
 public delegate void OnAriaLeaveGame();
 public class Aria : Npc 
 {
-    [SerializeField] AriaDisplayController m_position = default;
     [SerializeField] DialogueNode m_introFirstLoad = default;
     [SerializeField] AriaStateManager m_stateManager = default;
     public AriaState Current => m_stateManager.Current;
@@ -65,11 +64,6 @@ public class Aria : Npc
     {
         MessagePlayer(m_introFirstLoad);
     }
-    public override void OnCallAccepted()
-    {
-        throw new NotImplementedException();
-    }
-
     public override void OnCallDenied()
     {
         m_stateManager.OnDenied();
@@ -84,15 +78,6 @@ public class Aria : Npc
     {
         m_stateManager.Leave();
         OnLeave?.Invoke();
-    }
-    public override void OnCallFinished()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void OnChatFinished()
-    {
-        throw new NotImplementedException();
     }
 
     public override void OnPlayerCallCanceled()

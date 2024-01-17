@@ -7,7 +7,6 @@ public class PhoneScreenTransitionHandler : MonoBehaviour
     [SerializeField] HideableUITrigger m_contact = default;
     [SerializeField] HideableUITrigger m_chat = default;
     [SerializeField] HideableUITrigger m_call = default;
-    [SerializeField] HideableUITrigger m_lock = default;
     HideableUITrigger m_currentlyShowing;
     void Start() 
     {
@@ -29,16 +28,6 @@ public class PhoneScreenTransitionHandler : MonoBehaviour
     public void ToDial() 
     {
         TransitionTo(m_call);
-    }
-    public void LockScreen() 
-    {
-        m_currentlyShowing?.Hide();
-        m_lock?.Show();
-    }
-    public void UnlockScreen() 
-    {
-        m_currentlyShowing?.Show();
-        m_lock?.Hide();
     }
     void TransitionTo(HideableUITrigger goTo) 
     {

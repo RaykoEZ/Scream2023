@@ -21,12 +21,12 @@ public abstract class ViewState : MonoBehaviour
             InitStateInternal(saveData, result);
         }
     }
-    protected virtual void InitStateInternal(GameStateSaveData gamestate, ViewStateSaveData viewState) 
+    protected virtual void InitStateInternal(GameStateSaveData gamestate, ViewStateSaveData selfState) 
     {
     }
     public virtual ViewStateSaveData GetCurrentState() 
     {
-        return new ViewStateSaveData(true, Name, new List<string>(), new List<string>());
+        return new ViewStateSaveData(Name, new List<string>(), new List<string>());
     }
     public virtual void OnAriaEnter() { }
     public virtual void OnAriaExit() { }
