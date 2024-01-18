@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ce95675afac9b419cb7619f909084d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_chatDisplay: {fileID: 8517049472916884891}
   m_dialogueTree: {fileID: 4972978761160252236}
   m_historyCollection: []
 --- !u!114 &4972978761160252236
@@ -369,6 +370,7 @@ MonoBehaviour:
   m_title: {fileID: 8517049472504835714}
   m_optionPrompt: {fileID: 6369072579358474517}
   m_dialogueBoxToSpawn: {fileID: 5580796140441110615, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
+  m_npc: {fileID: 0}
 --- !u!1 &8517049473667602702
 GameObject:
   m_ObjectHideFlags: 0

@@ -72,7 +72,6 @@ public class DialogueHandler : MonoBehaviour
         m_currentDisplay = result;
         // Set current dialogue to the incoming dialogue
         m_currentDisplay.UpdateCurrentDialogue(newDialogue);
-        // play dialogue from the new dialogue node
         StartCurrentChat();
     }
     void HideAll() 

@@ -15,7 +15,5 @@ MonoBehaviour:
   m_whoSpoke: Aria
   m_dialogues:
   - WhoSpoke: Aria
-    Content: Hello?
-  - WhoSpoke: Aria
     Content: Please respond!
   m_replyOptions: []

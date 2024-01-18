@@ -12,9 +12,9 @@ public class DialogueDisplay : HideableUI
     List<MessageBox> m_spawnedMessages = new List<MessageBox>();
     ChatHistory m_history;
     DialogueNode m_currentNode;
-    Coroutine m_chatting;
     public event OnDialogueEnd OnEnd;
     public event OnPromptDialogueOption OnPrompt;
+    bool m_isDirty = false;
     public ChatHistory History => m_history; 
     public void Init(ChatHistory history)
     {
@@ -25,12 +25,12 @@ public class DialogueDisplay : HideableUI
             // Display all previous messages
             DisplayMessage(logEntry);
         }
+        m_isDirty = false;
     }
     void NextDialogue()
     {
         if (m_currentNode.Options.Count > 1)
         {
-            m_chatting = null;
             OnPrompt?.Invoke(m_currentNode.Options);
         }
         else if (m_currentNode.Options.Count == 1)
@@ -40,7 +40,9 @@ public class DialogueDisplay : HideableUI
         }
         else 
         {
-            EndDialogue();
+            // end display loop
+            m_isDirty = false;
+            OnEnd?.Invoke();
         }
     }
     // Display a new message
@@ -59,24 +61,24 @@ public class DialogueDisplay : HideableUI
     {
         m_currentNode = result;
         m_history.Append(m_currentNode);
+        m_isDirty = true;
     }
     // start displaying dialogues of current node
     // and continue until the end of the dialogue tree
     public void StartChat() 
     {
-        m_chatting = StartCoroutine(ContinueChat(m_currentNode.Dialogues, m_currentNode.WhoSpoke != DialogueNode.s_playerName));
-    }
-    public void EndDialogue()
-    {
-        OnEnd?.Invoke();
+        if (m_isDirty) 
+        {
+            StartCoroutine(ContinueChat(m_currentNode.Dialogues, m_currentNode.WhoSpoke != DialogueNode.s_playerName));
+        }
     }
     IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues, bool isNpc = true)
     {
         foreach (var line in dialogues)
         {
-            DisplayMessage(line, isNpc);
             // TODO: Simulate typing effect, will animate in future
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(line.Content.Length * 0.05f);
+            DisplayMessage(line, isNpc);
         }
         // prompt option at the end if there is any
         NextDialogue();

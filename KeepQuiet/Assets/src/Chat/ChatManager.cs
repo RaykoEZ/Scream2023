@@ -4,6 +4,7 @@ using UnityEngine;
 // Notifies player when message comes
 public class ChatManager : MonoBehaviour 
 {
+    [SerializeField] PhoneScreenTransitionHandler m_transition = default;
     [SerializeField] DialogueHandler m_dialogueTree = default;
     [SerializeField] List<ChatHistoryContainer> m_historyCollection = default;
     Dictionary<string, ChatHistory> m_histories = new Dictionary<string, ChatHistory>();
@@ -25,6 +26,7 @@ public class ChatManager : MonoBehaviour
     // Redirect to ContactList
     public void OnNewMessage(DialogueNode newDialogue) 
     {
+        m_transition.ToChat();
         m_dialogueTree.IncomingDialogue(newDialogue);
     }
 }

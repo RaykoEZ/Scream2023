@@ -15,8 +15,4 @@ MonoBehaviour:
   m_username: Aria
   m_history:
     m_lastDialogue: {fileID: 11400000, guid: 18130edef88487942b78483e8df81774, type: 2}
-    m_log:
-    - WhoSpoke: Aria
-      Content: I'm here
-    - WhoSpoke: Aria
-      Content: can I come in?
+    m_log: []

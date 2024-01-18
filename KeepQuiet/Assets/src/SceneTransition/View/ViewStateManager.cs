@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 // handles behaviours for a view
@@ -36,7 +37,7 @@ public class ViewStateManager : MonoBehaviour
         {
             item.Value.InitState(saved);
         }
-        ChangeView(m_views[saved.CurrentlyViewing]);
+        StartCoroutine(ChangeView_Internal(m_views[saved.CurrentlyViewing]));
     }
     public List<ViewStateSaveData> GetCurrentViewState() 
     {

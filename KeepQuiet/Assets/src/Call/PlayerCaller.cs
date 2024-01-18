@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Curry.Explore;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerCaller : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerCaller : MonoBehaviour
     [SerializeField] CallHandler m_call = default;
     [SerializeField] ChatManager m_chat = default;
     Sprite m_defaultSprite;
+    bool m_newMessage = false;
     private void Start()
     {
         m_defaultSprite = m_toggleIcon.sprite;
@@ -40,6 +42,7 @@ public class PlayerCaller : MonoBehaviour
     }
     public void EndAlert() 
     {
+        m_ring.Stop();
         m_toggleIcon.sprite = m_defaultSprite;
         m_toggleAnim.SetBool("Alert", false);
     }
