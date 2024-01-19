@@ -8,7 +8,6 @@ public abstract class ViewState : MonoBehaviour
     [SerializeField] private Transform m_vfx = default;
     [SerializeField] private Transform m_background = default;
     [SerializeField] VolumeProfile m_postProcessVolumeProfile = default;
-    public bool IsLit = true;
     public abstract string Name { get; }
     public Transform Lighting => m_lighting;
     public Transform Vfx => m_vfx;
