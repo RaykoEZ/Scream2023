@@ -14,6 +14,15 @@ public class GameStateSaveData
     public string CurrentlyViewing;
     public AriaState AriaStatus;
     public List<ViewStateSaveData> ViewStates;
+
+    public GameStateSaveData(GameStateSaveData copy)
+    {
+        RoomLeftDoorState = copy.RoomLeftDoorState;
+        NewGameCount = copy.NewGameCount;
+        CrashCount = copy.CrashCount;
+        AriaStatus = new AriaState(copy.AriaStatus);
+        ViewStates = new List<ViewStateSaveData>(copy.ViewStates);
+    }
     public GameStateSaveData(
         DoorState roomLeftDoorState,
         int newGameCount,

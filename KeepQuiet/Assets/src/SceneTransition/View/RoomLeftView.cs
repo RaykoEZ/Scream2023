@@ -11,7 +11,6 @@ public class RoomLeftView : ViewState
     [SerializeField] Animator m_doorControl = default;
     // All switchable clues in this view
     [SerializeField] Clue m_clock = default;
-    [SerializeField] Clue m_door = default;
     [SerializeField] Clue m_bat = default;
     public override string Name => "RoomLeft";
     private DoorState m_doorState = DoorState.Closed;
@@ -25,10 +24,6 @@ public class RoomLeftView : ViewState
         if (selfState.CluesToHide.Contains(m_clock.name))
         {
             m_clock.Hide();
-        }
-        if (selfState.CluesToHide.Contains(m_door.name))
-        {
-            m_door.Hide();
         }
         if (selfState.CluesToHide.Contains(m_bat.name))
         {

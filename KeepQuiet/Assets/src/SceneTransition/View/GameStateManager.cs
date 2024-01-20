@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 // handles behaviours for current game state
 public class GameStateManager : MonoBehaviour
 {
+    [SerializeField] protected InspectionDisplayHandler m_inspect = default;
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
@@ -18,6 +19,7 @@ public class GameStateManager : MonoBehaviour
     ViewState m_currentView;
     GameStateSaveData m_currentGameState;
     public DoorState LeftRoomDoor => m_roomLeft.DoorState;
+    public GameStateSaveData CurrentGameState => new GameStateSaveData(m_currentGameState);
     public List<ViewStateSaveData> GetCurrentViewState()
     {
         List<ViewStateSaveData> ret = new List<ViewStateSaveData>
@@ -71,5 +73,10 @@ public class GameStateManager : MonoBehaviour
         m_currentView?.SetVisual(true);
         m_currentView?.InitState(m_currentGameState);
         yield return new WaitForEndOfFrame();
+    }
+    public void InspectClue(Clue toInspect) 
+    {
+        var current = CurrentGameState;
+        m_inspect?.InspectTarget(toInspect.GetInspectionDisplay(current), current);
     }
 }

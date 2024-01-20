@@ -44,6 +44,16 @@ public class AriaState
         Sanity = sanity;
         CurrentLocation = currentLocation;
     }
+    public AriaState(AriaState copy)
+    {
+        SourceExists = copy.SourceExists;
+        IsPossessed = copy.IsPossessed;
+        HasPastRunMemory = copy.HasPastRunMemory;
+        NumDenied = copy.NumDenied;
+        Affection = copy.Affection;
+        Sanity = copy.Sanity;
+        CurrentLocation = copy.CurrentLocation;
+    }
 }
 public delegate void OnAriaMove(AriaPosition newLocation);
 public delegate void OnAriaLeaveGame();

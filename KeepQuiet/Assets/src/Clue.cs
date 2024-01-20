@@ -10,10 +10,13 @@ public class Clue : MonoBehaviour
     [SerializeField] Button m_button = default;
     [SerializeField] Image m_uiImage = default;
     [SerializeField] HideableUI m_clueImage = default;
-
     public HideableUI ClueImage { get => m_clueImage; set => m_clueImage = value; }
 
     public event OnClueInspect OnInspect;
+    public virtual InspectionDisplay GetInspectionDisplay(GameStateSaveData state) 
+    {
+        return null;
+    }
     public void Show()
     {
         ClueImage?.Show();
@@ -25,14 +28,5 @@ public class Clue : MonoBehaviour
         ClueImage?.Hide();    
         m_uiImage.enabled = false;
         m_button.interactable = false;
-    }
-    public void InspectClue()
-    {
-        BeginInspectContent();
-        OnInspect?.Invoke(this);
-    }
-    protected virtual void BeginInspectContent() 
-    { 
-    
     }
 }
