@@ -52,4 +52,12 @@ public class RoomLeftView : ViewState
         m_doorControl.ResetTrigger(stateName);
         m_doorControl.SetTrigger(stateName);
     }
+    public override void SetVisual(bool isOn)
+    {
+        if (isOn)
+        {
+            m_nav.ToRoomLeft();
+        }
+        base.SetVisual(isOn);
+    }
 }

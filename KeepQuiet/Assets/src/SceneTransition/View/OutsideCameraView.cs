@@ -17,6 +17,14 @@ public class OutsideCameraView : ViewState
             OnAriaExit();
         }
     }
+    public override void SetVisual(bool isOn)
+    {
+        if (isOn)
+        {
+            m_nav.ToCameraOutside();
+        }
+        base.SetVisual(isOn);
+    }
     public override void OnAriaEnter() 
     {
         m_anim.StopPlayback();

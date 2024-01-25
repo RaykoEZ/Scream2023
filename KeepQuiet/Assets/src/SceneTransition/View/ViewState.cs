@@ -4,6 +4,7 @@ using UnityEngine.Rendering;
 // Stores info about a view (e.g. currently viewing? visible clues, clue/puzzle states)
 public abstract class ViewState : MonoBehaviour
 {
+    [SerializeField] protected ViewNavigationHandler m_nav = default;
     [SerializeField] private Transform m_lighting = default;
     [SerializeField] private Transform m_vfx = default;
     [SerializeField] private Transform m_background = default;
