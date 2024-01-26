@@ -26,7 +26,7 @@ public abstract class ViewState : MonoBehaviour
     }
     public virtual ViewStateSaveData GetCurrentState() 
     {
-        return new ViewStateSaveData(Name, new List<string>(), new List<string>());
+        return new ViewStateSaveData(Name, new List<string>());
     }
     public virtual void OnAriaEnter() { }
     public virtual void OnAriaExit() { }

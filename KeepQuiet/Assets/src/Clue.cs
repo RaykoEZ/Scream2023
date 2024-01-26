@@ -1,18 +1,18 @@
 ﻿using Curry.Explore;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public delegate void OnClueInspect(Clue toInspect);
 // Switches and handling for a Clue UI
 public class Clue : MonoBehaviour
 {
     [SerializeField] Button m_button = default;
     [SerializeField] Image m_uiImage = default;
+    [SerializeField] TextMeshProUGUI m_hoverLabel = default;
     [SerializeField] HideableUI m_clueImage = default;
-    public HideableUI ClueImage { get => m_clueImage; set => m_clueImage = value; }
-
-    public event OnClueInspect OnInspect;
+    public HideableUI ClueImage => m_clueImage;
+    public TextMeshProUGUI HoverLabel => m_hoverLabel;
     public virtual InspectionDisplay GetInspectionDisplay(GameStateSaveData state) 
     {
         return null;

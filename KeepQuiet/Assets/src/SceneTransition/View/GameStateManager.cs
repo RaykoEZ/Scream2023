@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] protected InspectionDisplayHandler m_inspect = default;
+    [SerializeField] protected PlayerCaller m_phonecCall = default;
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;

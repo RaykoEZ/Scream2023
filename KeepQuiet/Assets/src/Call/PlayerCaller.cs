@@ -32,6 +32,17 @@ public class PlayerCaller : MonoBehaviour
         AnimateAlertIcon();
         m_chat.OnNewMessage(newDialogue);
     }
+    public void HideToggle() 
+    {
+        if (!m_toggleAnim.GetBool("Alert")) 
+        {
+            m_toggleAnim.SetBool("Show", false);
+        }
+    }
+    public void ShowToggle() 
+    {
+        m_toggleAnim.SetBool("Show", true);
+    }
     void AnimateAlertIcon() 
     {
         m_ring.clip = m_setting.GetRingtone();
