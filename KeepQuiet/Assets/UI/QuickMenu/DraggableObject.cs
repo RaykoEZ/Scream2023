@@ -1,11 +1,20 @@
 ﻿using Curry.Explore;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class ToolDisplay : MonoBehaviour
+public class ToolInteractionHandler : MonoBehaviour
 {
-    [SerializeField] Animator m_anim = default;
-
+    [SerializeField] TargetGuideHandler m_target = default;
+    [SerializeField] List<QuickTool> m_tools = default;
+    public void ReturnTool(QuickTool tool)
+    {
+    
+    }
+    public void UseTool(QuickTool tool) 
+    {
+    
+    }
 }
 
 [RequireComponent(typeof(CanvasGroup))]
