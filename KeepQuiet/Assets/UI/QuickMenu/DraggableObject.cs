@@ -1,26 +1,10 @@
-﻿using Curry.Explore;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class ToolInteractionHandler : MonoBehaviour
-{
-    [SerializeField] TargetGuideHandler m_target = default;
-    [SerializeField] List<QuickTool> m_tools = default;
-    public void ReturnTool(QuickTool tool)
-    {
-    
-    }
-    public void UseTool(QuickTool tool) 
-    {
-    
-    }
-}
-
 [RequireComponent(typeof(CanvasGroup))]
 public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    Vector2 m_anchorOffset;
+    protected Vector2 m_anchorOffset = Vector2.zero;
     Transform m_origin;
     int m_originIndex;
     public virtual bool Movable { get; set; } = true;
@@ -75,7 +59,7 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     {
         DropObject(m_origin, m_originIndex);
     }
-    void SetDragPosition(PointerEventData e)
+    protected virtual void SetDragPosition(PointerEventData e)
     {
         Vector2 worldPos = e.pressEventCamera.ScreenToWorldPoint(e.position - m_anchorOffset);
         GetComponent<RectTransform>().position = worldPos;
