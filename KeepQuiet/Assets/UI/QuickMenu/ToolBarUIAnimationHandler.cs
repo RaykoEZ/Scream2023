@@ -21,24 +21,12 @@ namespace Curry.Explore
     }
 
     // When pointer is in range, show ui, hide if not
-    public class ToolBarUIAnimationHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class ToolBarUIAnimationHandler : MonoBehaviour
     {
-        [SerializeField] bool m_showOnHover = default;
         [SerializeField] HideableUITrigger m_hidingUI = default;
         [SerializeField] CanvasGroup m_uiToggle = default;
         UITransitionBuffer m_buffer = new UITransitionBuffer();
         bool m_isOn = false;
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            if (!m_showOnHover) return;
-            // Buffer transition to stop unwanted flickers on edges
-            Show();
-        }
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            if (!m_showOnHover) return;
-            Hide();
-        }
         public void SetUIToggleActive(bool isActive) 
         {
             m_uiToggle.alpha = isActive ? 1f : 0f;
@@ -54,7 +42,6 @@ namespace Curry.Explore
             {
                 Show();
             }
-            m_isOn = !m_isOn;
         }
         public void Show() 
         {
@@ -63,11 +50,13 @@ namespace Curry.Explore
             {
                 m_hidingUI.Show();
                 StartCoroutine(m_buffer.Buffer());
+                m_isOn = true;
             }
         }
         public void Hide() 
         {
             m_hidingUI.Hide();
+            m_isOn = false;
         }
     }
 }

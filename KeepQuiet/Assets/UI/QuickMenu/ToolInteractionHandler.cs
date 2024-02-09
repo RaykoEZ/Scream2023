@@ -16,10 +16,13 @@ public class ToolInteractionHandler : MonoBehaviour
     }
     public void ReturnTool(QuickTool tool)
     {
-        if (m_using == null || tool != m_using) return;
+        if (tool == null || m_using == null || tool != m_using) return;
         m_using.OnReturn -= ReturnTool;
         m_aimIcon.HideCursor();
-
+    }
+    public void ReturnTool() 
+    {
+        ReturnTool(m_using);
     }
     public void UseTool(QuickTool tool) 
     {
