@@ -257,7 +257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49129b900435e384cb369f455b181e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_anim: {fileID: 2509594087673186280}
   m_aimIcon: {fileID: 0}
+  m_torch: {fileID: 0}
+  m_specialTorch: {fileID: 0}
   m_tools:
   - {fileID: 2966787828690214184}
   - {fileID: 4462738558076137807}
