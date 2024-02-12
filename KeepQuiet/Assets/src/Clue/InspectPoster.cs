@@ -16,13 +16,6 @@ public class InspectPoster : InspectionDisplay
         // Reveal hidden code here
     }
 }
-public class InspectBin : InspectionDisplay
-{
-    public override void Init(GameStateSaveData state)
-    {
-        throw new System.NotImplementedException();
-    }
-}
 public class InspectVent : InspectionDisplay
 {
     public override void Init(GameStateSaveData state)

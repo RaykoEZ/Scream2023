@@ -1,11 +1,13 @@
 ﻿using Curry.Explore;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 // Script to instantiate object when player click to inspect a clue
 public class InspectionDisplayHandler : HideableUI 
 {
     [SerializeField] Transform m_contentParent = default;
     [SerializeField] ToolBarUIAnimationHandler m_toolBar = default;
+    [SerializeField] Light2D m_lighting = default;
     InspectionDisplay m_currentlyInspecting;
     bool m_inspecting = false;
     public void InspectTarget(InspectionDisplay toDisplay, GameStateSaveData state) 
