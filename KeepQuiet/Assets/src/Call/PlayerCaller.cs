@@ -13,7 +13,6 @@ public class PlayerCaller : MonoBehaviour
     [SerializeField] CallHandler m_call = default;
     [SerializeField] ChatManager m_chat = default;
     Sprite m_defaultSprite;
-    bool m_newMessage = false;
     private void Start()
     {
         m_defaultSprite = m_toggleIcon.sprite;

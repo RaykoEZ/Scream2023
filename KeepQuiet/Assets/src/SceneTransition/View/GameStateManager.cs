@@ -7,7 +7,6 @@ using UnityEngine.Rendering;
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] protected InspectionDisplayHandler m_inspect = default;
-    [SerializeField] protected PlayerCaller m_phonecCall = default;
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
@@ -79,5 +78,13 @@ public class GameStateManager : MonoBehaviour
     {
         var current = CurrentGameState;
         m_inspect?.InspectTarget(toInspect.GetInspectionDisplay(current), current);
+    }
+    public void OnToolUse(EToolName usingTool) 
+    {
+        m_currentView?.OnUsingTool(usingTool);
+    }
+    public void OnToolReturn(EToolName returningTool) 
+    {
+        m_currentView?.OnReturningTool(returningTool);
     }
 }

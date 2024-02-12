@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ToolInteractionHandler : MonoBehaviour
 {
+    [SerializeField] GameStateManager m_gameState = default;
     [SerializeField] ToolBarUIAnimationHandler m_anim = default;
     [SerializeField] ToolAimIcon m_aimIcon = default;
     [SerializeField] ToolAimIcon m_torch = default;
@@ -26,6 +27,7 @@ public class ToolInteractionHandler : MonoBehaviour
         if (tool == null || m_using == null || tool != m_using) return;
         m_using.OnReturn -= ReturnTool;
         m_aiming?.HideCursor();
+        m_gameState?.OnToolReturn(tool.ToolName);
         m_anim?.Show();
     }
     public void ReturnTool() 
@@ -35,8 +37,9 @@ public class ToolInteractionHandler : MonoBehaviour
     public void UseTool(QuickTool tool) 
     {
         if (tool == null) return;
+        EToolName toolName = tool.ToolName;
         ToolAimIcon toolAimRef;
-        switch (tool.ToolName)
+        switch (toolName)
         {
             case EToolName.Bat:
                 toolAimRef = m_aimIcon;
@@ -61,6 +64,7 @@ public class ToolInteractionHandler : MonoBehaviour
         m_using = tool;
         m_using.OnReturn += ReturnTool;
         m_aiming?.ShowCursor();
+        m_gameState?.OnToolUse(toolName);
         m_anim?.Hide();
     }
     public void OnPointerEnter(QuickTool tool) 

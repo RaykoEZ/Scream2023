@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 public abstract class ViewState : MonoBehaviour
 {
     [SerializeField] protected ViewNavigationHandler m_nav = default;
+    [SerializeField] protected CanvasGroup m_clueGroup = default;
     [SerializeField] private Transform m_lighting = default;
     [SerializeField] private Transform m_vfx = default;
     [SerializeField] private Transform m_background = default;
@@ -35,5 +36,13 @@ public abstract class ViewState : MonoBehaviour
         Lighting?.gameObject.SetActive(isOn);
         Vfx?.gameObject.SetActive(isOn);
         Background?.gameObject.SetActive(isOn);
+    }
+    public virtual void OnUsingTool(EToolName usingTool) 
+    {
+        m_clueGroup.interactable = false;
+    }
+    public virtual void OnReturningTool(EToolName returningTool) 
+    {
+        m_clueGroup.interactable = true;
     }
 }

@@ -73,7 +73,7 @@ public class Aria : Npc
     } 
     public void OnGameIntro() 
     {
-        MessagePlayer(m_introFirstLoad);
+        //MessagePlayer(m_introFirstLoad);
         //CallPlayer(m_testDial);
 
     }

@@ -50,4 +50,3 @@ public class GameStateFileHandler : MonoBehaviour
         FileUtil.RawTextTo(FileUtil.s_gamestateSavePath, "saves","gamestate.json", new string[] { json });
     }
 }
-
