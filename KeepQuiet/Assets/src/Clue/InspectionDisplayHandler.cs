@@ -7,7 +7,7 @@ public class InspectionDisplayHandler : HideableUI
 {
     [SerializeField] Transform m_contentParent = default;
     [SerializeField] ToolBarUIAnimationHandler m_toolBar = default;
-    [SerializeField] Light2D m_lighting = default;
+    [SerializeField] HideableUITrigger m_inspectUITrigger = default;
     InspectionDisplay m_currentlyInspecting;
     bool m_inspecting = false;
     public void InspectTarget(InspectionDisplay toDisplay, GameStateSaveData state) 
@@ -17,13 +17,13 @@ public class InspectionDisplayHandler : HideableUI
         InspectionDisplay instance = Instantiate(toDisplay, m_contentParent, false);
         instance.Init(state);
         m_currentlyInspecting = instance;
-        Show();
+        m_inspectUITrigger?.Show();
     }
     public void StopInspecting() 
     {
-        Hide();
+        Destroy(m_currentlyInspecting.gameObject);
+        m_inspectUITrigger?.Hide();
         m_toolBar?.Hide();
         m_inspecting = false;
-        Destroy(m_currentlyInspecting);
     }
 }
