@@ -31689,6 +31689,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1866790523, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866790523, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.48700607
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866790523, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
+      propertyPath: m_Color.r
+      value: 0.506722
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866790523, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
+      propertyPath: m_Intensity
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 238991702109897376, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
       propertyPath: m_Name
       value: P_InspectBin
@@ -31699,7 +31715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 238991702109897376, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 238991702109897377, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
       propertyPath: m_Pivot.x
