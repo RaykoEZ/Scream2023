@@ -7,8 +7,7 @@ public enum EToolName
     Bat = 1 << 0,
     Torch = 1 << 1,
     SpecialTorch = 1<< 2,
-    CoatHanger = 1 << 3,
-    Hook = 1 << 4
+    CoatHanger = 1 << 3
 }
 public delegate void OnToolUpdate(QuickTool toUpdate);
 [Serializable]

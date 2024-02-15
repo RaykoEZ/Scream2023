@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7146708117800483939}
   - component: {fileID: 4518073783337090328}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: LeftAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7039675295238922241}
   - component: {fileID: 3369966214624341926}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Hook_Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 2569387765446985781}
   - component: {fileID: 2542464222420914149}
   - component: {fileID: 8194863683557129397}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: control_anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 3274412330606456537}
   - component: {fileID: 5032202653726599506}
   - component: {fileID: 8549693465339343689}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6024229460967451941}
   - component: {fileID: 7882726756723635499}
-  m_Layer: 6
+  - component: {fileID: 1963590967152145627}
+  - component: {fileID: 5365230500447054129}
+  - component: {fileID: 8457352817800827551}
+  - component: {fileID: 5065681730299461798}
+  m_Layer: 7
   m_Name: P_DraggableHanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +341,7 @@ RectTransform:
   m_GameObject: {fileID: 4890464496465336577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3878766641904715483}
@@ -349,8 +353,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.6, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 230.8, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7882726756723635499
 MonoBehaviour:
@@ -366,6 +370,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hook: {fileID: 3369966214624341926}
   m_left: {fileID: 4518073783337090328}
+--- !u!225 &1963590967152145627
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890464496465336577}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!222 &5365230500447054129
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890464496465336577}
+  m_CullTransparentMesh: 1
+--- !u!114 &8457352817800827551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890464496465336577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5065681730299461798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890464496465336577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a8f706631f8d44f9c362ffc7de52ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5113368568352803109
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +443,7 @@ GameObject:
   - component: {fileID: 4213448587950983791}
   - component: {fileID: 5071262733331326452}
   - component: {fileID: 3096061332621583810}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Hook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +521,7 @@ GameObject:
   - component: {fileID: 1111191028781438617}
   - component: {fileID: 517017686223771332}
   - component: {fileID: 2902852327325068783}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: control_anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3878766641904715483}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: NeutralPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +675,7 @@ GameObject:
   - component: {fileID: 308232717786829061}
   - component: {fileID: 269160303365351761}
   - component: {fileID: 2230985322939060203}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}

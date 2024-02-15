@@ -30,8 +30,10 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     {
         // Set default drop to return to hand
         SetDropOrigin(transform.parent, transform.GetSiblingIndex());
-        // move parent to intermediate parent until we see a drop zone/return to original parent 
-        transform.SetParent(OnDragParent);
+        // move parent to intermediate parent until we see a drop zone/return to original parent
+        Vector3 scale = transform.localScale;
+        transform.SetParent(OnDragParent, true);
+        transform.localScale = scale;
         Vector2 objectPos = eventData.pressEventCamera.WorldToScreenPoint(transform.position);
         m_anchorOffset = eventData.position - objectPos;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
