@@ -4267,6 +4267,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298664974}
   m_CullTransparentMesh: 1
+--- !u!1 &300199729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 176633027451707322, guid: 957efe96664375a47a68cfe9013d3291, type: 3}
+  m_PrefabInstance: {fileID: 1385950616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &344873570
 GameObject:
   m_ObjectHideFlags: 0
@@ -16570,7 +16575,6 @@ RectTransform:
   - {fileID: 1500122828}
   - {fileID: 2023875221}
   - {fileID: 685038249}
-  - {fileID: 1589165874}
   - {fileID: 1783969209}
   - {fileID: 570130626}
   m_Father: {fileID: 708370053}
@@ -19995,7 +19999,8 @@ PrefabInstance:
       propertyPath: m_toolName
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8184345128447347233, guid: 957efe96664375a47a68cfe9013d3291, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 957efe96664375a47a68cfe9013d3291, type: 3}
 --- !u!224 &1385950617 stripped
@@ -20003,6 +20008,21 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 425766469686049876, guid: 957efe96664375a47a68cfe9013d3291, type: 3}
   m_PrefabInstance: {fileID: 1385950616}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1385950627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300199729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bbfc3fa497b594daf258b78aa283b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toolName: 0
+  m_director: {fileID: 0}
+  m_transformSequence: {fileID: 0}
 --- !u!1 &1391783619
 GameObject:
   m_ObjectHideFlags: 0
@@ -23012,51 +23032,6 @@ MonoBehaviour:
   m_cameraNav: {fileID: 1963181110}
   m_returnLeft: {fileID: 707729536}
   m_returnRight: {fileID: 1260811966}
---- !u!1 &1589165873
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1589165874}
-  - component: {fileID: 1589165877}
-  m_Layer: 6
-  m_Name: QuickToolBar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1589165874
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589165873}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1165556947}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!222 &1589165877
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589165873}
-  m_CullTransparentMesh: 1
 --- !u!1 &1592402805
 GameObject:
   m_ObjectHideFlags: 0
@@ -25886,7 +25861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6760645903348220672, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_toolName
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7826969921250290059, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_Sprite
@@ -25898,7 +25873,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 51677627}
     - targetCorrespondingSourceObject: {fileID: 3945677919952748303, guid: a5f752141284dd844b23698746b03262, type: 3}
-      insertIndex: 2
+      insertIndex: -1
       addedObject: {fileID: 1385950617}
   m_SourcePrefab: {fileID: 100100000, guid: a5f752141284dd844b23698746b03262, type: 3}
 --- !u!224 &1783969209 stripped

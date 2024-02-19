@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7120009254058587624}
   - component: {fileID: 5322383985109612082}
   - component: {fileID: 8759621923371463884}
-  - component: {fileID: 8184345128447347233}
+  - component: {fileID: 8740068874347176562}
   - component: {fileID: 5774017687094669662}
   - component: {fileID: 6463978766353173905}
   - component: {fileID: 8129378175672480667}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8184345128447347233
+--- !u!114 &8740068874347176562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,10 +169,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 176633027451707322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ac553694a5daf49996c855eae5bad1, type: 3}
+  m_Script: {fileID: 11500000, guid: 79bbfc3fa497b594daf258b78aa283b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_toolName: 8
+  m_director: {fileID: 0}
+  m_transformSequence: {fileID: 0}
 --- !u!114 &5774017687094669662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8184345128447347233}
+        - m_Target: {fileID: 8740068874347176562}
           m_TargetAssemblyTypeName: QuickTool, Assembly-CSharp
           m_MethodName: OnPointerEnter
           m_Mode: 1
@@ -206,7 +208,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8184345128447347233}
+        - m_Target: {fileID: 8740068874347176562}
           m_TargetAssemblyTypeName: QuickTool, Assembly-CSharp
           m_MethodName: OnPointerExit
           m_Mode: 1

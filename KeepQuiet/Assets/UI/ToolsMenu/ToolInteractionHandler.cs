@@ -9,6 +9,7 @@ public class ToolInteractionHandler : MonoBehaviour
     [SerializeField] ToolAimIcon m_aimIcon = default;
     [SerializeField] ToolAimIcon m_torch = default;
     [SerializeField] ToolAimIcon m_specialTorch = default;
+    [SerializeField] CoatHanger m_coatHanger = default;
     //TODO:Coat hanger object, draggable and modifiable
     [SerializeField] List<QuickTool> m_tools = default;
     // tool we are currently using
@@ -38,23 +39,20 @@ public class ToolInteractionHandler : MonoBehaviour
     public void UseTool(QuickTool tool) 
     {
         if (tool == null) return;
-        EToolName toolName = tool.ToolName;
+        EToolFlag toolName = tool.ToolName;
         ToolAimIcon toolAimRef;
         switch (toolName)
         {
-            case EToolName.Bat:
+            case EToolFlag.Bat:
                 toolAimRef = m_aimIcon;
                 break;
-            case EToolName.Torch:
+            case EToolFlag.Torch:
                 toolAimRef = m_torch;
                 break;
-            case EToolName.SpecialTorch:
+            case EToolFlag.SpecialTorch:
                 toolAimRef = m_specialTorch;
                 break;
-            case EToolName.CoatHanger:
-                toolAimRef = m_aimIcon;
-                break;
-            case EToolName.Hook:
+            case EToolFlag.CoatHanger:
                 toolAimRef = m_aimIcon;
                 break;
             default:

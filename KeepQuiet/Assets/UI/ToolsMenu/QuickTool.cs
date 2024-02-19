@@ -1,20 +1,21 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 [Flags]
-public enum EToolName
+public enum EToolFlag
 { 
     Bat = 1 << 0,
     Torch = 1 << 1,
-    SpecialTorch = 1<< 2,
+    SpecialTorch = 1 << 2,
     CoatHanger = 1 << 3
 }
 public delegate void OnToolUpdate(QuickTool toUpdate);
 [Serializable]
 public class QuickTool : DraggableObject
 {
-    [SerializeField] EToolName m_toolName = default;
-    public EToolName ToolName => m_toolName;
+    [SerializeField] EToolFlag m_toolName = default;
+    public EToolFlag ToolName => m_toolName;
     public event OnToolUpdate OnEnter;
     public event OnToolUpdate OnExit;
     public event OnToolUpdate OnUse;

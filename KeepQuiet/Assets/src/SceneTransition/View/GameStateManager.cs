@@ -79,11 +79,11 @@ public class GameStateManager : MonoBehaviour
         var current = CurrentGameState;
         m_inspect?.InspectTarget(toInspect.GetInspectionDisplay(current), current);
     }
-    public void OnToolUse(EToolName usingTool) 
+    public void OnToolUse(EToolFlag usingTool) 
     {
         m_currentView?.OnUsingTool(usingTool);
     }
-    public void OnToolReturn(EToolName returningTool) 
+    public void OnToolReturn(EToolFlag returningTool) 
     {
         m_currentView?.OnReturningTool(returningTool);
     }

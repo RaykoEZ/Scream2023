@@ -210,6 +210,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7882726756723635499}
+          m_TargetAssemblyTypeName: CoatHanger, Assembly-CSharp
+          m_MethodName: OnHangerModified
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8194863683557129397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +327,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dda18efd0d22e48a81c8682b7b1a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4086453424972396029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3066992181453432927}
+  - component: {fileID: 2860315695081029486}
+  - component: {fileID: 9031390334717559309}
+  - component: {fileID: 4495425118271521983}
+  m_Layer: 7
+  m_Name: MoveTool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3066992181453432927
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086453424972396029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6024229460967451941}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6.4722, y: 0}
+  m_SizeDelta: {x: 216.6, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2860315695081029486
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086453424972396029}
+  m_CullTransparentMesh: 1
+--- !u!114 &9031390334717559309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086453424972396029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4495425118271521983
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086453424972396029}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4890464496465336577
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,8 +428,8 @@ GameObject:
   - component: {fileID: 7882726756723635499}
   - component: {fileID: 1963590967152145627}
   - component: {fileID: 5365230500447054129}
-  - component: {fileID: 8457352817800827551}
-  - component: {fileID: 5065681730299461798}
+  - component: {fileID: 2092231724240905933}
+  - component: {fileID: 5461764525975316603}
   m_Layer: 7
   m_Name: P_DraggableHanger
   m_TagString: Untagged
@@ -344,6 +449,7 @@ RectTransform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3066992181453432927}
   - {fileID: 3878766641904715483}
   - {fileID: 308232717786829061}
   - {fileID: 7039675295238922241}
@@ -370,6 +476,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hook: {fileID: 3369966214624341926}
   m_left: {fileID: 4518073783337090328}
+  m_hookAngleThreshold: -135
+  m_leftAngleThreshold: 135
+  m_thresholdMargin: 10
 --- !u!225 &1963590967152145627
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -390,37 +499,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4890464496465336577}
   m_CullTransparentMesh: 1
---- !u!114 &8457352817800827551
-MonoBehaviour:
+--- !u!95 &2092231724240905933
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4890464496465336577}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &5065681730299461798
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6090bc58d31de7341b5792dac7ae0a54, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5461764525975316603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -607,6 +706,22 @@ MonoBehaviour:
         - m_Target: {fileID: 3369966214624341926}
           m_TargetAssemblyTypeName: DragRotationHandler, Assembly-CSharp
           m_MethodName: BeginRotation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7882726756723635499}
+          m_TargetAssemblyTypeName: CoatHanger, Assembly-CSharp
+          m_MethodName: OnHangerModified
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

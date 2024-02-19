@@ -6,7 +6,7 @@ public class ToolAimIcon : HideableUI
 {
     bool m_show = false;
     Vector3 m_cursorPos;
-    private void Update()
+    protected virtual void Update()
     {
         if (m_show) 
         {
@@ -15,12 +15,12 @@ public class ToolAimIcon : HideableUI
             transform.position = m_cursorPos;
         }
     }
-    public void ShowCursor() 
+    public virtual void ShowCursor() 
     {
         m_show = true;
         Show();
     }
-    public void HideCursor() 
+    public virtual void HideCursor() 
     {
         m_show = false;
         Hide();
