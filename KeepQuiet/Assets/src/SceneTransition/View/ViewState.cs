@@ -37,11 +37,11 @@ public abstract class ViewState : MonoBehaviour
         Vfx?.gameObject.SetActive(isOn);
         Background?.gameObject.SetActive(isOn);
     }
-    public virtual void OnUsingTool(EToolFlag usingTool) 
+    public virtual void OnUsingTool(EToolType usingTool) 
     {
         m_clueGroup.interactable = false;
     }
-    public virtual void OnReturningTool(EToolFlag returningTool) 
+    public virtual void OnReturningTool(EToolType returningTool) 
     {
         m_clueGroup.interactable = true;
     }

@@ -1,5 +1,6 @@
 using Curry.Explore;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public enum ECoatHangerState 
 {
@@ -10,6 +11,7 @@ public class CoatHanger : ToolAimIcon
 {
     [SerializeField] DragRotationHandler m_hook = default;
     [SerializeField] DragRotationHandler m_left = default;
+    [SerializeField] HangerTool m_hangerTool = default;
     [Range(-180f, 180f)]
     [SerializeField] float m_hookAngleThreshold = default;
     [Range(-180f, 180f)]
@@ -64,6 +66,7 @@ public class CoatHanger : ToolAimIcon
                 break;
             case ECoatHangerState.Hook:
                 GetAnim?.SetTrigger("Hook");
+                m_hangerTool?.HookForm();
                 break;
             default:
                 GetAnim?.SetTrigger("Free");
@@ -76,15 +79,11 @@ public class CoatHanger : ToolAimIcon
         float left = m_left.CurrentAngle;
         bool hookCheck = hook <= HookAngleRange.Max && hook >= HookAngleRange.Min;
         bool leftCheck = left <= LeftAngleRange.Max && left >= LeftAngleRange.Min;
-        Debug.Log($" {HookAngleRange.Min} <= {hook} <= {HookAngleRange.Max}");
-        Debug.Log($" {LeftAngleRange.Min} <= {left} <= {LeftAngleRange.Max}");
-
         ECoatHangerState result = ECoatHangerState.FreeForm;
         if (hookCheck && leftCheck) 
         {
             result = ECoatHangerState.Hook;
         }
-        Debug.Log(result);
         return result;
     }
     public void ResetHangerState()

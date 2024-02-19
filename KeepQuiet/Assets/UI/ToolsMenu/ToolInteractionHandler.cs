@@ -1,15 +1,15 @@
 ﻿using Curry.Explore;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class ToolInteractionHandler : MonoBehaviour
 {
+    [SerializeField] ToolUnlockHandler m_unlock = default;
     [SerializeField] GameStateManager m_gameState = default;
     [SerializeField] ToolBarUIAnimationHandler m_anim = default;
     [SerializeField] ToolAimIcon m_aimIcon = default;
     [SerializeField] ToolAimIcon m_torch = default;
     [SerializeField] ToolAimIcon m_specialTorch = default;
-    [SerializeField] CoatHanger m_coatHanger = default;
+    [SerializeField] ToolAimIcon m_coatHanger = default;
     //TODO:Coat hanger object, draggable and modifiable
     [SerializeField] List<QuickTool> m_tools = default;
     // tool we are currently using
@@ -23,6 +23,7 @@ public class ToolInteractionHandler : MonoBehaviour
             item.OnEnter += OnPointerEnter;
             item.OnExit += OnPointerExit;
         }
+        m_unlock?.Init(m_tools);
     }
     public void ReturnTool(QuickTool tool)
     {
@@ -39,20 +40,23 @@ public class ToolInteractionHandler : MonoBehaviour
     public void UseTool(QuickTool tool) 
     {
         if (tool == null) return;
-        EToolFlag toolName = tool.ToolName;
+        EToolType toolName = tool.ToolName;
         ToolAimIcon toolAimRef;
         switch (toolName)
         {
-            case EToolFlag.Bat:
+            case EToolType.Bat:
                 toolAimRef = m_aimIcon;
                 break;
-            case EToolFlag.Torch:
+            case EToolType.Torch:
                 toolAimRef = m_torch;
                 break;
-            case EToolFlag.SpecialTorch:
+            case EToolType.SpecialTorch:
                 toolAimRef = m_specialTorch;
                 break;
-            case EToolFlag.CoatHanger:
+            case EToolType.CoatHanger:
+                toolAimRef = m_coatHanger;
+                break;
+            case EToolType.Hook:
                 toolAimRef = m_aimIcon;
                 break;
             default:
@@ -75,7 +79,6 @@ public class ToolInteractionHandler : MonoBehaviour
     {
         if (tool == null) return;
         tool.OnUse -= UseTool;
-
     }
 }
 

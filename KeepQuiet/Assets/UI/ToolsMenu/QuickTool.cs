@@ -2,28 +2,43 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[Flags]
-public enum EToolFlag
+public enum EToolType
 { 
-    Bat = 1 << 0,
-    Torch = 1 << 1,
-    SpecialTorch = 1 << 2,
-    CoatHanger = 1 << 3
+    Bat = 0,
+    Torch = 1,
+    SpecialTorch = 2,
+    CoatHanger = 3,
+    Hook = 4
 }
 public delegate void OnToolUpdate(QuickTool toUpdate);
 [Serializable]
 public class QuickTool : DraggableObject
 {
-    [SerializeField] EToolFlag m_toolName = default;
-    public EToolFlag ToolName => m_toolName;
+    [SerializeField] EToolType m_toolName = default;
+    [SerializeField] protected bool m_isUnlocked = default;
+    public virtual bool IsUnlocked { get => m_isUnlocked; protected set => m_isUnlocked = value; }
+    public EToolType ToolName => m_toolName;
     public event OnToolUpdate OnEnter;
     public event OnToolUpdate OnExit;
     public event OnToolUpdate OnUse;
     public event OnToolUpdate OnReturn;
+    public event OnToolUpdate OnUnlock;
+    public event OnToolUpdate OnLock;
+
     public override void OnBeginDrag(PointerEventData eventData)
     {
         // Drag the tool out of the tool bar
         OnUse?.Invoke(this);
+    }
+    public virtual void UnlockTool() 
+    {
+        IsUnlocked = true;
+        OnUnlock?.Invoke(this);
+    }
+    public virtual void LockTool()
+    {
+        IsUnlocked = false;
+        OnLock?.Invoke(this);
     }
     public override void OnDrag(PointerEventData eventData)
     {

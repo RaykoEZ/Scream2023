@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 6587366890146810147}
   - component: {fileID: 2509594087673186280}
   - component: {fileID: 5679775087862068242}
+  - component: {fileID: 6627563732347666621}
   m_Layer: 0
   m_Name: P_ToolQuickMenu
   m_TagString: Untagged
@@ -257,10 +258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49129b900435e384cb369f455b181e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_unlock: {fileID: 6627563732347666621}
+  m_gameState: {fileID: 0}
   m_anim: {fileID: 2509594087673186280}
   m_aimIcon: {fileID: 0}
   m_torch: {fileID: 0}
   m_specialTorch: {fileID: 0}
+  m_coatHanger: {fileID: 0}
   m_tools:
   - {fileID: 2966787828690214184}
   - {fileID: 4462738558076137807}
@@ -293,6 +297,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6627563732347666621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3945677920594794698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6844e1aa4689904dbe13bdf208c0c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_cutscene: {fileID: 0}
 --- !u!1001 &503047554994681706
 PrefabInstance:
   m_ObjectHideFlags: 0
