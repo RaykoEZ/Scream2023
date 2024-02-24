@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5043ea978c0fdd04ab37c933669a629e, type: 3}
+  m_Name: GameState_newGame
+  m_EditorClassIdentifier: 
+  m_state:
+    RoomLeftDoorState: 1
+    NewGameCount: 0
+    CrashCount: 0
+    CurrentlyViewing: RoomRight
+    AriaStatus:
+      IsPossessed: 0
+      HasPastRunMemory: 0
+      NumDenied: 0
+      Affection: 0
+      Sanity: 0
+      CurrentLocation: 1
+    ViewStates:
+    - LocationName: InsideCafe
+      CluesToHide: []
+    - LocationName: OutsideAria
+      CluesToHide: []
+    - LocationName: OutsideCamera
+      CluesToHide: []
+    - LocationName: RoomLeft
+      CluesToHide:
+      - Clock
+    - LocationName: RoomRight
+      CluesToHide: []
