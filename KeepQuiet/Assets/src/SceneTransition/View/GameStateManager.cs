@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Curry.Events;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-// handles behaviours for current game state
+// handles behaviours for current game state in game scene
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] protected InspectionDisplayHandler m_inspect = default;
@@ -15,11 +16,18 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected ViewState m_insideCafe = default;
     [SerializeField] protected RoomLeftView m_roomLeft = default;
     [SerializeField] protected ViewState m_roomRight = default;
+    [SerializeField] CurryGameEventTrigger m_saveGameState = default;
+    [SerializeField] CurryGameEventListener m_onGameLoad = default;
+
     Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
     GameStateSaveData m_currentGameState;
     public DoorState LeftRoomDoor => m_roomLeft.DoorState;
     public GameStateSaveData CurrentGameState => new GameStateSaveData(m_currentGameState);
+    private void Start()
+    {
+        m_onGameLoad?.Init();
+    }
     public List<ViewStateSaveData> GetCurrentViewState()
     {
         List<ViewStateSaveData> ret = new List<ViewStateSaveData>
@@ -31,6 +39,15 @@ public class GameStateManager : MonoBehaviour
             m_roomRight.GetCurrentState()
         };
         return ret;
+    }
+    public void SaveGameState()
+    {
+        EventInfo info = new EventInfo();
+        m_saveGameState?.TriggerEvent(info);
+    }
+    public void OnGameStateLoaded(EventInfo info) 
+    { 
+    
     }
     public Aria GetAria()
     {

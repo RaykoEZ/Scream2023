@@ -9,12 +9,24 @@ public class GameStateFileHandler : MonoBehaviour
     // State to load upon first load
     [SerializeField] GameStateContainer m_defaultState = default;
     [SerializeField] CurryGameEventListener m_exitGame = default;
+    [SerializeField] CurryGameEventListener m_onsaveGameState = default;
+    [SerializeField] CurryGameEventTrigger m_loadGameState = default;
     GameStateSaveData m_current;
     static string s_gamestatePath = "saves/gamestate.json";
     private void Start()
     {
         m_exitGame?.Init();
+        m_onsaveGameState?.Init();
         LoadStates();
+    }
+    public void LoadGameState()
+    {
+        EventInfo info = new EventInfo();
+        m_loadGameState?.TriggerEvent(info);
+    }
+    public void OnGameSave(EventInfo info) 
+    { 
+        
     }
     public void OnQuitGame(EventInfo info) 
     {

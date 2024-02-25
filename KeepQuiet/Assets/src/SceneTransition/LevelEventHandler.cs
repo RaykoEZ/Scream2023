@@ -2,11 +2,12 @@
 using UnityEngine;
 // Persistent event listener to handle scene changes
 [RequireComponent(typeof(LevelLoader))]
-public class LevelHandler : MonoBehaviour 
+public class LevelEventHandler : MonoBehaviour 
 {
     [SerializeField] CurryGameEventListener m_newGame = default;
     [SerializeField] CurryGameEventListener m_continueGame = default;
     [SerializeField] CurryGameEventListener m_returnToTitle = default;
+
     LevelLoader Loader => GetComponent<LevelLoader>();
     private void Start()
     {
