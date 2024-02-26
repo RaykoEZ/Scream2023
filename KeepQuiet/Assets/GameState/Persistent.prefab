@@ -271,6 +271,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  m_onGameReady:
+    m_eventToListen: {fileID: 11400000, guid: df87f0eb089774642906a0dc0666e9a9, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3112176199438094396}
+          m_TargetAssemblyTypeName: GameStateFileHandler, Assembly-CSharp
+          m_MethodName: OnGameReady
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   m_loadGameState:
     m_eventToTrigger: {fileID: 11400000, guid: 7981b5eb004aced4fa39c5c5186cd9f9, type: 2}
 --- !u!1 &3112176199721816027

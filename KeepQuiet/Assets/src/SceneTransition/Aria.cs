@@ -62,7 +62,7 @@ public class Aria : Npc
     public event OnAriaMove OnMove;
     // When aria leaves from all scene
     public event OnAriaLeaveGame OnLeave;
-    public void Init(GameStateSaveData state) 
+    public void Init(SaveData state) 
     {
         m_stateManager.InitState(state);
     } 

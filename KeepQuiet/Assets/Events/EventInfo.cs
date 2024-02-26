@@ -9,7 +9,6 @@ namespace Curry.Events
         public Dictionary<string, object> Payload { get; protected set; }
         // Method to call after resolving this event
         public Action OnFinishedCallback { get; protected set; }
-
         public EventInfo(Dictionary<string, object> payload = null, Action onFinishCallback = null) 
         {
             Payload = payload;

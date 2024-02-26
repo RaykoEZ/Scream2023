@@ -15,14 +15,14 @@ public abstract class ViewState : MonoBehaviour
     public Transform Vfx => m_vfx;
     public Transform Background => m_background;
     public VolumeProfile PostProcessVolumeProfile => m_postProcessVolumeProfile;
-    public void InitState(GameStateSaveData saveData) 
+    public void InitState(SaveData saveData) 
     {
         if (saveData.TryGetViewState(Name, out ViewStateSaveData result))
         {
             InitStateInternal(saveData, result);
         }
     }
-    protected virtual void InitStateInternal(GameStateSaveData gamestate, ViewStateSaveData selfState) 
+    protected virtual void InitStateInternal(SaveData gamestate, ViewStateSaveData selfState) 
     {
     }
     public virtual ViewStateSaveData GetCurrentState() 

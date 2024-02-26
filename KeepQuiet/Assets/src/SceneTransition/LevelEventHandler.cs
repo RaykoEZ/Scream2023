@@ -1,4 +1,5 @@
 ﻿using Curry.Events;
+using System;
 using UnityEngine;
 // Persistent event listener to handle scene changes
 [RequireComponent(typeof(LevelLoader))]
@@ -27,7 +28,6 @@ public class LevelEventHandler : MonoBehaviour
     }
     public void ReturnToTitle(EventInfo info) 
     {
-        // Save persistent and go to title
         GoToTitle();
     }
     void GoToGameScene() 

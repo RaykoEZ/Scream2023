@@ -10,7 +10,7 @@ public class InspectionDisplayHandler : HideableUI
     [SerializeField] HideableUITrigger m_inspectUITrigger = default;
     InspectionDisplay m_currentlyInspecting;
     bool m_inspecting = false;
-    public void InspectTarget(InspectionDisplay toDisplay, GameStateSaveData state) 
+    public void InspectTarget(InspectionDisplay toDisplay, SaveData state) 
     {
         if (m_inspecting || toDisplay == null) return;
         m_inspecting = true;

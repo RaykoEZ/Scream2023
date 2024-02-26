@@ -13,7 +13,7 @@ public class Clue : MonoBehaviour
     [SerializeField] HideableUI m_clueImage = default;
     public HideableUI ClueImage => m_clueImage;
     public TextMeshProUGUI HoverLabel => m_hoverLabel;
-    public virtual InspectionDisplay GetInspectionDisplay(GameStateSaveData state) 
+    public virtual InspectionDisplay GetInspectionDisplay(SaveData state) 
     {
         return null;
     }

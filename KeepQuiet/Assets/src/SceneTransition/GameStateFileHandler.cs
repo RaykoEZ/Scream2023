@@ -4,14 +4,17 @@ using System.IO;
 using Curry.Events;
 using System.Collections.Generic;
 // Script for persistent game state loading and saving
+// Loads persistent game state into game state manager in scene
+// Saves updated states coming from game state in scene
 public class GameStateFileHandler : MonoBehaviour
 {
     // State to load upon first load
     [SerializeField] GameStateContainer m_defaultState = default;
     [SerializeField] CurryGameEventListener m_exitGame = default;
     [SerializeField] CurryGameEventListener m_onsaveGameState = default;
+    [SerializeField] CurryGameEventListener m_onGameReady = default;
     [SerializeField] CurryGameEventTrigger m_loadGameState = default;
-    GameStateSaveData m_current;
+    SaveData m_current;
     static string s_gamestatePath = "saves/gamestate.json";
     private void Start()
     {
@@ -21,25 +24,33 @@ public class GameStateFileHandler : MonoBehaviour
     }
     public void LoadGameState()
     {
-        EventInfo info = new EventInfo();
+        Dictionary<string, object> payload = new Dictionary<string, object>
+        {{"save", new SaveData(m_current)}};
+        EventInfo info = new EventInfo(payload);
         m_loadGameState?.TriggerEvent(info);
     }
-    public void OnGameSave(EventInfo info) 
-    { 
-        
+    public void OnGameReady(EventInfo info)
+    {
+        LoadGameState();
     }
-    public void OnQuitGame(EventInfo info) 
+    public void OnGameSave(EventInfo info) 
     {
         Dictionary<string, object> payload = info.Payload;
         if (payload == null) return;
         bool ending = payload.TryGetValue("ending", out object e) ? (bool)e : false;
         bool crash = payload.TryGetValue("crash", out object c) ? (bool)c : false;
-        if (payload.TryGetValue("state", out object result) 
-            && result is GameStateManager state) 
+        if (payload.TryGetValue("state", out object result)
+            && result is GameStateManager state)
         {
             // Autosave
             SaveStates(state, ending, crash);
         }
+        // Do on finish callback
+        info.OnFinishedCallback?.Invoke();
+    }
+    public void OnQuitGame(EventInfo info) 
+    {
+        OnGameSave(info);
         Application.Quit();
     }
     // Read Meta File states and Locations to update game state
@@ -47,13 +58,13 @@ public class GameStateFileHandler : MonoBehaviour
     {
         if (!File.Exists(s_gamestatePath)) 
         {
-            m_current = new GameStateSaveData(m_defaultState.State);
+            m_current = new SaveData(m_defaultState.State);
             return;
         }
         using (StreamReader r = new StreamReader($"{FileUtil.s_gamestateSavePath}/{s_gamestatePath}"))
         {
             string json = r.ReadToEnd();
-            GameStateSaveData loaded = JsonConvert.DeserializeObject<GameStateSaveData>(json);
+            SaveData loaded = JsonConvert.DeserializeObject<SaveData>(json);
             m_current = loaded;
         }       
     }
@@ -63,7 +74,7 @@ public class GameStateFileHandler : MonoBehaviour
         // if we are saving after finish an ending, increment new gamw counter
         int newGameCount = ending ? ++m_current.NewGameCount : m_current.NewGameCount;
         Aria aria = currentState.GetAria();
-        GameStateSaveData newSave = new GameStateSaveData(
+        SaveData newSave = new SaveData(
             currentState.LeftRoomDoor, newGameCount, crashCount, aria.Current, currentState.GetCurrentViewState());
         string json = JsonConvert.SerializeObject(newSave);
         FileUtil.RawTextTo(FileUtil.s_gamestateSavePath, "saves","gamestate.json", new string[] { json });

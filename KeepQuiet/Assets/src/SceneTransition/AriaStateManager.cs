@@ -7,7 +7,7 @@ public class AriaStateManager
     [SerializeField] AriaDisplayController m_position = default;
     AriaState m_current;
     public AriaState Current => m_current;
-    public void InitState(GameStateSaveData change) 
+    public void InitState(SaveData change) 
     {
         m_current = change.AriaStatus;
     }

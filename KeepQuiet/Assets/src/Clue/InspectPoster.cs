@@ -7,7 +7,7 @@ public class InspectPoster : InspectionDisplay
     [SerializeField] Image m_hiddenCode = default;
     [SerializeField] Sprite m_defaultPosterImage = default;
     [SerializeField] Sprite m_glitchPosterImage = default;
-    public override void Init(GameStateSaveData state)
+    public override void Init(SaveData state)
     {
         m_poster.sprite = state.CrashCount > 0? m_glitchPosterImage : m_defaultPosterImage;
     }
@@ -18,35 +18,35 @@ public class InspectPoster : InspectionDisplay
 }
 public class InspectVent : InspectionDisplay
 {
-    public override void Init(GameStateSaveData state)
+    public override void Init(SaveData state)
     {
         throw new System.NotImplementedException();
     }
 }
 public class InspectDoor : InspectionDisplay
 {
-    public override void Init(GameStateSaveData state)
+    public override void Init(SaveData state)
     {
         throw new System.NotImplementedException();
     }
 }
 public class InspectClock : InspectionDisplay
 {
-    public override void Init(GameStateSaveData state)
+    public override void Init(SaveData state)
     {
         throw new System.NotImplementedException();
     }
 }
 public class InspectDocument : InspectionDisplay
 {
-    public override void Init(GameStateSaveData state)
+    public override void Init(SaveData state)
     {
         throw new System.NotImplementedException();
     }
 }
 public class InspectCans : InspectionDisplay
 {
-    public override void Init(GameStateSaveData state)
+    public override void Init(SaveData state)
     {
         throw new System.NotImplementedException();
     }

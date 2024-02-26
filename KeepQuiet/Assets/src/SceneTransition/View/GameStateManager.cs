@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 // handles behaviours for current game state in game scene
+// Notifies to save new persistent game state
+// Loads saved game state when game scene initializes
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] protected InspectionDisplayHandler m_inspect = default;
@@ -17,16 +19,20 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected RoomLeftView m_roomLeft = default;
     [SerializeField] protected ViewState m_roomRight = default;
     [SerializeField] CurryGameEventTrigger m_saveGameState = default;
+    // Called when scene is ready for loading save data
+    [SerializeField] CurryGameEventTrigger m_gameSceneReady = default;
     [SerializeField] CurryGameEventListener m_onGameLoad = default;
 
     Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
-    GameStateSaveData m_currentGameState;
+    SaveData m_currentGameState;
     public DoorState LeftRoomDoor => m_roomLeft.DoorState;
-    public GameStateSaveData CurrentGameState => new GameStateSaveData(m_currentGameState);
-    private void Start()
+    public SaveData CurrentGameState => new SaveData(m_currentGameState);
+    private void Awake()
     {
+        //Listen to savedatat load event, ready to receive save data
         m_onGameLoad?.Init();
+        m_gameSceneReady?.TriggerEvent(new EventInfo());
     }
     public List<ViewStateSaveData> GetCurrentViewState()
     {
@@ -40,20 +46,29 @@ public class GameStateManager : MonoBehaviour
         };
         return ret;
     }
-    public void SaveGameState()
+    public void SaveGameState(Action onFinish = null)
     {
-        EventInfo info = new EventInfo();
+        Dictionary<string, object> payload = new Dictionary<string, object>
+        {{"save", CurrentGameState }};
+        EventInfo info = new EventInfo(payload, onFinishCallback: onFinish);
         m_saveGameState?.TriggerEvent(info);
     }
     public void OnGameStateLoaded(EventInfo info) 
-    { 
-    
+    {
+        Dictionary<string, object> payload = info.Payload;
+        if (payload == null) return;
+        if (payload.TryGetValue("save", out object result)
+            && result is SaveData save)
+        {
+            // Autosave
+            Init(save);
+        }
     }
     public Aria GetAria()
     {
         return m_aria;
     }
-    public void Init(GameStateSaveData saved)
+    public void Init(SaveData saved)
     {
         m_aria?.Init(saved);
         m_currentGameState = saved;

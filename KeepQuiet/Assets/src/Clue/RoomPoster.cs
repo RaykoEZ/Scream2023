@@ -3,7 +3,7 @@
 public class RoomPoster : Clue 
 {
     [SerializeField] InspectPoster m_inspectPoster = default;
-    public override InspectionDisplay GetInspectionDisplay(GameStateSaveData state)
+    public override InspectionDisplay GetInspectionDisplay(SaveData state)
     {
         return m_inspectPoster;
     }
@@ -12,7 +12,7 @@ public class RoomPoster : Clue
 public class Bin : Clue 
 {
     [SerializeField] InspectBin m_inspectBin = default;
-    public override InspectionDisplay GetInspectionDisplay(GameStateSaveData state)
+    public override InspectionDisplay GetInspectionDisplay(SaveData state)
     {
         return m_inspectBin;
     }

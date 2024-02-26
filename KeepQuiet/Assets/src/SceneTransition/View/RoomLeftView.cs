@@ -15,7 +15,7 @@ public class RoomLeftView : ViewState
     public override string Name => "RoomLeft";
     private DoorState m_doorState = DoorState.Closed;
     public DoorState DoorState => m_doorState;
-    protected override void InitStateInternal(GameStateSaveData saveData, ViewStateSaveData selfState)
+    protected override void InitStateInternal(SaveData saveData, ViewStateSaveData selfState)
     {
         base.InitStateInternal(saveData, selfState);
         // Set door state

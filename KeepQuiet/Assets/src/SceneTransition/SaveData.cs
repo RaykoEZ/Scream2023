@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 [Serializable]
-public class GameStateSaveData
+public class SaveData
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public DoorState RoomLeftDoorState;
@@ -14,7 +14,7 @@ public class GameStateSaveData
     public AriaState AriaStatus;
     public List<ViewStateSaveData> ViewStates;
 
-    public GameStateSaveData(GameStateSaveData copy)
+    public SaveData(SaveData copy)
     {
         RoomLeftDoorState = copy.RoomLeftDoorState;
         NewGameCount = copy.NewGameCount;
@@ -22,7 +22,7 @@ public class GameStateSaveData
         AriaStatus = new AriaState(copy.AriaStatus);
         ViewStates = new List<ViewStateSaveData>(copy.ViewStates);
     }
-    public GameStateSaveData(
+    public SaveData(
         DoorState roomLeftDoorState,
         int newGameCount,
         int crashes,
