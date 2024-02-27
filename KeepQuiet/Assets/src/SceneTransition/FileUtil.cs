@@ -23,16 +23,13 @@ internal static class FileUtil
 
         TryMakeFolder(path, folderName);
         string resultPath = $"{path}/{folderName}/{fileName}";
-        if (File.Exists(resultPath))
+        using (StreamWriter sw = new StreamWriter(resultPath, append: false)) 
         {
-            return;
+            foreach(var line in content)
+            {
+                sw.WriteLine(line);
+            }
         }
-        StreamWriter sw = File.CreateText(resultPath);
-        foreach (var line in content)
-        {
-            sw.WriteLine(line);
-        }
-        sw.Close();
     }
     internal static void ClearTextFile(string path) 
     {
@@ -40,7 +37,7 @@ internal static class FileUtil
     }
     internal static void AppendToTextFile(string path, string[] content) 
     {
-        using (StreamWriter sw = new StreamWriter(path)) 
+        using (StreamWriter sw = new StreamWriter(path, append: true)) 
         {
             foreach (var line in content)
             {

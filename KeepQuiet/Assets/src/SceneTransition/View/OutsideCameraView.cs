@@ -8,7 +8,7 @@ public class OutsideCameraView : ViewState
     protected override void InitStateInternal(SaveData gamestate, ViewStateSaveData selfState)
     {
         base.InitStateInternal(gamestate, selfState);
-        if (gamestate.AriaStatus.CurrentLocation == AriaPosition.OutsideCam) 
+        if (gamestate.AriaStatus.CurrentLocation == AriaPosition.None) 
         {
             OnAriaEnter();
         } 

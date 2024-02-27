@@ -8,7 +8,6 @@ public class LevelEventHandler : MonoBehaviour
     [SerializeField] CurryGameEventListener m_newGame = default;
     [SerializeField] CurryGameEventListener m_continueGame = default;
     [SerializeField] CurryGameEventListener m_returnToTitle = default;
-
     LevelLoader Loader => GetComponent<LevelLoader>();
     private void Start()
     {

@@ -46,10 +46,8 @@ public class AriaDisplayController : MonoBehaviour
         Hide(previous);
         switch (newLocation)
         {
-            case AriaPosition.OutsideCam:
-                m_outsideCam?.OnAriaEnter();
-                break;
             case AriaPosition.InsideCafe_Entrance:
+                m_outsideCam?.OnAriaEnter();
                 m_cafePoses.ResetTrigger("entrance");
                 m_cafePoses.SetTrigger("entrance");
                 break;
@@ -79,9 +77,6 @@ public class AriaDisplayController : MonoBehaviour
     {
         switch (toHide)
         {
-            case AriaPosition.OutsideCam:
-                m_outsideCam?.OnAriaExit();
-                break;
             case AriaPosition.InsideCafe_Entrance:
                 m_cafePoses.ResetTrigger("hide");
                 m_cafePoses.SetTrigger("hide");

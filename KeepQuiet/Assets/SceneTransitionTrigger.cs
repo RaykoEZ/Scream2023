@@ -29,12 +29,12 @@ public class SceneTransitionTrigger : MonoBehaviour
         EventInfo info = new EventInfo();
         m_newGame?.TriggerEvent(info);
     }
-    public void QuitGame(bool crash = false, bool ending = false)
+    public void QuitGame()
     {
         // need reference to game state manager
         // to save data before quitting the game
         Dictionary<string, object> payload = new Dictionary<string, object>
-        {{"state", m_gameState}, {"ending", ending }, {"crash", crash } };
+        {{"save", m_gameState.CurrentGameState}};
         EventInfo info = new EventInfo(payload);
         m_quit?.TriggerEvent(info);
     }

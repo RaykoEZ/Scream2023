@@ -6,13 +6,12 @@ using UnityEngine;
 [Serializable]
 public enum AriaPosition
 { 
-    OutsideCam = 0,
-    InsideCafe_Entrance = 1,
-    InsideCafe_Counter = 2,
-    InsideCafe_Sit = 3,
-    InsideCafe_Closeup = 4,
-    RoomLeft_Peeking = 5,
-    RoomLeft_CloseUp = 6,
+    InsideCafe_Entrance = 0,
+    InsideCafe_Counter = 1,
+    InsideCafe_Sit = 2,
+    InsideCafe_Closeup = 3,
+    RoomLeft_Peeking = 4,
+    RoomLeft_CloseUp = 5,
     None = -1
 }
 [Serializable]
@@ -20,22 +19,19 @@ public class AriaState
 {
     public bool IsPossessed;
     public bool HasPastRunMemory;
-    public int NumDenied = 0;
     public int Affection = 0;
     public int Sanity = 0;
     [JsonConverter(typeof(StringEnumConverter))]   
     public AriaPosition CurrentLocation;
-    public static AriaState Default = new AriaState(false, false, 0, 1, 1, AriaPosition.OutsideCam);
+    public static AriaState Default = new AriaState(false, false, 1, 1, AriaPosition.InsideCafe_Entrance);
     public AriaState(
         bool isPossessed, 
         bool hasPastRunMemory, 
-        int numDenied, 
         int affection, 
         int sanity, AriaPosition currentLocation)
     {
         IsPossessed = isPossessed;
         HasPastRunMemory = hasPastRunMemory;
-        NumDenied = numDenied;
         Affection = affection;
         Sanity = sanity;
         CurrentLocation = currentLocation;
@@ -44,7 +40,6 @@ public class AriaState
     {
         IsPossessed = copy.IsPossessed;
         HasPastRunMemory = copy.HasPastRunMemory;
-        NumDenied = copy.NumDenied;
         Affection = copy.Affection;
         Sanity = copy.Sanity;
         CurrentLocation = copy.CurrentLocation;

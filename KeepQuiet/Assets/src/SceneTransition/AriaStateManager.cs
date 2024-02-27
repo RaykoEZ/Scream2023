@@ -10,6 +10,7 @@ public class AriaStateManager
     public void InitState(SaveData change) 
     {
         m_current = change.AriaStatus;
+        m_position?.MoveTo((int)change.AriaStatus.CurrentLocation);
     }
     public void AffectionDown(int val)
     {
@@ -22,11 +23,7 @@ public class AriaStateManager
     }
     public void OnDenied()
     {
-        Current.NumDenied++;
-        if (Current.NumDenied > 3)
-        {
-            AffectionDown(1);
-        }
+        AffectionDown(1);
     }
     public void Leave()
     {

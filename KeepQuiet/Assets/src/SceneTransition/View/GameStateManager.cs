@@ -25,7 +25,7 @@ public class GameStateManager : MonoBehaviour
 
     Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
-    SaveData m_currentGameState;
+    SaveData m_currentGameState = new SaveData();
     public DoorState LeftRoomDoor => m_roomLeft.DoorState;
     public SaveData CurrentGameState => new SaveData(m_currentGameState);
     private void Awake()
@@ -70,7 +70,6 @@ public class GameStateManager : MonoBehaviour
     }
     public void Init(SaveData saved)
     {
-        m_aria?.Init(saved);
         m_currentGameState = saved;
         //Hide all view first
         m_outsideCam?.SetVisual(false);
@@ -105,6 +104,8 @@ public class GameStateManager : MonoBehaviour
         m_currentView?.SetVisual(true);
         m_currentView?.InitState(m_currentGameState);
         yield return new WaitForEndOfFrame();
+        //Update Aria state after scene is set up
+        m_aria?.Init(m_currentGameState);
     }
     public void InspectClue(Clue toInspect) 
     {

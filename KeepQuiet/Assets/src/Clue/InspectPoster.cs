@@ -9,7 +9,7 @@ public class InspectPoster : InspectionDisplay
     [SerializeField] Sprite m_glitchPosterImage = default;
     public override void Init(SaveData state)
     {
-        m_poster.sprite = state.CrashCount > 0? m_glitchPosterImage : m_defaultPosterImage;
+        //m_poster.sprite =  m_glitchPosterImage;
     }
     public void RevealCode() 
     { 

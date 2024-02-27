@@ -7,18 +7,23 @@ public class SaveData
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public DoorState RoomLeftDoorState;
-    public int NewGameCount = 0;
-    public int CrashCount = 0;
     // Where is the player looking at
     public string CurrentlyViewing;
     public AriaState AriaStatus;
     public List<ViewStateSaveData> ViewStates;
 
+    public SaveData()
+    {
+        CurrentlyViewing = "RoomRight";
+        AriaStatus = AriaState.Default;
+        RoomLeftDoorState = DoorState.Closed;
+        ViewStates = new List<ViewStateSaveData>();
+    }
+
     public SaveData(SaveData copy)
     {
+        CurrentlyViewing = copy.CurrentlyViewing;
         RoomLeftDoorState = copy.RoomLeftDoorState;
-        NewGameCount = copy.NewGameCount;
-        CrashCount = copy.CrashCount;
         AriaStatus = new AriaState(copy.AriaStatus);
         ViewStates = new List<ViewStateSaveData>(copy.ViewStates);
     }
@@ -26,12 +31,12 @@ public class SaveData
         DoorState roomLeftDoorState,
         int newGameCount,
         int crashes,
+        string viewing,
         AriaState ariaStatus, 
         List<ViewStateSaveData> viewStates)
     {
+        CurrentlyViewing = viewing;
         RoomLeftDoorState = roomLeftDoorState;
-        NewGameCount = newGameCount;
-        CrashCount = crashes;
         AriaStatus = ariaStatus;
         ViewStates = viewStates;
     }

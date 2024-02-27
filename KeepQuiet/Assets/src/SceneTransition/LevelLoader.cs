@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Curry.Util;
 public class LevelLoader : MonoBehaviour
 {
+    [SerializeField] CoroutineManager m_coroutine = default;
     [SerializeField] LoadingScreenSequencer m_loadScreen = default;
     // Loads a single scene and sets it active 
     public void LoadScene(int sceneIndex, bool additive = false, bool setActive = true) 
@@ -11,7 +13,8 @@ public class LevelLoader : MonoBehaviour
         { 
             return; 
         }
-        StartCoroutine(LoadLevel_Internal(sceneIndex, additive, setActive));
+        m_coroutine.ScheduleCoroutine(LoadLevel_Internal(sceneIndex, additive, setActive));
+        m_coroutine.StartScheduledCoroutines();
     }
     public void LoadScene(string sceneName, bool additive = false, bool setActive = true)
     {
@@ -19,7 +22,8 @@ public class LevelLoader : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(LoadLevel_Internal(sceneName, additive, setActive));
+        m_coroutine.ScheduleCoroutine(LoadLevel_Internal(sceneName, additive, setActive));
+        m_coroutine.StartScheduledCoroutines();
     }
     IEnumerator LoadLevel_Internal(int sceneIndex, bool additive = false, bool setActive = true) 
     {
