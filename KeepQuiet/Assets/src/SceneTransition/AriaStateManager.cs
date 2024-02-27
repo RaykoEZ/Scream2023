@@ -2,7 +2,7 @@
 using UnityEngine;
 // Handles Aria's internal states i.e. sanity, movement, affection, memory and dialogue options
 [Serializable]
-public class AriaStateManager
+public class AriaStateManager : MonoBehaviour
 {
     [SerializeField] AriaDisplayController m_position = default;
     AriaState m_current;
@@ -10,7 +10,8 @@ public class AriaStateManager
     public void InitState(SaveData change) 
     {
         m_current = change.AriaStatus;
-        m_position?.MoveTo((int)change.AriaStatus.CurrentLocation);
+        m_position?.HideAll();
+        m_position?.MoveTo(change.AriaStatus.CurrentLocation, AriaPosition.None);
     }
     public void AffectionDown(int val)
     {
@@ -18,23 +19,38 @@ public class AriaStateManager
         if (Current.Affection < -10)
         {
             // If affecton is low, leave the player
-            Leave();
+            Hide();
         }
     }
     public void OnDenied()
     {
         AffectionDown(1);
     }
-    public void Leave()
+    public void Hide()
     {
-        AriaPosition prev = Current.CurrentLocation;
+        m_position.Hide(Current.CurrentLocation);
         Current.CurrentLocation = AriaPosition.None;
-        m_position.MoveTo(AriaPosition.None, prev);
     }
     public void MoveTo(AriaPosition newLocation)
     {
         AriaPosition prev = Current.CurrentLocation;
         Current.CurrentLocation = newLocation;
         m_position.MoveTo(newLocation, prev);
+    }
+    public void MoveTo(int newLocation)
+    {
+        AriaPosition newPos = (AriaPosition)newLocation;
+        var prev = m_current.CurrentLocation;
+        m_current.CurrentLocation = newPos;
+        m_position.MoveTo(newPos, prev);
+    }
+    public void TriggerPossessed(bool value)
+    {
+        m_current.IsPossessed = value;
+        m_position.TriggerPossessed(value);
+    }
+    public void TriggerSurprise()
+    {
+        m_position.TriggerSurprise();
     }
 }

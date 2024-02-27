@@ -79,7 +79,7 @@ public class Aria : Npc
     }
     protected void Leave() 
     {
-        m_stateManager.Leave();
+        m_stateManager.Hide();
         OnLeave?.Invoke();
     }
 

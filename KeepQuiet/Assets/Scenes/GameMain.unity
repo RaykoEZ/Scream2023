@@ -3645,14 +3645,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaPositionController, Assembly-CSharp
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
         m_MethodName: MoveTo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5127,14 +5127,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaPositionController, Assembly-CSharp
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
         m_MethodName: MoveTo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7423,9 +7423,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaPositionController, Assembly-CSharp
-        m_MethodName: HideCurrent
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13706,14 +13706,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaPositionController, Assembly-CSharp
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
         m_MethodName: MoveTo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13840,14 +13840,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaPositionController, Assembly-CSharp
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
         m_MethodName: MoveTo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19846,8 +19846,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaDisplayController, Assembly-CSharp
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
         m_MethodName: TriggerPossessed
         m_Mode: 6
         m_Arguments:
@@ -20512,14 +20512,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaPositionController, Assembly-CSharp
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
         m_MethodName: MoveTo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21895,8 +21895,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1526016396}
   - component: {fileID: 1526016397}
+  - component: {fileID: 1526016401}
   - component: {fileID: 1526016398}
-  - component: {fileID: 1526016399}
   - component: {fileID: 1526016400}
   m_Layer: 5
   m_Name: Aria
@@ -21942,8 +21942,7 @@ MonoBehaviour:
   m_introFirstLoad: {fileID: 11400000, guid: ff64d871b325a58428d4e5d3e619d002, type: 2}
   m_testDial:
     m_playThis: {fileID: 11400000, guid: 26859439d6574ad468723b1d2e1efeb0, type: 2}
-  m_stateManager:
-    m_position: {fileID: 1526016399}
+  m_stateManager: {fileID: 1526016401}
 --- !u!114 &1526016398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21957,23 +21956,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerCaller: {fileID: 685038258}
---- !u!114 &1526016399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526016395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc8417ecf3ac5c42a55fcc3479071a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_outsideCam: {fileID: 172971999}
-  m_cafePoses: {fileID: 294059935}
-  m_cafeCloseup: {fileID: 473942149176119279}
-  m_roomLeftPeek: {fileID: 909840030}
-  m_roomLeftCloseup: {fileID: 835372742}
 --- !u!114 &1526016400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22004,6 +21986,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1526016401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526016395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb5c1b60fce757419d0cb4f0651e329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_position:
+    m_cafePoses: {fileID: 294059935}
+    m_cafeCloseup: {fileID: 473942149176119279}
+    m_roomLeftPeek: {fileID: 909840030}
+    m_roomLeftCloseup: {fileID: 835372742}
 --- !u!1 &1528413336
 GameObject:
   m_ObjectHideFlags: 0
@@ -25429,8 +25428,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaDisplayController, Assembly-CSharp
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
         m_MethodName: TriggerSurprise
         m_Mode: 1
         m_Arguments:
@@ -27124,14 +27123,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526016399}
-        m_TargetAssemblyTypeName: AriaPositionController, Assembly-CSharp
+      - m_Target: {fileID: 1526016401}
+        m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
         m_MethodName: MoveTo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

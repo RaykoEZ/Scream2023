@@ -75,6 +75,7 @@ public class GameStateFileHandler : MonoBehaviour
     }
     protected void SaveStates(SaveData save) 
     {
+        m_current = save;
         // if we are saving after finish an ending, increment new gamw counter
         SaveData newSave = new SaveData(save);
         string json = JsonConvert.SerializeObject(newSave);
