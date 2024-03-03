@@ -55,9 +55,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _isOn: 1
-    - _lightRadius: 1.5
-    - _revealFallOff: 0
+    - _lightRadius: 1
+    - _revealFallOff: 0.005
     - _revealStrength: 4.7
     m_Colors:
-    - _lightPos: {r: -0.44, g: 0.72, b: 0, a: 0}
+    - _lightPos: {r: -0.73, g: 2.14, b: 0, a: 0}
   m_BuildTextureStacks: []

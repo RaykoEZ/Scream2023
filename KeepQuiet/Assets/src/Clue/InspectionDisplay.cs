@@ -2,5 +2,6 @@
 // A script on a clue display to notify clue inspection display handler
 public abstract class InspectionDisplay : MonoBehaviour 
 {
+    [SerializeField] protected Animator m_anim = default;
     public abstract void Init(SaveData state);
 }

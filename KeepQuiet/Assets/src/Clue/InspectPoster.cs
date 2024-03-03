@@ -4,12 +4,14 @@ using UnityEngine.UI;
 public class InspectPoster : InspectionDisplay
 {
     [SerializeField] Image m_poster = default;
-    [SerializeField] Image m_hiddenCode = default;
-    [SerializeField] Sprite m_defaultPosterImage = default;
-    [SerializeField] Sprite m_glitchPosterImage = default;
+    [Range(0f, 1f)]
+    [SerializeField] float m_scareRate = 0.1f;
     public override void Init(SaveData state)
     {
-        //m_poster.sprite =  m_glitchPosterImage;
+    }
+    public void TryScare() 
+    { 
+    
     }
     public void RevealCode() 
     { 
