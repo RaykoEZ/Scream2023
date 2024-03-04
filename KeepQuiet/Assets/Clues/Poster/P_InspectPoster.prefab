@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.773, g: 0.773, b: 0.773, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -85,7 +85,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427828438477388531}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720562635627340337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -375,11 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_anim: {fileID: 1528688706753010772}
-  m_poster: {fileID: 8839069458737568548}
-  m_hiddenCode: {fileID: 0}
-  m_defaultPosterImage: {fileID: 21300000, guid: d4931af9d7dc2cc44ac9b02e91720d4e, type: 3}
-  m_glitchPosterImage: {fileID: 21300000, guid: 0dbc407567b0424429e1b920c55f5f82, type: 3}
-  m_scareRate: 0.1
+  m_scareRate: 0.2
 --- !u!95 &1528688706753010772
 Animator:
   serializedVersion: 4

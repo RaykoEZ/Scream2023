@@ -1,4 +1,5 @@
 ﻿using Curry.Explore;
+using System.Collections;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -21,6 +22,12 @@ public class InspectionDisplayHandler : HideableUI
     }
     public void StopInspecting() 
     {
+        StartCoroutine(Stop_Internal());
+    }
+    IEnumerator Stop_Internal() 
+    {
+        yield return m_currentlyInspecting?.OnExit();
+        yield return new WaitForEndOfFrame();
         Destroy(m_currentlyInspecting.gameObject);
         m_inspectUITrigger?.Hide();
         m_toolBar?.Hide();

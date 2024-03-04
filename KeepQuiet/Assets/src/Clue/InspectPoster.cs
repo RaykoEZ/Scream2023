@@ -1,21 +1,40 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class InspectPoster : InspectionDisplay
 {
-    [SerializeField] Image m_poster = default;
     [Range(0f, 1f)]
     [SerializeField] float m_scareRate = 0.1f;
+    int m_numScareTrigger = 0;
     public override void Init(SaveData state)
     {
+
     }
     public void TryScare() 
-    { 
-    
+    {
+        if (m_numScareTrigger > 0) return;
+
+        float rand = Random.Range(0f, 1f);
+        if (rand < m_scareRate) 
+        {
+            m_anim?.SetTrigger("scare");
+            m_numScareTrigger++;
+        }
     }
-    public void RevealCode() 
-    { 
-        // Reveal hidden code here
+    void NormalState() 
+    {
+        m_anim?.SetBool("glitch", false);
+    }
+    void GlitchState() 
+    {
+        m_anim?.SetBool("glitch", true);
+    }
+
+    public override IEnumerator OnExit()
+    {
+        TryScare();
+        yield return new WaitForSeconds(0.05f);
     }
 }
 public class InspectVent : InspectionDisplay
@@ -24,12 +43,22 @@ public class InspectVent : InspectionDisplay
     {
         throw new System.NotImplementedException();
     }
+
+    public override IEnumerator OnExit()
+    {
+        yield return null;
+    }
 }
 public class InspectDoor : InspectionDisplay
 {
     public override void Init(SaveData state)
     {
         throw new System.NotImplementedException();
+    }
+
+    public override IEnumerator OnExit()
+    {
+        yield return null;
     }
 }
 public class InspectClock : InspectionDisplay
@@ -38,6 +67,11 @@ public class InspectClock : InspectionDisplay
     {
         throw new System.NotImplementedException();
     }
+
+    public override IEnumerator OnExit()
+    {
+        yield return null;
+    }
 }
 public class InspectDocument : InspectionDisplay
 {
@@ -45,11 +79,21 @@ public class InspectDocument : InspectionDisplay
     {
         throw new System.NotImplementedException();
     }
+
+    public override IEnumerator OnExit()
+    {
+        yield return null;
+    }
 }
 public class InspectCans : InspectionDisplay
 {
     public override void Init(SaveData state)
     {
         throw new System.NotImplementedException();
+    }
+
+    public override IEnumerator OnExit()
+    {
+        yield return null;
     }
 }
