@@ -25,8 +25,8 @@ public abstract class BypassNode : HideableUI
 public class MissNode : BypassNode 
 {
     public override void OnHit() 
-    { 
-    
+    {
+        base.OnHit();
     }
 
 }
