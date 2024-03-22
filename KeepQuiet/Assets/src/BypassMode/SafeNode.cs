@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
-public class SafeNode: BypassNode 
+public class SafeNode: BypassNode
 {
-    public override void OnHit()
+    public event OnBypassNodeHit OnSuccess;
+
+    protected override void OnHit()
     {
         base.OnHit();
+        OnSuccess?.Invoke();
     }
+
 }
