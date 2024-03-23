@@ -1,27 +1,8 @@
 using Curry.Explore;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 public delegate void OnBypassNodeHit();
-// A class to handle multiple stages of spot-the-odd-one mini-game 
-public class BypassManager : MonoBehaviour 
-{
-    [SerializeField] List<BypassStage> m_stages = default;
-    int m_currentStage;
-    public void Init(int currentStage)
-    {
-        m_currentStage = currentStage;
-    }
-    public void Continue() 
-    { 
-        if (m_currentStage < 0 && m_currentStage >= m_stages.Count) 
-        {
-            m_currentStage = 0;
-        }
-        m_stages[m_currentStage]?.LoadStage();
-    }
-}
 
 public abstract class BypassNode : HideableUI, 
     IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
@@ -61,7 +42,6 @@ public abstract class BypassNode : HideableUI,
 public class MissNode : BypassNode
 {
     public event OnBypassNodeHit OnFail;
-
     protected override void OnHit() 
     {
         base.OnHit();
