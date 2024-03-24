@@ -7,6 +7,7 @@ public delegate void OnBypassNodeHit();
 public abstract class BypassNode : HideableUI, 
     IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] protected AudioSource m_hitAudio = default;
     [SerializeField] protected SpriteRenderer m_sprite = default;
     public virtual void OnPointerClick(PointerEventData eventData)
     {
@@ -27,6 +28,7 @@ public abstract class BypassNode : HideableUI,
     {
         GetAnim.ResetTrigger("Hit");
         GetAnim.SetTrigger("Hit");
+        m_hitAudio?.Play();
     }
     protected virtual void Flash()
     {
@@ -38,14 +40,4 @@ public abstract class BypassNode : HideableUI,
         GetAnim.ResetTrigger("Solid");
         GetAnim.SetTrigger("Solid");
     }
-}
-public class MissNode : BypassNode
-{
-    public event OnBypassNodeHit OnFail;
-    protected override void OnHit() 
-    {
-        base.OnHit();
-        OnFail?.Invoke();
-    }
-
 }

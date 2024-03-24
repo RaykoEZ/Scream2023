@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Playables;
 // A class to handle multiple stages of spot-the-odd-one mini-game 
 public class BypassManager : MonoBehaviour 
 {
+    [SerializeField] PlayableDirector m_director = default;
     [SerializeField] List<BypassStage> m_stages = default;
     int m_currentStage = 0;
     public void Init(int currentStage)
@@ -13,9 +16,12 @@ public class BypassManager : MonoBehaviour
     { 
         if (m_currentStage < 0 && m_currentStage >= m_stages.Count) 
         {
-            m_currentStage = 0;
+            Debug.LogWarning("Bypass stage index out of range");
+            return;
         }
-        m_stages[m_currentStage]?.InitStage();
+        BypassStage currentStage = m_stages[m_currentStage];
+        currentStage.OnClear += OnStageClear;
+        currentStage?.InitStage();
     }
     public void StartStage(int stageIndex) 
     {
@@ -29,5 +35,11 @@ public class BypassManager : MonoBehaviour
         {
             StartCurrentStage();
         }
+    }
+    void OnStageClear(BypassStage stage) 
+    {
+        BypassStage currentStage = m_stages[m_currentStage];
+        currentStage.OnClear -= OnStageClear;
+        NextStage(true);
     }
 }

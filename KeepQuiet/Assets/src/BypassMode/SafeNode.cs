@@ -8,5 +8,13 @@ public class SafeNode: BypassNode
         base.OnHit();
         OnSuccess?.Invoke();
     }
+}
 
+// Hidden unless game stage triggers reveal event
+public class HiddenNode : SafeNode 
+{ 
+    public virtual void Reveal() 
+    { 
+    
+    }
 }

@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+public delegate void OnStageUpdate(BypassStage toUpdate);
 // class for one stage of mini-game
 public class BypassStage : MonoBehaviour 
 {
     [SerializeField] List<MissNode> m_misses = default;
     [SerializeField] SafeNode m_safeNode = default;
-    public void InitStage() 
+    public event OnStageUpdate OnClear;
+    public virtual void InitStage() 
     {
         foreach (var item in m_misses)
         {
@@ -15,7 +17,7 @@ public class BypassStage : MonoBehaviour
         m_safeNode?.Init();
         m_safeNode.OnSuccess += OnSafe;
     }
-    public void EndStage() 
+    protected virtual void EndStage() 
     {
         foreach (var item in m_misses)
         {
@@ -29,7 +31,8 @@ public class BypassStage : MonoBehaviour
     
     }
     void OnSafe() 
-    { 
-    
+    {
+        EndStage();
+        OnClear?.Invoke(this);
     }
 }
