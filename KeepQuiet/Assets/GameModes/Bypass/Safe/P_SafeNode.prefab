@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1357745574084608085, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1357745574084608085, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,6 +64,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_SafeNode
       objectReference: {fileID: 0}
+    - target: {fileID: 3571592512784657432, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571592512784657432, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571592512784657432, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
+      propertyPath: m_Color.r
+      value: 0.039849162
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
@@ -85,12 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hitAudio: {fileID: 7385392767947109826}
-  m_sprite: {fileID: 2870296444274071822}
---- !u!212 &2870296444274071822 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1357745574084608084, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
-  m_PrefabInstance: {fileID: 3819889278791047514}
-  m_PrefabAsset: {fileID: 0}
+  m_image: {fileID: 0}
 --- !u!82 &7385392767947109826 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6015919153730301080, guid: f2e8101210c88b94d98658a0b312f282, type: 3}

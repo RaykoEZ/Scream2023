@@ -1,14 +1,14 @@
 using Curry.Explore;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
-public delegate void OnBypassNodeHit();
+using UnityEngine.UI;
 
+public delegate void OnBypassNodeHit();
 public abstract class BypassNode : HideableUI, 
     IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] protected AudioSource m_hitAudio = default;
-    [SerializeField] protected SpriteRenderer m_sprite = default;
+    [SerializeField] protected Image m_image = default;
     public virtual void OnPointerClick(PointerEventData eventData)
     {
         OnHit();

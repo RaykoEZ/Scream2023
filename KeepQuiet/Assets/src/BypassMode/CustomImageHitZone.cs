@@ -1,10 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
 [RequireComponent(typeof(Image))]
-public class CustomShapeButton : MonoBehaviour
+public class CustomImageHitZone : MonoBehaviour 
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.05f;
     }
