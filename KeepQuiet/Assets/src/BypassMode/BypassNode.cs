@@ -4,11 +4,21 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public delegate void OnBypassNodeHit();
-public abstract class BypassNode : HideableUI, 
+public class BypassNode : HideableUI, 
     IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] protected AudioSource m_hitAudio = default;
     [SerializeField] protected Image m_image = default;
+    bool m_isSafe = false;
+    public event OnBypassNodeHit OnSuccess;
+    public event OnBypassNodeHit OnFail;
+
+    public bool IsSafe => m_isSafe;
+    public void SetSafe(bool isSafe) 
+    {
+        m_isSafe = isSafe;
+        GetAnim?.SetBool("IsSafe", m_isSafe);
+    }
     public virtual void OnPointerClick(PointerEventData eventData)
     {
         OnHit();
@@ -29,6 +39,14 @@ public abstract class BypassNode : HideableUI,
         GetAnim.ResetTrigger("Hit");
         GetAnim.SetTrigger("Hit");
         m_hitAudio?.Play();
+        if (m_isSafe) 
+        {
+            OnSuccess?.Invoke();
+        }
+        else 
+        {
+            OnFail?.Invoke();
+        }
     }
     protected virtual void Flash()
     {
