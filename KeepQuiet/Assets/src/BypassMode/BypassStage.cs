@@ -19,11 +19,15 @@ public class BypassStage : HideableUI
     public event OnStageUpdate OnClear;
     public event OnStageUpdate OnNodeMiss;
     int m_currentSubStage = 0;
-    public virtual void InitStage() 
+    public virtual void InitStage(bool reset = false) 
     {
         if(m_currentSubStage >= m_subStages.SafeNodes.Count) 
         {
             return; 
+        }
+        if (reset) 
+        {
+            m_currentSubStage = 0;
         }
         BypassNode currentSafeNode = m_subStages.SafeNodes[m_currentSubStage];
         foreach (var item in m_subStages.AllNodes)
@@ -41,19 +45,18 @@ public class BypassStage : HideableUI
     protected virtual void NextSubstage() 
     {
         // Stop listeners of cleared stage, start next stage listeners or end stage
-        EndSubStage();
-        m_currentSubStage++;
-        if (m_currentSubStage < m_subStages.SafeNodes.Count) 
+        EndCurrentStage();
+        if (m_currentSubStage + 1 < m_subStages.SafeNodes.Count) 
         {
+            m_currentSubStage++;
             InitStage();
         }
         else 
         {
             OnClear?.Invoke(this);
-            Hide();
         }
     }
-    protected virtual void EndSubStage() 
+    public virtual void EndCurrentStage() 
     {
         BypassNode currentSafeNode = m_subStages.SafeNodes[m_currentSubStage];
         foreach (var item in m_subStages.AllNodes)
