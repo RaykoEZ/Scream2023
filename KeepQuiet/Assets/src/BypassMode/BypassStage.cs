@@ -27,7 +27,7 @@ public class BypassStage : HideableUI
         }
         if (reset) 
         {
-            m_currentSubStage = 0;
+            ResetClearedStage();
         }
         BypassNode currentSafeNode = m_subStages.SafeNodes[m_currentSubStage];
         foreach (var item in m_subStages.AllNodes)
@@ -42,6 +42,11 @@ public class BypassStage : HideableUI
         currentSafeNode?.Init();
         Show();
     }
+    public void ResetClearedStage() 
+    {
+        m_currentSubStage = 0;
+        GetAnim.SetBool("Cleared", false);
+    }
     protected virtual void NextSubstage() 
     {
         // Stop listeners of cleared stage, start next stage listeners or end stage
@@ -54,6 +59,7 @@ public class BypassStage : HideableUI
         else 
         {
             OnClear?.Invoke(this);
+            GetAnim.SetBool("Cleared", true);
         }
     }
     public virtual void EndCurrentStage() 
@@ -74,6 +80,5 @@ public class BypassStage : HideableUI
     void OnSafe() 
     {
         NextSubstage();
-        Debug.Log("Correct Button!");
     }
 }
