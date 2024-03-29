@@ -19,6 +19,8 @@ public class BypassStage : HideableUI
     public event OnStageUpdate OnClear;
     public event OnStageUpdate OnNodeMiss;
     int m_currentSubStage = 0;
+    protected bool m_hasClearedOnce = false;
+    public bool HasClearedOnce => m_hasClearedOnce;
     public virtual void InitStage(bool reset = false) 
     {
         if(m_currentSubStage >= m_subStages.SafeNodes.Count) 
@@ -58,6 +60,7 @@ public class BypassStage : HideableUI
         }
         else 
         {
+            m_hasClearedOnce = true;
             OnClear?.Invoke(this);
             GetAnim.SetBool("Cleared", true);
         }

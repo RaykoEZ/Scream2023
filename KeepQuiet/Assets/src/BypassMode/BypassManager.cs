@@ -12,7 +12,9 @@ public class BypassManager : HideableUI
     [SerializeField] PlayableDirector m_director = default;
     [SerializeField] List<BypassStage> m_stages = default;
     [SerializeField] TextMeshProUGUI m_stageCount = default;
+    [SerializeField] Button m_nextButtonDisplay = default;
     int m_currentStage = 0;
+
     public void Start()
     {
         Init(0);
@@ -43,7 +45,20 @@ public class BypassManager : HideableUI
         BypassStage currentStage = m_stages[m_currentStage];
         currentStage.OnClear += OnStageClear;
         currentStage.OnNodeMiss += OnMiss;
+        SetNextPuzzleButton(currentStage.HasClearedOnce);
         currentStage?.InitStage(reset: true);
+    }
+    void SetNextPuzzleButton(bool newValue) 
+    {
+        m_nextButtonDisplay.interactable = newValue;
+        if (newValue) 
+        {
+            m_nextButtonDisplay.animator.SetTrigger("Normal");
+        }
+        else 
+        {
+            m_nextButtonDisplay.animator.SetTrigger("Disabled");
+        }
     }
     void StopCurrentStage() 
     {
@@ -57,11 +72,6 @@ public class BypassManager : HideableUI
         currentStage.OnNodeMiss -= OnMiss;
         currentStage?.EndCurrentStage();
         currentStage?.Hide();
-    }
-    public void StartStage(int stageIndex) 
-    {
-        m_currentStage = stageIndex;
-        StartCurrentStage();
     }
     public void PreviousStage() 
     {
@@ -94,7 +104,6 @@ public class BypassManager : HideableUI
         currentStage.OnClear -= OnStageClear;
         currentStage.OnNodeMiss -= OnMiss;
         m_director.Play(m_onCorrect);
-       
-
+        SetNextPuzzleButton(true);
     }
 }
