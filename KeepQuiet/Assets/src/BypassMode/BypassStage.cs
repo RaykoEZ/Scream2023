@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-public delegate void OnStageUpdate(BypassStage toUpdate);
+public delegate void OnStageUpdate(BypassStage toUpdate, bool playFeedback);
 [Serializable]
 public class BypassSubStage 
 {
@@ -20,28 +20,35 @@ public class BypassStage : HideableUI
     public event OnStageUpdate OnNodeMiss;
     int m_currentSubStage = 0;
     protected bool m_hasClearedOnce = false;
+    protected virtual bool PlayFeedbackSequence => true;
     public bool HasClearedOnce => m_hasClearedOnce;
     public virtual void InitStage(bool reset = false) 
     {
-        if(m_currentSubStage >= m_subStages.SafeNodes.Count) 
+        if(m_subStages.SafeNodes.Count > 0 &&
+            (m_currentSubStage < 0 || 
+            m_currentSubStage >= m_subStages.SafeNodes.Count)) 
         {
             return; 
         }
         if (reset) 
         {
             ResetClearedStage();
+
         }
-        BypassNode currentSafeNode = m_subStages.SafeNodes[m_currentSubStage];
         foreach (var item in m_subStages.AllNodes)
         {
-            currentSafeNode.SetSafe(false);
+            item.SetSafe(false);
             item?.Init();
             item.OnFail += OnMiss;
         }
-        currentSafeNode.SetSafe(true);
-        currentSafeNode.OnFail -= OnMiss;
-        currentSafeNode.OnSuccess += OnSafe;
-        currentSafeNode?.Init();
+        if (m_subStages.SafeNodes.Count > 0) 
+        {
+            BypassNode currentSafeNode = m_subStages.SafeNodes[m_currentSubStage];
+            currentSafeNode.SetSafe(true);
+            currentSafeNode.OnFail -= OnMiss;
+            currentSafeNode.OnSuccess += OnSafe;
+            currentSafeNode?.Init();
+        }
         Show();
     }
     public void ResetClearedStage() 
@@ -61,26 +68,29 @@ public class BypassStage : HideableUI
         else 
         {
             m_hasClearedOnce = true;
-            OnClear?.Invoke(this);
+            OnClear?.Invoke(this, PlayFeedbackSequence);
             GetAnim.SetBool("Cleared", true);
         }
     }
     public virtual void EndCurrentStage() 
     {
-        BypassNode currentSafeNode = m_subStages.SafeNodes[m_currentSubStage];
         foreach (var item in m_subStages.AllNodes)
         {
             item.OnFail -= OnMiss;
         }
-        currentSafeNode.SetSafe(false);
-        currentSafeNode.OnSuccess -= OnSafe;
+        if (m_subStages.SafeNodes.Count > 0)
+        {
+            BypassNode currentSafeNode = m_subStages.SafeNodes[m_currentSubStage];
+            currentSafeNode.SetSafe(false);
+            currentSafeNode.OnSuccess -= OnSafe;
+        }
     }
     // callbacks for player interaction with nodes
-    void OnMiss() 
+    protected virtual void OnMiss() 
     {
-        OnNodeMiss?.Invoke(this);
+        OnNodeMiss?.Invoke(this, PlayFeedbackSequence);
     }
-    void OnSafe() 
+    protected virtual void OnSafe() 
     {
         NextSubstage();
     }

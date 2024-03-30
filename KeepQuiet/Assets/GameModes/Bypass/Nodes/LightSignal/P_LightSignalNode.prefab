@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1357745574084608085, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1357745574084608085, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
       propertyPath: m_AnchorMax.x
@@ -94,7 +94,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1357745574084608086, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
       propertyPath: m_Name
-      value: P_BypassNode
+      value: P_LightSignalNode
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615558612107647923, guid: f2e8101210c88b94d98658a0b312f282, type: 3}
+      propertyPath: m_Alpha
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

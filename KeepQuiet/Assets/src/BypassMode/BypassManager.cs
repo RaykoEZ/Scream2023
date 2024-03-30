@@ -94,16 +94,22 @@ public class BypassManager : HideableUI
         }
 
     }
-    void OnMiss(BypassStage stage) 
+    void OnMiss(BypassStage stage, bool playFeedback) 
     {
-        m_director.Play(m_onMiss);
+        if (playFeedback)
+        {
+            m_director.Play(m_onMiss);
+        }
     }
-    void OnStageClear(BypassStage stage) 
+    void OnStageClear(BypassStage stage, bool playFeedback) 
     {
         BypassStage currentStage = m_stages[m_currentStage];
         currentStage.OnClear -= OnStageClear;
         currentStage.OnNodeMiss -= OnMiss;
-        m_director.Play(m_onCorrect);
+        if (playFeedback) 
+        {
+            m_director.Play(m_onCorrect);
+        }
         SetNextPuzzleButton(true);
     }
 }
