@@ -30,7 +30,7 @@ public class ExternalFileEventReceiver : MonoBehaviour
             fi = new FileInfo(f);
             string ext = fi.Extension.ToLower();
             // detect file extensions to respond to
-            if (ext == ".txt" || ext == ".cogni" || ext == ".jpeg" || ext == ".png")
+            if (ext == ".txt" || ext == ".cogni" || ext == ".jamm" || ext == ".key" || ext == ".jpeg" || ext == ".png")
             {
                 file = f;
                 break;
