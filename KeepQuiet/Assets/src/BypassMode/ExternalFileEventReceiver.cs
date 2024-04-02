@@ -4,13 +4,15 @@ using System.IO;
 using UnityEngine;
 public class ExternalFileDropInfo
 {
-    public string file;
+    public string content;
     public FileInfo fileInfo;
     public Vector2 pos;
 }
 public delegate void ExternalFileDropped(ExternalFileDropInfo dropInfo);
 public class ExternalFileEventReceiver : MonoBehaviour
 {
+    DefaultFileValidor m_isValid = new DefaultFileValidor();
+    protected virtual IFileValidator Validator => m_isValid;
     public event ExternalFileDropped FileDropped;
     private void OnEnable()
     {
@@ -36,12 +38,13 @@ public class ExternalFileEventReceiver : MonoBehaviour
                 break;
             }
         }
-        // If the user dropped a supported file, create a DropInfo and pass to other listeners
-        if (file != "")
+        // check if file dropped is what we want
+        if (Validator.Validate(fi, file))
         {
+            // If the user dropped a supported file, create a DropInfo and pass to other listeners
             var info = new ExternalFileDropInfo
             {
-                file = file,
+                content = file,
                 fileInfo = fi,
                 pos = new Vector2(aPos.x, aPos.y)
             };

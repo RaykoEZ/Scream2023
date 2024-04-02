@@ -9,7 +9,7 @@ internal static class FileUtil
     internal static string s_gamestateSavePath = Application.persistentDataPath;
     internal static string s_desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
     // Uses UTF8 to encode string
-    internal static void EncodeTextTo(string path, string folderName, string fileName, string content) 
+    internal static void UTF8EncodeTextTo(string path, string folderName, string fileName, string content) 
     {
         if (string.IsNullOrWhiteSpace(fileName)) { return; }
         bool hasFolder = TryMakeFolder(path, folderName);

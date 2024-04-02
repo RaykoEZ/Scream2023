@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public delegate void OnSecretUpdate();
 public class HiddenNodeHandller : MonoBehaviour 
 {
-    [SerializeField] protected PlayableDirector m_director = default;
     [SerializeField] ExternalFileEventReceiver m_event = default;
     [SerializeField] List<BypassNode> m_toReveal = default;
     public event OnSecretUpdate SecretUnlocked;

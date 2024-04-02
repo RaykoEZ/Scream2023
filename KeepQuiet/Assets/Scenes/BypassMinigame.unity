@@ -1510,6 +1510,8 @@ GameObject:
   m_Component:
   - component: {fileID: 835708306}
   - component: {fileID: 835708307}
+  - component: {fileID: 835708308}
+  - component: {fileID: 835708309}
   m_Layer: 5
   m_Name: SecretHandler
   m_TagString: Untagged
@@ -1549,9 +1551,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd64c4460db2e2247b8f043d8d66e182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_director: {fileID: 0}
-  m_hiddenNodeSignal: {fileID: 0}
-  m_initialReadme: {fileID: 0}
+  m_director: {fileID: 832939813}
+  m_hiddenNodeSignal: {fileID: 835708308}
+  m_jamHint: {fileID: 0}
+--- !u!114 &835708308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835708305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31c3da45f0c3cb4e9a0103449defbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 835708309}
+  m_toReveal: []
+--- !u!114 &835708309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835708305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2401582ba3db644adf1af30d589eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &869116988
 GameObject:
   m_ObjectHideFlags: 0
