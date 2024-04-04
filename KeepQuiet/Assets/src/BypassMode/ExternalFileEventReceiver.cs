@@ -26,7 +26,7 @@ public class ExternalFileEventReceiver : MonoBehaviour
     void OnFiles(List<string> aFiles, Vector2 aPos)
     {
         string file = "";
-        FileInfo fi = new FileInfo("");
+        FileInfo fi = null;
         foreach (var f in aFiles)
         {
             fi = new FileInfo(f);

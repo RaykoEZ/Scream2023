@@ -9,7 +9,11 @@ public class HiddenNodeHandller : MonoBehaviour
     [SerializeField] ExternalFileEventReceiver m_event = default;
     [SerializeField] List<BypassNode> m_toReveal = default;
     public event OnSecretUpdate SecretUnlocked;
-    public void Init()
+    private void Start()
+    {
+        Init();
+    }
+    void Init()
     {
         m_event.FileDropped += OnFileDropped;
         foreach (var item in m_toReveal)
@@ -17,7 +21,7 @@ public class HiddenNodeHandller : MonoBehaviour
             item?.Hide();
         }
     }
-    public void Shutdown() 
+    void Shutdown() 
     {
         m_event.FileDropped -= OnFileDropped;
     }

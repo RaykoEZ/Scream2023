@@ -8,7 +8,6 @@ using TMPro;
 public class BypassManager : HideableUI 
 {
     [SerializeField] PlayableAsset m_onCorrect = default;
-    [SerializeField] PlayableAsset m_onMiss = default;
     [SerializeField] PlayableDirector m_director = default;
     [SerializeField] List<BypassStage> m_stages = default;
     [SerializeField] TextMeshProUGUI m_stageCount = default;
@@ -96,10 +95,7 @@ public class BypassManager : HideableUI
     }
     void OnMiss(BypassStage stage, bool playFeedback) 
     {
-        if (playFeedback)
-        {
-            m_director.Play(m_onMiss);
-        }
+
     }
     void OnStageClear(BypassStage stage, bool playFeedback) 
     {

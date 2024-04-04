@@ -7,6 +7,8 @@ public delegate void OnBypassNodeHit();
 public class BypassNode : HideableUI, 
     IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] bool m_pressable = default;
+    [SerializeField] bool m_isHidden = default;
     [SerializeField] protected AudioSource m_hitAudio = default;
     [SerializeField] protected Image m_image = default;
     bool m_isSafe = false;
@@ -21,7 +23,10 @@ public class BypassNode : HideableUI,
     }
     public virtual void OnPointerClick(PointerEventData eventData)
     {
-        OnHit();
+        if (m_pressable) 
+        {
+            OnHit();
+        }
     }
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
@@ -32,7 +37,14 @@ public class BypassNode : HideableUI,
     }
     public virtual void Init()
     {
-        Show();
+        if (m_isHidden) 
+        {
+            Hide();
+        } 
+        else
+        {
+            Show();
+        }
     }
     protected virtual void OnHit() 
     {
@@ -47,15 +59,5 @@ public class BypassNode : HideableUI,
         {
             OnFail?.Invoke();
         }
-    }
-    protected virtual void Flash()
-    {
-        GetAnim.ResetTrigger("Flash");
-        GetAnim.SetTrigger("Flash");
-    }
-    protected virtual void SolidLight() 
-    {
-        GetAnim.ResetTrigger("Solid");
-        GetAnim.SetTrigger("Solid");
     }
 }

@@ -8,7 +8,7 @@ public class DefaultFileValidor : IFileValidator
 {
     public virtual bool Validate(FileInfo info, string content)
     {
-        return content != "";
+        return info != null && content != "";
     }
 }
 public class JammerFileValidator : DefaultFileValidor, IFileValidator

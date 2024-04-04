@@ -274,5 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa1a7dda8f53c24e8c9bcc4aace15ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pressable: 1
   m_hitAudio: {fileID: 6015919153730301080}
   m_image: {fileID: 3571592512784657432}
