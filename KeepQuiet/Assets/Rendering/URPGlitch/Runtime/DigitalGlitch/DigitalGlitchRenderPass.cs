@@ -35,9 +35,9 @@ namespace URPGlitch.Runtime.DigitalGlitch
             _volume != null &&
             _volume.IsActive;
 
-        public DigitalGlitchRenderPass(Shader shader)
+        public DigitalGlitchRenderPass(Shader shader, RenderPassEvent renderOrder)
         {
-            renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
+            renderPassEvent = renderOrder;
             _profilingSampler = new ProfilingSampler(RenderPassName);
             _random = new System.Random();
             _glitchMaterial = CoreUtils.CreateEngineMaterial(shader);

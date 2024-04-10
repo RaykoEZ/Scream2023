@@ -10,7 +10,6 @@ public class AriaStateManager : MonoBehaviour
     public void InitState(SaveData change) 
     {
         m_current = change.AriaStatus;
-        m_position?.HideAll();
         m_position?.MoveTo(change.AriaStatus.CurrentLocation, AriaPosition.None);
     }
     public void AffectionDown(int val)

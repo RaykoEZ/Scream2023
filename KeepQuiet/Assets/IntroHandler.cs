@@ -15,6 +15,6 @@ public class IntroHandler : MonoBehaviour
     {
         //TODO: Play a sequence and go to title screen
         yield return new WaitForSeconds(0.5f);
-        m_level?.LoadScene(0);
+        m_level?.LoadScene(1);
     }
 }

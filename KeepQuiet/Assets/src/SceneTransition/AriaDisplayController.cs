@@ -87,10 +87,8 @@ public class AriaDisplayController
     }
     public void HideAll() 
     {
-        m_cafePoses.ResetTrigger("hide");
         m_cafePoses.SetTrigger("hide");
         m_cafeCloseup.ExitScene();
-        m_roomLeftPeek.ResetTrigger("exit");
         m_roomLeftPeek.SetTrigger("exit");
         m_roomLeftCloseup.ExitScene();
     }

@@ -31,10 +31,10 @@ public class LevelEventHandler : MonoBehaviour
     }
     void GoToGameScene() 
     {
-        Loader?.LoadScene(1);
+        Loader?.LoadScene(2);
     }
     void GoToTitle() 
     {
-        Loader?.LoadScene(0);
+        Loader?.LoadScene(1);
     }
 }
