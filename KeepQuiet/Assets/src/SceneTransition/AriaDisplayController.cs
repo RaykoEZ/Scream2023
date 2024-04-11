@@ -30,26 +30,40 @@ public class AriaDisplayController
         switch (newLocation)
         {
             case AriaPosition.InsideCafe_Entrance:
-                m_cafePoses.ResetTrigger("entrance");
-                m_cafePoses.SetTrigger("entrance");
+                if (m_cafePoses.isActiveAndEnabled)
+                {
+                    m_cafePoses.SetTrigger("entrance");
+                }
                 break;
             case AriaPosition.InsideCafe_Counter:
-                m_cafePoses.ResetTrigger("counter");
-                m_cafePoses.SetTrigger("counter");
+                if (m_cafePoses.isActiveAndEnabled)
+                {
+                    m_cafePoses.SetTrigger("counter");
+                }
                 break;
             case AriaPosition.InsideCafe_Sit:
-                m_cafePoses.ResetTrigger("sit");
-                m_cafePoses.SetTrigger("sit");
+                if (m_cafePoses.isActiveAndEnabled)
+                {
+                    m_cafePoses.SetTrigger("sit");
+                }
                 break;
             case AriaPosition.InsideCafe_Closeup:
-                m_cafeCloseup.EnterScene();
+                if (m_cafeCloseup.isActiveAndEnabled)
+                {
+                    m_cafeCloseup.EnterScene();
+                }
                 break;
             case AriaPosition.RoomLeft_Peeking:
-                m_roomLeftPeek.ResetTrigger("peek");
-                m_roomLeftPeek.SetTrigger("peek");
+                if (m_roomLeftPeek.isActiveAndEnabled)
+                {
+                    m_roomLeftPeek.SetTrigger("peek");
+                }
                 break;
             case AriaPosition.RoomLeft_CloseUp:
-                m_roomLeftCloseup.EnterScene();
+                if (m_roomLeftCloseup.isActiveAndEnabled)
+                {
+                    m_roomLeftCloseup.EnterScene();
+                }
                 break;
             default:
                 break;
@@ -60,22 +74,18 @@ public class AriaDisplayController
         switch (toHide)
         {
             case AriaPosition.InsideCafe_Entrance:
-                m_cafePoses.ResetTrigger("hide");
                 m_cafePoses.SetTrigger("hide");
                 break;
             case AriaPosition.InsideCafe_Counter:
-                m_cafePoses.ResetTrigger("hide");
                 m_cafePoses.SetTrigger("hide");
                 break;
             case AriaPosition.InsideCafe_Sit:
-                m_cafePoses.ResetTrigger("hide");
                 m_cafePoses.SetTrigger("hide");
                 break;
             case AriaPosition.InsideCafe_Closeup:
                 m_cafeCloseup.ExitScene();
                 break;
             case AriaPosition.RoomLeft_Peeking:
-                m_roomLeftPeek.ResetTrigger("exit");
                 m_roomLeftPeek.SetTrigger("exit");
                 break;
             case AriaPosition.RoomLeft_CloseUp:

@@ -15,6 +15,7 @@ public class GameStateFileHandler : MonoBehaviour
     [SerializeField] CurryGameEventListener m_onGameReady = default;
     [SerializeField] CurryGameEventTrigger m_loadGameState = default;
     SaveData m_current;
+    bool m_isNewGame = false;
     static string s_gamestatePath = "saves/gamestate.json";
     private void Start()
     {
@@ -35,8 +36,16 @@ public class GameStateFileHandler : MonoBehaviour
         EventInfo info = new EventInfo(payload);
         m_loadGameState?.TriggerEvent(info);
     }
+    public void SetNewGame(bool isNewGame) 
+    {
+        m_isNewGame = isNewGame;
+    }
     public void OnGameReady(EventInfo info)
     {
+        if (m_isNewGame) 
+        {
+            m_current = new SaveData(m_defaultState.State);
+        }
         LoadGameState();
     }
     // sets valid incoming save data

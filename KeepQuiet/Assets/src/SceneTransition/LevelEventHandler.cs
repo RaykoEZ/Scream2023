@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(LevelLoader))]
 public class LevelEventHandler : MonoBehaviour 
 {
+    [SerializeField] GameStateFileHandler m_files = default;
     [SerializeField] CurryGameEventListener m_newGame = default;
     [SerializeField] CurryGameEventListener m_continueGame = default;
     [SerializeField] CurryGameEventListener m_returnToTitle = default;
@@ -17,11 +18,13 @@ public class LevelEventHandler : MonoBehaviour
     }
     public void ContinueGame(EventInfo info) 
     {
+        m_files?.SetNewGame(false);
         // Load persistent and start game
         GoToGameScene();
     }
     public void NewGame(EventInfo info) 
     {
+        m_files?.SetNewGame(true);
         // Start game from the start, may keep some persistent
         GoToGameScene();
     }

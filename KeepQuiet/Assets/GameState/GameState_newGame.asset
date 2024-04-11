@@ -13,16 +13,12 @@ MonoBehaviour:
   m_Name: GameState_newGame
   m_EditorClassIdentifier: 
   m_state:
-    RoomLeftDoorState: 1
-    NewGameCount: 0
-    CrashCount: 0
     CurrentlyViewing: RoomRight
     AriaStatus:
       IsPossessed: 0
       HasPastRunMemory: 0
-      NumDenied: 0
-      Affection: 0
-      Sanity: 0
+      Affection: 1
+      Sanity: 1
       CurrentLocation: 1
     ViewStates:
     - LocationName: InsideCafe

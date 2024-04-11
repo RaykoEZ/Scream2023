@@ -5,8 +5,6 @@ using System.Collections.Generic;
 [Serializable]
 public class SaveData
 {
-    [JsonConverter(typeof(StringEnumConverter))]
-    public DoorState RoomLeftDoorState;
     // Where is the player looking at
     public string CurrentlyViewing;
     public AriaState AriaStatus;
@@ -16,27 +14,21 @@ public class SaveData
     {
         CurrentlyViewing = "RoomRight";
         AriaStatus = AriaState.Default;
-        RoomLeftDoorState = DoorState.Closed;
         ViewStates = new List<ViewStateSaveData>();
     }
 
     public SaveData(SaveData copy)
     {
         CurrentlyViewing = copy.CurrentlyViewing;
-        RoomLeftDoorState = copy.RoomLeftDoorState;
         AriaStatus = new AriaState(copy.AriaStatus);
         ViewStates = new List<ViewStateSaveData>(copy.ViewStates);
     }
     public SaveData(
-        DoorState roomLeftDoorState,
-        int newGameCount,
-        int crashes,
         string viewing,
         AriaState ariaStatus, 
         List<ViewStateSaveData> viewStates)
     {
         CurrentlyViewing = viewing;
-        RoomLeftDoorState = roomLeftDoorState;
         AriaStatus = ariaStatus;
         ViewStates = viewStates;
     }

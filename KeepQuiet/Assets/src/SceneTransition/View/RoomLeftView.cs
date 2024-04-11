@@ -19,7 +19,7 @@ public class RoomLeftView : ViewState
     {
         base.InitStateInternal(saveData, selfState);
         // Set door state
-        ChangeDoorState(saveData.RoomLeftDoorState);
+        ChangeDoorState(DoorState.Closed);
         // hide clues?
         if (selfState.CluesToHide.Contains(m_clock.name))
         {
@@ -49,7 +49,6 @@ public class RoomLeftView : ViewState
             default:
                 break;
         }
-        m_doorControl.ResetTrigger(stateName);
         m_doorControl.SetTrigger(stateName);
     }
     public override void SetVisual(bool isOn)

@@ -52,9 +52,6 @@ public class ToolInteractionHandler : MonoBehaviour
             case EToolType.SpecialTorch:
                 toolAimRef = m_specialTorch;
                 break;
-            case EToolType.Hook:
-                toolAimRef = m_aimIcon;
-                break;
             default:
                 toolAimRef = m_aimIcon;
                 break;

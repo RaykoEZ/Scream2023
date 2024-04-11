@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6eb3438291e2c4a9976298c6d82a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_defaultState: {fileID: 11400000, guid: 19aa9ce775b917a47bfaa161fda45f2d, type: 2}
+  m_defaultState: {fileID: 11400000, guid: ee06b205f81e38f44b950c42ec469263, type: 2}
   m_exitGame:
     m_eventToListen: {fileID: 11400000, guid: e3df2d70be6172c4296d6f4526e8fa8d, type: 2}
     m_responses:
@@ -447,6 +447,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2457883914855737599, guid: 43226a31a1546bb46b28e40272cc17da, type: 3}
+      propertyPath: m_files
+      value: 
+      objectReference: {fileID: 3112176199438094396}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 43226a31a1546bb46b28e40272cc17da, type: 3}
