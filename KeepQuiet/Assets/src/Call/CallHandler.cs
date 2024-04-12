@@ -8,12 +8,11 @@ public delegate void OnIncomingNotify(string callerNumber);
 public delegate void OnCallCanceled(string dialed);
 public delegate void OnCallFinish(string dialed);
 public delegate void OnDialed(string dialed);
-public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
+
+public class CallHandler : MonoBehaviour
 {
     [SerializeField] int m_characterLimit = default;
-    [SerializeField] PhoneSettings m_setting = default;
     [SerializeField] Animator m_anim = default;
-    [SerializeField] AudioSource m_callAudio = default;
     [SerializeField] IncomingCall m_incoming = default;
     [SerializeField] TextMeshProUGUI m_display = default;
     [SerializeField] PlayableDirector m_director = default;
@@ -30,8 +29,6 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     public bool Calling => m_calling;
     private void Start()
     {
-        m_setting.Listen(this);
-        m_callAudio.volume = m_setting.GetVolume();
         m_incoming.OnCallAccept += OnIncomingCallAccept;
         m_incoming.OnCallDeny += CallDenied;
         foreach (var result in m_results) 
@@ -43,7 +40,7 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
     {
         // triggernpc deny event
         Npc denied = m_npc.Get(incoming);
-        denied?.OnCallDenied();
+        denied?.OnPlayerCallCanceled();
     }
     void OnIncomingCallAccept(string incoming) 
     {
@@ -124,9 +121,5 @@ public class CallHandler : MonoBehaviour, ISettingUpdateListener<PhoneSettings>
         OnCallEnd?.Invoke(m_confirmedInput);
         m_calling = false;
         m_anim.SetBool("Calling", false);
-    }
-    public void OnUpdate(PhoneSettings updated)
-    {
-        m_callAudio.volume = updated.GetVolume();
     }
 }

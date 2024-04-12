@@ -63,13 +63,9 @@ public class Aria : Npc
     } 
     public void OnGameIntro() 
     {
-        //MessagePlayer(m_introFirstLoad);
-        //CallPlayer(m_testDial);
+        MessagePlayer(m_introFirstLoad);
+        CallPlayer(m_testDial);
 
-    }
-    public override void OnCallDenied()
-    {
-        m_stateManager.OnDenied();
     }
     public void MoveTo(AriaPosition newLocation)
     {
@@ -85,16 +81,14 @@ public class Aria : Npc
 
     public override void OnPlayerCallCanceled()
     {
-        throw new NotImplementedException();
+        m_stateManager?.OnDenied();
     }
 
     public override void OnPlayerDecided(DialogueNode chosen, int choiceIndex)
     {
-        throw new NotImplementedException();
     }
 
     public override void OnPlayerDialed()
     {
-        throw new NotImplementedException();
     }
 }
