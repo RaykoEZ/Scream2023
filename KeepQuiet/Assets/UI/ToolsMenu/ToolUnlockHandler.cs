@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ToolUnlockHandler : MonoBehaviour 
 {
-    [SerializeField] CutsceneHandler m_cutscene = default;
     public void Init(List<QuickTool> tools) 
     {
         foreach (var item in tools)
@@ -19,7 +18,6 @@ public class ToolUnlockHandler : MonoBehaviour
     // When hanger transforms to a hook play a short sequence to unlock the hook
     public void OnToolUnlock(QuickTool toUnlock)
     {
-        m_cutscene.UnlockSequence(toUnlock);
     }
 }
 

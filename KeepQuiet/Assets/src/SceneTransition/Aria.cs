@@ -49,8 +49,6 @@ public delegate void OnAriaMove(AriaPosition newLocation);
 public delegate void OnAriaLeaveGame();
 public class Aria : Npc 
 {
-    [SerializeField] DialogueNode m_introFirstLoad = default;
-    [SerializeField] DialEvent m_testDial = default;
     [SerializeField] AriaStateManager m_stateManager = default;
     public AriaState Current => m_stateManager.Current;
     // When aria move from one to another
@@ -61,12 +59,6 @@ public class Aria : Npc
     {
         m_stateManager.InitState(state);
     } 
-    public void OnGameIntro() 
-    {
-        MessagePlayer(m_introFirstLoad);
-        CallPlayer(m_testDial);
-
-    }
     public void MoveTo(AriaPosition newLocation)
     {
         if (Current.CurrentLocation == newLocation) { return; }

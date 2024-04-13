@@ -5,8 +5,6 @@ using UnityEngine;
 using TMPro;
 
 public delegate void OnIncomingNotify(string callerNumber);
-public delegate void OnCallCanceled(string dialed);
-public delegate void OnCallFinish(string dialed);
 public delegate void OnDialed(string dialed);
 
 public class CallHandler : MonoBehaviour
@@ -16,13 +14,11 @@ public class CallHandler : MonoBehaviour
     [SerializeField] IncomingCall m_incoming = default;
     [SerializeField] TextMeshProUGUI m_display = default;
     [SerializeField] PlayableDirector m_director = default;
+    [SerializeField] AudioSource m_callingAudio = default;
     [SerializeField] NpcManager m_npc = default;
     [SerializeField] List<DialResult> m_results = default;
-    public event OnCallCanceled OnCallCancel;
-    public event OnCallFinish OnCallEnd;
     public event OnDialed OnDial;
     Dictionary<string, DialEvent> m_eventSet = new Dictionary<string, DialEvent>();
-    string m_confirmedInput = "";
     bool m_calling = false;
     Npc m_callingWith;
     DialEvent m_latestIncomingCall;
@@ -70,24 +66,22 @@ public class CallHandler : MonoBehaviour
         StopResultPlayback();
         m_calling = false;
         m_anim.SetBool("Calling", false);
-        OnCallCancel?.Invoke(m_confirmedInput);
     }
     // Start Call, check puzzle phone book for results 
     public void ConfirmInput()
     {
         // TODO: Need a short dial waiting/ringtone sfx + animation
         // Find valid result and output event wioth audio + subtitle (maybe?)
-        if(m_eventSet.TryGetValue(m_confirmedInput, out var result)) 
+        if(m_eventSet.TryGetValue(m_display.text, out var result)) 
         {
             BeginCall(m_display.text, result);
         }
     }
     void BeginCall(string callDisplay, DialEvent result) 
     {
-        m_confirmedInput = callDisplay;
-        m_callingWith = m_npc.Get(m_confirmedInput);
+        m_callingWith = m_npc.Get(callDisplay);
         m_callingWith?.OnPlayerDialed();
-        OnDial?.Invoke(m_confirmedInput);
+        OnDial?.Invoke(callDisplay);
         m_calling = true;
         //TODO: trigger audio response here + subtitle is needed
         m_anim.SetBool("Calling", true);
@@ -96,7 +90,6 @@ public class CallHandler : MonoBehaviour
     public void ClearDial()
     {
         m_display.text = "";
-        m_confirmedInput = "";
     }
     void StopResultPlayback() 
     { 
@@ -115,10 +108,11 @@ public class CallHandler : MonoBehaviour
             yield break;
         }
         m_director.playableAsset = sequence;
-        yield return new WaitForSeconds(Random.Range(0.8f, 3f));
+        m_callingAudio?.Play();
+        yield return new WaitForSeconds(Random.Range(5f, 10f));
+        m_callingAudio?.Stop();
         m_director.Play();
         yield return new WaitForSeconds((float)sequence.duration + 0.5f);
-        OnCallEnd?.Invoke(m_confirmedInput);
         m_calling = false;
         m_anim.SetBool("Calling", false);
     }
