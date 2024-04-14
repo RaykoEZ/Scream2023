@@ -2,15 +2,14 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-public class DialogueManager : MonoBehaviour
+public class HUDTextManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI m_nameDisplay = default;
     [SerializeField] TextMeshProUGUI m_dialogueDisplay = default;
     [SerializeField] Animator m_anim = default;
     Queue<string> m_dialogue;
     string m_currentLine;
     Coroutine m_displayingText;
-    public delegate void OnDialogueEnd();
+    public event OnDialogueEnd OnEnd;
     public bool InProgress { get; protected set; } = false;
     public void DisplaySingle(string text) 
     {
@@ -19,12 +18,11 @@ public class DialogueManager : MonoBehaviour
         m_dialogueDisplay.text = text;
         m_anim.SetBool("BoxOn", true);
     }
-    public void OpenDialogue(List<string> dialogue, string title) 
+    public void OpenDialogue(List<string> dialogue) 
     {
         InProgress = true;
         m_dialogue?.Clear();
         m_currentLine = "";
-        m_nameDisplay.text = title;
         m_dialogueDisplay.text = "";
         m_dialogue = new Queue<string>(dialogue);
         m_anim.SetBool("BoxOn", true);
@@ -75,6 +73,7 @@ public class DialogueManager : MonoBehaviour
         m_anim.SetBool("BoxOn", false);
         InProgress = false;
         m_dialogue = null;
+        OnEnd?.Invoke();
     }
 }
 

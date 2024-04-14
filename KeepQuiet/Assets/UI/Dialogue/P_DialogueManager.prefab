@@ -52,7 +52,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ef10b7d5b2b5e4da902e6e203861b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nameDisplay: {fileID: 6533337752466823378}
   m_dialogueDisplay: {fileID: 6533337753938941039}
   m_anim: {fileID: 986404703746024599}
 --- !u!223 &7352875359136222805
@@ -194,6 +193,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 68592570752180866, guid: a90cd16390a327f4b9d449187de351dd, type: 3}
+      propertyPath: m_fontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 68592570752180866, guid: a90cd16390a327f4b9d449187de351dd, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 182179592816595145, guid: a90cd16390a327f4b9d449187de351dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.20784314
+      objectReference: {fileID: 0}
     - target: {fileID: 8926851730268822910, guid: a90cd16390a327f4b9d449187de351dd, type: 3}
       propertyPath: m_Alpha
       value: 1
@@ -206,17 +217,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6334538670972441210, guid: a90cd16390a327f4b9d449187de351dd, type: 3}
   m_PrefabInstance: {fileID: 6510134157078165229}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6533337752466823378 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 68592569271512639, guid: a90cd16390a327f4b9d449187de351dd, type: 3}
-  m_PrefabInstance: {fileID: 6510134157078165229}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &6533337753921136220 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 68592570734334129, guid: a90cd16390a327f4b9d449187de351dd, type: 3}
