@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.Playables;
 using UnityEngine;
 using TMPro;
-
 public delegate void OnIncomingNotify(string callerNumber);
 public delegate void OnDialed(string dialed);
 
@@ -84,6 +83,7 @@ public class CallHandler : MonoBehaviour
         OnDial?.Invoke(callDisplay);
         m_calling = true;
         //TODO: trigger audio response here + subtitle is needed
+        m_anim.SetBool("Show", true);
         m_anim.SetBool("Calling", true);
         StartCoroutine(PlayResultSequence(result.PlayThis));
     }

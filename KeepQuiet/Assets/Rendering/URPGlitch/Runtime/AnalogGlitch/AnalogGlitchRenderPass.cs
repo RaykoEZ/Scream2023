@@ -32,9 +32,9 @@ namespace URPGlitch.Runtime.AnalogGlitch
             _volume != null &&
             _volume.IsActive;
 
-        public AnalogGlitchRenderPass(Shader shader)
+        public AnalogGlitchRenderPass(Shader shader, RenderPassEvent renderOrder)
         {
-            renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
+            renderPassEvent = renderOrder;
             _profilingSampler = new ProfilingSampler(RenderPassName);
             _glitchMaterial = CoreUtils.CreateEngineMaterial(shader);
 

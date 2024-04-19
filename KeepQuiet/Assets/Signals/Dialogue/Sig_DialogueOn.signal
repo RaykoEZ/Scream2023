@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 681897a2037d001479377fb0d6b81103, type: 3}
-  m_Name: Dial_104596_handshakePhraseReveal
+  m_Script: {fileID: 11500000, guid: d6fa2d92fc1b3f34da284357edf89c3b, type: 3}
+  m_Name: Sig_DialogueOn
   m_EditorClassIdentifier: 
-  m_sequence: 104596
-  m_eventToTrigger:
-    m_playThis: {fileID: 11400000, guid: dd73201c905fd974d89d10492d58e196, type: 2}

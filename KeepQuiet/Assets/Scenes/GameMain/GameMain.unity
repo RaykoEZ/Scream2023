@@ -3944,7 +3944,7 @@ MonoBehaviour:
   m_lighting: {fileID: 1423802251}
   m_vfx: {fileID: 2066361721}
   m_background: {fileID: 2143934019}
-  m_postProcessVolumeProfile: {fileID: 11400000, guid: f9dba9c51dd9894479d8935fa92a9cc7, type: 2}
+  m_postProcessVolumeProfile: {fileID: 11400000, guid: 9b1ecfdd68fd82c40b2a08d8dbf2f71e, type: 2}
   m_doorControl: {fileID: 488005685}
   m_clock: {fileID: 1036254820}
   m_bat: {fileID: 1500065153}

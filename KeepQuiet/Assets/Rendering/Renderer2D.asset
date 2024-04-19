@@ -74,6 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   shader: {fileID: 4800000, guid: a8806b096c701424f865bdd5e4b76928, type: 3}
+  m_renderOrder: 550
 --- !u!114 &5816529083141523530
 MonoBehaviour:
   m_ObjectHideFlags: 0

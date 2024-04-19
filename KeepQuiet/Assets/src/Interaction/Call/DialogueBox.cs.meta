@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 1e65186ef1f25f74b9e6da90e3a9c15e
+guid: 713430f9bc770b140afe76052b41f497
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - shader: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

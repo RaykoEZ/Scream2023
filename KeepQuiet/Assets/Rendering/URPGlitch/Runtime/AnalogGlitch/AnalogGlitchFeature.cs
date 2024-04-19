@@ -10,11 +10,12 @@ namespace URPGlitch.Runtime.AnalogGlitch
     public sealed class AnalogGlitchFeature : ScriptableRendererFeature
     {
         [SerializeField] Shader shader;
+        [SerializeField] RenderPassEvent m_renderOrder = default;
         AnalogGlitchRenderPass _scriptablePass;
 
         public override void Create()
         {
-            _scriptablePass = new AnalogGlitchRenderPass(shader);
+            _scriptablePass = new AnalogGlitchRenderPass(shader, m_renderOrder);
         }
 
         // Here you can inject one or multiple render passes in the renderer.
