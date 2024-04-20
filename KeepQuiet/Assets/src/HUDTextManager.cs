@@ -16,7 +16,7 @@ public class HUDTextManager : MonoBehaviour
         m_dialogue?.Clear();
         m_currentLine = "";
         m_dialogueDisplay.text = text;
-        m_anim.SetBool("BoxOn", true);
+        m_anim.SetBool("Show", true);
     }
     public void OpenDialogue(List<string> dialogue) 
     {
@@ -25,7 +25,7 @@ public class HUDTextManager : MonoBehaviour
         m_currentLine = "";
         m_dialogueDisplay.text = "";
         m_dialogue = new Queue<string>(dialogue);
-        m_anim.SetBool("BoxOn", true);
+        m_anim.SetBool("Show", true);
         NextPage();
     }
 
@@ -70,7 +70,7 @@ public class HUDTextManager : MonoBehaviour
     void EndDialogue()
     {
         // end
-        m_anim.SetBool("BoxOn", false);
+        m_anim.SetBool("Show", false);
         InProgress = false;
         m_dialogue = null;
         OnEnd?.Invoke();

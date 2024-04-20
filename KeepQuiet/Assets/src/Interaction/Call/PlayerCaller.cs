@@ -1,4 +1,5 @@
 ﻿using Curry.Explore;
+using System.Net.Mail;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class PlayerCaller : MonoBehaviour
     [SerializeField] CallHandler m_call = default;
     [SerializeField] ChatManager m_chat = default;
     Sprite m_defaultSprite;
+    bool m_newMessage = false;
     private void Start()
     {
         m_defaultSprite = m_toggleIcon.sprite;
@@ -20,6 +22,7 @@ public class PlayerCaller : MonoBehaviour
     // If phone rings when phone isn't toggled on, alert player with animated toggle icon
     public void Call(string incomingNumber, DialEvent onAccept) 
     {
+        m_newMessage = false;
         m_toggleIcon.sprite = m_callAlert;
         // Start glowing / animating
         AnimateAlertIcon();
@@ -27,6 +30,7 @@ public class PlayerCaller : MonoBehaviour
     }
     public void Message(DialogueNode newDialogue) 
     {
+        m_newMessage = true;
         m_toggleIcon.sprite = m_messageAlert;
         AnimateAlertIcon();
         m_chat.OnNewMessage(newDialogue);
@@ -50,10 +54,14 @@ public class PlayerCaller : MonoBehaviour
         // Animate Toggle Icon here
         m_toggleAnim.SetBool("Alert", true);
     }
-    public void EndAlert() 
+    public void PickupPhone() 
     {
-        m_ring.Stop();
+        if (m_newMessage) 
+        {
+            m_ring.Stop();
+        }
         m_toggleIcon.sprite = m_defaultSprite;
         m_toggleAnim.SetBool("Alert", false);
+        m_newMessage = false;
     }
 }

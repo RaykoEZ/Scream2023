@@ -151,7 +151,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279101696
+    rgba: 4279809792
   m_fontColor: {r: 0, g: 0.71599996, b: 0.09546674, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3098594875280757635}
   - component: {fileID: 5214966325995218326}
   - component: {fileID: 2522996734140314070}
-  - component: {fileID: 5683855450461384643}
+  - component: {fileID: 739579493249483841}
   m_Layer: 0
   m_Name: P_DialogueWindow
   m_TagString: Untagged
@@ -292,7 +292,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5683855450461384643
+--- !u!114 &739579493249483841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
