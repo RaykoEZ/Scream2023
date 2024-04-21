@@ -21,6 +21,7 @@ public class TutorialCollection : MonoBehaviour
     public void NextTutorialStep() 
     {
         if (!isActive) return;
+
         if (m_tutorials[m_current].Next()) 
         {
             NextSequence();
