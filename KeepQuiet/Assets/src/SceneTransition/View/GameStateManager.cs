@@ -9,6 +9,7 @@ using UnityEngine.Rendering;
 // Loads saved game state when game scene initializes
 public class GameStateManager : MonoBehaviour
 {
+    [SerializeField] protected AudioSettingHandler m_sudio = default;
     [SerializeField] protected InspectionDisplayHandler m_inspect = default;
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
@@ -94,6 +95,8 @@ public class GameStateManager : MonoBehaviour
     }
     IEnumerator ChangeView_Internal(ViewState newView) 
     {
+        m_sudio?.StopBgm();
+        m_sudio?.StopRain();
         // update state for viewing location
         m_currentGameState.CurrentlyViewing = newView.Name;
         // Hide current view visuals
