@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1587793911}
   - component: {fileID: 1587793910}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text_loading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Waiting...
+  m_text: Loading...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.8
+  m_fontSize: 45.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -811,6 +811,7 @@ GameObject:
   - component: {fileID: 3112176199721816036}
   - component: {fileID: 5644878326943971752}
   - component: {fileID: 6418421873998056600}
+  - component: {fileID: 1581159171422469408}
   m_Layer: 0
   m_Name: Persistent
   m_TagString: Untagged
@@ -883,6 +884,50 @@ PlayableDirector:
     value: {fileID: 68078811351672608}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1581159171422469408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112176199721816027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3258ee1108dfe47971f78d5865c02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_file: {fileID: 3112176199438094396}
+  m_ending: {fileID: 0}
+  m_onTitleLoad:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onNewGame:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onContinue:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onDialSecret:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onJamOut:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onToolIn:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &8381010399326172198
 GameObject:
   m_ObjectHideFlags: 0
