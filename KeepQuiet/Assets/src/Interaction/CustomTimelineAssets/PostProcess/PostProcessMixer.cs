@@ -20,7 +20,7 @@ public class PostProcessMixer : PlayableBehaviour
             {
                 var intputPlayable = (ScriptPlayable<PostProcessBehaviour>)playable.GetInput(i);
                 PostProcessBehaviour input = intputPlayable.GetBehaviour();
-                currentWeight = input.VolumeWeight;
+                currentWeight = weight * input.VolumeWeight;
                 currentProfile = input.PostprocessSetting;
             }
         }

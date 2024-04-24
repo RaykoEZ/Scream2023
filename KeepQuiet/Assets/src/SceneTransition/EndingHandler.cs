@@ -1,6 +1,14 @@
 ﻿using Curry.Events;
+using System;
 using UnityEngine;
 using UnityEngine.Playables;
+[Serializable]
+public enum Ending 
+{ 
+    Normal,
+    Bad, 
+    Secret
+}
 //Handle ending sequence after credit roll
 public class EndingHandler : MonoBehaviour 
 {
@@ -8,20 +16,32 @@ public class EndingHandler : MonoBehaviour
     [SerializeField] PlayableAsset m_badEndSeq = default;
     [SerializeField] PlayableAsset m_normalEndSeq = default;
     [SerializeField] PlayableAsset m_secretEndSeq = default;
-    [SerializeField] CurryGameEventListener m_badEnd = default;
-    [SerializeField] CurryGameEventListener m_normalEnd = default;
-    [SerializeField] CurryGameEventListener m_secretEnd = default;
-    public void BadEnd()
+    PlayableAsset m_endToPlay;
+    public void PlayEnding() 
     {
-        m_endingDirector.Play(m_badEndSeq);
+        if (m_endToPlay == null) 
+        {
+            m_endToPlay = m_normalEndSeq;
+        }
+        m_endingDirector.Play(m_endToPlay);
     }
+    public void SetEnding(Ending ending)
+    {
+        switch (ending)
+        {
+            case Ending.Normal:
+                m_endToPlay = m_normalEndSeq;
+                break;
+            case Ending.Bad:
+                m_endToPlay = m_badEndSeq;
 
-    public void NormalEnd()
-    {
-        m_endingDirector.Play(m_normalEndSeq);
-    }
-    public void SecretEnd()
-    {
-        m_endingDirector.Play(m_secretEndSeq);
+                break;
+            case Ending.Secret:
+                m_endToPlay = m_secretEndSeq;
+                break;
+            default:
+                m_endToPlay = m_normalEndSeq;
+                break;
+        }
     }
 }
