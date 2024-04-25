@@ -500,6 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810e9de234d4acd43b886276a7c7dbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gameState: {fileID: 0}
   m_toTile:
     m_eventToTrigger: {fileID: 11400000, guid: 121d7104f7a41f244981ab02303c66ea, type: 2}
   m_continue:
@@ -1073,7 +1074,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &8892957358053140018
 GameObject:
