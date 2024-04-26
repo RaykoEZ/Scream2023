@@ -12,50 +12,79 @@ public class PersistentGameStateManager : MonoBehaviour
     [SerializeField] CurryGameEventListener m_onDialSecret = default;
     [SerializeField] CurryGameEventListener m_onJamOut = default;
     [SerializeField] CurryGameEventListener m_onToolIn = default;
-    private void OnEnable()
+    void OnEnable()
     {
-        
+        m_credits.OnFinish += OnCreditFinish;
     }
-    private void OnDisable()
+    void OnDisable()
     {
-        
-    }
-    void OnEndingDesignate() 
-    { 
-    
+        m_credits.OnFinish -= OnCreditFinish;
     }
     void OnCreditFinish() 
-    { 
-    
+    {
+        // Determine a game ending through game states
+
     }
-    //play credit
     void OnGameEnd() 
-    { 
-    
+    {
+        //play credit
+
     }
+    // Change title screen behaviour depending on game state
     public void OnTitleLoaded() 
     { 
+        // If play killed Aria, show creepier title atmosphere, no more Aria
         
-    }
+        // If Aria is possessed, glitch + disable clear cache & new game,
+        // add random scares
 
+        // if true end reached, No Aria, no raining, slight rain drip, calmer music
+    }
     public void OnNewGame() 
     { 
-    
+        // if player killed Aria on the previous load
+        // (leading to a game crash), new game soft locks into bloody scene
+        // need to clear cache reset
+
+        // aria possessed, disable new game
+        // glitch + scary when choosing & spamming new game 
+
     }
     public void OnContinue() 
     { 
-    
+        // if player killed Aria on the previous load, soft lock as well
+
+        // Continue increment
     }
 
     public void OnDialSecretReveal() 
     { 
     
     }
-    public void OnJamDragOut() 
+    public void OnJamRemove() 
     { 
     
     }
-
+    public void OnMalwareIsolated() 
+    { 
+    
+    }
+    public void OnKillAria() 
+    { 
+    
+    }
+    public void HandshakeComplete() 
+    { 
+    
+    }
+    public void SecretKeyInput() 
+    { 
+    
+    }
+    public void OnClockSecretReveal() 
+    { 
+    
+    }
     public void OnToolDragIn() 
     { 
     

@@ -29,23 +29,11 @@ public class GameStateManager : MonoBehaviour
     SaveData m_currentGameState = new SaveData();
     public DoorState LeftRoomDoor => m_roomLeft.DoorState;
     public SaveData CurrentGameState => new SaveData(m_currentGameState);
-    private void Awake()
+    void Awake()
     {
         //Listen to savedatat load event, ready to receive save data
         m_onGameLoad?.Init();
         m_gameSceneReady?.TriggerEvent(new EventInfo());
-    }
-    public List<ViewStateSaveData> GetCurrentViewState()
-    {
-        List<ViewStateSaveData> ret = new List<ViewStateSaveData>
-        {
-            m_outsideCam.GetCurrentState(),
-            m_outsideAria.GetCurrentState(),
-            m_insideCafe.GetCurrentState(),
-            m_roomLeft.GetCurrentState(),
-            m_roomRight.GetCurrentState()
-        };
-        return ret;
     }
     public void SaveGameState(Action onFinish = null)
     {

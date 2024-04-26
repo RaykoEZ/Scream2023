@@ -9,17 +9,19 @@ public class TutorialManager : MonoBehaviour
     TutorialCollection m_current;
     public void Navigation() 
     {
+        m_current?.EndTutorial();
         m_uiNavigation?.Begin();
         m_current = m_uiNavigation;
     }
-    public void Tools() 
+    public void Tools()
     {
+        m_current?.EndTutorial();
         m_tools?.Begin();
         m_current = m_tools;
-
     }
-    public void NewGame() 
+    public void NewGame()
     {
+        m_current?.EndTutorial();
         m_newGame?.Begin();
         m_current = m_newGame;
     }

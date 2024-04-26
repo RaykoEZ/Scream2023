@@ -7,7 +7,8 @@ public enum Ending
 { 
     Normal,
     Bad, 
-    Secret
+    Secret,
+    None
 }
 //Handle ending sequence after credit roll
 public class EndingHandler : MonoBehaviour 

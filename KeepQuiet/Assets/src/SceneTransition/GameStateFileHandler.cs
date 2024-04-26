@@ -44,7 +44,12 @@ public class GameStateFileHandler : MonoBehaviour
     {
         if (m_isNewGame) 
         {
+            // copy persisting save from current
+            SaveData.PersistentSave persist = new SaveData.PersistentSave(m_current.Persistent);
+            // reset game state to new game
             m_current = new SaveData(m_defaultState.State);
+            // set persistent save states
+            m_current.Persistent = persist;
         }
         LoadGameState();
     }

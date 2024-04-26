@@ -20,20 +20,18 @@ public class AriaState
     public bool IsPossessed;
     public bool HasPastRunMemory;
     public int Affection = 0;
-    public int Sanity = 0;
     [JsonConverter(typeof(StringEnumConverter))]   
     public AriaPosition CurrentLocation;
-    public static AriaState Default = new AriaState(false, false, 1, 1, AriaPosition.InsideCafe_Entrance);
+    public static AriaState Default = new AriaState(false, false, 1, AriaPosition.InsideCafe_Entrance);
     public AriaState(
         bool isPossessed, 
         bool hasPastRunMemory, 
-        int affection, 
-        int sanity, AriaPosition currentLocation)
+        int affection,
+        AriaPosition currentLocation)
     {
         IsPossessed = isPossessed;
         HasPastRunMemory = hasPastRunMemory;
         Affection = affection;
-        Sanity = sanity;
         CurrentLocation = currentLocation;
     }
     public AriaState(AriaState copy)
@@ -41,7 +39,6 @@ public class AriaState
         IsPossessed = copy.IsPossessed;
         HasPastRunMemory = copy.HasPastRunMemory;
         Affection = copy.Affection;
-        Sanity = copy.Sanity;
         CurrentLocation = copy.CurrentLocation;
     }
 }
@@ -75,11 +72,9 @@ public class Aria : Npc
     {
         m_stateManager?.OnDenied();
     }
-
     public override void OnPlayerDecided(DialogueNode chosen, int choiceIndex)
     {
     }
-
     public override void OnPlayerDialed()
     {
     }

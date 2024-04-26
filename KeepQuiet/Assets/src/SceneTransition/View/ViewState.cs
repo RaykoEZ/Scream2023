@@ -17,17 +17,10 @@ public abstract class ViewState : MonoBehaviour
     public VolumeProfile PostProcessVolumeProfile => m_postProcessVolumeProfile;
     public void InitState(SaveData saveData) 
     {
-        if (saveData.TryGetViewState(Name, out ViewStateSaveData result))
-        {
-            InitStateInternal(saveData, result);
-        }
+        InitStateInternal(saveData);
     }
-    protected virtual void InitStateInternal(SaveData gamestate, ViewStateSaveData selfState) 
+    protected virtual void InitStateInternal(SaveData gamestate)
     {
-    }
-    public virtual ViewStateSaveData GetCurrentState() 
-    {
-        return new ViewStateSaveData(Name, new List<string>());
     }
     public virtual void OnAriaEnter() { }
     public virtual void OnAriaExit() { }
