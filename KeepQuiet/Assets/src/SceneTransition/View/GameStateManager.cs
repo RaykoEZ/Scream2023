@@ -9,8 +9,9 @@ using UnityEngine.Rendering;
 // Loads saved game state when game scene initializes
 public class GameStateManager : MonoBehaviour
 {
-    [SerializeField] protected AudioSettingHandler m_sudio = default;
+    [SerializeField] protected AudioTrigger m_audio = default;
     [SerializeField] protected InspectionDisplayHandler m_inspect = default;
+    [SerializeField] protected ToolInteractionHandler m_toolMenu = default;
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
@@ -66,6 +67,7 @@ public class GameStateManager : MonoBehaviour
         m_insideCafe?.SetVisual(false);
         m_roomLeft?.SetVisual(false);
         m_roomRight?.SetVisual(false);
+        m_toolMenu?.Init(saved);
         m_views = new Dictionary<string, ViewState>
         {
             {m_outsideCam.Name, m_outsideCam},
@@ -83,8 +85,8 @@ public class GameStateManager : MonoBehaviour
     }
     IEnumerator ChangeView_Internal(ViewState newView) 
     {
-        m_sudio?.StopBgm();
-        m_sudio?.StopRain();
+        m_audio?.StopBgm();
+        m_audio?.StopRain();
         // update state for viewing location
         m_currentGameState.CurrentlyViewing = newView.Name;
         // Hide current view visuals

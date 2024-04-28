@@ -3,26 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 public class ToolInteractionHandler : MonoBehaviour
 {
-    [SerializeField] ToolUnlockHandler m_unlock = default;
     [SerializeField] GameStateManager m_gameState = default;
     [SerializeField] ToolBarUIAnimationHandler m_anim = default;
     [SerializeField] ToolAimIcon m_aimIcon = default;
-    [SerializeField] ToolAimIcon m_torch = default;
-    [SerializeField] ToolAimIcon m_specialTorch = default;
+    [SerializeField] ToolAimIcon m_torchAim = default;
+    [SerializeField] ToolAimIcon m_specialTorchAim = default;
     //TODO:Coat hanger object, draggable and modifiable
-    [SerializeField] List<QuickTool> m_tools = default;
+    [SerializeField] QuickTool m_torch = default;
+    [SerializeField] QuickTool m_specialTorch = default;
+    [SerializeField] QuickTool m_bat = default;
     // tool we are currently using
     QuickTool m_using;
     // the current tool aiming object
     ToolAimIcon m_aiming;
-    private void Start()
+    void Start()
     {
-        foreach (var item in m_tools)
+        Init(new SaveData());
+    }
+    public void Init(SaveData saved)
+    {
+        SetToolUnlock(m_torch, true);
+        SetToolUnlock(m_specialTorch, saved.SpecialTorchUnlocked);
+        SetToolUnlock(m_bat, saved.BatUnlocked);
+    }
+    void SetToolUnlock(QuickTool tool, bool isUnlocked) 
+    {
+        if (isUnlocked) 
         {
-            item.OnEnter += OnPointerEnter;
-            item.OnExit += OnPointerExit;
+            tool.gameObject.SetActive(true);
+            tool.OnEnter += OnPointerEnter;
+            tool.OnExit += OnPointerExit;
         }
-        m_unlock?.Init(m_tools);
+        else 
+        {
+            tool.OnEnter -= OnPointerEnter;
+            tool.OnExit -= OnPointerExit;
+            tool.gameObject.SetActive(false);
+        }
     }
     public void ReturnTool(QuickTool tool)
     {
@@ -47,10 +64,10 @@ public class ToolInteractionHandler : MonoBehaviour
                 toolAimRef = m_aimIcon;
                 break;
             case EToolType.Torch:
-                toolAimRef = m_torch;
+                toolAimRef = m_torchAim;
                 break;
             case EToolType.SpecialTorch:
-                toolAimRef = m_specialTorch;
+                toolAimRef = m_specialTorchAim;
                 break;
             default:
                 toolAimRef = m_aimIcon;

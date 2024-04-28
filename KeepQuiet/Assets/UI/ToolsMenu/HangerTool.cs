@@ -10,7 +10,6 @@ public class HangerTool : QuickTool
     public void HookForm() 
     {
         // do animationto transform hanger to hook
-        UnlockTool();
     }
 }
 

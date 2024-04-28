@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Curry.Events;
 using UnityEngine.Audio;
 
-public class AudioSettingHandler : MonoBehaviour
+public class AudioTrigger : MonoBehaviour
 {
     [SerializeField] CurryGameEventTrigger m_playRain = default;
     [SerializeField] CurryGameEventTrigger m_stopRain = default;

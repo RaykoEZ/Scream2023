@@ -68,7 +68,9 @@ public class SaveData
     public bool DialPuzzleSolved;
     // Did the player take the bat in Room Left?
     // Bat can be dragged out and dragged in
-    public bool IsBatTaken;
+    public bool BatUnlocked;
+    // Special torch unlocked after Jammer is taken out, game
+    public bool SpecialTorchUnlocked;
     // Clock is revealed after setting system clock to clued time frame
     // Player can hit the clock to reveal more clues
     public bool RevealClock;
@@ -80,6 +82,9 @@ public class SaveData
         IsJammerRemoved = false;
         IsMalwareIsolated = false;
         DialPuzzleSolved = false;
+        BatUnlocked = false;
+        RevealClock = false;
+        SpecialTorchUnlocked = false;
         Persistent = new PersistentSave();
         CurrentlyViewing = "RoomRight";
         AriaStatus = AriaState.Default;
@@ -88,7 +93,10 @@ public class SaveData
     {
         IsJammerRemoved = copy.IsJammerRemoved;
         IsMalwareIsolated = copy.IsMalwareIsolated;
+        BatUnlocked = copy.BatUnlocked;
+        SpecialTorchUnlocked = copy.SpecialTorchUnlocked;
         DialPuzzleSolved = copy.DialPuzzleSolved;
+        RevealClock = copy.RevealClock;
         Persistent = copy.Persistent;
         CurrentlyViewing = copy.CurrentlyViewing;
         AriaStatus = new AriaState(copy.AriaStatus);

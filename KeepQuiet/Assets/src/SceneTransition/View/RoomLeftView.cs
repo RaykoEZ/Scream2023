@@ -25,7 +25,7 @@ public class RoomLeftView : ViewState
         {
             m_clock.Hide();
         }
-        if (saveData.IsBatTaken)
+        if (saveData.BatUnlocked)
         {
             m_bat.Hide();
         }

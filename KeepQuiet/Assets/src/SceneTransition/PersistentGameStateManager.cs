@@ -19,7 +19,7 @@ public class PersistentGameStateManager : MonoBehaviour
     void OnDisable()
     {
         m_credits.OnFinish -= OnCreditFinish;
-    }
+    } 
     void OnCreditFinish() 
     {
         // Determine a game ending through game states
