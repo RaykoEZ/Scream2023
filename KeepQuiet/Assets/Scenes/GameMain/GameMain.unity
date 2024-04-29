@@ -3989,7 +3989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audio: {fileID: 1189461310}
-  m_inspect: {fileID: 1500122829}
   m_toolMenu: {fileID: 1143764596}
   m_aria: {fileID: 1526016397}
   m_fade: {fileID: 1884570903}
@@ -8100,7 +8099,7 @@ RectTransform:
   m_GameObject: {fileID: 823697923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1322507397}
@@ -10947,7 +10946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -13397,18 +13396,18 @@ PrefabInstance:
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 451893988}
+      objectReference: {fileID: 1500122829}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InspectClue
+      value: InspectTarget
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameStateManager, Assembly-CSharp
+      value: InspectionDisplayHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -15496,6 +15495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60ced8ad310a34b881510f8ed79a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_state: {fileID: 451893988}
   m_contentParent: {fileID: 234719393}
   m_toolBar: {fileID: 1783969210}
   m_inspectUITrigger:
@@ -22068,18 +22068,18 @@ PrefabInstance:
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 451893988}
+      objectReference: {fileID: 1500122829}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InspectClue
+      value: InspectTarget
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameStateManager, Assembly-CSharp
+      value: InspectionDisplayHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -24663,18 +24663,18 @@ PrefabInstance:
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 451893988}
+      objectReference: {fileID: 1500122829}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InspectClue
+      value: InspectTarget
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameStateManager, Assembly-CSharp
+      value: InspectionDisplayHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4534110535339856744, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -25540,9 +25540,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 451893988}
-        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
-        m_MethodName: InspectClue
+      - m_Target: {fileID: 1500122829}
+        m_TargetAssemblyTypeName: InspectionDisplayHandler, Assembly-CSharp
+        m_MethodName: InspectTarget
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2043649199}

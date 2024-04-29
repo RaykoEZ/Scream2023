@@ -427,6 +427,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1766557956858580033, guid: f40f3a7cc9c06244fa08f74b10823ec9, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766557956858580033, guid: f40f3a7cc9c06244fa08f74b10823ec9, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 3112176199721816027, guid: f40f3a7cc9c06244fa08f74b10823ec9, type: 3}
       propertyPath: m_Name
       value: Persistent

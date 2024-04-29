@@ -1176,8 +1176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_file: {fileID: 3112176199438094396}
-  m_ending: {fileID: 0}
-  m_credits: {fileID: 0}
+  m_ending: {fileID: 483844114}
+  m_credits: {fileID: 2537013320965685242}
   m_onTitleLoad:
     m_eventToListen: {fileID: 0}
     m_responses:
@@ -1221,6 +1221,7 @@ GameObject:
   - component: {fileID: 5515090890551321576}
   - component: {fileID: 2537013320965685242}
   - component: {fileID: 2887634368561763860}
+  - component: {fileID: 4683980795009048975}
   m_Layer: 0
   m_Name: Canvas_Credits
   m_TagString: Untagged
@@ -1331,6 +1332,18 @@ PlayableDirector:
     value: {fileID: 5583753482777160916}
   m_ExposedReferences:
     m_References: []
+--- !u!225 &4683980795009048975
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486740602116966160}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8381010399326172198
 GameObject:
   m_ObjectHideFlags: 0

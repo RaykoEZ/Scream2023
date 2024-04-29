@@ -7,10 +7,6 @@ public class InspectPoster : InspectionDisplay
     [Range(0f, 1f)]
     [SerializeField] float m_scareRate = 0.1f;
     int m_numScareTrigger = 0;
-    public override void Init(SaveData state)
-    {
-
-    }
     public void TryScare() 
     {
         if (m_numScareTrigger > 0) return;
@@ -39,11 +35,6 @@ public class InspectPoster : InspectionDisplay
 }
 public class InspectVent : InspectionDisplay
 {
-    public override void Init(SaveData state)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override IEnumerator OnExit()
     {
         yield return null;
@@ -51,11 +42,6 @@ public class InspectVent : InspectionDisplay
 }
 public class InspectDoor : InspectionDisplay
 {
-    public override void Init(SaveData state)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override IEnumerator OnExit()
     {
         yield return null;
@@ -63,11 +49,6 @@ public class InspectDoor : InspectionDisplay
 }
 public class InspectClock : InspectionDisplay
 {
-    public override void Init(SaveData state)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override IEnumerator OnExit()
     {
         yield return null;
@@ -75,11 +56,6 @@ public class InspectClock : InspectionDisplay
 }
 public class InspectDocument : InspectionDisplay
 {
-    public override void Init(SaveData state)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override IEnumerator OnExit()
     {
         yield return null;
@@ -87,11 +63,6 @@ public class InspectDocument : InspectionDisplay
 }
 public class InspectCans : InspectionDisplay
 {
-    public override void Init(SaveData state)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override IEnumerator OnExit()
     {
         yield return null;

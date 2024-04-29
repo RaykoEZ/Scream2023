@@ -10,7 +10,6 @@ using UnityEngine.Rendering;
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] protected AudioTrigger m_audio = default;
-    [SerializeField] protected InspectionDisplayHandler m_inspect = default;
     [SerializeField] protected ToolInteractionHandler m_toolMenu = default;
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
@@ -102,8 +101,6 @@ public class GameStateManager : MonoBehaviour
     }
     public void InspectClue(Clue toInspect) 
     {
-        var current = CurrentGameState;
-        m_inspect?.InspectTarget(toInspect.GetInspectionDisplay(current), current);
     }
     public void OnToolUse(EToolType usingTool) 
     {
