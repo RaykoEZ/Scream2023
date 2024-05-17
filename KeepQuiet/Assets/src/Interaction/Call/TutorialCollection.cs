@@ -5,6 +5,9 @@ using UnityEngine;
 // handles a list of tutorial sequences
 public class TutorialCollection : MonoBehaviour 
 {
+    // Length of time to wait after finishing a tutorial sequence(in seconds)
+    [Range(0f, 1000f)]
+    [SerializeField] float m_pauseTimeAfterSequence = default;
     [SerializeField] List<TutorialDisplay> m_tutorials = default;
     bool isActive = false;
     int m_current = 0;
@@ -25,6 +28,7 @@ public class TutorialCollection : MonoBehaviour
     {
         if (!m_tutorials[m_current].Next()) 
         {
+            yield return new WaitForSeconds(m_pauseTimeAfterSequence);
             NextSequence();
         }
         yield return new WaitForSeconds(0.2f);

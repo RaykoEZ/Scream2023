@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60076258b4b5ae408e01144f5f346b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pauseTimeAfterSequence: 0.5
   m_tutorials:
   - {fileID: 7707543183353628602}
   - {fileID: 6026416092571164032}

@@ -27,7 +27,7 @@ public class SaveData
         // display slightly different title/continue/new game sequences
         // depending on ending
         [JsonConverter(typeof(StringEnumConverter))]
-        public Ending PreviousEnding;
+        public Ending CurrentEnding;
         public PersistentSave( bool isAriaDead,
             bool secretKeyObtained, bool handshakeComplete, 
             int continueCount, Ending previousEnding)
@@ -36,7 +36,7 @@ public class SaveData
             SecretKeyObtained = secretKeyObtained;
             HandshakeComplete = handshakeComplete;
             ContinueCount = continueCount;
-            PreviousEnding = previousEnding;
+            CurrentEnding = previousEnding;
         }
         // Default ctor, for fresh game/clear cache
         public PersistentSave() 
@@ -45,7 +45,7 @@ public class SaveData
             SecretKeyObtained = false;
             HandshakeComplete = false;
             ContinueCount = 0;
-            PreviousEnding = Ending.None;
+            CurrentEnding = Ending.None;
         }
         public PersistentSave(PersistentSave persistent)
         {
@@ -53,7 +53,7 @@ public class SaveData
             SecretKeyObtained = persistent.SecretKeyObtained;
             HandshakeComplete = persistent.HandshakeComplete;
             ContinueCount = persistent.ContinueCount;
-            PreviousEnding = persistent.PreviousEnding;
+            CurrentEnding = persistent.CurrentEnding;
         }
     }
     #endregion
@@ -65,7 +65,7 @@ public class SaveData
     // Secret/True End Flag
     public bool IsMalwareIsolated;
     // The dial puzzle to start Jammer trigger
-    public bool DialPuzzleSolved;
+    public bool DialSolved;
     // Did the player take the bat in Room Left?
     // Bat can be dragged out and dragged in
     public bool BatUnlocked;
@@ -81,7 +81,7 @@ public class SaveData
     {
         IsJammerRemoved = false;
         IsMalwareIsolated = false;
-        DialPuzzleSolved = false;
+        DialSolved = false;
         BatUnlocked = false;
         RevealClock = false;
         SpecialTorchUnlocked = false;
@@ -95,7 +95,7 @@ public class SaveData
         IsMalwareIsolated = copy.IsMalwareIsolated;
         BatUnlocked = copy.BatUnlocked;
         SpecialTorchUnlocked = copy.SpecialTorchUnlocked;
-        DialPuzzleSolved = copy.DialPuzzleSolved;
+        DialSolved = copy.DialSolved;
         RevealClock = copy.RevealClock;
         Persistent = copy.Persistent;
         CurrentlyViewing = copy.CurrentlyViewing;

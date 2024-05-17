@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using Curry.Events;
 using System.Collections.Generic;
+using UnityEngine.Events;
 // Script for persistent game state loading and saving
 // Loads persistent game state into game state manager in scene
 // Saves updated states coming from game state in scene
@@ -10,6 +11,7 @@ public class GameStateFileHandler : MonoBehaviour
 {
     // State to load upon first load
     [SerializeField] GameStateContainer m_defaultState = default;
+    [SerializeField] UnityEvent m_readyGameLaunch = default;
     [SerializeField] CurryGameEventListener m_exitGame = default;
     [SerializeField] CurryGameEventListener m_onsaveGameState = default;
     [SerializeField] CurryGameEventListener m_onGameReady = default;
@@ -17,12 +19,15 @@ public class GameStateFileHandler : MonoBehaviour
     SaveData m_current;
     bool m_isNewGame = false;
     static string s_gamestatePath = "saves/gamestate.json";
+    public SaveData Current { get => m_current; }
     private void Start()
     {
         m_onGameReady?.Init();
         m_exitGame?.Init();
         m_onsaveGameState?.Init();
         LoadStates();
+        // Start game launch sequence when game is ready
+        m_readyGameLaunch?.Invoke();
     }
     private void OnApplicationQuit()
     {            
