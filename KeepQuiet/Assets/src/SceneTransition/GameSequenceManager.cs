@@ -10,7 +10,7 @@ public class GameSequenceManager : MonoBehaviour
     [SerializeField] SkippableSequencePlayer m_credits = default;
     // post credit
     [SerializeField] EndingPlayer m_ending = default;
-    [SerializeField] CurryGameEventListener m_onTitleLoad = default;
+
     [SerializeField] CurryGameEventListener m_onNewGame = default;
     [SerializeField] CurryGameEventListener m_onContinue = default;
     [SerializeField] CurryGameEventListener m_onDialSecret = default;
@@ -43,16 +43,7 @@ public class GameSequenceManager : MonoBehaviour
         //play credit
 
     }
-    // Change title screen behaviour depending on game state
-    public void OnTitleLoaded() 
-    { 
-        // If play killed Aria, show creepier title atmosphere, no more Aria
-        
-        // If Aria is possessed, glitch + disable clear cache & new game,
-        // add random scares
 
-        // if true end reached, No Aria, no raining, slight rain drip, calmer music
-    }
     public void OnNewGame() 
     { 
         // if player killed Aria on the previous load

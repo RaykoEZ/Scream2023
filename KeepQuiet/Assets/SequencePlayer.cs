@@ -1,6 +1,6 @@
 using Curry.Events;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -16,6 +16,11 @@ public class SequencePlayer : MonoBehaviour
     public virtual void PlaySequence() 
     {
         StartCoroutine(PlaySequence_Internal());
+    }
+    public void PlaySequence(PlayableAsset toPlay)
+    {
+        if (toPlay == null) return;
+        m_director?.Play(toPlay);
     }
     protected void OnFinishCallback() 
     {

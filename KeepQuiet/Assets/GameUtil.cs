@@ -1,4 +1,5 @@
-﻿public static class GameUtil 
+﻿using UnityEngine;
+public static class GameUtil 
 {
     // Get min and max of a angle with range thresholds
     public static FloatRange SignedAngleThresholdRange(float threshold, float margin)
@@ -23,5 +24,14 @@
             max = b;
         }
         return new FloatRange(min, max);
+    }
+    // rotate a transform by a given signed angle
+    public static void SignedRotationDegree(Transform target, float signedAngle) 
+    {
+        Vector3 newRotation = new Vector3(0f, 0f, signedAngle);
+        newRotation.z = signedAngle;
+        Quaternion rotateTo = Quaternion.Euler(newRotation);
+        // rotate to new direction
+        target.rotation = Quaternion.RotateTowards(target.rotation, rotateTo, 360f);
     }
 }

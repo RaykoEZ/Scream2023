@@ -14,7 +14,7 @@ public class GameStateFileHandler : MonoBehaviour
     [SerializeField] UnityEvent m_readyGameLaunch = default;
     [SerializeField] CurryGameEventListener m_exitGame = default;
     [SerializeField] CurryGameEventListener m_onsaveGameState = default;
-    [SerializeField] CurryGameEventListener m_onGameReady = default;
+    [SerializeField] CurryGameEventListener m_onGameStateRequest = default;
     [SerializeField] CurryGameEventTrigger m_loadGameState = default;
     SaveData m_current;
     bool m_isNewGame = false;
@@ -22,7 +22,7 @@ public class GameStateFileHandler : MonoBehaviour
     public SaveData Current { get => m_current; }
     private void Start()
     {
-        m_onGameReady?.Init();
+        m_onGameStateRequest?.Init();
         m_exitGame?.Init();
         m_onsaveGameState?.Init();
         LoadStates();

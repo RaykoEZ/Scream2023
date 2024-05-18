@@ -14,6 +14,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
+    // view states
     [SerializeField] protected ViewState m_outsideCam = default;
     [SerializeField] protected ViewState m_outsideAria = default;
     [SerializeField] protected ViewState m_insideCafe = default;
@@ -21,19 +22,25 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected ViewState m_roomRight = default;
     [SerializeField] CurryGameEventTrigger m_saveGameState = default;
     // Called when scene is ready for loading save data
-    [SerializeField] CurryGameEventTrigger m_gameSceneReady = default;
-    [SerializeField] CurryGameEventListener m_onGameLoad = default;
-
+    [SerializeField] SaveDataSource m_saveData = default;
+ 
     Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
     SaveData m_currentGameState = new SaveData();
     public DoorState LeftRoomDoor => m_roomLeft.DoorState;
     public SaveData CurrentGameState => new SaveData(m_currentGameState);
-    void Awake()
+    void OnEnable()
+    {
+        m_saveData.OnUpdate += Init;
+    }
+    void OnDisable()
+    {
+        m_saveData.OnUpdate -= Init;
+    }
+    void Start()
     {
         //Listen to savedatat load event, ready to receive save data
-        m_onGameLoad?.Init();
-        m_gameSceneReady?.TriggerEvent(new EventInfo());
+        m_saveData.RequestGameState();
     }
     public void SaveGameState(Action onFinish = null)
     {
@@ -41,23 +48,14 @@ public class GameStateManager : MonoBehaviour
         {{"save", CurrentGameState }};
         EventInfo info = new EventInfo(payload, onFinishCallback: onFinish);
         m_saveGameState?.TriggerEvent(info);
-    }
-    public void OnGameStateLoaded(EventInfo info) 
-    {
-        Dictionary<string, object> payload = info.Payload;
-        if (payload == null) return;
-        if (payload.TryGetValue("save", out object result)
-            && result is SaveData save)
-        {
-            // Autosave
-            Init(save);
-        }
+        // new save data available to update
+        SaveDataSource.SetDirty();
     }
     public Aria GetAria()
     {
         return m_aria;
     }
-    public void Init(SaveData saved)
+    void Init(SaveData saved)
     {
         m_currentGameState = saved;
         //Hide all view first

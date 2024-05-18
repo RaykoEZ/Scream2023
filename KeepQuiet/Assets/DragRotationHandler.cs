@@ -16,12 +16,8 @@ public class DragRotationHandler : MonoBehaviour
     }
     public void SetRotation(float signedAngle) 
     {
-        Vector3 newRotation = new Vector3(0f, 0f, signedAngle);
-        newRotation.z = signedAngle;
         m_currentAngle = signedAngle;
-        Quaternion rotateTo = Quaternion.Euler(newRotation);
-        // rotate to new cursor direction
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotateTo, 360f);
+        GameUtil.SignedRotationDegree(transform, signedAngle);
     }
     public void BeginRotation()
     {

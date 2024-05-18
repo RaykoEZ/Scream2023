@@ -5,9 +5,9 @@ using UnityEngine.Playables;
 [Serializable]
 public enum Ending 
 { 
-    Normal,
-    Bad, 
-    Secret,
+    Normal_CaseClosed,
+    Bad_Delusion, 
+    Secret_FreeFromOrbit,
     None
 }
 // Handle ending sequence after credit roll
@@ -30,14 +30,14 @@ public class EndingPlayer : SequencePlayer
     {
         switch (ending)
         {
-            case Ending.Normal:
+            case Ending.Normal_CaseClosed:
                 m_endToPlay = m_normalEndSeq;
                 break;
-            case Ending.Bad:
+            case Ending.Bad_Delusion:
                 m_endToPlay = m_badEndSeq;
 
                 break;
-            case Ending.Secret:
+            case Ending.Secret_FreeFromOrbit:
                 m_endToPlay = m_secretEndSeq;
                 break;
             default:
