@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AOC_Aria_opening_dead
+  m_Controller: {fileID: 9100000, guid: a6b7bcb9b2ed96c43882967bc53a78be, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 913134c5d5f444346bee1dcfccc810c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: adac7801618d148499407aa906d75fff, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3718604f45ecc4c44a59a721fb969090, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c709214d3a73764e8e14d67ea922750, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7f45d3622f2105147bed9863dd64928d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fcd504bb9eb4241409b44fd0011590e4, type: 2}

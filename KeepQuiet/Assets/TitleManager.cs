@@ -6,7 +6,6 @@ public class TitleManager : MonoBehaviour
     [SerializeField] PlayableAsset m_default = default;
     [SerializeField] PlayableAsset m_freedomRoute = default;
     [SerializeField] PlayableAsset m_freedomEnd = default;
-    [SerializeField] PlayableAsset m_badEnd = default;
     [SerializeField] PlayableAsset m_deadEnd = default;
 
     [SerializeField] SequencePlayer m_title = default;
