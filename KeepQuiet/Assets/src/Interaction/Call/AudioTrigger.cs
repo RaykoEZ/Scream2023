@@ -15,6 +15,11 @@ public class AudioTrigger : MonoBehaviour
         AudioInfo info = new AudioInfo(bgm, true);
         m_changeBgm?.TriggerEvent(info);
     }
+    public void PlayBgm()
+    {
+        EventInfo info = new EventInfo();
+        m_playBgm?.TriggerEvent(info);
+    }
     public void StopBgm()
     {
         m_stopBgm?.TriggerEvent(new EventInfo());

@@ -16,8 +16,6 @@ public class SaveData
         // If player choose to hit Aria with the bat, we reach Bad End,
         // a different title & New Game & Continue if Aria is dead
         public bool AriaDead;
-        // Leads to answer for handshake
-        public bool SecretKeyObtained;
         // Responded to handshake with secret answer,
         // leads to an ending depending on other persistent states
         public bool HandshakeComplete;
@@ -29,11 +27,10 @@ public class SaveData
         [JsonConverter(typeof(StringEnumConverter))]
         public Ending CurrentEnding;
         public PersistentSave( bool isAriaDead,
-            bool secretKeyObtained, bool handshakeComplete, 
+            bool handshakeComplete, 
             int continueCount, Ending previousEnding)
         {
             AriaDead = isAriaDead;
-            SecretKeyObtained = secretKeyObtained;
             HandshakeComplete = handshakeComplete;
             ContinueCount = continueCount;
             CurrentEnding = previousEnding;
@@ -42,7 +39,6 @@ public class SaveData
         public PersistentSave() 
         {
             AriaDead = false;
-            SecretKeyObtained = false;
             HandshakeComplete = false;
             ContinueCount = 0;
             CurrentEnding = Ending.None;
@@ -50,7 +46,6 @@ public class SaveData
         public PersistentSave(PersistentSave persistent)
         {
             AriaDead = persistent.AriaDead;
-            SecretKeyObtained = persistent.SecretKeyObtained;
             HandshakeComplete = persistent.HandshakeComplete;
             ContinueCount = persistent.ContinueCount;
             CurrentEnding = persistent.CurrentEnding;
@@ -59,8 +54,6 @@ public class SaveData
     #endregion
     public PersistentSave Persistent;
     // Check if player found and dragged out the Jamming device found in secret puzzle 
-    // Bad End Flag 
-    public bool IsJammerRemoved;
     // Did player resolve malware overtaking Aria?
     // Secret/True End Flag
     public bool IsMalwareIsolated;
@@ -68,35 +61,37 @@ public class SaveData
     public bool DialSolved;
     // Did the player take the bat in Room Left?
     // Bat can be dragged out and dragged in
-    public bool BatUnlocked;
+    public bool BatTaken;
     // Special torch unlocked after Jammer is taken out, game
     public bool SpecialTorchUnlocked;
     // Clock is revealed after setting system clock to clued time frame
     // Player can hit the clock to reveal more clues
     public bool RevealClock;
+    // Freedom flag before reaching ending
+    public bool FreedomRoute;
     // Where is the player looking at
     public string CurrentlyViewing;
     public AriaState AriaStatus;
     public SaveData()
     {
-        IsJammerRemoved = false;
         IsMalwareIsolated = false;
         DialSolved = false;
-        BatUnlocked = false;
+        BatTaken = false;
         RevealClock = false;
         SpecialTorchUnlocked = false;
+        FreedomRoute = false;
         Persistent = new PersistentSave();
         CurrentlyViewing = "RoomRight";
         AriaStatus = AriaState.Default;
     }
     public SaveData(SaveData copy)
     {
-        IsJammerRemoved = copy.IsJammerRemoved;
         IsMalwareIsolated = copy.IsMalwareIsolated;
-        BatUnlocked = copy.BatUnlocked;
+        BatTaken = copy.BatTaken;
         SpecialTorchUnlocked = copy.SpecialTorchUnlocked;
         DialSolved = copy.DialSolved;
         RevealClock = copy.RevealClock;
+        FreedomRoute = copy.FreedomRoute;
         Persistent = copy.Persistent;
         CurrentlyViewing = copy.CurrentlyViewing;
         AriaStatus = new AriaState(copy.AriaStatus);

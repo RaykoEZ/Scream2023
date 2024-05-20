@@ -24,7 +24,7 @@ public class ToolInteractionHandler : MonoBehaviour
     {
         SetToolUnlock(m_torch, true);
         SetToolUnlock(m_specialTorch, saved.SpecialTorchUnlocked);
-        SetToolUnlock(m_bat, saved.BatUnlocked);
+        SetToolUnlock(m_bat, saved.BatTaken);
     }
     void SetToolUnlock(QuickTool tool, bool isUnlocked) 
     {

@@ -30,11 +30,19 @@ public class SceneTransitionTrigger : MonoBehaviour
     }
     public void QuitGame()
     {
-        // need reference to game state manager
-        // to save data before quitting the game
-        Dictionary<string, object> payload = new Dictionary<string, object>
-        {{"save", m_gameState.CurrentGameState}};
-        EventInfo info = new EventInfo(payload);
+        EventInfo info;
+        if (m_gameState == null) 
+        {
+            info = new EventInfo();
+        }
+        else 
+        {
+            // need reference to game state manager
+            // to save data before quitting the game
+            Dictionary<string, object> payload = new Dictionary<string, object>
+            {{"save", m_gameState.CurrentGameState}};
+            info = new EventInfo(payload);
+        }
         m_quit?.TriggerEvent(info);
     }
 }

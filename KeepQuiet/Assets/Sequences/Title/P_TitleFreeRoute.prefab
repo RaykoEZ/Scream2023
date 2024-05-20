@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7807931431500050077}
   - component: {fileID: 7807931431500050076}
   - component: {fileID: 7807931431500050075}
+  - component: {fileID: 6107263046165276690}
   m_Layer: 0
   m_Name: bg
   m_TagString: Untagged
@@ -112,8 +113,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Events:
-    m_Signals: []
-    m_Events: []
+    m_Signals:
+    - {fileID: 11400000, guid: eea8b40a6c985be47b712c5c7d6bc5c4, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7807931431500050076}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Open
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6107263046165276690}
+          m_TargetAssemblyTypeName: AnimationLooper, Assembly-CSharp
+          m_MethodName: BeginLoop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &6107263046165276690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807931431500050073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0e1a1a8b84d20498bd63c697d22296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_loopOnStart: 0
+  m_anim: {fileID: 7807931431500050076}
+  m_toPlay: {fileID: 7400000, guid: 41dfc81aa4f344344ba728a53ce48f17, type: 2}
+  m_maxDelayPerLoop: 10
+  m_minDelayPerLoop: 5
 --- !u!1 &7807931431644849052
 GameObject:
   m_ObjectHideFlags: 0

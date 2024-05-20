@@ -176,10 +176,6 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -1108203505438018460, guid: 1c16309490753974d9db3fb8bd295bd6, type: 2}
-    value: {fileID: 520722251}
-  - key: {fileID: 5226506699634134648, guid: 1c16309490753974d9db3fb8bd295bd6, type: 2}
-    value: {fileID: 520722250}
   - key: {fileID: 1115369818868626496, guid: 1c16309490753974d9db3fb8bd295bd6, type: 2}
     value: {fileID: 1956640604}
   - key: {fileID: -1068874314498732640, guid: 1c16309490753974d9db3fb8bd295bd6, type: 2}
@@ -534,28 +530,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 154640818304815653, guid: 8c39279dcae70ed4cb9d5474d20fe0f0, type: 3}
   m_PrefabInstance: {fileID: 520722248}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &520722250 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5876877067326719567, guid: 8c39279dcae70ed4cb9d5474d20fe0f0, type: 3}
-  m_PrefabInstance: {fileID: 520722248}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &520722251 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7998243577566916452, guid: 8c39279dcae70ed4cb9d5474d20fe0f0, type: 3}
-  m_PrefabInstance: {fileID: 520722248}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &539828176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -727,11 +701,6 @@ MonoBehaviour:
   m_intro: {fileID: 6798904}
   m_credits: {fileID: 1749859593}
   m_ending: {fileID: 539828178}
-  m_onTitleLoad:
-    m_eventToListen: {fileID: 0}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls: []
   m_onNewGame:
     m_eventToListen: {fileID: 0}
     m_responses:
