@@ -26,15 +26,8 @@ public class AriaDisplayController
     }
     public void MoveTo(AriaPosition newLocation, AriaPosition previous) 
     {
-        Hide(previous);
         switch (newLocation)
         {
-            case AriaPosition.InsideCafe_Entrance:
-                if (m_cafePoses.isActiveAndEnabled)
-                {
-                    m_cafePoses.SetTrigger("entrance");
-                }
-                break;
             case AriaPosition.InsideCafe_Counter:
                 if (m_cafePoses.isActiveAndEnabled)
                 {
@@ -66,6 +59,7 @@ public class AriaDisplayController
                 }
                 break;
             default:
+                Hide(previous);
                 break;
         }
     }
@@ -73,9 +67,6 @@ public class AriaDisplayController
     {
         switch (toHide)
         {
-            case AriaPosition.InsideCafe_Entrance:
-                m_cafePoses.SetTrigger("hide");
-                break;
             case AriaPosition.InsideCafe_Counter:
                 m_cafePoses.SetTrigger("hide");
                 break;

@@ -6,7 +6,6 @@ using UnityEngine;
 [Serializable]
 public enum AriaPosition
 { 
-    InsideCafe_Entrance = 0,
     InsideCafe_Counter = 1,
     InsideCafe_Sit = 2,
     InsideCafe_Closeup = 3,
@@ -22,7 +21,7 @@ public class AriaState
     public int Affection = 0;
     [JsonConverter(typeof(StringEnumConverter))]   
     public AriaPosition CurrentLocation;
-    public static AriaState Default = new AriaState(false, false, 1, AriaPosition.InsideCafe_Entrance);
+    public static AriaState Default = new AriaState(false, false, 1, AriaPosition.None);
     public AriaState(
         bool isPossessed, 
         bool hasPastRunMemory, 

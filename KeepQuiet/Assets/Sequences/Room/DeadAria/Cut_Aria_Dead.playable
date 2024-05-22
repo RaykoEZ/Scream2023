@@ -1219,7 +1219,7 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   TextColour: {r: 1, g: 0, b: 0, a: 0}
-  SubtitleText: <size=72><b>mv aria.cogni -d resv-dir DESKTOP</b></size>
+  SubtitleText: <size=72><b>handsh aria.cogni --forceextract -d resv-dir DESKTOP</b></size>
 --- !u!114 &-1900314810991339799
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1727,7 +1727,8 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   TextColour: {r: 1, g: 0, b: 0, a: 0}
-  SubtitleText: "<size=72><b>mv VAI_\u2588ria.cogni -\u2588 res\u2588-dir D\u2588SKT\u2588\u2588</b></size>"
+  SubtitleText: "<size=72><b>handsh VAI_\u2588ria.cogni --forceextract -\u2588 res\u2588-dir
+    D\u2588SKT\u2588\u2588</b></size>"
 --- !u!114 &9152334124754999210
 MonoBehaviour:
   m_ObjectHideFlags: 1

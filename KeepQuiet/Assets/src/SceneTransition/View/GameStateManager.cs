@@ -31,14 +31,21 @@ public class GameStateManager : MonoBehaviour
     public SaveData CurrentGameState => new SaveData(m_currentGameState);
     void OnEnable()
     {
-        m_saveData.OnUpdate += Init;
+        m_toolMenu.BatUnlocked += OnBatUnlock;
+        m_toolMenu.SpecialTorchUnlocked += OnSpecialTorchUnlock;
     }
     void OnDisable()
     {
-        m_saveData.OnUpdate -= Init;
+        m_toolMenu.BatUnlocked -= OnBatUnlock;
+        m_toolMenu.SpecialTorchUnlocked -= OnSpecialTorchUnlock;
     }
     void Start()
     {
+        UpdateGameState();
+    }
+    void UpdateGameState() 
+    {
+        m_saveData.OnUpdate += Init;
         //Listen to savedatat load event, ready to receive save data
         m_saveData.RequestGameState();
     }
@@ -50,6 +57,7 @@ public class GameStateManager : MonoBehaviour
         m_saveGameState?.TriggerEvent(info);
         // new save data available to update
         SaveDataSource.SetDirty();
+        UpdateGameState();
     }
     public Aria GetAria()
     {
@@ -57,6 +65,7 @@ public class GameStateManager : MonoBehaviour
     }
     void Init(SaveData saved)
     {
+        m_saveData.OnUpdate -= Init;
         m_currentGameState = saved;
         //Hide all view first
         m_outsideCam?.SetVisual(false);
@@ -107,5 +116,16 @@ public class GameStateManager : MonoBehaviour
     public void OnToolReturn(EToolType returningTool) 
     {
         m_currentView?.OnReturningTool(returningTool);
+    }
+    void OnBatUnlock() 
+    {
+        m_currentGameState.BatTaken = true;
+        SaveGameState();
+    }
+
+    void OnSpecialTorchUnlock() 
+    {
+        m_currentGameState.SpecialTorchUnlocked = true;
+        SaveGameState();
     }
 }

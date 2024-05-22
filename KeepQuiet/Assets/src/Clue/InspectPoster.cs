@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Curry.Explore;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,11 +19,11 @@ public class InspectPoster : InspectionDisplay
             m_numScareTrigger++;
         }
     }
-    void NormalState() 
+    public void NormalState() 
     {
         m_anim?.SetBool("glitch", false);
     }
-    void GlitchState() 
+    public void GlitchState() 
     {
         m_anim?.SetBool("glitch", true);
     }
@@ -31,13 +32,6 @@ public class InspectPoster : InspectionDisplay
     {
         TryScare();
         yield return new WaitForSeconds(0.05f);
-    }
-}
-public class InspectVent : InspectionDisplay
-{
-    public override IEnumerator OnExit()
-    {
-        yield return null;
     }
 }
 public class InspectDoor : InspectionDisplay
@@ -60,11 +54,21 @@ public class InspectDocument : InspectionDisplay
     {
         yield return null;
     }
-}
-public class InspectCans : InspectionDisplay
-{
-    public override IEnumerator OnExit()
-    {
-        yield return null;
+    public void OpenManual() 
+    { 
+    
+    }
+    public void IncidentReport() 
+    { 
+    
+    }
+    public void SubjectProfile() 
+    { 
+    
+    
+    }
+    public void MissionNote() 
+    { 
+    
     }
 }

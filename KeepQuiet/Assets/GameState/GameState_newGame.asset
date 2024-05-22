@@ -13,22 +13,20 @@ MonoBehaviour:
   m_Name: GameState_newGame
   m_EditorClassIdentifier: 
   m_state:
+    Persistent:
+      AriaDead: 0
+      HandshakeComplete: 0
+      ContinueCount: 0
+      CurrentEnding: 3
+    IsMalwareIsolated: 0
+    DialSolved: 0
+    BatTaken: 0
+    SpecialTorchUnlocked: 0
+    RevealClock: 0
+    FreedomRoute: 0
     CurrentlyViewing: RoomRight
     AriaStatus:
       IsPossessed: 0
       HasPastRunMemory: 0
       Affection: 1
-      Sanity: 1
-      CurrentLocation: 1
-    ViewStates:
-    - LocationName: InsideCafe
-      CluesToHide: []
-    - LocationName: OutsideAria
-      CluesToHide: []
-    - LocationName: OutsideCamera
-      CluesToHide: []
-    - LocationName: RoomLeft
-      CluesToHide:
-      - Clock
-    - LocationName: RoomRight
-      CluesToHide: []
+      CurrentLocation: -1

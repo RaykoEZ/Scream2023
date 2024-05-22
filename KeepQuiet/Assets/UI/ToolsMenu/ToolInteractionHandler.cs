@@ -1,6 +1,7 @@
 ﻿using Curry.Explore;
 using System.Collections.Generic;
 using UnityEngine;
+public delegate void OnToolUnlock();
 public class ToolInteractionHandler : MonoBehaviour
 {
     [SerializeField] GameStateManager m_gameState = default;
@@ -12,6 +13,8 @@ public class ToolInteractionHandler : MonoBehaviour
     [SerializeField] QuickTool m_torch = default;
     [SerializeField] QuickTool m_specialTorch = default;
     [SerializeField] QuickTool m_bat = default;
+    public event OnToolUnlock BatUnlocked;
+    public event OnToolUnlock SpecialTorchUnlocked;
     // tool we are currently using
     QuickTool m_using;
     // the current tool aiming object
@@ -26,7 +29,7 @@ public class ToolInteractionHandler : MonoBehaviour
         SetToolUnlock(m_specialTorch, saved.SpecialTorchUnlocked);
         SetToolUnlock(m_bat, saved.BatTaken);
     }
-    void SetToolUnlock(QuickTool tool, bool isUnlocked) 
+    public void SetToolUnlock(QuickTool tool, bool isUnlocked) 
     {
         if (isUnlocked) 
         {
@@ -40,6 +43,16 @@ public class ToolInteractionHandler : MonoBehaviour
             tool.OnExit -= OnPointerExit;
             tool.gameObject.SetActive(false);
         }
+    }
+    public void UnlockSpecialTorch() 
+    {
+        SetToolUnlock(m_specialTorch, true);
+        SpecialTorchUnlocked?.Invoke();
+    }
+    public void UnlockBat()
+    {
+        SetToolUnlock(m_bat, true);
+        BatUnlocked?.Invoke();
     }
     public void ReturnTool(QuickTool tool)
     {
