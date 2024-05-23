@@ -17,8 +17,3 @@ public class Bin : Clue
         return m_inspectBin;
     }
 }
-
-public class Documents: Clue 
-{ 
-
-}

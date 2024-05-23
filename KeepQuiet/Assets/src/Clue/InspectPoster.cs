@@ -8,6 +8,17 @@ public class InspectPoster : InspectionDisplay
     [Range(0f, 1f)]
     [SerializeField] float m_scareRate = 0.1f;
     int m_numScareTrigger = 0;
+    public override void Init(SaveData save) 
+    { 
+        if (save.RevealClock || save.Persistent.AriaDead) 
+        {
+            GlitchState();
+        }
+        else 
+        {
+            NormalState();
+        }
+    }
     public void TryScare() 
     {
         if (m_numScareTrigger > 0) return;
@@ -46,29 +57,5 @@ public class InspectClock : InspectionDisplay
     public override IEnumerator OnExit()
     {
         yield return null;
-    }
-}
-public class InspectDocument : InspectionDisplay
-{
-    public override IEnumerator OnExit()
-    {
-        yield return null;
-    }
-    public void OpenManual() 
-    { 
-    
-    }
-    public void IncidentReport() 
-    { 
-    
-    }
-    public void SubjectProfile() 
-    { 
-    
-    
-    }
-    public void MissionNote() 
-    { 
-    
     }
 }

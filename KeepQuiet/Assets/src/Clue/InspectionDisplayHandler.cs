@@ -12,11 +12,13 @@ public class InspectionDisplayHandler : HideableUI
     bool m_inspecting = false;
     public void InspectTarget(Clue toDisplay) 
     {
-        var display = toDisplay?.GetInspectionDisplay(m_state.CurrentGameState);
+        var save = m_state.CurrentGameState;
+        var display = toDisplay?.GetInspectionDisplay(save);
         if (m_inspecting || toDisplay == null || display == null) return;
         m_inspecting = true;
         InspectionDisplay instance = Instantiate(display, m_contentParent, false);
         m_currentlyInspecting = instance;
+        m_currentlyInspecting?.Init(save);
         m_inspectUITrigger?.Show();
     }
     public void StopInspecting() 
