@@ -8,12 +8,3 @@ public class RoomPoster : Clue
         return m_inspectPoster;
     }
 }
-
-public class Bin : Clue 
-{
-    [SerializeField] InspectBin m_inspectBin = default;
-    public override InspectionDisplay GetInspectionDisplay(SaveData state)
-    {
-        return m_inspectBin;
-    }
-}
