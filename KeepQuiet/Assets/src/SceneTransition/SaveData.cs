@@ -56,7 +56,8 @@ public class SaveData
     // Check if player found and dragged out the Jamming device found in secret puzzle 
     // Did player resolve malware overtaking Aria?
     // Secret/True End Flag
-    public bool IsMalwareIsolated;
+    public bool IsMalwareGone;
+    public bool WatchUnlocked;
     // The dial puzzle to start Jammer trigger
     public bool DialSolved;
     // Did the player take the bat in Room Left?
@@ -74,24 +75,26 @@ public class SaveData
     public AriaState AriaStatus;
     public SaveData()
     {
-        IsMalwareIsolated = false;
+        IsMalwareGone = false;
         DialSolved = false;
         BatTaken = false;
         RevealClock = false;
         SpecialTorchUnlocked = false;
         FreedomRoute = false;
+        WatchUnlocked = false;
         Persistent = new PersistentSave();
         CurrentlyViewing = "RoomRight";
         AriaStatus = AriaState.Default;
     }
     public SaveData(SaveData copy)
     {
-        IsMalwareIsolated = copy.IsMalwareIsolated;
+        IsMalwareGone = copy.IsMalwareGone;
         BatTaken = copy.BatTaken;
         SpecialTorchUnlocked = copy.SpecialTorchUnlocked;
         DialSolved = copy.DialSolved;
         RevealClock = copy.RevealClock;
         FreedomRoute = copy.FreedomRoute;
+        WatchUnlocked = copy.WatchUnlocked;
         Persistent = copy.Persistent;
         CurrentlyViewing = copy.CurrentlyViewing;
         AriaStatus = new AriaState(copy.AriaStatus);

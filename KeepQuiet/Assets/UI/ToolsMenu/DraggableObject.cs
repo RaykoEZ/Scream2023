@@ -12,7 +12,7 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     public virtual bool Draggable { get; set; } = true;
     protected virtual Transform OnDragParent => transform.root;
     // Move one above original parent when dragging the object 
-    void OnEnable()
+    protected virtual void OnEnable()
     {
         GetComponent<CanvasGroup>().blocksRaycasts = true;
     }

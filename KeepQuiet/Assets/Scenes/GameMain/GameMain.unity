@@ -23790,6 +23790,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1165556947}
     m_Modifications:
+    - target: {fileID: 1400776604, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 1945968200485290728, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945968200485290728, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366647854050035786, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 20eb22285269b5a4ca6f88818c29a3dd, type: 2}
+    - target: {fileID: 3601563319066067908, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 4139442290581622856, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -23874,10 +23894,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4488630591502967546, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -453930281
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488630591502967546, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4806512207042711829, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
       propertyPath: m_Name
       value: P_Watch
       objectReference: {fileID: 0}
+    - target: {fileID: 4806512207042711829, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993374497877325773, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb122f6a92dc2c42ab06d96d5e835bb, type: 3}
