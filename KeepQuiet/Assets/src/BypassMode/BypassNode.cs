@@ -16,6 +16,10 @@ public class BypassNode : HideableUI,
     public event OnBypassNodeHit OnFail;
 
     public bool IsSafe => m_isSafe;
+    void Start() 
+    {
+        Init();
+    }
     public void SetSafe(bool isSafe) 
     {
         m_isSafe = isSafe;

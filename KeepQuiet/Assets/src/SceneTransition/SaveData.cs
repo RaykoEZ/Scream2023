@@ -58,6 +58,7 @@ public class SaveData
     // Secret/True End Flag
     public bool IsMalwareGone;
     public bool WatchUnlocked;
+    public WatchDisplay WatchState;
     // The dial puzzle to start Jammer trigger
     public bool DialSolved;
     // Did the player take the bat in Room Left?
@@ -82,6 +83,7 @@ public class SaveData
         SpecialTorchUnlocked = false;
         FreedomRoute = false;
         WatchUnlocked = false;
+        WatchState = WatchDisplay.Off;
         Persistent = new PersistentSave();
         CurrentlyViewing = "RoomRight";
         AriaStatus = AriaState.Default;
@@ -95,6 +97,7 @@ public class SaveData
         RevealClock = copy.RevealClock;
         FreedomRoute = copy.FreedomRoute;
         WatchUnlocked = copy.WatchUnlocked;
+        WatchState = copy.WatchState;
         Persistent = copy.Persistent;
         CurrentlyViewing = copy.CurrentlyViewing;
         AriaStatus = new AriaState(copy.AriaStatus);

@@ -38,7 +38,6 @@ public class BypassStage : HideableUI
         foreach (var item in m_subStages.AllNodes)
         {
             item.SetSafe(false);
-            item?.Init();
             item.OnFail += OnMiss;
         }
         if (m_subStages.SafeNodes.Count > 0) 
@@ -47,7 +46,6 @@ public class BypassStage : HideableUI
             currentSafeNode.SetSafe(true);
             currentSafeNode.OnFail -= OnMiss;
             currentSafeNode.OnSuccess += OnSafe;
-            currentSafeNode?.Init();
         }
         Show();
     }
