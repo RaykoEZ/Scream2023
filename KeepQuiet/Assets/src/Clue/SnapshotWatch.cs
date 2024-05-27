@@ -7,20 +7,19 @@ public enum WatchDisplay
     Present,
     HoursAgo,
     YearAgo,
-    Glitch,
-    Reset,
+    Error,
+    None,
     Off
 }
 [RequireComponent(typeof(CanvasGroup))]
 public class SnapshotWatch : DraggableObject 
 {
-    [SerializeField] PlayableDirector m_director = default;
-    
+    [SerializeField] PlayableDirector m_director = default; 
     [SerializeField] PlayableAsset m_presentTime = default;
     [SerializeField] PlayableAsset m_hoursAgo = default;
     [SerializeField] PlayableAsset m_yearAgo = default;
     [SerializeField] PlayableAsset m_glitch = default;
-    [SerializeField] PlayableAsset m_reset = default;
+    [SerializeField] PlayableAsset m_none = default;
     [SerializeField] PlayableAsset m_off = default;
     WatchDisplay m_currentDisplay = WatchDisplay.Off;
     protected override Transform OnDragParent => transform.parent;
@@ -52,6 +51,7 @@ public class SnapshotWatch : DraggableObject
     }
     public void SetWatchState(WatchDisplay state) 
     {
+        if (state == m_currentDisplay) return;
         m_currentDisplay = state;
         switch (m_currentDisplay)
         {
@@ -64,11 +64,11 @@ public class SnapshotWatch : DraggableObject
             case WatchDisplay.YearAgo:
                 m_director.Play(m_yearAgo);
                 break;
-            case WatchDisplay.Glitch:
+            case WatchDisplay.Error:
                 m_director.Play(m_glitch);
                 break;
-            case WatchDisplay.Reset:
-                m_director.Play(m_reset);
+            case WatchDisplay.None:
+                m_director.Play(m_none);
                 break;
             case WatchDisplay.Off:
                 m_director.Play(m_off);

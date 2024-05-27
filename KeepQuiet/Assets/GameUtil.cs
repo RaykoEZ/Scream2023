@@ -1,6 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 public static class GameUtil 
 {
+    // Coountdown in seconds
+    public static IEnumerator Countdown(float secondsLeft, Action onFinish = null)
+    {
+        float t = secondsLeft;
+        while (t > 0f) 
+        {
+            yield return new WaitForSeconds(1f);
+            t--;
+        }
+        onFinish?.Invoke();
+    }
     // Get min and max of a angle with range thresholds
     public static FloatRange SignedAngleThresholdRange(float threshold, float margin)
     {
