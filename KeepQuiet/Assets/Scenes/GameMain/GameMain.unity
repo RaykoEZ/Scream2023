@@ -9951,7 +9951,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992750382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -32.475952, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9.353074, y: 9.353074, z: 9.353074}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9968,7 +9968,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7417992732861164449, guid: bdc572df6f9cbbe448362b45c603ca47, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -17188,11 +17188,11 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 108338463}
   m_steps:
   - Display: {fileID: 752801055}
-    Content: Hmm...
+    Content: <color=red><b>Hmm..</b>.</color>
   - Display: {fileID: 752801055}
     Content: <color=red>Shoot, I can't see the response for the Secret Handshake.</color>
   - Display: {fileID: 752801055}
-    Content: This makes things...annoying.
+    Content: This makes things...<color=red>annoying.</color>
 --- !u!114 &1549354742
 MonoBehaviour:
   m_ObjectHideFlags: 0
