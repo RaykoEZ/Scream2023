@@ -47,8 +47,7 @@ public class TutorialDisplay : MonoBehaviour
     {
         m_inProgress = true;
         var step = m_steps[m_current];
-        step?.Display?.SetContent(step.Content);
-        step?.Display?.Show();
+        step?.Show();
         yield return new WaitForSeconds(0.5f);
         m_inProgress = false;
     }

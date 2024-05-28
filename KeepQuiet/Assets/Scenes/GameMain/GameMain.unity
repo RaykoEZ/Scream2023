@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_blockBackground: 0
-  m_pauseTimeAfterSequence: 0.5
+  m_pauseTimeAfterSequence: 0.7
   m_tutorials:
   - {fileID: 1549354741}
 --- !u!114 &123671209
@@ -9189,12 +9189,15 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 1789103374}
   m_steps:
   - Display: {fileID: 1861727496}
+    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: You'll need to remove the suspect from this sandbox once the interrogation
       ends.
   - Display: {fileID: 1861727496}
+    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Your <color=yellow><b>Secret Phrases</b></color> should be availble
       already
   - Display: {fileID: 1861727496}
+    PlaySound: {fileID: 0}
     Content: <color=yellow><b>Let's find them.</b></color>
 --- !u!114 &959404766
 MonoBehaviour:
@@ -17188,11 +17191,17 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 108338463}
   m_steps:
   - Display: {fileID: 752801055}
+    PlaySound: {fileID: 0}
     Content: <color=red><b>Hmm..</b>.</color>
   - Display: {fileID: 752801055}
+    PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
     Content: <color=red>Shoot, I can't see the response for the Secret Handshake.</color>
   - Display: {fileID: 752801055}
-    Content: This makes things...<color=red>annoying.</color>
+    PlaySound: {fileID: 0}
+    Content: This makes things...
+  - Display: {fileID: 752801055}
+    PlaySound: {fileID: 0}
+    Content: <color=red>annoying.</color>
 --- !u!114 &1549354742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27944,10 +27953,13 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 7712070707087821935}
   m_steps:
   - Display: {fileID: 752447849}
+    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: This is our <color=yellow>prime suspect</color>.
   - Display: {fileID: 752447849}
+    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: She has been quarantined inside this sandbox.
   - Display: {fileID: 752447849}
+    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: She is prepared for interrogation in this quarantined zone.
 --- !u!114 &7712070707087821935
 MonoBehaviour:
