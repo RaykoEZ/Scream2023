@@ -57,7 +57,6 @@ public class SaveData
     // Did player resolve malware overtaking Aria?
     // Secret/True End Flag
     public bool IsMalwareGone;
-    public bool WatchUnlocked;
     public WatchDisplay WatchState;
     // The dial puzzle to start Jammer trigger
     public bool DialSolved;
@@ -82,7 +81,6 @@ public class SaveData
         RevealClock = false;
         SpecialTorchUnlocked = false;
         FreedomRoute = false;
-        WatchUnlocked = false;
         WatchState = WatchDisplay.Off;
         Persistent = new PersistentSave();
         CurrentlyViewing = "RoomRight";
@@ -96,7 +94,6 @@ public class SaveData
         DialSolved = copy.DialSolved;
         RevealClock = copy.RevealClock;
         FreedomRoute = copy.FreedomRoute;
-        WatchUnlocked = copy.WatchUnlocked;
         WatchState = copy.WatchState;
         Persistent = copy.Persistent;
         CurrentlyViewing = copy.CurrentlyViewing;

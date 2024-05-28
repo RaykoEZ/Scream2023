@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60076258b4b5ae408e01144f5f346b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.5
   m_tutorials:
   - {fileID: 7707543183353628602}
@@ -479,9 +480,9 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 7712070706748669192}
   m_steps:
   - Display: {fileID: 3996086162607233945}
-    Content: Operator, welcome back to the Virtual Sandbox Environment.
+    Content: Welcome back to the Virtual Sandbox.
   - Display: {fileID: 3996086162607233945}
-    Content: A new ergent task has been sent to you.
+    Content: A new <color=orange><b>urgent task</b></color> has been sent to you.
 --- !u!1 &7180029472151755665
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +568,7 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 7579684179848225147}
   m_steps:
   - Display: {fileID: 458327205589955881}
-    Content: The important documents are at your desk.
+    Content: The files you need are at your desk.
   - Display: {fileID: 458327205589955881}
     Content: Clicking here to inspect, good luck on your mission.
 --- !u!1001 &873642850596335976

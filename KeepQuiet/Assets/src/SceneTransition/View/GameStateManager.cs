@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+
 // handles behaviours for current game state in game scene
 // Notifies to save new persistent game state
 // Loads saved game state when game scene initializes
@@ -14,6 +15,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
+    [SerializeField] protected SnapshotWatch m_watch = default;
     // view states
     [SerializeField] protected ViewState m_outsideCam = default;
     [SerializeField] protected ViewState m_outsideAria = default;
@@ -31,11 +33,13 @@ public class GameStateManager : MonoBehaviour
     public SaveData CurrentGameState => new SaveData(m_currentGameState);
     void OnEnable()
     {
+        m_saveData.OnUpdate += Init;
         m_toolMenu.BatUnlocked += OnBatUnlock;
         m_toolMenu.SpecialTorchUnlocked += OnSpecialTorchUnlock;
     }
     void OnDisable()
     {
+        m_saveData.OnUpdate -= Init;
         m_toolMenu.BatUnlocked -= OnBatUnlock;
         m_toolMenu.SpecialTorchUnlocked -= OnSpecialTorchUnlock;
     }
@@ -45,7 +49,6 @@ public class GameStateManager : MonoBehaviour
     }
     void UpdateGameState() 
     {
-        m_saveData.OnUpdate += Init;
         //Listen to savedatat load event, ready to receive save data
         m_saveData.RequestGameState();
     }
@@ -56,7 +59,6 @@ public class GameStateManager : MonoBehaviour
         EventInfo info = new EventInfo(payload, onFinishCallback: onFinish);
         m_saveGameState?.TriggerEvent(info);
         // new save data available to update
-        SaveDataSource.SetDirty();
         UpdateGameState();
     }
     public Aria GetAria()
@@ -65,8 +67,8 @@ public class GameStateManager : MonoBehaviour
     }
     void Init(SaveData saved)
     {
-        m_saveData.OnUpdate -= Init;
         m_currentGameState = saved;
+        m_watch?.Init(saved);
         //Hide all view first
         m_outsideCam?.SetVisual(false);
         m_outsideAria?.SetVisual(false);
@@ -105,9 +107,6 @@ public class GameStateManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         //Update Aria state after scene is set up
         m_aria?.Init(m_currentGameState);
-    }
-    public void InspectClue(Clue toInspect) 
-    {
     }
     public void OnToolUse(EToolType usingTool) 
     {

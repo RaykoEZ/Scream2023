@@ -16,8 +16,8 @@ public class InspectionDisplayHandler : HideableUI
         var display = toDisplay?.GetInspectionDisplay(save);
         if (m_inspecting || toDisplay == null || display == null) return;
         m_inspecting = true;
-        InspectionDisplay instance = Instantiate(display, m_contentParent, false);
-        m_currentlyInspecting = instance;
+        m_currentlyInspecting = display;
+        m_currentlyInspecting.gameObject.SetActive(true);
         m_currentlyInspecting?.Init(save);
         m_inspectUITrigger?.Show();
     }
@@ -29,7 +29,7 @@ public class InspectionDisplayHandler : HideableUI
     {
         yield return m_currentlyInspecting?.OnExit();
         yield return new WaitForEndOfFrame();
-        Destroy(m_currentlyInspecting.gameObject);
+        m_currentlyInspecting.gameObject.SetActive(false);
         m_inspectUITrigger?.Hide();
         m_toolBar?.Hide();
         m_inspecting = false;

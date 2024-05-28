@@ -30,14 +30,6 @@ public class SnapshotWatch : DraggableObject
     public void Init(SaveData save)
     {
         SetWatchState(save.WatchState);
-        if (save.WatchUnlocked)
-        {
-            Show();
-        }
-        else 
-        {
-            Hide();
-        }
     }
     public void Show() 
     {

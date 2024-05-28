@@ -10,18 +10,15 @@ public class SaveDataSource : MonoBehaviour
     [SerializeField] CurryGameEventListener m_onDataRecieve = default;
     [SerializeField] CurryGameEventTrigger m_readyForData = default;
     static SaveData m_currentGameState = new SaveData();
-    static bool m_isDirty = true;
     // Get New save data 
     public event SaveDataUpdate OnUpdate;
     public SaveData CurrentGameState => new SaveData(m_currentGameState);
+    bool m_loading = false;
     // Set this flag if game save data changed and isn't loaded here
-    public static bool IsDirty => m_isDirty;
-    public static void SetDirty() 
-    {
-        m_isDirty = true;
-    }
     public void RequestGameState() 
     {
+        if (m_loading) return;
+        m_loading = true;
         m_onDataRecieve?.Init();
         m_readyForData?.TriggerEvent(new EventInfo());
     }
@@ -34,9 +31,9 @@ public class SaveDataSource : MonoBehaviour
         {
             // update static game state
             m_currentGameState = save;
-            m_isDirty = false;
             // Send new copy to listeners
             OnUpdate?.Invoke(CurrentGameState);
+            m_loading = false;
         }
     }
 }

@@ -6,31 +6,20 @@ public class TutorialManager : MonoBehaviour
 {
     [SerializeField] Image m_background = default;
     [SerializeField] GameStateManager m_gameState = default;
-    [SerializeField] TutorialCollection m_uiNavigation = default;
-    [SerializeField] TutorialCollection m_tools = default;
-    [SerializeField] TutorialCollection m_newGame = default;
     TutorialCollection m_current;
     Coroutine m_transition;
-    public void Navigation()
+    public void TriggerTutorial(TutorialCollection col) 
     {
-        m_background.enabled = true;
-        EndCurrent();
-        m_uiNavigation?.Begin();
-        m_current = m_uiNavigation;
+        StartTutorial(col);
     }
-    public void Tools()
+    void StartTutorial(TutorialCollection col, bool forceRepeat = false) 
     {
-        m_background.enabled = true;
+        // Don't repeat the same tutorial in the same session if we don't need to
+        if (col.HasTriggeredOnce && !forceRepeat) return;
+        m_background.enabled = col.BlockBackground;
         EndCurrent();
-        m_tools?.Begin();
-        m_current = m_tools;
-    }
-    public void NewGame()
-    {
-        m_background.enabled = true;
-        EndCurrent();
-        m_newGame?.Begin();
-        m_current = m_newGame;
+        m_current = col;
+        m_current?.Begin();
     }
     void EndCurrent()
     {

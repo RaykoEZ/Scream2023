@@ -665,10 +665,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1109917215461769568}
   - component: {fileID: 1109917215461769570}
+  - component: {fileID: 1576783506367604441}
   - component: {fileID: 1109917215461769573}
   - component: {fileID: 1109917215461769569}
   - component: {fileID: 1109917215461769572}
   - component: {fileID: 1109917215461769571}
+  - component: {fileID: 6241555466866397188}
   m_Layer: 7
   m_Name: Cut_Aria_Dead
   m_TagString: Untagged
@@ -714,6 +716,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109917215461769599}
   m_CullTransparentMesh: 1
+--- !u!114 &1576783506367604441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109917215461769599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d93bfd6fea72134cb5cdffd8572da4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_waitAfterSequenceFinishes: 0
+  m_director: {fileID: 1109917215461769573}
 --- !u!320 &1109917215461769573
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -724,7 +740,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 7c5928510dcdb3047a8025c543a9fc9b, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -753,6 +769,10 @@ PlayableDirector:
     value: {fileID: 1109917215410144926}
   - key: {fileID: 180328858521094954, guid: 7c5928510dcdb3047a8025c543a9fc9b, type: 2}
     value: {fileID: 2071732845}
+  - key: {fileID: -3316181563556998482, guid: 7c5928510dcdb3047a8025c543a9fc9b, type: 2}
+    value: {fileID: 1109917215872110631}
+  - key: {fileID: -1168529003267294585, guid: 7c5928510dcdb3047a8025c543a9fc9b, type: 2}
+    value: {fileID: 6241555466866397188}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1109917215461769569
@@ -833,6 +853,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!225 &6241555466866397188
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109917215461769599}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1109917215600142578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,7 +1096,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 1
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 03defca290aa45b4e9a87843a9a8db54, type: 2}
 --- !u!1 &1109917216269303465
 GameObject:

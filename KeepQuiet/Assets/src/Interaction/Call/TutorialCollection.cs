@@ -5,14 +5,17 @@ using UnityEngine;
 // handles a list of tutorial sequences
 public class TutorialCollection : MonoBehaviour 
 {
+    [SerializeField] bool m_blockBackground = default;
     // Length of time to wait after finishing a tutorial sequence(in seconds)
     [Range(0f, 1000f)]
     [SerializeField] float m_pauseTimeAfterSequence = default;
     [SerializeField] List<TutorialDisplay> m_tutorials = default;
     bool isActive = false;
     int m_current = 0;
-
+    bool m_hasTriggeredOnce = false;
     public bool IsActive { get => isActive; private set => isActive = value; }
+    public bool HasTriggeredOnce { get => m_hasTriggeredOnce; }
+    public bool BlockBackground { get => m_blockBackground;}
 
     // Start tutorial from the beginning
     public void Begin() 
@@ -50,6 +53,7 @@ public class TutorialCollection : MonoBehaviour
     public void EndTutorial() 
     {
         m_tutorials[m_current]?.End();
+        m_hasTriggeredOnce = true;
         IsActive = false;
     }
 }

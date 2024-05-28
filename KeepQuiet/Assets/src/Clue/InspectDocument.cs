@@ -6,6 +6,4 @@ public class InspectDocument : InspectionDisplay
     {
         yield return null;
     }
-
-
 }
