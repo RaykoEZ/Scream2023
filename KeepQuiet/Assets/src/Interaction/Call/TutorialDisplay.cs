@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 // handles screen animation and text boxes in a tutorial sequence
 public class TutorialDisplay : MonoBehaviour 
 {
@@ -17,8 +18,9 @@ public class TutorialDisplay : MonoBehaviour
     }
     public bool Next() 
     {
+        int next = m_current + 1;
         //end this tutorial sequence if current index is at the end
-        bool hasStepsLeft = m_current + 1 < m_steps.Count;
+        bool hasStepsLeft = next < m_steps.Count;
         // ignore spamming
         if (!hasStepsLeft || m_inProgress) 
         {
@@ -27,18 +29,18 @@ public class TutorialDisplay : MonoBehaviour
         // increment sequence
         else
         {
+            var nextStep = m_steps[next];
+            m_steps[m_current]?.Transition(nextStep);
             ++m_current;
-            m_steps[m_current]?.Display?.Hide();
             m_inProgress = true;
             StartCoroutine(Next_Internal());
         }
         return hasStepsLeft;
     }
-
     public void End() 
     {
         var step = m_steps[m_current];
-        step?.Display?.Hide();
+        step?.End();
         ScreenHighlight?.Hide();
         m_current = 0;
         m_inProgress = false;

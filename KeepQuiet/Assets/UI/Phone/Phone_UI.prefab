@@ -8105,10 +8105,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1422298867171598941}
     - target: {fileID: 8517049472916884871, guid: b631464e43b6ecc4491f3e40bc6d2fa4, type: 3}
-      propertyPath: m_historyCollection.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8517049472916884871, guid: b631464e43b6ecc4491f3e40bc6d2fa4, type: 3}
       propertyPath: m_historyCollection.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: ddd0e08e8901fc44ca6a1b99bd0e0e4b, type: 2}

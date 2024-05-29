@@ -84,7 +84,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenHighlight: {fileID: 4368637991434815128}
   m_steps:
-  - Display: {fileID: 7754466563408511019}
+  - ShowInstantly: 0
+    Angry: 0
+    m_display: {fileID: 7754466563408511019}
+    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Your can access your tools to help with your investigations.
 --- !u!1 &5680943262187842216
 GameObject:
@@ -170,7 +173,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenHighlight: {fileID: 8609531853427731603}
   m_steps:
-  - Display: {fileID: 4941927003066501973}
+  - ShowInstantly: 0
+    Angry: 0
+    m_display: {fileID: 4941927003066501973}
+    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Drag the icons with the cursor to access the tools to assist your investigationl.
 --- !u!1 &5680943262833493797
 GameObject:
@@ -352,6 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60076258b4b5ae408e01144f5f346b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.5
   m_tutorials:
   - {fileID: 3389000690025469521}

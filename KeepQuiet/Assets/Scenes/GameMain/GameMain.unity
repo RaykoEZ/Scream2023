@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2316483}
+  - component: {fileID: 2316484}
   m_Layer: 5
   m_Name: Messages
   m_TagString: Untagged
@@ -160,6 +161,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!320 &2316484
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316482}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6d571c0e2aababd4a93b7827295351c3, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 9134490074191452733, guid: 6d571c0e2aababd4a93b7827295351c3, type: 2}
+    value: {fileID: 506863545}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &20639011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234719393}
   m_Layer: 8
-  m_Name: InspectionContent
+  m_Name: Inspection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2240,7 +2260,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234719392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90.00027}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2248,6 +2268,7 @@ RectTransform:
   - {fileID: 1986412923}
   - {fileID: 1380001387}
   - {fileID: 823687750}
+  - {fileID: 1500122828}
   m_Father: {fileID: 1966327969}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6134,7 +6155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708370053}
   m_Layer: 0
-  m_Name: Scene Canvases
+  m_Name: Canvases
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6756,17 +6777,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1323951158285202498, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
   m_PrefabInstance: {fileID: 748699816}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &752447849 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 739579493249483841, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
-  m_PrefabInstance: {fileID: 4411118123954679487}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 713430f9bc770b140afe76052b41f497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &752801053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6782,6 +6792,18 @@ PrefabInstance:
     - target: {fileID: 2522996734140314070, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_Alpha
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987259106450330617, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
+      propertyPath: m_Color.b
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987259106450330617, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
+      propertyPath: m_Color.g
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987259106450330617, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
+      propertyPath: m_Color.r
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875261018546, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_fontSize
@@ -6885,6 +6907,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153005742186615495, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153005742186615495, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153005742186615495, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153005742186615495, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6957186005547714382, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
@@ -9188,17 +9226,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenHighlight: {fileID: 1789103374}
   m_steps:
-  - Display: {fileID: 1861727496}
+  - ShowInstantly: 0
+    Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: You'll need to remove the suspect from this sandbox once the interrogation
       ends.
-  - Display: {fileID: 1861727496}
+    m_display: {fileID: 1861727496}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+  - ShowInstantly: 0
+    Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Your <color=yellow><b>Secret Phrases</b></color> should be availble
       already
-  - Display: {fileID: 1861727496}
+    m_display: {fileID: 1861727496}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+  - ShowInstantly: 0
+    Angry: 0
     PlaySound: {fileID: 0}
     Content: <color=yellow><b>Let's find them.</b></color>
+    m_display: {fileID: 1861727496}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &959404766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16079,7 +16132,7 @@ GameObject:
   - component: {fileID: 1500122832}
   - component: {fileID: 1500122831}
   m_Layer: 5
-  m_Name: InspectionOverlay
+  m_Name: Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16093,12 +16146,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500122827}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90.00027}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1177813764}
-  m_Father: {fileID: 1966327969}
+  m_Father: {fileID: 234719393}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -17190,18 +17243,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenHighlight: {fileID: 108338463}
   m_steps:
-  - Display: {fileID: 752801055}
+  - ShowInstantly: 1
+    Angry: 0
     PlaySound: {fileID: 0}
-    Content: <color=red><b>Hmm..</b>.</color>
-  - Display: {fileID: 752801055}
+    Content: <color=red><b>Hmm?</b></color>
+    m_display: {fileID: 752801055}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1500122829}
+          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
+          m_MethodName: Hide
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - ShowInstantly: 0
+    Angry: 1
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
-    Content: <color=red>Shoot, I can't see the response for the Secret Handshake.</color>
-  - Display: {fileID: 752801055}
+    Content: <color=red><b>WHAT</b></color>
+    m_display: {fileID: 752801055}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2018118395}
+          m_TargetAssemblyTypeName: InspectDocument, Assembly-CSharp
+          m_MethodName: ZoomNote
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - ShowInstantly: 0
+    Angry: 1
+    PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    Content: <color=red><b>IT'S MISSING</b></color>
+    m_display: {fileID: 752801055}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2018118395}
+          m_TargetAssemblyTypeName: InspectDocument, Assembly-CSharp
+          m_MethodName: ZoomNoteMore
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - ShowInstantly: 0
+    Angry: 1
     PlaySound: {fileID: 0}
-    Content: This makes things...
-  - Display: {fileID: 752801055}
+    Content: <color=red>The <b>Secret Phrase</b></color>
+    m_display: {fileID: 752801055}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+  - ShowInstantly: 1
+    Angry: 0
     PlaySound: {fileID: 0}
-    Content: <color=red>annoying.</color>
+    Content: <color=red>f*ck</color>
+    m_display: {fileID: 752801055}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2018118395}
+          m_TargetAssemblyTypeName: InspectDocument, Assembly-CSharp
+          m_MethodName: StopZoom
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1500122829}
+          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
+          m_MethodName: Show
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &1549354742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22805,7 +22946,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 234719393}
-  - {fileID: 1500122828}
   - {fileID: 220030862}
   - {fileID: 1720387837}
   - {fileID: 453729573}
@@ -23127,10 +23267,6 @@ PrefabInstance:
     - target: {fileID: 384319479513525900, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 384319479559697264, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 384319480401248928, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_IsActive
@@ -26421,6 +26557,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1422298867138801164, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
+      propertyPath: m_historyCollection.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422298867138801164, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
+      propertyPath: m_historyCollection.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: aabd1639357dd92418f633d010968d49, type: 2}
     - target: {fileID: 1422298867204129820, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -26547,7 +26691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422298867397155356, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -800
+      value: -945
       objectReference: {fileID: 0}
     - target: {fileID: 1422298867397155356, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27549,6 +27693,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1966327969}
     m_Modifications:
+    - target: {fileID: 5727084683964369317, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727084683964369317, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6087678029485662422, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
       propertyPath: m_Name
       value: P_WatchUI
@@ -27952,15 +28104,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenHighlight: {fileID: 7712070707087821935}
   m_steps:
-  - Display: {fileID: 752447849}
+  - ShowInstantly: 0
+    Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: This is our <color=yellow>prime suspect</color>.
-  - Display: {fileID: 752447849}
+    m_display: {fileID: 0}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+  - ShowInstantly: 0
+    Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: She has been quarantined inside this sandbox.
-  - Display: {fileID: 752447849}
+    m_display: {fileID: 0}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+  - ShowInstantly: 0
+    Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: She is prepared for interrogation in this quarantined zone.
+    m_display: {fileID: 0}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &7712070707087821935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28189,6 +28356,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1567135143, guid: 9e9e26a6cbdb2504ea1f0f58dd161cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1567135144, guid: 9e9e26a6cbdb2504ea1f0f58dd161cac, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -28344,6 +28515,10 @@ PrefabInstance:
     - target: {fileID: 8892957357779844443, guid: 9e9e26a6cbdb2504ea1f0f58dd161cac, type: 3}
       propertyPath: m_Name
       value: P_PauseScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892957357779844443, guid: 9e9e26a6cbdb2504ea1f0f58dd161cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

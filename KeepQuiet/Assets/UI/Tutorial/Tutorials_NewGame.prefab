@@ -479,10 +479,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenHighlight: {fileID: 7712070706748669192}
   m_steps:
-  - Display: {fileID: 3996086162607233945}
+  - ShowInstantly: 0
+    Angry: 0
+    m_display: {fileID: 3996086162607233945}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Welcome back to the Virtual Sandbox.
-  - Display: {fileID: 3996086162607233945}
+  - ShowInstantly: 0
+    Angry: 0
+    m_display: {fileID: 3996086162607233945}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: A new <color=orange><b>urgent task</b></color> has been sent to you.
 --- !u!1 &7180029472151755665
@@ -569,10 +573,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenHighlight: {fileID: 7579684179848225147}
   m_steps:
-  - Display: {fileID: 458327205589955881}
+  - ShowInstantly: 0
+    Angry: 0
+    m_display: {fileID: 458327205589955881}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: The files you need are at your desk.
-  - Display: {fileID: 458327205589955881}
+  - ShowInstantly: 0
+    Angry: 0
+    m_display: {fileID: 458327205589955881}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Clicking here to inspect, good luck on your mission.
 --- !u!1001 &873642850596335976

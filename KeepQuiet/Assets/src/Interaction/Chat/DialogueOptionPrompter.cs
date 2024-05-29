@@ -18,8 +18,7 @@ public class DialogueOptionPrompter : MonoBehaviour
             m_options.Add(instance);
         }
     }
-    
-    public void PromptOption(IReadOnlyList<DialogueNode> options) 
+    public void PromptOption(IReadOnlyList<ChatOption> options) 
     {
         if (options.Count == 0) return;
         HideAll();
@@ -34,7 +33,7 @@ public class DialogueOptionPrompter : MonoBehaviour
     void OnOptionChosen(DialogueOption chosen)
     {
         HideAll();
-        OnChosen?.Invoke(chosen.OptionValue, m_options.IndexOf(chosen));
+        OnChosen?.Invoke(chosen.OptionValue.Outcome, m_options.IndexOf(chosen));
     }
     void HideAll()
     {

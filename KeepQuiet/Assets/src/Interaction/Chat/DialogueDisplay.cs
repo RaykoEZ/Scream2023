@@ -35,7 +35,7 @@ public class DialogueDisplay : HideableUI
         }
         else if (m_currentNode.Options.Count == 1)
         {
-            UpdateCurrentDialogue(m_currentNode.Options[0]);
+            UpdateCurrentDialogue(m_currentNode.Options[0].Outcome);
             StartChat();
         }
         else 
@@ -69,7 +69,7 @@ public class DialogueDisplay : HideableUI
     {
         if (m_isDirty) 
         {
-            StartCoroutine(ContinueChat(m_currentNode.Dialogues, m_currentNode.WhoSpoke != DialogueNode.s_playerName));
+            StartCoroutine(ContinueChat(m_currentNode.Dialogues, m_currentNode.Title != DialogueNode.s_playerName));
         }
     }
     IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues, bool isNpc = true)

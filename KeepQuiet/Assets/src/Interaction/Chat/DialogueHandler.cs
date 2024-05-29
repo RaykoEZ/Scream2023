@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-public delegate void OnPromptDialogueOption(IReadOnlyList<DialogueNode> options);
+public delegate void OnPromptDialogueOption(IReadOnlyList<ChatOption> options);
 public delegate void OnDialogueEnd();
 // Need a node-network for dialogue states & decisions
 public class DialogueHandler : MonoBehaviour
@@ -61,7 +61,7 @@ public class DialogueHandler : MonoBehaviour
     // Start a new dialogue tree from a sender
     public void IncomingDialogue(DialogueNode newDialogue) 
     {
-        string chatting = newDialogue.WhoSpoke;
+        string chatting = newDialogue.Title;
         if (!m_spawnedDialogueBoxes.TryGetValue(chatting, out DialogueDisplay result))
         {
             OnEnd?.Invoke();
@@ -83,7 +83,7 @@ public class DialogueHandler : MonoBehaviour
     }
     void StartCurrentChat() 
     {
-        m_chattingWith = m_npc.Get(m_currentDisplay.History.LastDialogue.WhoSpoke);
+        m_chattingWith = m_npc.Get(m_currentDisplay.History.LastDialogue.Title);
         // listen to dialogue update events
         m_currentDisplay.OnPrompt += OnPromptChoice;
         m_currentDisplay.OnEnd += EndDialogue;
@@ -98,7 +98,7 @@ public class DialogueHandler : MonoBehaviour
         m_currentDisplay.OnEnd -= EndDialogue;
         OnEnd?.Invoke();
     }
-    void OnPromptChoice(IReadOnlyList<DialogueNode> options)
+    void OnPromptChoice(IReadOnlyList<ChatOption> options)
     {
         m_optionPrompt.PromptOption(options);
     }
