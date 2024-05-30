@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PhoneNotificationHandler : MonoBehaviour
 {
     [SerializeField] Animator m_toggleAnim = default;
+    [SerializeField] HideableUI m_phoneUI = default;
     [SerializeField] AudioSource m_ring = default;
     [SerializeField] Image m_toggleIcon = default;
     [SerializeField] Sprite m_callAlert = default;
@@ -62,6 +63,10 @@ public class PhoneNotificationHandler : MonoBehaviour
         {
             m_chat.BeginChat(m_newMessage.Title);
             m_newMessage = null;
+        }
+        else 
+        {
+            m_phoneUI.Toggle();
         }
     }
 }

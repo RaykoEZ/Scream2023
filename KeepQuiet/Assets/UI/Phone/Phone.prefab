@@ -643,10 +643,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 35420106450640367}
     m_Modifications:
     - target: {fileID: 4703903792474085515, guid: e632190aa3481b94f9eeb94182721d64, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703903792474085515, guid: e632190aa3481b94f9eeb94182721d64, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4700150480706302704}
@@ -778,6 +774,10 @@ PrefabInstance:
       propertyPath: m_ring
       value: 
       objectReference: {fileID: 7576918235971904002}
+    - target: {fileID: 4703903792474085525, guid: e632190aa3481b94f9eeb94182721d64, type: 3}
+      propertyPath: m_phoneUI
+      value: 
+      objectReference: {fileID: 1423369680388875599}
     - target: {fileID: 4703903792474085525, guid: e632190aa3481b94f9eeb94182721d64, type: 3}
       propertyPath: m_transition
       value: 
