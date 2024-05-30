@@ -2,7 +2,7 @@
 
 public class TriggerMessage : TriggerInteraction
 {
-    [SerializeField] protected PlayerCaller m_trigger = default;
+    [SerializeField] protected PhoneNotificationHandler m_trigger = default;
     [SerializeField] protected DialogueNode m_message = default;
     public override void Trigger()
     {

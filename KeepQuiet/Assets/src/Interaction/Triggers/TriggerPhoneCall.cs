@@ -2,7 +2,7 @@
 
 public class TriggerPhoneCall : TriggerInteraction
 {
-    [SerializeField] protected PlayerCaller m_trigger = default;
+    [SerializeField] protected PhoneNotificationHandler m_trigger = default;
     [SerializeField] protected DialResult m_callContent = default;
     public override void Trigger()
     {

@@ -1,10 +1,9 @@
 ﻿using Curry.Explore;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 // Contains and displays text message boxes for a NPC chat
-public class DialogueDisplay : HideableUI
+public class ChatRoom : HideableUI
 {
     [SerializeField] Transform m_messageParent = default;
     [SerializeField] MessageBox m_npcBoxPrefab = default;
@@ -77,7 +76,7 @@ public class DialogueDisplay : HideableUI
         foreach (var line in dialogues)
         {
             // TODO: Simulate typing effect, will animate in future
-            yield return new WaitForSeconds(line.Content.Length * 0.05f);
+            yield return new WaitForSeconds(line.Content.Length * 0.03f);
             DisplayMessage(line, isNpc);
         }
         // prompt option at the end if there is any

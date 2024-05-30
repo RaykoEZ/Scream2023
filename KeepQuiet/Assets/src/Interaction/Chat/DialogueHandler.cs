@@ -7,13 +7,12 @@ public delegate void OnDialogueEnd();
 public class DialogueHandler : MonoBehaviour
 {
     [SerializeField] Transform m_dialogueBoxParent = default;
-    [SerializeField] TextMeshProUGUI m_title = default;
     [SerializeField] DialogueOptionPrompter m_optionPrompt = default;
-    [SerializeField] DialogueDisplay m_dialogueBoxToSpawn = default;
+    [SerializeField] ChatRoom m_chatRoomToSpawn = default;
     [SerializeField] NpcManager m_npc = default;
-    Dictionary<string, DialogueDisplay> m_spawnedDialogueBoxes = new Dictionary<string, DialogueDisplay>();
+    Dictionary<string, ChatRoom> m_spawnedDialogueBoxes = new Dictionary<string, ChatRoom>();
     // all dialogues displayed before ending dialogue
-    DialogueDisplay m_currentDisplay;
+    ChatRoom m_currentDisplay;
     public event OnDialogueEnd OnEnd;
     Npc m_chattingWith;
     private void Start()
@@ -29,7 +28,7 @@ public class DialogueHandler : MonoBehaviour
     { 
         foreach (var kvp in histories) 
         {
-            DialogueDisplay instance = Instantiate(m_dialogueBoxToSpawn, m_dialogueBoxParent);
+            ChatRoom instance = Instantiate(m_chatRoomToSpawn, m_dialogueBoxParent);
             instance.Init(kvp.Value);
             m_spawnedDialogueBoxes.Add(kvp.Key, instance);
         }
@@ -47,12 +46,11 @@ public class DialogueHandler : MonoBehaviour
     // Start dialogue with npc
     public void StartDialogue(string chattingWith) 
     {
-        if (!m_spawnedDialogueBoxes.TryGetValue(chattingWith, out DialogueDisplay result)) 
+        if (!m_spawnedDialogueBoxes.TryGetValue(chattingWith, out ChatRoom result)) 
         {
             OnEnd?.Invoke();
             return; 
         }
-        m_title.text = chattingWith;
         HideAll();
         m_currentDisplay = result;
         StartCurrentChat();
@@ -62,17 +60,15 @@ public class DialogueHandler : MonoBehaviour
     public void IncomingDialogue(DialogueNode newDialogue) 
     {
         string chatting = newDialogue.Title;
-        if (!m_spawnedDialogueBoxes.TryGetValue(chatting, out DialogueDisplay result))
+        if (!m_spawnedDialogueBoxes.TryGetValue(chatting, out ChatRoom result))
         {
             OnEnd?.Invoke();
             return;
         }
-        m_title.text = chatting;
         HideAll();
         m_currentDisplay = result;
         // Set current dialogue to the incoming dialogue
         m_currentDisplay.UpdateCurrentDialogue(newDialogue);
-        StartCurrentChat();
     }
     void HideAll() 
     {

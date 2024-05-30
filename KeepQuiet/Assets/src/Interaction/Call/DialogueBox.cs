@@ -1,7 +1,6 @@
 ﻿using Curry.Explore;
 using System;
 using TMPro;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -53,7 +52,7 @@ public class TutorialStep
     {
         bool sameDialogueBox = nextStep.m_display == m_display;
         // Don't hide if transitioning the same dialogue box
-        if (sameDialogueBox && (nextStep.Angry || nextStep.ShowInstantly)) 
+        if (sameDialogueBox && nextStep.ShowInstantly) 
         {
             return;
         }
