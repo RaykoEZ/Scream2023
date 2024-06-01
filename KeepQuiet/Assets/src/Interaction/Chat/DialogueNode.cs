@@ -7,7 +7,8 @@ using UnityEngine;
 public struct Dialogue 
 {
     public string WhoSpoke;
-    public Texture2D SentPhoto;
+    // Can be image, clue, etc
+    public GameObject SentPrefabRef;
     [TextArea]
     public string Content;
 }

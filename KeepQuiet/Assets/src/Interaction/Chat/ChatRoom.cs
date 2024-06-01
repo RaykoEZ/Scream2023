@@ -26,6 +26,14 @@ public class ChatRoom : HideableUI
         }
         m_isDirty = false;
     }
+    public void Shutdown() 
+    {
+        foreach (var message in m_spawnedMessages)
+        {
+            // Display all previous messages
+            message.Cleanup();
+        }
+    }
     void NextDialogue()
     {
         if (m_currentNode.Options.Count > 1)
@@ -51,7 +59,7 @@ public class ChatRoom : HideableUI
         MessageBox instance = isNpc? 
             Instantiate(m_npcBoxPrefab, m_messageParent) : 
             Instantiate(m_playerBoxPrefab, m_messageParent);
-        instance.Init(toDisplay.WhoSpoke, toDisplay.Content);
+        instance.Init(toDisplay.Content);
         m_spawnedMessages.Add(instance);
         instance.Show();
     }

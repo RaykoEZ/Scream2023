@@ -61,7 +61,7 @@ public class PhoneNotificationHandler : MonoBehaviour
         m_ring.Stop();
         if (m_newMessage != null) 
         {
-            m_chat.BeginChat(m_newMessage.Title);
+            m_chat.BeginChat();
             m_newMessage = null;
         }
         else 

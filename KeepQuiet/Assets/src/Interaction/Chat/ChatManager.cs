@@ -17,10 +17,10 @@ public class ChatManager : HideableUI
         m_dialogueTree.PrepareDialogueBoxes(m_histories);
     }
     // load chat of the person in question
-    public void BeginChat(string name) 
+    public void BeginChat() 
     {
         if (string.IsNullOrEmpty(name)) return;
-        m_dialogueTree?.StartDialogue(name);
+        m_dialogueTree?.StartDialogue();
         Show();
     }
     // Redirect to ContactList
