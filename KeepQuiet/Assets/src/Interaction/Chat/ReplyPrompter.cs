@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Curry.Events;
+using System;
+
 public delegate void OnPlayerChosen(DialogueNode chosen, int choiceIndex);
-public class DialogueOptionPrompter : MonoBehaviour
+public class ReplyPrompter : MonoBehaviour
 {
     [SerializeField] int m_maxOptions = 3;
     [SerializeField] DialogueOption m_optionPrefab = default;
@@ -33,6 +36,7 @@ public class DialogueOptionPrompter : MonoBehaviour
     void OnOptionChosen(DialogueOption chosen)
     {
         HideAll();
+        chosen.OptionValue?.TriggerChoiceEvent();
         OnChosen?.Invoke(chosen.OptionValue.Outcome, m_options.IndexOf(chosen));
     }
     void HideAll()

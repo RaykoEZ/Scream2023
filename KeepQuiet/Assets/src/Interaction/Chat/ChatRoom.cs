@@ -36,14 +36,9 @@ public class ChatRoom : HideableUI
     }
     void NextDialogue()
     {
-        if (m_currentNode.Options.Count > 1)
+        if (m_currentNode.Options.Count > 0)
         {
             OnPrompt?.Invoke(m_currentNode.Options);
-        }
-        else if (m_currentNode.Options.Count == 1)
-        {
-            UpdateCurrentDialogue(m_currentNode.Options[0].Outcome);
-            StartChat();
         }
         else 
         {
@@ -59,7 +54,7 @@ public class ChatRoom : HideableUI
         MessageBox instance = isNpc? 
             Instantiate(m_npcBoxPrefab, m_messageParent) : 
             Instantiate(m_playerBoxPrefab, m_messageParent);
-        instance.Init(toDisplay.Content);
+        instance.Init(toDisplay);
         m_spawnedMessages.Add(instance);
         instance.Show();
     }
@@ -76,17 +71,20 @@ public class ChatRoom : HideableUI
     {
         if (m_isDirty) 
         {
-            StartCoroutine(ContinueChat(m_currentNode.Dialogues, m_currentNode.Title != DialogueNode.s_playerName));
+            StartCoroutine(ContinueChat(m_currentNode.Dialogues));
         }
     }
-    IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues, bool isNpc = true)
+    IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues)
     {
+        bool isNpc;
         foreach (var line in dialogues)
         {
+            isNpc = line.WhoSpoke != DialogueNode.s_playerName;
             // TODO: Simulate typing effect, will animate in future
-            yield return new WaitForSeconds(line.Content.Length * 0.03f);
+            yield return new WaitForSeconds(line.TypingDelay);
             DisplayMessage(line, isNpc);
         }
+        yield return new WaitForSeconds(0.5f);
         // prompt option at the end if there is any
         NextDialogue();
     }

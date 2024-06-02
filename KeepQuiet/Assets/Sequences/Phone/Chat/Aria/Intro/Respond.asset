@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Reply_Intro_respond
+  m_Name: Respond
   m_EditorClassIdentifier: 
-  m_whoSpoke: 
   m_dialogues:
-  - WhoSpoke: 
-    Content: Respond
-  - WhoSpoke: You
+  - TypingDelay: 0.5
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: Hello, who is this?
+  - TypingDelay: 3
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
     Content: Hello, who is this?
   m_replyOptions: []

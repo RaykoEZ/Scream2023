@@ -6414,7 +6414,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6425,10 +6425,6 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1422298867171598941}
-    - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -6438,7 +6434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToChat
+      value: BeginChat
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -6446,7 +6442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PhoneScreenTransitionHandler, Assembly-CSharp
+      value: ChatManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -6454,7 +6450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
+      value: Aria
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument

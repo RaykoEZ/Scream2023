@@ -9,17 +9,17 @@ public class MessageBox : HideableUI
     [SerializeField] TextMeshProUGUI m_content = default;
     protected bool m_typing = false;
     GameObject m_spawned;
-    public void Init(string content)
-    {
-        m_content.text = content;
-    }
     // TODO: add image to display
     public void Init(Dialogue content)
     {
         Cleanup();
         m_content.text = content.Content;
-        m_spawned = Instantiate(content.SentPrefabRef, m_content.transform.parent);
-        m_spawned.SetActive(true);
+        GameObject toSpawn = content.SentPrefabRef;
+        if (toSpawn != null) 
+        {
+            m_spawned = Instantiate(toSpawn, m_content.transform.parent);
+            m_spawned.SetActive(true);
+        }
     }
     public void Cleanup() 
     {

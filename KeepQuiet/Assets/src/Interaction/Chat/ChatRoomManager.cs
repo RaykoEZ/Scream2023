@@ -4,17 +4,15 @@ using UnityEngine;
 public delegate void OnPromptDialogueOption(IReadOnlyList<ChatOption> options);
 public delegate void OnDialogueEnd();
 // Need a node-network for dialogue states & decisions
-public class DialogueHandler : MonoBehaviour
+public class ChatRoomManager : MonoBehaviour
 {
-    [SerializeField] DialogueOptionPrompter m_optionPrompt = default;
+    [SerializeField] ReplyPrompter m_optionPrompt = default;
     [SerializeField] ChatRoom m_chatRoom = default;
-    [SerializeField] NpcManager m_npc = default;
     // all dialogues displayed before ending dialogue
     public event OnDialogueEnd OnEnd;
-    Npc m_chattingWith;
     private void Start()
     {
-        m_optionPrompt.OnChosen += OnNewDialogue;
+        m_optionPrompt.OnChosen += OnReplyChosen;
     }
     private void OnDestroy()
     {
@@ -30,7 +28,7 @@ public class DialogueHandler : MonoBehaviour
     }
     public void Shutdown() 
     {
-        m_optionPrompt.OnChosen -= OnNewDialogue;
+        m_optionPrompt.OnChosen -= OnReplyChosen;
         // shutdown chat room
         m_chatRoom.Shutdown();
     }
@@ -44,7 +42,6 @@ public class DialogueHandler : MonoBehaviour
     // Start a new dialogue tree from a sender
     public void IncomingDialogue(DialogueNode newDialogue) 
     {
-        string chatting = newDialogue.Title;
         HideAll();
         // Set current dialogue to the incoming dialogue
         m_chatRoom.UpdateCurrentDialogue(newDialogue);
@@ -55,7 +52,6 @@ public class DialogueHandler : MonoBehaviour
     }
     void StartCurrentChat() 
     {
-        m_chattingWith = m_npc.Get(m_chatRoom.History.LastDialogue.Title);
         // listen to dialogue update events
         m_chatRoom.OnPrompt += OnPromptChoice;
         m_chatRoom.OnEnd += EndDialogue;
@@ -75,9 +71,8 @@ public class DialogueHandler : MonoBehaviour
         m_optionPrompt.PromptOption(options);
     }
     // A new dialogue is chosen for the current display
-    void OnNewDialogue(DialogueNode chosen, int choiceIndex)
+    void OnReplyChosen(DialogueNode chosen, int choiceIndex)
     {
-        m_chattingWith?.OnPlayerDecided(chosen, choiceIndex);
         m_chatRoom.UpdateCurrentDialogue(chosen);
         m_chatRoom.StartChat();
     }

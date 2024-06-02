@@ -4,7 +4,7 @@ using UnityEngine;
 // Notifies player when message comes
 public class ChatManager : HideableUI 
 {
-    [SerializeField] DialogueHandler m_dialogueTree = default;
+    [SerializeField] ChatRoomManager m_dialogueTree = default;
     [SerializeField] List<ChatHistoryContainer> m_historyCollection = default;
     Dictionary<string, ChatHistory> m_histories = new Dictionary<string, ChatHistory>();
     private void Start()
