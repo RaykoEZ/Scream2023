@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: Ignore_0
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - TypingDelay: 0.5
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: No one?
+  - TypingDelay: 3
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: Okay, I'll wait.
+  m_replyOptions:
+  - m_description: Respond
+    m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
+    m_triggerAfterChoice:
+      m_eventToTrigger: {fileID: 0}
+  - m_description: Ignore
+    m_outcome: {fileID: 11400000, guid: 3d7af8a8a9ce0f542a441d91ee2b66ff, type: 2}
+    m_triggerAfterChoice:
+      m_eventToTrigger: {fileID: 0}

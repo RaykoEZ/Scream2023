@@ -15,17 +15,17 @@ public class RoomLeftView : ViewState
     public override string Name => "RoomLeft";
     private DoorState m_doorState = DoorState.Closed;
     public DoorState DoorState => m_doorState;
-    protected override void InitStateInternal(GameStateSaveData saveData, ViewStateSaveData selfState)
+    protected override void InitStateInternal(SaveData saveData)
     {
-        base.InitStateInternal(saveData, selfState);
+        base.InitStateInternal(saveData);
         // Set door state
-        ChangeDoorState(saveData.RoomLeftDoorState);
+        ChangeDoorState(DoorState.Closed);
         // hide clues?
-        if (selfState.CluesToHide.Contains(m_clock.name))
+        if (!saveData.RevealClock)
         {
             m_clock.Hide();
         }
-        if (selfState.CluesToHide.Contains(m_bat.name))
+        if (saveData.BatTaken)
         {
             m_bat.Hide();
         }
@@ -49,7 +49,6 @@ public class RoomLeftView : ViewState
             default:
                 break;
         }
-        m_doorControl.ResetTrigger(stateName);
         m_doorControl.SetTrigger(stateName);
     }
     public override void SetVisual(bool isOn)

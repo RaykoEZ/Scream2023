@@ -10,15 +10,11 @@ public class AriaCloseupHandler : MonoBehaviour
     [SerializeField] Animator m_anim = default;
     public void EnterScene() 
     {
-        m_anim.ResetTrigger("exit");
-        m_anim.ResetTrigger("enter");
         m_anim.SetTrigger("enter");
 
     }
     public void ExitScene() 
     {
-        m_anim.ResetTrigger("enter");
-        m_anim.ResetTrigger("exit");
         m_anim.SetTrigger("exit");
     }
     public void Curious() 

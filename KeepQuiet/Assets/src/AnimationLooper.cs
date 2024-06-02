@@ -32,7 +32,7 @@ public class AnimationLooper : MonoBehaviour
     }
     IEnumerator StartLoop() 
     {
-        while (true) 
+        while (m_isLooping) 
         {
             yield return new WaitForSeconds(Random.Range(m_minDelayPerLoop, m_maxDelayPerLoop));
             

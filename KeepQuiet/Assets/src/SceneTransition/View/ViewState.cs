@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 public abstract class ViewState : MonoBehaviour
 {
     [SerializeField] protected ViewNavigationHandler m_nav = default;
+    [SerializeField] protected CanvasGroup m_clueGroup = default;
     [SerializeField] private Transform m_lighting = default;
     [SerializeField] private Transform m_vfx = default;
     [SerializeField] private Transform m_background = default;
@@ -14,19 +15,12 @@ public abstract class ViewState : MonoBehaviour
     public Transform Vfx => m_vfx;
     public Transform Background => m_background;
     public VolumeProfile PostProcessVolumeProfile => m_postProcessVolumeProfile;
-    public void InitState(GameStateSaveData saveData) 
+    public void InitState(SaveData saveData) 
     {
-        if (saveData.TryGetViewState(Name, out ViewStateSaveData result))
-        {
-            InitStateInternal(saveData, result);
-        }
+        InitStateInternal(saveData);
     }
-    protected virtual void InitStateInternal(GameStateSaveData gamestate, ViewStateSaveData selfState) 
+    protected virtual void InitStateInternal(SaveData gamestate)
     {
-    }
-    public virtual ViewStateSaveData GetCurrentState() 
-    {
-        return new ViewStateSaveData(Name, new List<string>());
     }
     public virtual void OnAriaEnter() { }
     public virtual void OnAriaExit() { }
@@ -35,5 +29,13 @@ public abstract class ViewState : MonoBehaviour
         Lighting?.gameObject.SetActive(isOn);
         Vfx?.gameObject.SetActive(isOn);
         Background?.gameObject.SetActive(isOn);
+    }
+    public virtual void OnUsingTool(EToolType usingTool) 
+    {
+        m_clueGroup.interactable = false;
+    }
+    public virtual void OnReturningTool(EToolType returningTool) 
+    {
+        m_clueGroup.interactable = true;
     }
 }

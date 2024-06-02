@@ -1,53 +1,114 @@
 ﻿using Newtonsoft.Json;
 using UnityEngine;
 using System.IO;
+using Curry.Events;
+using System.Collections.Generic;
+using UnityEngine.Events;
+// Script for persistent game state loading and saving
+// Loads persistent game state into game state manager in scene
+// Saves updated states coming from game state in scene
 public class GameStateFileHandler : MonoBehaviour
 {
-    [SerializeField] CutsceneHandler m_cutscene = default;
-    [SerializeField] GameStateManager m_state = default;
     // State to load upon first load
-    [SerializeField] GameStateSaveData m_defaultState = default;
-    GameStateSaveData m_current;
+    [SerializeField] GameStateContainer m_defaultState = default;
+    [SerializeField] UnityEvent m_readyGameLaunch = default;
+    [SerializeField] CurryGameEventListener m_exitGame = default;
+    [SerializeField] CurryGameEventListener m_onsaveGameState = default;
+    [SerializeField] CurryGameEventListener m_onGameStateRequest = default;
+    [SerializeField] CurryGameEventTrigger m_loadGameState = default;
+    SaveData m_current;
+    bool m_isNewGame = false;
     static string s_gamestatePath = "saves/gamestate.json";
+    public SaveData Current { get => m_current; }
     private void Start()
     {
+        m_onGameStateRequest?.Init();
+        m_exitGame?.Init();
+        m_onsaveGameState?.Init();
         LoadStates();
+        // Start game launch sequence when game is ready
+        m_readyGameLaunch?.Invoke();
     }
-    // init the game upon first load
-    protected void FreshState() 
+    private void OnApplicationQuit()
+    {            
+        // Autosave on quitting
+        SaveStates(m_current);
+    }
+    public void LoadGameState()
     {
-        m_current = m_defaultState;
-        m_state?.Init(m_current);
-        m_cutscene.PlayIntro();
+        Dictionary<string, object> payload = new Dictionary<string, object>
+        {{"save", new SaveData(m_current)}};
+        EventInfo info = new EventInfo(payload);
+        m_loadGameState?.TriggerEvent(info);
+    }
+    public void SetNewGame(bool isNewGame) 
+    {
+        m_isNewGame = isNewGame;
+    }
+    public void OnGameReady(EventInfo info)
+    {
+        if (m_isNewGame) 
+        {
+            // copy persisting save from current
+            SaveData.PersistentSave persist = new SaveData.PersistentSave(m_current.Persistent);
+            // reset game state to new game
+            m_current = new SaveData(m_defaultState.State);
+            // set persistent save states
+            m_current.Persistent = persist;
+        }
+        LoadGameState();
+    }
+    // sets valid incoming save data
+    void HandleSaveData(EventInfo info) 
+    {
+        Dictionary<string, object> payload = info.Payload;
+        if (payload == null) return;
+        if (payload.TryGetValue("save", out object result)
+            && result is SaveData save)
+        {
+            m_current = save;
+        }
+    }
+    public void OnGameSave(EventInfo info) 
+    {
+        HandleSaveData(info);
+        // Autosave
+        SaveStates(m_current);
+        // Do on finish callback
+        info.OnFinishedCallback?.Invoke();
+    }
+    public void OnQuitGame(EventInfo info) 
+    {
+        HandleSaveData(info);
+        // Quit the game
+#if UNITY_STANDALONE
+        Application.Quit();
+#endif
+#if UNITY_EDITOR
+        SaveStates(m_current);
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
     // Read Meta File states and Locations to update game state
     protected void LoadStates() 
     {
-        if (!File.Exists(s_gamestatePath)) 
+        if (!File.Exists($"{FileUtil.s_gamestateSavePath}/{s_gamestatePath}")) 
         {
-            FreshState();
+            m_current = new SaveData(m_defaultState.State);
             return;
         }
-
         using (StreamReader r = new StreamReader($"{FileUtil.s_gamestateSavePath}/{s_gamestatePath}"))
         {
             string json = r.ReadToEnd();
-            GameStateSaveData loaded = JsonConvert.DeserializeObject<GameStateSaveData>(json);
+            SaveData loaded = JsonConvert.DeserializeObject<SaveData>(json);
             m_current = loaded;
-            // Before Start of game, init states from scratch or local files
-            m_state?.Init(m_current);
         }       
     }
-    protected void SaveStates(bool ending = false, bool crash = false) 
+    protected void SaveStates(SaveData save) 
     {
-        int crashCount = crash ? ++m_current.CrashCount : m_current.CrashCount;
         // if we are saving after finish an ending, increment new gamw counter
-        int newGameCount = ending ? ++m_current.NewGameCount : m_current.NewGameCount;
-        Aria aria = m_state.GetAria();
-        GameStateSaveData newSave = new GameStateSaveData(
-            m_state.LeftRoomDoor, newGameCount, crashCount, aria.Current, m_state.GetCurrentViewState());
+        SaveData newSave = new SaveData(save);
         string json = JsonConvert.SerializeObject(newSave);
         FileUtil.RawTextTo(FileUtil.s_gamestateSavePath, "saves","gamestate.json", new string[] { json });
     }
 }
-

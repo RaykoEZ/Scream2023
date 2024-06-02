@@ -1,46 +1,34 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Curry.Util;
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] Animator m_transition = default;
+    [SerializeField] CoroutineManager m_coroutine = default;
+    [SerializeField] LoadingScreenSequencer m_loadScreen = default;
+    bool m_inProgress = false;
     // Loads a single scene and sets it active 
-    public void LoadScene(int sceneIndex) 
+    public void LoadScene(int sceneIndex, bool additive = false, bool setActive = true) 
     {
-        if (sceneIndex < 0) 
+        if (sceneIndex < 0 || m_inProgress) 
         { 
             return; 
         }
-        StartCoroutine(LoadLevel_Internal(sceneIndex));
+        m_inProgress = true;
+        m_coroutine.ScheduleCoroutine(LoadLevel_Internal(sceneIndex, additive, setActive));
+        m_coroutine.StartScheduledCoroutines();
     }
-    public void LoadScene(string sceneName, bool additive = false, bool setActive = false)
+    IEnumerator LoadLevel_Internal(int sceneIndex, bool additive = false, bool setActive = true) 
     {
-        if (string.IsNullOrEmpty(sceneName))
-        {
-            return;
-        }
-        StartCoroutine(LoadLevel_Internal(sceneName, additive, setActive));
-    }
-    IEnumerator LoadLevel_Internal(int sceneIndex) 
-    {
+        // play transition animaton
+        yield return m_loadScreen.FadeOut();
         AsyncOperation op;
         // start scene loading
-        op = SceneManager.LoadSceneAsync(sceneIndex);
-        op.allowSceneActivation = false;
-        // play transition animaton
-        m_transition?.SetTrigger("transition");
-        // transition to new scene when loading and animation are done
-        yield return StartCoroutine(SetLoadedScene(op));
-    }
-    IEnumerator LoadLevel_Internal(string sceneName, bool additive = false, bool setActive = false)
-    {
-        AsyncOperation op;
         op = SceneManager.LoadSceneAsync(
-            sceneName,
+            sceneIndex,
             additive ? LoadSceneMode.Additive : LoadSceneMode.Single);
         op.allowSceneActivation = false;
-        // play transition animaton
-        m_transition?.SetTrigger("transition");
+        // transition to new scene when loading and animation are done
         if (setActive)
         {
             yield return StartCoroutine(SetLoadedScene(op));
@@ -51,6 +39,9 @@ public class LevelLoader : MonoBehaviour
         // transition to new scene when loading and animation are done
         yield return new WaitUntil(() => op.progress >= 0.9f);
         op.allowSceneActivation = true;
+        yield return new WaitForEndOfFrame();
+        m_inProgress = false;
+        yield return m_loadScreen.FadeIn();
     }
 
     public void UnloadScene(string toUnload)

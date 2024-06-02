@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PhoneSetting_
   m_EditorClassIdentifier: 
   m_volume: 0.8
-  m_ringtone: {fileID: 8300000, guid: 6b955e476c4e75649b3de490ef059a8c, type: 3}
+  m_ringtone: {fileID: 8300000, guid: dc885be79f98e064181fea9d82b8f127, type: 3}
   m_wallPaper: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}

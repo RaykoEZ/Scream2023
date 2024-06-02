@@ -5,10 +5,10 @@ public class OutsideCameraView : ViewState
     [SerializeField] Animator m_anim = default;
     [SerializeField] AnimationClip m_noAria = default;
     public override string Name => "OutsideCamera";
-    protected override void InitStateInternal(GameStateSaveData gamestate, ViewStateSaveData selfState)
+    protected override void InitStateInternal(SaveData gamestate)
     {
-        base.InitStateInternal(gamestate, selfState);
-        if (gamestate.AriaStatus.CurrentLocation == AriaPosition.OutsideCam) 
+        base.InitStateInternal(gamestate);
+        if (gamestate.AriaStatus.CurrentLocation == AriaPosition.None) 
         {
             OnAriaEnter();
         } 

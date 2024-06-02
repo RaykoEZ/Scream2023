@@ -1,25 +1,16 @@
-﻿using UnityEngine;
-public class AriaDisplayController : MonoBehaviour 
+﻿using System;
+using UnityEngine;
+[Serializable]
+public class AriaDisplayController 
 {
-    [SerializeField] ViewState m_outsideCam = default;
     [SerializeField] Animator m_cafePoses = default;
     [SerializeField] AriaCloseupHandler m_cafeCloseup = default;
     [SerializeField] Animator m_roomLeftPeek = default;
     [SerializeField] AriaCloseupHandler m_roomLeftCloseup = default;
-    AriaPosition m_current = AriaPosition.None;
-    public AriaPosition Current => m_current;
-
-    private bool m_isPossessed = false;
-
-    public bool GetIsPossessed()
-    {
-        return m_isPossessed;
-    }
     public void TriggerPossessed(bool value)
     {
-        m_isPossessed = value;
         m_roomLeftPeek.ResetTrigger("possessed");
-        if (m_isPossessed) 
+        if (value) 
         {
             m_roomLeftPeek.SetTrigger("possessed");
         }
@@ -33,72 +24,59 @@ public class AriaDisplayController : MonoBehaviour
         m_roomLeftPeek.ResetTrigger("surprise");
         m_roomLeftPeek.SetTrigger("surprise");
     }
-
-    public void MoveTo(int newLocation) 
-    {
-        AriaPosition newPos = (AriaPosition) newLocation;
-        var prev = Current;
-        m_current = newPos;
-        MoveTo(Current, prev);
-    }
     public void MoveTo(AriaPosition newLocation, AriaPosition previous) 
     {
-        Hide(previous);
         switch (newLocation)
         {
-            case AriaPosition.OutsideCam:
-                m_outsideCam?.OnAriaEnter();
-                break;
-            case AriaPosition.InsideCafe_Entrance:
-                m_cafePoses.ResetTrigger("entrance");
-                m_cafePoses.SetTrigger("entrance");
-                break;
             case AriaPosition.InsideCafe_Counter:
-                m_cafePoses.ResetTrigger("counter");
-                m_cafePoses.SetTrigger("counter");
+                if (m_cafePoses.isActiveAndEnabled)
+                {
+                    m_cafePoses.SetTrigger("counter");
+                }
                 break;
             case AriaPosition.InsideCafe_Sit:
-                m_cafePoses.ResetTrigger("sit");
-                m_cafePoses.SetTrigger("sit");
+                if (m_cafePoses.isActiveAndEnabled)
+                {
+                    m_cafePoses.SetTrigger("sit");
+                }
                 break;
             case AriaPosition.InsideCafe_Closeup:
-                m_cafeCloseup.EnterScene();
+                if (m_cafeCloseup.isActiveAndEnabled)
+                {
+                    m_cafeCloseup.EnterScene();
+                }
                 break;
             case AriaPosition.RoomLeft_Peeking:
-                m_roomLeftPeek.ResetTrigger("peek");
-                m_roomLeftPeek.SetTrigger("peek");
+                if (m_roomLeftPeek.isActiveAndEnabled)
+                {
+                    m_roomLeftPeek.SetTrigger("peek");
+                }
                 break;
             case AriaPosition.RoomLeft_CloseUp:
-                m_roomLeftCloseup.EnterScene();
+                if (m_roomLeftCloseup.isActiveAndEnabled)
+                {
+                    m_roomLeftCloseup.EnterScene();
+                }
                 break;
             default:
+                Hide(previous);
                 break;
         }
     }
-    void Hide(AriaPosition toHide) 
+    public void Hide(AriaPosition toHide) 
     {
         switch (toHide)
         {
-            case AriaPosition.OutsideCam:
-                m_outsideCam?.OnAriaExit();
-                break;
-            case AriaPosition.InsideCafe_Entrance:
-                m_cafePoses.ResetTrigger("hide");
-                m_cafePoses.SetTrigger("hide");
-                break;
             case AriaPosition.InsideCafe_Counter:
-                m_cafePoses.ResetTrigger("hide");
                 m_cafePoses.SetTrigger("hide");
                 break;
             case AriaPosition.InsideCafe_Sit:
-                m_cafePoses.ResetTrigger("hide");
                 m_cafePoses.SetTrigger("hide");
                 break;
             case AriaPosition.InsideCafe_Closeup:
                 m_cafeCloseup.ExitScene();
                 break;
             case AriaPosition.RoomLeft_Peeking:
-                m_roomLeftPeek.ResetTrigger("exit");
                 m_roomLeftPeek.SetTrigger("exit");
                 break;
             case AriaPosition.RoomLeft_CloseUp:
@@ -108,8 +86,11 @@ public class AriaDisplayController : MonoBehaviour
                 break;
         }
     }
-    public void HideCurrent() 
+    public void HideAll() 
     {
-        Hide(Current);
+        m_cafePoses.SetTrigger("hide");
+        m_cafeCloseup.ExitScene();
+        m_roomLeftPeek.SetTrigger("exit");
+        m_roomLeftCloseup.ExitScene();
     }
 }

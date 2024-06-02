@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AOC_InspectionScreenBlurr
+  m_Controller: {fileID: 9100000, guid: 8c4978cb72b0aff45818517bf755925a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 310afee8314502541b1c91957e1812d5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 396162c2951751c44b0f7c9c63fc6084, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9d709f085370363458b8e32df63ce371, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7088fdf9791ed384f9f1ec732b129c58, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 072ae9b3fbfc55b41b613c858dbc97f5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d267baa95e0aad3479ba88c6459f7c04, type: 2}
