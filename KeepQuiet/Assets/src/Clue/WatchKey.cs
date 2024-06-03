@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Playables;
 public delegate void OnKeyActivate(WatchDisplay newDisplay);
 // A watch button that pulls out a Hidden Key
-public class WatchKey : DraggableObject 
+public class WatchKey : ExternalDraggableObject
 {
     [Range(0.1f, 10f)]
     [SerializeField] float m_unlockTime = default;

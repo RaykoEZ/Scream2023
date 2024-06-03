@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Curry.Events;
+using System;
 using UnityEngine;
 using UnityEngine.Playables;
 [Serializable]
@@ -11,8 +12,9 @@ public enum WatchDisplay
     None,
     Off
 }
+
 [RequireComponent(typeof(CanvasGroup))]
-public class SnapshotWatch : DraggableObject 
+public class SnapshotWatch : ExternalDraggableObject
 {
     [SerializeField] PlayableDirector m_director = default; 
     [SerializeField] PlayableAsset m_presentTime = default;

@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public delegate void OnSecretUpdate();
 public class HiddenNodeHandller : MonoBehaviour 
 {
-    [SerializeField] ExternalFileEventReceiver m_event = default;
+    [SerializeField] ExternalFileReceiver m_event = default;
     [SerializeField] List<BypassNode> m_toReveal = default;
     public event OnSecretUpdate SecretUnlocked;
     private void Start()
