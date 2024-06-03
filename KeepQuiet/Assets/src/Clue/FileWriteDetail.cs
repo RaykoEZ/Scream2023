@@ -8,7 +8,7 @@ public class FileWriteDetail : ScriptableObject
     /// m_filename - name of file (with extension)
     /// </summary>
     [SerializeField] string m_filename = default;
-    [TextArea]
+    [TextArea(5, 50)]
     [SerializeField] string m_rawContent = default;
     public string Filename { get => m_filename; }
     public string RawContent { get => m_rawContent; }

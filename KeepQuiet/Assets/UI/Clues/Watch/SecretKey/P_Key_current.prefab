@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 8503287825159094842}
   - component: {fileID: 6859338597780375072}
   m_Layer: 8
-  m_Name: P_SecretKey
+  m_Name: P_Key_current
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954a248f589a9a64eabefbe20b983452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_unlockTime: 3
+  m_extractEnabled: 1
+  m_toWrite: {fileID: 11400000, guid: c3d5afc4863a29340ab9450183abad55, type: 2}
+  m_unlockTime: 2
   m_keyTrigger: 0
   m_director: {fileID: 4585261695636628028}
   m_clickButton: {fileID: 11400000, guid: f8fd4ec2173094940ad2998e3973c2b5, type: 2}

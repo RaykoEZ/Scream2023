@@ -6,7 +6,7 @@ public class FileWriter
     {
         if (encode) 
         {
-            FileUtil.UTF8EncodeTextTo(FileUtil.s_desktopPath, folder, filename, content);
+            FileUtil.Base64TextTo(FileUtil.s_desktopPath, folder, filename, content);
         } 
         else 
         {
@@ -15,7 +15,7 @@ public class FileWriter
     }
     public void WriteToDesktop(string filename, string folder, string content) 
     {
-        FileUtil.UTF8EncodeTextTo(FileUtil.s_desktopPath, folder, filename, content);
+        FileUtil.Base64TextTo(FileUtil.s_desktopPath, folder, filename, content);
 
     }
     public void SendPngToDesktop(string filename, string foldername, Texture2D texture) 
