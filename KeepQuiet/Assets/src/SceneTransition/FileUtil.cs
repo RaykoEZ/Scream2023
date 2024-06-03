@@ -9,13 +9,14 @@ internal static class FileUtil
     internal static string s_gamestateSavePath = Application.persistentDataPath;
     internal static string s_desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
     // Uses UTF8 to encode string
-    internal static void UTF8EncodeTextTo(string path, string folderName, string fileName, string content) 
+    internal static void Base64TextTo(string path, string folderName, string fileName, string content) 
     {
         if (string.IsNullOrWhiteSpace(fileName)) { return; }
         bool hasFolder = TryMakeFolder(path, folderName);
         byte[] encoded = Encoding.UTF8.GetBytes(content);
+        string result = Convert.ToBase64String(encoded);
         string resultPath = hasFolder? $"{path}/{folderName}/{fileName}" : $"{path}/{fileName}";
-        File.WriteAllBytes(resultPath, encoded);
+        File.WriteAllText(resultPath, result);
     }
     // Writes New raw text fil to desktop
     internal static void RawTextTo(string path, string folderName, string fileName, string[] content)

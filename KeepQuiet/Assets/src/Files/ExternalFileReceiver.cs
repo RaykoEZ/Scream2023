@@ -9,7 +9,7 @@ public class ExternalFileDropInfo
     public Vector2 pos;
 }
 public delegate void ExternalFileDropped(ExternalFileDropInfo dropInfo);
-public class ExternalFileEventReceiver : MonoBehaviour
+public class ExternalFileReceiver : MonoBehaviour
 {
     DefaultFileValidor m_isValid = new DefaultFileValidor();
     protected virtual IFileValidator Validator => m_isValid;
@@ -32,7 +32,7 @@ public class ExternalFileEventReceiver : MonoBehaviour
             fi = new FileInfo(f);
             string ext = fi.Extension.ToLower();
             // detect file extensions to respond to
-            if (ext == ".txt" || ext == ".cogni" || ext == ".mod" || ext == ".jpeg" || ext == ".png")
+            if (ext == Validator.AcceptedFileExtension)
             {
                 file = f;
                 break;
