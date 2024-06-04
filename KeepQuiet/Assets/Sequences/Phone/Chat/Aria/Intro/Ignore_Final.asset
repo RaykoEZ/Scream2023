@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Ignore_Final
   m_EditorClassIdentifier: 
   m_dialogues:
-  - TypingDelay: 3
+  - DelayBeforeTyping: 2
+    TypingDelay: 3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Ah I get it now, you are testing me with the social pressure to let
       me fill in the story. Right?
-  - TypingDelay: 3
+  - DelayBeforeTyping: 1
+    TypingDelay: 3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Well, keep me posted, I'll be all ears from now on.

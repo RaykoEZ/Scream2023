@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Ignore_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - TypingDelay: 0.5
+  - DelayBeforeTyping: 3
+    TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: No one?
-  - TypingDelay: 3
+  - DelayBeforeTyping: 3
+    TypingDelay: 1
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Okay, I'll wait.

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 // handles a list of tutorial sequences
-public class TutorialCollection : MonoBehaviour 
+public class GuideCollection : MonoBehaviour 
 {
     [SerializeField] bool m_blockBackground = default;
     // Length of time to wait after finishing a tutorial sequence(in seconds)
     [Range(0f, 1000f)]
     [SerializeField] float m_pauseTimeAfterSequence = default;
-    [SerializeField] List<TutorialDisplay> m_tutorials = default;
+    [SerializeField] List<GuideDisplay> m_tutorials = default;
     bool isActive = false;
     int m_current = 0;
     bool m_hasTriggeredOnce = false;

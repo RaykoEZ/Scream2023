@@ -29,7 +29,7 @@ public class DialogueBox : HideableUI
     }
 }
 [Serializable]
-public class TutorialStep 
+public class GuideStep 
 {
     public bool ShowInstantly;
     public bool Angry;
@@ -48,7 +48,7 @@ public class TutorialStep
         m_display?.SetContent(Content);
         m_display?.Show(ShowInstantly, Angry);
     }
-    public virtual void Transition(TutorialStep nextStep) 
+    public virtual void Transition(GuideStep nextStep) 
     {
         bool sameDialogueBox = nextStep.m_display == m_display;
         // Don't hide if transitioning the same dialogue box

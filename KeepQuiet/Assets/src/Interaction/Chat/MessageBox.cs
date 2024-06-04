@@ -21,6 +21,16 @@ public class MessageBox : HideableUI
             m_spawned.SetActive(true);
         }
     }
+    public void Typing() 
+    {
+        GetAnim?.SetBool("Show", false);
+        GetAnim?.SetBool("Typing", true);
+    }
+    public override void Show()
+    {
+        GetAnim?.SetBool("Typing", false);
+        base.Show();
+    }
     public void Cleanup() 
     {
         m_content.text = "";

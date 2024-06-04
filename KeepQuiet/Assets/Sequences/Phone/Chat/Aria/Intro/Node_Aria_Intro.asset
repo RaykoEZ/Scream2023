@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Node_Aria_Intro
   m_EditorClassIdentifier: 
   m_dialogues:
-  - TypingDelay: 1
+  - DelayBeforeTyping: 0.5
+    TypingDelay: 1
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Hey, anyone here?
-  - TypingDelay: 1.5
+  - DelayBeforeTyping: 0.5
+    TypingDelay: 1.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: ' I''ve been waiting here in the rain.'

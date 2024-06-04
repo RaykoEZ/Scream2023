@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 // handles screen animation and text boxes in a tutorial sequence
-public class TutorialDisplay : MonoBehaviour 
+public class GuideDisplay : MonoBehaviour 
 {
     [SerializeField] protected HideableUI ScreenHighlight;
-    [SerializeField] protected List<TutorialStep> m_steps = default;
+    [SerializeField] protected List<GuideStep> m_steps = default;
     int m_current = 0;
     bool m_inProgress = false;
     public void Begin()
@@ -16,12 +16,12 @@ public class TutorialDisplay : MonoBehaviour
         ScreenHighlight?.Show();
         StartCoroutine(ShowCurrent());
     }
-    public void AppendStep(List<TutorialStep> toAdd) 
+    public void AppendStep(List<GuideStep> toAdd) 
     {
         m_steps.AddRange(toAdd);
     }
     // overwrite all steps starting from the current step index
-    public void ReplaceStep(List<TutorialStep> toReplace) 
+    public void ReplaceStep(List<GuideStep> toReplace) 
     {
         // replace all
         if (m_current == 0) 

@@ -13,19 +13,17 @@ MonoBehaviour:
   m_Name: Ignore_1
   m_EditorClassIdentifier: 
   m_dialogues:
-  - TypingDelay: 0.5
+  - DelayBeforeTyping: 0.5
+    TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Hey, I know someone's on the other side!
-  - TypingDelay: 3
+  - DelayBeforeTyping: 1
+    TypingDelay: 3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: "I have a busy schedule ahead of this interview. Can we stop wasting
       our time in here? \n\nLet's get this over and done with."
-  - TypingDelay: 0.25
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: "(\u3186_\u3186)"
   m_replyOptions:
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}

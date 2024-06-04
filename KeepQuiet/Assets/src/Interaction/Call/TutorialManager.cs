@@ -6,13 +6,13 @@ public class TutorialManager : MonoBehaviour
 {
     [SerializeField] Image m_background = default;
     [SerializeField] GameStateManager m_gameState = default;
-    TutorialCollection m_current;
+    GuideCollection m_current;
     Coroutine m_transition;
-    public void TriggerTutorial(TutorialCollection col) 
+    public void TriggerTutorial(GuideCollection col) 
     {
         StartTutorial(col);
     }
-    void StartTutorial(TutorialCollection col, bool forceRepeat = false) 
+    void StartTutorial(GuideCollection col, bool forceRepeat = false) 
     {
         // Don't repeat the same tutorial in the same session if we don't need to
         if (col.HasTriggeredOnce && !forceRepeat) return;

@@ -19,10 +19,12 @@ public class ChatRoom : HideableUI
     {
         m_history = new ChatHistory(history);
         m_currentNode = m_history.LastDialogue;
+        MessageBox msg;
         foreach (var logEntry in m_history.Log)
         {
             // Display all previous messages
-            DisplayMessage(logEntry);
+            msg = PrepareMessage(logEntry);
+            msg?.Show();
         }
         m_isDirty = false;
     }
@@ -43,12 +45,11 @@ public class ChatRoom : HideableUI
         else 
         {
             // end display loop
-            m_isDirty = false;
             OnEnd?.Invoke();
         }
     }
     // Display a new message
-    void DisplayMessage(Dialogue toDisplay, bool isNpc = true) 
+    MessageBox PrepareMessage(Dialogue toDisplay, bool isNpc = true) 
     {
         // Instntiate a message box for the message
         MessageBox instance = isNpc? 
@@ -56,7 +57,7 @@ public class ChatRoom : HideableUI
             Instantiate(m_playerBoxPrefab, m_messageParent);
         instance.Init(toDisplay);
         m_spawnedMessages.Add(instance);
-        instance.Show();
+        return instance;
     }
     // Append a dialogue to history
     public void UpdateCurrentDialogue(DialogueNode result) 
@@ -71,18 +72,23 @@ public class ChatRoom : HideableUI
     {
         if (m_isDirty) 
         {
+            m_isDirty = false;
             StartCoroutine(ContinueChat(m_currentNode.Dialogues));
         }
     }
     IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues)
     {
         bool isNpc;
+        MessageBox msg;
         foreach (var line in dialogues)
         {
             isNpc = line.WhoSpoke != DialogueNode.s_playerName;
             // TODO: Simulate typing effect, will animate in future
+            yield return new WaitForSeconds(line.DelayBeforeTyping);
+            msg = PrepareMessage(line, isNpc);
+            msg.Typing();
             yield return new WaitForSeconds(line.TypingDelay);
-            DisplayMessage(line, isNpc);
+            msg.Show();
         }
         yield return new WaitForSeconds(0.5f);
         // prompt option at the end if there is any

@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Respond
   m_EditorClassIdentifier: 
   m_dialogues:
-  - TypingDelay: 0.5
+  - DelayBeforeTyping: 0.5
+    TypingDelay: 0.5
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
     Content: Hello, who is this?
-  - TypingDelay: 3
+  - DelayBeforeTyping: 0
+    TypingDelay: 3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Hello, who is this?

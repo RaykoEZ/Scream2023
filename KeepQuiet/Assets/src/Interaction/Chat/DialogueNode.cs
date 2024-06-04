@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public struct Dialogue 
 {
+    public float DelayBeforeTyping;
     // how much time to stay typing
     public float TypingDelay;
     public string WhoSpoke;
