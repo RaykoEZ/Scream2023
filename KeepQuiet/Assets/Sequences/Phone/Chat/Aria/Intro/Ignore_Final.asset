@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ignore_Final
   m_EditorClassIdentifier: 
   m_dialogues:
-  - DelayBeforeTyping: 2
+  - DelayBeforeTyping: 1.5
     TypingDelay: 3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
@@ -29,3 +29,7 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
     m_triggerAfterChoice:
       m_eventToTrigger: {fileID: 0}
+  - m_description: <color=red>Ignore</color>
+    m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
+    m_triggerAfterChoice:
+      m_eventToTrigger: {fileID: 11400000, guid: 9dc0535e93879f0499f260e298c6c6ee, type: 2}

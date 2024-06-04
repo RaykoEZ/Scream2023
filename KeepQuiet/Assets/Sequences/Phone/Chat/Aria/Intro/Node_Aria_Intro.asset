@@ -22,12 +22,12 @@ MonoBehaviour:
     TypingDelay: 1.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: ' I''ve been waiting here in the rain.'
+    Content: ' I''ve been waiting here, in the rain.'
   m_replyOptions:
   - m_description: Ignore
     m_outcome: {fileID: 11400000, guid: c6a066986d426074384268fd5ea8bf5e, type: 2}
     m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+      m_eventToTrigger: {fileID: 11400000, guid: 3c9e550f17351bd439ed46939168b703, type: 2}
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
     m_triggerAfterChoice:

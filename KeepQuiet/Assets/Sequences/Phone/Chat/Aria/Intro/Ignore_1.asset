@@ -32,4 +32,4 @@ MonoBehaviour:
   - m_description: Continue to ignore
     m_outcome: {fileID: 11400000, guid: 5e10f23224d3b4147afa88299b975b57, type: 2}
     m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+      m_eventToTrigger: {fileID: 11400000, guid: adc7f966d6ac1814a9fdaa5d02ea4544, type: 2}

@@ -18,11 +18,11 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: No one?
-  - DelayBeforeTyping: 3
+  - DelayBeforeTyping: 1.5
     TypingDelay: 1
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Okay, I'll wait.
+    Content: Okay, I'll wait longer.
   m_replyOptions:
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}

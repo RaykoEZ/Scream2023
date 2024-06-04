@@ -34,7 +34,7 @@ public class GuideStep
     public bool ShowInstantly;
     public bool Angry;
     public AudioClip PlaySound;
-    [TextArea]
+    [TextArea(5, 10)]
     public string Content;
     [SerializeField] protected DialogueBox m_display = default;
     [SerializeField] UnityEvent m_triggerOnShow = default;
