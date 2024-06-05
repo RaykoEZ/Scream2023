@@ -10,26 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Ignore_Final
+  m_Name: Aria_Ignore_ForceReply
   m_EditorClassIdentifier: 
   m_dialogues:
-  - DelayBeforeTyping: 1.5
-    TypingDelay: 3
+  - DelayBeforeTyping: 0
+    TypingDelay: 0
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Ah I get it now, you are testing me with the social pressure to let
-      me fill in the story. Right?
-  - DelayBeforeTyping: 1
-    TypingDelay: 3
+    Content: Hey, anyone here?
+  - DelayBeforeTyping: 0
+    TypingDelay: 0
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Well, keep me posted, I'll be all ears
+    Content: ' I''ve been waiting here, in the rain.'
   m_replyOptions:
-  - m_description: <color=green>Respond</color>
+  - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
     m_triggerAfterChoice:
       m_eventToTrigger: {fileID: 0}
-  - m_description: <color=red>Ignore</color>
-    m_outcome: {fileID: 0}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 11400000, guid: 9dc0535e93879f0499f260e298c6c6ee, type: 2}

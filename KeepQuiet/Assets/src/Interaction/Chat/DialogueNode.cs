@@ -12,7 +12,7 @@ public struct Dialogue
     public string WhoSpoke;
     // Can be image, clue, etc
     public GameObject SentPrefabRef;
-    [TextArea]
+    [TextArea(5, 10)]
     public string Content;
 }
 public class ReplyInfo : EventInfo

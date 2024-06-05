@@ -38,6 +38,7 @@ public class GuideStep
     public string Content;
     [SerializeField] protected DialogueBox m_display = default;
     [SerializeField] UnityEvent m_triggerOnShow = default;
+    [SerializeField] UnityEvent m_triggerOnFinish = default;
     public virtual void Show()
     {
         if (PlaySound != null) 
@@ -56,10 +57,15 @@ public class GuideStep
         {
             return;
         }
-        m_display?.Hide();
+        Hide();
     }
     public void End() 
     {
+        Hide();
+    }
+    void Hide() 
+    {
         m_display?.Hide();
+        m_triggerOnFinish?.Invoke();
     }
 }

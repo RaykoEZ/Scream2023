@@ -1,4 +1,5 @@
 ﻿using Curry.Events;
+using System.Collections;
 using UnityEngine;
 // Listens to saved game states and affect game behaviour
 public class GameSequenceManager : MonoBehaviour 
@@ -14,15 +15,17 @@ public class GameSequenceManager : MonoBehaviour
     [SerializeField] CurryGameEventListener m_onNewGame = default;
     [SerializeField] CurryGameEventListener m_onContinue = default;
     [SerializeField] CurryGameEventListener m_onDialSecret = default;
-    [SerializeField] CurryGameEventListener m_onJamOut = default;
-    [SerializeField] CurryGameEventListener m_onToolIn = default;
     void OnEnable()
     {
         m_credits.OnFinish += OnCreditFinish;
+        m_onNewGame?.Init();
+        m_onContinue?.Init();
     }
     void OnDisable()
     {
         m_credits.OnFinish -= OnCreditFinish;
+        m_onNewGame?.Shutdown();
+        m_onContinue?.Shutdown();
     }
     public void PlayIntro()
     {
@@ -38,10 +41,14 @@ public class GameSequenceManager : MonoBehaviour
         // Determine a post credit sequence for ending
 
     }
-    void OnGameEnd() 
+    void OnEndingFinish() 
+    { 
+    
+    }
+    void PlayCredit() 
     {
         //play credit
-
+        m_credits?.PlaySequence();
     }
 
     public void OnNewGame() 
@@ -59,38 +66,5 @@ public class GameSequenceManager : MonoBehaviour
         // if player killed Aria on the previous load, soft lock as well
 
         // Continue increment
-    }
-
-    public void OnDialSecretReveal() 
-    { 
-    
-    }
-    public void OnJamRemove() 
-    { 
-    
-    }
-    public void OnMalwareIsolated() 
-    { 
-    
-    }
-    public void OnKillAria() 
-    { 
-    
-    }
-    public void HandshakeComplete() 
-    { 
-    
-    }
-    public void SecretKeyInput() 
-    { 
-    
-    }
-    public void OnClockSecretReveal() 
-    { 
-    
-    }
-    public void OnToolDragIn() 
-    { 
-    
     }
 }

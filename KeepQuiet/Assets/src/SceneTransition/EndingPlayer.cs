@@ -14,6 +14,7 @@ public enum Ending
 // ending must be picked before playing, normal ending sequence by default
 public class EndingPlayer : SequencePlayer 
 {
+    [SerializeField] PlayableAsset m_dismissSeq = default;
     [SerializeField] PlayableAsset m_badEndSeq = default;
     [SerializeField] PlayableAsset m_normalEndSeq = default;
     [SerializeField] PlayableAsset m_secretEndSeq = default;
@@ -22,9 +23,15 @@ public class EndingPlayer : SequencePlayer
     {
         if (m_endToPlay == null) 
         {
-            m_endToPlay = m_normalEndSeq;
+            Debug.LogWarning("Ending sequebce not set when trying to play an ending.");
+            return;
         }
         base.PlaySequence();
+    }
+    public void DismissSequence() 
+    {
+        m_endToPlay = m_dismissSeq;
+        PlaySequence();
     }
     public void SetEnding(Ending ending)
     {

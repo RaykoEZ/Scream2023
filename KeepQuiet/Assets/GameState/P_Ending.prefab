@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2772443947424165768}
   - component: {fileID: 2772443947424165771}
   - component: {fileID: 7520983765181559012}
+  - component: {fileID: 5489978334138664839}
   m_Layer: 0
   m_Name: P_Ending
   m_TagString: Untagged
@@ -52,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_waitAfterSequenceFinishes: 0
   m_director: {fileID: 7520983765181559012}
+  m_dismissSeq: {fileID: 11400000, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
   m_badEndSeq: {fileID: 11400000, guid: 15d25f05c3679b94dbbad3016b586aa9, type: 2}
   m_normalEndSeq: {fileID: 11400000, guid: f1d6ba8e3131a5944ab8b155a95f82e7, type: 2}
   m_secretEndSeq: {fileID: 11400000, guid: d9d3c324a415279438a4385920a05918, type: 2}
@@ -69,6 +71,26 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: 1554708449094362166, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 880239820261190107, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -9093062278480135629, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5517737702820045006, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!225 &5489978334138664839
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2772443947424165769}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

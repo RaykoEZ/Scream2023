@@ -14,6 +14,7 @@ public class ChatRoom : HideableUI
     public event OnDialogueEnd OnEnd;
     public event OnPromptDialogueOption OnPrompt;
     bool m_isDirty = false;
+    bool m_paused = false;
     public ChatHistory History => m_history; 
     public void Init(ChatHistory history)
     {
@@ -28,12 +29,27 @@ public class ChatRoom : HideableUI
         }
         m_isDirty = false;
     }
+    public void SetPaused(bool paused)
+    {
+        m_paused = paused;
+    }
+    // Overwrite history and reload chat
+    public void Overwrite(DialogueNode newChat) 
+    {
+        Shutdown();
+        m_history.OverwriteLog(newChat);
+        Init(m_history);
+        NextDialogue();
+    }
     public void Shutdown() 
     {
-        foreach (var message in m_spawnedMessages)
+        List<MessageBox> toDelete = new List<MessageBox>(m_spawnedMessages);
+        foreach (var item in toDelete)
         {
-            // Display all previous messages
-            message.Cleanup();
+            // Clear all previous messages
+            m_spawnedMessages.Remove(item);
+            item.Cleanup();
+            Destroy(item.gameObject);
         }
     }
     void NextDialogue()
@@ -84,6 +100,7 @@ public class ChatRoom : HideableUI
         {
             isNpc = line.WhoSpoke != DialogueNode.s_playerName;
             // TODO: Simulate typing effect, will animate in future
+            yield return new WaitUntil(() => !m_paused);
             yield return new WaitForSeconds(line.DelayBeforeTyping);
             msg = PrepareMessage(line, isNpc);
             msg.Typing();

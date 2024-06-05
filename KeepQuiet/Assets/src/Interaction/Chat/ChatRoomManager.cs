@@ -73,6 +73,7 @@ public class ChatRoomManager : MonoBehaviour
     // A new dialogue is chosen for the current display
     void OnReplyChosen(DialogueNode chosen, int choiceIndex)
     {
+        if (chosen == null) return;
         m_chatRoom.UpdateCurrentDialogue(chosen);
         m_chatRoom.StartChat();
     }

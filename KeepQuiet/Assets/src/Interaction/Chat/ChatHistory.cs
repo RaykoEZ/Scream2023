@@ -21,15 +21,11 @@ public class ChatHistory
         m_lastDialogue = copy.m_lastDialogue;
         m_log = new List<Dialogue>(copy.Log);
     }
-    public ChatHistory(DialogueNode lastDialogue, List<Dialogue> log) 
+    // Clear log and overwrite all content
+    public void OverwriteLog(DialogueNode lastDialogue) 
     {
         m_lastDialogue = lastDialogue;
-        m_log = log;
-    }
-    public void OverwriteLog(DialogueNode lastDialogue, List<Dialogue> overwrite) 
-    {
-        m_lastDialogue = lastDialogue;
-        m_log = overwrite;
+        m_log = lastDialogue.Dialogues as List<Dialogue>;
     }
     public void Append(List<DialogueNode> append) 
     {

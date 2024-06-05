@@ -25,7 +25,6 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] CurryGameEventTrigger m_saveGameState = default;
     // Called when scene is ready for loading save data
     [SerializeField] SaveDataSource m_saveData = default;
- 
     Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
     SaveData m_currentGameState = new SaveData();

@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2316483}
   - component: {fileID: 2316484}
+  - component: {fileID: 2316485}
   m_Layer: 5
-  m_Name: Messages
+  m_Name: Chat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,6 +181,83 @@ PlayableDirector:
     value: {fileID: 506863545}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2316485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08704b06050c8274b9236a998e3dbc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toListen:
+  - m_eventToListen: {fileID: 11400000, guid: 3c9e550f17351bd439ed46939168b703, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1152285344}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: TriggerTutorial
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 776284540}
+            m_ObjectArgumentAssemblyTypeName: GuideCollection, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - m_eventToListen: {fileID: 11400000, guid: 7931c971716f1694580aa0117f65f7f1, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1152285344}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: TriggerTutorial
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 766613847}
+            m_ObjectArgumentAssemblyTypeName: GuideCollection, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - m_eventToListen: {fileID: 11400000, guid: adc7f966d6ac1814a9fdaa5d02ea4544, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1152285344}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: TriggerTutorial
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1156101650}
+            m_ObjectArgumentAssemblyTypeName: GuideCollection, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - m_eventToListen: {fileID: 11400000, guid: 9dc0535e93879f0499f260e298c6c6ee, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7520983764671522738}
+          m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &20639011
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,15 +412,41 @@ MonoBehaviour:
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 0}
-    Content: We getting nowhere with this! Talk to <color=red>SOMEONE</color> or
-      I'll have to <color=red>report</color> this misconduct to your superiors!
+    Content: <color=red>We getting nowhere with this!</color>
+    m_display: {fileID: 1362229430}
+    m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1069873654}
+          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+          m_MethodName: SetPaused
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
+  - ShowInstantly: 0
+    Angry: 1
+    PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    Content: <color=red>Begin the questioning</color> or I'll have to <color=red>report</color>
+      this misconduct to your superiors!
     m_display: {fileID: 1362229430}
     m_triggerOnShow:
       m_PersistentCalls:
         m_Calls: []
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
   - ShowInstantly: 1
     Angry: 0
-    PlaySound: {fileID: 0}
+    PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
     Content: '<color=yellow>This is your final warning.</color>
 
 
@@ -352,6 +456,21 @@ MonoBehaviour:
     m_triggerOnShow:
       m_PersistentCalls:
         m_Calls: []
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1069873654}
+          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+          m_MethodName: SetPaused
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &39071262
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,12 +529,18 @@ MonoBehaviour:
     m_triggerOnShow:
       m_PersistentCalls:
         m_Calls: []
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
     Content: I apologize for my previous outburst, it was unbefitting of an Assisstant
     m_display: {fileID: 1861727496}
     m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+    m_triggerOnFinish:
       m_PersistentCalls:
         m_Calls: []
   - ShowInstantly: 0
@@ -425,6 +550,9 @@ MonoBehaviour:
       our suspect.
     m_display: {fileID: 1861727496}
     m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+    m_triggerOnFinish:
       m_PersistentCalls:
         m_Calls: []
   m_display: {fileID: 959404765}
@@ -591,6 +719,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &51677633
 Animator:
   serializedVersion: 4
@@ -1215,6 +1349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &108338464
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2189,6 +2329,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c89bd8eeaa15bd49a8ff37097de9181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &220030866
 Animator:
   serializedVersion: 4
@@ -2567,6 +2713,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &240480901
 Animator:
   serializedVersion: 4
@@ -3034,6 +3186,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &274647154
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3334,6 +3492,21 @@ MonoBehaviour:
     m_display: {fileID: 1544671088}
     m_triggerOnShow:
       m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1069873654}
+          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+          m_MethodName: SetPaused
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    m_triggerOnFinish:
+      m_PersistentCalls:
         m_Calls: []
   - ShowInstantly: 1
     Angry: 0
@@ -3344,6 +3517,21 @@ MonoBehaviour:
     m_triggerOnShow:
       m_PersistentCalls:
         m_Calls: []
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1069873654}
+          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+          m_MethodName: SetPaused
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &340838835 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6087678029485662423, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
@@ -4393,6 +4581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c89bd8eeaa15bd49a8ff37097de9181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &453729576
 Animator:
   serializedVersion: 4
@@ -4496,7 +4690,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1228148511
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_TargetDisplay: 0
 --- !u!114 &464209080
 MonoBehaviour:
@@ -4511,7 +4705,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_toHide:
-  - {fileID: 0}
   - {fileID: 1966327970}
   - {fileID: 1645881433}
   m_ariaBody: {fileID: 1109917216767050257}
@@ -6647,6 +6840,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &695600778
 Animator:
   serializedVersion: 4
@@ -6910,8 +7109,8 @@ Transform:
   - {fileID: 1256618965}
   - {fileID: 1492826288}
   - {fileID: 1069873653}
-  - {fileID: 464209076}
   - {fileID: 837320624}
+  - {fileID: 464209076}
   - {fileID: 1884570900}
   - {fileID: 1387035799}
   m_Father: {fileID: 0}
@@ -8905,7 +9104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6392157}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10340,6 +10539,9 @@ MonoBehaviour:
     m_triggerOnShow:
       m_PersistentCalls:
         m_Calls: []
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
@@ -10347,6 +10549,9 @@ MonoBehaviour:
       already
     m_display: {fileID: 1861727496}
     m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+    m_triggerOnFinish:
       m_PersistentCalls:
         m_Calls: []
 --- !u!114 &959404766
@@ -12633,18 +12838,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 35420106450640367, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 35420106450640367, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 35420106450640367, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 35420106450640367, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -13032,6 +13225,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1548029542696566235, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1862351592}
     - target: {fileID: 1745119217714358530, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13080,21 +13277,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3512695012404548682, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].value
+      value: 
+      objectReference: {fileID: 795265558}
     - target: {fileID: 3886771052015391306, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 383241161}
-    - target: {fileID: 4431481687853719781, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1862351592}
     - target: {fileID: 5803256607225750278, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5803256607225750278, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -734.99976
       objectReference: {fileID: 0}
     - target: {fileID: 6988494421130402489, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_AnchorMax.y
@@ -13120,6 +13313,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 35420106450640367, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
   m_PrefabInstance: {fileID: 1069873652}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1069873654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4764148645332724724, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+  m_PrefabInstance: {fileID: 1069873652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a64767dac2e4974cbcac7d6576b5ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1070705327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13578,6 +13782,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &1107036364
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -13812,7 +14022,34 @@ MonoBehaviour:
     m_display: {fileID: 609150687}
     m_triggerOnShow:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1069873654}
+          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+          m_MethodName: SetPaused
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1069873654}
+          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+          m_MethodName: SetPaused
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1133265055
 GameObject:
   m_ObjectHideFlags: 0
@@ -14417,7 +14654,7 @@ GameObject:
   - component: {fileID: 1152285343}
   - component: {fileID: 1152285344}
   m_Layer: 5
-  m_Name: TutorialManager
+  m_Name: GuideManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15558,7 +15795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6392157}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15923,7 +16160,7 @@ MonoBehaviour:
   m_uiImage: {fileID: 1248419316}
   m_hoverLabel: {fileID: 1248419313}
   m_clueImage: {fileID: 0}
-  m_inspectBin: {fileID: 8810639375806570772, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
+  m_inspectBin: {fileID: 1380001388}
 --- !u!1 &1256618964
 GameObject:
   m_ObjectHideFlags: 0
@@ -17201,6 +17438,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 238991702109897377, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
   m_PrefabInstance: {fileID: 238991700805543114}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1380001388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8810639375806570772, guid: d181d212e75c0b1459a472888e3334d2, type: 3}
+  m_PrefabInstance: {fileID: 238991700805543114}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5036c6ff979e00041854b9ebf4942cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1387035799 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8892957357779844442, guid: 9e9e26a6cbdb2504ea1f0f58dd161cac, type: 3}
@@ -18359,6 +18607,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60ced8ad310a34b881510f8ed79a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
   m_state: {fileID: 451893988}
   m_contentParent: {fileID: 234719393}
   m_toolBar: {fileID: 1783969210}
@@ -19646,6 +19900,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
@@ -19666,6 +19923,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
@@ -19686,12 +19946,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
     Content: <color=red>The <b>Secret Phrase</b></color>
     m_display: {fileID: 752801055}
     m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+    m_triggerOnFinish:
       m_PersistentCalls:
         m_Calls: []
   - ShowInstantly: 1
@@ -19726,6 +19992,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &1549354742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20404,7 +20673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6313726}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21140,6 +21409,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &1602202496
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -22451,6 +22726,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c89bd8eeaa15bd49a8ff37097de9181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &1720387840
 Animator:
   serializedVersion: 4
@@ -23318,6 +23599,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &1789103375
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -24381,7 +24668,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1865920670
 RectTransform:
@@ -25471,7 +25758,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 1228148511
+  m_SortingLayerID: -453930281
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1966327969
@@ -27156,6 +27443,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &2094003639
 Animator:
   serializedVersion: 4
@@ -28562,6 +28855,14 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6241555466866397188, guid: c99af0e02339891438fe5860fa85177b, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241555466866397188, guid: c99af0e02339891438fe5860fa85177b, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c99af0e02339891438fe5860fa85177b, type: 3}
@@ -28766,6 +29067,10 @@ PrefabInstance:
     - target: {fileID: 1323951158285202499, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323951158285202499, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1323951158285202525, guid: fee79f0294d5baa4b98f39584a2eb975, type: 3}
       propertyPath: m_Color.a
@@ -29925,6 +30230,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!320 &7520983764671522738 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 3512695012404548682, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+  m_PrefabInstance: {fileID: 1069873652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7707543183678224093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29947,6 +30257,9 @@ MonoBehaviour:
     m_triggerOnShow:
       m_PersistentCalls:
         m_Calls: []
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
@@ -29955,12 +30268,18 @@ MonoBehaviour:
     m_triggerOnShow:
       m_PersistentCalls:
         m_Calls: []
+    m_triggerOnFinish:
+      m_PersistentCalls:
+        m_Calls: []
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Wonder where she is? We need to find her.
     m_display: {fileID: 0}
     m_triggerOnShow:
+      m_PersistentCalls:
+        m_Calls: []
+    m_triggerOnFinish:
       m_PersistentCalls:
         m_Calls: []
 --- !u!114 &7712070707087821935
@@ -29975,6 +30294,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7757307289384993610
 PrefabInstance:
   m_ObjectHideFlags: 0

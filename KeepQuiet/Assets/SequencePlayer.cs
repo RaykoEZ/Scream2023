@@ -29,7 +29,7 @@ public class SequencePlayer : MonoBehaviour
     protected virtual IEnumerator PlaySequence_Internal() 
     {      
         m_director?.Play();
-        yield return new WaitUntil(() => m_director.state == PlayState.Paused);
+        yield return new WaitForSeconds((float)m_director.playableAsset.duration);
         yield return new WaitForSeconds(m_waitAfterSequenceFinishes);
         OnFinish?.Invoke();
     }

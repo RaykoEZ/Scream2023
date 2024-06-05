@@ -2,11 +2,13 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 // A class to display a text message
 public class MessageBox : HideableUI
 {
     [SerializeField] TextMeshProUGUI m_content = default;
+
     protected bool m_typing = false;
     GameObject m_spawned;
     // TODO: add image to display

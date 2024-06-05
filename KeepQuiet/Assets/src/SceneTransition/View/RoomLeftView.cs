@@ -23,11 +23,11 @@ public class RoomLeftView : ViewState
         // hide clues?
         if (!saveData.RevealClock)
         {
-            m_clock.Hide();
+            m_clock?.Hide();
         }
         if (saveData.BatTaken)
         {
-            m_bat.Hide();
+            m_bat?.Hide();
         }
     }
     // Change door state and trheir visuals
