@@ -2,13 +2,11 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 // A class to display a text message
 public class MessageBox : HideableUI
 {
     [SerializeField] TextMeshProUGUI m_content = default;
-
+    [SerializeField] AudioSource m_audio = default;
     protected bool m_typing = false;
     GameObject m_spawned;
     // TODO: add image to display
@@ -17,6 +15,7 @@ public class MessageBox : HideableUI
         Cleanup();
         m_content.text = content.Content;
         GameObject toSpawn = content.SentPrefabRef;
+        m_audio.mute = !content.HasAudio;
         if (toSpawn != null) 
         {
             m_spawned = Instantiate(toSpawn, m_content.transform.parent);

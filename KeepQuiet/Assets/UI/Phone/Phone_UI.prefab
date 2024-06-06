@@ -327,6 +327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &1422298866635158004
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3122,6 +3128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!223 &1422298867397155352
 Canvas:
   m_ObjectHideFlags: 0
@@ -4265,6 +4277,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &1422298867745032693
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4671,6 +4689,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &1422298867926273607
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4889,6 +4913,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adac7e8052b7454db3e52a3bc58af62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
   m_incomingNumber: {fileID: 1422298867029633401}
 --- !u!222 &1422298868034852726
 CanvasRenderer:
@@ -6414,7 +6444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6422,8 +6452,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1422298867397155357}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6434,7 +6468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BeginChat
+      value: Hide
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -6442,7 +6476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChatManager, Assembly-CSharp
+      value: Curry.Explore.HideableUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1092355728816553583, guid: 8f6339934c3b8ad4e81f3788235e8049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName

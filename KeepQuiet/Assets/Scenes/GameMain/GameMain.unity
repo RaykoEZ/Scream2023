@@ -1796,8 +1796,8 @@ CanvasGroup:
   m_GameObject: {fileID: 162141628}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &172971997
 GameObject:
@@ -6965,8 +6965,8 @@ CanvasGroup:
   m_GameObject: {fileID: 707729534}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &707729537
 MonoBehaviour:
@@ -12801,6 +12801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone
       objectReference: {fileID: 0}
+    - target: {fileID: 35420106450640366, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 35420106450640367, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13285,6 +13289,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1862351592}
+    - target: {fileID: 4852233933323221572, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852233933323221572, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852233933323221572, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5803256607225750278, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -14939,9 +14955,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177813763}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1184725515
 GameObject:
@@ -16511,8 +16527,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1260811964}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &1260811967
 MonoBehaviour:
@@ -18389,6 +18405,10 @@ PrefabInstance:
     - target: {fileID: 1150422148234020361, guid: 82c0221cb07aed1488ba92306cc7a275, type: 3}
       propertyPath: m_Name
       value: P_Subtitle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150422148234020361, guid: 82c0221cb07aed1488ba92306cc7a275, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3455564987586771760, guid: 82c0221cb07aed1488ba92306cc7a275, type: 3}
       propertyPath: m_Camera
@@ -24883,8 +24903,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1882936210}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!224 &1884570900 stripped
 RectTransform:

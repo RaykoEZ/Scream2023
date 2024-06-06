@@ -2796,17 +2796,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2059788764105263694, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3724936081716733260}
-    - target: {fileID: 2059788764105263694, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059788764105263694, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: BeginChat
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3724936081716733260}
     - target: {fileID: 3133998188732569121, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_Name
       value: Audio_Phone

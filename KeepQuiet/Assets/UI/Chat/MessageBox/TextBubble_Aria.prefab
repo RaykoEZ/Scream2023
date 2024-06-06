@@ -133,6 +133,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_content: {fileID: 6893385317221878509}
+  m_audio: {fileID: 76442708376504833}
 --- !u!225 &8005377732621105416
 CanvasGroup:
   m_ObjectHideFlags: 0

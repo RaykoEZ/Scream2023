@@ -1,11 +1,13 @@
 ﻿using Curry.Events;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 [Serializable]
 public struct Dialogue 
 {
+    public bool HasAudio;
     public float DelayBeforeTyping;
     // how much time to stay typing
     public float TypingDelay;

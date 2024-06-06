@@ -2,7 +2,15 @@
 using UnityEngine;
 using Curry.Events;
 using System;
-
+public class OptionInfo : EventInfo 
+{
+    List<ChatOption> m_options;
+    public IReadOnlyList<ChatOption> Options => m_options;
+    public OptionInfo(List<ChatOption> options) 
+    {
+        m_options = options;
+    }
+}
 public delegate void OnPlayerChosen(DialogueNode chosen, int choiceIndex);
 public class ReplyPrompter : MonoBehaviour
 {

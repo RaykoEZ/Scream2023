@@ -10,26 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Ignore_1
+  m_Name: Ignore_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - DelayBeforeTyping: 0.5
+  - HasAudio: 1
+    DelayBeforeTyping: 3
     TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Hey, I know someone's on the other side!
-  - DelayBeforeTyping: 1
-    TypingDelay: 3
+    Content: No one?
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 1
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: "I have a busy schedule ahead of this interview. \n\nCan we stop wasting
-      our time in here? "
+    Content: Okay, I'll wait longer.
   m_replyOptions:
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
     m_triggerAfterChoice:
       m_eventToTrigger: {fileID: 0}
-  - m_description: Continue to ignore
-    m_outcome: {fileID: 11400000, guid: 5e10f23224d3b4147afa88299b975b57, type: 2}
+  - m_description: Ignore
+    m_outcome: {fileID: 11400000, guid: 3d7af8a8a9ce0f542a441d91ee2b66ff, type: 2}
     m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 11400000, guid: adc7f966d6ac1814a9fdaa5d02ea4544, type: 2}
+      m_eventToTrigger: {fileID: 0}
