@@ -19,12 +19,9 @@ public class ChatRoomManager : MonoBehaviour
         Shutdown();
     }
     // Instantiate all chat UIs, call at start of chat
-    public void PrepareDialogueBoxes(Dictionary<string, ChatHistory> histories) 
+    public void PrepareDialogueBoxes(ChatHistory histories) 
     { 
-        foreach (var kvp in histories) 
-        {
-            m_chatRoom.Init(kvp.Value);
-        }
+        m_chatRoom.Init(histories);
     }
     public void Shutdown() 
     {

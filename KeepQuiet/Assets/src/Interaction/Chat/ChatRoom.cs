@@ -8,6 +8,7 @@ public class ChatRoom : HideableUI
     [SerializeField] Transform m_messageParent = default;
     [SerializeField] MessageBox m_npcBoxPrefab = default;
     [SerializeField] MessageBox m_playerBoxPrefab = default;
+    [SerializeField] SaveDataSource m_saveState = default;
     List<MessageBox> m_spawnedMessages = new List<MessageBox>();
     ChatHistory m_history;
     DialogueNode m_currentNode;
@@ -15,7 +16,7 @@ public class ChatRoom : HideableUI
     public event OnPromptDialogueOption OnPrompt;
     bool m_isDirty = false;
     bool m_paused = false;
-    public ChatHistory History => m_history; 
+    public ChatHistory History => m_history;
     public void Init(ChatHistory history)
     {
         m_history = new ChatHistory(history);
@@ -39,7 +40,7 @@ public class ChatRoom : HideableUI
         Shutdown();
         m_history.OverwriteLog(newChat);
         Init(m_history);
-        NextDialogue();
+        CheckForReplyOptions();
     }
     public void Shutdown() 
     {
@@ -52,9 +53,10 @@ public class ChatRoom : HideableUI
             Destroy(item.gameObject);
         }
     }
-    void NextDialogue()
+    void CheckForReplyOptions()
     {
-        if (m_currentNode.Options.Count > 0)
+        var options = GetChatOptions();
+        if (options.Count > 0)
         {
             OnPrompt?.Invoke(m_currentNode.Options);
         }
@@ -64,6 +66,21 @@ public class ChatRoom : HideableUI
             OnEnd?.Invoke();
         }
     }
+    // Get options for the current dialogue node, check for hidden option conditions
+    IReadOnlyList<ChatOption> GetChatOptions() 
+    {
+        SaveData save = m_saveState.CurrentGameState;
+        if (m_currentNode.HiddenOptions != null &&
+            !m_currentNode.HiddenOptions.CheckForOptions(save, out var result)
+            && result != null) 
+        {
+            return result;
+        }
+        else 
+        {
+            return m_currentNode.Options;        
+        }
+    } 
     // Display a new message
     MessageBox PrepareMessage(Dialogue toDisplay, bool isNpc = true) 
     {
@@ -91,6 +108,12 @@ public class ChatRoom : HideableUI
             m_isDirty = false;
             StartCoroutine(ContinueChat(m_currentNode.Dialogues));
         }
+        else 
+        {
+            // Called when reopening a static chatroom,
+            // check for new reply override conditions
+            CheckForReplyOptions();
+        }
     }
     IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues)
     {
@@ -109,6 +132,6 @@ public class ChatRoom : HideableUI
         }
         yield return new WaitForSeconds(0.5f);
         // prompt option at the end if there is any
-        NextDialogue();
+        CheckForReplyOptions();
     }
 }

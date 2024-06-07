@@ -98,7 +98,7 @@ MonoBehaviour:
     m_TimeScale: 1
     m_ParentTrack: {fileID: -9093062278480135629}
     m_EaseInDuration: 0
-    m_EaseOutDuration: 0.1
+    m_EaseOutDuration: 0
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -484,7 +484,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 0.8333333333333334
+    m_Start: 0.75
     m_ClipIn: 0
     m_Asset: {fileID: -2458371198610337610}
     m_Duration: 1.5704146375258763
@@ -611,7 +611,7 @@ MonoBehaviour:
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1554708449094362166}
     m_EaseInDuration: 0
-    m_EaseOutDuration: 1
+    m_EaseOutDuration: 0.2
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -853,7 +853,7 @@ MonoBehaviour:
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5517737702820045006}
     m_EaseInDuration: 0
-    m_EaseOutDuration: 0.1
+    m_EaseOutDuration: 0
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:

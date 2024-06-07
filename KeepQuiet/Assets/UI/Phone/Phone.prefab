@@ -679,9 +679,8 @@ MonoBehaviour:
   m_onHideEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_dialogueTree: {fileID: 3913932668303135663}
-  m_historyCollection:
-  - {fileID: 11400000, guid: aabd1639357dd92418f633d010968d49, type: 2}
+  m_chatroomHandler: {fileID: 3913932668303135663}
+  m_historySource: {fileID: 11400000, guid: aabd1639357dd92418f633d010968d49, type: 2}
 --- !u!114 &3913932668303135663
 MonoBehaviour:
   m_ObjectHideFlags: 0

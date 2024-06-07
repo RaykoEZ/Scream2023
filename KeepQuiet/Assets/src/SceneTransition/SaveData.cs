@@ -2,6 +2,8 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+
+
 // Contains persistent data for changing game environment
 // and state of quicksaved game state
 [Serializable]
@@ -53,13 +55,11 @@ public class SaveData
     }
     #endregion
     public PersistentSave Persistent;
+    public bool CheckedSubjectProfile;
     // Check if player found and dragged out the Jamming device found in secret puzzle 
     // Did player resolve malware overtaking Aria?
     // Secret/True End Flag
-    public bool IsMalwareGone;
     public WatchDisplay WatchState;
-    // The dial puzzle to start Jammer trigger
-    public bool DialSolved;
     // Did the player take the bat in Room Left?
     // Bat can be dragged out and dragged in
     public bool BatTaken;
@@ -75,8 +75,7 @@ public class SaveData
     public AriaState AriaStatus;
     public SaveData()
     {
-        IsMalwareGone = false;
-        DialSolved = false;
+        CheckedSubjectProfile = false;
         BatTaken = false;
         RevealClock = false;
         SpecialTorchUnlocked = false;
@@ -88,10 +87,9 @@ public class SaveData
     }
     public SaveData(SaveData copy)
     {
-        IsMalwareGone = copy.IsMalwareGone;
+        CheckedSubjectProfile = copy.CheckedSubjectProfile;
         BatTaken = copy.BatTaken;
         SpecialTorchUnlocked = copy.SpecialTorchUnlocked;
-        DialSolved = copy.DialSolved;
         RevealClock = copy.RevealClock;
         FreedomRoute = copy.FreedomRoute;
         WatchState = copy.WatchState;

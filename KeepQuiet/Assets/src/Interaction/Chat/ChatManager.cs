@@ -4,28 +4,23 @@ using UnityEngine;
 // Notifies player when message comes
 public class ChatManager : HideableUI 
 {
-    [SerializeField] ChatRoomManager m_dialogueTree = default;
-    [SerializeField] List<ChatHistoryContainer> m_historyCollection = default;
-    Dictionary<string, ChatHistory> m_histories = new Dictionary<string, ChatHistory>();
+    [SerializeField] ChatRoomManager m_chatroomHandler = default;
+    [SerializeField] ChatHistoryContainer m_historySource = default;
     private void Start()
     {
         // instantiate history logs and store them here for record keeping if needed
-        foreach(var history in m_historyCollection) 
-        {
-            m_histories.Add(history.Username, history.History);
-        }
-        m_dialogueTree.PrepareDialogueBoxes(m_histories);
+        m_chatroomHandler.PrepareDialogueBoxes(m_historySource.History);
     }
     // load chat of the person in question
     public void BeginChat() 
     {
         if (string.IsNullOrEmpty(name)) return;
-        m_dialogueTree?.StartDialogue();
+        m_chatroomHandler?.StartDialogue();
         Show();
     }
     // Redirect to ContactList
     public void OnNewMessage(DialogueNode newDialogue) 
     {
-        m_dialogueTree.IncomingDialogue(newDialogue);
+        m_chatroomHandler.IncomingDialogue(newDialogue);
     }
 }

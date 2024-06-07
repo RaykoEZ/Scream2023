@@ -49,15 +49,18 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
 {
     [SerializeField] List<Dialogue> m_dialogues = default;
     [SerializeField] List<ChatOption> m_replyOptions = default;
+    [SerializeField] ChatOptionOverride m_hiddenOptions = default;
     public static readonly string s_playerName = "You";
     public IReadOnlyList<Dialogue> Dialogues => m_dialogues;
     // Leaves for possible next Dialogue Nodes and their reply text
     // If option count > 1, player chooses a reply
     public IReadOnlyList<ChatOption> Options => m_replyOptions;
+    public ChatOptionOverride HiddenOptions { get => m_hiddenOptions; }
     bool IEquatable<DialogueNode>.Equals(DialogueNode other)
     {
         if (other == null) return false;
         return
             Dialogues == other.Dialogues;
     }
+
 }
