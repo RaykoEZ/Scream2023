@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "optAlt_", menuName = "Chat/Reply Option Transformation")]
+[CreateAssetMenu(fileName = "optAlt_", menuName = "Chat/Reply Option Override")]
+[Serializable]
 public class ChatOptionOverride : GameContentOverride<List<ChatOption>>
 {
     // Check for all gamestate condtions to fullfil

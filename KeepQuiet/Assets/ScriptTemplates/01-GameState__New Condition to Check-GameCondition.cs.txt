@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-
-
 #NOTRIM#
 [CreateAssetMenu(fileName = "#SCRIPTNAME#_", menuName = "GameState/Check for .../#SCRIPTNAME#", order = 1)]
 public class #SCRIPTNAME# : GameStateCondition

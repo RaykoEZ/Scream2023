@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: Respond0
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - HasAudio: 1
+    DelayBeforeTyping: 0.5
+    TypingDelay: 0.5
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: Hello, who is this?
+  - HasAudio: 1
+    DelayBeforeTyping: 3
+    TypingDelay: 2
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'Who am I? What do you mean '
+  - HasAudio: 1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.7
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'you guys put me in here
+
+
+      Dont you have my files?
+
+
+      I''m
+      not here to do your job you know'
+  m_replyOptions:
+  - m_description: <i>*Continue questioning.</i>
+    m_outcome: {fileID: 11400000, guid: aca0aed420a8b534992c49accf28f2e0, type: 2}
+    m_triggerAfterChoice:
+      m_eventToTrigger: {fileID: 0}
+  m_hiddenOptions: {fileID: 11400000, guid: 70f1711fc535d7c4d864e2329fa72366, type: 2}

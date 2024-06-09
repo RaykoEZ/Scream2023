@@ -10,38 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Respond
+  m_Name: FindClue0
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0.5
-    TypingDelay: 0.5
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: Hello, who is this?
-  - HasAudio: 1
-    DelayBeforeTyping: 3
-    TypingDelay: 2
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: Who am I?
-  - HasAudio: 1
-    DelayBeforeTyping: 0.3
     TypingDelay: 0.3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: "What do you mean \n\nyou guys put me in here"
-  - HasAudio: 1
-    DelayBeforeTyping: 0.5
-    TypingDelay: 0.5
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'Dont you have my files?
+    Content: 'Do you know when I''ll be released?
 
 
-      I''m not here to do your job you know'
+      I need to be somewhere'
   m_replyOptions:
-  - m_description: You are Ms. Yanagi, correct?
+  - m_description: <i>*Reassure her</i>
     m_outcome: {fileID: 0}
     m_triggerAfterChoice:
       m_eventToTrigger: {fileID: 0}
+  m_hiddenOptions: {fileID: 0}

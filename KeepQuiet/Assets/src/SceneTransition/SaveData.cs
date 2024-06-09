@@ -18,9 +18,9 @@ public class SaveData
         // If player choose to hit Aria with the bat, we reach Bad End,
         // a different title & New Game & Continue if Aria is dead
         public bool AriaDead;
-        // Responded to handshake with secret answer,
+        // Has the secret key for handshake,
         // leads to an ending depending on other persistent states
-        public bool HandshakeComplete;
+        public bool HasSecretKey;
         // No. of times player launched this game after first new game
         // Triggers new game tutorial sequences for new game players
         public int ContinueCount;
@@ -29,11 +29,11 @@ public class SaveData
         [JsonConverter(typeof(StringEnumConverter))]
         public Ending CurrentEnding;
         public PersistentSave( bool isAriaDead,
-            bool handshakeComplete, 
+            bool hasSecretKey, 
             int continueCount, Ending previousEnding)
         {
             AriaDead = isAriaDead;
-            HandshakeComplete = handshakeComplete;
+            HasSecretKey = hasSecretKey;
             ContinueCount = continueCount;
             CurrentEnding = previousEnding;
         }
@@ -41,14 +41,14 @@ public class SaveData
         public PersistentSave() 
         {
             AriaDead = false;
-            HandshakeComplete = false;
+            HasSecretKey = false;
             ContinueCount = 0;
             CurrentEnding = Ending.None;
         }
         public PersistentSave(PersistentSave persistent)
         {
             AriaDead = persistent.AriaDead;
-            HandshakeComplete = persistent.HandshakeComplete;
+            HasSecretKey = persistent.HasSecretKey;
             ContinueCount = persistent.ContinueCount;
             CurrentEnding = persistent.CurrentEnding;
         }

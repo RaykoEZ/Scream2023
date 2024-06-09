@@ -44,7 +44,7 @@ public class ChatOption
 }
 [Serializable]
 // A node class for storing NPC text message, player reply options, and the next npc dialogue
-[CreateAssetMenu(fileName = "Node_", menuName = "Dialogue/Node", order = 0)]
+[CreateAssetMenu(fileName = "Node_", menuName = "Chat/New Dialogue", order = 0)]
 public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
 {
     [SerializeField] List<Dialogue> m_dialogues = default;
