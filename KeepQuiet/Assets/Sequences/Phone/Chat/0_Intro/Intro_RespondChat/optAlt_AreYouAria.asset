@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b684d37c2ba3c774f84255d4f977ed47, type: 2}
   m_newOptions:
   - m_description: <i>*Continue questioning.</i>
-    m_outcome: {fileID: 11400000, guid: e33dd034720fe4f428a4fa839c9c241d, type: 2}
+    m_outcome: {fileID: 11400000, guid: aca0aed420a8b534992c49accf28f2e0, type: 2}
     m_triggerAfterChoice:
       m_eventToTrigger: {fileID: 0}
   - m_description: You are Ms. Yanagi, correct?

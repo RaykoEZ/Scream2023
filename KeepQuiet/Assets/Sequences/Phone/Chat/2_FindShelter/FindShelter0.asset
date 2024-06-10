@@ -10,21 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: FindClue0
+  m_Name: FindShelter0
   m_EditorClassIdentifier: 
-  m_dialogues:
-  - HasAudio: 1
-    DelayBeforeTyping: 0.5
-    TypingDelay: 0.3
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'Do you know when I''ll be released?
-
-
-      I need to be somewhere'
-  m_replyOptions:
-  - m_description: <i>*Reassure her</i>
-    m_outcome: {fileID: 0}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+  m_dialogues: []
+  m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

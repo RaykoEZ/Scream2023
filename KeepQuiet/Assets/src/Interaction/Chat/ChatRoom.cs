@@ -122,16 +122,21 @@ public class ChatRoom : HideableUI
         foreach (var line in dialogues)
         {
             isNpc = line.WhoSpoke != DialogueNode.s_playerName;
-            // TODO: Simulate typing effect, will animate in future
             yield return new WaitUntil(() => !m_paused);
             yield return new WaitForSeconds(line.DelayBeforeTyping);
             msg = PrepareMessage(line, isNpc);
             msg.Typing();
             yield return new WaitForSeconds(line.TypingDelay);
             msg.Show();
+            // Trigger any events after a dialogue is displayed
+            TryTriggerAfterCurrentLine(line);
         }
         yield return new WaitForSeconds(0.5f);
         // prompt option at the end if there is any
         CheckForReplyOptions();
+    }
+    public static void TryTriggerAfterCurrentLine(Dialogue current)
+    {
+        current.TriggerAfterThisLine?.Trigger();
     }
 }

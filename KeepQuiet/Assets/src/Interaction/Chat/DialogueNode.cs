@@ -1,9 +1,26 @@
 ﻿using Curry.Events;
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
-
+public class TextInfo : EventInfo 
+{ 
+    public string Content { get; private set; }
+    public TextInfo(string content, bool pause = true) 
+    {
+        Content = content;
+    }
+}
+public class TriggeredDialogueContent : ScriptableObject 
+{
+    [TextArea(5, 10)]
+    [SerializeField] string m_content = default;
+    [SerializeField] CurryGameEventTrigger m_trigger = default;
+    public string Content { get => m_content; }
+    public void Trigger()
+    {
+        m_trigger?.TriggerEvent(new TextInfo(m_content));
+    }
+}
 [Serializable]
 public struct Dialogue 
 {
@@ -16,6 +33,7 @@ public struct Dialogue
     public GameObject SentPrefabRef;
     [TextArea(5, 10)]
     public string Content;
+    public TriggeredDialogueContent TriggerAfterThisLine;
 }
 public class ReplyInfo : EventInfo
 {
@@ -41,6 +59,7 @@ public class ChatOption
     {
         m_triggerAfterChoice?.TriggerEvent(new ReplyInfo(this));
     }
+
 }
 [Serializable]
 // A node class for storing NPC text message, player reply options, and the next npc dialogue

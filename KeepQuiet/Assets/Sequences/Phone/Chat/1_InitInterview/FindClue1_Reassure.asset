@@ -10,46 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Response1_Questioning
+  m_Name: FindClue1_Reassure
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0
-    TypingDelay: 0
+    TypingDelay: 0.5
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'Just going through the procedures
+    Content: 'You''re not in any trouble right now, we just need to check some facts
+      with you today.
 
 
-      Sorry about the delay from
-      earlier, let''s get you through this ASAP'
+      You''ll be released once we understand your involvement
+      in this incident.'
   - HasAudio: 1
-    DelayBeforeTyping: 0.1
-    TypingDelay: 0.5
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.2
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Okay, yes my name is Aria Yanagi.
-  - HasAudio: 1
-    DelayBeforeTyping: 0.1
-    TypingDelay: 0.5
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: 'Thanks!
-
-      Before we begin, we just want to know what happened
-      on stage today'
+    Content: Alright
   - HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 0.2
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'mhm
+    Content: 'btw, feeling a bit lonely n hungry rn
 
 
-      Sure, it''s still fresh in my head.'
+      can we meet up and get
+      some grub whilst we''re at it?'
   m_replyOptions:
-  - m_description: <i>*Continue questioning.</i>
-    m_outcome: {fileID: 11400000, guid: 972710f115ff86b4687edf40f04d1cdb, type: 2}
+  - m_description: No we can't.
+    m_outcome: {fileID: 11400000, guid: 53fccbb9d044b584fa575f1d1a6109e8, type: 2}
     m_triggerAfterChoice:
       m_eventToTrigger: {fileID: 0}
   m_hiddenOptions: {fileID: 0}
