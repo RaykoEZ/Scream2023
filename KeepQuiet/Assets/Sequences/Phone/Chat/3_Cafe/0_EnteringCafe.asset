@@ -10,24 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: WhereIsPlayer0
+  m_Name: 0_EnteringCafe
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 0
+  - HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: 
+    WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: 
-  - HasAudio: 0
-    DelayBeforeTyping: 0
-    TypingDelay: 0
-    WhoSpoke: 
-    SentPrefabRef: {fileID: 0}
-    Content: 
-  m_replyOptions:
-  - m_description: 
-    m_outcome: {fileID: 11400000, guid: 676fbd38d4bd68c4c839128dd08d3450, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

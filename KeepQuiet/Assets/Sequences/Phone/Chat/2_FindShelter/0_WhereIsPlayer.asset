@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: FindClue0
+  m_Name: 0_WhereIsPlayer
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
-    DelayBeforeTyping: 90
-    TypingDelay: 0.3
-    WhoSpoke: Aria
+  - HasAudio: 0
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: 
     SentPrefabRef: {fileID: 0}
-    Content: 'Do you know when I''ll be released?
-
-
-      I need to be somewhere'
+    Content: 
+  - HasAudio: 0
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: 
+    SentPrefabRef: {fileID: 0}
+    Content: 
   m_replyOptions:
-  - m_description: I can assure you...
-    m_outcome: {fileID: 11400000, guid: 61d5c6286eced704c841798823a1a7e1, type: 2}
+  - m_description: 
+    m_outcome: {fileID: 11400000, guid: 676fbd38d4bd68c4c839128dd08d3450, type: 2}
     m_triggerAfterChoice:
       m_eventToTrigger: {fileID: 0}
   m_hiddenOptions: {fileID: 0}

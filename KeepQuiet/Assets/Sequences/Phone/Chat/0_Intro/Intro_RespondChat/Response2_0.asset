@@ -22,6 +22,7 @@ MonoBehaviour:
 
       Before we begin, we just want to know what happened
       on stage today'
+    TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 0.2
@@ -31,6 +32,7 @@ MonoBehaviour:
 
 
       Sure, it''s still fresh in my head.'
+    TriggerAfterThisLine: {fileID: 11400000, guid: 68dcf84614b111e40b140cdec54c9cdc, type: 2}
   m_replyOptions:
   - m_description: I'll be back in a sec
     m_outcome: {fileID: 11400000, guid: edcab9b8117e7e84ebfde10dee9e1931, type: 2}

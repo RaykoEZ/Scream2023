@@ -128,6 +128,7 @@ public class ChatRoom : HideableUI
             msg.Typing();
             yield return new WaitForSeconds(line.TypingDelay);
             msg.Show();
+            yield return new WaitForSeconds(0.1f);
             // Trigger any events after a dialogue is displayed
             TryTriggerAfterCurrentLine(line);
         }
