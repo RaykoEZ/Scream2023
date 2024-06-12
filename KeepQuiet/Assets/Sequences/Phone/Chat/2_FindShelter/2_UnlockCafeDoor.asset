@@ -10,22 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 0_FindClue0
+  m_Name: 2_UnlockCafeDoor
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
-    DelayBeforeTyping: 100
-    TypingDelay: 0.3
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: 'Hey, can you go to that bar you just mentioned
+
+
+      I''m trying
+      to open the door for you'
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 2
+    TypingDelay: 0.2
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'Hey, do you know when I''ll be released?
-
-
-      I need to be somewhere'
+    Content: I'll be waiting outside~
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions:
-  - m_description: I can assure you...
-    m_outcome: {fileID: 11400000, guid: 61d5c6286eced704c841798823a1a7e1, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+  m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

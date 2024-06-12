@@ -18,8 +18,8 @@ MonoBehaviour:
     TypingDelay: 0.2
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: "We're in a virtual space, am afraid I can't get you anything here.\n\nWe
-      are monitoring your vitals right now \n\nno need to worry about food :)"
+    Content: "We're in a virtual space, your vitals are in good care \n\nno need
+      to worry about food :)"
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.1
@@ -33,23 +33,5 @@ MonoBehaviour:
 
 '
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.15
-    TypingDelay: 0.1
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'Cmon can we at least meet somewhere comfortable?
-
-
-      It''s raining
-      out here and I might catch a cold'
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.1
-    TypingDelay: 0.05
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: virtually
-    TriggerAfterThisLine: {fileID: 11400000, guid: fb87a33e1eeb61b4097e41771c7143f9, type: 2}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

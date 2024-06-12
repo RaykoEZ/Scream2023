@@ -24,14 +24,16 @@ MonoBehaviour:
 
       You''ll be released once we understand your involvement
       in this incident.'
+    TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.3
     TypingDelay: 0.2
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Alright
+    TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 0.5
+    DelayBeforeTyping: 5
     TypingDelay: 0.2
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
@@ -40,6 +42,7 @@ MonoBehaviour:
 
       can we meet up and get
       some grub whilst we''re at it?'
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: No we can't.
     m_outcome: {fileID: 11400000, guid: 53fccbb9d044b584fa575f1d1a6109e8, type: 2}

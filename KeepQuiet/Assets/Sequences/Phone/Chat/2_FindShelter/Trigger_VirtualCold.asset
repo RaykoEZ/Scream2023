@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8414539f8de499542869ffd4508f2705, type: 3}
-  m_Name: Trigger_Wait
+  m_Name: Trigger_VirtualCold
   m_EditorClassIdentifier: 
-  m_content: 
+  m_content: She will be fine.
   m_trigger:
-    m_eventToTrigger: {fileID: 11400000, guid: 86c25b3de6f510541810224561525d99, type: 2}
+    m_eventToTrigger: {fileID: 0}

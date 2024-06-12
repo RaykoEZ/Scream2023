@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
   m_Name: 1_WhatIsNext
   m_EditorClassIdentifier: 
-  m_dialogues: []
+  m_dialogues:
+  - HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}
