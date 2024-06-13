@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8414539f8de499542869ffd4508f2705, type: 3}
-  m_Name: Trigger_Meanwhile
+  m_Script: {fileID: 11500000, guid: 6a4fe992dfc669e4287ad63aab3dae6f, type: 3}
+  m_Name: e_TriggerMonologue_Top
   m_EditorClassIdentifier: 
-  m_content: <color=yellow>I do not recommend a meeting before verifying Ms. Aria's
-    stability.</color>
-  m_trigger:
-    m_eventToTrigger: {fileID: 0}

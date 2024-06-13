@@ -14,7 +14,7 @@ public struct Dialogue
     public GameObject SentPrefabRef;
     [TextArea(5, 10)]
     public string Content;
-    public TriggeredDialogueContent TriggerAfterThisLine;
+    public DialogueEventTrigger TriggerAfterThisLine;
 }
 public class ReplyInfo : EventInfo
 {

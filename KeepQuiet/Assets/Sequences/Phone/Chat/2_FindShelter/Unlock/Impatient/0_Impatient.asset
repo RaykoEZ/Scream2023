@@ -10,26 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 2_UnlockCafeDoor
+  m_Name: 0_Impatient
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: 'Hey, can you go to that bar you just mentioned
-
-
-      I''m trying
-      to open the door for you'
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 2
-    TypingDelay: 0.2
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: I'll be waiting outside~
+    Content: Umm any progress on the door?
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}
