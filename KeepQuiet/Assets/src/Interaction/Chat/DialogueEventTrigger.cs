@@ -1,21 +1,24 @@
 ﻿using Curry.Events;
+using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName ="NewTriggerDialogue", menuName = "Chat/Trigger Dialogue")]
 public class DialogueEventTrigger : ScriptableObject 
 {
-    [TextArea(5, 10)]
-    [SerializeField] string m_monologue = default;
-    [SerializeField] CurryGameEventTrigger m_trigger = default;
-    public string Monologue { get => m_monologue; }
-    public void Trigger()
+    [SerializeField] List<DialogueContent> m_monologue = default;
+    [SerializeField] CurryGameEventTrigger m_displayToTrigger = default;
+    [SerializeField] CurryGameEventTrigger m_triggerOnShow = default;
+    [SerializeField] CurryGameEventTrigger m_triggerOnFinish = default;
+    public IReadOnlyList<DialogueContent> Monologue { get => m_monologue; }
+    public void TriggerDisplay()
     {
-        m_trigger?.TriggerEvent(new TextInfo(m_monologue));
+        m_displayToTrigger?.TriggerEvent(
+            new DialogueInfo(m_monologue));
     }
 }
-public class TextInfo : EventInfo
+public class DialogueInfo : EventInfo
 {
-    public string Content { get; private set; }
-    public TextInfo(string content, bool pause = true)
+    public List<DialogueContent> Content { get; private set; }
+    public DialogueInfo(List<DialogueContent> content)
     {
         Content = content;
     }

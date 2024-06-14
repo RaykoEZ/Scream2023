@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8414539f8de499542869ffd4508f2705, type: 3}
   m_Name: Trigger_Shelter
   m_EditorClassIdentifier: 
-  m_content: 
+  m_monologue: []
   m_trigger:
-    m_eventToTrigger: {fileID: 0}
+    m_eventToTrigger: {fileID: 11400000, guid: 47cb956e9ca774e41b5d9151f27d7a64, type: 2}

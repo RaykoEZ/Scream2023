@@ -138,6 +138,6 @@ public class ChatRoom : HideableUI
     }
     public static void TryTriggerAfterCurrentLine(Dialogue current)
     {
-        current.TriggerAfterThisLine?.Trigger();
+        current.TriggerAfterThisLine?.TriggerDisplay();
     }
 }

@@ -1,8 +1,8 @@
-﻿using Curry.Explore;
+﻿using Curry.Events;
+using Curry.Explore;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 // handles screen animation and text boxes in a tutorial sequence
 public class GuideDisplay : MonoBehaviour 
 {
@@ -15,6 +15,11 @@ public class GuideDisplay : MonoBehaviour
         m_current = 0;
         ScreenHighlight?.Show();
         StartCoroutine(ShowCurrent());
+    }
+    public void Overwrite(DialogueInfo info) 
+    {
+        m_steps.Clear();
+
     }
     public void AppendStep(List<GuideStep> toAdd) 
     {

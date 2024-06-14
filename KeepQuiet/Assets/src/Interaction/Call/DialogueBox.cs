@@ -1,4 +1,5 @@
-﻿using Curry.Explore;
+﻿using Curry.Events;
+using Curry.Explore;
 using System;
 using TMPro;
 using UnityEngine;
@@ -29,6 +30,15 @@ public class DialogueBox : HideableUI
     }
 }
 [Serializable]
+public class DialogueContent 
+{
+    public bool ShowInstantly;
+    public bool Angry;
+    public AudioClip PlaySound;
+    [TextArea(5, 10)]
+    public string Text;
+}
+[Serializable]
 public class GuideStep 
 {
     public bool ShowInstantly;
@@ -37,15 +47,13 @@ public class GuideStep
     [TextArea(5, 10)]
     public string Content;
     [SerializeField] protected DialogueBox m_display = default;
-    [SerializeField] UnityEvent m_triggerOnShow = default;
-    [SerializeField] UnityEvent m_triggerOnFinish = default;
+
     public virtual void Show()
     {
         if (PlaySound != null) 
         {
             m_display?.Audio?.PlayOneShot(PlaySound);
         }
-        m_triggerOnShow?.Invoke();
         m_display?.SetContent(Content);
         m_display?.Show(ShowInstantly, Angry);
     }
@@ -57,15 +65,10 @@ public class GuideStep
         {
             return;
         }
-        Hide();
+        m_display?.Hide();
     }
     public void End() 
     {
-        Hide();
-    }
-    void Hide() 
-    {
         m_display?.Hide();
-        m_triggerOnFinish?.Invoke();
     }
 }

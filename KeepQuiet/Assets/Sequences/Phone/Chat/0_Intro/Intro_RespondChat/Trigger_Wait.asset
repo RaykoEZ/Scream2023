@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8414539f8de499542869ffd4508f2705, type: 3}
   m_Name: Trigger_Wait
   m_EditorClassIdentifier: 
-  m_content: Great work keeping her on your side.
+  m_monologue:
+  - ShowInstantly: 0
+    Angry: 0
+    PlaySound: {fileID: 0}
+    Text: 
   m_trigger:
     m_eventToTrigger: {fileID: 11400000, guid: 86c25b3de6f510541810224561525d99, type: 2}

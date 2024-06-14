@@ -338,36 +338,12 @@ MonoBehaviour:
     PlaySound: {fileID: 0}
     Content: <color=red>We getting nowhere with this!</color>
     m_display: {fileID: 1362229430}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1069873654}
-          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
-          m_MethodName: SetPaused
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
     Content: <color=red>Begin the questioning</color> or I'll have to <color=red>report</color>
       this misconduct to your superiors!
     m_display: {fileID: 1362229430}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
@@ -377,24 +353,6 @@ MonoBehaviour:
       <color=red><b>Conduct
       your questioning at once.</b></color>'
     m_display: {fileID: 1362229430}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1069873654}
-          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
-          m_MethodName: SetPaused
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &39071262
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,42 +402,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6044e3229a913e4d9aa5abb727431ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_manager: {fileID: 1152285344}
   m_extraSteps:
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
     Content: ...
     m_display: {fileID: 1861727496}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
     Content: I apologize for my previous outburst, it was unbefitting of an Assisstant
     m_display: {fileID: 1861727496}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 0}
     Content: We need the Secret Phrase so we can exit the sandbox after interrogating
       our suspect.
     m_display: {fileID: 1861727496}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   m_display: {fileID: 959404765}
+  m_triggerListener:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &51677626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1359,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.7
+  m_triggerOnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  m_triggerOnFinish:
+    m_PersistentCalls:
+      m_Calls: []
   m_tutorials:
   - {fileID: 1549354741}
 --- !u!114 &123671209
@@ -3414,48 +3366,12 @@ MonoBehaviour:
     PlaySound: {fileID: 0}
     Content: Ignoring isn't helping our cause at this stage of the investigation.
     m_display: {fileID: 1544671088}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1069873654}
-          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
-          m_MethodName: SetPaused
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
     Content: I would suggest you ask some basic questions to verify this individual's
       identity.
     m_display: {fileID: 1544671088}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1069873654}
-          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
-          m_MethodName: SetPaused
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!224 &340838835 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6087678029485662423, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
@@ -7964,6 +7880,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.7
+  m_triggerOnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  m_triggerOnFinish:
+    m_PersistentCalls:
+      m_Calls: []
   m_tutorials:
   - {fileID: 331666729}
 --- !u!1 &768706254
@@ -8406,6 +8328,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.7
+  m_triggerOnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  m_triggerOnFinish:
+    m_PersistentCalls:
+      m_Calls: []
   m_tutorials:
   - {fileID: 1131785401}
 --- !u!1 &783347802
@@ -9715,7 +9643,7 @@ GameObject:
   - component: {fileID: 837320626}
   - component: {fileID: 837320625}
   m_Layer: 0
-  m_Name: Monologues
+  m_Name: MonologueDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10514,24 +10442,12 @@ MonoBehaviour:
     Content: You'll need to remove the suspect from this sandbox once the interrogation
       ends.
     m_display: {fileID: 1861727496}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Your <color=yellow><b>Secret Phrases</b></color> should be availble
       already
     m_display: {fileID: 1861727496}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &959404766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13311,17 +13227,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 35420106450640367, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
   m_PrefabInstance: {fileID: 1069873652}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1069873654 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4764148645332724724, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
-  m_PrefabInstance: {fileID: 1069873652}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a64767dac2e4974cbcac7d6576b5ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1070705327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14018,36 +13923,6 @@ MonoBehaviour:
     PlaySound: {fileID: 0}
     Content: It is advisable to take extra care in exchanges with an unknown entity.
     m_display: {fileID: 609150687}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1069873654}
-          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
-          m_MethodName: SetPaused
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1069873654}
-          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
-          m_MethodName: SetPaused
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1133265055
 GameObject:
   m_ObjectHideFlags: 0
@@ -14786,6 +14661,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockBackground: 0
   m_pauseTimeAfterSequence: 1.5
+  m_triggerOnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  m_triggerOnFinish:
+    m_PersistentCalls:
+      m_Calls: []
   m_tutorials:
   - {fileID: 22350976}
 --- !u!114 &1169064671
@@ -19989,128 +19870,26 @@ MonoBehaviour:
     PlaySound: {fileID: 0}
     Content: <color=red><b>Hmm?</b></color>
     m_display: {fileID: 752801055}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1500122829}
-          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
-          m_MethodName: Hide
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 39071264}
-          m_TargetAssemblyTypeName: TutorialStepChanger, Assembly-CSharp
-          m_MethodName: Replace
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
     Content: <color=red><b>WHAT</b></color>
     m_display: {fileID: 752801055}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2018118395}
-          m_TargetAssemblyTypeName: InspectDocument, Assembly-CSharp
-          m_MethodName: ZoomNote
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
     Content: <color=red><b>IT'S MISSING</b></color>
     m_display: {fileID: 752801055}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2018118395}
-          m_TargetAssemblyTypeName: InspectDocument, Assembly-CSharp
-          m_MethodName: ZoomNoteMore
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
     Content: <color=red>The <b>Secret Phrase</b></color>
     m_display: {fileID: 752801055}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
     Content: <color=red>damn</color>
     m_display: {fileID: 752801055}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2018118395}
-          m_TargetAssemblyTypeName: InspectDocument, Assembly-CSharp
-          m_MethodName: StopZoom
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1500122829}
-          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
-          m_MethodName: Show
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &1549354742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25701,6 +25480,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.5
+  m_triggerOnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  m_triggerOnFinish:
+    m_PersistentCalls:
+      m_Calls: []
   m_tutorials:
   - {fileID: 959404765}
 --- !u!1 &1960615264
@@ -30116,6 +29901,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.5
+  m_triggerOnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  m_triggerOnFinish:
+    m_PersistentCalls:
+      m_Calls: []
   m_tutorials:
   - {fileID: 7707543183678224093}
 --- !u!224 &6372547513212878594
@@ -30370,34 +30161,16 @@ MonoBehaviour:
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: This is our <color=yellow>prime suspect</color>.
     m_display: {fileID: 0}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: She has been quarantined inside this sandbox.
     m_display: {fileID: 0}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Wonder where she is? We need to find her.
     m_display: {fileID: 0}
-    m_triggerOnShow:
-      m_PersistentCalls:
-        m_Calls: []
-    m_triggerOnFinish:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &7712070707087821935
 MonoBehaviour:
   m_ObjectHideFlags: 0

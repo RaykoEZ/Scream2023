@@ -8,11 +8,11 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] GameStateManager m_gameState = default;
     GuideCollection m_current;
     Coroutine m_transition;
-    public void TriggerTutorial(GuideCollection col) 
+    public virtual void TriggerTutorial(GuideCollection col) 
     {
         StartTutorial(col);
     }
-    void StartTutorial(GuideCollection col, bool forceRepeat = false) 
+    protected virtual void StartTutorial(GuideCollection col, bool forceRepeat = false) 
     {
         // Don't repeat the same tutorial in the same session if we don't need to
         if (col.HasTriggeredOnce && !forceRepeat) return;
