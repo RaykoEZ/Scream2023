@@ -30,45 +30,21 @@ public class DialogueBox : HideableUI
     }
 }
 [Serializable]
-public class DialogueContent 
-{
-    public bool ShowInstantly;
-    public bool Angry;
-    public AudioClip PlaySound;
-    [TextArea(5, 10)]
-    public string Text;
-}
-[Serializable]
 public class GuideStep 
 {
     public bool ShowInstantly;
     public bool Angry;
     public AudioClip PlaySound;
+    [SerializeField] CurryGameEventTrigger m_onShow = default;
     [TextArea(5, 10)]
     public string Content;
-    [SerializeField] protected DialogueBox m_display = default;
-
-    public virtual void Show()
+    public CurryGameEventTrigger OnShow { get => m_onShow; }
+    public virtual void SetContent(GuideStep content) 
     {
-        if (PlaySound != null) 
-        {
-            m_display?.Audio?.PlayOneShot(PlaySound);
-        }
-        m_display?.SetContent(Content);
-        m_display?.Show(ShowInstantly, Angry);
-    }
-    public virtual void Transition(GuideStep nextStep) 
-    {
-        bool sameDialogueBox = nextStep.m_display == m_display;
-        // Don't hide if transitioning the same dialogue box
-        if (sameDialogueBox && nextStep.ShowInstantly) 
-        {
-            return;
-        }
-        m_display?.Hide();
-    }
-    public void End() 
-    {
-        m_display?.Hide();
+        ShowInstantly = content.ShowInstantly;
+        Angry = content.Angry;
+        PlaySound = content.PlaySound;
+        Content = content.Content;
+        m_onShow = content.m_onShow;
     }
 }

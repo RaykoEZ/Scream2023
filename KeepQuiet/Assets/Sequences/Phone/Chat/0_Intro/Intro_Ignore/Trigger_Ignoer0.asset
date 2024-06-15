@@ -16,6 +16,6 @@ MonoBehaviour:
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
-    Text: It is advisable to take extra care in exchanges with an unknown entity.
-  m_trigger:
-    m_eventToTrigger: {fileID: 11400000, guid: 069992d332a16b740a44bbf651969f87, type: 2}
+    Content: It is advisable to take extra care in exchanges with an unknown entity.
+  m_displayToTrigger:
+    m_eventToTrigger: {fileID: 11400000, guid: 47cb956e9ca774e41b5d9151f27d7a64, type: 2}

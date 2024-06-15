@@ -4,11 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="NewTriggerDialogue", menuName = "Chat/Trigger Dialogue")]
 public class DialogueEventTrigger : ScriptableObject 
 {
-    [SerializeField] List<DialogueContent> m_monologue = default;
+    [SerializeField] List<GuideStep> m_monologue = default;
     [SerializeField] CurryGameEventTrigger m_displayToTrigger = default;
-    [SerializeField] CurryGameEventTrigger m_triggerOnShow = default;
-    [SerializeField] CurryGameEventTrigger m_triggerOnFinish = default;
-    public IReadOnlyList<DialogueContent> Monologue { get => m_monologue; }
+    public IReadOnlyList<GuideStep> Monologue { get => m_monologue; }
     public void TriggerDisplay()
     {
         m_displayToTrigger?.TriggerEvent(
@@ -17,8 +15,8 @@ public class DialogueEventTrigger : ScriptableObject
 }
 public class DialogueInfo : EventInfo
 {
-    public List<DialogueContent> Content { get; private set; }
-    public DialogueInfo(List<DialogueContent> content)
+    public List<GuideStep> Content { get; private set; }
+    public DialogueInfo(List<GuideStep> content)
     {
         Content = content;
     }

@@ -16,11 +16,11 @@ MonoBehaviour:
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
-    Text: Ignoring isn't helping our cause at this stage of the investigation.
+    Content: Ignoring isn't helping our cause at this stage of the investigation.
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
-    Text: I would suggest you ask some basic questions to verify this individual's
+    Content: I would suggest you ask some basic questions to verify this individual's
       identity.
-  m_trigger:
-    m_eventToTrigger: {fileID: 11400000, guid: 069992d332a16b740a44bbf651969f87, type: 2}
+  m_displayToTrigger:
+    m_eventToTrigger: {fileID: 11400000, guid: 86c25b3de6f510541810224561525d99, type: 2}

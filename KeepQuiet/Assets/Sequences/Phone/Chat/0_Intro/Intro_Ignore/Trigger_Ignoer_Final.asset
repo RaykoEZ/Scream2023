@@ -16,19 +16,19 @@ MonoBehaviour:
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 0}
-    Text: <color=red>We getting nowhere with this!</color>
+    Content: <color=red>We getting nowhere with this!</color>
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
-    Text: <color=red>Begin the questioning</color> or I'll have to <color=red>report</color>
+    Content: <color=red>Begin the questioning</color> or I'll have to <color=red>report</color>
       this misconduct to your superiors!
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
-    Text: '<color=yellow>This is your final warning.</color>
+    Content: '<color=yellow>This is your final warning.</color>
 
 
       <color=red><b>Conduct
       your questioning at once.</b></color>'
-  m_trigger:
+  m_displayToTrigger:
     m_eventToTrigger: {fileID: 11400000, guid: 47cb956e9ca774e41b5d9151f27d7a64, type: 2}

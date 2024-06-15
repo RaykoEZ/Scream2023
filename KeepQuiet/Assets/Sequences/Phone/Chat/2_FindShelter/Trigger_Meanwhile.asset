@@ -17,5 +17,5 @@ MonoBehaviour:
     Angry: 0
     PlaySound: {fileID: 0}
     Text: 
-  m_trigger:
+  m_displayToTrigger:
     m_eventToTrigger: {fileID: 11400000, guid: 069992d332a16b740a44bbf651969f87, type: 2}

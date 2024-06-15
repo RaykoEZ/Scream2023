@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8414539f8de499542869ffd4508f2705, type: 3}
-  m_Name: Trigger_VirtualCold
+  m_Name: Trigger_BeginQuestion
   m_EditorClassIdentifier: 
   m_monologue:
-  - ShowInstantly: 1
+  - ShowInstantly: 0
     Angry: 0
-    PlaySound: {fileID: 0}
-    Content: Ms. Aria will be fine.
+    PlaySound: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+    Content: Good, let's start the questioning
+  - ShowInstantly: 0
+    Angry: 0
+    PlaySound: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+    Content: We need to find some topics to ask her
   m_displayToTrigger:
     m_eventToTrigger: {fileID: 11400000, guid: 069992d332a16b740a44bbf651969f87, type: 2}

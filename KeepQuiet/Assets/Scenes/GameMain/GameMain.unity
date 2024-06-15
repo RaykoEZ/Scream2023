@@ -336,23 +336,27 @@ MonoBehaviour:
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: <color=red>We getting nowhere with this!</color>
-    m_display: {fileID: 1362229430}
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: <color=red>Begin the questioning</color> or I'll have to <color=red>report</color>
       this misconduct to your superiors!
-    m_display: {fileID: 1362229430}
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: '<color=yellow>This is your final warning.</color>
 
 
       <color=red><b>Conduct
       your questioning at once.</b></color>'
-    m_display: {fileID: 1362229430}
+  m_display: {fileID: 1362229430}
 --- !u!1 &39071262
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,19 +411,21 @@ MonoBehaviour:
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: ...
-    m_display: {fileID: 1861727496}
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: I apologize for my previous outburst, it was unbefitting of an Assisstant
-    m_display: {fileID: 1861727496}
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 0}
-    Content: We need the Secret Phrase so we can exit the sandbox after interrogating
-      our suspect.
-    m_display: {fileID: 1861727496}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
+    Content: We need that missing phrase so we can exit the sandbox after the interrogation.
   m_display: {fileID: 959404765}
   m_triggerListener:
     m_eventToListen: {fileID: 0}
@@ -3364,14 +3370,17 @@ MonoBehaviour:
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: Ignoring isn't helping our cause at this stage of the investigation.
-    m_display: {fileID: 1544671088}
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: I would suggest you ask some basic questions to verify this individual's
       identity.
-    m_display: {fileID: 1544671088}
+  m_display: {fileID: 1544671088}
 --- !u!224 &340838835 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6087678029485662423, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
@@ -9645,7 +9654,7 @@ GameObject:
   m_Layer: 0
   m_Name: MonologueDisplay
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10439,15 +10448,18 @@ MonoBehaviour:
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: You'll need to remove the suspect from this sandbox once the interrogation
       ends.
-    m_display: {fileID: 1861727496}
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: Your <color=yellow><b>Secret Phrases</b></color> should be availble
       already
-    m_display: {fileID: 1861727496}
+  m_display: {fileID: 1861727496}
 --- !u!114 &959404766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13921,8 +13933,10 @@ MonoBehaviour:
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: It is advisable to take extra care in exchanges with an unknown entity.
-    m_display: {fileID: 609150687}
+  m_display: {fileID: 609150687}
 --- !u!1 &1133265055
 GameObject:
   m_ObjectHideFlags: 0
@@ -16054,7 +16068,7 @@ GameObject:
   m_Layer: 6
   m_Name: Tutorials
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19868,28 +19882,34 @@ MonoBehaviour:
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: <color=red><b>Hmm?</b></color>
-    m_display: {fileID: 752801055}
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 11400000, guid: f1c1953a0b1ff7745b9c57a2b5c8cce9, type: 2}
     Content: <color=red><b>WHAT</b></color>
-    m_display: {fileID: 752801055}
   - ShowInstantly: 0
     Angry: 1
     PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 11400000, guid: ee5a309af0bb32049b0b6e862cadc47b, type: 2}
     Content: <color=red><b>IT'S MISSING</b></color>
-    m_display: {fileID: 752801055}
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: <color=red>The <b>Secret Phrase</b></color>
-    m_display: {fileID: 752801055}
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: <color=red>damn</color>
-    m_display: {fileID: 752801055}
+  m_display: {fileID: 752801055}
 --- !u!114 &1549354742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25478,7 +25498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60076258b4b5ae408e01144f5f346b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_blockBackground: 0
+  m_blockBackground: 1
   m_pauseTimeAfterSequence: 0.5
   m_triggerOnShow:
     m_PersistentCalls:
@@ -25596,7 +25616,7 @@ GameObject:
   m_Layer: 8
   m_Name: Gameplay
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25985,6 +26005,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 384319478460489852, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 384319478838471274, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -26000,6 +26024,10 @@ PrefabInstance:
     - target: {fileID: 384319480401248928, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753932973482596850, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4753932973482596850, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
@@ -26047,58 +26075,42 @@ PrefabInstance:
       objectReference: {fileID: 6372547513212878593}
     - target: {fileID: 4753932973750806518, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: TutorialCollection, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 2
+      value: GuideCollection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1152285344}
-    - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: TriggerTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: TutorialManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1948175589}
-    - target: {fileID: 4753932974116640523, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: TutorialCollection, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1152285344}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 39071264}
+    - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
@@ -26106,11 +26118,23 @@ PrefabInstance:
       value: TriggerTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Replace
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: TutorialManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: GuideStepChanger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
@@ -26119,7 +26143,11 @@ PrefabInstance:
       objectReference: {fileID: 116814609}
     - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: TutorialCollection, Assembly-CSharp
+      value: GuideCollection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753932974279843583, guid: f314db6ee61d0164f8babdce4437d360, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -29474,6 +29502,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
   m_PrefabInstance: {fileID: 4411118123954679487}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4411118123954679489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 739579493249483841, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
+  m_PrefabInstance: {fileID: 4411118123954679487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713430f9bc770b140afe76052b41f497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!223 &4412727677254243984
 Canvas:
   m_ObjectHideFlags: 0
@@ -29899,7 +29938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60076258b4b5ae408e01144f5f346b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_blockBackground: 0
+  m_blockBackground: 1
   m_pauseTimeAfterSequence: 0.5
   m_triggerOnShow:
     m_PersistentCalls:
@@ -30159,18 +30198,22 @@ MonoBehaviour:
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: This is our <color=yellow>prime suspect</color>.
-    m_display: {fileID: 0}
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: She has been quarantined inside this sandbox.
-    m_display: {fileID: 0}
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: Wonder where she is? We need to find her.
-    m_display: {fileID: 0}
+  m_display: {fileID: 4411118123954679489}
 --- !u!114 &7712070707087821935
 MonoBehaviour:
   m_ObjectHideFlags: 0

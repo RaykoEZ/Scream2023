@@ -86,9 +86,9 @@ MonoBehaviour:
   m_steps:
   - ShowInstantly: 0
     Angry: 0
-    m_display: {fileID: 7754466563408511019}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Your can access your tools to help with your investigations.
+  m_display: {fileID: 7754466563408511019}
 --- !u!1 &5680943262187842216
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,9 +175,9 @@ MonoBehaviour:
   m_steps:
   - ShowInstantly: 0
     Angry: 0
-    m_display: {fileID: 4941927003066501973}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Drag the icons with the cursor to access the tools to assist your investigationl.
+  m_display: {fileID: 4941927003066501973}
 --- !u!1 &5680943262833493797
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +360,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.5
+  m_triggerOnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  m_triggerOnFinish:
+    m_PersistentCalls:
+      m_Calls: []
   m_tutorials:
   - {fileID: 3389000690025469521}
   - {fileID: 5680943262187842218}

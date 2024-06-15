@@ -93,6 +93,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6239686968237461486
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +231,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockBackground: 0
   m_pauseTimeAfterSequence: 0.5
+  m_triggerOnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  m_triggerOnFinish:
+    m_PersistentCalls:
+      m_Calls: []
   m_tutorials:
   - {fileID: 7707543183353628602}
   - {fileID: 6026416092571164032}
@@ -481,14 +493,13 @@ MonoBehaviour:
   m_steps:
   - ShowInstantly: 0
     Angry: 0
-    m_display: {fileID: 3996086162607233945}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Welcome back to the Virtual Sandbox.
   - ShowInstantly: 0
     Angry: 0
-    m_display: {fileID: 3996086162607233945}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: A new <color=orange><b>urgent task</b></color> has been sent to you.
+  m_display: {fileID: 3996086162607233945}
 --- !u!1 &7180029472151755665
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,14 +586,13 @@ MonoBehaviour:
   m_steps:
   - ShowInstantly: 0
     Angry: 0
-    m_display: {fileID: 458327205589955881}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: The files you need are at your desk.
   - ShowInstantly: 0
     Angry: 0
-    m_display: {fileID: 458327205589955881}
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     Content: Clicking here to inspect, good luck on your mission.
+  m_display: {fileID: 458327205589955881}
 --- !u!1001 &873642850596335976
 PrefabInstance:
   m_ObjectHideFlags: 0
