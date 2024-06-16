@@ -6,9 +6,11 @@ public class DialogueEventTrigger : ScriptableObject
 {
     [SerializeField] List<GuideStep> m_monologue = default;
     [SerializeField] CurryGameEventTrigger m_displayToTrigger = default;
+    [SerializeField] CurryGameEventTrigger m_stateToTrigger = default;
     public IReadOnlyList<GuideStep> Monologue { get => m_monologue; }
-    public void TriggerDisplay()
+    public void Trigger()
     {
+        m_stateToTrigger?.TriggerEvent(new EventInfo());
         m_displayToTrigger?.TriggerEvent(
             new DialogueInfo(m_monologue));
     }
@@ -18,6 +20,6 @@ public class DialogueInfo : EventInfo
     public List<GuideStep> Content { get; private set; }
     public DialogueInfo(List<GuideStep> content)
     {
-        Content = content;
+        Content = new List<GuideStep>(content);
     }
 }

@@ -16,29 +16,18 @@ public struct Dialogue
     public string Content;
     public DialogueEventTrigger TriggerAfterThisLine;
 }
-public class ReplyInfo : EventInfo
-{
-    private ChatOption m_optionTriggered;
-    public ChatOption OptionTrigger => m_optionTriggered;
-    public ReplyInfo(ChatOption option,
-        Dictionary<string, object> payload = null, Action onFinishCallback = null) :
-        base(payload, onFinishCallback)
-    {
-        m_optionTriggered = option;
-    }
-}
 [Serializable]
 public class ChatOption 
 {
     [SerializeField] string m_description = default;
     [SerializeField] DialogueNode m_outcome = default;
-    [SerializeField] CurryGameEventTrigger m_triggerAfterChoice = default;
+    [SerializeField] DialogueEventTrigger m_triggerAfterChoice = default;
     public DialogueNode Outcome { get => m_outcome; }
     public string Description { get => m_description; }
     // Trigger a game event if player chose this option
     public void TriggerChoiceEvent() 
     {
-        m_triggerAfterChoice?.TriggerEvent(new ReplyInfo(this));
+        m_triggerAfterChoice?.Trigger();
     }
 
 }

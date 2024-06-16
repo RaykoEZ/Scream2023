@@ -2,15 +2,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialManager : MonoBehaviour 
+public class SystemDialoguePlayer : MonoBehaviour 
 {
     [SerializeField] Image m_background = default;
     [SerializeField] GameStateManager m_gameState = default;
     GuideCollection m_current;
     Coroutine m_transition;
-    public virtual void TriggerTutorial(GuideCollection col) 
+    public virtual void TriggerTutorial(GuideCollection col)
     {
         StartTutorial(col);
+    }
+    public virtual void TriggerTutorial(GuideCollection col, bool forceRepeat = false) 
+    {
+        StartTutorial(col, forceRepeat);
     }
     protected virtual void StartTutorial(GuideCollection col, bool forceRepeat = false) 
     {

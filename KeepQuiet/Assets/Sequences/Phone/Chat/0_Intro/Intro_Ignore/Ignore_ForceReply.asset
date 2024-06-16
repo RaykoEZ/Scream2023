@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Aria_Ignore_ForceReply
+  m_Name: Ignore_ForceReply
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 0
@@ -19,14 +19,16 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Hey, anyone here?
+    TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 0
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: ' I''ve been waiting here, in the rain.'
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+    m_triggerAfterChoice: {fileID: 0}
+  m_hiddenOptions: {fileID: 0}

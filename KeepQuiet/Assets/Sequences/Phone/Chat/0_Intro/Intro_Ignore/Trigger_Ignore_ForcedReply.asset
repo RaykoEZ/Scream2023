@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8414539f8de499542869ffd4508f2705, type: 3}
-  m_Name: Trigger_Ignoer0
+  m_Name: Trigger_Ignore_ForcedReply
   m_EditorClassIdentifier: 
-  m_monologue:
-  - ShowInstantly: 1
-    Angry: 0
-    PlaySound: {fileID: 0}
-    Content: It is advisable to take extra care in exchanges with an unknown entity.
+  m_monologue: []
   m_displayToTrigger:
-    m_eventToTrigger: {fileID: 11400000, guid: 47cb956e9ca774e41b5d9151f27d7a64, type: 2}
+    m_eventToTrigger: {fileID: 0}
+  m_stateToTrigger:
+    m_eventToTrigger: {fileID: 11400000, guid: 9dc0535e93879f0499f260e298c6c6ee, type: 2}

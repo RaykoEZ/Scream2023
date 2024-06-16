@@ -19,18 +19,19 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: No one?
+    TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 1
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Okay, I'll wait longer.
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+    m_triggerAfterChoice: {fileID: 0}
   - m_description: Ignore
     m_outcome: {fileID: 11400000, guid: 3d7af8a8a9ce0f542a441d91ee2b66ff, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+    m_triggerAfterChoice: {fileID: 11400000, guid: f4ce946bce289af41a892cd785c898de, type: 2}
+  m_hiddenOptions: {fileID: 0}

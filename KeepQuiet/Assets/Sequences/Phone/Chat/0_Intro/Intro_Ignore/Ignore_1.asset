@@ -19,6 +19,7 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Hey, I know someone's on the other side!
+    TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 3
@@ -26,12 +27,12 @@ MonoBehaviour:
     SentPrefabRef: {fileID: 0}
     Content: "I have a busy schedule ahead of this interview. \n\nCan we stop wasting
       our time in here? "
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+    m_triggerAfterChoice: {fileID: 0}
   - m_description: Continue to ignore
     m_outcome: {fileID: 11400000, guid: 5e10f23224d3b4147afa88299b975b57, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 11400000, guid: adc7f966d6ac1814a9fdaa5d02ea4544, type: 2}
+    m_triggerAfterChoice: {fileID: 11400000, guid: 4cb49e9d1ddbe734d930e1503f04217a, type: 2}
+  m_hiddenOptions: {fileID: 0}

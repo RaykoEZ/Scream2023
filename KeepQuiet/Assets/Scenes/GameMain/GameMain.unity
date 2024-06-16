@@ -154,7 +154,6 @@ RectTransform:
   m_Children:
   - {fileID: 506863546}
   - {fileID: 1353389903}
-  - {fileID: 665899720}
   m_Father: {fileID: 823697926}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -406,7 +405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6044e3229a913e4d9aa5abb727431ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_manager: {fileID: 1152285344}
   m_extraSteps:
   - ShowInstantly: 1
     Angry: 0
@@ -427,11 +425,6 @@ MonoBehaviour:
       m_eventToTrigger: {fileID: 0}
     Content: We need that missing phrase so we can exit the sandbox after the interrogation.
   m_display: {fileID: 959404765}
-  m_triggerListener:
-    m_eventToListen: {fileID: 0}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &51677626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1727,17 @@ MonoBehaviour:
   m_blink: {fileID: 1192904577}
   m_anim: {fileID: 1192904576}
   m_noAria: {fileID: 7400000, guid: 6d7d8d23be82941479166630c128a93c, type: 2}
+--- !u!114 &175999625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4764148645332724724, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
+  m_PrefabInstance: {fileID: 1069873652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a64767dac2e4974cbcac7d6576b5ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &183406720
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,11 +5983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 256
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6015,11 +6019,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -501.6
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -300
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6599,60 +6603,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664853035}
   m_CullTransparentMesh: 1
---- !u!1 &665899719
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 665899720}
-  - component: {fileID: 665899721}
-  m_Layer: 5
-  m_Name: TriggerGuideMonologue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &665899720
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665899719}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2316483}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &665899721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665899719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08704b06050c8274b9236a998e3dbc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_toListen:
-  - m_eventToListen: {fileID: 11400000, guid: 86c25b3de6f510541810224561525d99, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &695600773
 GameObject:
   m_ObjectHideFlags: 0
@@ -7807,8 +7757,9 @@ GameObject:
   - component: {fileID: 766613847}
   - component: {fileID: 766613846}
   - component: {fileID: 766613845}
+  - component: {fileID: 766613848}
   m_Layer: 5
-  m_Name: OnIgnore_1
+  m_Name: SysDialogue_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7891,12 +7842,67 @@ MonoBehaviour:
   m_pauseTimeAfterSequence: 0.7
   m_triggerOnShow:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175999625}
+        m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_triggerOnFinish:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175999625}
+        m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_tutorials:
   - {fileID: 331666729}
+--- !u!114 &766613848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766613843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0fe6b58f128c04cb2b9b575ffd8260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playback: {fileID: 1152285344}
+  m_display: {fileID: 331666729}
+  m_triggerListener:
+    m_eventToListen: {fileID: 11400000, guid: 47cb956e9ca774e41b5d9151f27d7a64, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 766613848}
+          m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+          m_MethodName: Trigger
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &768706254
 GameObject:
   m_ObjectHideFlags: 0
@@ -8255,8 +8261,9 @@ GameObject:
   - component: {fileID: 776284540}
   - component: {fileID: 776284539}
   - component: {fileID: 776284538}
+  - component: {fileID: 776284541}
   m_Layer: 5
-  m_Name: OnIgnore_0
+  m_Name: SysDialogue_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8339,12 +8346,67 @@ MonoBehaviour:
   m_pauseTimeAfterSequence: 0.7
   m_triggerOnShow:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175999625}
+        m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_triggerOnFinish:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175999625}
+        m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_tutorials:
   - {fileID: 1131785401}
+--- !u!114 &776284541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776284536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0fe6b58f128c04cb2b9b575ffd8260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playback: {fileID: 1152285344}
+  m_display: {fileID: 1131785401}
+  m_triggerListener:
+    m_eventToListen: {fileID: 11400000, guid: 86c25b3de6f510541810224561525d99, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 776284541}
+          m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+          m_MethodName: Trigger
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &783347802
 GameObject:
   m_ObjectHideFlags: 0
@@ -14541,7 +14603,7 @@ GameObject:
   - component: {fileID: 1152285343}
   - component: {fileID: 1152285344}
   m_Layer: 5
-  m_Name: GuideManager
+  m_Name: SystemDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14593,8 +14655,9 @@ GameObject:
   - component: {fileID: 1156101650}
   - component: {fileID: 1156101649}
   - component: {fileID: 1156101648}
+  - component: {fileID: 1156101651}
   m_Layer: 5
-  m_Name: OnIgnore_Final
+  m_Name: SysDialogue_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14677,12 +14740,67 @@ MonoBehaviour:
   m_pauseTimeAfterSequence: 1.5
   m_triggerOnShow:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175999625}
+        m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_triggerOnFinish:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175999625}
+        m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_tutorials:
   - {fileID: 22350976}
+--- !u!114 &1156101651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156101646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0fe6b58f128c04cb2b9b575ffd8260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playback: {fileID: 1152285344}
+  m_display: {fileID: 22350976}
+  m_triggerListener:
+    m_eventToListen: {fileID: 11400000, guid: 069992d332a16b740a44bbf651969f87, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1156101651}
+          m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+          m_MethodName: Trigger
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1169064671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16931,54 +17049,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_toListen:
-  - m_eventToListen: {fileID: 11400000, guid: 3c9e550f17351bd439ed46939168b703, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1152285344}
-          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-          m_MethodName: TriggerTutorial
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 776284540}
-            m_ObjectArgumentAssemblyTypeName: GuideCollection, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - m_eventToListen: {fileID: 11400000, guid: 7931c971716f1694580aa0117f65f7f1, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1152285344}
-          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-          m_MethodName: TriggerTutorial
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 766613847}
-            m_ObjectArgumentAssemblyTypeName: GuideCollection, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - m_eventToListen: {fileID: 11400000, guid: adc7f966d6ac1814a9fdaa5d02ea4544, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1152285344}
-          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-          m_MethodName: TriggerTutorial
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1156101650}
-            m_ObjectArgumentAssemblyTypeName: GuideCollection, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - m_eventToListen: {fileID: 11400000, guid: 9dc0535e93879f0499f260e298c6c6ee, type: 2}
     m_responses:
       m_PersistentCalls:
@@ -17073,11 +17143,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 256
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17109,7 +17179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -501.6
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -19586,11 +19656,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 256
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19622,11 +19692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -501.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -300
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3098594875280757633, guid: 2fe21d059915f7c47b87ba1970130bef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
