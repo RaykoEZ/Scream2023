@@ -41,15 +41,5 @@ MonoBehaviour:
     SentPrefabRef: {fileID: 0}
     Content: No wonder why people are yapping about you GenOp bureaucrats lately.
     TriggerAfterThisLine: {fileID: 11400000, guid: 1cfd178a18ab89341a09885230f3b8b8, type: 2}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.3
-    TypingDelay: 0.5
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'Who am I kidding
-
-
-      They''re always yapping'
-    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}
