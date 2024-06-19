@@ -33,9 +33,5 @@ MonoBehaviour:
 
       Sure, it''s still fresh in my head.'
     TriggerAfterThisLine: {fileID: 11400000, guid: 68dcf84614b111e40b140cdec54c9cdc, type: 2}
-  m_replyOptions:
-  - m_description: I'll be back in a sec
-    m_outcome: {fileID: 11400000, guid: edcab9b8117e7e84ebfde10dee9e1931, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+  m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

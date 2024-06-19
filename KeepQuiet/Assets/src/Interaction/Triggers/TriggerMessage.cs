@@ -6,6 +6,6 @@ public class TriggerMessage : TriggerInteraction
     [SerializeField] protected DialogueNode m_message = default;
     public override void Trigger()
     {
-        m_trigger?.Message(m_message);
+        m_trigger?.MessagePlayer(m_message);
     }
 }

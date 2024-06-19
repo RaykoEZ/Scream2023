@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 1_FindShelter_angry
+  m_Name: 1_FindShelter
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
@@ -18,28 +18,48 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: Whereabouts are you?
+    Content: 'Whereabouts are you?
+
+
+      You should be near some shelter.'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 3
     TypingDelay: 0.8
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Been a wet dog on the streets, nothing's open, no food...
+    Content: 'Been wandering around the streets all around.
+
+
+      Everything''s
+      closed.'
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.5
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: There's the cafe with lights on, but the door's locked
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.2
-    TypingDelay: 0.3
+    TypingDelay: 0.8
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: and a jerk on the phone
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.4
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: No wonder why people are yapping about you GenOp bureaucrats lately.
+    Content: 'Couldn''t you guys have give me a roof on my head?
+
+      No wonder
+      why people are yapping about you GenOp bureaucrats lately.'
     TriggerAfterThisLine: {fileID: 11400000, guid: 1cfd178a18ab89341a09885230f3b8b8, type: 2}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.5
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'Who am I kidding
+
+
+      They''re always yapping'
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

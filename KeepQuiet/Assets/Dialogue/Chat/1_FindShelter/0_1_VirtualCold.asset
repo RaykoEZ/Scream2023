@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 0_UnlockCafeDoor
+  m_Name: 0_1_VirtualCold
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
@@ -18,18 +18,25 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'Hey, can you go to that bar you just mentioned
+    Content: 'Don''t worry, you are in good hands.
 
 
-      I''m trying
-      to open the door for you'
+      The rain shouldn''t be
+      an issue, it won''t kill.'
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 3
-    TypingDelay: 0.2
+  - HasAudio: 0
+    DelayBeforeTyping: 0.1
+    TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: k I'll be waiting outside
+    Content: 'Easy for you to say
+
+
+      how about you come out and enjoy the sad
+      shower'
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions: []
+  m_replyOptions:
+  - m_description: Where are you right now?
+    m_outcome: {fileID: 11400000, guid: 93b8d41dfca2bfe489140679bffe7687, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_hiddenOptions: {fileID: 0}

@@ -10,22 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 1_DoorUnlocked
+  m_Name: 0_OpenCafeDoor
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0
-    TypingDelay: 0
+    TypingDelay: 0.3
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: There, try the door now
+    Content: 'Hey, can you go to that bar you just mentioned
+
+
+      try the door
+      now'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 0.5
-    TypingDelay: 0.1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.2
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: k
-    TriggerAfterThisLine: {fileID: 0}
+    Content: alright
+    TriggerAfterThisLine: {fileID: 11400000, guid: 5e96f05ccf35b6a47b859268eecddc08, type: 2}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

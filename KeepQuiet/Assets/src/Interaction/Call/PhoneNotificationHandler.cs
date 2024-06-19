@@ -29,13 +29,18 @@ public class PhoneNotificationHandler : MonoBehaviour
         AnimateAlertIcon();
         m_call.CallPhone(incomingNumber, onAccept);
     }
-    public void Message(DialogueNode newDialogue) 
+    public void MessagePlayer(DialogueNode newDialogue) 
     {
         ShowToggle();
         m_newMessage = newDialogue;
         m_toggleIcon.sprite = m_messageAlert;
         AnimateAlertIcon();
         m_chat.OnNewMessage(newDialogue);
+    }
+    public void MessageNpc(DialogueNode dialogue) 
+    {
+        m_chat.OnNewMessage(dialogue);
+        m_chat.BeginChat();
     }
     public void HideToggle() 
     {

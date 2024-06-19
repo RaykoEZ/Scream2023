@@ -10,34 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 0_1_VirtualCold
+  m_Name: 0_FindClue0
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0
-    TypingDelay: 0
+    TypingDelay: 0.3
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'Don''t worry, you are in good hands.
-
-
-      The rain shouldn''t be
-      an issue, it won''t kill.'
+    Content: Okay, ?
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 0
-    DelayBeforeTyping: 0.1
-    TypingDelay: 0.5
+  - HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0.3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'Easy for you to say
+    Content: 'Hey, do you know when I''ll be released?
 
 
-      how about you come out and enjoy the sad
-      shower'
-    TriggerAfterThisLine: {fileID: 11400000, guid: fb87a33e1eeb61b4097e41771c7143f9, type: 2}
+      I need to be somewhere'
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: Where are you right now?
-    m_outcome: {fileID: 11400000, guid: 93b8d41dfca2bfe489140679bffe7687, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
+  - m_description: I can assure you...
+    m_outcome: {fileID: 11400000, guid: 61d5c6286eced704c841798823a1a7e1, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_hiddenOptions: {fileID: 0}

@@ -10,12 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8414539f8de499542869ffd4508f2705, type: 3}
-  m_Name: Trigger_Meanwhile
+  m_Name: Trigger_Shelter
   m_EditorClassIdentifier: 
   m_monologue:
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 0}
-    Text: 
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
+    Content: Let's get her indoors before anything.
+  - ShowInstantly: 0
+    Angry: 0
+    PlaySound: {fileID: 0}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
+    Content: We need her compliance above all right now.
   m_displayToTrigger:
     m_eventToTrigger: {fileID: 11400000, guid: 069992d332a16b740a44bbf651969f87, type: 2}
+  m_stateToTrigger:
+    m_eventToTrigger: {fileID: 0}
