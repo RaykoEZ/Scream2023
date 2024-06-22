@@ -1,9 +1,6 @@
 ﻿using Curry.Explore;
-using System.Collections;
-using System.Net.Mail;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class PhoneNotificationHandler : MonoBehaviour
 {
     [SerializeField] Animator m_toggleAnim = default;

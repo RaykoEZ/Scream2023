@@ -1,14 +1,13 @@
 ﻿using Curry.Explore;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 // A class to display a text message
 public class MessageBox : HideableUI
 {
     [SerializeField] TextMeshProUGUI m_content = default;
     [SerializeField] AudioSource m_audio = default;
+    [SerializeField] AttachmentEventHandler m_attachment = default;
     protected bool m_typing = false;
-    GameObject m_spawned;
     // TODO: add image to display
     public void Init(Dialogue content)
     {
@@ -16,10 +15,11 @@ public class MessageBox : HideableUI
         m_content.text = content.Content;
         GameObject toSpawn = content.SentPrefabRef;
         m_audio.mute = !content.HasAudio;
-        if (toSpawn != null) 
+        bool hasAttachment = toSpawn != null;
+        m_attachment.enabled = hasAttachment;
+        if (hasAttachment) 
         {
-            m_spawned = Instantiate(toSpawn, m_content.transform.parent);
-            m_spawned.SetActive(true);
+            m_attachment?.Init(toSpawn.name, toSpawn);
         }
     }
     public void Typing() 
@@ -35,9 +35,7 @@ public class MessageBox : HideableUI
     public void Cleanup() 
     {
         m_content.text = "";
-        if (m_spawned != null) 
-        {
-            Destroy(m_spawned);
-        }
+        m_attachment.Shutdown();
+        m_attachment.enabled = false;
     }
 }

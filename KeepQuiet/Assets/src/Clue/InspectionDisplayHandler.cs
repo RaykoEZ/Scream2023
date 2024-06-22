@@ -1,4 +1,5 @@
-﻿using Curry.Explore;
+﻿using Curry.Events;
+using Curry.Explore;
 using System.Collections;
 using UnityEngine;
 // Script to instantiate object when player click to inspect a clue
