@@ -10,38 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: HoursAgo_1
+  m_Name: 0_ChatA
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: Handler
+    WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Yo, whats up?
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.05
-    TypingDelay: 0.2
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: What time is it?
+    Content: Hey, Al, I'm gonna be a bit late for our rehearsal today
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.1
-    TypingDelay: 0.2
-    WhoSpoke: Handler
+    TypingDelay: 0.5
+    WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'Just past noon, why?
-
-
-      Are you okay? '
+    Content: Mind passing along to Fly?
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions:
-  - m_description: Yeah, just checking (Brush it off)
-    m_outcome: {fileID: 11400000, guid: 3f54c1701adc07a47a6085f8ec3af6d1, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
-  - m_description: Wait, what? (Confused)
-    m_outcome: {fileID: 11400000, guid: 2b5a15d98421c63448d1ef13ab921e87, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.1
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: Sure thing, don't sweat it.
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.1
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: "Thanks, I'll be ~30min late \n\nyou're a lifesaver"
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

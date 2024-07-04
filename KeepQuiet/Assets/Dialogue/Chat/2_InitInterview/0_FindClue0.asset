@@ -16,13 +16,6 @@ MonoBehaviour:
   - HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0.3
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: Okay, ?
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0
-    TypingDelay: 0.3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: 'Hey, do you know when I''ll be released?

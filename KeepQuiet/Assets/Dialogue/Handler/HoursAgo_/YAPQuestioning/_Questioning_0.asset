@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: HoursAgo_Confuse
+  m_Name: _Questioning_0
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
@@ -20,26 +20,20 @@ MonoBehaviour:
     SentPrefabRef: {fileID: 0}
     Content: 'Wait a minute, did you typo?
 
+      This can''t be right
 
-      It''s not Monday today'
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.3
-    TypingDelay: 0.3
-    WhoSpoke: Handler
-    SentPrefabRef: {fileID: 0}
-    Content: ???
+'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.05
     TypingDelay: 0.3
     WhoSpoke: Handler
     SentPrefabRef: {fileID: 0}
-    Content: 'Bro did you have a food coma from lunch?
+    Content: 'did you have a food coma from lunch?
 
 
       You''re sounding just
-      like one of those crazy contrarians we locked up a year ago.'
+      like one of those crazy Sensus guys we locked up a year ago.'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.05
@@ -50,7 +44,7 @@ MonoBehaviour:
 
 
       I was just questioning Ms. Yanagi
-      a second ago.'
+      a second ago and she''s gone.'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.2
@@ -63,27 +57,21 @@ MonoBehaviour:
       I don''t see any Ms Yanagi on our timetable.'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.07
-    WhoSpoke: Handler
-    SentPrefabRef: {fileID: 0}
-    Content: Where you at?
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
     DelayBeforeTyping: 0.3
-    TypingDelay: 0.1
+    TypingDelay: 0.3
     WhoSpoke: Handler
     SentPrefabRef: {fileID: 0}
-    Content: <color=red>We need to go through some questions with you just in case</color>
+    Content: '<color=red>We need to go through some questions with you just in case</color>
+
+
+      Where
+      are you right now?'
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: <color=red>I'm in the sandbox.</color>
-    m_outcome: {fileID: 0}
+  - m_description: I'm in the sandbox.
+    m_outcome: {fileID: 11400000, guid: 541cafd67f62fe644933b00797f06952, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  - m_description: <color=red>I'm in the sandbox.</color>
-    m_outcome: {fileID: 0}
-    m_triggerAfterChoice: {fileID: 0}
-  - m_description: <color=red>I'm in the sandbox.</color>
-    m_outcome: {fileID: 0}
+  - m_description: <color=red><i>Lie</i></color>
+    m_outcome: {fileID: 11400000, guid: bb9d9580cdc5e6e4092c61b9fec7c98b, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_hiddenOptions: {fileID: 0}

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: 1_AToF_0
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: Hey, Aria's gonna be late for ~30 mins
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1.5
+    TypingDelay: 0.3
+    WhoSpoke: Fli
+    SentPrefabRef: {fileID: 0}
+    Content: "Ah of course she is. It's only been a week \nsince she got discharged 
+      from hospital."
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.5
+    TypingDelay: 0.2
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: Guess we'll cut her some slacks
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.2
+    WhoSpoke: Fli
+    SentPrefabRef: {fileID: 0}
+    Content: Not really, she needs to catch up with everything.
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.2
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: True, everyone's gotten used to Aria Mk. II, the OG has some big shoes
+      to fill
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_hiddenOptions: {fileID: 0}
