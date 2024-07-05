@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45fea2d2d620644d8b6072287dc4fab, type: 3}
+  m_Name: optAlt_CafeInterview
+  m_EditorClassIdentifier: 
+  m_conditions:
+  - {fileID: 11400000, guid: 4515723eb6902eb4b823ab9b4d5fefba, type: 2}
+  m_newOptions:
+  - m_description: About Alm
+    m_outcome: {fileID: 11400000, guid: abb0e63115798ef41a438aaeb662b390, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: About Elia
+    m_outcome: {fileID: 11400000, guid: 26a3b75d20b4d4c41ba700a8224cb13e, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: About GenOp
+    m_outcome: {fileID: 11400000, guid: 3d77a4573ca92e44184a61a49dd89f5c, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: About Sensus
+    m_outcome: {fileID: 11400000, guid: f21f51578e79e6f428ed76f9203ff94b, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: About Herself
+    m_outcome: {fileID: 11400000, guid: 3c475d7fd6015c348a9e92d39916a74a, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: Enough info for now
+    m_outcome: {fileID: 11400000, guid: aa6cddd49dc1b2741b0b356885f5c647, type: 2}
+    m_triggerAfterChoice: {fileID: 0}

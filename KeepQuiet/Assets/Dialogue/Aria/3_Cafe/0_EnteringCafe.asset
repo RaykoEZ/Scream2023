@@ -10,25 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: CloseCase_0
+  m_Name: 0_EnteringCafe
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.1
-    WhoSpoke: You
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: I think we're done here, get me out.
+    Content: Yo
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 1
+    DelayBeforeTyping: 0.3
     TypingDelay: 0.2
-    WhoSpoke: Handler
-    SentPrefabRef: {fileID: 0}
-    Content: Alright, lemme get the checklist done before you get out.
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 9220433789127847104, guid: c032643d10539254d93a72e3e483dc86, type: 3}
+    Content: Check this out
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions:
-  - m_description: I'm missing the secret phrase.
-    m_outcome: {fileID: 11400000, guid: 96d714cafcbbf4044b9cbe006b8ed668, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.5
+    TypingDelay: 0.1
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: Perfect place for an interview, is it not?
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

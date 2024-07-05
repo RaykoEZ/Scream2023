@@ -43,18 +43,18 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.1
-    TypingDelay: 0.7
+    TypingDelay: 1
     WhoSpoke: Handler
     SentPrefabRef: {fileID: 0}
-    Content: "Pretty damning for our Ms here\n\nWe have enough evidence to cloase
-      shop, you just need \nto do a few simple questions to set the scene. "
+    Content: "Pretty damning for our Miss here\n\nWe probably have enough to close
+      shop, you just need \nto get a few simple answers to set the narrative."
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.05
     TypingDelay: 0.4
     WhoSpoke: Handler
     SentPrefabRef: {fileID: 0}
-    Content: Just give me a shout in the chat when you're done
+    Content: Give me a shout in the chat when you're done
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}
