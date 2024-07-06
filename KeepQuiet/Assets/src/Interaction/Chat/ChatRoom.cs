@@ -121,6 +121,9 @@ public class ChatRoom : HideableUI
         MessageBox msg;
         foreach (var line in dialogues)
         {
+            //skip empty content
+            if (line.Content == null || string.IsNullOrEmpty(line.Content)) continue;
+
             isNpc = line.WhoSpoke != DialogueNode.s_playerName;
             yield return new WaitUntil(() => !m_paused);
             yield return new WaitForSeconds(line.DelayBeforeTyping);

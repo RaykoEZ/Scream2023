@@ -25,7 +25,10 @@ MonoBehaviour:
     TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Mind passing along to Fly?
+    Content: 'Mind passing along to Elia?
+
+
+      Can''t reach him on phone rn'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 1
@@ -35,11 +38,11 @@ MonoBehaviour:
     Content: Sure thing, don't sweat it.
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 1
+    DelayBeforeTyping: 0.5
     TypingDelay: 0.1
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: "Thanks, I'll be ~30min late \n\nyou're a lifesaver"
+    Content: "Thanks, will be ~30min late \n\nyou're a lifesaver"
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

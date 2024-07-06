@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Relation_F
   m_EditorClassIdentifier: 
   m_dialogues: []
-  m_replyOptions: []
+  m_replyOptions:
+  - m_description: Change the topic
+    m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_hiddenOptions: {fileID: 0}

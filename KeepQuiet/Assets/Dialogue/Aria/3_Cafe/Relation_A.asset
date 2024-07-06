@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
   m_Name: Relation_A
   m_EditorClassIdentifier: 
-  m_dialogues: []
-  m_replyOptions: []
+  m_dialogues:
+  - HasAudio: 0
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: 
+    SentPrefabRef: {fileID: 0}
+    Content: 
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions:
+  - m_description: Change the topic
+    m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_hiddenOptions: {fileID: 0}
