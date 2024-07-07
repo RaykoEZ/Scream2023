@@ -25,18 +25,9 @@ MonoBehaviour:
     TypingDelay: 5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'Two days ago, that''s the day I was discharged from the hospital,
-
-      they
-      had a last head checkup and I was free to leave around noon.
-
-
-      there
-      was also the rehearsal at the studio later in the afternoon too
-
-
-      you
-      can cehck with others'
+    Content: "Two days ago, that's the day I went to the hospital \nfor a routine
+      checkup and I was free to leave around noon.\n\nthere was also the rehearsal
+      at the studio later in the afternoon too\n\nyou can cehck with the others"
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.2

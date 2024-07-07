@@ -33,7 +33,7 @@ MonoBehaviour:
     TypingDelay: 1
     WhoSpoke: ??a?1_spA
     SentPrefabRef: {fileID: 0}
-    Content: Shit u serious?
+    Content: Shit seriously?
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 5

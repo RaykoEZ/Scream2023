@@ -25,7 +25,7 @@ MonoBehaviour:
     TypingDelay: 1
     WhoSpoke: F
     SentPrefabRef: {fileID: 0}
-    Content: Let's hear it.
+    Content: Go on
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 2
