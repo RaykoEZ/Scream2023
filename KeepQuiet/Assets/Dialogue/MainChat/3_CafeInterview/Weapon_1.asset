@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: Weapon_1
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: So you don't know anything about this weapon?
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.1
+    TypingDelay: 0.5
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: Nope
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.7
+    TypingDelay: 3
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: 'If so, we might have a problem here.
+
+
+      We found your fingerprints
+      on the bat.
+
+
+      Why might that be?'
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.2
+    TypingDelay: 0.1
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: WHAT
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 5
+    TypingDelay: 10
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'How
+
+
+      This is nonsense! I never touch anything like this
+
+
+      Why
+      would I even have a bat
+
+
+      I''m being framed I''m sure of it!
+
+
+      I
+      haven''t piss off any baseballers, it must be some of my haters
+
+
+      they''d
+      do anything to ruin me'
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.1
+    TypingDelay: 3
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'There must be a mistake with your results right?
+
+
+      Did you get
+      the correct fingerprints?'
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.1
+    TypingDelay: 1
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'I can''t believe this
+
+
+      You have the wrong person!
+
+
+      I
+      have nothing to do with this!'
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_hiddenOptions: {fileID: 0}

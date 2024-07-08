@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Weapon_0
+  m_Name: 1_AboutTimeWarp
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
@@ -18,36 +18,29 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: "We found a potential weapon near the scene, \n\nWhat do you know anything
-      about this?"
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 3
-    TypingDelay: 0.7
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'Woah this is messed up.
-
-
-      I don''t know what you mean but I have
-      no idea.'
+    Content: Aria you there?
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 2
-    TypingDelay: 1.5
+    TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'To be honest, I''m not sure what I got myself into.
-
-
-      I haven''t
-      witness any violence like this, to my belief
-
-
-'
+    Content: No
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions:
-  - m_description: Change the topic
-    m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.7
+    TypingDelay: 0.5
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: Roger, I'll be back later.
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.3
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: Alright enough stalling, what do you know about the watch you showed
+      to me?
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

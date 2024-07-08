@@ -10,15 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: ExitCode_0
+  m_Name: About_WeaponResult
   m_EditorClassIdentifier: 
-  m_dialogues:
-  - HasAudio: 1
-    DelayBeforeTyping: 0
-    TypingDelay: 0
-    WhoSpoke: Handler
-    SentPrefabRef: {fileID: 0}
-    Content: 
-    TriggerAfterThisLine: {fileID: 0}
+  m_dialogues: []
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}

@@ -23,14 +23,14 @@ MonoBehaviour:
   - HasAudio: 1
     DelayBeforeTyping: 1.5
     TypingDelay: 0.3
-    WhoSpoke: Fli
+    WhoSpoke: F
     SentPrefabRef: {fileID: 0}
     Content: "Of course she is. It's only been a week \nsince she left the hospital."
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.3
     TypingDelay: 0.2
-    WhoSpoke: Fli
+    WhoSpoke: F
     SentPrefabRef: {fileID: 0}
     Content: She needs to catch up and it's not going to be easy.
     TriggerAfterThisLine: {fileID: 0}
@@ -45,7 +45,7 @@ MonoBehaviour:
   - HasAudio: 1
     DelayBeforeTyping: 2
     TypingDelay: 0.2
-    WhoSpoke: Fil
+    WhoSpoke: F
     SentPrefabRef: {fileID: 0}
     Content: She will be fine, I will make sure of it.
     TriggerAfterThisLine: {fileID: 0}

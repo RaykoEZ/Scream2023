@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 0_AToComrade
+  m_Name: 0_AToSquad
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
@@ -18,50 +18,52 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: ?z??a1q
     SentPrefabRef: {fileID: 0}
-    Content: Need help at Sector 7, some idiots brought fireworks
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.3
-    TypingDelay: 1
-    WhoSpoke: ?z??a1q
-    SentPrefabRef: {fileID: 0}
-    Content: "You're in Sector 7 rn? \n\nWe need to get indoors before someone gets
-      hurt"
+    Content: "You're up? \n\nNeed help at Sector 7, some idiots brought fireworks"
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 1
     WhoSpoke: ??a?1_spA
     SentPrefabRef: {fileID: 0}
-    Content: Shit seriously?
+    Content: 'Shit seriously?
+
+
+      Thought it was just a peaceful rally'
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.2
+    WhoSpoke: ?z??a1q
+    SentPrefabRef: {fileID: 0}
+    Content: 'Rogue party
+
+
+      We need to get indoors before someone gets hurt'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 5
     TypingDelay: 3
     WhoSpoke: ??a?1_spA
     SentPrefabRef: {fileID: 0}
-    Content: 'at work rn
+    Content: 'I''m going to open a door at the back of Lane A12 Unit104
 
 
-      I''m going to open a door at the back of Lane A12
-      Unit104
+      go
+      behind the building and it''s upstairs
 
 
-      go behind the building and it''s upstairs
+      get in the WC, go straight,
+      second left
 
 
-      get in the
-      WC, go straight, second left
-
-
-      don''t get followed'
+      don''t get tailed'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 3
     TypingDelay: 0.2
     WhoSpoke: ?z??a1q
     SentPrefabRef: {fileID: 0}
-    Content: Got it thanks
+    Content: Got it
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_hiddenOptions: {fileID: 0}
