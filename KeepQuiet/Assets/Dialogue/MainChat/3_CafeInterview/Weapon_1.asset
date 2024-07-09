@@ -21,36 +21,36 @@ MonoBehaviour:
     Content: So you don't know anything about this weapon?
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 0.1
+    DelayBeforeTyping: 0.2
     TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Nope
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 0.7
+    DelayBeforeTyping: 2
     TypingDelay: 3
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'If so, we might have a problem here.
+    Content: 'If so, we might have a problem.
 
 
-      We found your fingerprints
-      on the bat.
+      Our analysis team found your
+      fingerprints on the bat.
 
 
       Why might that be?'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 0.2
+    DelayBeforeTyping: 3
     TypingDelay: 0.1
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: WHAT
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 5
-    TypingDelay: 10
+    DelayBeforeTyping: 2
+    TypingDelay: 5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: 'How
@@ -60,33 +60,28 @@ MonoBehaviour:
 
 
       Why
-      would I even have a bat
-
-
-      I''m being framed I''m sure of it!
-
-
-      I
-      haven''t piss off any baseballers, it must be some of my haters
-
-
-      they''d
-      do anything to ruin me'
+      would I bring a bat anywhere?'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.1
-    TypingDelay: 3
+    TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'There must be a mistake with your results right?
+    Content: I haven't piss off any baseballers
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.2
+    TypingDelay: 0.4
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'it must be some of my haters
 
 
-      Did you get
-      the correct fingerprints?'
+      they''d do anything to ruin me'
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.1
-    TypingDelay: 1
+    TypingDelay: 2
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: 'I can''t believe this

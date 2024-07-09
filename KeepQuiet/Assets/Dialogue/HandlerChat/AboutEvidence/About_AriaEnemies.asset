@@ -10,33 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: About_WeaponResult
+  m_Name: About_AriaEnemies
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0
-    TypingDelay: 1
-    WhoSpoke: Handler
+    TypingDelay: 0
+    WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'We got the weapon analysed for prints.
+    Content: 'Are there any info on Ms Aria''s social status?
 
 
-      Ms Aria''s prints are
-      at the handle, holding the bat.'
+      Any potential
+      adversaries who could be involved? '
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 1
-    TypingDelay: 1.3
+    DelayBeforeTyping: 4
+    TypingDelay: 2
     WhoSpoke: Handler
     SentPrefabRef: {fileID: 0}
-    Content: "Smoke and gun\n\ndon't you think? \n\nwe can close the case now and
-      have an early break"
+    Content: 'Why do we need that?
+
+
+      Our evidence points to her quite convincingly
+
+      enough
+      to finish the case on our side.'
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions:
-  - m_description: Agree
-    m_outcome: {fileID: 11400000, guid: d3a7cc4658f3cfa40bd34574258c43b3, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
-  - m_description: Deny
-    m_outcome: {fileID: 11400000, guid: e460c76a99fc50f4288bbb5d6e8e616c, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.5
+    TypingDelay: 3
+    WhoSpoke: Handler
+    SentPrefabRef: {fileID: 0}
+    Content: 'Just get her statements and we''re done
+
+
+      she''s toast either
+      way, no need to prolong the session.'
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
   m_hiddenOptions: {fileID: 0}
