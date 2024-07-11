@@ -4,6 +4,9 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(CanvasGroup))]
 public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
+    public delegate void OnDragUpdate(DraggableObject dragged);
+    public event OnDragUpdate OnDragFinish;
+    public event OnDragUpdate OnDragBegin;
     protected Vector2 m_anchorOffset = Vector2.zero;
     Transform m_origin;
     int m_originIndex;
@@ -25,6 +28,7 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     public virtual void OnBeginDrag(PointerEventData eventData)
     {
         LeaveOrigin(eventData);
+        OnDragBegin?.Invoke(this);
     }
     protected virtual void LeaveOrigin(PointerEventData eventData)
     {
@@ -51,6 +55,7 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     {
         GetComponent<CanvasGroup>().blocksRaycasts = true;
         ReturnToBeforeDrag();
+        OnDragFinish?.Invoke(this);
     }
     public virtual void DropObject(Transform parent, int siblingIndex = 0)
     {
