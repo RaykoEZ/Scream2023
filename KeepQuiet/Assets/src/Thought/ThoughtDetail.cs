@@ -11,6 +11,8 @@ public class ThoughtDetail : ScriptableObject
     // On triggering dialogue with thought,
     // check ID & game state, trigger dialogue if ID has triggers and gamestate == true
     [SerializeField] string m_description = default;
+    [SerializeField] DialogueNode m_triggerDialogue = default;
     public string Id => name;
-    public string Description { get => m_description; set => m_description = value; }
+    public string Description { get => m_description; }
+    public DialogueNode TriggerDialogue { get => m_triggerDialogue; }
 }

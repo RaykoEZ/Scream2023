@@ -8,5 +8,6 @@ public class ChatOptionOverride : GameContentOverride<List<ChatOption>>
 {
     // Check for all gamestate condtions to fullfil
     [SerializeField] List<ChatOption> m_newOptions = default;
+    [SerializeField] List<ThoughtDetail> m_droppableThoughts = default;
     protected override List<ChatOption> ToOverride => new List<ChatOption>(m_newOptions);
 }

@@ -1,15 +1,14 @@
-﻿using Curry.Explore;
-using System;
-using UnityEditor;
+﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
-
 // onCancel: action to invoke when card activation is cancelled
 public delegate void OnThoughtDrop(ThoughtBubble thought);
 // For deploying any interactable from hand to play zone 
 public class ThoughtDropZone : MonoBehaviour, IDropHandler
 {
-    public event OnThoughtDrop OnDropped;
+    [SerializeField] UnityEvent<ThoughtBubble> m_onDropped = default;
+    public event OnThoughtDrop ThoughtDropping;
     // Called before the dropped card invokes its OnDragEnd,
     // trigger drop event when drag finishes (drop starts)
     public virtual void OnDrop(PointerEventData eventData)
@@ -27,17 +26,18 @@ public class ThoughtDropZone : MonoBehaviour, IDropHandler
         if (toDrop is ThoughtBubble thought) 
         {
             DropCard(thought);
-            OnDropped?.Invoke(thought);
+            ThoughtDropping?.Invoke(thought);
         }
         else 
         {
             toDrop.ReturnToBeforeDrag();
         }
     }
-    protected virtual void DropCard(ThoughtBubble toDrop) 
+    public virtual void DropCard(ThoughtBubble toDrop) 
     {
         int dropIdx = GetDropPosition(toDrop.transform.position.x);
         toDrop?.DropObject(transform, dropIdx);
+        m_onDropped?.Invoke(toDrop);
     }
     // Called when card is dropped into this zone
     protected int GetDropPosition(float dropX)

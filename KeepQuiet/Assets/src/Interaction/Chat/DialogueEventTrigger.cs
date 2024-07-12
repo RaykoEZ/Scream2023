@@ -1,7 +1,7 @@
 ﻿using Curry.Events;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName ="NewTriggerDialogue", menuName = "Chat/Trigger Dialogue")]
+[CreateAssetMenu(fileName ="Trigger_", menuName = "Chat/Trigger Dialogue")]
 public class DialogueEventTrigger : ScriptableObject 
 {
     [SerializeField] List<GuideStep> m_monologue = default;
