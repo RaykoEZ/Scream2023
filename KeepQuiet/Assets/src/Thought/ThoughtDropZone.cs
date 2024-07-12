@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Curry.Events;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -7,8 +8,17 @@ public delegate void OnThoughtDrop(ThoughtBubble thought);
 // For deploying any interactable from hand to play zone 
 public class ThoughtDropZone : MonoBehaviour, IDropHandler
 {
+    [SerializeField] CurryGameEventListener m_onThoughtDrag = default;
     [SerializeField] UnityEvent<ThoughtBubble> m_onDropped = default;
     public event OnThoughtDrop ThoughtDropping;
+    void OnEnable() 
+    {
+        m_onThoughtDrag?.Init();
+    }
+    void OnDisable() 
+    {
+        m_onThoughtDrag?.Shutdown();
+    }
     // Called before the dropped card invokes its OnDragEnd,
     // trigger drop event when drag finishes (drop starts)
     public virtual void OnDrop(PointerEventData eventData)

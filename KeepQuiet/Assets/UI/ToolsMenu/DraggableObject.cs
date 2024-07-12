@@ -1,9 +1,18 @@
-﻿using System;
+﻿using Curry.Events;
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 [RequireComponent(typeof(CanvasGroup))]
 public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
+    [Serializable]
+    protected struct UITriggers
+    {
+        [SerializeField] CurryGameEventTrigger m_cardDragTrigger;
+        [SerializeField] CurryGameEventTrigger m_cardDropTrigger;
+        public CurryGameEventTrigger DragTrigger { get { return m_cardDragTrigger; } }
+        public CurryGameEventTrigger DropTrigger { get { return m_cardDropTrigger; } }
+    }
     public delegate void OnDragUpdate(DraggableObject dragged);
     public event OnDragUpdate OnDragFinish;
     public event OnDragUpdate OnDragBegin;

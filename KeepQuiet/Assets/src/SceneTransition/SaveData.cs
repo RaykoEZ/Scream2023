@@ -72,6 +72,7 @@ public class SaveData
     public bool FreedomRoute;
     // Where is the player looking at
     public string CurrentlyViewing;
+    public HashSet<ThoughtDetail> HeldThoughts;
     public AriaState AriaStatus;
     public SaveData()
     {
@@ -82,6 +83,7 @@ public class SaveData
         FreedomRoute = false;
         WatchState = WatchDisplay.Off;
         Persistent = new PersistentSave();
+        HeldThoughts = new HashSet<ThoughtDetail>();
         CurrentlyViewing = "RoomRight";
         AriaStatus = AriaState.Default;
     }
@@ -95,6 +97,7 @@ public class SaveData
         WatchState = copy.WatchState;
         Persistent = copy.Persistent;
         CurrentlyViewing = copy.CurrentlyViewing;
+        HeldThoughts = copy.HeldThoughts;
         AriaStatus = new AriaState(copy.AriaStatus);
     }
 }

@@ -19,6 +19,7 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Hey, anyone here?
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.5
@@ -26,6 +27,7 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: ' I''ve been waiting here, in the rain.'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Ignore
@@ -34,4 +36,5 @@ MonoBehaviour:
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
     m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}

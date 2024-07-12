@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45fea2d2d620644d8b6072287dc4fab, type: 3}
-  m_Name: optAlt_showsKey
+  m_Script: {fileID: 11500000, guid: 6a4fe992dfc669e4287ad63aab3dae6f, type: 3}
+  m_Name: e_DragThought
   m_EditorClassIdentifier: 
-  m_conditions:
-  - {fileID: 11400000, guid: 07a52b177a8ae6b4fa1a97dcf303cbed, type: 2}
-  m_newOptions: []

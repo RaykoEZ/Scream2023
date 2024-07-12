@@ -18,7 +18,7 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: Whereabouts are you?
+    Content: Where are you right now?
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 3
@@ -49,4 +49,5 @@ MonoBehaviour:
     Content: '"A bunch of emotionless drones."'
     TriggerAfterThisLine: {fileID: 11400000, guid: 1cfd178a18ab89341a09885230f3b8b8, type: 2}
   m_replyOptions: []
+  m_droppableThoughts: []
   m_hiddenOptions: {fileID: 0}

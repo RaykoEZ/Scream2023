@@ -14,6 +14,7 @@ public struct Dialogue
     public GameObject SentPrefabRef;
     [TextArea(5, 10)]
     public string Content;
+    public ThoughtBubble ObtainThought;
     public DialogueEventTrigger TriggerAfterThisLine;
 }
 [Serializable]
@@ -29,7 +30,6 @@ public class ChatOption
     {
         m_triggerAfterChoice?.Trigger();
     }
-
 }
 [Serializable]
 // A node class for storing NPC text message, player reply options, and the next npc dialogue
@@ -38,18 +38,20 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
 {
     [SerializeField] List<Dialogue> m_dialogues = default;
     [SerializeField] List<ChatOption> m_replyOptions = default;
+    [SerializeField] List<ThoughtDropResult> m_thoughtOutcomes = default;
     [SerializeField] ChatOptionOverride m_hiddenOptions = default;
+
     public static readonly string s_playerName = "You";
     public IReadOnlyList<Dialogue> Dialogues => m_dialogues;
     // Leaves for possible next Dialogue Nodes and their reply text
     // If option count > 1, player chooses a reply
     public IReadOnlyList<ChatOption> Options => m_replyOptions;
     public ChatOptionOverride HiddenOptions { get => m_hiddenOptions; }
+    public List<ThoughtDropResult> ThoughtOutcomes => m_thoughtOutcomes;
     bool IEquatable<DialogueNode>.Equals(DialogueNode other)
     {
         if (other == null) return false;
         return
             Dialogues == other.Dialogues;
     }
-
 }

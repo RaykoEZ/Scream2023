@@ -22,9 +22,40 @@ MonoBehaviour:
 
 
       I need to be somewhere'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.5
+    TypingDelay: 1
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: You're not in any trouble right now, we just need to check some facts
+      with you today.
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.2
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: Okay
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 2
+    TypingDelay: 0.7
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'btw, feeling a bit lonely n hungry rn
+
+
+      can we meet up and get
+      some grub whilst we''re at it?'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 11400000, guid: 8f798f7e8b6edc941b525a939ab30725, type: 2}
   m_replyOptions:
-  - m_description: I can assure you...
-    m_outcome: {fileID: 11400000, guid: 61d5c6286eced704c841798823a1a7e1, type: 2}
+  - m_description: No.
+    m_outcome: {fileID: 11400000, guid: 53fccbb9d044b584fa575f1d1a6109e8, type: 2}
     m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}

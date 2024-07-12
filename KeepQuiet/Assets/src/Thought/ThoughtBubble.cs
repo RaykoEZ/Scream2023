@@ -1,9 +1,16 @@
-﻿using TMPro;
+﻿using Curry.Events;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
+[RequireComponent(typeof(Animator))]
 public class ThoughtBubble : DraggableObject
 {
-    [SerializeField] Animator m_anim = default;
     [SerializeField] TextMeshProUGUI m_label = default;
+    [SerializeField] CurryGameEventTrigger m_onConsume = default;
+    [SerializeField] protected UITriggers m_ui = default;
     string m_id = "";
     public string Id => m_id;
     public string Description => m_label.text;
@@ -12,12 +19,28 @@ public class ThoughtBubble : DraggableObject
         m_id = id;
         m_label.text = description;
     }
-    public void SetBubbleActive(bool isActive) 
+    public override void OnBeginDrag(PointerEventData eventData)
     {
-        m_anim.SetBool("Active", isActive);
+        base.OnBeginDrag(eventData);
+        EventInfo info = new EventInfo();
+        m_ui.DragTrigger?.TriggerEvent(info);
     }
     public override void DropObject(Transform parent, int siblingIndex = 0)
     {
         base.DropObject(parent, siblingIndex);
+        EventInfo info = new EventInfo();
+        m_ui.DropTrigger?.TriggerEvent(info);
+    }
+    public void ConsumeBubble() 
+    {
+        StartCoroutine(Consume());
+    }
+    IEnumerator Consume() 
+    {
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<Animator>()?.SetTrigger("Inactive");
+        yield return new WaitForSeconds(0.5f);
+        m_onConsume?.TriggerEvent(
+            new EventInfo(payload: new Dictionary<string, object> {{"thought", this}}));
     }
 }
