@@ -11,13 +11,17 @@ public class ThoughtBubble : DraggableObject
     [SerializeField] TextMeshProUGUI m_label = default;
     [SerializeField] CurryGameEventTrigger m_onConsume = default;
     [SerializeField] protected UITriggers m_ui = default;
-    string m_id = "";
-    public string Id => m_id;
-    public string Description => m_label.text;
-    public void Init(string id, string description)
+    [SerializeField] ThoughtDetail m_test = default;
+    ThoughtDetail m_detailRef;
+    public ThoughtDetail DetailRef => m_detailRef;
+    void Start()
     {
-        m_id = id;
-        m_label.text = description;
+        m_detailRef = m_test;
+    }
+    public void Init(ThoughtDetail detail)
+    {
+        m_detailRef = detail;
+        m_label.text = detail.Description;
     }
     public override void OnBeginDrag(PointerEventData eventData)
     {

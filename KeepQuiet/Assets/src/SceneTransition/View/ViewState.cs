@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Curry.Events;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 // Stores info about a view (e.g. currently viewing? visible clues, clue/puzzle states)
@@ -10,6 +11,8 @@ public abstract class ViewState : MonoBehaviour
     [SerializeField] private Transform m_vfx = default;
     [SerializeField] private Transform m_background = default;
     [SerializeField] VolumeProfile m_postProcessVolumeProfile = default;
+    [SerializeField] CurryGameEventListener m_onToolUse = default;
+    [SerializeField] CurryGameEventListener m_onToolReturn = default;
     public abstract string Name { get; }
     public Transform Lighting => m_lighting;
     public Transform Vfx => m_vfx;
@@ -19,22 +22,36 @@ public abstract class ViewState : MonoBehaviour
     {
         InitStateInternal(saveData);
     }
+    void Start()
+    {
+        // Disable all views by default
+        ResetState();
+    }
+    public virtual void ResetState() 
+    {
+        m_onToolUse?.Shutdown();
+        m_onToolReturn?.Shutdown();
+        SetVisual(false);
+    }
     protected virtual void InitStateInternal(SaveData gamestate)
     {
+        m_onToolUse?.Init();
+        m_onToolReturn?.Init();
+        SetVisual(true);
     }
     public virtual void OnAriaEnter() { }
     public virtual void OnAriaExit() { }
-    public virtual void SetVisual(bool isOn)
+    protected virtual void SetVisual(bool isOn)
     {
         Lighting?.gameObject.SetActive(isOn);
         Vfx?.gameObject.SetActive(isOn);
         Background?.gameObject.SetActive(isOn);
     }
-    public virtual void OnUsingTool(EToolType usingTool) 
+    public virtual void OnUsingTool(EventInfo info) 
     {
         m_clueGroup.interactable = false;
     }
-    public virtual void OnReturningTool(EToolType returningTool) 
+    public virtual void OnReturningTool(EventInfo info) 
     {
         m_clueGroup.interactable = true;
     }

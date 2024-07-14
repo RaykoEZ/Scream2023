@@ -12,6 +12,7 @@ public class ChatRoom : HideableUI
     List<MessageBox> m_spawnedMessages = new List<MessageBox>();
     ChatHistory m_history;
     DialogueNode m_currentNode;
+    Coroutine m_chatting;
     public event OnDialogueEnd OnEnd;
     public event OnPromptDialogueOption OnPrompt;
     bool m_isDirty = false;
@@ -41,6 +42,17 @@ public class ChatRoom : HideableUI
         m_history.OverwriteLog(newChat);
         Init(m_history);
         CheckForReplyOptions();
+    }
+    public void OnThoughtDrop(ThoughtBubble thought) 
+    {
+        if (thought.DetailRef == null) return;
+        // Find a dialogue outcome from dropping the thought
+        DialogueNode outcome = m_currentNode.FindThoughtOutcome(thought.DetailRef);
+        if (outcome != null) 
+        {
+            // Stop current Dialogue and move to the new dialogue line
+            StartCoroutine(InterruptChat(outcome));
+        }
     }
     public void Shutdown() 
     {
@@ -106,7 +118,7 @@ public class ChatRoom : HideableUI
         if (m_isDirty) 
         {
             m_isDirty = false;
-            StartCoroutine(ContinueChat(m_currentNode.Dialogues));
+            m_chatting = StartCoroutine(ContinueChat(m_currentNode.Dialogues));
         }
         else 
         {
@@ -114,6 +126,15 @@ public class ChatRoom : HideableUI
             // check for new reply override conditions
             CheckForReplyOptions();
         }
+    }
+    IEnumerator InterruptChat(DialogueNode outcome) 
+    {
+        // Stop current Dialogue and move to the new dialogue line
+        UpdateCurrentDialogue(outcome);
+        // Wat until previous chat finish resolving last line
+        yield return new WaitUntil(() => m_chatting == null);
+        yield return new WaitForSeconds(0.5f);
+        StartChat();
     }
     IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues)
     {
@@ -123,7 +144,6 @@ public class ChatRoom : HideableUI
         {
             //skip empty content
             if (line.Content == null || string.IsNullOrEmpty(line.Content)) continue;
-
             isNpc = line.WhoSpoke != DialogueNode.s_playerName;
             yield return new WaitUntil(() => !m_paused);
             yield return new WaitForSeconds(line.DelayBeforeTyping);
@@ -131,11 +151,18 @@ public class ChatRoom : HideableUI
             msg.Typing();
             yield return new WaitForSeconds(line.TypingDelay);
             msg.Show();
-            yield return new WaitForSeconds(0.1f);
+            // Break subroutine if we have interrupted the chat (thought bubble)
+            if (m_isDirty == true)
+            {
+                m_chatting = null;
+                yield break;
+            }
+            yield return new WaitForSeconds(0.05f);
             // Trigger any events after a dialogue is displayed
             TryTriggerAfterCurrentLine(line);
         }
         yield return new WaitForSeconds(0.5f);
+        m_chatting = null;
         // prompt option at the end if there is any
         CheckForReplyOptions();
     }

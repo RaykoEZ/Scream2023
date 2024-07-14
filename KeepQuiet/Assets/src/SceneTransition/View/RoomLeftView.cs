@@ -17,7 +17,6 @@ public class RoomLeftView : ViewState
     public DoorState DoorState => m_doorState;
     protected override void InitStateInternal(SaveData saveData)
     {
-        base.InitStateInternal(saveData);
         // Set door state
         ChangeDoorState(DoorState.Closed);
         // hide clues?
@@ -29,6 +28,7 @@ public class RoomLeftView : ViewState
         {
             m_bat?.Hide();
         }
+        base.InitStateInternal(saveData);
     }
     // Change door state and trheir visuals
     public void ChangeDoorState(DoorState newState) 
@@ -51,7 +51,7 @@ public class RoomLeftView : ViewState
         }
         m_doorControl.SetTrigger(stateName);
     }
-    public override void SetVisual(bool isOn)
+    protected override void SetVisual(bool isOn)
     {
         if (isOn)
         {

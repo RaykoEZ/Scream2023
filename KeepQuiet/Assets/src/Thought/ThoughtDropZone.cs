@@ -8,16 +8,19 @@ public delegate void OnThoughtDrop(ThoughtBubble thought);
 // For deploying any interactable from hand to play zone 
 public class ThoughtDropZone : MonoBehaviour, IDropHandler
 {
-    [SerializeField] CurryGameEventListener m_onThoughtDrag = default;
+    [SerializeField] CurryGameEventListener m_thoughtDragBegin = default;
+    [SerializeField] CurryGameEventListener m_thoughtDragEnd = default;
     [SerializeField] UnityEvent<ThoughtBubble> m_onDropped = default;
     public event OnThoughtDrop ThoughtDropping;
     void OnEnable() 
     {
-        m_onThoughtDrag?.Init();
+        m_thoughtDragBegin?.Init();
+        m_thoughtDragEnd?.Init();
     }
-    void OnDisable() 
+    void OnDisable()
     {
-        m_onThoughtDrag?.Shutdown();
+        m_thoughtDragBegin?.Shutdown();
+        m_thoughtDragEnd?.Shutdown();
     }
     // Called before the dropped card invokes its OnDragEnd,
     // trigger drop event when drag finishes (drop starts)
@@ -43,7 +46,11 @@ public class ThoughtDropZone : MonoBehaviour, IDropHandler
             toDrop.ReturnToBeforeDrag();
         }
     }
-    public virtual void DropCard(ThoughtBubble toDrop) 
+    public void test(ThoughtBubble bub) 
+    {
+        Debug.Log(bub.name);
+    }
+    protected virtual void DropCard(ThoughtBubble toDrop) 
     {
         int dropIdx = GetDropPosition(toDrop.transform.position.x);
         toDrop?.DropObject(transform, dropIdx);

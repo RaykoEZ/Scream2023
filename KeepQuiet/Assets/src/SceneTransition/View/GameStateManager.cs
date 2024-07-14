@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-
 // handles behaviours for current game state in game scene
 // Notifies to save new persistent game state
 // Loads saved game state when game scene initializes
@@ -16,6 +15,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
     [SerializeField] protected SnapshotWatch m_watch = default;
+    [SerializeField] protected ThoughtEventHandler m_thoughts = default;
     // view states
     [SerializeField] protected ViewState m_outsideCam = default;
     [SerializeField] protected ViewState m_outsideAria = default;
@@ -68,13 +68,8 @@ public class GameStateManager : MonoBehaviour
     {
         m_currentGameState = saved;
         m_watch?.Init(saved);
-        //Hide all view first
-        m_outsideCam?.SetVisual(false);
-        m_outsideAria?.SetVisual(false);
-        m_insideCafe?.SetVisual(false);
-        m_roomLeft?.SetVisual(false);
-        m_roomRight?.SetVisual(false);
         m_toolMenu?.Init(saved);
+        m_thoughts?.Init(m_currentGameState.HeldThoughts);
         m_views = new Dictionary<string, ViewState>
         {
             {m_outsideCam.Name, m_outsideCam},
@@ -97,30 +92,20 @@ public class GameStateManager : MonoBehaviour
         // update state for viewing location
         m_currentGameState.CurrentlyViewing = newView.Name;
         // Hide current view visuals
-        m_currentView?.SetVisual(false);
+        m_currentView?.ResetState();
         // Show New Visuals
         m_currentView = newView;
         m_postProcess.profile = m_currentView.PostProcessVolumeProfile;
-        m_currentView?.SetVisual(true);
         m_currentView?.InitState(m_currentGameState);
         yield return new WaitForEndOfFrame();
         //Update Aria state after scene is set up
         m_aria?.Init(m_currentGameState);
-    }
-    public void OnToolUse(EToolType usingTool) 
-    {
-        m_currentView?.OnUsingTool(usingTool);
-    }
-    public void OnToolReturn(EToolType returningTool) 
-    {
-        m_currentView?.OnReturningTool(returningTool);
     }
     void OnBatUnlock() 
     {
         m_currentGameState.BatTaken = true;
         SaveGameState();
     }
-
     void OnSpecialTorchUnlock() 
     {
         m_currentGameState.SpecialTorchUnlocked = true;

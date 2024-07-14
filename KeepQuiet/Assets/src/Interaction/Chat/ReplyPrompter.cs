@@ -17,8 +17,17 @@ public class ReplyPrompter : MonoBehaviour
     [SerializeField] int m_maxOptions = 3;
     [SerializeField] DialogueOption m_optionPrefab = default;
     [SerializeField] Transform m_contentParent = default;
+    [SerializeField] CurryGameEventListener m_onThoughtBubbleDialogue = default;
     public event OnPlayerChosen OnChosen;
     List<DialogueOption> m_options;
+    void OnEnable()
+    {
+        m_onThoughtBubbleDialogue?.Init();
+    }
+    void OnDisable()
+    {
+        m_onThoughtBubbleDialogue?.Shutdown();
+    }
     void Awake() 
     {
         m_options = new List<DialogueOption>(m_maxOptions);
@@ -40,6 +49,10 @@ public class ReplyPrompter : MonoBehaviour
             m_options[i].OnChosen += OnOptionChosen;
             m_options[i].Show();
         }
+    }
+    public void OnThoughtDialogue() 
+    {
+        HideAll();
     }
     void OnOptionChosen(DialogueOption chosen)
     {

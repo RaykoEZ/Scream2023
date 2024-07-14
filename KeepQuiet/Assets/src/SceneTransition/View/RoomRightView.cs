@@ -2,7 +2,7 @@
 public class RoomRightView : ViewState
 {
     public override string Name => "RoomRight";
-    public override void SetVisual(bool isOn)
+    protected override void SetVisual(bool isOn)
     {
         if (isOn) 
         {

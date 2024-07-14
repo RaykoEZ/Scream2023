@@ -47,7 +47,11 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
     // If option count > 1, player chooses a reply
     public IReadOnlyList<ChatOption> Options => m_replyOptions;
     public ChatOptionOverride HiddenOptions { get => m_hiddenOptions; }
-    public List<ThoughtDropResult> ThoughtOutcomes => m_thoughtOutcomes;
+    public DialogueNode FindThoughtOutcome(ThoughtDetail detail) 
+    {
+        var result = m_thoughtOutcomes.Find(i => i.ToDrop.Id == detail.Id);
+        return result.Outcome;
+    }
     bool IEquatable<DialogueNode>.Equals(DialogueNode other)
     {
         if (other == null) return false;

@@ -1,10 +1,12 @@
-﻿using Curry.Explore;
+﻿using Curry.Events;
+using Curry.Explore;
 using System.Collections.Generic;
 using UnityEngine;
 public delegate void OnToolUnlock();
 public class ToolInteractionHandler : MonoBehaviour
 {
-    [SerializeField] GameStateManager m_gameState = default;
+    [SerializeField] CurryGameEventTrigger m_onToolUse = default;
+    [SerializeField] CurryGameEventTrigger m_onToolReturn = default;
     [SerializeField] ToolBarUIAnimationHandler m_anim = default;
     [SerializeField] ToolAimIcon m_aimIcon = default;
     [SerializeField] ToolAimIcon m_torchAim = default;
@@ -59,7 +61,7 @@ public class ToolInteractionHandler : MonoBehaviour
         if (tool == null || m_using == null || tool != m_using) return;
         m_using.OnReturn -= ReturnTool;
         m_aiming?.HideCursor();
-        m_gameState?.OnToolReturn(tool.ToolName);
+        m_onToolReturn?.TriggerEvent(new EventInfo());
         m_anim?.Show();
     }
     public void ReturnTool() 
@@ -90,7 +92,7 @@ public class ToolInteractionHandler : MonoBehaviour
         m_using = tool;
         m_using.OnReturn += ReturnTool;
         m_aiming?.ShowCursor();
-        m_gameState?.OnToolUse(toolName);
+        m_onToolUse?.TriggerEvent(new EventInfo());
         m_anim?.Hide();
     }
     public void OnPointerEnter(QuickTool tool) 

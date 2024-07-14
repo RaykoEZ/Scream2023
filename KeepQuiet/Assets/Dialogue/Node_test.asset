@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: Node_test
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: Hey, this is a test
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 2
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: Indeed
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions:
+  - m_description: Option 1
+    m_outcome: {fileID: 11400000, guid: 2c3ed3c66724d2f4886d7e1ad316f47f, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: Option 2
+    m_outcome: {fileID: 11400000, guid: c464a99efdf1a554a82720b3ea490204, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes:
+  - m_toDrop: {fileID: 11400000, guid: e0e2ed8e49da0fa46974db142ec887de, type: 2}
+    m_outcome: {fileID: 11400000, guid: c89be82eb123cf84eb5c93021dbe9d76, type: 2}
+  m_hiddenOptions: {fileID: 0}
