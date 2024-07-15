@@ -72,7 +72,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a64767dac2e4974cbcac7d6576b5ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onThoughtDialogue:
+    m_PersistentCalls:
+      m_Calls: []
   m_messageParent: {fileID: 6910228639041388709}
+  m_optionPrompt: {fileID: 0}
   m_npcBoxPrefab: {fileID: 710849735624650233, guid: fadae6181916adb458da29118f392332, type: 3}
   m_playerBoxPrefab: {fileID: 5617551562625244690, guid: 61bba733715985b46b9fb64e0eccef04, type: 3}
 --- !u!225 &8496014464634887945

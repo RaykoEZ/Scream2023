@@ -9,7 +9,7 @@ public class HUDTextManager : MonoBehaviour
     Queue<string> m_dialogue;
     string m_currentLine;
     Coroutine m_displayingText;
-    public event OnDialogueEnd OnEnd;
+    public event OnChatUpdate OnEnd;
     public bool InProgress { get; protected set; } = false;
     public void DisplaySingle(string text) 
     {

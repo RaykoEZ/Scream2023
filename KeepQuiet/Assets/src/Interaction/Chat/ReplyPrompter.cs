@@ -11,23 +11,14 @@ public class OptionInfo : EventInfo
         m_options = options;
     }
 }
-public delegate void OnPlayerChosen(DialogueNode chosen, int choiceIndex);
+public delegate void OnPlayerChosen(DialogueNode chosen);
 public class ReplyPrompter : MonoBehaviour
 {
     [SerializeField] int m_maxOptions = 3;
     [SerializeField] DialogueOption m_optionPrefab = default;
     [SerializeField] Transform m_contentParent = default;
-    [SerializeField] CurryGameEventListener m_onThoughtBubbleDialogue = default;
     public event OnPlayerChosen OnChosen;
     List<DialogueOption> m_options;
-    void OnEnable()
-    {
-        m_onThoughtBubbleDialogue?.Init();
-    }
-    void OnDisable()
-    {
-        m_onThoughtBubbleDialogue?.Shutdown();
-    }
     void Awake() 
     {
         m_options = new List<DialogueOption>(m_maxOptions);
@@ -50,17 +41,13 @@ public class ReplyPrompter : MonoBehaviour
             m_options[i].Show();
         }
     }
-    public void OnThoughtDialogue() 
-    {
-        HideAll();
-    }
     void OnOptionChosen(DialogueOption chosen)
     {
         HideAll();
         chosen.OptionValue?.TriggerChoiceEvent();
-        OnChosen?.Invoke(chosen.OptionValue.Outcome, m_options.IndexOf(chosen));
+        OnChosen?.Invoke(chosen.OptionValue.Outcome);
     }
-    void HideAll()
+    public void HideAll()
     {
         foreach (var opt in m_options)
         {

@@ -596,7 +596,6 @@ GameObject:
   - component: {fileID: 5172958429997853552}
   - component: {fileID: 8828932486642689828}
   - component: {fileID: 3724936081716733260}
-  - component: {fileID: 3913932668303135663}
   - component: {fileID: 6882426600055712958}
   m_Layer: 0
   m_Name: P_ChatDisplay
@@ -679,22 +678,8 @@ MonoBehaviour:
   m_onHideEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_chatroomHandler: {fileID: 3913932668303135663}
-  m_historySource: {fileID: 11400000, guid: aabd1639357dd92418f633d010968d49, type: 2}
---- !u!114 &3913932668303135663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4548189582428876574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7688a6a21e6100741a584f8576e4cb24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_optionPrompt: {fileID: 4644978284122627933}
   m_chatRoom: {fileID: 4764148645332724724}
+  m_historySource: {fileID: 11400000, guid: aabd1639357dd92418f633d010968d49, type: 2}
 --- !u!223 &6882426600055712958
 Canvas:
   m_ObjectHideFlags: 0
@@ -2975,6 +2960,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5580796140441110615, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
+      propertyPath: m_optionPrompt
+      value: 
+      objectReference: {fileID: 4644978284122627933}
     - target: {fileID: 6910228638723139452, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2989,12 +2978,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910228639041388709, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -734.99976
+      value: -8728.327
       objectReference: {fileID: 0}
     - target: {fileID: 6910228639095420630, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7232251575240503918, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232251575240503918, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
+      propertyPath: m_SceneBindings.Array.data[3].key
+      value: 
+      objectReference: {fileID: 7795657080226190832, guid: 982abd369005f2d4eaad93dc92a324e7, type: 2}
+    - target: {fileID: 7232251575240503918, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].value
+      value: 
+      objectReference: {fileID: 5437218672473505545}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}

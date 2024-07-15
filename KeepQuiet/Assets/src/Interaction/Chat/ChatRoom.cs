@@ -2,22 +2,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+public delegate void OnChatUpdate();
 // Contains and displays text message boxes for a NPC chat
 public class ChatRoom : HideableUI
 {
+    [SerializeField] UnityEvent m_onThoughtDialogue = default;
     [SerializeField] Transform m_messageParent = default;
+    [SerializeField] ReplyPrompter m_optionPrompt = default;
     [SerializeField] MessageBox m_npcBoxPrefab = default;
     [SerializeField] MessageBox m_playerBoxPrefab = default;
-    [SerializeField] SaveDataSource m_saveState = default;
     List<MessageBox> m_spawnedMessages = new List<MessageBox>();
     ChatHistory m_history;
     DialogueNode m_currentNode;
     Coroutine m_chatting;
-    public event OnDialogueEnd OnEnd;
-    public event OnPromptDialogueOption OnPrompt;
+    public event OnChatUpdate OnEnd;
     bool m_isDirty = false;
     bool m_paused = false;
     public ChatHistory History => m_history;
+    void OnEnable()
+    {
+        m_optionPrompt.OnChosen += OnReplyChosen;
+    }
+    void OnDisable()
+    {
+        Shutdown();
+    }
     public void Init(ChatHistory history)
     {
         m_history = new ChatHistory(history);
@@ -52,10 +63,13 @@ public class ChatRoom : HideableUI
         {
             // Stop current Dialogue and move to the new dialogue line
             StartCoroutine(InterruptChat(outcome));
+            thought.ConsumeBubble();
+            m_onThoughtDialogue?.Invoke();
         }
     }
     public void Shutdown() 
     {
+        m_optionPrompt.OnChosen -= OnReplyChosen;
         List<MessageBox> toDelete = new List<MessageBox>(m_spawnedMessages);
         foreach (var item in toDelete)
         {
@@ -67,10 +81,10 @@ public class ChatRoom : HideableUI
     }
     void CheckForReplyOptions()
     {
-        var options = GetChatOptions();
+        var options = m_currentNode.Options;
         if (options.Count > 0)
         {
-            OnPrompt?.Invoke(m_currentNode.Options);
+            m_optionPrompt.PromptOption(options);
         }
         else 
         {
@@ -78,21 +92,13 @@ public class ChatRoom : HideableUI
             OnEnd?.Invoke();
         }
     }
-    // Get options for the current dialogue node, check for hidden option conditions
-    IReadOnlyList<ChatOption> GetChatOptions() 
+    // A new dialogue is chosen for the current display
+    void OnReplyChosen(DialogueNode chosen)
     {
-        SaveData save = m_saveState.CurrentGameState;
-        if (m_currentNode.HiddenOptions != null &&
-            !m_currentNode.HiddenOptions.CheckForOptions(save, out var result)
-            && result != null) 
-        {
-            return result;
-        }
-        else 
-        {
-            return m_currentNode.Options;        
-        }
-    } 
+        if (chosen == null) return;
+        UpdateCurrentDialogue(chosen);
+        StartChat();
+    }
     // Display a new message
     MessageBox PrepareMessage(Dialogue toDisplay, bool isNpc = true) 
     {
@@ -129,6 +135,7 @@ public class ChatRoom : HideableUI
     }
     IEnumerator InterruptChat(DialogueNode outcome) 
     {
+        m_optionPrompt?.HideAll();
         // Stop current Dialogue and move to the new dialogue line
         UpdateCurrentDialogue(outcome);
         // Wat until previous chat finish resolving last line

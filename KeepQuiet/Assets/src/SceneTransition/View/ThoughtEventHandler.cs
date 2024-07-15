@@ -40,6 +40,7 @@ public class ThoughtEventHandler : MonoBehaviour
             result is ThoughtBubble bubble) 
         {
             Remove(bubble.DetailRef);
+            Destroy(bubble.gameObject);
         } 
     }
     public void OnObtain(EventInfo info)

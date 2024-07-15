@@ -42,7 +42,7 @@ public class ThoughtBubble : DraggableObject
     IEnumerator Consume() 
     {
         yield return new WaitForSeconds(0.1f);
-        GetComponent<Animator>()?.SetTrigger("Inactive");
+        GetComponent<Animator>()?.SetTrigger("Drop");
         yield return new WaitForSeconds(0.5f);
         m_onConsume?.TriggerEvent(
             new EventInfo(payload: new Dictionary<string, object> {{"thought", this}}));
