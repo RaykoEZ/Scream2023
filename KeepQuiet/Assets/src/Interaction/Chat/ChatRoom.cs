@@ -1,14 +1,28 @@
 ﻿using Curry.Explore;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-
+[Serializable]
+public class ThoughtTriggerDisplay 
+{
+    [SerializeField] List<TextMeshProUGUI> m_labels = default;
+    public void SetThoughtText(string thought) 
+    {
+        foreach (var item in m_labels)
+        {
+            item.text = thought;
+        }
+    }
+}
 public delegate void OnChatUpdate();
 // Contains and displays text message boxes for a NPC chat
 public class ChatRoom : HideableUI
 {
     [SerializeField] UnityEvent m_onThoughtDialogue = default;
+    [SerializeField] ThoughtTriggerDisplay m_thoughtTriggers = default;
     [SerializeField] Transform m_messageParent = default;
     [SerializeField] ReplyPrompter m_optionPrompt = default;
     [SerializeField] MessageBox m_npcBoxPrefab = default;
@@ -61,10 +75,10 @@ public class ChatRoom : HideableUI
         DialogueNode outcome = m_currentNode.FindThoughtOutcome(thought.DetailRef);
         if (outcome != null) 
         {
-            // Stop current Dialogue and move to the new dialogue line
-            StartCoroutine(InterruptChat(outcome));
             thought.ConsumeBubble();
-            m_onThoughtDialogue?.Invoke();
+            // Stop current Dialogue and move to the new dialogue line
+            m_chatting = StartCoroutine(InterruptChat(outcome));
+            m_thoughtTriggers?.SetThoughtText(thought.DetailRef.Description);
         }
     }
     public void Shutdown() 
@@ -140,7 +154,8 @@ public class ChatRoom : HideableUI
         UpdateCurrentDialogue(outcome);
         // Wat until previous chat finish resolving last line
         yield return new WaitUntil(() => m_chatting == null);
-        yield return new WaitForSeconds(0.5f);
+        m_onThoughtDialogue?.Invoke();
+        yield return new WaitForSeconds(2f);
         StartChat();
     }
     IEnumerator ContinueChat(IReadOnlyList<Dialogue> dialogues)

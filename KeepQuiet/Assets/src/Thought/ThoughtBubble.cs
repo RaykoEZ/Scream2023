@@ -11,13 +11,8 @@ public class ThoughtBubble : DraggableObject
     [SerializeField] TextMeshProUGUI m_label = default;
     [SerializeField] CurryGameEventTrigger m_onConsume = default;
     [SerializeField] protected UITriggers m_ui = default;
-    [SerializeField] ThoughtDetail m_test = default;
     ThoughtDetail m_detailRef;
     public ThoughtDetail DetailRef => m_detailRef;
-    void Start()
-    {
-        m_detailRef = m_test;
-    }
     public void Init(ThoughtDetail detail)
     {
         m_detailRef = detail;
@@ -35,16 +30,10 @@ public class ThoughtBubble : DraggableObject
         EventInfo info = new EventInfo();
         m_ui.DropTrigger?.TriggerEvent(info);
     }
-    public void ConsumeBubble() 
+    public void ConsumeBubble()
     {
-        StartCoroutine(Consume());
-    }
-    IEnumerator Consume() 
-    {
-        yield return new WaitForSeconds(0.1f);
-        GetComponent<Animator>()?.SetTrigger("Drop");
-        yield return new WaitForSeconds(0.5f);
         m_onConsume?.TriggerEvent(
-            new EventInfo(payload: new Dictionary<string, object> {{"thought", this}}));
+            new EventInfo(payload: new Dictionary<string, object> { { "thought", m_detailRef } }));
+        Destroy(gameObject);
     }
 }

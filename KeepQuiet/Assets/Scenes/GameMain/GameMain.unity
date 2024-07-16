@@ -1725,6 +1725,16 @@ MonoBehaviour:
   m_vfx: {fileID: 642929162}
   m_background: {fileID: 1465261650}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: c5e55d45008b3f14daf73e1db982a658, type: 2}
+  m_onToolUse:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onToolReturn:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
   m_blink: {fileID: 1192904577}
   m_anim: {fileID: 1192904576}
   m_noAria: {fileID: 7400000, guid: 6d7d8d23be82941479166630c128a93c, type: 2}
@@ -4297,6 +4307,7 @@ MonoBehaviour:
   m_fade: {fileID: 1884570903}
   m_postProcess: {fileID: 1539457609}
   m_watch: {fileID: 6087678029144893797}
+  m_thoughts: {fileID: 0}
   m_outsideCam: {fileID: 172971999}
   m_outsideAria: {fileID: 1072763294}
   m_insideCafe: {fileID: 1610518091}
@@ -4682,6 +4693,16 @@ MonoBehaviour:
   m_vfx: {fileID: 2066361721}
   m_background: {fileID: 2143934019}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: 9b1ecfdd68fd82c40b2a08d8dbf2f71e, type: 2}
+  m_onToolUse:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onToolReturn:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
   m_doorControl: {fileID: 488005685}
   m_clock: {fileID: 0}
   m_bat: {fileID: 0}
@@ -13887,6 +13908,16 @@ MonoBehaviour:
   m_vfx: {fileID: 1914714372}
   m_background: {fileID: 714918329}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: 40385910d1684204da69229de7fd89eb, type: 2}
+  m_onToolUse:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onToolReturn:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1075881472
 GameObject:
   m_ObjectHideFlags: 0
@@ -21963,6 +21994,16 @@ MonoBehaviour:
   m_vfx: {fileID: 852939241}
   m_background: {fileID: 1850945471}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: 84caaea35c25cb946becc0136b6abe8a, type: 2}
+  m_onToolUse:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onToolReturn:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1645881428
 GameObject:
   m_ObjectHideFlags: 0
@@ -24286,6 +24327,16 @@ MonoBehaviour:
   m_vfx: {fileID: 1968032667}
   m_background: {fileID: 69931359}
   m_postProcessVolumeProfile: {fileID: 11400000, guid: 9b1ecfdd68fd82c40b2a08d8dbf2f71e, type: 2}
+  m_onToolUse:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
+  m_onToolReturn:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!224 &1826041234 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 473942149775057532, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}

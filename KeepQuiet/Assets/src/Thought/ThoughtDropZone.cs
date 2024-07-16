@@ -53,8 +53,8 @@ public class ThoughtDropZone : MonoBehaviour, IDropHandler
     protected virtual void DropCard(ThoughtBubble toDrop) 
     {
         int dropIdx = GetDropPosition(toDrop.transform.position.x);
-        toDrop?.DropObject(transform, dropIdx);
         m_onDropped?.Invoke(toDrop);
+        toDrop?.DropObject(transform, dropIdx);
     }
     // Called when card is dropped into this zone
     protected int GetDropPosition(float dropX)

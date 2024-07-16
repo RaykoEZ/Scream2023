@@ -37,10 +37,9 @@ public class ThoughtEventHandler : MonoBehaviour
     {
         if (info == null || info.Payload == null) return;
         if(info.Payload.TryGetValue("thought", out object result) && 
-            result is ThoughtBubble bubble) 
+            result is ThoughtDetail detail) 
         {
-            Remove(bubble.DetailRef);
-            Destroy(bubble.gameObject);
+            Remove(detail);
         } 
     }
     public void OnObtain(EventInfo info)

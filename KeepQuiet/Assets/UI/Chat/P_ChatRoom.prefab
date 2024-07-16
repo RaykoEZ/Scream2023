@@ -80,7 +80,25 @@ MonoBehaviour:
       m_Calls: []
   m_onThoughtDialogue:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_thoughtTriggers:
+    m_labels:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_messageParent: {fileID: 6910228639041388709}
   m_optionPrompt: {fileID: 0}
   m_npcBoxPrefab: {fileID: 710849735624650233, guid: fadae6181916adb458da29118f392332, type: 3}
