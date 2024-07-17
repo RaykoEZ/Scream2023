@@ -11,6 +11,7 @@ public class ThoughtDetail : ScriptableObject
     // On obtaining thought bubble, instantiate + init Description from db with ID
     // On triggering dialogue with thought,
     // check ID & game state, trigger dialogue if ID has triggers and gamestate == true
+    [TextArea(3, 5)]
     [SerializeField] string m_description = default;
     public string Id => name;
     public string Description { get => m_description; }
