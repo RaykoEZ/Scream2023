@@ -19,6 +19,7 @@ MonoBehaviour:
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
     Content: Just checking, where were you between noon and 1530 two days ago?
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 1
@@ -27,17 +28,12 @@ MonoBehaviour:
     SentPrefabRef: {fileID: 0}
     Content: "Two days ago, that's the day I went to the hospital \nfor a routine
       checkup and I was free to leave around noon.\n\nthere was also the rehearsal
-      at the studio later in the afternoon too\n\nyou can cehck with the others"
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.3
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: '*check'
+      at the studio later in the afternoon too\n\nyou can check with the others"
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Change the topic
     m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
     m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}
