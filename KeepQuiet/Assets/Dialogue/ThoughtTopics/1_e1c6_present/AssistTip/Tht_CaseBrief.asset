@@ -12,9 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
   m_Name: Tht_CaseBrief
   m_EditorClassIdentifier: 
-  m_description: 'An aggravated assault case at an office in Sector 7.
-
-    System
-    Time: 1531
-
-    System Cycle: E1C6'
+  m_description: An aggravated assault case at an office in Sector 7.

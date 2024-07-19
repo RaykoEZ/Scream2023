@@ -10,6 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
-  m_Name: Tht_Resonance
+  m_Name: Tht_YAPCanceled
   m_EditorClassIdentifier: 
-  m_description: This "Aria" is faintly familiar to me, what is this feeling?
+  m_description: 'Project YAP is set to dissolve after this system cycle.
+
+
+    Test
+    subjects will be sanitized and released.'

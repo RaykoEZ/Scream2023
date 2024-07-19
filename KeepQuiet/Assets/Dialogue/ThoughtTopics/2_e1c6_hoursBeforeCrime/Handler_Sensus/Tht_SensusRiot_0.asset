@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
   m_Name: Tht_SensusRiot_0
   m_EditorClassIdentifier: 
-  m_description: The Sensus Group planned and exacted a violent uprising of E1C5
-    in Sector 7 (one system cycle ago).
+  m_description: 'The Sensus Group exacted a violent uprising at Sector 7, injuring
+    many protesters and surrounding occupants.
+
+    - December, E1C5, one system
+    cycle ago.'

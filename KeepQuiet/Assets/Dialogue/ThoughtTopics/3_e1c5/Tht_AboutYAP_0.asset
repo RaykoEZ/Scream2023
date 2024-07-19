@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
-  m_Name: Tht_BrainDamage
+  m_Name: Tht_AboutYAP_0
   m_EditorClassIdentifier: 
-  m_description: 
+  m_description: The manager of Paper Moon is involved in a secret GenOp project.

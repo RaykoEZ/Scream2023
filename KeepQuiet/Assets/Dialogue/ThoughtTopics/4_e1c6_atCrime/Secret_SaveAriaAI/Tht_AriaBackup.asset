@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
   m_Name: Tht_AriaBackup
   m_EditorClassIdentifier: 
-  m_description: 
+  m_description: 'Backups of Aria''s AI will be deleted to cover up this incident,
+    unless... '

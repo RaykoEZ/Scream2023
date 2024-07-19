@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
   m_Name: Tht_ContactAlm
   m_EditorClassIdentifier: 
-  m_description: 
+  m_description: 'Contact Alm at:'

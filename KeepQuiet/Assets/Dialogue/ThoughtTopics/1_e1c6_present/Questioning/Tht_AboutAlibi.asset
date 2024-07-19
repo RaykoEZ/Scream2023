@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
   m_Name: Tht_AboutAlibi
   m_EditorClassIdentifier: 
-  m_description: Aria claims to have been on-site at the time of the incident after
-    a visit to the hospital.
+  m_description: Aria was onsite at the time of the incident after a routine visit
+    to the hospital.
