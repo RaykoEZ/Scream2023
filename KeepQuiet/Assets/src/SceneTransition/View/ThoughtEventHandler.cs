@@ -6,7 +6,6 @@ using UnityEngine;
 [Serializable]
 public class ThoughtEventHandler : MonoBehaviour
 {
-    [SerializeField] CurryGameEventListener m_onThoughtConsume = default;
     HashSet<ThoughtDetail> m_heldThoughts = new HashSet<ThoughtDetail>();
     public HashSet<ThoughtDetail> HeldThoughts => m_heldThoughts;
     public void Init(HashSet<ThoughtDetail> heldThoughts) 
@@ -15,14 +14,6 @@ public class ThoughtEventHandler : MonoBehaviour
         {
             m_heldThoughts = heldThoughts;
         }
-    }
-    void OnEnable()
-    {
-        m_onThoughtConsume?.Init();
-    }
-    void OnDisable()
-    {
-        m_onThoughtConsume?.Shutdown();
     }
     public void Add(ThoughtDetail newThought) 
     {

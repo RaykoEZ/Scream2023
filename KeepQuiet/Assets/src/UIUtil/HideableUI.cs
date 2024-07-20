@@ -23,6 +23,14 @@ namespace Curry.Explore
         {
             bool current = GetAnim.GetBool("Show");
             GetAnim?.SetBool("Show", !current);
+            if (current) 
+            {
+                m_onHideEvent?.Invoke();
+            }
+            else 
+            {
+                m_onShowEvent?.Invoke();
+            }
         }
     }
 }

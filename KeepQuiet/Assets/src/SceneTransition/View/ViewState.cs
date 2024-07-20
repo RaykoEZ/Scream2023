@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 // Stores info about a view (e.g. currently viewing? visible clues, clue/puzzle states)
 public abstract class ViewState : MonoBehaviour
 {
+    [SerializeField] bool m_activeOnStart = default;
     [SerializeField] protected ViewNavigationHandler m_nav = default;
     [SerializeField] protected CanvasGroup m_clueGroup = default;
     [SerializeField] private Transform m_lighting = default;
@@ -25,7 +26,10 @@ public abstract class ViewState : MonoBehaviour
     void Start()
     {
         // Disable all views by default
-        ResetState();
+        if (!m_activeOnStart) 
+        {
+            ResetState();
+        }
     }
     public virtual void ResetState() 
     {
