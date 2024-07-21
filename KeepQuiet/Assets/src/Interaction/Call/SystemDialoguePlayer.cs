@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class SystemDialoguePlayer : MonoBehaviour 
 {
     [SerializeField] Image m_background = default;
-    [SerializeField] GameStateManager m_gameState = default;
     GuideCollection m_current;
     Coroutine m_transition;
     public virtual void TriggerTutorial(GuideCollection col)

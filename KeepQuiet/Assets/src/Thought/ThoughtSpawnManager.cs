@@ -1,6 +1,5 @@
 ﻿using Curry.Events;
 using UnityEngine;
-
 public class ThoughtSpawnManager : MonoBehaviour 
 {
     [SerializeField] ThoughtBubble m_spawnRef = default;

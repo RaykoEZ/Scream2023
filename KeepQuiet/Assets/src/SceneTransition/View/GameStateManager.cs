@@ -68,7 +68,6 @@ public class GameStateManager : MonoBehaviour
     {
         m_currentGameState = saved;
         m_watch?.Init(saved);
-        m_toolMenu?.Init(saved);
         m_thoughts?.Init(m_currentGameState.HeldThoughts);
         m_views = new Dictionary<string, ViewState>
         {

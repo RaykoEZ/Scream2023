@@ -12,12 +12,12 @@ public class ThoughtDropZone : MonoBehaviour, IDropHandler
     [SerializeField] CurryGameEventListener m_thoughtDragEnd = default;
     [SerializeField] UnityEvent<ThoughtBubble> m_onDropped = default;
     public event OnThoughtDrop ThoughtDropping;
-    void OnEnable() 
+    public void Init()
     {
         m_thoughtDragBegin?.Init();
         m_thoughtDragEnd?.Init();
     }
-    void OnDisable()
+    public void Shutdown() 
     {
         m_thoughtDragBegin?.Shutdown();
         m_thoughtDragEnd?.Shutdown();

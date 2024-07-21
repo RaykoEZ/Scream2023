@@ -6,7 +6,6 @@ using UnityEngine;
 public class InspectionDisplayHandler : HideableUI 
 {
     [SerializeField] GameStateManager m_state = default;
-    [SerializeField] Transform m_contentParent = default;
     [SerializeField] ToolBarUIAnimationHandler m_toolBar = default;
     [SerializeField] HideableUITrigger m_inspectUITrigger = default;
     InspectionDisplay m_currentlyInspecting;

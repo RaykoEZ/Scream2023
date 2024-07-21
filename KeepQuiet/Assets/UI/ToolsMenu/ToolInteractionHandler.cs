@@ -5,8 +5,6 @@ using UnityEngine;
 public delegate void OnToolUnlock();
 public class ToolInteractionHandler : MonoBehaviour
 {
-    [SerializeField] CurryGameEventTrigger m_onToolUse = default;
-    [SerializeField] CurryGameEventTrigger m_onToolReturn = default;
     [SerializeField] ToolBarUIAnimationHandler m_anim = default;
     [SerializeField] ToolAimIcon m_aimIcon = default;
     [SerializeField] ToolAimIcon m_torchAim = default;
@@ -23,9 +21,9 @@ public class ToolInteractionHandler : MonoBehaviour
     ToolAimIcon m_aiming;
     void Start()
     {
-        Init(new SaveData());
+        Init();
     }
-    public void Init(SaveData saved)
+    public void Init()
     {
         SetToolUnlock(m_torch, true);
         SetToolUnlock(m_specialTorch, true);
@@ -46,22 +44,11 @@ public class ToolInteractionHandler : MonoBehaviour
             tool.gameObject.SetActive(false);
         }
     }
-    public void UnlockSpecialTorch() 
-    {
-        SetToolUnlock(m_specialTorch, true);
-        SpecialTorchUnlocked?.Invoke();
-    }
-    public void UnlockBat()
-    {
-        SetToolUnlock(m_bat, true);
-        BatUnlocked?.Invoke();
-    }
     public void ReturnTool(QuickTool tool)
     {
         if (tool == null || m_using == null || tool != m_using) return;
         m_using.OnReturn -= ReturnTool;
         m_aiming?.HideCursor();
-        m_onToolReturn?.TriggerEvent(new EventInfo());
         m_anim?.Show();
     }
     public void ReturnTool() 
@@ -92,7 +79,6 @@ public class ToolInteractionHandler : MonoBehaviour
         m_using = tool;
         m_using.OnReturn += ReturnTool;
         m_aiming?.ShowCursor();
-        m_onToolUse?.TriggerEvent(new EventInfo());
         m_anim?.Hide();
     }
     public void OnPointerEnter(QuickTool tool) 
