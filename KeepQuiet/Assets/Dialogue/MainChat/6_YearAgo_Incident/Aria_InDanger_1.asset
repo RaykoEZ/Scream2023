@@ -10,32 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 1_AboutTimeWarp
+  m_Name: Aria_InDanger_1
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - HasAudio: 0
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: You
+    WhoSpoke: 12e1c5_junksave
     SentPrefabRef: {fileID: 0}
-    Content: Aria you there?
+    Content: c2F2ZSBlbGlhCg
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - HasAudio: 0
     DelayBeforeTyping: 2
-    TypingDelay: 0.5
-    WhoSpoke: Aria
+    TypingDelay: 0.7
+    WhoSpoke: 12e1c5_junk
     SentPrefabRef: {fileID: 0}
-    Content: No
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 1
-    TypingDelay: 0.3
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: Alright enough stalling, what do you know about the watch you showed
-      to me?
+    Content: good luck
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []

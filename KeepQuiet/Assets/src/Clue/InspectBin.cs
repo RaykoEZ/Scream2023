@@ -9,6 +9,6 @@ public class InspectBin : InspectionDisplay
     public void SpawnBin()
     {
         m_watchInBin.enabled = false;
-        Instantiate(m_watchToInspect, transform);
+        m_watchToInspect?.Show();
     }
 }

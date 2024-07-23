@@ -7,7 +7,6 @@ using UnityEngine.Playables;
 [RequireComponent(typeof(Collider2D))]
 public class ThoughtGainTrigger : MonoBehaviour 
 {
-    [SerializeField] protected float m_scanDuration = default;
     [SerializeField] protected CurryGameEventTrigger m_onObtainThought = default;
     [SerializeField] protected PlayableDirector m_director = default;
     protected EventInfo m_thoughtEvent;
@@ -28,6 +27,7 @@ public class ThoughtGainTrigger : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
+        if (m_inProgress == null) return;
         // Cancel timer
         StopCoroutine(m_inProgress);
         m_inProgress = null;
@@ -35,8 +35,7 @@ public class ThoughtGainTrigger : MonoBehaviour
     IEnumerator ScanTimer() 
     {
         m_director?.Play();
-        yield return new WaitForSeconds(m_scanDuration);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         m_onObtainThought?.TriggerEvent(m_thoughtEvent);
         m_currentSource?.Shutdown();
         m_inProgress = null;
