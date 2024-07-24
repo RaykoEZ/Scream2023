@@ -5,6 +5,7 @@ using UnityEngine;
 public class MessageBox : HideableUI
 {
     [SerializeField] TextMeshProUGUI m_content = default;
+    [SerializeField] TextMeshProUGUI m_name = default;
     [SerializeField] AudioSource m_audio = default;
     [SerializeField] AttachmentEventHandler m_attachment = default;
     protected bool m_typing = false;
@@ -13,6 +14,7 @@ public class MessageBox : HideableUI
     {
         Cleanup();
         m_content.text = content.Content;
+        m_name.text = content.WhoSpoke;
         GameObject toSpawn = content.SentPrefabRef;
         m_audio.mute = !content.HasAudio;
         bool hasAttachment = toSpawn != null;
