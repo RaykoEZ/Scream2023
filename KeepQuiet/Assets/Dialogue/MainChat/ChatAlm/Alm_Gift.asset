@@ -10,23 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: GetCheat
+  m_Name: Alm_Gift
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 0
-    DelayBeforeTyping: 0
-    TypingDelay: 0
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: 
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 0
-    DelayBeforeTyping: 0
-    TypingDelay: 0
+    DelayBeforeTyping: 1.5
+    TypingDelay: 0.7
     WhoSpoke: AI.
     SentPrefabRef: {fileID: 0}
-    Content: It's your turn to light the torch
+    Content: 'Well I have a gift for you
+
+
+      It should help with the investigation'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 0
@@ -34,9 +29,15 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: Al.
     SentPrefabRef: {fileID: 0}
-    Content: have fun
+    Content: 'goodbye for now
+
+
+      don''t let them catch you'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions: []
+  m_replyOptions:
+  - m_description: Why do this?
+    m_outcome: {fileID: 11400000, guid: dc4f544c5029cc747ba231e8d83e4123, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}
