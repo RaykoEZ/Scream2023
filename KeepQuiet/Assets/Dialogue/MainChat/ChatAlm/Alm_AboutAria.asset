@@ -12,10 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
   m_Name: Alm_AboutAria
   m_EditorClassIdentifier: 
-  m_dialogues: []
+  m_dialogues:
+  - HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0.1
+    WhoSpoke: Al.
+    SentPrefabRef: {fileID: 0}
+    Content: 'Lady Aria is a joy to work with
+
+
+      A bit unhinged off the stage
+      but she has an idol''s charm'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: 
+  - m_description: Go Back
+    m_outcome: {fileID: 11400000, guid: 154965437299c9643a8b3e4348d184e8, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: ...
     m_outcome: {fileID: 11400000, guid: c63240d2e208bf141b3164fc90f603fd, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  m_thoughtOutcomes: []
+  m_thoughtOutcomes:
+  - m_toDrop: {fileID: 0}
+    m_outcome: {fileID: 11400000, guid: 30cf79b8742705648892529c57808172, type: 2}
   m_hiddenOptions: {fileID: 0}

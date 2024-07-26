@@ -18,7 +18,8 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: ?z??a1q
     SentPrefabRef: {fileID: 0}
-    Content: "You're up? \n\nNeed help at Sector 7, some idiots brought fireworks"
+    Content: "Alm you up? \n\nNeed help at Sector 7, some idiots brought fireworks"
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.5
@@ -29,6 +30,7 @@ MonoBehaviour:
 
 
       Thought it was just a peaceful rally'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 1
@@ -39,6 +41,7 @@ MonoBehaviour:
 
 
       We need to get indoors before someone gets hurt'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 5
@@ -57,6 +60,7 @@ MonoBehaviour:
 
 
       don''t get tailed'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 3
@@ -64,6 +68,8 @@ MonoBehaviour:
     WhoSpoke: ?z??a1q
     SentPrefabRef: {fileID: 0}
     Content: Got it
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
+  m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}

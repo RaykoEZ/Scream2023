@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 0
-    DelayBeforeTyping: 1.5
+    DelayBeforeTyping: 2.5
     TypingDelay: 0.7
     WhoSpoke: AI.
     SentPrefabRef: {fileID: 0}
-    Content: 'Well I have a gift for you
+    Content: 'Well if we''re done here, I have something for you
 
 
-      It should help with the investigation'
+      It should
+      help with the investigation'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 0

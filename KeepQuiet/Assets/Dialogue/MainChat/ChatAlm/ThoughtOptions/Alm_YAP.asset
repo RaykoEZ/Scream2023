@@ -10,39 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Alm_0
+  m_Name: Alm_YAP
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
-    DelayBeforeTyping: 0
-    TypingDelay: 0
+    DelayBeforeTyping: 4
+    TypingDelay: 2.7
     WhoSpoke: Al.
     SentPrefabRef: {fileID: 0}
-    Content: Yo
+    Content: You seem to know a lot for a puppet.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 0.8
-    TypingDelay: 0.7
-    WhoSpoke: You
+    DelayBeforeTyping: 0.3
+    TypingDelay: 1.2
+    WhoSpoke: Al.
     SentPrefabRef: {fileID: 0}
-    Content: What's up
+    Content: Okay, I'll give you this
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 2.3
-    TypingDelay: 1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 1.2
     WhoSpoke: Al.
     SentPrefabRef: {fileID: 0}
-    Content: 'You are safe from eavesdroppers
-
-
-      Anything I can do for you today?'
+    Content: make of it what you will
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: Proceed with questions
+  - m_description: Go back
     m_outcome: {fileID: 11400000, guid: 154965437299c9643a8b3e4348d184e8, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: ...
+    m_outcome: {fileID: 11400000, guid: c63240d2e208bf141b3164fc90f603fd, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}
