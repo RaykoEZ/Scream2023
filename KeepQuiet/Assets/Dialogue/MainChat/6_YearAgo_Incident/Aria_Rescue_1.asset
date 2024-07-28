@@ -16,7 +16,7 @@ MonoBehaviour:
   - HasAudio: 0
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: 12e1c5_junksave
+    WhoSpoke: 12e1c5_junk
     SentPrefabRef: {fileID: 0}
     Content: c2F2ZSBlbGlhCg
     ObtainThought: {fileID: 0}

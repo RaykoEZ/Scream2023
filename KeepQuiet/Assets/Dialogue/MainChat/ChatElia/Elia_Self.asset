@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: About_WeaponResult
+  m_Name: Elia_Self
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0
-    TypingDelay: 1
-    WhoSpoke: Handler
+    TypingDelay: 0
+    WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'We got the weapon analysed for prints.
-
-
-      Ms Aria''s prints are
-      at the handle, holding the bat.'
+    Content: I need to know something about you
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 1
-    TypingDelay: 1.3
-    WhoSpoke: Handler
+    DelayBeforeTyping: 0.4
+    TypingDelay: 0.8
+    WhoSpoke: Elia
     SentPrefabRef: {fileID: 0}
-    Content: "Smoke n gun\n\ndon't you think? \n\nclose the case now and we have
-      an early break"
+    Content: And this concerns Aria?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions: []
-  m_thoughtOutcomes: []
+  m_replyOptions:
+  - m_description: Change topic
+    m_outcome: {fileID: 11400000, guid: da5b2e6dcc918104886cf7db397fe031, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes:
+  - m_toDrop: {fileID: 0}
+    m_outcome: {fileID: 11400000, guid: 8bd5242b50f8a4f40b4e3b357e8ec421, type: 2}
   m_hiddenOptions: {fileID: 0}

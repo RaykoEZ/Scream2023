@@ -10,55 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: Alm_AboutF
+  m_Name: Elia_AriaRelations
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: Al.
+    WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'Elia is walking on a tightrope for his special someone
+    Content: 'Your colleague mentioned your intimate relationship with Ms Aria.
 
 
-      forced
-      into a collab with those pigs'
+      Is
+      this correct?'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 1
-    TypingDelay: 1.2
-    WhoSpoke: Al.
+    TypingDelay: 0.8
+    WhoSpoke: Elia
     SentPrefabRef: {fileID: 0}
-    Content: 'Not gonna give anymore details about the lovebirds
+    Content: 'Was it the technician who told you this?
 
 
-      You should
-      ask him
-
-'
+      I''m not here to entertain
+      his gossip.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 1
-    TypingDelay: 1.2
-    WhoSpoke: Al.
+    DelayBeforeTyping: 1.2
+    TypingDelay: 1.3
+    WhoSpoke: Elia
     SentPrefabRef: {fileID: 0}
-    Content: '01294709 message only, don''t let them track the chat
+    Content: 'We were childhood friends and we want to keep it as is
 
 
-      Tell
-      him "Alm said hi and up for anything"'
+      There,
+      that''s it. '
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Go back
-    m_outcome: {fileID: 11400000, guid: 154965437299c9643a8b3e4348d184e8, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
-  - m_description: ...
-    m_outcome: {fileID: 11400000, guid: c63240d2e208bf141b3164fc90f603fd, type: 2}
+    m_outcome: {fileID: 11400000, guid: da5b2e6dcc918104886cf7db397fe031, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes:
   - m_toDrop: {fileID: 0}
-    m_outcome: {fileID: 11400000, guid: f3373caed17e42d48ab512dc72c1f4ec, type: 2}
+    m_outcome: {fileID: 11400000, guid: e56d74fe8a8358d4fbdca35192298fbd, type: 2}
+  - m_toDrop: {fileID: 0}
+    m_outcome: {fileID: 11400000, guid: 794416a6b1f9c9e408288b52a59849bb, type: 2}
   m_hiddenOptions: {fileID: 0}

@@ -18,7 +18,8 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: Can you elaborate on your impression of your manager?
+    Content: Can you tell me about your manager?
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 3
@@ -28,6 +29,7 @@ MonoBehaviour:
     Content: 'Oh Elia?
 
       He and I got along in school and started a music club'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 3
@@ -43,9 +45,11 @@ MonoBehaviour:
 
       I wouldn''t be here
       if Elia wasn''t there for me.'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Change the topic
     m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
     m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}

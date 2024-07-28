@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 0_EnteringCafe
+  m_Name: Elia_YAP_GetClue
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
@@ -18,28 +18,40 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: Yo
+    Content: 'I need a list of employees in my department.
+
+
+      Do you have access?'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 0.3
-    TypingDelay: 0.2
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 9220433789127847104, guid: c032643d10539254d93a72e3e483dc86, type: 3}
-    Content: Check this out
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.5
-    TypingDelay: 0.1
-    WhoSpoke: Aria
+    DelayBeforeTyping: 1.5
+    TypingDelay: 0.4
+    WhoSpoke: Elia
     SentPrefabRef: {fileID: 0}
-    Content: Perfect place for an interview, is it not?
+    Content: 'I might
+
+
+      Why?'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.6
+    TypingDelay: 0.4
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: 'It was a request from Aria
+
+
+      I cannot say much as I don''t know
+
+      what
+      I''d expect.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: Begin interview session
-    m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
+  - m_description: End conversation
+    m_outcome: {fileID: 11400000, guid: 95a5c6dc56d466c4db62dbb87d7bea25, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}
