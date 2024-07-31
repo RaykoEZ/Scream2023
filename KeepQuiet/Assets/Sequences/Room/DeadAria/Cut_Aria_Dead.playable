@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   TextColour: {r: 0.84699994, g: 0.035788707, b: 0.035788707, a: 0}
-  SubtitleText: It's here
+  SubtitleText: They are here
 --- !u!114 &1450735625559784169
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1911,7 +1911,7 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   TextColour: {r: 0.5566038, g: 0.023629395, b: 0.023629395, a: 0}
-  SubtitleText: <size=54><b>Get Away from us</b></size>
+  SubtitleText: <size=54><b>Get away</b></size>
 --- !u!114 &6222013179525675169
 MonoBehaviour:
   m_ObjectHideFlags: 1

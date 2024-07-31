@@ -26,6 +26,7 @@ public class ChatRoom : HideableUI
     [SerializeField] Transform m_messageParent = default;
     [SerializeField] ReplyPrompter m_optionPrompt = default;
     [SerializeField] MessageBox m_npcBoxPrefab = default;
+    [SerializeField] MessageBox m_ariaBoxPrefab = default;
     [SerializeField] MessageBox m_playerBoxPrefab = default;
     List<MessageBox> m_spawnedMessages = new List<MessageBox>();
     ChatHistory m_history;
@@ -114,12 +115,23 @@ public class ChatRoom : HideableUI
         StartChat();
     }
     // Display a new message
-    MessageBox PrepareMessage(Dialogue toDisplay, bool isNpc = true) 
+    MessageBox PrepareMessage(Dialogue toDisplay) 
     {
         // Instntiate a message box for the message
-        MessageBox instance = isNpc? 
-            Instantiate(m_npcBoxPrefab, m_messageParent) : 
-            Instantiate(m_playerBoxPrefab, m_messageParent);
+        MessageBox instance;
+        string who = toDisplay.WhoSpoke;
+        if(who == DialogueNode.s_playerName) 
+        {
+            instance = Instantiate(m_playerBoxPrefab, m_messageParent);
+        }
+        else if (who == DialogueNode.s_ariaName) 
+        {
+            instance = Instantiate(m_ariaBoxPrefab, m_messageParent);
+        }
+        else 
+        {
+            instance = Instantiate(m_npcBoxPrefab, m_messageParent);
+        }
         instance.Init(toDisplay);
         m_spawnedMessages.Add(instance);
         return instance;
@@ -169,7 +181,7 @@ public class ChatRoom : HideableUI
             isNpc = line.WhoSpoke != DialogueNode.s_playerName;
             yield return new WaitUntil(() => !m_paused);
             yield return new WaitForSeconds(line.DelayBeforeTyping);
-            msg = PrepareMessage(line, isNpc);
+            msg = PrepareMessage(line);
             msg.Typing();
             yield return new WaitForSeconds(line.TypingDelay);
             msg.Show();

@@ -13,6 +13,7 @@ public class InspectionDisplayHandler : HideableUI
     public void InspectTarget(Clue toDisplay) 
     {
         var save = m_state.CurrentGameState;
+        // Get inspect target
         var display = toDisplay?.GetInspectionDisplay(save);
         if (m_inspecting || toDisplay == null || display == null) return;
         m_inspecting = true;

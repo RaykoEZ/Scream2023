@@ -101,7 +101,8 @@ MonoBehaviour:
     - {fileID: 0}
   m_messageParent: {fileID: 6910228639041388709}
   m_optionPrompt: {fileID: 0}
-  m_npcBoxPrefab: {fileID: 710849735624650233, guid: fadae6181916adb458da29118f392332, type: 3}
+  m_npcBoxPrefab: {fileID: 710849735624650233, guid: c8054087698e7434294090a0ccfb1b72, type: 3}
+  m_ariaBoxPrefab: {fileID: 710849735624650233, guid: fadae6181916adb458da29118f392332, type: 3}
   m_playerBoxPrefab: {fileID: 5617551562625244690, guid: 61bba733715985b46b9fb64e0eccef04, type: 3}
 --- !u!225 &8496014464634887945
 CanvasGroup:
@@ -243,8 +244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144.20004, y: -735.001}
-  m_SizeDelta: {x: 860, y: 61}
+  m_AnchoredPosition: {x: 144.20004, y: -772.4999}
+  m_SizeDelta: {x: 860, y: 0}
   m_Pivot: {x: 0, y: 0.25}
 --- !u!114 &6910228639041388731
 MonoBehaviour:

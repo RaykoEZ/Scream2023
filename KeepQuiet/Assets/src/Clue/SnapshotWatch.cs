@@ -26,9 +26,6 @@ public class SnapshotWatch : ExternalDraggableObject
     WatchDisplay m_currentDisplay = WatchDisplay.Off;
     protected override Transform OnDragParent => transform.parent;
     public WatchDisplay CurrentDisplay { get => m_currentDisplay;}
-    protected override void OnEnable()
-    {
-    }
     public void Init(SaveData save)
     {
         SetWatchState(save.WatchState);

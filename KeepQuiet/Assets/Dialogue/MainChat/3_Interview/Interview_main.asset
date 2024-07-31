@@ -20,13 +20,14 @@ MonoBehaviour:
   - m_description: The weapon
     m_outcome: {fileID: 11400000, guid: 5a9f2f8d38e70b4499a71652d0c640df, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  - m_description: Your relations with F
+  - m_description: About her manager
     m_outcome: {fileID: 11400000, guid: d46d60f1a940f5c48b599b887b438459, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  - m_description: Your relations with A
+  - m_description: About A
     m_outcome: {fileID: 11400000, guid: 90bf3f74b3e647f438fe2c1da11c144e, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   - m_description: End the interview for now.
     m_outcome: {fileID: 11400000, guid: aa6cddd49dc1b2741b0b356885f5c647, type: 2}
     m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 11400000, guid: 9a07e2d5f2b99e04783bef9288ce7961, type: 2}

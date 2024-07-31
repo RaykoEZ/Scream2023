@@ -19,13 +19,8 @@ MonoBehaviour:
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
     Content: Sure, I'll take it
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 2
-    TypingDelay: 0.2
-    WhoSpoke: Handler
-    SentPrefabRef: {fileID: 0}
-    Content: 
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 11400000, guid: e7d4e199874ee7140b44cb3a85a92a70, type: 2}
   m_replyOptions: []
+  m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}

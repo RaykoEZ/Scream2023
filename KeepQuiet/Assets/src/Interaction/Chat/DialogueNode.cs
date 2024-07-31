@@ -42,6 +42,8 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
     [SerializeField] ChatOptionOverride m_hiddenOptions = default;
 
     public static readonly string s_playerName = "You";
+    public static readonly string s_ariaName = "Aria";
+
     public IReadOnlyList<Dialogue> Dialogues => m_dialogues;
     // Leaves for possible next Dialogue Nodes and their reply text
     // If option count > 1, player chooses a reply

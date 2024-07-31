@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: 0_AboutWatch
+  m_Name: Weapon_0
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
@@ -18,25 +18,33 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'Hey, I found a wrist watch
-
-
-      what do you know about this?'
+    Content: "We found a potential weapon near the scene, \n\nWhat do you know anything
+      about this?"
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
-    DelayBeforeTyping: 1.5
-    TypingDelay: 2
+    DelayBeforeTyping: 3
+    TypingDelay: 0.7
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'Sorry I don''t work in a pawn shop
-
-      can''t give you a price on
-      this relic
-
-'
+    Content: I don't know what you mean but I have no idea.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions: []
+  - HasAudio: 1
+    DelayBeforeTyping: 2
+    TypingDelay: 1.5
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'To be honest, I''m not sure what I got myself into.
+
+
+      I have
+      no idea what you''re talking about.'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions:
+  - m_description: Change the topic
+    m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
   m_hiddenOptions: {fileID: 0}
