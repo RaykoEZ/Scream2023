@@ -222,11 +222,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422298867171598938, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_Color.b
-      value: 0.751729
+      value: 0.4909176
       objectReference: {fileID: 0}
     - target: {fileID: 1422298867171598938, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.65199995
       objectReference: {fileID: 0}
     - target: {fileID: 1422298867171598938, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_Color.r
@@ -291,6 +291,18 @@ PrefabInstance:
     - target: {fileID: 1422298867364465489, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422298867397155352, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422298867397155352, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422298867397155352, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1422298867397155356, guid: f5b34b80b68c9f745844717edf113cb4, type: 3}
       propertyPath: m_Pivot.x

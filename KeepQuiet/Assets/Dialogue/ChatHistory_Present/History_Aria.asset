@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
-  m_Name: Tht_YAPCanceled
+  m_Script: {fileID: 11500000, guid: 5571d07a5804bbe428d710d512def0c4, type: 3}
+  m_Name: History_Aria
   m_EditorClassIdentifier: 
-  m_description: 'Project YAP is set to dissolve after this system cycle.
-
-
-    Test
-    subjects will be sanitized and released.'
+  m_username: Aria
+  m_history:
+    m_lastDialogue: {fileID: 11400000, guid: ff64d871b325a58428d4e5d3e619d002, type: 2}
+    m_log: []

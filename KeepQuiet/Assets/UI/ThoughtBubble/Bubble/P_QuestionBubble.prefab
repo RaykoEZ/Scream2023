@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 4522162167957446829}
   - component: {fileID: 4522162167957446834}
   m_Layer: 5
-  m_Name: P_ThoughtBubble
+  m_Name: P_QuestionBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33530614, g: 0.40800157, b: 0.5188679, a: 0.16078432}
+  m_Color: {r: 1, g: 0.32874122, b: 0.08962262, a: 0.32156864}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

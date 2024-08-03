@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+public class QuestionBubble : ThoughtBubble
+{
+    
+}
 [RequireComponent(typeof(Animator))]
 public class ThoughtBubble : DraggableObject
 {
-    [SerializeField] TextMeshProUGUI m_label = default;
-    [SerializeField] CurryGameEventTrigger m_onConsume = default;
+    [SerializeField] protected TextMeshProUGUI m_label = default;
+    [SerializeField] protected CurryGameEventTrigger m_onConsume = default;
     [SerializeField] protected UITriggers m_ui = default;
-    ThoughtDetail m_detailRef;
+    protected ThoughtDetail m_detailRef;
     public ThoughtDetail DetailRef => m_detailRef;
-    public void Init(ThoughtDetail detail)
+    public virtual void Init(ThoughtDetail detail)
     {
         m_detailRef = detail;
         m_label.text = detail.Description;
@@ -29,7 +32,7 @@ public class ThoughtBubble : DraggableObject
         EventInfo info = new EventInfo();
         m_ui.DropTrigger?.TriggerEvent(info);
     }
-    public void ConsumeBubble()
+    public virtual void RemoveBubble()
     {
         m_onConsume?.TriggerEvent(
             new EventInfo(payload: new Dictionary<string, object> { { "thought", m_detailRef } }));

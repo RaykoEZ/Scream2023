@@ -76,7 +76,7 @@ public class ChatRoom : HideableUI
         DialogueNode outcome = m_currentNode.FindThoughtOutcome(thought.DetailRef);
         if (outcome != null) 
         {
-            thought.ConsumeBubble();
+            thought.ReturnToBeforeDrag();
             // Stop current Dialogue and move to the new dialogue line
             m_chatting = StartCoroutine(InterruptChat(outcome));
             m_thoughtTriggers?.SetThoughtText(thought.DetailRef.Description);

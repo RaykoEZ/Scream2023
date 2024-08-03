@@ -74,8 +74,16 @@ public class SaveData
     public string CurrentlyViewing;
     public HashSet<ThoughtDetail> HeldThoughts;
     public AriaState AriaStatus;
+    public string InitTime;
+    string SaveStartTime() 
+    {
+        string ret = DateTime.Now.ToString("d").Replace(@"/", string.Empty);
+        return ret;
+    }
+    // New save file
     public SaveData()
     {
+        InitTime = SaveStartTime();
         CheckedSubjectProfile = false;
         BatTaken = false;
         RevealClock = false;
@@ -91,6 +99,7 @@ public class SaveData
     {
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
         BatTaken = copy.BatTaken;
+        InitTime = copy.InitTime;
         SpecialTorchUnlocked = copy.SpecialTorchUnlocked;
         RevealClock = copy.RevealClock;
         FreedomRoute = copy.FreedomRoute;
