@@ -6,7 +6,7 @@ public class BypassSecretManager : SecretManager
 {
     [SerializeField] PlayableAsset m_onReveal = default;
     [SerializeField] HiddenNodeHandller m_hiddenNodeSignal = default;
-    [SerializeField] ClueFileTemplate m_jamHint = default;
+    [SerializeField] FileWriteDetail m_jamHint = default;
     FileWriter m_writer = new FileWriter();
     public override SecretEventFlag EventFlagToRaise => SecretEventFlag.HiddenNodeRevealed;
 
@@ -27,7 +27,7 @@ public class BypassSecretManager : SecretManager
     }
     public override void TriggerSecret() 
     {
-        m_writer.WriteTextToDesktop(m_jamHint.Filename, FileUtil.s_operatorFolder, m_jamHint.Content, encode: true);
+        m_writer.WriteTextToDesktop(m_jamHint.Filename, FileUtil.s_operatorFolder, m_jamHint.RawContent);
         base.TriggerSecret();
     }
 }

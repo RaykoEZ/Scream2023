@@ -22,7 +22,7 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     public virtual bool Movable { get; set; } = true;
     public virtual bool Droppable { get { return true; } }
     public virtual bool Draggable { get; set; } = true;
-    protected virtual Transform OnDragParent => transform.root;
+    protected virtual Transform OnDragParent => transform.parent;
     // Move one above original parent when dragging the object 
     protected virtual void OnEnable()
     {
