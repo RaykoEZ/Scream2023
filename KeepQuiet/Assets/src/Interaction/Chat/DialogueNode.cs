@@ -41,8 +41,11 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
     [SerializeField] List<ThoughtDropResult> m_thoughtOutcomes = default;
     [SerializeField] ChatOptionOverride m_hiddenOptions = default;
 
-    public static readonly string s_playerName = "You";
-    public static readonly string s_ariaName = "Aria";
+    public static readonly string s_player = "You";
+    public static readonly string s_aria = "Aria";
+    public static readonly string s_alm = "Al.";
+    public static readonly string s_elia = "Elia";
+    public static readonly string s_handler = "Your Handler";
 
     public IReadOnlyList<Dialogue> Dialogues => m_dialogues;
     // Leaves for possible next Dialogue Nodes and their reply text

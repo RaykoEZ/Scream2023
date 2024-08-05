@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "History_", menuName ="Chat/History", order = 1)]
+[CreateAssetMenu(fileName = "History_", menuName ="Chat/History for one NPC", order = 1)]
 public class ChatHistoryContainer : ScriptableObject 
 {
     [SerializeField] string m_username = default;

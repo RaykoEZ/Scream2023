@@ -46,6 +46,7 @@ public class ChatRoom : HideableUI
     }
     public void Init(ChatHistory history)
     {
+        Shutdown();
         m_history = new ChatHistory(history);
         m_currentNode = m_history.LastDialogue;
         MessageBox msg;
@@ -120,11 +121,11 @@ public class ChatRoom : HideableUI
         // Instntiate a message box for the message
         MessageBox instance;
         string who = toDisplay.WhoSpoke;
-        if(who == DialogueNode.s_playerName) 
+        if(who == DialogueNode.s_player) 
         {
             instance = Instantiate(m_playerBoxPrefab, m_messageParent);
         }
-        else if (who == DialogueNode.s_ariaName) 
+        else if (who == DialogueNode.s_aria) 
         {
             instance = Instantiate(m_ariaBoxPrefab, m_messageParent);
         }
@@ -178,7 +179,7 @@ public class ChatRoom : HideableUI
         {
             //skip empty content
             if (line.Content == null || string.IsNullOrEmpty(line.Content)) continue;
-            isNpc = line.WhoSpoke != DialogueNode.s_playerName;
+            isNpc = line.WhoSpoke != DialogueNode.s_player;
             yield return new WaitUntil(() => !m_paused);
             yield return new WaitForSeconds(line.DelayBeforeTyping);
             msg = PrepareMessage(line);

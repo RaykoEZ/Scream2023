@@ -63,7 +63,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -453930281
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &7273891157358895412
 MonoBehaviour:
@@ -1262,7 +1262,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_chatRoom: {fileID: 4764148645332724724}
-  m_historySource: {fileID: 11400000, guid: aabd1639357dd92418f633d010968d49, type: 2}
+  m_ariaHistory: {fileID: 0}
+  m_handlerHistory: {fileID: 0}
+  m_almHistory: {fileID: 0}
+  m_histories: {fileID: 0}
 --- !u!223 &6882426600055712958
 Canvas:
   m_ObjectHideFlags: 0

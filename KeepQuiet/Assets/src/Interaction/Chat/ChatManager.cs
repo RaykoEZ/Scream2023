@@ -5,12 +5,15 @@ using UnityEngine;
 public class ChatManager : HideableUI 
 {
     [SerializeField] ChatRoom m_chatRoom = default;
-    [SerializeField] ChatHistoryContainer m_historySource = default;
+    [SerializeField] ChatHistoryContainer m_ariaHistory = default;
+    [SerializeField] ChatHistoryContainer m_handlerHistory = default;
+    [SerializeField] ChatHistoryContainer m_almHistory = default;
+    [SerializeField] ChatHistoryCollection m_histories = default;
     public event OnChatUpdate OnEnd;
     private void Start()
     {
         // instantiate history logs and store them here for record keeping if needed
-        m_chatRoom.Init(m_historySource.History);
+        m_chatRoom.Init(m_ariaHistory.History);
     }
     private void OnDestroy()
     {
@@ -22,9 +25,12 @@ public class ChatManager : HideableUI
         m_chatRoom.Shutdown();
     }
     // load chat of the person in question
-    public void BeginChat() 
+    public void BeginChat(string username)
     {
-        if (string.IsNullOrEmpty(name)) return;
+        if (string.IsNullOrWhiteSpace(username)) return;
+        ChatHistory result = m_histories.Find(username);
+        // instantiate history logs and store them here for record keeping if needed
+        m_chatRoom.Init(result);
         m_chatRoom.Hide();
         StartCurrentChat();
         Show();

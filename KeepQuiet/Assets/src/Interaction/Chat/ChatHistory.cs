@@ -9,8 +9,6 @@ public class ChatHistory
     [SerializeField] List<Dialogue> m_log;
     public DialogueNode LastDialogue => m_lastDialogue;
     public List<Dialogue> Log => m_log;
-
-
     public ChatHistory() 
     {
         m_lastDialogue = null;

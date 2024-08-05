@@ -6,13 +6,11 @@ public delegate void OnToolUnlock();
 public class ToolInteractionHandler : MonoBehaviour
 {
     [SerializeField] ToolBarUIAnimationHandler m_anim = default;
-    [SerializeField] ToolAimIcon m_aimIcon = default;
     [SerializeField] ToolAimIcon m_torchAim = default;
     [SerializeField] ToolAimIcon m_specialTorchAim = default;
     //TODO:Coat hanger object, draggable and modifiable
     [SerializeField] QuickTool m_torch = default;
     [SerializeField] QuickTool m_specialTorch = default;
-    [SerializeField] QuickTool m_bat = default;
     public event OnToolUnlock BatUnlocked;
     public event OnToolUnlock SpecialTorchUnlocked;
     // tool we are currently using
@@ -27,7 +25,6 @@ public class ToolInteractionHandler : MonoBehaviour
     {
         SetToolUnlock(m_torch, true);
         SetToolUnlock(m_specialTorch, true);
-        SetToolUnlock(m_bat, true);
     }
     public void SetToolUnlock(QuickTool tool, bool isUnlocked) 
     {
@@ -62,9 +59,6 @@ public class ToolInteractionHandler : MonoBehaviour
         ToolAimIcon toolAimRef;
         switch (toolName)
         {
-            case EToolType.Bat:
-                toolAimRef = m_aimIcon;
-                break;
             case EToolType.Torch:
                 toolAimRef = m_torchAim;
                 break;
@@ -72,8 +66,7 @@ public class ToolInteractionHandler : MonoBehaviour
                 toolAimRef = m_specialTorchAim;
                 break;
             default:
-                toolAimRef = m_aimIcon;
-                break;
+                return;
         }
         m_aiming = toolAimRef;
         m_using = tool;

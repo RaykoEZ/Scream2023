@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 public enum EToolType
 { 
-    Bat = 0,
     Torch = 1,
     SpecialTorch = 2
 }

@@ -13,6 +13,7 @@ public class PhoneNotificationHandler : MonoBehaviour
     [SerializeField] ChatManager m_chat = default;
     Sprite m_defaultSprite;
     DialogueNode m_newMessage;
+    string m_currentlyCalling;
     private void Start()
     {
         m_defaultSprite = m_toggleIcon.sprite;
@@ -26,18 +27,19 @@ public class PhoneNotificationHandler : MonoBehaviour
         AnimateAlertIcon();
         m_call.CallPhone(incomingNumber, onAccept);
     }
-    public void MessagePlayer(DialogueNode newDialogue) 
+    public void MessagePlayer(DialogueNode newDialogue, string username) 
     {
         ShowToggle();
+        m_currentlyCalling = username;
         m_newMessage = newDialogue;
         m_toggleIcon.sprite = m_messageAlert;
         AnimateAlertIcon();
         m_chat.OnNewMessage(newDialogue);
     }
-    public void MessageNpc(DialogueNode dialogue) 
+    public void MessageNpc(DialogueNode dialogue, string username) 
     {
         m_chat.OnNewMessage(dialogue);
-        m_chat.BeginChat();
+        m_chat.BeginChat(username);
     }
     public void HideToggle() 
     {
@@ -63,7 +65,7 @@ public class PhoneNotificationHandler : MonoBehaviour
         m_ring.Stop();
         if (m_newMessage != null) 
         {
-            m_chat.BeginChat();
+            m_chat.BeginChat(m_currentlyCalling);
             m_newMessage = null;
         }
         else 
