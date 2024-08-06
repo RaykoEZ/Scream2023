@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
-  m_Name: Tht_AriaInDanger
+  m_Script: {fileID: 11500000, guid: 7746f8522bded894e8fdb86ae7b6fcdf, type: 3}
+  m_Name: HisCol_Current
   m_EditorClassIdentifier: 
-  m_description: Aria is missing, we need help to find her.
+  m_histories:
+  - {fileID: 11400000, guid: aabd1639357dd92418f633d010968d49, type: 2}
+  - {fileID: 11400000, guid: 9d74041f398c4934e93514794679072b, type: 2}

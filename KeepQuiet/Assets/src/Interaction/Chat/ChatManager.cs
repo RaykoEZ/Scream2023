@@ -5,16 +5,8 @@ using UnityEngine;
 public class ChatManager : HideableUI 
 {
     [SerializeField] ChatRoom m_chatRoom = default;
-    [SerializeField] ChatHistoryContainer m_ariaHistory = default;
-    [SerializeField] ChatHistoryContainer m_handlerHistory = default;
-    [SerializeField] ChatHistoryContainer m_almHistory = default;
     [SerializeField] ChatHistoryCollection m_histories = default;
     public event OnChatUpdate OnEnd;
-    private void Start()
-    {
-        // instantiate history logs and store them here for record keeping if needed
-        m_chatRoom.Init(m_ariaHistory.History);
-    }
     private void OnDestroy()
     {
         Shutdown();
@@ -44,8 +36,11 @@ public class ChatManager : HideableUI
         m_chatRoom.StartChat();
     }
     // Redirect to ContactList
-    public void OnNewMessage(DialogueNode newDialogue) 
+    public void OnNewMessage(DialogueNode newDialogue, string username) 
     {
+        ChatHistory result = m_histories.Find(username);
+        // instantiate history logs and store them here for record keeping if needed
+        m_chatRoom.Init(result);
         m_chatRoom.Hide();
         // Set current dialogue to the incoming dialogue
         m_chatRoom.UpdateCurrentDialogue(newDialogue);

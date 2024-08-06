@@ -263,7 +263,7 @@ MonoBehaviour:
     m_Left: 5
     m_Right: 5
     m_Top: 150
-    m_Bottom: 250
+    m_Bottom: 400
   m_ChildAlignment: 0
   m_Spacing: 100
   m_ChildForceExpandWidth: 1

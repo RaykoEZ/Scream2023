@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
   m_Name: Tht_AIForAria
   m_EditorClassIdentifier: 
-  m_description: Artificial intelligence has been used to replace Aria's role at
-    Paper Moon Productions since her long hiatus.
+  m_description: Artificial intelligence used to replace Aria's role at Paper Moon
+    Productions since her long hiatus.

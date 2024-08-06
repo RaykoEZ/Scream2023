@@ -46,17 +46,12 @@ public class ChatRoom : HideableUI
     }
     public void Init(ChatHistory history)
     {
-        Shutdown();
-        m_history = new ChatHistory(history);
-        m_currentNode = m_history.LastDialogue;
-        MessageBox msg;
-        foreach (var logEntry in m_history.Log)
+        if(m_history != history) 
         {
-            // Display all previous messages
-            msg = PrepareMessage(logEntry);
-            msg?.Show();
+            ClearChat();
         }
-        m_isDirty = false;
+        m_history = history;
+        m_currentNode = m_history.LastDialogue;
     }
     public void SetPaused(bool paused)
     {
@@ -86,6 +81,10 @@ public class ChatRoom : HideableUI
     public void Shutdown() 
     {
         m_optionPrompt.OnChosen -= OnReplyChosen;
+        ClearChat();
+    }
+    void ClearChat() 
+    {
         List<MessageBox> toDelete = new List<MessageBox>(m_spawnedMessages);
         foreach (var item in toDelete)
         {
@@ -192,7 +191,7 @@ public class ChatRoom : HideableUI
                 m_chatting = null;
                 yield break;
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.25f);
             // Trigger any events after a dialogue is displayed
             TryTriggerAfterCurrentLine(line);
         }

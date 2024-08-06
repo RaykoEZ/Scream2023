@@ -34,11 +34,11 @@ public class PhoneNotificationHandler : MonoBehaviour
         m_newMessage = newDialogue;
         m_toggleIcon.sprite = m_messageAlert;
         AnimateAlertIcon();
-        m_chat.OnNewMessage(newDialogue);
+        m_chat.OnNewMessage(newDialogue, username);
     }
     public void MessageNpc(DialogueNode dialogue, string username) 
     {
-        m_chat.OnNewMessage(dialogue);
+        m_chat.OnNewMessage(dialogue, username);
         m_chat.BeginChat(username);
     }
     public void HideToggle() 

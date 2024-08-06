@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class QuestionBubble : ThoughtBubble
-{
-    
-}
 [RequireComponent(typeof(Animator))]
 public class ThoughtBubble : DraggableObject
 {

@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
-  m_Name: Tht_ContactF
+  m_Script: {fileID: 11500000, guid: 5571d07a5804bbe428d710d512def0c4, type: 3}
+  m_Name: History_Handler
   m_EditorClassIdentifier: 
-  m_description: 'To contact Elia (The Manager):'
+  m_username: Your Handler
+  m_history:
+    m_lastDialogue: {fileID: 11400000, guid: 04b7d217dcdfd9a4dba0219cffea36a1, type: 2}
+    m_log: []
