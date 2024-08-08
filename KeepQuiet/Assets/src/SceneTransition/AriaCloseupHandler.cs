@@ -1,39 +1,35 @@
-﻿using UnityEngine;
-using UnityEngine.Playables;
-
+﻿using Curry.Explore;
+using System.Collections;
+using TMPro;
+using UnityEngine;
+// Displays aria talking & entrtance/exit
 public class AriaCloseupHandler : MonoBehaviour 
 {
-    [SerializeField] Animator m_anim = default;
-    public void EnterScene() 
+    [SerializeField] HideableUI m_message = default;
+    [SerializeField] FaceAnimationHandler m_face = default;
+    [SerializeField] TextMeshProUGUI m_content = default;
+    public void EnterScene()
     {
-        m_anim.SetTrigger("enter");
+        m_face?.EnterScene();
     }
-    public void ExitScene() 
+    public void ExitScene()
     {
-        m_anim.SetTrigger("exit");
+        m_face?.ExitScene();
     }
-    public void Curious() 
+    // Start a line of speech
+    public void StartTalk(string content) 
     {
-        m_anim.SetTrigger("curious");
+        m_message?.Hide();
+        StopAllCoroutines();
+        StartCoroutine(Talk_Internal(content));
     }
-    public void Angry() 
+    IEnumerator Talk_Internal(string content) 
     {
-        m_anim.SetTrigger("angry");
-    }
-    public void Smug() 
-    {
-        m_anim.SetTrigger("smug");
-    }
-    public void Scary() 
-    {
-        m_anim.SetTrigger("scary");
-    }
-    public void ScaryShaded() 
-    {
-        m_anim.SetTrigger("scaryDark");
-    }
-    public void Shadow() 
-    {
-        m_anim.SetTrigger("hideScary");
+        m_content.text = content;
+        m_face?.SetTalking(true);
+        yield return new WaitForSeconds(0.05f);
+        m_message?.Show();
+        yield return new WaitForSeconds(1f + (content.Length * 0.1f));
+        m_face?.SetTalking(false);
     }
 }

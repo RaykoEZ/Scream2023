@@ -4,9 +4,8 @@ using UnityEngine;
 public class AriaDisplayController 
 {
     [SerializeField] Animator m_cafePoses = default;
-    [SerializeField] AriaCloseupHandler m_cafeCloseup = default;
     [SerializeField] Animator m_roomLeftPeek = default;
-    [SerializeField] AriaCloseupHandler m_roomLeftCloseup = default;
+    [SerializeField] AriaCloseupHandler m_closeup = default;
     public void TriggerPossessed(bool value)
     {
         m_roomLeftPeek.ResetTrigger("possessed");
@@ -41,9 +40,9 @@ public class AriaDisplayController
                 }
                 break;
             case AriaPosition.InsideCafe_Closeup:
-                if (m_cafeCloseup.isActiveAndEnabled)
+                if (m_closeup.isActiveAndEnabled)
                 {
-                    m_cafeCloseup.EnterScene();
+                    //m_cafeCloseup.EnterScene();
                 }
                 break;
             case AriaPosition.RoomLeft_Peeking:
@@ -53,9 +52,9 @@ public class AriaDisplayController
                 }
                 break;
             case AriaPosition.RoomLeft_CloseUp:
-                if (m_roomLeftCloseup.isActiveAndEnabled)
+                if (m_closeup.isActiveAndEnabled)
                 {
-                    m_roomLeftCloseup.EnterScene();
+                    //m_roomLeftCloseup.EnterScene();
                 }
                 break;
             default:
@@ -74,13 +73,13 @@ public class AriaDisplayController
                 m_cafePoses.SetTrigger("hide");
                 break;
             case AriaPosition.InsideCafe_Closeup:
-                m_cafeCloseup.ExitScene();
+                //m_cafeCloseup.ExitScene();
                 break;
             case AriaPosition.RoomLeft_Peeking:
                 m_roomLeftPeek.SetTrigger("exit");
                 break;
             case AriaPosition.RoomLeft_CloseUp:
-                m_roomLeftCloseup.ExitScene();
+                //m_roomLeftCloseup.ExitScene();
                 break;
             default:
                 break;
@@ -89,8 +88,8 @@ public class AriaDisplayController
     public void HideAll() 
     {
         m_cafePoses.SetTrigger("hide");
-        m_cafeCloseup.ExitScene();
+        //m_cafeCloseup.ExitScene();
         m_roomLeftPeek.SetTrigger("exit");
-        m_roomLeftCloseup.ExitScene();
+        //m_roomLeftCloseup.ExitScene();
     }
 }
