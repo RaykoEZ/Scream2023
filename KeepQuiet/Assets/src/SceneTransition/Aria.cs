@@ -6,11 +6,10 @@ using UnityEngine;
 [Serializable]
 public enum AriaPosition
 { 
+    Outside = 0,
     InsideCafe_Counter = 1,
     InsideCafe_Sit = 2,
-    InsideCafe_Closeup = 3,
-    RoomLeft_Peeking = 4,
-    RoomLeft_CloseUp = 5,
+    RoomLeft_Peeking = 3,
     None = -1
 }
 [Serializable]
@@ -18,26 +17,22 @@ public class AriaState
 {
     public bool IsPossessed;
     public bool HasPastRunMemory;
-    public int Affection = 0;
     [JsonConverter(typeof(StringEnumConverter))]   
     public AriaPosition CurrentLocation;
-    public static AriaState Default = new AriaState(false, false, 1, AriaPosition.None);
+    public static AriaState Default = new AriaState(false, false, AriaPosition.None);
     public AriaState(
         bool isPossessed, 
         bool hasPastRunMemory, 
-        int affection,
         AriaPosition currentLocation)
     {
         IsPossessed = isPossessed;
         HasPastRunMemory = hasPastRunMemory;
-        Affection = affection;
         CurrentLocation = currentLocation;
     }
     public AriaState(AriaState copy)
     {
         IsPossessed = copy.IsPossessed;
         HasPastRunMemory = copy.HasPastRunMemory;
-        Affection = copy.Affection;
         CurrentLocation = copy.CurrentLocation;
     }
 }
@@ -65,16 +60,5 @@ public class Aria : Npc
     {
         m_stateManager.Hide();
         OnLeave?.Invoke();
-    }
-
-    public override void OnPlayerCallCanceled()
-    {
-        m_stateManager?.OnDenied();
-    }
-    public override void OnPlayerDecided(DialogueNode chosen, int choiceIndex)
-    {
-    }
-    public override void OnPlayerDialed()
-    {
     }
 }

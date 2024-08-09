@@ -25,17 +25,10 @@ public class CallHandler : MonoBehaviour
     private void Start()
     {
         m_incoming.OnCallAccept += OnIncomingCallAccept;
-        m_incoming.OnCallDeny += CallDenied;
         foreach (var result in m_results) 
         {
             m_eventSet.Add(result.Sequence, result.EventToTrigger);
         }
-    }
-    void CallDenied(string incoming) 
-    {
-        // triggernpc deny event
-        Npc denied = m_npc.Get(incoming);
-        denied?.OnPlayerCallCanceled();
     }
     void OnIncomingCallAccept(string incoming) 
     {
@@ -61,7 +54,6 @@ public class CallHandler : MonoBehaviour
     }
     public void CancelCall()
     {
-        m_callingWith?.OnPlayerCallCanceled();
         StopResultPlayback();
         m_calling = false;
         m_anim.SetBool("Calling", false);
@@ -79,7 +71,6 @@ public class CallHandler : MonoBehaviour
     void BeginCall(string callDisplay, DialEvent result) 
     {
         m_callingWith = m_npc.Get(callDisplay);
-        m_callingWith?.OnPlayerDialed();
         OnDial?.Invoke(callDisplay);
         m_calling = true;
         //TODO: trigger audio response here + subtitle is needed

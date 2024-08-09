@@ -12,19 +12,6 @@ public class AriaStateManager : MonoBehaviour
         m_current = change.AriaStatus;
         m_position?.MoveTo(change.AriaStatus.CurrentLocation, AriaPosition.None);
     }
-    public void AffectionDown(int val)
-    {
-        Current.Affection -= val;
-        if (Current.Affection < -10)
-        {
-            // If affecton is low, leave the player
-            Hide();
-        }
-    }
-    public void OnDenied()
-    {
-        AffectionDown(1);
-    }
     public void Hide()
     {
         m_position.Hide(Current.CurrentLocation);

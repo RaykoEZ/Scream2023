@@ -39,22 +39,10 @@ public class AriaDisplayController
                     m_cafePoses.SetTrigger("sit");
                 }
                 break;
-            case AriaPosition.InsideCafe_Closeup:
-                if (m_closeup.isActiveAndEnabled)
-                {
-                    //m_cafeCloseup.EnterScene();
-                }
-                break;
             case AriaPosition.RoomLeft_Peeking:
                 if (m_roomLeftPeek.isActiveAndEnabled)
                 {
                     m_roomLeftPeek.SetTrigger("peek");
-                }
-                break;
-            case AriaPosition.RoomLeft_CloseUp:
-                if (m_closeup.isActiveAndEnabled)
-                {
-                    //m_roomLeftCloseup.EnterScene();
                 }
                 break;
             default:
@@ -72,14 +60,8 @@ public class AriaDisplayController
             case AriaPosition.InsideCafe_Sit:
                 m_cafePoses.SetTrigger("hide");
                 break;
-            case AriaPosition.InsideCafe_Closeup:
-                //m_cafeCloseup.ExitScene();
-                break;
             case AriaPosition.RoomLeft_Peeking:
                 m_roomLeftPeek.SetTrigger("exit");
-                break;
-            case AriaPosition.RoomLeft_CloseUp:
-                //m_roomLeftCloseup.ExitScene();
                 break;
             default:
                 break;
@@ -88,8 +70,6 @@ public class AriaDisplayController
     public void HideAll() 
     {
         m_cafePoses.SetTrigger("hide");
-        //m_cafeCloseup.ExitScene();
         m_roomLeftPeek.SetTrigger("exit");
-        //m_roomLeftCloseup.ExitScene();
     }
 }
