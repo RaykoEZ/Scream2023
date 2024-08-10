@@ -9,7 +9,6 @@ public enum AriaPosition
     Outside = 0,
     InsideCafe_Counter = 1,
     InsideCafe_Sit = 2,
-    RoomLeft_Peeking = 3,
     None = -1
 }
 [Serializable]

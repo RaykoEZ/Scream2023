@@ -11,11 +11,12 @@ public class Clue : MonoBehaviour
     [SerializeField] Image m_uiImage = default;
     [SerializeField] TextMeshProUGUI m_hoverLabel = default;
     [SerializeField] HideableUI m_clueImage = default;
+    [SerializeField] InspectionDisplay m_toInspect = default;
     public HideableUI ClueImage => m_clueImage;
     public TextMeshProUGUI HoverLabel => m_hoverLabel;
     public virtual InspectionDisplay GetInspectionDisplay(SaveData state) 
     {
-        return null;
+        return m_toInspect;
     }
     public void Show()
     {

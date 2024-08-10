@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+// display aria's position in cafe
 [Serializable]
 public class AriaDisplayController 
 {
@@ -23,6 +24,13 @@ public class AriaDisplayController
         m_roomLeftPeek.ResetTrigger("surprise");
         m_roomLeftPeek.SetTrigger("surprise");
     }
+    public void PeekIntoRoom() 
+    {
+        if (m_roomLeftPeek.isActiveAndEnabled)
+        {
+            m_roomLeftPeek.SetTrigger("peek");
+        }
+    }
     public void MoveTo(AriaPosition newLocation, AriaPosition previous) 
     {
         switch (newLocation)
@@ -39,37 +47,13 @@ public class AriaDisplayController
                     m_cafePoses.SetTrigger("sit");
                 }
                 break;
-            case AriaPosition.RoomLeft_Peeking:
-                if (m_roomLeftPeek.isActiveAndEnabled)
-                {
-                    m_roomLeftPeek.SetTrigger("peek");
-                }
-                break;
             default:
-                Hide(previous);
+                Hide();
                 break;
         }
     }
-    public void Hide(AriaPosition toHide) 
-    {
-        switch (toHide)
-        {
-            case AriaPosition.InsideCafe_Counter:
-                m_cafePoses.SetTrigger("hide");
-                break;
-            case AriaPosition.InsideCafe_Sit:
-                m_cafePoses.SetTrigger("hide");
-                break;
-            case AriaPosition.RoomLeft_Peeking:
-                m_roomLeftPeek.SetTrigger("exit");
-                break;
-            default:
-                break;
-        }
-    }
-    public void HideAll() 
+    public void Hide() 
     {
         m_cafePoses.SetTrigger("hide");
-        m_roomLeftPeek.SetTrigger("exit");
     }
 }

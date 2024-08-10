@@ -14,7 +14,7 @@ public class AriaStateManager : MonoBehaviour
     }
     public void Hide()
     {
-        m_position.Hide(Current.CurrentLocation);
+        m_position.Hide();
         Current.CurrentLocation = AriaPosition.None;
     }
     public void MoveTo(AriaPosition newLocation)
