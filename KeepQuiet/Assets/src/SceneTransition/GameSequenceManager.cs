@@ -4,7 +4,6 @@ using UnityEngine;
 // Listens to saved game states and affect game behaviour
 public class GameSequenceManager : MonoBehaviour 
 {
-    [SerializeField] GameStateFileHandler m_file = default;
     [SerializeField] LevelLoader m_level = default;
     // sequences to trigger
     [SerializeField] SequencePlayer m_intro = default;

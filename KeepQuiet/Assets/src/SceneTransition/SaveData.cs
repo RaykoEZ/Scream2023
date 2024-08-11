@@ -60,11 +60,6 @@ public class SaveData
     // Did player resolve malware overtaking Aria?
     // Secret/True End Flag
     public WatchDisplay WatchState;
-    // Did the player take the bat in Room Left?
-    // Bat can be dragged out and dragged in
-    public bool BatTaken;
-    // Special torch unlocked after Jammer is taken out, game
-    public bool SpecialTorchUnlocked;
     // Clock is revealed after setting system clock to clued time frame
     // Player can hit the clock to reveal more clues
     public bool RevealClock;
@@ -85,9 +80,7 @@ public class SaveData
     {
         InitTime = SaveStartTime();
         CheckedSubjectProfile = false;
-        BatTaken = false;
         RevealClock = false;
-        SpecialTorchUnlocked = false;
         FreedomRoute = false;
         WatchState = WatchDisplay.Off;
         Persistent = new PersistentSave();
@@ -98,9 +91,7 @@ public class SaveData
     public SaveData(SaveData copy)
     {
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
-        BatTaken = copy.BatTaken;
         InitTime = copy.InitTime;
-        SpecialTorchUnlocked = copy.SpecialTorchUnlocked;
         RevealClock = copy.RevealClock;
         FreedomRoute = copy.FreedomRoute;
         WatchState = copy.WatchState;

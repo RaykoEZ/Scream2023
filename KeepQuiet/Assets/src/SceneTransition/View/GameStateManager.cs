@@ -33,14 +33,10 @@ public class GameStateManager : MonoBehaviour
     void OnEnable()
     {
         m_saveData.OnUpdate += Init;
-        m_toolMenu.BatUnlocked += OnBatUnlock;
-        m_toolMenu.SpecialTorchUnlocked += OnSpecialTorchUnlock;
     }
     void OnDisable()
     {
         m_saveData.OnUpdate -= Init;
-        m_toolMenu.BatUnlocked -= OnBatUnlock;
-        m_toolMenu.SpecialTorchUnlocked -= OnSpecialTorchUnlock;
     }
     void Start()
     {
@@ -99,15 +95,5 @@ public class GameStateManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         //Update Aria state after scene is set up
         m_aria?.Init(m_currentGameState);
-    }
-    void OnBatUnlock() 
-    {
-        m_currentGameState.BatTaken = true;
-        SaveGameState();
-    }
-    void OnSpecialTorchUnlock() 
-    {
-        m_currentGameState.SpecialTorchUnlocked = true;
-        SaveGameState();
     }
 }

@@ -1,6 +1,4 @@
-﻿using Curry.Events;
-using Curry.Explore;
-using System.Collections.Generic;
+﻿using Curry.Explore;
 using UnityEngine;
 public delegate void OnToolUnlock();
 public class ToolInteractionHandler : MonoBehaviour
@@ -11,8 +9,6 @@ public class ToolInteractionHandler : MonoBehaviour
     //TODO:Coat hanger object, draggable and modifiable
     [SerializeField] QuickTool m_torch = default;
     [SerializeField] QuickTool m_specialTorch = default;
-    public event OnToolUnlock BatUnlocked;
-    public event OnToolUnlock SpecialTorchUnlocked;
     // tool we are currently using
     QuickTool m_using;
     // the current tool aiming object
