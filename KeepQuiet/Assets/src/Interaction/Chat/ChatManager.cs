@@ -1,4 +1,5 @@
-﻿using Curry.Explore;
+﻿using Curry.Events;
+using Curry.Explore;
 using System.Collections.Generic;
 using UnityEngine;
 // Notifies player when message comes
@@ -6,7 +7,16 @@ public class ChatManager : HideableUI
 {
     [SerializeField] ChatRoom m_chatRoom = default;
     [SerializeField] ChatHistoryCollection m_histories = default;
+    [SerializeField] CurryGameEventListener m_onGameSetup = default;
     public event OnChatUpdate OnEnd;
+    void OnEnable()
+    {
+        m_onGameSetup?.Init();
+    }
+    void OnDisable()
+    {
+        m_onGameSetup?.Shutdown();
+    }
     private void OnDestroy()
     {
         Shutdown();
@@ -15,6 +25,11 @@ public class ChatManager : HideableUI
     {
         // shutdown chat room
         m_chatRoom.Shutdown();
+    }
+    
+    public void SetupChatHistory(EventInfo info) 
+    { 
+    
     }
     // load chat of the person in question
     public void BeginChat(string username)

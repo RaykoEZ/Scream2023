@@ -2,6 +2,7 @@
 using Curry.Explore;
 using System.Collections;
 using UnityEngine;
+
 // Script to instantiate object when player click to inspect a clue
 public class InspectionDisplayHandler : HideableUI 
 {

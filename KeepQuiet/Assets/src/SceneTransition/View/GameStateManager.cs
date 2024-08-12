@@ -56,10 +56,6 @@ public class GameStateManager : MonoBehaviour
         // new save data available to update
         UpdateGameState();
     }
-    public Aria GetAria()
-    {
-        return m_aria;
-    }
     void Init(SaveData saved)
     {
         m_currentGameState = saved;

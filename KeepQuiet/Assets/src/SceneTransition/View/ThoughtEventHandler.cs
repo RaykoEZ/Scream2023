@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public class ThoughtEventHandler : MonoBehaviour
 {
+    [SerializeField] ThoughtSpawnManager m_spawn = default;
     HashSet<ThoughtDetail> m_heldThoughts = new HashSet<ThoughtDetail>();
     public HashSet<ThoughtDetail> HeldThoughts => m_heldThoughts;
     public void Init(HashSet<ThoughtDetail> heldThoughts) 
@@ -14,13 +15,18 @@ public class ThoughtEventHandler : MonoBehaviour
         {
             m_heldThoughts = heldThoughts;
         }
+        // Spawn currently held thoughts
+        foreach (var item in m_heldThoughts)
+        {
+            m_spawn?.SpawnThoughtBubble(item);
+        }
     }
-    public void Add(ThoughtDetail newThought) 
+    void Add(ThoughtDetail newThought) 
     {
         if (newThought == null) return;
         m_heldThoughts.Add(newThought);
     }
-    public void Remove(ThoughtDetail toRemove) 
+    void Remove(ThoughtDetail toRemove) 
     {
         m_heldThoughts.Remove(toRemove);
     }

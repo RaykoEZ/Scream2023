@@ -150,7 +150,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8810639375806570772}
           m_TargetAssemblyTypeName: InspectBin, Assembly-CSharp
-          m_MethodName: SpawnBin
+          m_MethodName: GetWatch
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

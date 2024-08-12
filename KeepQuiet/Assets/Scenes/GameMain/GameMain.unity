@@ -24951,7 +24951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.43845677, g: 0.5566038, b: 0.50692296, a: 1}
+  m_Color: {r: 0.622241, g: 0.745283, b: 0.6919648, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -30034,23 +30034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_toListen:
-  - m_eventToListen: {fileID: 0}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1682549341}
-          m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-          m_MethodName: set_sprite
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: 843d9a9d615d43b4380b8df8c3aa2ef6, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - m_eventToListen: {fileID: 0}
+  - m_eventToListen: {fileID: 11400000, guid: c34c1d0fcf79c99478b5dc4b4e8ba3df, type: 2}
     m_responses:
       m_PersistentCalls:
         m_Calls:
@@ -30066,7 +30050,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - m_eventToListen: {fileID: 0}
+  - m_eventToListen: {fileID: 11400000, guid: 4b9281ff53e05c840bb80f358786a8b5, type: 2}
     m_responses:
       m_PersistentCalls:
         m_Calls:
@@ -30091,7 +30075,7 @@ MonoBehaviour:
           m_MethodName: set_sprite
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: fd6dfb4bacb2c4d419705af16b75d3c1, type: 3}
+            m_ObjectArgument: {fileID: 21300000, guid: 843d9a9d615d43b4380b8df8c3aa2ef6, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0

@@ -5,6 +5,7 @@ public class ThoughtSpawnManager : MonoBehaviour
     [SerializeField] ThoughtBubble m_spawnRef = default;
     [SerializeField] RangedSpawner m_spawner = default;
     [SerializeField] CurryGameEventListener m_obtainThought = default;
+
     void Start()
     {
         m_obtainThought?.Init();

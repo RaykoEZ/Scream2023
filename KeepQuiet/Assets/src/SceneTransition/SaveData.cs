@@ -2,8 +2,6 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-
-
 // Contains persistent data for changing game environment
 // and state of quicksaved game state
 [Serializable]
@@ -69,16 +67,13 @@ public class SaveData
     public string CurrentlyViewing;
     public HashSet<ThoughtDetail> HeldThoughts;
     public AriaState AriaStatus;
+    public DateTime InitDate;
     public string InitTime;
-    string SaveStartTime() 
-    {
-        string ret = DateTime.Now.ToString("d").Replace(@"/", string.Empty);
-        return ret;
-    }
     // New save file
     public SaveData()
     {
-        InitTime = SaveStartTime();
+        InitDate = DateTime.Now;
+        InitTime = InitDate.ToString("d").Replace(@"/", string.Empty);
         CheckedSubjectProfile = false;
         RevealClock = false;
         FreedomRoute = false;
@@ -91,6 +86,7 @@ public class SaveData
     public SaveData(SaveData copy)
     {
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
+        InitDate = copy.InitDate;
         InitTime = copy.InitTime;
         RevealClock = copy.RevealClock;
         FreedomRoute = copy.FreedomRoute;
