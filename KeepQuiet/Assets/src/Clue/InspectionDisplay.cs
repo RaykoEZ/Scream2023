@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class InspectionDisplay : MonoBehaviour 
 {
     [SerializeField] protected Animator m_anim = default;
-    public virtual void Init(SaveData save){ }
+    public virtual void Init(SaveData save) { }
     public virtual IEnumerator OnExit() 
     {
         yield return null;

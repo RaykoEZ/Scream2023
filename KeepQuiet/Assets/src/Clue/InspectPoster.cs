@@ -1,7 +1,7 @@
 ﻿using Curry.Explore;
+using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InspectPoster : InspectionDisplay
 {
@@ -10,7 +10,7 @@ public class InspectPoster : InspectionDisplay
     int m_numScareTrigger = 0;
     public override void Init(SaveData save) 
     { 
-        if (save.RevealClock || save.Persistent.AriaDead) 
+        if (save.Persistent.AriaDead) 
         {
             GlitchState();
         }
@@ -23,7 +23,7 @@ public class InspectPoster : InspectionDisplay
     {
         if (m_numScareTrigger > 0) return;
 
-        float rand = Random.Range(0f, 1f);
+        float rand = UnityEngine.Random.Range(0f, 1f);
         if (rand < m_scareRate) 
         {
             m_anim?.SetTrigger("scare");
@@ -43,19 +43,5 @@ public class InspectPoster : InspectionDisplay
     {
         TryScare();
         yield return new WaitForSeconds(0.05f);
-    }
-}
-public class InspectDoor : InspectionDisplay
-{
-    public override IEnumerator OnExit()
-    {
-        yield return null;
-    }
-}
-public class InspectClock : InspectionDisplay
-{
-    public override IEnumerator OnExit()
-    {
-        yield return null;
     }
 }

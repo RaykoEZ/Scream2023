@@ -58,24 +58,23 @@ public class SaveData
     // Did player resolve malware overtaking Aria?
     // Secret/True End Flag
     public WatchDisplay WatchState;
-    // Clock is revealed after setting system clock to clued time frame
-    // Player can hit the clock to reveal more clues
-    public bool RevealClock;
     // Freedom flag before reaching ending
     public bool FreedomRoute;
     // Where is the player looking at
     public string CurrentlyViewing;
     public HashSet<ThoughtDetail> HeldThoughts;
     public AriaState AriaStatus;
+    // time of the simulation, watch displays it
+    public WatchDisplay SimulationTime;
     public DateTime InitDate;
     public string InitTime;
     // New save file
     public SaveData()
     {
+        SimulationTime = WatchDisplay.Present;
         InitDate = DateTime.Now;
         InitTime = InitDate.ToString("d").Replace(@"/", string.Empty);
         CheckedSubjectProfile = false;
-        RevealClock = false;
         FreedomRoute = false;
         WatchState = WatchDisplay.Off;
         Persistent = new PersistentSave();
@@ -85,10 +84,10 @@ public class SaveData
     }
     public SaveData(SaveData copy)
     {
+        SimulationTime = copy.SimulationTime;
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
         InitDate = copy.InitDate;
         InitTime = copy.InitTime;
-        RevealClock = copy.RevealClock;
         FreedomRoute = copy.FreedomRoute;
         WatchState = copy.WatchState;
         Persistent = copy.Persistent;
@@ -97,4 +96,3 @@ public class SaveData
         AriaStatus = new AriaState(copy.AriaStatus);
     }
 }
-

@@ -18,11 +18,6 @@ public class RoomLeftView : ViewState
     {
         // Set door state
         ChangeDoorState(DoorState.Closed);
-        // hide clues?
-        if (!saveData.RevealClock)
-        {
-            m_clock?.Hide();
-        }
         base.InitStateInternal(saveData);
     }
     // Change door state and trheir visuals

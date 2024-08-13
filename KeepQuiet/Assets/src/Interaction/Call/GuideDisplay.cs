@@ -79,7 +79,7 @@ public class GuideDisplay : MonoBehaviour
         }
         m_display?.SetContent(step.Content);
         m_display?.Show(step.ShowInstantly, step.Angry);
-        step?.OnShow?.TriggerEvent(new EventInfo());
+        step?.OnShow?.TriggerEvent();
         yield return new WaitForSeconds(0.5f);
         m_inProgress = false;
     }

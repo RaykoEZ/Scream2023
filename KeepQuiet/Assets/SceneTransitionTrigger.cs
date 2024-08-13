@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 public class SceneTransitionTrigger : MonoBehaviour
 {
-    [SerializeField] GameStateManager m_gameState = default;
+    [SerializeField] CurryGameEventTrigger m_saveGameRequest = default;
     [SerializeField] CurryGameEventTrigger m_toTile = default;
     [SerializeField] CurryGameEventTrigger m_continue = default;
     [SerializeField] CurryGameEventTrigger m_newGame = default;
@@ -14,9 +14,9 @@ public class SceneTransitionTrigger : MonoBehaviour
     {
         Action onFinish = () => 
         {
-            m_toTile?.TriggerEvent(new EventInfo());
+            m_toTile?.TriggerEvent();
         };
-        m_gameState?.SaveGameState(onFinish);
+        m_saveGameRequest?.TriggerEvent(new EventInfo(null, onFinish));
     }
     public void Continue() 
     {
@@ -30,19 +30,6 @@ public class SceneTransitionTrigger : MonoBehaviour
     }
     public void QuitGame()
     {
-        EventInfo info;
-        if (m_gameState == null) 
-        {
-            info = new EventInfo();
-        }
-        else 
-        {
-            // need reference to game state manager
-            // to save data before quitting the game
-            Dictionary<string, object> payload = new Dictionary<string, object>
-            {{"save", m_gameState.CurrentGameState}};
-            info = new EventInfo(payload);
-        }
-        m_quit?.TriggerEvent(info);
+        m_quit?.TriggerEvent();
     }
 }

@@ -16,21 +16,22 @@ public class LevelEventHandler : MonoBehaviour
         m_continueGame?.Init();
         m_returnToTitle?.Init();
     }
-    public void ContinueGame(EventInfo info) 
+    public void ContinueGame() 
     {
-        m_files?.SetNewGame(false);
-        // Load persistent and start game
+        // Load save and start game
         GoToGameScene();
     }
-    public void NewGame(EventInfo info) 
+    public void NewGame() 
     {
-        m_files?.SetNewGame(true);
+        // Overwrite
+        m_files?.SetupNewGame();
         // Start game from the start, may keep some persistent
         GoToGameScene();
     }
-    public void ReturnToTitle(EventInfo info) 
+    public void ReturnToTitle() 
     {
-        GoToTitle();
+        StartCoroutine(
+            m_files?.SaveGame(GoToTitle));
     }
     void GoToGameScene() 
     {

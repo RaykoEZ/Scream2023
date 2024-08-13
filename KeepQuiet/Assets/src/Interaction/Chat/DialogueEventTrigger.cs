@@ -10,7 +10,7 @@ public class DialogueEventTrigger : ScriptableObject
     public IReadOnlyList<GuideStep> Monologue { get => m_monologue; }
     public void Trigger()
     {
-        m_stateToTrigger?.TriggerEvent(new EventInfo());
+        m_stateToTrigger?.TriggerEvent();
         m_displayToTrigger?.TriggerEvent(
             new DialogueInfo(m_monologue));
     }

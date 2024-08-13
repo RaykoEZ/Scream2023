@@ -4,13 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+
 // handles behaviours for current game state in game scene
 // Notifies to save new persistent game state
 // Loads saved game state when game scene initializes
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] protected AudioTrigger m_audio = default;
-    [SerializeField] protected ToolInteractionHandler m_toolMenu = default;
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
@@ -22,39 +22,23 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected ViewState m_insideCafe = default;
     [SerializeField] protected RoomLeftView m_roomLeft = default;
     [SerializeField] protected ViewState m_roomRight = default;
-    [SerializeField] CurryGameEventTrigger m_saveGameState = default;
     // Called when scene is ready for loading save data
     [SerializeField] SaveDataSource m_saveData = default;
     Dictionary<string, ViewState> m_views;
     ViewState m_currentView;
     SaveData m_currentGameState = new SaveData();
-    public DoorState LeftRoomDoor => m_roomLeft.DoorState;
     public SaveData CurrentGameState => new SaveData(m_currentGameState);
     void OnEnable()
     {
-        m_saveData.OnUpdate += Init;
+        m_saveData.OnRefresh += Init;
     }
     void OnDisable()
     {
-        m_saveData.OnUpdate -= Init;
+        m_saveData.OnRefresh -= Init;
     }
     void Start()
     {
-        UpdateGameState();
-    }
-    void UpdateGameState() 
-    {
-        //Listen to savedatat load event, ready to receive save data
-        m_saveData.RequestGameState();
-    }
-    public void SaveGameState(Action onFinish = null)
-    {
-        Dictionary<string, object> payload = new Dictionary<string, object>
-        {{"save", CurrentGameState }};
-        EventInfo info = new EventInfo(payload, onFinishCallback: onFinish);
-        m_saveGameState?.TriggerEvent(info);
-        // new save data available to update
-        UpdateGameState();
+        m_saveData?.RequestLoadSave();
     }
     void Init(SaveData saved)
     {

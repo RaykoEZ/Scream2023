@@ -11,6 +11,10 @@ namespace Curry.Events
         {
             m_eventToTrigger?.Broadcast(eventInfo);
         }
+        public void TriggerEvent()
+        {
+            m_eventToTrigger?.Broadcast(new EventInfo());
+        }
     }
 
 }

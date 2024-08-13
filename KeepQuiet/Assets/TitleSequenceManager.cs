@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Playables;
+
 // play sequence for title
 public class TitleSequenceManager : MonoBehaviour
 {
@@ -12,16 +13,16 @@ public class TitleSequenceManager : MonoBehaviour
     [SerializeField] SaveDataSource m_saveData = default;
     void OnEnable()
     {
-        m_saveData.OnUpdate += InitTitleState;
+        m_saveData.OnRefresh += InitTitleState;
     }
     void OnDisable()
     {
-        m_saveData.OnUpdate -= InitTitleState;
+        m_saveData.OnRefresh -= InitTitleState;
     }
     void Start()
     {
         // Get current game state
-        m_saveData.RequestGameState();
+        m_saveData.RequestLoadSave();
     }
     void InitTitleState(SaveData save) 
     {

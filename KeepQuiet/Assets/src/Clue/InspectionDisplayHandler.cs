@@ -6,7 +6,7 @@ using UnityEngine;
 // Script to instantiate object when player click to inspect a clue
 public class InspectionDisplayHandler : HideableUI 
 {
-    [SerializeField] GameStateManager m_state = default;
+    [SerializeField] SaveDataSource m_state = default;
     [SerializeField] ToolBarUIAnimationHandler m_toolBar = default;
     [SerializeField] HideableUITrigger m_inspectUITrigger = default;
     InspectionDisplay m_currentlyInspecting;

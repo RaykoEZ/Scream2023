@@ -22,14 +22,14 @@ public class AudioTrigger : MonoBehaviour
     }
     public void StopBgm()
     {
-        m_stopBgm?.TriggerEvent(new EventInfo());
+        m_stopBgm?.TriggerEvent();
     }
     public void PlayRain()
     {
-        m_playRain?.TriggerEvent(new EventInfo());
+        m_playRain?.TriggerEvent();
     }
     public void StopRain()
     {
-        m_stopRain?.TriggerEvent(new EventInfo());
+        m_stopRain?.TriggerEvent();
     }
 }
