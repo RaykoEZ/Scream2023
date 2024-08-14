@@ -274,7 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3258ee1108dfe47971f78d5865c02b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_file: {fileID: 3112176199438094396, guid: f40f3a7cc9c06244fa08f74b10823ec9, type: 3}
   m_level: {fileID: 0}
   m_intro: {fileID: 8514409656426655655}
   m_credits: {fileID: 5399834186622748946}
@@ -539,6 +538,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Ending
       objectReference: {fileID: 0}
+    - target: {fileID: 7520983765181559012, guid: 53513102e8cefa141b9dffa70f0deee3, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 15d25f05c3679b94dbbad3016b586aa9, type: 2}
+    - target: {fileID: 7520983765181559012, guid: 53513102e8cefa141b9dffa70f0deee3, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7520983765181559012, guid: 53513102e8cefa141b9dffa70f0deee3, type: 3}
+      propertyPath: m_SceneBindings.Array.data[4].key
+      value: 
+      objectReference: {fileID: -8667416946496530167, guid: 6a658130c230b97479e36df8338aa082, type: 2}
+    - target: {fileID: 7520983765181559012, guid: 53513102e8cefa141b9dffa70f0deee3, type: 3}
+      propertyPath: m_SceneBindings.Array.data[5].key
+      value: 
+      objectReference: {fileID: -5448725150880590911, guid: 6a658130c230b97479e36df8338aa082, type: 2}
+    - target: {fileID: 7520983765181559012, guid: 53513102e8cefa141b9dffa70f0deee3, type: 3}
+      propertyPath: m_SceneBindings.Array.data[6].key
+      value: 
+      objectReference: {fileID: -1695827242306293671, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 53513102e8cefa141b9dffa70f0deee3, type: 3}
@@ -634,6 +653,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Credits
       objectReference: {fileID: 0}
+    - target: {fileID: 4034920603981319268, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034920603981319268, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_SceneBindings.Array.data[3].key
+      value: 
+      objectReference: {fileID: 1554708449094362166, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    - target: {fileID: 4034920603981319268, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_SceneBindings.Array.data[4].key
+      value: 
+      objectReference: {fileID: 880239820261190107, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    - target: {fileID: 4034920603981319268, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_SceneBindings.Array.data[5].key
+      value: 
+      objectReference: {fileID: -9093062278480135629, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    - target: {fileID: 4034920603981319268, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_SceneBindings.Array.data[6].key
+      value: 
+      objectReference: {fileID: 5517737702820045006, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    - target: {fileID: 4034920603981319268, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_SceneBindings.Array.data[7].key
+      value: 
+      objectReference: {fileID: -1695827242306293671, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
     - target: {fileID: 4156278841426684616, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -735,6 +778,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949643186441500324, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840067843563158527, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840067843563158527, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
       propertyPath: m_BlocksRaycasts
       value: 0
       objectReference: {fileID: 0}

@@ -4,11 +4,22 @@ using UnityEngine.UI;
 
 public class InspectClock : InspectionDisplay
 {
-    [SerializeField] Image m_clock = default;
-    [SerializeField] Image m_hiddenClue = default;
     public override void Init(SaveData save) 
     {
         DateTime init = save.InitDate;
-        m_hiddenClue.enabled = DateTime.Now == init;
+        bool timeCheck = DateTime.Now == init;
+        // set clock state
+        if (timeCheck && save.Persistent.AriaDead) 
+        {
+            m_anim?.SetTrigger("dead");
+        }
+        else if (timeCheck && !save.Persistent.AriaDead) 
+        {
+            m_anim?.SetTrigger("dateSync");
+        }
+        else 
+        {
+            m_anim?.SetTrigger("normal");
+        }
     }
 }

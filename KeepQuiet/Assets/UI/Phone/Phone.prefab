@@ -1262,10 +1262,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_chatRoom: {fileID: 4764148645332724724}
-  m_ariaHistory: {fileID: 0}
-  m_handlerHistory: {fileID: 0}
-  m_almHistory: {fileID: 0}
   m_histories: {fileID: 0}
+  m_onGameSetup:
+    m_eventToListen: {fileID: 0}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!223 &6882426600055712958
 Canvas:
   m_ObjectHideFlags: 0
@@ -1596,7 +1598,7 @@ PlayableDirector:
   m_GameObject: {fileID: 6597447584940672515}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 098e65bc0e000de44abdf7c3f5c184f2, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -1611,6 +1613,16 @@ PlayableDirector:
   - key: {fileID: 5517737702820045006, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
     value: {fileID: 1615748863557289732}
   - key: {fileID: -1695827242306293671, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
+    value: {fileID: 1550660813804878801}
+  - key: {fileID: 1554708449094362166, guid: 098e65bc0e000de44abdf7c3f5c184f2, type: 2}
+    value: {fileID: 648130337244982569}
+  - key: {fileID: 880239820261190107, guid: 098e65bc0e000de44abdf7c3f5c184f2, type: 2}
+    value: {fileID: 4852233933323221572}
+  - key: {fileID: -9093062278480135629, guid: 098e65bc0e000de44abdf7c3f5c184f2, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5517737702820045006, guid: 098e65bc0e000de44abdf7c3f5c184f2, type: 2}
+    value: {fileID: 1615748863557289732}
+  - key: {fileID: -1695827242306293671, guid: 098e65bc0e000de44abdf7c3f5c184f2, type: 2}
     value: {fileID: 1550660813804878801}
   m_ExposedReferences:
     m_References: []
@@ -1731,7 +1743,7 @@ Canvas:
   m_GameObject: {fileID: 6597447584940672515}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
@@ -1739,7 +1751,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1228148511
   m_SortingOrder: 10
@@ -1766,7 +1778,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!222 &1888444062740855974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3719,7 +3731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910228639041388709, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -197558.19
+      value: -735
       objectReference: {fileID: 0}
     - target: {fileID: 6910228639095420630, guid: 041481df7d3c2bb418fb9b7f1b13e1db, type: 3}
       propertyPath: m_Layer
