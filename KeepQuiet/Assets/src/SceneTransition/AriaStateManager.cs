@@ -32,7 +32,7 @@ public class AriaStateManager : MonoBehaviour
     }
     public void TriggerPossessed(bool value)
     {
-        m_current.IsPossessed = value;
+        m_current.IsMissing = value;
         m_position.TriggerPossessed(value);
     }
     public void TriggerSurprise()

@@ -1,4 +1,5 @@
-﻿using Curry.Explore;
+﻿using Curry.Events;
+using Curry.Explore;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ public delegate void OnChatUpdate();
 public class ChatRoom : HideableUI
 {
     [SerializeField] UnityEvent m_onThoughtDialogue = default;
+    [SerializeField] CurryGameEventListener m_overwriteChat = default;
     [SerializeField] ThoughtTriggerDisplay m_thoughtTriggers = default;
     [SerializeField] Transform m_messageParent = default;
     [SerializeField] ReplyPrompter m_optionPrompt = default;
@@ -39,12 +41,13 @@ public class ChatRoom : HideableUI
     void OnEnable()
     {
         m_optionPrompt.OnChosen += OnReplyChosen;
+        m_overwriteChat?.Init();
     }
     void OnDisable()
     {
         Shutdown();
     }
-    public void Init(ChatHistory history)
+    public void SetChatHistory(ChatHistory history)
     {
         if(m_history != history) 
         {
@@ -57,12 +60,27 @@ public class ChatRoom : HideableUI
     {
         m_paused = paused;
     }
+    public void OnOverwriteChat(EventInfo info) 
+    {
+        if (info == null || info.Payload == null) return;
+        var payload = info.Payload;
+        if (payload.TryGetValue("overwrite", out object result) &&
+            result is DialogueNode node) 
+        {
+            Overwrite(node);
+        }
+    }
     // Overwrite history and reload chat
     public void Overwrite(DialogueNode newChat) 
     {
+        if (newChat == null) 
+        {
+            Debug.LogWarning("Chat overwrite: null chat node in arg");
+            return;
+        }
         Shutdown();
         m_history.OverwriteLog(newChat);
-        Init(m_history);
+        SetChatHistory(m_history);
         CheckForReplyOptions();
     }
     public void OnThoughtDrop(ThoughtBubble thought) 
@@ -81,6 +99,7 @@ public class ChatRoom : HideableUI
     public void Shutdown() 
     {
         m_optionPrompt.OnChosen -= OnReplyChosen;
+        m_overwriteChat?.Shutdown();
         ClearChat();
     }
     void ClearChat() 

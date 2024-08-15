@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 348621212}
-  - component: {fileID: 348621211}
   m_Layer: 0
   m_Name: Npcs
   m_TagString: Untagged
@@ -140,20 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &348621211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348621210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff678d220b6fe6541b39d8b45212544d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_npcInScene:
-  - {fileID: 1386124244}
 --- !u!4 &348621212
 Transform:
   m_ObjectHideFlags: 0
@@ -718,9 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_position:
     m_cafePoses: {fileID: 0}
-    m_cafeCloseup: {fileID: 0}
     m_roomLeftPeek: {fileID: 0}
-    m_roomLeftCloseup: {fileID: 0}
 --- !u!114 &1386124247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,6 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1caa2800decb9438bb051d6b6c2582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_callerName: 
   m_trigger: {fileID: 509921717}
   m_message: {fileID: 11400000, guid: 3583a4f462d702240ac7ff8d87c835bd, type: 2}
 --- !u!224 &1426214029
@@ -1615,7 +1599,7 @@ PrefabInstance:
     - target: {fileID: 1423369680200152765, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_npc
       value: 
-      objectReference: {fileID: 348621211}
+      objectReference: {fileID: 0}
     - target: {fileID: 1423369680356455427, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1875,7 +1859,7 @@ PrefabInstance:
     - target: {fileID: 2373926580492617621, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_npc
       value: 
-      objectReference: {fileID: 348621211}
+      objectReference: {fileID: 0}
     - target: {fileID: 3724936081716733260, guid: 61c109c7fbabf58429001d1f0c101a32, type: 3}
       propertyPath: m_historySource
       value: 

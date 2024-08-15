@@ -10,7 +10,6 @@ public class RoomLeftView : ViewState
 {
     [SerializeField] Animator m_doorControl = default;
     // All switchable clues in this view
-    [SerializeField] Clue m_clock = default;
     public override string Name => "RoomLeft";
     private DoorState m_doorState = DoorState.Closed;
     public DoorState DoorState => m_doorState;

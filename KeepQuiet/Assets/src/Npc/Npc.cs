@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Curry.Events;
+using UnityEngine;
 // Handles npc states and react to player inputs
 public abstract class Npc : MonoBehaviour 
 {

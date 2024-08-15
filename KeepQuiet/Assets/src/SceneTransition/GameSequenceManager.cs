@@ -10,10 +10,9 @@ public class GameSequenceManager : MonoBehaviour
     [SerializeField] SkippableSequencePlayer m_credits = default;
     // post credit
     [SerializeField] EndingPlayer m_ending = default;
-
     [SerializeField] CurryGameEventListener m_onNewGame = default;
     [SerializeField] CurryGameEventListener m_onContinue = default;
-    [SerializeField] CurryGameEventListener m_onDialSecret = default;
+
     void OnEnable()
     {
         m_credits.OnFinish += OnCreditFinish;
@@ -66,4 +65,6 @@ public class GameSequenceManager : MonoBehaviour
 
         // Continue increment
     }
+    public void DialAl() { }
+    public void DialElia() { }
 }

@@ -14,12 +14,10 @@ public class CallHandler : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_display = default;
     [SerializeField] PlayableDirector m_director = default;
     [SerializeField] AudioSource m_callingAudio = default;
-    [SerializeField] NpcManager m_npc = default;
     [SerializeField] List<DialResult> m_results = default;
     public event OnDialed OnDial;
     Dictionary<string, DialEvent> m_eventSet = new Dictionary<string, DialEvent>();
     bool m_calling = false;
-    Npc m_callingWith;
     DialEvent m_latestIncomingCall;
     public bool Calling => m_calling;
     private void Start()
@@ -70,10 +68,8 @@ public class CallHandler : MonoBehaviour
     }
     void BeginCall(string callDisplay, DialEvent result) 
     {
-        m_callingWith = m_npc.Get(callDisplay);
         OnDial?.Invoke(callDisplay);
         m_calling = true;
-        //TODO: trigger audio response here + subtitle is needed
         m_anim.SetBool("Show", true);
         m_anim.SetBool("Calling", true);
         StartCoroutine(PlayResultSequence(result.PlayThis));

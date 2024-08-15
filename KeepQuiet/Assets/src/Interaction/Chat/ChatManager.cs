@@ -37,7 +37,7 @@ public class ChatManager : HideableUI
         if (string.IsNullOrWhiteSpace(username)) return;
         ChatHistory result = m_histories.Find(username);
         // instantiate history logs and store them here for record keeping if needed
-        m_chatRoom.Init(result);
+        m_chatRoom.SetChatHistory(result);
         m_chatRoom.Hide();
         StartCurrentChat();
         Show();
@@ -55,7 +55,7 @@ public class ChatManager : HideableUI
     {
         ChatHistory result = m_histories.Find(username);
         // instantiate history logs and store them here for record keeping if needed
-        m_chatRoom.Init(result);
+        m_chatRoom.SetChatHistory(result);
         m_chatRoom.Hide();
         // Set current dialogue to the incoming dialogue
         m_chatRoom.UpdateCurrentDialogue(newDialogue);

@@ -14,7 +14,7 @@ public enum AriaPosition
 [Serializable]
 public class AriaState
 {
-    public bool IsPossessed;
+    public bool IsMissing;
     public bool HasPastRunMemory;
     [JsonConverter(typeof(StringEnumConverter))]   
     public AriaPosition CurrentLocation;
@@ -24,13 +24,13 @@ public class AriaState
         bool hasPastRunMemory, 
         AriaPosition currentLocation)
     {
-        IsPossessed = isPossessed;
+        IsMissing = isPossessed;
         HasPastRunMemory = hasPastRunMemory;
         CurrentLocation = currentLocation;
     }
     public AriaState(AriaState copy)
     {
-        IsPossessed = copy.IsPossessed;
+        IsMissing = copy.IsMissing;
         HasPastRunMemory = copy.HasPastRunMemory;
         CurrentLocation = copy.CurrentLocation;
     }

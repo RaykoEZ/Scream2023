@@ -6,7 +6,6 @@ public class AriaDisplayController
 {
     [SerializeField] Animator m_cafePoses = default;
     [SerializeField] Animator m_roomLeftPeek = default;
-    [SerializeField] AriaCloseupHandler m_closeup = default;
     public void TriggerPossessed(bool value)
     {
         m_roomLeftPeek.ResetTrigger("possessed");
