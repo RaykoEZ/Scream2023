@@ -39,16 +39,6 @@ public class GameSequenceManager : MonoBehaviour
         // Determine a post credit sequence for ending
 
     }
-    void OnEndingFinish() 
-    { 
-    
-    }
-    void PlayCredit() 
-    {
-        //play credit
-        m_credits?.PlaySequence();
-    }
-
     public void OnNewGame() 
     { 
         // if player killed Aria on the previous load
