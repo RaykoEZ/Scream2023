@@ -38,7 +38,6 @@ public class InspectPoster : InspectionDisplay
     {
         m_anim?.SetBool("glitch", true);
     }
-
     public override IEnumerator OnExit()
     {
         TryScare();

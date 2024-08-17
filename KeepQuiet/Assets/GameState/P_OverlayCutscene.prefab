@@ -66,7 +66,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '<size=48><color=yellow>Operator Terminated </color>
+
+
+    Error: General
+    Misconduct</size>
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -75,8 +81,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16780543
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278193407
+  m_fontColor: {r: 1, g: 0.0460961, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -146,7 +152,7 @@ GameObject:
   - component: {fileID: 524431793980425338}
   - component: {fileID: 660816507251211255}
   m_Layer: 0
-  m_Name: BloodyScreen
+  m_Name: BloodyScreens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +269,6 @@ RectTransform:
   m_Children:
   - {fileID: 7796390502812288318}
   - {fileID: 8057166316726951972}
-  - {fileID: 2631557403884726799}
   m_Father: {fileID: 8514409657950997309}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -306,7 +311,7 @@ PlayableDirector:
   - key: {fileID: 5517737702820045006, guid: 098e65bc0e000de44abdf7c3f5c184f2, type: 2}
     value: {fileID: 5937475767177195679}
   - key: {fileID: 8958218852244610840, guid: 098e65bc0e000de44abdf7c3f5c184f2, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 3672171385647440232}
   m_ExposedReferences:
     m_References: []
 --- !u!225 &565321538471890752
@@ -459,7 +464,7 @@ GameObject:
   - component: {fileID: 7245103076957415680}
   - component: {fileID: 3672171385647440232}
   m_Layer: 6
-  m_Name: Text_Subtext
+  m_Name: Text_ModVersion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,12 +477,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7216190981957923100}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3435192523955949220}
+  m_Father: {fileID: 8514409657950997309}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -513,7 +518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: modver = beta1123E1C6.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -523,7 +528,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.4716981, g: 0, b: 0.03163702, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -835,7 +840,7 @@ GameObject:
   - component: {fileID: 8514409657471475517}
   - component: {fileID: 8514409657471475515}
   m_Layer: 0
-  m_Name: P_PersistentSequences
+  m_Name: P_OverlayCutscene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -962,6 +967,7 @@ RectTransform:
   - {fileID: 8514409656447637249}
   - {fileID: 5787390968518664647}
   - {fileID: 3435192523955949220}
+  - {fileID: 2631557403884726799}
   - {fileID: 5730641328525133392}
   - {fileID: 8781558173882654925}
   - {fileID: 84385591701237182}

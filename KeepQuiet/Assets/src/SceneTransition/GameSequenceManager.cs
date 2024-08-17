@@ -12,7 +12,6 @@ public class GameSequenceManager : MonoBehaviour
     [SerializeField] EndingPlayer m_ending = default;
     [SerializeField] CurryGameEventListener m_onNewGame = default;
     [SerializeField] CurryGameEventListener m_onContinue = default;
-
     void OnEnable()
     {
         m_credits.OnFinish += OnCreditFinish;
