@@ -554,6 +554,9 @@ MonoBehaviour:
   m_specialTorchAim: {fileID: 0}
   m_torch: {fileID: 4462738558076137807}
   m_specialTorch: {fileID: 6760645903348220672}
+  m_mouseClickToReturnTool: {fileID: 2291439758075416680, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_onSpecialTorch:
+    m_eventToTrigger: {fileID: 11400000, guid: 879c5447d2565f94b8eadd7ec528a767, type: 2}
 --- !u!114 &2509594087673186280
 MonoBehaviour:
   m_ObjectHideFlags: 0

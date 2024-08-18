@@ -7,7 +7,7 @@ public enum Ending
 { 
     Normal_CaseClosed,
     Bad_Delusion, 
-    Secret_FreeFromOrbit,
+    Secret_Freedom,
     None
 }
 // Handle ending sequence after credit roll
@@ -44,7 +44,7 @@ public class EndingPlayer : SequencePlayer
                 m_endToPlay = m_badEndSeq;
 
                 break;
-            case Ending.Secret_FreeFromOrbit:
+            case Ending.Secret_Freedom:
                 m_endToPlay = m_secretEndSeq;
                 break;
             default:

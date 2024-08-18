@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _isOn: 1
-    - _lightRadius: 1
+    - _lightRadius: 1.5
     - _revealFallOff: 0.005
     - _revealStrength: 4.7
     m_Colors:

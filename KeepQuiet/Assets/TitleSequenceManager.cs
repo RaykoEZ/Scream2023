@@ -33,7 +33,7 @@ public class TitleSequenceManager : MonoBehaviour
         // if true end reached, white aria close eye, calmer music
         switch (ending)
         {
-            case Ending.Secret_FreeFromOrbit:
+            case Ending.Secret_Freedom:
                 toPlay = m_freedomEnd;
                 break;
             default:

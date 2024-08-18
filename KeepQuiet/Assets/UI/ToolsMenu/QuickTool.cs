@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -16,19 +17,27 @@ public class QuickTool : DraggableObject
     public event OnToolUpdate OnEnter;
     public event OnToolUpdate OnExit;
     public event OnToolUpdate OnUse;
-    public event OnToolUpdate OnReturn;
-
+    bool m_using = false;
     public override void OnBeginDrag(PointerEventData eventData)
     {
         // Drag the tool out of the tool bar
-        OnUse?.Invoke(this);
+        UseTool();
     }
     public override void OnDrag(PointerEventData eventData)
     {
     }
     public override void ReturnToBeforeDrag()
     {
-        OnReturn?.Invoke(this);
+    }
+    public void UseTool() 
+    {
+        if (m_using) return;
+        m_using = true;
+        OnUse?.Invoke(this);
+    }
+    public void OnReturnTool() 
+    {
+        m_using = false;
     }
     public virtual void OnPointerEnter() 
     {

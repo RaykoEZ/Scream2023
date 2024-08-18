@@ -46,7 +46,7 @@ public class KeySlot : MonoBehaviour
             && key == m_currentlyInserted && key.Inserted) 
         {
             ShutdownKey();
-            m_watch.SetWatchState(WatchDisplay.Off);
+            m_watch.SetWatchState(WatchDisplay.None);
         }
     }
     void OnKeyActivate(WatchDisplay newDisplay) 

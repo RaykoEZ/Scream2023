@@ -76,7 +76,7 @@ public class SaveData
         InitTime = InitDate.ToString("d").Replace(@"/", string.Empty);
         CheckedSubjectProfile = false;
         FreedomRoute = false;
-        WatchState = WatchDisplay.Off;
+        WatchState = WatchDisplay.None;
         Persistent = new PersistentSave();
         HeldThoughts = new HashSet<ThoughtDetail>();
         CurrentlyViewing = "RoomRight";

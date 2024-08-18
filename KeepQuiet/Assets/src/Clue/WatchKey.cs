@@ -9,6 +9,7 @@ public class WatchKey : ExternalDraggableObject
 {
     [Range(0.1f, 10f)]
     [SerializeField] float m_unlockTime = default;
+    [SerializeField] bool m_startLocked = default;
     // Key to change time line of the game
     [SerializeField] WatchDisplay m_keyTrigger = default;
     [SerializeField] PlayableDirector m_director = default;
@@ -24,12 +25,15 @@ public class WatchKey : ExternalDraggableObject
     public WatchDisplay KeyTrigger => m_keyTrigger;
     void Start()
     {
-        OnLock();
+        SetLock(m_startLocked);
+        Inserted = m_startLocked;
     }
-    void OnLock()
+    void SetLock(bool isLocked)
     {
-        Movable = false;
-        GetComponent<Animator>().cullingMode = AnimatorCullingMode.AlwaysAnimate;
+        Movable = !isLocked;
+        GetComponent<Animator>().cullingMode = isLocked ?
+            AnimatorCullingMode.AlwaysAnimate : 
+            AnimatorCullingMode.CullUpdateTransforms;
     }
     public override void DropObject(Transform parent, int siblingIndex = 0)
     {
@@ -57,7 +61,7 @@ public class WatchKey : ExternalDraggableObject
     {
         m_director?.Play(m_clickButton);
         // lock key transform movement to animator
-        OnLock();
+        SetLock(true);
     }
     // Key can be pulled out after this trigger
     public void TryUnlockKey()
@@ -81,8 +85,8 @@ public class WatchKey : ExternalDraggableObject
         yield return new WaitForSeconds((float)m_unlockKey.duration);
         yield return new WaitForEndOfFrame();
         // Don't let animator override transform to allow dragging
-        GetComponent<Animator>().cullingMode = AnimatorCullingMode.CullUpdateTransforms;
-        Movable = true;
+        SetLock(false);
+
     }
     protected override void SetDragPosition(PointerEventData e)
     {

@@ -1,5 +1,10 @@
-﻿using Curry.Explore;
+﻿using Curry.Events;
+using Curry.Explore;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
+
 public delegate void OnToolUnlock();
 public class ToolInteractionHandler : MonoBehaviour
 {
@@ -9,6 +14,9 @@ public class ToolInteractionHandler : MonoBehaviour
     //TODO:Coat hanger object, draggable and modifiable
     [SerializeField] QuickTool m_torch = default;
     [SerializeField] QuickTool m_specialTorch = default;
+    // Allow RMB to return tool from use state
+    [SerializeField] InputActionReference m_mouseClickToReturnTool = default;
+    [SerializeField] CurryGameEventTrigger m_onSpecialTorch = default;
     // tool we are currently using
     QuickTool m_using;
     // the current tool aiming object
@@ -40,13 +48,24 @@ public class ToolInteractionHandler : MonoBehaviour
     public void ReturnTool(QuickTool tool)
     {
         if (tool == null || m_using == null || tool != m_using) return;
-        m_using.OnReturn -= ReturnTool;
         m_aiming?.HideCursor();
         m_anim?.Show();
     }
     public void ReturnTool() 
     {
+        if (m_using.ToolName == EToolType.SpecialTorch) 
+        {
+            OnSpecialTorch(false);
+        }
+        // disable input action for returning tool
+        m_mouseClickToReturnTool.action.performed -= OnReturnTool;
+        m_using?.OnReturnTool();
         ReturnTool(m_using);
+    }
+    // handles PMB input to return tool from using state
+    void OnReturnTool(CallbackContext callback) 
+    {
+        ReturnTool();
     }
     public void UseTool(QuickTool tool) 
     {
@@ -60,19 +79,28 @@ public class ToolInteractionHandler : MonoBehaviour
                 break;
             case EToolType.SpecialTorch:
                 toolAimRef = m_specialTorchAim;
+                OnSpecialTorch(true);
                 break;
             default:
                 return;
         }
+        m_mouseClickToReturnTool.action.performed += OnReturnTool;
         m_aiming = toolAimRef;
         m_using = tool;
-        m_using.OnReturn += ReturnTool;
         m_aiming?.ShowCursor();
         m_anim?.Hide();
+    }
+
+    void OnSpecialTorch(bool isOn = true) 
+    {
+        var payload = new Dictionary<string, object> { { "isOn", isOn} };
+        EventInfo info = new EventInfo(payload);
+        m_onSpecialTorch?.TriggerEvent(info);
     }
     public void OnPointerEnter(QuickTool tool) 
     {
         if (tool == null) return;
+
         tool.OnUse += UseTool;
     }
     public void OnPointerExit(QuickTool tool) 

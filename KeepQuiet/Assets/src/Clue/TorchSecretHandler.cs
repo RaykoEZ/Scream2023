@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Curry.Events;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -11,8 +12,7 @@ public class TorchSecretHandler : MonoBehaviour
     Vector2 m_currentTorchMatPosition = Vector2.zero;
     void Start()
     {
-        // set torch as out of bounds if we're not using torch
-        m_hiddenObjectMat?.SetVector("_lightPos", c_materialBounds);
+        ResetSecretMaterial();
     }
     void Update()
     {
@@ -25,10 +25,28 @@ public class TorchSecretHandler : MonoBehaviour
             m_hiddenObjectMat?.SetVector("_lightPos", m_currentTorchMatPosition);
         }
     }
+    public void SetSecretActive(EventInfo info) 
+    {
+        if (info == null || info.Payload == null) return;
+        if (info.Payload.TryGetValue("isOn", out object result) 
+            && result is bool isOn) 
+        {
+            SetSecretActive(isOn);
+        }
+    }
     // toggle hidden object activity
-    public void SetHiddenObjectsActive(bool isActive) 
+    public void SetSecretActive(bool isActive) 
     {
         m_isSpecialTorchOn = isActive;
+        if (!isActive) 
+        {
+            ResetSecretMaterial();
+        }
+    }
+    void ResetSecretMaterial() 
+    {
+        // set torch as out of bounds if we're not using torch
+        m_hiddenObjectMat?.SetVector("_lightPos", c_materialBounds);
     }
     Vector2 GetTorchMaterialPosition(Vector2 screenPos) 
     {
