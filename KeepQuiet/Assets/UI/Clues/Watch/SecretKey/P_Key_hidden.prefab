@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 3954991656914864923}
   - component: {fileID: 8702893115021149612}
   - component: {fileID: 5905934387678478774}
+  - component: {fileID: 5047297164992625838}
   m_Layer: 8
   m_Name: P_Key_hidden
   m_TagString: Untagged
@@ -164,8 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_extractEnabled: 1
   m_toWrite: {fileID: 11400000, guid: c3d5afc4863a29340ab9450183abad55, type: 2}
-  m_unlockTime: 2
-  m_startLocked: 0
+  m_unlockTime: 0.5
+  m_startLocked: 1
   m_keyTrigger: 0
   m_director: {fileID: 3559324902205171114}
   m_clickButton: {fileID: 11400000, guid: f8fd4ec2173094940ad2998e3973c2b5, type: 2}
@@ -440,3 +441,32 @@ PolygonCollider2D:
       - {x: 46.48, y: 64.27}
       - {x: 49.45, y: 87.39}
   m_UseDelaunayMesh: 0
+--- !u!114 &5047297164992625838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784909806971624568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08704b06050c8274b9236a998e3dbc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toListen:
+  - m_eventToListen: {fileID: 11400000, guid: 879c5447d2565f94b8eadd7ec528a767, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5882106897355391145}
+          m_TargetAssemblyTypeName: WatchKey, Assembly-CSharp
+          m_MethodName: SetKeyActivity
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

@@ -6,7 +6,7 @@ public class ExternalDraggableObject : DraggableObject
     [SerializeField] bool m_extractEnabled = default;
     [SerializeField] FileWriteDetail m_toWrite = default;
     protected FileWriter m_writer = new FileWriter();
-    protected virtual FileWriteDetail WriteFile { 
+    protected virtual FileWriteDetail WriteFile {
         get { return m_toWrite; } set { m_toWrite = value; }
     }
     public bool ExtractEnabled {

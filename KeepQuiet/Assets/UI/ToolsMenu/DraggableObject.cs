@@ -19,21 +19,19 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     protected Vector2 m_anchorOffset = Vector2.zero;
     Transform m_origin;
     int m_originIndex;
-    public virtual bool Movable { get; set; } = true;
-    public virtual bool Droppable { get { return true; } }
-    public virtual bool Draggable { get; set; } = true;
+    bool m_draggable = true;
+    public virtual bool Draggable { get => m_draggable; set => m_draggable = value; }
     protected virtual Transform OnDragParent => transform.parent;
     // Move one above original parent when dragging the object 
     protected virtual void OnEnable()
     {
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
+        GetComponent<CanvasGroup>().blocksRaycasts = Draggable;
     }
     public virtual void SetDropOrigin(Transform parent, int siblingIndex = 0)
     {
         m_origin = parent;
         m_originIndex = siblingIndex;
     }
-
     public virtual void OnBeginDrag(PointerEventData eventData)
     {
         LeaveOrigin(eventData);
@@ -54,17 +52,15 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     public virtual void OnDrag(PointerEventData eventData)
     {
         // Do not move when drag is held, if the object needs to do something else
-        if (Movable)
+        if (Draggable)
         {
             SetDragPosition(eventData);
         }
     }
-
     public virtual void OnEndDrag(PointerEventData eventData)
     {
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
+        FinishDragCallback();
         ReturnToBeforeDrag();
-        OnDragFinish?.Invoke(this);
     }
     public virtual void DropObject(Transform parent, int siblingIndex = 0)
     {
@@ -75,10 +71,14 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     {
         DropObject(m_origin, m_originIndex);
     }
+    protected void FinishDragCallback()
+    {
+        GetComponent<CanvasGroup>().blocksRaycasts = Draggable;
+        OnDragFinish?.Invoke(this);
+    }
     protected virtual void SetDragPosition(PointerEventData e)
     {
         Vector2 worldPos = e.pressEventCamera.ScreenToWorldPoint(e.position - m_anchorOffset);
         GetComponent<RectTransform>().position = worldPos;
     }
 }
-

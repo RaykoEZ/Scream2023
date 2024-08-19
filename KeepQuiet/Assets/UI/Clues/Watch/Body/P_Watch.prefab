@@ -769,13 +769,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d851b4eca8837dd438f9ad1b3540e975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_extractEnabled: 0
+  m_toWrite: {fileID: 0}
   m_director: {fileID: 3366647854050035786}
   m_presentTime: {fileID: 11400000, guid: 93e28619c178e864b8ab7e6882b79c76, type: 2}
   m_hoursAgo: {fileID: 11400000, guid: afb0709a313b58543adfee1364e42fc3, type: 2}
   m_yearAgo: {fileID: 11400000, guid: 9a22a2622b95dfc40885cce0117a5885, type: 2}
   m_glitch: {fileID: 11400000, guid: 20eb22285269b5a4ca6f88818c29a3dd, type: 2}
   m_none: {fileID: 11400000, guid: 7efeec751b665cc478ad1fb1e29daf7b, type: 2}
-  m_off: {fileID: 11400000, guid: 637c7db65dcb8794aac91dddb297e9b1, type: 2}
 --- !u!320 &3366647854050035786
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -785,7 +786,7 @@ PlayableDirector:
   m_GameObject: {fileID: 4806512207042711829}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 637c7db65dcb8794aac91dddb297e9b1, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 7efeec751b665cc478ad1fb1e29daf7b, type: 2}
   m_InitialState: 0
   m_WrapMode: 1
   m_DirectorUpdateMode: 1

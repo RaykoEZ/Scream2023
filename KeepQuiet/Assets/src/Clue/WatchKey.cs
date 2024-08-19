@@ -1,15 +1,17 @@
-﻿using System.Collections;
-using Unity.VisualScripting;
+﻿using Curry.Events;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Playables;
 public delegate void OnKeyActivate(WatchDisplay newDisplay);
 // A watch button that pulls out a Hidden Key
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 public class WatchKey : ExternalDraggableObject
 {
-    [Range(0.1f, 10f)]
+    [Range(0.1f, 5f)]
     [SerializeField] float m_unlockTime = default;
-    [SerializeField] bool m_startLocked = default;
+    [SerializeField] bool m_startInteractable = default;
     // Key to change time line of the game
     [SerializeField] WatchDisplay m_keyTrigger = default;
     [SerializeField] PlayableDirector m_director = default;
@@ -20,26 +22,50 @@ public class WatchKey : ExternalDraggableObject
     public event OnKeyActivate OnActivate;
     protected override Transform OnDragParent => transform.parent;
     Coroutine m_unlocking;
-    bool m_inserted = true;
-    public bool Inserted { get { return m_inserted; } set { m_inserted = value; } }
+    bool m_inserted = false;
+    Rigidbody2D Rb2d => GetComponent<Rigidbody2D>();
+    Collider2D Collider => GetComponent<Collider2D>();
+    public bool Inserted { get { return m_inserted; } set { m_inserted = value; } } 
     public WatchDisplay KeyTrigger => m_keyTrigger;
+
     void Start()
     {
-        SetLock(m_startLocked);
-        Inserted = m_startLocked;
+        Inserted = false;
+        SetCollision(false);
+        SetInteractable(m_startInteractable);
     }
-    void SetLock(bool isLocked)
+    public void SetKeyActivity(EventInfo info)
     {
-        Movable = !isLocked;
-        GetComponent<Animator>().cullingMode = isLocked ?
-            AnimatorCullingMode.AlwaysAnimate : 
-            AnimatorCullingMode.CullUpdateTransforms;
+        if (info == null || info.Payload == null) return;
+        if (info.Payload.TryGetValue("isOn", out object result) &&
+            result is bool isOn)
+        {
+            SetCollision(isOn);
+            SetInteractable(isOn);
+        }
     }
-    public override void DropObject(Transform parent, int siblingIndex = 0)
+    public void SetCollision(bool isOn) 
     {
+        Rb2d.bodyType = isOn? 
+            RigidbodyType2D.Dynamic : RigidbodyType2D.Kinematic;
+        Collider.isTrigger = !isOn;
     }
-    public override void ReturnToBeforeDrag()
+    public void SetInteractable(bool isInteractable)
     {
+        Draggable = isInteractable;
+        GetComponent<Animator>().cullingMode = isInteractable ?
+            AnimatorCullingMode.CullUpdateTransforms :
+            AnimatorCullingMode.AlwaysAnimate;
+    }
+    public override void OnBeginDrag(PointerEventData eventData)
+    {
+        SetCollision(true);
+        base.OnBeginDrag(eventData);
+    }
+    public override void OnEndDrag(PointerEventData eventData)
+    {
+        SetCollision(false);
+        FinishDragCallback();
     }
     // Interrupt unlock if trying to unlock
     public void OnPointerRelease() 
@@ -61,13 +87,12 @@ public class WatchKey : ExternalDraggableObject
     {
         m_director?.Play(m_clickButton);
         // lock key transform movement to animator
-        SetLock(true);
+        SetInteractable(false);
     }
     // Key can be pulled out after this trigger
     public void TryUnlockKey()
     {
         if (!m_inserted) return;
-
         if (m_inserted) 
         {
             m_director?.Play(m_down);
@@ -85,8 +110,7 @@ public class WatchKey : ExternalDraggableObject
         yield return new WaitForSeconds((float)m_unlockKey.duration);
         yield return new WaitForEndOfFrame();
         // Don't let animator override transform to allow dragging
-        SetLock(false);
-
+        SetInteractable(true);
     }
     protected override void SetDragPosition(PointerEventData e)
     {
