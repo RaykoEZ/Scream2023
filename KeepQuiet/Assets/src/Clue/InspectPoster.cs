@@ -7,9 +7,16 @@ public class InspectPoster : InspectionDisplay
 {
     [Range(0f, 1f)]
     [SerializeField] float m_scareRate = 0.1f;
+    [SerializeField] WatchKey m_hiddenKey = default;
     int m_numScareTrigger = 0;
+    void Start()
+    {
+        m_hiddenKey?.gameObject?.SetActive(false);
+    }
     public override void Init(SaveData save) 
-    { 
+    {
+        //show hidden key
+        m_hiddenKey?.gameObject?.SetActive(true);
         if (save.Persistent.AriaDead) 
         {
             GlitchState();
@@ -41,6 +48,8 @@ public class InspectPoster : InspectionDisplay
     public override IEnumerator OnExit()
     {
         TryScare();
+        //hide hidden key
+        m_hiddenKey?.gameObject?.SetActive(false);
         yield return new WaitForSeconds(0.05f);
     }
 }

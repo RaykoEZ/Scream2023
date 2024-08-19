@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742dde37021300b42a489ee6473a5654, type: 3}
+  m_Name: file_ariaMem
+  m_EditorClassIdentifier: 
+  m_filename: aria.cogni
+  m_rawContent: '#ref=GenoSandboxDBTK_CIV0014
+
+    COGNITION EXTRACTION FAILED:
+    REJECTED BY SUBJECT
+
+    PLEASE RESTART HANDSHAKE EXTRACTION SEQUENCE WITH CONSENT
+    FROM THE SUBJECT
+
+    Extraction Time: 12/02/E1C6, 1545
+
+    COGNITION EXTRACTION
+    FAILED: REJECTED BY SUBJECT
+
+    PLEASE RESTART HANDSHAKE EXTRACTION SEQUENCE
+    WITH CONSENT FROM THE SUBJECT
+
+    Extraction Time: 12/02/E1C6, 1545
+
+    COGNITION
+    EXTRACTION FAILED: REJECTED BY SUBJECT
+
+    PLEASE RESTART HANDSHAKE EXTRACTION
+    SEQUENCE WITH CONSENT FROM THE SUBJECT
+
+    Extraction Time: 12/02/E1C6, 1545'
