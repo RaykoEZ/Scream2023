@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1414595482891226826}
   - component: {fileID: 5580796140441110615}
   - component: {fileID: 8496014464634887945}
+  - component: {fileID: 4546144896250830065}
   m_Layer: 6
   m_Name: P_ChatRoom
   m_TagString: Untagged
@@ -93,6 +94,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_onThoughtOutCome:
+    m_eventToTrigger: {fileID: 11400000, guid: 10937a8374d7a2640a643a821afb7c07, type: 2}
+  m_thoughtsAvailble:
+    m_eventToTrigger: {fileID: 11400000, guid: b33e7f506d334614ea4e58e6443eab93, type: 2}
   m_thoughtTriggers:
     m_labels:
     - {fileID: 0}
@@ -116,6 +121,39 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4546144896250830065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716939833550515878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08704b06050c8274b9236a998e3dbc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toListen:
+  - m_eventToListen: {fileID: 11400000, guid: 1ce96bf3df4243a4d9d1aef197e51c8b, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5580796140441110615}
+          m_TargetAssemblyTypeName: ChatRoom, Assembly-CSharp
+          m_MethodName: OnOverwriteChat
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - m_eventToListen: {fileID: 11400000, guid: 6911400d04d04804abda9cd8dda1c1b1, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &6910228638723139452
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144.20004, y: -1001.0071}
+  m_AnchoredPosition: {x: 144.20004, y: -735.484}
   m_SizeDelta: {x: 860, y: 0}
   m_Pivot: {x: 0, y: 0.25}
 --- !u!114 &6910228639041388731

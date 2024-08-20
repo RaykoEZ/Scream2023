@@ -7,14 +7,23 @@ using UnityEngine.EventSystems;
 public class ThoughtBubble : DraggableObject
 {
     [SerializeField] protected TextMeshProUGUI m_label = default;
-    [SerializeField] protected CurryGameEventTrigger m_onConsume = default;
+    [SerializeField] protected CurryGameEventListener m_onGlow = default;
+    [SerializeField] protected CurryGameEventListener m_onOutcomeTrigger = default;
     [SerializeField] protected UITriggers m_ui = default;
     protected ThoughtDetail m_detailRef;
     public ThoughtDetail DetailRef => m_detailRef;
     public virtual void Init(ThoughtDetail detail)
     {
+        Draggable = false;
+        m_onGlow?.Init();
+        m_onOutcomeTrigger?.Init();
         m_detailRef = detail;
         m_label.text = detail.Description;
+    }
+    public virtual void Shutdown() 
+    {
+        m_onOutcomeTrigger?.Shutdown();
+        m_onGlow?.Shutdown();
     }
     public override void OnBeginDrag(PointerEventData eventData)
     {
@@ -28,10 +37,23 @@ public class ThoughtBubble : DraggableObject
         EventInfo info = new EventInfo();
         m_ui.DropTrigger?.TriggerEvent(info);
     }
-    public virtual void RemoveBubble()
+    public virtual void OnBubbleGlow(EventInfo info) 
     {
-        m_onConsume?.TriggerEvent(
-            new EventInfo(payload: new Dictionary<string, object> { { "thought", m_detailRef } }));
-        Destroy(gameObject);
+        if (info == null || info.Payload == null) return;
+        //if this thought should be glowing, glow
+        var payload = info.Payload;
+        if(payload.TryGetValue("toDrop", out object result) &&
+            result is List<ThoughtDetail> details &&
+            details.Contains(DetailRef)) 
+        {
+            Draggable = true;
+            GetComponent<Animator>()?.SetBool("Glow", true);
+        }
+    }
+    // when player chose and interacted with another thought bubble
+    public virtual void OnThoughtTriggered() 
+    {
+        Draggable = false;
+        GetComponent<Animator>()?.SetBool("Glow", false);
     }
 }

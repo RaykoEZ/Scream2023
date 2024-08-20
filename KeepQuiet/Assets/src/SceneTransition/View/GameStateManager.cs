@@ -15,7 +15,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
     [SerializeField] protected SnapshotWatch m_watch = default;
-    [SerializeField] protected ThoughtEventHandler m_thoughts = default;
+    [SerializeField] protected ThoughtStateManager m_thoughts = default;
     // view states
     [SerializeField] protected ViewState m_outsideCam = default;
     [SerializeField] protected ViewState m_outsideAria = default;

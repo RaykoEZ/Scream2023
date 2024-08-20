@@ -19,8 +19,9 @@ GameObject:
   - component: {fileID: 4703903792474085523}
   - component: {fileID: 4703903792474085521}
   - component: {fileID: 4703903792474085522}
+  - component: {fileID: 4095887347022646225}
   m_Layer: 6
-  m_Name: Phone_Toggle
+  m_Name: Toggle_Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aed582610573dc4cba7bdfa4317b548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_toggleAnim: {fileID: 4703903792474085512}
+  m_toggleAnim: {fileID: 4095887347022646225}
   m_phoneUI: {fileID: 0}
   m_ring: {fileID: 0}
   m_toggleIcon: {fileID: 4703903792474085514}
@@ -209,6 +210,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4703903792474085523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +233,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4703903792474085525}
-          m_TargetAssemblyTypeName: PlayerCaller, Assembly-CSharp
+        - m_Target: {fileID: 4095887347022646225}
+          m_TargetAssemblyTypeName: ToggleAnimationHandler, Assembly-CSharp
           m_MethodName: ShowToggle
           m_Mode: 1
           m_Arguments:
@@ -242,8 +249,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4703903792474085525}
-          m_TargetAssemblyTypeName: PlayerCaller, Assembly-CSharp
+        - m_Target: {fileID: 4095887347022646225}
+          m_TargetAssemblyTypeName: ToggleAnimationHandler, Assembly-CSharp
           m_MethodName: HideToggle
           m_Mode: 1
           m_Arguments:
@@ -293,6 +300,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4095887347022646225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703903792474085519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f218a58ee76401a4195e3e65fff7179c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toggleAnim: {fileID: 4703903792474085512}
 --- !u!1 &4703903793654005613
 GameObject:
   m_ObjectHideFlags: 0

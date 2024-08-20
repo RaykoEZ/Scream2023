@@ -38,7 +38,7 @@ public class ThoughtDropZone : MonoBehaviour, IDropHandler
         toDrop.OnDragFinish -= PrepareDrop;
         if (toDrop is ThoughtBubble thought) 
         {
-            DropCard(thought);
+            Drop(thought);
             ThoughtDropping?.Invoke(thought);
         }
         else 
@@ -46,11 +46,7 @@ public class ThoughtDropZone : MonoBehaviour, IDropHandler
             toDrop.ReturnToBeforeDrag();
         }
     }
-    public void test(ThoughtBubble bub) 
-    {
-        Debug.Log(bub.name);
-    }
-    protected virtual void DropCard(ThoughtBubble toDrop) 
+    protected virtual void Drop(ThoughtBubble toDrop) 
     {
         int dropIdx = GetDropPosition(toDrop.transform.position.x);
         m_onDropped?.Invoke(toDrop);

@@ -23,7 +23,8 @@ public delegate void OnChatUpdate();
 public class ChatRoom : HideableUI
 {
     [SerializeField] UnityEvent m_onThoughtDialogue = default;
-    [SerializeField] CurryGameEventListener m_overwriteChat = default;
+    [SerializeField] CurryGameEventTrigger m_onThoughtOutCome = default;
+    [SerializeField] CurryGameEventTrigger m_thoughtsAvailble = default;
     [SerializeField] ThoughtTriggerDisplay m_thoughtTriggers = default;
     [SerializeField] Transform m_messageParent = default;
     [SerializeField] ReplyPrompter m_optionPrompt = default;
@@ -41,7 +42,6 @@ public class ChatRoom : HideableUI
     void OnEnable()
     {
         m_optionPrompt.OnChosen += OnReplyChosen;
-        m_overwriteChat?.Init();
     }
     void OnDisable()
     {
@@ -70,6 +70,20 @@ public class ChatRoom : HideableUI
             Overwrite(node);
         }
     }
+    public void OnThoughtOutcome(EventInfo info)
+    {
+        if (info == null || info.Payload == null) return;
+        var payload = info.Payload;
+        if (payload.TryGetValue("thought", out object result) &&
+            result is ThoughtDetail detail)
+        {
+            DialogueNode outcome = m_currentNode.FindThoughtOutcome(detail);
+            // Animate here
+
+            // Start a new message chain
+            OnReplyChosen(outcome);
+        }
+    }
     // Overwrite history and reload chat
     public void Overwrite(DialogueNode newChat) 
     {
@@ -83,6 +97,7 @@ public class ChatRoom : HideableUI
         SetChatHistory(m_history);
         CheckForReplyOptions();
     }
+    // When a thought is dropped into the conversation
     public void OnThoughtDrop(ThoughtBubble thought) 
     {
         if (thought.DetailRef == null) return;
@@ -94,12 +109,17 @@ public class ChatRoom : HideableUI
             // Stop current Dialogue and move to the new dialogue line
             m_chatting = StartCoroutine(InterruptChat(outcome));
             m_thoughtTriggers?.SetThoughtText(thought.DetailRef.Description);
+            m_onThoughtOutCome?.TriggerEvent(
+                new EventInfo(
+                    payload: new Dictionary<string, object> 
+                    {
+                        { "thought", thought}
+                    }));
         }
     }
     public void Shutdown() 
     {
         m_optionPrompt.OnChosen -= OnReplyChosen;
-        m_overwriteChat?.Shutdown();
         ClearChat();
     }
     void ClearChat() 
@@ -218,6 +238,18 @@ public class ChatRoom : HideableUI
         m_chatting = null;
         // prompt option at the end if there is any
         CheckForReplyOptions();
+        // check for any thought that can be dropped
+        CheckForThoughts();
+    }
+    void CheckForThoughts() 
+    {
+        List<ThoughtDetail> result = m_currentNode.ThoughtsToDrop();
+        if (result.Count > 0) 
+        {
+            EventInfo info = new EventInfo(payload:
+                new Dictionary<string, object> { {"toDrop", result } });
+            m_thoughtsAvailble?.TriggerEvent(info);
+        }
     }
     public static void TryTriggerAfterCurrentLine(Dialogue current)
     {

@@ -365,6 +365,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_label: {fileID: 832644211056811920}
+  m_onGlow:
+    m_eventToListen: {fileID: 11400000, guid: b33e7f506d334614ea4e58e6443eab93, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4522162167957446835}
+          m_TargetAssemblyTypeName: ThoughtBubble, Assembly-CSharp
+          m_MethodName: OnBubbleGlow
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  m_onOutcomeTrigger:
+    m_eventToListen: {fileID: 11400000, guid: 10937a8374d7a2640a643a821afb7c07, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4522162167957446835}
+          m_TargetAssemblyTypeName: ThoughtBubble, Assembly-CSharp
+          m_MethodName: OnThoughtTriggered
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   m_onConsume:
     m_eventToTrigger: {fileID: 11400000, guid: 536774ab94c9dd64e880ddb9818c500f, type: 2}
   m_ui:

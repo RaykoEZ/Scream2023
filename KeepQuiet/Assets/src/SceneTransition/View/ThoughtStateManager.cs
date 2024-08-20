@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Holds states of held thoughts
 [Serializable]
-public class ThoughtEventHandler : MonoBehaviour
+public class ThoughtStateManager : MonoBehaviour
 {
     [SerializeField] ThoughtSpawnManager m_spawn = default;
+    [SerializeField] ToggleAnimationHandler m_toggleAnim = default;
     HashSet<ThoughtDetail> m_heldThoughts = new HashSet<ThoughtDetail>();
     public HashSet<ThoughtDetail> HeldThoughts => m_heldThoughts;
     public void Init(HashSet<ThoughtDetail> heldThoughts) 
@@ -30,22 +31,38 @@ public class ThoughtEventHandler : MonoBehaviour
     {
         m_heldThoughts.Remove(toRemove);
     }
+    // When thoughts can be dropped into things
+    public void OnThoughtPrompt(EventInfo info)
+    {
+        if (info == null || info.Payload == null) return;
+        if (info.Payload.TryGetValue("toDrop", out object result) &&
+            result is List<ThoughtDetail> toDrop)
+        {
+            // Check if player has any held thoughts to drop
+            HashSet<ThoughtDetail> check = new HashSet<ThoughtDetail>(m_heldThoughts);
+            check.IntersectWith(toDrop);
+            m_toggleAnim?.AnimateAlertIcon(check.Count > 0);
+        }
+    }
     public void OnConsume(EventInfo info) 
     {
         if (info == null || info.Payload == null) return;
         if(info.Payload.TryGetValue("thought", out object result) && 
-            result is ThoughtDetail detail) 
+            result is ThoughtBubble bubble) 
         {
-            Remove(detail);
+            Remove(bubble.DetailRef);
+            bubble?.Shutdown();
+            Destroy(bubble.gameObject);
         } 
     }
     public void OnObtain(EventInfo info)
     {
         if (info == null || info.Payload == null) return;
         if (info.Payload.TryGetValue("thought", out object result) &&
-            result is ThoughtBubble bubble)
+            result is ThoughtDetail detail)
         {
-            Add(bubble.DetailRef);
+            Add(detail);
+            m_spawn?.SpawnThoughtBubble(detail);
         }
     }
 }
