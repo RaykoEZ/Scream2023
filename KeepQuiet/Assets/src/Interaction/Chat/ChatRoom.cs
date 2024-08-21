@@ -6,26 +6,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-[Serializable]
-public class ThoughtTriggerDisplay 
-{
-    [SerializeField] List<TextMeshProUGUI> m_labels = default;
-    public void SetThoughtText(string thought) 
-    {
-        foreach (var item in m_labels)
-        {
-            item.text = thought;
-        }
-    }
-}
+
 public delegate void OnChatUpdate();
 // Contains and displays text message boxes for a NPC chat
 public class ChatRoom : HideableUI
 {
-    [SerializeField] UnityEvent m_onThoughtDialogue = default;
-    [SerializeField] CurryGameEventTrigger m_onThoughtOutCome = default;
+    [SerializeField] CurryGameEventTrigger m_onThoughtResolved = default;
+    [SerializeField] CurryGameEventTrigger m_onThoughtDisable = default;
     [SerializeField] CurryGameEventTrigger m_thoughtsAvailble = default;
-    [SerializeField] ThoughtTriggerDisplay m_thoughtTriggers = default;
     [SerializeField] Transform m_messageParent = default;
     [SerializeField] ReplyPrompter m_optionPrompt = default;
     [SerializeField] MessageBox m_npcBoxPrefab = default;
@@ -70,20 +58,6 @@ public class ChatRoom : HideableUI
             Overwrite(node);
         }
     }
-    public void OnThoughtOutcome(EventInfo info)
-    {
-        if (info == null || info.Payload == null) return;
-        var payload = info.Payload;
-        if (payload.TryGetValue("thought", out object result) &&
-            result is ThoughtDetail detail)
-        {
-            DialogueNode outcome = m_currentNode.FindThoughtOutcome(detail);
-            // Animate here
-
-            // Start a new message chain
-            OnReplyChosen(outcome);
-        }
-    }
     // Overwrite history and reload chat
     public void Overwrite(DialogueNode newChat) 
     {
@@ -107,14 +81,7 @@ public class ChatRoom : HideableUI
         {
             thought.ReturnToBeforeDrag();
             // Stop current Dialogue and move to the new dialogue line
-            m_chatting = StartCoroutine(InterruptChat(outcome));
-            m_thoughtTriggers?.SetThoughtText(thought.DetailRef.Description);
-            m_onThoughtOutCome?.TriggerEvent(
-                new EventInfo(
-                    payload: new Dictionary<string, object> 
-                    {
-                        { "thought", thought}
-                    }));
+            StartCoroutine(ResolveThought(outcome, thought));
         }
     }
     public void Shutdown() 
@@ -186,6 +153,8 @@ public class ChatRoom : HideableUI
     // and continue until the end of the dialogue tree
     public void StartChat() 
     {
+        // disable all available thoughtbubbles
+        m_onThoughtDisable?.TriggerEvent();
         if (m_isDirty) 
         {
             m_isDirty = false;
@@ -198,14 +167,20 @@ public class ChatRoom : HideableUI
             CheckForReplyOptions();
         }
     }
-    IEnumerator InterruptChat(DialogueNode outcome) 
+    // Interrupt chat with
+    IEnumerator ResolveThought(DialogueNode outcome, ThoughtBubble thought) 
     {
         m_optionPrompt?.HideAll();
         // Stop current Dialogue and move to the new dialogue line
         UpdateCurrentDialogue(outcome);
         // Wat until previous chat finish resolving last line
         yield return new WaitUntil(() => m_chatting == null);
-        m_onThoughtDialogue?.Invoke();
+        // trigger thought 
+        m_onThoughtResolved?.TriggerEvent( new EventInfo(
+        payload: new Dictionary<string, object>
+        {
+            { "thought", thought}
+        }));
         yield return new WaitForSeconds(2f);
         StartChat();
     }
@@ -235,11 +210,12 @@ public class ChatRoom : HideableUI
             TryTriggerAfterCurrentLine(line);
         }
         yield return new WaitForSeconds(0.5f);
-        m_chatting = null;
         // prompt option at the end if there is any
         CheckForReplyOptions();
         // check for any thought that can be dropped
         CheckForThoughts();
+        m_chatting = null;
+
     }
     void CheckForThoughts() 
     {

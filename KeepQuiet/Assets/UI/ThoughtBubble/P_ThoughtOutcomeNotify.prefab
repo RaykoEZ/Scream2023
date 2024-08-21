@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 5023515501252092456}
   - component: {fileID: 4748660915690350624}
   - component: {fileID: 7995405433689438164}
+  - component: {fileID: 4448029278359973568}
   - component: {fileID: 5355122698789602268}
   m_Layer: 0
   m_Name: P_ThoughtOutcomeNotify
@@ -216,6 +217,8 @@ PlayableDirector:
     value: {fileID: 7995405433689438164}
   - key: {fileID: -6136698769541174406, guid: 03aae7e5bc79e6345a385b091bc41449, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 4454802397115965250, guid: 03aae7e5bc79e6345a385b091bc41449, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 88dee36e6200018409ddc66f88d1aea2: {fileID: 7935079638895427533}
@@ -239,6 +242,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4448029278359973568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6749278252488073549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5946f3c9d7f57b349894dd0625b19855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_thoughtTriggers:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4748660915690350624}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 982abd369005f2d4eaad93dc92a324e7, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Playables.PlayableAsset,
+            UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_labels:
+  - {fileID: 4202768020388624610}
+  - {fileID: 9174338988248279430}
+  - {fileID: 2200414617780118065}
 --- !u!114 &5355122698789602268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,14 +291,13 @@ MonoBehaviour:
     m_responses:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4748660915690350624}
-          m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
-          m_MethodName: Play
-          m_Mode: 2
+        - m_Target: {fileID: 4448029278359973568}
+          m_TargetAssemblyTypeName: ThoughtTriggerDisplay, Assembly-CSharp
+          m_MethodName: OnThoughtOutcome
+          m_Mode: 0
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 982abd369005f2d4eaad93dc92a324e7, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Playables.PlayableAsset,
-              UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

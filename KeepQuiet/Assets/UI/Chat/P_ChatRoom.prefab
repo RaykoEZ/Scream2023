@@ -79,31 +79,10 @@ MonoBehaviour:
   m_onHideEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_onThoughtDialogue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_onThoughtOutCome:
+  m_onThoughtResolved:
     m_eventToTrigger: {fileID: 11400000, guid: 10937a8374d7a2640a643a821afb7c07, type: 2}
   m_thoughtsAvailble:
     m_eventToTrigger: {fileID: 11400000, guid: b33e7f506d334614ea4e58e6443eab93, type: 2}
-  m_thoughtTriggers:
-    m_labels:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
   m_messageParent: {fileID: 6910228639041388709}
   m_optionPrompt: {fileID: 0}
   m_npcBoxPrefab: {fileID: 710849735624650233, guid: c8054087698e7434294090a0ccfb1b72, type: 3}
@@ -150,10 +129,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - m_eventToListen: {fileID: 11400000, guid: 6911400d04d04804abda9cd8dda1c1b1, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &6910228638723139452
 GameObject:
   m_ObjectHideFlags: 0
