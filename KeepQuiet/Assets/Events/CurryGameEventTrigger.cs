@@ -16,7 +16,4 @@ namespace Curry.Events
             m_eventToTrigger?.Broadcast(new EventInfo());
         }
     }
-
 }
-
-

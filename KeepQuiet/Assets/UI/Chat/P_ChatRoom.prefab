@@ -81,6 +81,8 @@ MonoBehaviour:
       m_Calls: []
   m_onThoughtResolved:
     m_eventToTrigger: {fileID: 11400000, guid: 10937a8374d7a2640a643a821afb7c07, type: 2}
+  m_onThoughtDisable:
+    m_eventToTrigger: {fileID: 11400000, guid: 87f5b0e69b56fed40b7d3a83bd4117a2, type: 2}
   m_thoughtsAvailble:
     m_eventToTrigger: {fileID: 11400000, guid: b33e7f506d334614ea4e58e6443eab93, type: 2}
   m_messageParent: {fileID: 6910228639041388709}

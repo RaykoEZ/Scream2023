@@ -61,6 +61,7 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
     }
     public DialogueNode FindThoughtOutcome(ThoughtDetail detail) 
     {
+        if (detail == null) return null;
         var result = m_thoughtOutcomes.Find(i => i.ToDrop.Id == detail.Id);
         return result.Outcome;
     }

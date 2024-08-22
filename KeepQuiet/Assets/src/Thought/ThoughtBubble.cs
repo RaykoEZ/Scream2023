@@ -12,9 +12,10 @@ public class ThoughtBubble : DraggableObject
     [SerializeField] protected UITriggers m_ui = default;
     protected ThoughtDetail m_detailRef;
     public ThoughtDetail DetailRef => m_detailRef;
+    protected override Transform OnDragParent => transform.parent.parent;
+
     public virtual void Init(ThoughtDetail detail)
     {
-        Draggable = false;
         m_onGlow?.Init();
         m_onOutcomeTrigger?.Init();
         m_detailRef = detail;
@@ -28,13 +29,15 @@ public class ThoughtBubble : DraggableObject
     public override void OnBeginDrag(PointerEventData eventData)
     {
         base.OnBeginDrag(eventData);
-        EventInfo info = new EventInfo();
+        var payload = new Dictionary<string, object> { { "thought", this } };
+        EventInfo info = new EventInfo(payload);
         m_ui.DragTrigger?.TriggerEvent(info);
     }
     public override void DropObject(Transform parent, int siblingIndex = 0)
     {
         base.DropObject(parent, siblingIndex);
-        EventInfo info = new EventInfo();
+        var payload = new Dictionary<string, object> { { "thought", this } };
+        EventInfo info = new EventInfo(payload);
         m_ui.DropTrigger?.TriggerEvent(info);
     }
     public virtual void OnBubbleGlow(EventInfo info) 
@@ -46,14 +49,12 @@ public class ThoughtBubble : DraggableObject
             result is List<ThoughtDetail> details &&
             details.Contains(DetailRef)) 
         {
-            Draggable = true;
             GetComponent<Animator>()?.SetBool("Glow", true);
         }
     }
     // when player chose and interacted with another thought bubble
     public virtual void OnThoughtTriggered() 
     {
-        Draggable = false;
         GetComponent<Animator>()?.SetBool("Glow", false);
     }
 }

@@ -19,4 +19,9 @@ public class ToggleAnimationHandler : MonoBehaviour
         // Animate Toggle Icon here
         m_toggleAnim.SetBool("Alert", isOn);
     }
+    public void AlertOff()
+    {
+        // Animate Toggle Icon here
+        m_toggleAnim.SetBool("Alert", false);
+    }
 }

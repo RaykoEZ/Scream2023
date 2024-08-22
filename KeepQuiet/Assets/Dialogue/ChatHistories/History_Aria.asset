@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_username: Aria
   m_history:
-    m_lastDialogue: {fileID: 11400000, guid: ff64d871b325a58428d4e5d3e619d002, type: 2}
-    m_log: []
+    m_lastDialogue: {fileID: 0}

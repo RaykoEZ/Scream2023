@@ -74,12 +74,13 @@ public class ChatRoom : HideableUI
     // When a thought is dropped into the conversation
     public void OnThoughtDrop(ThoughtBubble thought) 
     {
-        if (thought.DetailRef == null) return;
+        DialogueNode outcome = m_currentNode?.FindThoughtOutcome(thought.DetailRef);
+        bool reject = thought == null || thought.DetailRef == null || outcome == null;
+        // if dropped thought was not valid, cancel and return thought back
+        if (reject) { return; }
         // Find a dialogue outcome from dropping the thought
-        DialogueNode outcome = m_currentNode.FindThoughtOutcome(thought.DetailRef);
-        if (outcome != null) 
+        else if (outcome != null) 
         {
-            thought.ReturnToBeforeDrag();
             // Stop current Dialogue and move to the new dialogue line
             StartCoroutine(ResolveThought(outcome, thought));
         }
@@ -102,6 +103,7 @@ public class ChatRoom : HideableUI
     }
     void CheckForReplyOptions()
     {
+        if (m_currentNode == null) return;
         var options = m_currentNode.Options;
         if (options.Count > 0)
         {
@@ -215,12 +217,12 @@ public class ChatRoom : HideableUI
         // check for any thought that can be dropped
         CheckForThoughts();
         m_chatting = null;
-
     }
     void CheckForThoughts() 
     {
-        List<ThoughtDetail> result = m_currentNode.ThoughtsToDrop();
-        if (result.Count > 0) 
+        List<ThoughtDetail> result = m_currentNode?.ThoughtsToDrop();
+        if (result != null && 
+            result.Count > 0) 
         {
             EventInfo info = new EventInfo(payload:
                 new Dictionary<string, object> { {"toDrop", result } });

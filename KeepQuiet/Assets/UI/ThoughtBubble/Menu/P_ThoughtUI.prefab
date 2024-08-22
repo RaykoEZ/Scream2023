@@ -183,23 +183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnRef: {fileID: 4522162167957446835, guid: 045e4d3f6d554cd4ab1d77690fcbfc4c, type: 3}
   m_spawner: {fileID: 6670728044096788209}
-  m_obtainThought:
-    m_eventToListen: {fileID: 11400000, guid: f2c6edfa5fffdeb4988290af94caa04d, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6670728044096788214}
-          m_TargetAssemblyTypeName: ThoughtManager, Assembly-CSharp
-          m_MethodName: OnThoughtObtain
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &6670728044096788209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5361a3db5b8444b8a7e25110d2ba24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnRange: {fileID: 6670728044096788208}
 --- !u!61 &6670728044096788208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -237,7 +219,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1500, y: 780}
+  m_Size: {x: 1200, y: 660}
   m_EdgeRadius: 0
 --- !u!1 &6670728044379112807
 GameObject:
@@ -270,6 +252,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3432257263724777469}
   - {fileID: 6670728044579003039}
   - {fileID: 6670728044096788220}
   m_Father: {fileID: 0}
@@ -507,52 +490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6570319bb748743aaf97dcc0b2500b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_thoughtDragBegin:
-    m_eventToListen: {fileID: 11400000, guid: 46984d2e901d65e408d81051b56c5fa3, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6670728044579003030}
-          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
-          m_MethodName: Show
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 6670728044096788221}
-          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
-          m_MethodName: Hide
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  m_thoughtDragEnd:
-    m_eventToListen: {fileID: 11400000, guid: 841afeeea70a239448bc092d70af0c60, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6670728044579003030}
-          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
-          m_MethodName: Hide
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   m_onDropped:
     m_PersistentCalls:
       m_Calls:
@@ -586,3 +523,147 @@ MonoBehaviour:
   m_onHideEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &8854981277789282609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3432257263724777469}
+  - component: {fileID: 406945710100545435}
+  - component: {fileID: 4357189169386194466}
+  m_Layer: 5
+  m_Name: UIHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3432257263724777469
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854981277789282609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6670728044379112804}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &406945710100545435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854981277789282609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08704b06050c8274b9236a998e3dbc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toListen:
+  - m_eventToListen: {fileID: 11400000, guid: 46984d2e901d65e408d81051b56c5fa3, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6670728044579003030}
+          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
+          m_MethodName: Show
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6670728044096788221}
+          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
+          m_MethodName: Hide
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4357189169386194466}
+          m_TargetAssemblyTypeName: DragCancelHandler, Assembly-CSharp
+          m_MethodName: EnableCancel
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - m_eventToListen: {fileID: 11400000, guid: 841afeeea70a239448bc092d70af0c60, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6670728044579003030}
+          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
+          m_MethodName: Hide
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6670728044379112826}
+          m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
+          m_MethodName: Hide
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4357189169386194466}
+          m_TargetAssemblyTypeName: DragCancelHandler, Assembly-CSharp
+          m_MethodName: DisableCancel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &4357189169386194466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854981277789282609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288ddf8f1439681469c377a31ecb3f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_cancelDragAction: {fileID: 2291439758075416680, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}

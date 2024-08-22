@@ -2968,6 +2968,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toggle_Phone
       objectReference: {fileID: 0}
+    - target: {fileID: 4703903792474085521, guid: 7aea8e2277cbcc6429ad7b6f810d5c67, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703903792474085521, guid: 7aea8e2277cbcc6429ad7b6f810d5c67, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -453930281
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703903792474085521, guid: 7aea8e2277cbcc6429ad7b6f810d5c67, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aea8e2277cbcc6429ad7b6f810d5c67, type: 3}

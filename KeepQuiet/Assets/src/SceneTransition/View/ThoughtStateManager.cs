@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 // Holds states of held thoughts
-[Serializable]
 public class ThoughtStateManager : MonoBehaviour
 {
     [SerializeField] ThoughtSpawnManager m_spawn = default;
     [SerializeField] ToggleAnimationHandler m_toggleAnim = default;
     HashSet<ThoughtDetail> m_heldThoughts = new HashSet<ThoughtDetail>();
     public HashSet<ThoughtDetail> HeldThoughts => m_heldThoughts;
+    // currently dragging bubble
+    ThoughtBubble m_dragging;
     public void Init(HashSet<ThoughtDetail> heldThoughts) 
     {
         if (heldThoughts != null) 
@@ -63,6 +64,7 @@ public class ThoughtStateManager : MonoBehaviour
         {
             Add(detail);
             m_spawn?.SpawnThoughtBubble(detail);
+            m_toggleAnim?.AnimateAlertIcon(true);
         }
     }
 }

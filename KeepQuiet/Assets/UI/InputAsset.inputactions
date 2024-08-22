@@ -60,12 +60,12 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ReturnTool",
+                    "name": "RightClick",
                     "type": "Button",
                     "id": "19d05403-57de-4eff-a2f9-cccace9c74f4",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -448,10 +448,10 @@
                     "name": "",
                     "id": "4c191405-5738-4d4b-a523-c6a301dbf754",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "ReturnTool",
+                    "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
