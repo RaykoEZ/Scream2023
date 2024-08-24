@@ -39,7 +39,6 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
     [SerializeField] List<Dialogue> m_dialogues = default;
     [SerializeField] List<ChatOption> m_replyOptions = default;
     [SerializeField] List<ThoughtDropResult> m_thoughtOutcomes = default;
-    [SerializeField] ChatOptionOverride m_hiddenOptions = default;
     public static readonly string s_player = "You";
     public static readonly string s_aria = "Aria";
     public static readonly string s_alm = "Al.";
@@ -49,7 +48,6 @@ public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
     // Leaves for possible next Dialogue Nodes and their reply text
     // If option count > 1, player chooses a reply
     public IReadOnlyList<ChatOption> Options => m_replyOptions;
-    public ChatOptionOverride HiddenOptions { get => m_hiddenOptions; }
     public List<ThoughtDetail> ThoughtsToDrop() 
     {
         var ret = new List<ThoughtDetail>();

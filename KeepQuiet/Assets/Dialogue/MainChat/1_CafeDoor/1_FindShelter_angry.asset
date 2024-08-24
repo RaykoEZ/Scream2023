@@ -19,6 +19,7 @@ MonoBehaviour:
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
     Content: Where are you right now?
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 3
@@ -26,28 +27,15 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: On the streets, near a lit bar, nothing's open, no food...all wet
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.3
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: and have a jerk on the phone
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.2
     TypingDelay: 0.4
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: No wonder why people are yapping about you guys.
+    Content: No wonder those riots happened.
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.3
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: '"A bunch of emotionless drones."'
-    TriggerAfterThisLine: {fileID: 11400000, guid: 1cfd178a18ab89341a09885230f3b8b8, type: 2}
   m_replyOptions: []
-  m_droppableThoughts: []
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes: []

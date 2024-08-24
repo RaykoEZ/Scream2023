@@ -18,10 +18,7 @@ MonoBehaviour:
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'Whereabouts are you?
-
-
-      You should be near some shelter.'
+    Content: Whereabouts are you?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
@@ -29,11 +26,10 @@ MonoBehaviour:
     TypingDelay: 0.8
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'Been wandering around the streets all around.
+    Content: 'Been wandering around.
 
 
-      Everything''s
-      closed.'
+      Everything''s closed.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
@@ -41,20 +37,8 @@ MonoBehaviour:
     TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: There's the cafe with lights on, but the door's locked
+    Content: At a cafe right now
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.8
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'Couldn''t you guys have give me a roof on my head?
-
-      No wonder
-      why people are complaining about you bureaucrats lately.'
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 11400000, guid: 1cfd178a18ab89341a09885230f3b8b8, type: 2}
   m_replyOptions: []
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

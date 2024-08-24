@@ -20,15 +20,7 @@ MonoBehaviour:
     SentPrefabRef: {fileID: 0}
     Content: "We're in a virtual space, your vitals are in good care \n\nno need
       to worry about food :)"
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.1
-    TypingDelay: 0.2
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'not even a humble glass of virtual soda?
-
-'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.1
@@ -36,6 +28,7 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: OTZ
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes: []

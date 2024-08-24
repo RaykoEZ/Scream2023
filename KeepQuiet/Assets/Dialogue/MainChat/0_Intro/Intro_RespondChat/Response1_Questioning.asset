@@ -38,4 +38,4 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: 972710f115ff86b4687edf40f04d1cdb, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 11400000, guid: 1c84f3ecb86045f458b4c008cd35cf12, type: 2}
+  m_hiddenOptions: {fileID: 0}

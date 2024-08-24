@@ -19,6 +19,7 @@ MonoBehaviour:
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
     Content: Hello, who is this?
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 3
@@ -29,6 +30,7 @@ MonoBehaviour:
 
 
       I don''t see anyone else here'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.3
@@ -36,10 +38,11 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: You guys put me in here, dont you have my files?
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: <i>*Continue questioning.</i>
     m_outcome: {fileID: 11400000, guid: aca0aed420a8b534992c49accf28f2e0, type: 2}
-    m_triggerAfterChoice:
-      m_eventToTrigger: {fileID: 0}
-  m_hiddenOptions: {fileID: 11400000, guid: 70f1711fc535d7c4d864e2329fa72366, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes: []
+  m_hiddenOptions: {fileID: 0}

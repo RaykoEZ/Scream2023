@@ -27,7 +27,7 @@ MonoBehaviour:
     TypingDelay: 0.7
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: I don't know what you mean but I have no idea.
+    Content: I have no idea.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
@@ -35,11 +35,7 @@ MonoBehaviour:
     TypingDelay: 1.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'To be honest, I''m not sure what I got myself into.
-
-
-      I have
-      no idea what you''re talking about.'
+    Content: To be honest, I'm not sure what I got myself into.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
@@ -47,4 +43,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

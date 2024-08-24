@@ -14,22 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dialogues:
   - HasAudio: 1
-    DelayBeforeTyping: 0
-    TypingDelay: 0.05
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: Okay, let's begin.
-    TriggerAfterThisLine: {fileID: 11400000, guid: f6b51fa36ff28ea49824b5823b7678a7, type: 2}
-  - HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.1
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
-    Content: 'Can we at least meet somewhere comfortable?
+    Content: 'Can I come inside now?
 
 
-      It''s raining out
-      here and I might catch a cold'
+      It''s raining out here and I might catch
+      a cold'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - HasAudio: 1
     DelayBeforeTyping: 0.1
@@ -37,6 +31,7 @@ MonoBehaviour:
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: virtually
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 11400000, guid: f6b51fa36ff28ea49824b5823b7678a7, type: 2}
   m_replyOptions:
   - m_description: Where are you right now?
@@ -45,4 +40,4 @@ MonoBehaviour:
   - m_description: You'll be fine.
     m_outcome: {fileID: 11400000, guid: 0228afbd2e9628b499f91a7420ef8a6b, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes: []
