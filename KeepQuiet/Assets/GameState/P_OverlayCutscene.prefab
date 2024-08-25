@@ -1150,6 +1150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Ending
       objectReference: {fileID: 0}
+    - target: {fileID: 2772443947424165771, guid: 53513102e8cefa141b9dffa70f0deee3, type: 3}
+      propertyPath: m_director
+      value: 
+      objectReference: {fileID: 6446043414805001120}
     - target: {fileID: 7520983765181559012, guid: 53513102e8cefa141b9dffa70f0deee3, type: 3}
       propertyPath: m_PlayableAsset
       value: 

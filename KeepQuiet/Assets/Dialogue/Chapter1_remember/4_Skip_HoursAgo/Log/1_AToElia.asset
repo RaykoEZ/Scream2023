@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: 1_AToElia
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: Hey, she's gonna be late for ~30 mins
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1.5
+    TypingDelay: 0.3
+    WhoSpoke: F
+    SentPrefabRef: {fileID: 0}
+    Content: "Of course she is. It's only been a week \nsince she left the hospital."
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.2
+    WhoSpoke: F
+    SentPrefabRef: {fileID: 0}
+    Content: She needs to catch up and it's not going to be easy.
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.2
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: True, everyone's gotten used to the Mk. II, the OG has some big shoes
+      to fill
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 2
+    TypingDelay: 0.2
+    WhoSpoke: F
+    SentPrefabRef: {fileID: 0}
+    Content: She will be fine, I will make sure of it.
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 1.5
+    TypingDelay: 0.5
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: Woah, Mr. Hero's got her back, guess I can slack off a little now
+    TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.7
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: 'jk btw
+
+
+      Don''t push yourself too hard tho, we are a team
+
+
+      and
+      we help one another when the time comes'
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_hiddenOptions: {fileID: 0}
