@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
 public class ChatHistory
 {
-    [SerializeField] DialogueNode m_lastDialogue;
-    public DialogueNode LastDialogue => m_lastDialogue;
+    [SerializeField] List<DialogueNode> m_chatLog = default;
+    public DialogueNode LastDialogue => m_chatLog.Last();
+    public List<DialogueNode> ChatLog { get => m_chatLog; }
+
     public ChatHistory() 
     {
-        m_lastDialogue = null;
+        m_chatLog = null;
     }
     public ChatHistory(ChatHistory copy) 
     {
-        m_lastDialogue = copy.m_lastDialogue;
+        m_chatLog = copy.m_chatLog;
     }
     // Clear log and overwrite all content
     public void OverwriteLog(DialogueNode lastDialogue) 
     {
-        m_lastDialogue = lastDialogue;
+        m_chatLog.Clear();
+        Append(lastDialogue);
     }
     public void Append(DialogueNode append) 
     {
-        m_lastDialogue = append;
+        m_chatLog.Add(append);
     }
 }

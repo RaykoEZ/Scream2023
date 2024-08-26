@@ -9,6 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6fa2d92fc1b3f34da284357edf89c3b, type: 3}
-  m_Name: 0_Unknown_DeliverKey
+  m_Script: {fileID: 11500000, guid: 5571d07a5804bbe428d710d512def0c4, type: 3}
+  m_Name: History_Aria
   m_EditorClassIdentifier: 
+  m_username: Aria
+  m_history:
+    m_chatLog:
+    - {fileID: 11400000, guid: 289382b7e04b7914c8072fa5168be493, type: 2}

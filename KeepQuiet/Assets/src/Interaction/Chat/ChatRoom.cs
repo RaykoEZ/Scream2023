@@ -1,4 +1,5 @@
-﻿using Curry.Events;
+﻿using B83.Win32;
+using Curry.Events;
 using Curry.Explore;
 using System;
 using System.Collections;
@@ -37,11 +38,24 @@ public class ChatRoom : HideableUI
     }
     public void SetChatHistory(ChatHistory history)
     {
-        if(m_history != history) 
+        if (m_history != history) 
         {
+            // remove all old messages
             ClearChat();
+            m_history = history;
+            IReadOnlyList<Dialogue> lines;
+            MessageBox msg;
+            // Display new chat history messages
+            foreach (DialogueNode log in m_history.ChatLog)
+            {
+                lines = log.Dialogues;
+                foreach(var l in lines) 
+                {
+                    msg = PrepareMessage(l);
+                    msg.Show();
+                }
+            }
         }
-        m_history = history;
         m_currentNode = m_history.LastDialogue;
     }
     public void SetPaused(bool paused)
@@ -92,6 +106,7 @@ public class ChatRoom : HideableUI
     }
     void ClearChat() 
     {
+        m_optionPrompt?.HideAll();
         List<MessageBox> toDelete = new List<MessageBox>(m_spawnedMessages);
         foreach (var item in toDelete)
         {
@@ -119,7 +134,7 @@ public class ChatRoom : HideableUI
     void OnReplyChosen(DialogueNode chosen)
     {
         if (chosen == null) return;
-        UpdateCurrentDialogue(chosen);
+        NewCurrentDialogue(chosen);
         StartChat();
     }
     // Display a new message
@@ -145,7 +160,7 @@ public class ChatRoom : HideableUI
         return instance;
     }
     // Append a dialogue to history
-    public void UpdateCurrentDialogue(DialogueNode result) 
+    public void NewCurrentDialogue(DialogueNode result) 
     {
         m_currentNode = result;
         m_history.Append(m_currentNode);
@@ -174,7 +189,7 @@ public class ChatRoom : HideableUI
     {
         m_optionPrompt?.HideAll();
         // Stop current Dialogue and move to the new dialogue line
-        UpdateCurrentDialogue(outcome);
+        NewCurrentDialogue(outcome);
         // Wat until previous chat finish resolving last line
         yield return new WaitUntil(() => m_chatting == null);
         // trigger thought 

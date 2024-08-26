@@ -7,16 +7,7 @@ public class ChatManager : HideableUI
 {
     [SerializeField] ChatRoom m_chatRoom = default;
     [SerializeField] ChatHistoryCollection m_histories = default;
-    [SerializeField] CurryGameEventListener m_onGameSetup = default;
     public event OnChatUpdate OnEnd;
-    void OnEnable()
-    {
-        m_onGameSetup?.Init();
-    }
-    void OnDisable()
-    {
-        m_onGameSetup?.Shutdown();
-    }
     private void OnDestroy()
     {
         Shutdown();
@@ -24,12 +15,7 @@ public class ChatManager : HideableUI
     public void Shutdown()
     {
         // shutdown chat room
-        m_chatRoom.Shutdown();
-    }
-    
-    public void SetupChatHistory(EventInfo info) 
-    { 
-    
+        m_chatRoom?.Shutdown();
     }
     // load chat of the person in question
     public void BeginChat(string username)
@@ -57,8 +43,7 @@ public class ChatManager : HideableUI
         // instantiate history logs and store them here for record keeping if needed
         m_chatRoom.SetChatHistory(result);
         m_chatRoom.Hide();
-        // Set current dialogue to the incoming dialogue
-        m_chatRoom.UpdateCurrentDialogue(newDialogue);
+        m_chatRoom.NewCurrentDialogue(newDialogue);
     }
     void EndDialogue()
     {
