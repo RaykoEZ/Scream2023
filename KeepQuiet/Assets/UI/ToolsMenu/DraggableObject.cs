@@ -13,19 +13,33 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
         public CurryGameEventTrigger DragTrigger { get { return m_cardDragTrigger; } }
         public CurryGameEventTrigger DropTrigger { get { return m_cardDropTrigger; } }
     }
+    [SerializeField] bool m_draggable = default;
     public delegate void OnDragUpdate(DraggableObject dragged);
     public event OnDragUpdate OnDragFinish;
     public event OnDragUpdate OnDragBegin;
     protected Vector2 m_anchorOffset = Vector2.zero;
     Transform m_origin;
     int m_originIndex;
-    bool m_draggable = true;
-    public virtual bool Draggable { get => m_draggable; set => m_draggable = value; }
+
+    public virtual bool GetDraggable()
+    {
+        return m_draggable;
+    }
+    protected virtual void SetDraggable(bool value)
+    {
+        m_draggable = value;
+        GetComponent<CanvasGroup>().blocksRaycasts = value;
+    }
+
     protected virtual Transform OnDragParent => transform.parent;
     // Move one above original parent when dragging the object 
     protected virtual void OnEnable()
     {
-        GetComponent<CanvasGroup>().blocksRaycasts = Draggable;
+        SetDraggable(m_draggable);
+    }
+    protected virtual void OnDisable() 
+    {
+        SetDraggable(false);
     }
     public virtual void SetDropOrigin(Transform parent, int siblingIndex = 0)
     {
@@ -52,7 +66,7 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     public virtual void OnDrag(PointerEventData eventData)
     {
         // Do not move when drag is held, if the object needs to do something else
-        if (Draggable)
+        if (GetDraggable())
         {
             SetDragPosition(eventData);
         }
@@ -73,7 +87,7 @@ public class DraggableObject : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     }
     protected void FinishDragCallback()
     {
-        GetComponent<CanvasGroup>().blocksRaycasts = Draggable;
+        GetComponent<CanvasGroup>().blocksRaycasts = GetDraggable();
         OnDragFinish?.Invoke(this);
     }
     protected virtual void SetDragPosition(PointerEventData e)

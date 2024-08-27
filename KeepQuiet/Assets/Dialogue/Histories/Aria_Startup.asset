@@ -12,25 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
   m_Name: Aria_Startup
   m_EditorClassIdentifier: 
-  m_dialogues:
-  - HasAudio: 0
-    DelayBeforeTyping: 0
-    TypingDelay: 0
-    WhoSpoke: 
-    SentPrefabRef: {fileID: 0}
-    Content: 
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 0
-    DelayBeforeTyping: 0
-    TypingDelay: 0
-    WhoSpoke: 
-    SentPrefabRef: {fileID: 0}
-    Content: dd
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions:
-  - m_description: s
-    m_outcome: {fileID: 11400000, guid: ff64d871b325a58428d4e5d3e619d002, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
+  m_dialogues: []
+  m_replyOptions: []
   m_thoughtOutcomes: []

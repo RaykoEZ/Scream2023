@@ -52,7 +52,7 @@ public class WatchKey : ExternalDraggableObject
     }
     public void SetInteractable(bool isInteractable)
     {
-        Draggable = isInteractable;
+        SetDraggable(isInteractable);
         GetComponent<Animator>().cullingMode = isInteractable ?
             AnimatorCullingMode.CullUpdateTransforms :
             AnimatorCullingMode.AlwaysAnimate;

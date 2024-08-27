@@ -13,12 +13,6 @@ MonoBehaviour:
   m_Name: Trigger_Ignore_Warn
   m_EditorClassIdentifier: 
   m_monologue:
-  - ShowInstantly: 0
-    Angry: 1
-    PlaySound: {fileID: 0}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: <color=red>We are getting nowhere with this!</color>
   - ShowInstantly: 1
     Angry: 0
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
@@ -27,8 +21,8 @@ MonoBehaviour:
     Content: '<color=yellow>This is your final warning.</color>
 
 
-      <color=red><b>Conduct
-      your questioning.</b></color>'
+      <color=red><b>Please
+      respond, operator.</b></color>'
   m_displayToTrigger:
     m_eventToTrigger: {fileID: 11400000, guid: 47cb956e9ca774e41b5d9151f27d7a64, type: 2}
   m_stateToTrigger:

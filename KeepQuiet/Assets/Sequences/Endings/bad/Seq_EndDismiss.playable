@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
   TextColour: {r: 0.04347825, g: 0.5, b: 0, a: 1}
-  SubtitleText: modver = f_beta1123E1C6.1
+  SubtitleText: modver = vai_f_beta1123E1C6.1
 --- !u!114 &880239820261190107
 MonoBehaviour:
   m_ObjectHideFlags: 1
