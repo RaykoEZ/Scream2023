@@ -1,10 +1,9 @@
 ﻿using Curry.Events;
 using UnityEngine;
-[RequireComponent(typeof(GuideCollection))]
+[RequireComponent(typeof(GuideDisplay))]
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] protected SystemDialoguePlayer m_playback = default;
-    [SerializeField] protected GuideDisplay m_display = default;
     [SerializeField] CurryGameEventListener m_triggerListener = default;
     void Start()
     {
@@ -12,12 +11,12 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void Trigger(EventInfo info)
     {
-        var collection = GetComponent<GuideCollection>();
-        if (collection == null || info == null || collection.IsActive) return;
+        var display = GetComponent<GuideDisplay>();
+        if (display == null || info == null || display.IsActive) return;
         if (info is DialogueInfo dialogue)
         {
-            m_display.ReplaceStep(dialogue.Content);
-            m_playback?.TriggerTutorial(collection, true);
+            display.ReplaceStep(dialogue.Content);
+            m_playback?.TriggerTutorial(display, true);
         }
     }
 }

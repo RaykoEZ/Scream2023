@@ -1,6 +1,4 @@
-﻿using Curry.Events;
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -14,8 +12,6 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] protected Aria m_aria = default;
     [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
-    [SerializeField] protected SnapshotWatch m_watch = default;
-    [SerializeField] protected ThoughtStateManager m_thoughts = default;
     // view states
     [SerializeField] protected ViewState m_outsideCam = default;
     [SerializeField] protected ViewState m_outsideAria = default;
@@ -43,8 +39,6 @@ public class GameStateManager : MonoBehaviour
     void Init(SaveData saved)
     {
         m_currentGameState = saved;
-        m_watch?.Init(saved);
-        m_thoughts?.Init(m_currentGameState.HeldThoughts);
         m_views = new Dictionary<string, ViewState>
         {
             {m_outsideCam.Name, m_outsideCam},

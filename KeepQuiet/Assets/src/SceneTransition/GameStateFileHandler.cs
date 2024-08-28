@@ -18,7 +18,6 @@ public class GameStateFileHandler : MonoBehaviour
     [SerializeField] CurryGameEventListener m_onSaveGame = default;
     [SerializeField] CurryGameEventListener m_onLoadGame = default;
     [SerializeField] CurryGameEventTrigger m_saveLoaded = default;
-    [SerializeField] CurryGameEventTrigger m_syncSave = default;
     SaveData m_current;
     static bool m_saveInProgress = false;
     static string s_gamestatePath = "saves/gamestate.json";
@@ -75,24 +74,27 @@ public class GameStateFileHandler : MonoBehaviour
     // incoming game save data
     public void OnGameSave(EventInfo info) 
     {
+        if (m_saveInProgress) return;
+        m_saveInProgress = true;
         SaveData result = HandleSave(info);
         if (result != null) 
         {
             m_current = result;
+            SaveToFile(m_current);
         }
         // Do on finish callback
-        info.OnFinishedCallback?.Invoke();
+        info?.OnFinishedCallback?.Invoke();
         m_saveInProgress = false;
     }
     public IEnumerator SaveGame(Action onFinish = null) 
     {
+        if (m_saveInProgress) yield break;
         m_saveInProgress = true;
-        m_syncSave?.TriggerEvent();
         // Wait for save and quit when finished
-        yield return new WaitUntil(() => !m_saveInProgress);
         SaveToFile(m_current);
         yield return new WaitForEndOfFrame();
         onFinish?.Invoke();
+        m_saveInProgress = false;
     }
     public void OnQuitGame()
     {

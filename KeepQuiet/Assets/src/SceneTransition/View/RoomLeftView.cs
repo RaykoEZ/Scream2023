@@ -1,44 +1,25 @@
 ﻿using UnityEngine;
-public enum DoorState 
-{ 
-    Open,
-    Closed,
-    SlightlyOpen,
-    NoDoor
-}
+
 public class RoomLeftView : ViewState 
 {
-    [SerializeField] Animator m_doorControl = default;
+    [SerializeField] Animator m_roomControl = default;
     // All switchable clues in this view
     public override string Name => "RoomLeft";
-    private DoorState m_doorState = DoorState.Closed;
-    public DoorState DoorState => m_doorState;
+    public bool IsDoorOn { get; set; }
     protected override void InitStateInternal(SaveData saveData)
     {
         // Set door state
-        ChangeDoorState(DoorState.Closed);
         base.InitStateInternal(saveData);
     }
     // Change door state and trheir visuals
-    public void ChangeDoorState(DoorState newState) 
+    public void UpdateDoorState(bool isOn) 
     {
-        m_doorState = newState;
-        string stateName = "noDoor";
-        switch (m_doorState)
-        {
-            case DoorState.Open:
-                stateName = "open";
-                break;
-            case DoorState.Closed:
-                stateName = "close";
-                break;
-            case DoorState.SlightlyOpen:
-                stateName = "slightlyOpen";
-                break;
-            default:
-                break;
-        }
-        m_doorControl.SetTrigger(stateName);
+        string stateName = isOn ? "close" : "noDoor";
+        m_roomControl.SetTrigger(stateName);
+    }
+    public void SetDeadBody(bool isDead) 
+    {
+        m_roomControl.SetBool("dead",isDead);
     }
     protected override void SetVisual(bool isOn)
     {

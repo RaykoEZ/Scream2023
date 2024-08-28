@@ -1,51 +1,65 @@
 ﻿using System.Collections;
+using System.Drawing;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class SystemDialoguePlayer : MonoBehaviour 
 {
     [SerializeField] Image m_background = default;
-    GuideCollection m_current;
+    [SerializeField] InputActionReference m_nextStep = default;
+    GuideDisplay m_current;
     Coroutine m_transition;
-    public virtual void TriggerTutorial(GuideCollection col)
+    public virtual void TriggerTutorial(GuideDisplay col)
     {
         StartTutorial(col);
     }
-    public virtual void TriggerTutorial(GuideCollection col, bool forceRepeat = false) 
+    public virtual void TriggerTutorial(GuideDisplay col, bool forceRepeat = false) 
     {
         StartTutorial(col, forceRepeat);
     }
-    protected virtual void StartTutorial(GuideCollection col, bool forceRepeat = false) 
+    protected virtual void StartTutorial(GuideDisplay col, bool forceRepeat = false) 
     {
         // Don't repeat the same tutorial in the same session if we don't need to
-        if (col.HasTriggeredOnce && !forceRepeat) return;
+        if ((!col.IsActive || col.HasTriggeredOnce) && !forceRepeat) return;
         m_background.enabled = col.BlockBackground;
         EndCurrent();
         m_current = col;
         m_current?.Begin();
+        m_nextStep.action.performed += NextStep;
     }
     void EndCurrent()
     {
-        m_current?.EndTutorial();
+        m_nextStep.action.performed -= NextStep;
+        m_current?.End();
         StopAllCoroutines();
         m_transition = null;
-        m_current = null;
+        m_background.enabled = false;
     }
-    public void NextStep() 
+    public void NextStep()
     {
-        if (m_current == null || m_transition != null) return;
-        m_transition = StartCoroutine(Next_Internal());       
+        if (m_transition != null) return;
+        m_transition = StartCoroutine(Next_Internal());
+    }
+    public void NextStep(InputAction.CallbackContext c) 
+    {
+        NextStep();
     }
     IEnumerator Next_Internal() 
     {
-        yield return m_current.NextTutorialStep();
         yield return new WaitForEndOfFrame();
-        m_transition = null;
         // End current tutorial if we finished all dialogues
-        if (!m_current.IsActive) 
+        if (m_current.Next())
         {
-            m_current = null;
-            m_background.enabled = false;
+            m_transition = null;
+        }
+        else if(m_current.NextDisplay != null)
+        {
+            StartTutorial(m_current.NextDisplay);
+        }
+        else 
+        {
+            EndCurrent();
         }
     }
 }

@@ -184,7 +184,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6372547512745807461}
-  - component: {fileID: 6372547512745807462}
   - component: {fileID: 4412727677595641847}
   - component: {fileID: 4935899469800603048}
   m_Layer: 5
@@ -217,29 +216,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6372547512745807462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6372547512745807460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60076258b4b5ae408e01144f5f346b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_blockBackground: 0
-  m_pauseTimeAfterSequence: 0.5
-  m_triggerOnShow:
-    m_PersistentCalls:
-      m_Calls: []
-  m_triggerOnFinish:
-    m_PersistentCalls:
-      m_Calls: []
-  m_tutorials:
-  - {fileID: 7707543183353628602}
-  - {fileID: 6026416092571164032}
 --- !u!223 &4412727677595641847
 Canvas:
   m_ObjectHideFlags: 0
@@ -489,16 +465,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa59d92724664c459915c0dce1f39d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_blockBackground: 1
   ScreenHighlight: {fileID: 7712070706748669192}
   m_steps:
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: Welcome back to the Virtual Sandbox.
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: A new <color=orange><b>urgent task</b></color> has been sent to you.
+  m_nextDisplay: {fileID: 6026416092571164032}
   m_display: {fileID: 3996086162607233945}
 --- !u!1 &7180029472151755665
 GameObject:
@@ -582,16 +564,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa59d92724664c459915c0dce1f39d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_blockBackground: 1
   ScreenHighlight: {fileID: 7579684179848225147}
   m_steps:
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: The files you need are at your desk.
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: Clicking here to inspect, good luck on your mission.
+  m_nextDisplay: {fileID: 0}
   m_display: {fileID: 458327205589955881}
 --- !u!1001 &873642850596335976
 PrefabInstance:

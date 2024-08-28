@@ -3,6 +3,7 @@
 // Class to handle UI buttons for moving from one view to another
 public class ViewNavigationHandler : MonoBehaviour 
 {
+    [SerializeField] SaveDataSource m_saveData = default;
     [SerializeField] CanvasGroup m_roomParentNav = default;
     [SerializeField] CanvasGroup m_roomLeft = default;
     [SerializeField] CanvasGroup m_roomRight = default;

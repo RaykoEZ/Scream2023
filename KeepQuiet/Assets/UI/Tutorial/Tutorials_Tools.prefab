@@ -82,12 +82,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa59d92724664c459915c0dce1f39d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_blockBackground: 1
   ScreenHighlight: {fileID: 4368637991434815128}
   m_steps:
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: Your can access your tools to help with your investigations.
+  m_nextDisplay: {fileID: 0}
   m_display: {fileID: 7754466563408511019}
 --- !u!1 &5680943262187842216
 GameObject:
@@ -98,7 +102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5680943262187842219}
-  - component: {fileID: 5680943262187842221}
   - component: {fileID: 5680943262187842218}
   m_Layer: 5
   m_Name: Tutorial_ToolBar
@@ -129,36 +132,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5680943262187842221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5680943262187842216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 0bbeace184f1bb74281ba5701e61f5cd, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5680943262187842218}
-          m_TargetAssemblyTypeName: TutorialDisplay, Assembly-CSharp
-          m_MethodName: Begin
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &5680943262187842218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,12 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa59d92724664c459915c0dce1f39d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_blockBackground: 1
   ScreenHighlight: {fileID: 8609531853427731603}
   m_steps:
   - ShowInstantly: 0
     Angry: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    m_onShow:
+      m_eventToTrigger: {fileID: 0}
     Content: Drag the icons with the cursor to access the tools to assist your investigationl.
+  m_nextDisplay: {fileID: 0}
   m_display: {fileID: 4941927003066501973}
 --- !u!1 &5680943262833493797
 GameObject:
@@ -315,7 +292,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5680943262948579705}
-  - component: {fileID: 5680943262948579704}
   m_Layer: 5
   m_Name: Tutorials_Tools
   m_TagString: Untagged
@@ -346,29 +322,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5680943262948579704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5680943262948579702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60076258b4b5ae408e01144f5f346b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_blockBackground: 0
-  m_pauseTimeAfterSequence: 0.5
-  m_triggerOnShow:
-    m_PersistentCalls:
-      m_Calls: []
-  m_triggerOnFinish:
-    m_PersistentCalls:
-      m_Calls: []
-  m_tutorials:
-  - {fileID: 3389000690025469521}
-  - {fileID: 5680943262187842218}
 --- !u!1001 &5680943262827548436
 PrefabInstance:
   m_ObjectHideFlags: 0

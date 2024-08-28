@@ -30,13 +30,4 @@ public class AriaStateManager : MonoBehaviour
         m_current.CurrentLocation = newPos;
         m_position.MoveTo(newPos, prev);
     }
-    public void TriggerPossessed(bool value)
-    {
-        m_current.IsMissing = value;
-        m_position.TriggerPossessed(value);
-    }
-    public void TriggerSurprise()
-    {
-        m_position.TriggerSurprise();
-    }
 }

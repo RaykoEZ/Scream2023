@@ -203,7 +203,7 @@ MonoBehaviour:
         - m_Target: {fileID: 3112176199438094396}
           m_TargetAssemblyTypeName: GameStateFileHandler, Assembly-CSharp
           m_MethodName: OnQuitGame
-          m_Mode: 0
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -9,13 +9,14 @@ public class SaveDataSource : MonoBehaviour
 {
     public delegate void SaveDataUpdate(SaveData newSave);
     public delegate void SaveDataRequest();
-    // Recieve save data from game state SaveFileHandler
+    // Recieve save data from save file
     [SerializeField] CurryGameEventListener m_onSaveLoaded = default;
+    // load save data from file
     [SerializeField] CurryGameEventTrigger m_loadSaveRequest = default;
-    // Game save needs current state for saving game to file
-    [SerializeField] CurryGameEventListener m_syncSave = default;
     // Save game to file
-    [SerializeField] CurryGameEventTrigger m_saveGameRequest = default;
+    [SerializeField] CurryGameEventTrigger m_onSaveGame = default;
+    // provide save data whenever save data updates
+    [SerializeField] List<Transform> m_constantSubscriberLocations = default;
     static SaveData m_currentGameState = new SaveData();
     // Get New save data 
     public event SaveDataUpdate OnRefresh;
@@ -24,12 +25,10 @@ public class SaveDataSource : MonoBehaviour
     void OnEnable()
     {
         m_onSaveLoaded?.Init();
-        m_syncSave?.Init();
     }
     void OnDisable()
     {
         m_onSaveLoaded?.Shutdown();
-        m_syncSave?.Shutdown();
     }
     // Set this flag if game save data changed and isn't loaded here
     public void RequestLoadSave() 
@@ -43,9 +42,9 @@ public class SaveDataSource : MonoBehaviour
         Dictionary<string, object> payload = new Dictionary<string, object>
         {{"save", CurrentGameState }};
         EventInfo info = new EventInfo(payload, onFinishCallback: onFinish);
-        m_saveGameRequest?.TriggerEvent(info);
+        m_onSaveGame?.TriggerEvent(info);
     }
-    public void SyncSave(EventInfo info) 
+    public void SaveGameToFile(EventInfo info) 
     {
         SaveGameToFile(info.OnFinishedCallback);
     }
@@ -60,6 +59,10 @@ public class SaveDataSource : MonoBehaviour
             m_currentGameState = save;
             // Send new copy to listeners
             OnRefresh?.Invoke(CurrentGameState);
+            foreach (var item in m_constantSubscriberLocations)
+            {
+                item?.GetComponent<ISaveDataSubscriber>()?.Refresh(CurrentGameState);
+            }
             m_loading = false;
         }
     }

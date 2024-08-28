@@ -61,8 +61,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  m_loadSaveRequest:
-    m_eventToTrigger: {fileID: 11400000, guid: 7981b5eb004aced4fa39c5c5186cd9f9, type: 2}
   m_syncSave:
     m_eventToListen: {fileID: 11400000, guid: 0c03fee5eda5ce14c91a5ce0d6678e4f, type: 2}
     m_responses:
@@ -70,7 +68,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8184080981015914391}
           m_TargetAssemblyTypeName: SaveDataSource, Assembly-CSharp
-          m_MethodName: SyncSave
+          m_MethodName: OnRecieve
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -80,5 +78,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  m_saveGameRequest:
+  m_loadSaveRequest:
+    m_eventToTrigger: {fileID: 11400000, guid: 7981b5eb004aced4fa39c5c5186cd9f9, type: 2}
+  m_onSaveGame:
     m_eventToTrigger: {fileID: 11400000, guid: 83b08ae852b1af54eb97c7f524cbe6d4, type: 2}
+  m_constantSubscriberLocations: []

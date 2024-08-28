@@ -13,7 +13,7 @@ public enum WatchDisplay
 }
 
 [RequireComponent(typeof(CanvasGroup))]
-public class SnapshotWatch : ExternalDraggableObject
+public class SnapshotWatch : ExternalDraggableObject, ISaveDataSubscriber
 {
     [SerializeField] PlayableDirector m_director = default; 
     [SerializeField] PlayableAsset m_presentTime = default;
@@ -24,7 +24,7 @@ public class SnapshotWatch : ExternalDraggableObject
     WatchDisplay m_currentDisplay = WatchDisplay.None;
     protected override Transform OnDragParent => transform.parent;
     public WatchDisplay CurrentDisplay { get => m_currentDisplay;}
-    public void Init(SaveData save)
+    public void Refresh(SaveData save)
     {
         SetWatchState(save.WatchState);
     }

@@ -5,31 +5,6 @@ using UnityEngine;
 public class AriaDisplayController 
 {
     [SerializeField] Animator m_cafePoses = default;
-    [SerializeField] Animator m_roomLeftPeek = default;
-    public void TriggerPossessed(bool value)
-    {
-        m_roomLeftPeek.ResetTrigger("possessed");
-        if (value) 
-        {
-            m_roomLeftPeek.SetTrigger("possessed");
-        }
-        else 
-        {
-            m_roomLeftPeek.SetTrigger("exit");
-        }
-    }
-    public void TriggerSurprise()
-    {
-        m_roomLeftPeek.ResetTrigger("surprise");
-        m_roomLeftPeek.SetTrigger("surprise");
-    }
-    public void PeekIntoRoom() 
-    {
-        if (m_roomLeftPeek.isActiveAndEnabled)
-        {
-            m_roomLeftPeek.SetTrigger("peek");
-        }
-    }
     public void MoveTo(AriaPosition newLocation, AriaPosition previous) 
     {
         switch (newLocation)

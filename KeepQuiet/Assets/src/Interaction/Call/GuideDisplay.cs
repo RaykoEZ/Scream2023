@@ -4,13 +4,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 // handles screen animation and text boxes in a tutorial sequence
-public class GuideDisplay : MonoBehaviour 
+public class GuideDisplay : MonoBehaviour
 {
+    [SerializeField] protected bool m_blockBackground = default;
     [SerializeField] protected HideableUI ScreenHighlight;
     [SerializeField] protected List<GuideStep> m_steps = default;
+    [SerializeField] GuideDisplay m_nextDisplay = default;
     [SerializeField] protected DialogueBox m_display = default;
     int m_current = 0;
     bool m_inProgress = false;
+    protected bool isActive = true;
+    protected bool m_hasTriggeredOnce = false;
+    public bool IsActive { get => isActive; private set => isActive = value; }
+    public bool HasTriggeredOnce { get => m_hasTriggeredOnce; }
+    public bool BlockBackground { get => m_blockBackground; }
+    public GuideDisplay NextDisplay { get => m_nextDisplay; }
+
     public void Begin()
     {
         m_current = 0;
@@ -38,7 +47,7 @@ public class GuideDisplay : MonoBehaviour
     }
     public bool Next() 
     {
-        int next = m_current + 1;
+        int next = ++m_current;
         //end this tutorial sequence if current index is at the end
         bool hasStepsLeft = next < m_steps.Count;
         // ignore spamming
@@ -55,7 +64,6 @@ public class GuideDisplay : MonoBehaviour
             {
                 m_display?.Hide();
             }
-            ++m_current;
             m_inProgress = true;
             StartCoroutine(Next_Internal());
         }
@@ -63,11 +71,12 @@ public class GuideDisplay : MonoBehaviour
     }
     public void End() 
     {
-        var step = m_steps[m_current];
         m_display?.Hide();
         ScreenHighlight?.Hide();
         m_current = 0;
+        m_hasTriggeredOnce = true;
         m_inProgress = false;
+        IsActive = false;
     }
     IEnumerator ShowCurrent()
     {
@@ -90,5 +99,9 @@ public class GuideDisplay : MonoBehaviour
         {
             yield return ShowCurrent();
         }
+    }
+    public virtual void Refresh(SaveData save)
+    {
+        IsActive = true;
     }
 }

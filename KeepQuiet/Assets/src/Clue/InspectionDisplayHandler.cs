@@ -1,8 +1,6 @@
-﻿using Curry.Events;
-using Curry.Explore;
+﻿using Curry.Explore;
 using System.Collections;
 using UnityEngine;
-
 // Script to instantiate object when player click to inspect a clue
 public class InspectionDisplayHandler : HideableUI 
 {
@@ -11,7 +9,7 @@ public class InspectionDisplayHandler : HideableUI
     [SerializeField] HideableUITrigger m_inspectUITrigger = default;
     InspectionDisplay m_currentlyInspecting;
     bool m_inspecting = false;
-    public void InspectTarget(Clue toDisplay) 
+    public void InspectTarget(Clue toDisplay)
     {
         var save = m_state.CurrentGameState;
         // Get inspect target
