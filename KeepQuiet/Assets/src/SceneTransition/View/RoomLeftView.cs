@@ -10,23 +10,24 @@ public class RoomLeftView : ViewState
     {
         // Set door state
         base.InitStateInternal(saveData);
+        SetDeadBody(saveData.Persistent.AriaDead);
+    }
+    protected override void SetVisual(bool isOn)
+    {
+        base.SetVisual(isOn);
+        if (isOn) 
+        {
+            UpdateDoorState(isOn);
+        }
     }
     // Change door state and trheir visuals
-    public void UpdateDoorState(bool isOn) 
+    public void UpdateDoorState(bool isDoorOn) 
     {
-        string stateName = isOn ? "close" : "noDoor";
+        string stateName = isDoorOn ? "close" : "noDoor";
         m_roomControl.SetTrigger(stateName);
     }
     public void SetDeadBody(bool isDead) 
     {
-        m_roomControl.SetBool("dead",isDead);
-    }
-    protected override void SetVisual(bool isOn)
-    {
-        if (isOn)
-        {
-            m_nav.ToRoomLeft();
-        }
-        base.SetVisual(isOn);
+        m_roomControl.SetBool("dead", isDead);
     }
 }

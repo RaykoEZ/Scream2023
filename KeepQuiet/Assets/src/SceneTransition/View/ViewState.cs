@@ -1,15 +1,14 @@
-﻿using Curry.Events;
-using System.Collections.Generic;
+﻿using UnityEngine.Events;
 using UnityEngine;
 using UnityEngine.Rendering;
 // Stores info about a view (e.g. currently viewing? visible clues, clue/puzzle states)
 public abstract class ViewState : MonoBehaviour
 {
     [SerializeField] bool m_activeOnStart = default;
-    [SerializeField] protected ViewNavigationHandler m_nav = default;
     [SerializeField] private Transform m_vfx = default;
     [SerializeField] private Transform m_background = default;
     [SerializeField] VolumeProfile m_postProcessVolumeProfile = default;
+    [SerializeField] UnityEvent m_onShow = default;
     public abstract string Name { get; }
     public Transform Vfx => m_vfx;
     public Transform Background => m_background;
@@ -25,6 +24,12 @@ public abstract class ViewState : MonoBehaviour
         {
             ResetState();
         }
+#if UNITY_EDITOR
+        else 
+        {
+            SetVisual(true);
+        }
+#endif    
     }
     public virtual void ResetState() 
     {
@@ -40,5 +45,9 @@ public abstract class ViewState : MonoBehaviour
     {
         Vfx?.gameObject.SetActive(isOn);
         Background?.gameObject.SetActive(isOn);
+        if (isOn) 
+        {
+            m_onShow?.Invoke();
+        }
     }
 }

@@ -9,29 +9,27 @@ public enum AriaPosition
     Outside = 0,
     InsideCafe_Counter = 1,
     InsideCafe_Sit = 2,
+    // Use Closeup for room interaction
+    InRoom = 3,
     None = -1
 }
 [Serializable]
 public class AriaState
 {
     public bool IsMissing;
-    public bool HasPastRunMemory;
     [JsonConverter(typeof(StringEnumConverter))]   
     public AriaPosition CurrentLocation;
-    public static AriaState Default = new AriaState(false, false, AriaPosition.None);
+    public static AriaState Default = new AriaState(false, AriaPosition.None);
     public AriaState(
-        bool isPossessed, 
-        bool hasPastRunMemory, 
+        bool isMissing, 
         AriaPosition currentLocation)
     {
-        IsMissing = isPossessed;
-        HasPastRunMemory = hasPastRunMemory;
+        IsMissing = isMissing;
         CurrentLocation = currentLocation;
     }
     public AriaState(AriaState copy)
     {
         IsMissing = copy.IsMissing;
-        HasPastRunMemory = copy.HasPastRunMemory;
         CurrentLocation = copy.CurrentLocation;
     }
 }

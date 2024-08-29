@@ -2720,15 +2720,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810e9de234d4acd43b886276a7c7dbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_gameState: {fileID: 0}
+  m_saveData: {fileID: 634235538}
+  m_resetSave:
+    m_eventToTrigger: {fileID: 11400000, guid: 017ebddf7d247de4099e4578cb95bb3a, type: 2}
   m_toTile:
     m_eventToTrigger: {fileID: 11400000, guid: 121d7104f7a41f244981ab02303c66ea, type: 2}
   m_continue:
     m_eventToTrigger: {fileID: 11400000, guid: c18e1bfd0e80628439af36ed14f88874, type: 2}
   m_newGame:
     m_eventToTrigger: {fileID: 11400000, guid: eb1df2b084c7b364a884278d411f2257, type: 2}
-  m_quit:
-    m_eventToTrigger: {fileID: 11400000, guid: e3df2d70be6172c4296d6f4526e8fa8d, type: 2}
 --- !u!114 &1791434953
 MonoBehaviour:
   m_ObjectHideFlags: 0

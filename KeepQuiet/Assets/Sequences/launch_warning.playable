@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Time: 6
   m_Retroactive: 0
   m_EmitOnce: 1
-  m_Asset: {fileID: 11400000, guid: 776802d4107128f4fafcb1bae8d00243, type: 2}
+  m_Asset: {fileID: 11400000, guid: d424c7ccbcbcb654bbb883fca8367764, type: 2}
 --- !u!114 &-5906104514224668491
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,11 +126,11 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -5477669991158730030}
-    m_Duration: 7.5
+    m_Duration: 8.016666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1068874314498732640}
     m_EaseInDuration: 0
-    m_EaseOutDuration: 0.2
+    m_EaseOutDuration: 0
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:

@@ -30,7 +30,7 @@ public class GameSequenceManager : MonoBehaviour
     }
     public void OnIntroFinish() 
     {
-        // playa special sequence if save data has flag
+        // play a special sequence if save data has flag
         m_level?.LoadScene(1);
     }
     void OnCreditFinish() 

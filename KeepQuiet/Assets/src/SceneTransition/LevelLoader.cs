@@ -36,16 +36,11 @@ public class LevelLoader : MonoBehaviour
     }
     IEnumerator SetLoadedScene(AsyncOperation op) 
     {
+        yield return m_loadScreen.FadeIn();
         // transition to new scene when loading and animation are done
         yield return new WaitUntil(() => op.progress >= 0.9f);
-        op.allowSceneActivation = true;
         yield return new WaitForEndOfFrame();
+        op.allowSceneActivation = true;
         m_inProgress = false;
-        yield return m_loadScreen.FadeIn();
-    }
-
-    public void UnloadScene(string toUnload)
-    {
-        SceneManager.UnloadSceneAsync(toUnload);
     }
 }

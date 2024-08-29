@@ -16,6 +16,6 @@ public class LoadingScreenSequencer
     {
         m_transition?.ResetTrigger("finish");
         m_transition?.SetTrigger("finish");
-        yield return null;
+        yield return new WaitForSeconds(1.25f);
     }
 }

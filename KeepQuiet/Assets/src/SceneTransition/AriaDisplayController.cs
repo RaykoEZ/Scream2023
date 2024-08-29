@@ -7,6 +7,7 @@ public class AriaDisplayController
     [SerializeField] Animator m_cafePoses = default;
     public void MoveTo(AriaPosition newLocation, AriaPosition previous) 
     {
+        if (!m_cafePoses.isActiveAndEnabled) return;
         switch (newLocation)
         {
             case AriaPosition.InsideCafe_Counter:

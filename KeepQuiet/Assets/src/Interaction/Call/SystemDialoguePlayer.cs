@@ -9,7 +9,6 @@ public class SystemDialoguePlayer : MonoBehaviour
     [SerializeField] Image m_background = default;
     [SerializeField] InputActionReference m_nextStep = default;
     GuideDisplay m_current;
-    Coroutine m_transition;
     public virtual void TriggerTutorial(GuideDisplay col)
     {
         StartTutorial(col);
@@ -33,13 +32,11 @@ public class SystemDialoguePlayer : MonoBehaviour
         m_nextStep.action.performed -= NextStep;
         m_current?.End();
         StopAllCoroutines();
-        m_transition = null;
         m_background.enabled = false;
     }
     public void NextStep()
     {
-        if (m_transition != null) return;
-        m_transition = StartCoroutine(Next_Internal());
+        StartCoroutine(Next_Internal());
     }
     public void NextStep(InputAction.CallbackContext c) 
     {
@@ -48,16 +45,17 @@ public class SystemDialoguePlayer : MonoBehaviour
     IEnumerator Next_Internal() 
     {
         yield return new WaitForEndOfFrame();
-        // End current tutorial if we finished all dialogues
-        if (m_current.Next())
+        bool stepsLeft = m_current.Next();
+        if (stepsLeft) 
         {
-            m_transition = null;
+            yield break;
         }
-        else if(m_current.NextDisplay != null)
+        // End current tutorial if we finished all dialogues
+        else if (!stepsLeft && m_current.NextDisplay != null)
         {
             StartTutorial(m_current.NextDisplay);
         }
-        else 
+        else
         {
             EndCurrent();
         }

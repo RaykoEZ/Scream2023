@@ -500,7 +500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810e9de234d4acd43b886276a7c7dbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_gameState: {fileID: 0}
+  m_saveData: {fileID: 0}
+  m_resetSave:
+    m_eventToTrigger: {fileID: 11400000, guid: 017ebddf7d247de4099e4578cb95bb3a, type: 2}
   m_toTile:
     m_eventToTrigger: {fileID: 11400000, guid: 121d7104f7a41f244981ab02303c66ea, type: 2}
   m_continue:
@@ -1065,6 +1067,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &8892957357779844439
 CanvasGroup:
   m_ObjectHideFlags: 0

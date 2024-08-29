@@ -14,7 +14,7 @@ public class GameStateFileHandler : MonoBehaviour
     // State to load upon first load
     [SerializeField] GameStateContainer m_defaultState = default;
     [SerializeField] UnityEvent m_readyGameLaunch = default;
-    [SerializeField] CurryGameEventListener m_exitGame = default;
+    [SerializeField] CurryGameEventListener m_resetSaveData = default;
     [SerializeField] CurryGameEventListener m_onSaveGame = default;
     [SerializeField] CurryGameEventListener m_onLoadGame = default;
     [SerializeField] CurryGameEventTrigger m_saveLoaded = default;
@@ -25,16 +25,11 @@ public class GameStateFileHandler : MonoBehaviour
     private void Start()
     {
         m_onLoadGame?.Init();
-        m_exitGame?.Init();
         m_onSaveGame?.Init();
+        m_resetSaveData?.Init();
         LoadFromFile();
         // Start game launch sequence when game is ready
         m_readyGameLaunch?.Invoke();
-    }
-    private void OnApplicationQuit()
-    {
-        // Autosave on quitting
-        SaveToFile(m_current);
     }
     public void LoadGame()
     {
@@ -45,8 +40,8 @@ public class GameStateFileHandler : MonoBehaviour
         m_saveLoaded?.TriggerEvent(info);
     }
     // Set a new game with persistent kept
-    public void SetupNewGame()
-    {            
+    public void SetupNewGame(EventInfo info)
+    {
         // copy persisting save from current
         SaveData.PersistentSave persist = new SaveData.PersistentSave(m_current.Persistent);
         // reset game state to new game
@@ -54,6 +49,7 @@ public class GameStateFileHandler : MonoBehaviour
         // set persistent save states
         m_current.Persistent = persist;
         SaveToFile(m_current);
+        info?.OnFinishedCallback?.Invoke();
     }
     public void OnGameReady()
     {
@@ -95,21 +91,6 @@ public class GameStateFileHandler : MonoBehaviour
         yield return new WaitForEndOfFrame();
         onFinish?.Invoke();
         m_saveInProgress = false;
-    }
-    public void OnQuitGame()
-    {
-        // Quit the game
-        StartCoroutine(SaveGame(Quit_Internal));
-    }
-    void Quit_Internal() 
-    {
-#if UNITY_STANDALONE
-        Application.Quit();
-#endif
-#if UNITY_EDITOR
-        SaveToFile(m_current);
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
     }
     // Read Meta File states and Locations to update game state
     protected void LoadFromFile() 

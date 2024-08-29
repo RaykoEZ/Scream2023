@@ -7,6 +7,7 @@ public class OutsideCameraView : ViewState
     public override string Name => "OutsideCamera";
     protected override void InitStateInternal(SaveData gamestate)
     {
+        base.InitStateInternal(gamestate);
         if (gamestate.AriaStatus.CurrentLocation == AriaPosition.Outside) 
         {
             OnAriaEnter();
@@ -15,14 +16,9 @@ public class OutsideCameraView : ViewState
         {
             OnAriaExit();
         }
-        base.InitStateInternal(gamestate);
     }
     protected override void SetVisual(bool isOn)
     {
-        if (isOn)
-        {
-            m_nav.ToCameraOutside();
-        }
         base.SetVisual(isOn);
     }
     public override void OnAriaEnter() 

@@ -26,7 +26,8 @@ public class SaveData
         // depending on ending
         [JsonConverter(typeof(StringEnumConverter))]
         public Ending CurrentEnding;
-        public PersistentSave( bool isAriaDead,
+        public PersistentSave( 
+            bool isAriaDead,
             bool hasSecretKey, 
             int continueCount, Ending previousEnding)
         {
