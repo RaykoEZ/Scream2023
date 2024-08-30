@@ -3,7 +3,6 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-
 public class SystemDialoguePlayer : MonoBehaviour 
 {
     [SerializeField] Image m_background = default;

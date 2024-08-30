@@ -5,6 +5,7 @@ using UnityEngine;
 // Holds states of held thoughts
 public class ThoughtStateManager : MonoBehaviour, ISaveDataSubscriber
 {
+    [SerializeField] GameSaveSource m_gameState = default;
     [SerializeField] ThoughtSpawnManager m_spawn = default;
     [SerializeField] ToggleAnimationHandler m_toggleAnim = default;
     HashSet<ThoughtDetail> m_heldThoughts = new HashSet<ThoughtDetail>();
@@ -13,7 +14,7 @@ public class ThoughtStateManager : MonoBehaviour, ISaveDataSubscriber
     {
         Init(save?.HeldThoughts);
     }
-    public void Init(HashSet<ThoughtDetail> heldThoughts) 
+    void Init(HashSet<ThoughtDetail> heldThoughts) 
     {
         if (heldThoughts != null) 
         {

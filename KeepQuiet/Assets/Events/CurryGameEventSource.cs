@@ -32,7 +32,18 @@ namespace Curry.Events
             }
             UpdateListeners();
         }
-
+        public bool TryBroadcast(EventInfo eventInfo) 
+        {
+            UpdateListeners();
+            bool ret = m_eventListeners.Count > 0;
+            if (!ret) return ret;
+            foreach (CurryGameEventListener listener in m_eventListeners)
+            {
+                listener.OnEventTriggered(eventInfo);
+            }
+            UpdateListeners();
+            return ret;
+        }
         void UpdateListeners()
         {
             // Remove doubled add & remove listeners

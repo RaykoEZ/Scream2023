@@ -2,41 +2,28 @@
 using System.Collections;
 using UnityEngine;
 // Listens to saved game states and affect game behaviour
-public class GameSequenceManager : MonoBehaviour 
+public class EndingSequenceManager : MonoBehaviour 
 {
-    [SerializeField] LevelLoader m_level = default;
     // sequences to trigger
-    [SerializeField] SequencePlayer m_intro = default;
     [SerializeField] SkippableSequencePlayer m_credits = default;
     // post credit
     [SerializeField] EndingPlayer m_ending = default;
-    [SerializeField] CurryGameEventListener m_onNewGame = default;
-    [SerializeField] CurryGameEventListener m_onContinue = default;
     void OnEnable()
     {
         m_credits.OnFinish += OnCreditFinish;
-        m_onNewGame?.Init();
-        m_onContinue?.Init();
     }
     void OnDisable()
     {
         m_credits.OnFinish -= OnCreditFinish;
-        m_onNewGame?.Shutdown();
-        m_onContinue?.Shutdown();
-    }
-    public void PlayIntro()
-    {
-        m_intro?.PlaySequence();
-    }
-    public void OnIntroFinish() 
-    {
-        // play a special sequence if save data has flag
-        m_level?.LoadScene(1);
     }
     void OnCreditFinish() 
     {
         // Determine a post credit sequence for ending
 
+    }
+    public void PlayCredit() 
+    {
+        m_credits?.PlaySequence();
     }
     public void OnNewGame() 
     { 
@@ -54,6 +41,4 @@ public class GameSequenceManager : MonoBehaviour
 
         // Continue increment
     }
-    public void DialAl() { }
-    public void DialElia() { }
 }

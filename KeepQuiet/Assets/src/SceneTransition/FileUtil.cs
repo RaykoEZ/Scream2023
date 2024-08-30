@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text;
 using UnityEngine;
-
 internal static class FileUtil 
 {
     internal static string s_operatorFolder = "For R_OX016";

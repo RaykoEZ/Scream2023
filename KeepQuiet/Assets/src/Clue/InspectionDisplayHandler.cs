@@ -4,14 +4,14 @@ using UnityEngine;
 // Script to instantiate object when player click to inspect a clue
 public class InspectionDisplayHandler : HideableUI 
 {
-    [SerializeField] SaveDataSource m_state = default;
+    [SerializeField] GameSaveSource m_state = default;
     [SerializeField] ToolBarUIAnimationHandler m_toolBar = default;
     [SerializeField] HideableUITrigger m_inspectUITrigger = default;
     InspectionDisplay m_currentlyInspecting;
     bool m_inspecting = false;
     public void InspectTarget(Clue toDisplay)
     {
-        var save = m_state.CurrentGameState;
+        var save = m_state.Current;
         // Get inspect target
         var display = toDisplay?.GetInspectionDisplay(save);
         if (m_inspecting || toDisplay == null || display == null) return;

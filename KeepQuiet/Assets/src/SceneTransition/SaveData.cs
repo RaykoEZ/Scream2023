@@ -91,9 +91,9 @@ public class SaveData
         InitTime = copy.InitTime;
         FreedomRoute = copy.FreedomRoute;
         WatchState = copy.WatchState;
-        Persistent = copy.Persistent;
+        Persistent = new PersistentSave(copy.Persistent);
         CurrentlyViewing = copy.CurrentlyViewing;
-        HeldThoughts = copy.HeldThoughts;
+        HeldThoughts = new HashSet<ThoughtDetail>(copy.HeldThoughts);
         AriaStatus = new AriaState(copy.AriaStatus);
     }
 }

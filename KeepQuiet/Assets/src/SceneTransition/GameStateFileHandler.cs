@@ -1,11 +1,9 @@
 ﻿using Newtonsoft.Json;
 using UnityEngine;
 using System.IO;
-using Curry.Events;
-using System.Collections.Generic;
 using UnityEngine.Events;
-using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 // Script for persistent game state loading and saving
 // Loads persistent game state into game state manager in scene
 // Saves updated states coming from game state in scene
@@ -13,34 +11,56 @@ public class GameStateFileHandler : MonoBehaviour
 {
     // State to load upon first load
     [SerializeField] GameStateContainer m_defaultState = default;
-    [SerializeField] UnityEvent m_readyGameLaunch = default;
-    [SerializeField] CurryGameEventListener m_resetSaveData = default;
-    [SerializeField] CurryGameEventListener m_onSaveGame = default;
-    [SerializeField] CurryGameEventListener m_onLoadGame = default;
-    [SerializeField] CurryGameEventTrigger m_saveLoaded = default;
+    // current save data in SO when changing scenes 
+    [SerializeField] GameStateContainer m_currentCache = default;
+    [SerializeField] UnityEvent<SaveData> m_InitSceneCallbacks = default;
     SaveData m_current;
-    static bool m_saveInProgress = false;
+    static bool s_saveInProgress = false;
     static string s_gamestatePath = "saves/gamestate.json";
-    public SaveData Current { get => m_current; }
-    private void Start()
+    public SaveData Current => new SaveData(m_current);
+    void Awake()
     {
-        m_onLoadGame?.Init();
-        m_onSaveGame?.Init();
-        m_resetSaveData?.Init();
-        LoadFromFile();
-        // Start game launch sequence when game is ready
-        m_readyGameLaunch?.Invoke();
+        int sceneIdx = SceneManager.GetActiveScene().buildIndex;
+        if(sceneIdx == 0)
+        {
+            // Start game launch, we load save from file
+            LoadFromFile();
+        }
+        else 
+        {
+            // If we are in other scenes, load cache from previous scene
+            TryLoadFromCache();
+        }
     }
-    public void LoadGame()
+    // load from SaveDataSource
+    void TryLoadFromCache()
     {
-        LoadFromFile();
-        Dictionary<string, object> payload = new Dictionary<string, object>
-        {{"save", new SaveData(m_current)}};
-        EventInfo info = new EventInfo(payload);
-        m_saveLoaded?.TriggerEvent(info);
+        // fallback to loading from file if
+        // cached state is null
+        SaveData save = m_currentCache?.State;
+        if (save == null) 
+        {
+            LoadFromFile();
+        }
+        else 
+        {
+            m_current = save;
+        }
+        m_InitSceneCallbacks?.Invoke(Current);
+    }
+    // For getting the latest save data, then saving the game
+    public void UpdateSave(SaveData update, bool saveToFile = false)
+    {
+        if (update == null) return;
+        m_current = new SaveData(update);
+        m_currentCache.SetSaveState(m_current);
+        if (saveToFile) 
+        {
+            SaveToFile(m_current);
+        }
     }
     // Set a new game with persistent kept
-    public void SetupNewGame(EventInfo info)
+    public void SetupNewGame()
     {
         // copy persisting save from current
         SaveData.PersistentSave persist = new SaveData.PersistentSave(m_current.Persistent);
@@ -48,53 +68,15 @@ public class GameStateFileHandler : MonoBehaviour
         m_current = new SaveData(m_defaultState.State);
         // set persistent save states
         m_current.Persistent = persist;
-        SaveToFile(m_current);
-        info?.OnFinishedCallback?.Invoke();
+        m_currentCache.SetSaveState(m_current);
     }
-    public void OnGameReady()
-    {
-        LoadGame();
-    }
-    // sets valid incoming save data
-    SaveData HandleSave(EventInfo info) 
-    {
-        Dictionary<string, object> payload = info.Payload;
-        if (payload == null) return null;
-        if (payload.TryGetValue("save", out object result)
-            && result is SaveData save)
-        {
-            return save;
-        }
-        else return null;
-    }
-    // incoming game save data
-    public void OnGameSave(EventInfo info) 
-    {
-        if (m_saveInProgress) return;
-        m_saveInProgress = true;
-        SaveData result = HandleSave(info);
-        if (result != null) 
-        {
-            m_current = result;
-            SaveToFile(m_current);
-        }
-        // Do on finish callback
-        info?.OnFinishedCallback?.Invoke();
-        m_saveInProgress = false;
-    }
-    public IEnumerator SaveGame(Action onFinish = null) 
-    {
-        if (m_saveInProgress) yield break;
-        m_saveInProgress = true;
-        // Wait for save and quit when finished
-        SaveToFile(m_current);
-        yield return new WaitForEndOfFrame();
-        onFinish?.Invoke();
-        m_saveInProgress = false;
-    }
+
+    #region File Operations
     // Read Meta File states and Locations to update game state
     protected void LoadFromFile() 
     {
+        // no loading when saving
+        if (s_saveInProgress) return;
         if (!File.Exists($"{FileUtil.s_gamestateSavePath}/{s_gamestatePath}")) 
         {
             m_current = new SaveData(m_defaultState.State);
@@ -114,4 +96,5 @@ public class GameStateFileHandler : MonoBehaviour
         string json = JsonConvert.SerializeObject(newSave);
         FileUtil.RawTextTo(FileUtil.s_gamestateSavePath, "saves","gamestate.json", new string[] { json });
     }
+    #endregion
 }

@@ -8,23 +8,8 @@ public class TitleSequenceManager : MonoBehaviour
     [SerializeField] PlayableAsset m_freedomRoute = default;
     [SerializeField] PlayableAsset m_freedomEnd = default;
     [SerializeField] PlayableAsset m_deadEnd = default;
-
     [SerializeField] SequencePlayer m_title = default;
-    [SerializeField] SaveDataSource m_saveData = default;
-    void OnEnable()
-    {
-        m_saveData.OnRefresh += InitTitleState;
-    }
-    void OnDisable()
-    {
-        m_saveData.OnRefresh -= InitTitleState;
-    }
-    void Start()
-    {
-        // Get current game state
-        m_saveData.RequestLoadSave();
-    }
-    void InitTitleState(SaveData save) 
+    public void InitTitleState(SaveData save) 
     {
         PlayableAsset toPlay;
         Ending ending = save.Persistent.CurrentEnding;
