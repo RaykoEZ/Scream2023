@@ -20,8 +20,8 @@ public class SystemDialoguePlayer : MonoBehaviour
     {
         // Don't repeat the same tutorial in the same session if we don't need to
         if ((!col.IsActive || col.HasTriggeredOnce) && !forceRepeat) return;
-        m_background.enabled = col.BlockBackground;
         EndCurrent();
+        m_background.enabled = col.BlockBackground;
         m_current = col;
         m_current?.Begin();
         m_nextStep.action.performed += NextStep;

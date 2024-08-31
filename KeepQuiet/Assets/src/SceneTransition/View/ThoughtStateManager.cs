@@ -9,7 +9,6 @@ public class ThoughtStateManager : MonoBehaviour, ISaveDataSubscriber
     [SerializeField] ThoughtSpawnManager m_spawn = default;
     [SerializeField] ToggleAnimationHandler m_toggleAnim = default;
     HashSet<ThoughtDetail> m_heldThoughts = new HashSet<ThoughtDetail>();
-    public HashSet<ThoughtDetail> HeldThoughts => m_heldThoughts;
     public void Refresh(SaveData save)
     {
         Init(save?.HeldThoughts);
@@ -30,10 +29,12 @@ public class ThoughtStateManager : MonoBehaviour, ISaveDataSubscriber
     {
         if (newThought == null) return;
         m_heldThoughts.Add(newThought);
+        m_gameState.Current.HeldThoughts.Add(newThought);
     }
     void Remove(ThoughtDetail toRemove) 
     {
         m_heldThoughts.Remove(toRemove);
+        m_gameState.Current.HeldThoughts.Remove(toRemove);
     }
     // When thoughts can be dropped into things
     public void OnThoughtPrompt(EventInfo info)

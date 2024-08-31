@@ -16,9 +16,6 @@ public class SaveData
         // If player choose to hit Aria with the bat, we reach Bad End,
         // a different title & New Game & Continue if Aria is dead
         public bool AriaDead;
-        // Has the secret key for handshake,
-        // leads to an ending depending on other persistent states
-        public bool HasSecretKey;
         // No. of times player launched this game after first new game
         // Triggers new game tutorial sequences for new game players
         public int ContinueCount;
@@ -32,7 +29,6 @@ public class SaveData
             int continueCount, Ending previousEnding)
         {
             AriaDead = isAriaDead;
-            HasSecretKey = hasSecretKey;
             ContinueCount = continueCount;
             CurrentEnding = previousEnding;
         }
@@ -40,38 +36,38 @@ public class SaveData
         public PersistentSave() 
         {
             AriaDead = false;
-            HasSecretKey = false;
             ContinueCount = 0;
             CurrentEnding = Ending.None;
         }
         public PersistentSave(PersistentSave persistent)
         {
             AriaDead = persistent.AriaDead;
-            HasSecretKey = persistent.HasSecretKey;
             ContinueCount = persistent.ContinueCount;
             CurrentEnding = persistent.CurrentEnding;
         }
     }
     #endregion
     public PersistentSave Persistent;
+    // Freedom flag before reaching ending
+    public bool FreedomRoute;
     public bool CheckedSubjectProfile;
+    // Where is the player looking at
+    public string CurrentlyViewing;
+    public string InitTime;
+    public DateTime InitDate;
     // Check if player found and dragged out the Jamming device found in secret puzzle 
     // Did player resolve malware overtaking Aria?
     // Secret/True End Flag
     public WatchDisplay WatchState;
-    // Freedom flag before reaching ending
-    public bool FreedomRoute;
-    // Where is the player looking at
-    public string CurrentlyViewing;
-    public HashSet<ThoughtDetail> HeldThoughts;
     public AriaState AriaStatus;
     // time of the simulation, watch displays it
     public WatchDisplay SimulationTime;
-    public DateTime InitDate;
-    public string InitTime;
+    public HashSet<ThoughtDetail> HeldThoughts;
+    public List<ChatHistoryItem> ChatHistories;
     // New save file
     public SaveData()
     {
+        ChatHistories = new List<ChatHistoryItem>();
         SimulationTime = WatchDisplay.Present;
         InitDate = DateTime.Now;
         InitTime = InitDate.ToString("d").Replace(@"/", string.Empty);
@@ -85,6 +81,7 @@ public class SaveData
     }
     public SaveData(SaveData copy)
     {
+        ChatHistories = new List<ChatHistoryItem>(copy.ChatHistories);
         SimulationTime = copy.SimulationTime;
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
         InitDate = copy.InitDate;

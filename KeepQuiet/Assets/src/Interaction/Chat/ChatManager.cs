@@ -1,12 +1,11 @@
-﻿using Curry.Events;
-using Curry.Explore;
+﻿using Curry.Explore;
 using System.Collections.Generic;
 using UnityEngine;
 // Notifies player when message comes
 public class ChatManager : HideableUI 
 {
+    [SerializeField] GameSaveSource m_save = default;
     [SerializeField] ChatRoom m_chatRoom = default;
-    [SerializeField] ChatHistoryCollection m_histories = default;
     public event OnChatUpdate OnEnd;
     private void OnDestroy()
     {
@@ -20,8 +19,8 @@ public class ChatManager : HideableUI
     // load chat of the person in question
     public void BeginChat(string username)
     {
-        if (string.IsNullOrWhiteSpace(username)) return;
-        ChatHistory result = m_histories.Find(username);
+        ChatHistory result = FindHistory(username, m_save.Current.ChatHistories);
+        if (result == null) return;
         // instantiate history logs and store them here for record keeping if needed
         m_chatRoom.SetChatHistory(result);
         m_chatRoom.Hide();
@@ -39,7 +38,10 @@ public class ChatManager : HideableUI
     // Redirect to ContactList
     public void OnNewMessage(DialogueNode newDialogue, string username) 
     {
-        ChatHistory result = m_histories.Find(username);
+        ChatHistory result = FindHistory(username, m_save.Current.ChatHistories);
+        if (result == null) return;
+        // add new dialogue to chat history
+        result.Append(newDialogue);
         // instantiate history logs and store them here for record keeping if needed
         m_chatRoom.SetChatHistory(result);
         m_chatRoom.Hide();
@@ -50,5 +52,14 @@ public class ChatManager : HideableUI
         // unlisten dialogue events
         m_chatRoom.OnEnd -= EndDialogue;
         OnEnd?.Invoke();
+    }
+    static ChatHistory FindHistory(string name, List<ChatHistoryItem> list)
+    {
+        if (list == null || string.IsNullOrWhiteSpace(name))
+        {
+            return null;
+        }
+        var result = list.Find(x => x.Username == name);
+        return result.History;
     }
 }

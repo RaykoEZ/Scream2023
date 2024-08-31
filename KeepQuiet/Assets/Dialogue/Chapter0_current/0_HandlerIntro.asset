@@ -21,5 +21,13 @@ MonoBehaviour:
     Content: I will send you more files for the interrogation later
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
+  - HasAudio: 0
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 0}
+    Content: Be on standby before that
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_thoughtOutcomes: []

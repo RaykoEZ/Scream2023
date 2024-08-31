@@ -33,11 +33,11 @@ public class ViewNavigationHandler : MonoBehaviour
     public void ToCameraCafe()
     {
         m_returnLeft.alpha = 1f;
-        m_roomLeft.interactable = true;
+        m_returnLeft.interactable = true;
         m_returnLeft.blocksRaycasts = true;
 
         m_returnRight.alpha = 0f;
-        m_roomRight.interactable = false;
+        m_returnRight.interactable = false;
         m_returnRight.blocksRaycasts = false;
 
         m_roomParentNav.alpha = 0;

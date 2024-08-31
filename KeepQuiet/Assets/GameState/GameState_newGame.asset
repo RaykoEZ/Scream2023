@@ -15,18 +15,31 @@ MonoBehaviour:
   m_state:
     Persistent:
       AriaDead: 0
-      HandshakeComplete: 0
       ContinueCount: 0
       CurrentEnding: 3
-    IsMalwareIsolated: 0
-    DialSolved: 0
-    BatTaken: 0
-    SpecialTorchUnlocked: 0
-    RevealClock: 0
     FreedomRoute: 0
+    CheckedSubjectProfile: 0
     CurrentlyViewing: RoomRight
+    InitTime: 0
+    WatchState: 4
     AriaStatus:
-      IsPossessed: 0
-      HasPastRunMemory: 0
-      Affection: 1
-      CurrentLocation: -1
+      IsMissing: 0
+      CurrentLocation: 0
+    SimulationTime: 0
+    ChatHistories:
+    - Username: Aria
+      History:
+        m_chatLog:
+        - {fileID: 11400000, guid: 289382b7e04b7914c8072fa5168be493, type: 2}
+    - Username: Your Handler
+      History:
+        m_chatLog:
+        - {fileID: 11400000, guid: 7c8ed4b872331d74f9260891ae136e50, type: 2}
+    - Username: Elia
+      History:
+        m_chatLog:
+        - {fileID: 11400000, guid: 289382b7e04b7914c8072fa5168be493, type: 2}
+    - Username: Al.
+      History:
+        m_chatLog:
+        - {fileID: 11400000, guid: 289382b7e04b7914c8072fa5168be493, type: 2}

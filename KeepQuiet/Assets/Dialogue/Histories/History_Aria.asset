@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5571d07a5804bbe428d710d512def0c4, type: 3}
   m_Name: History_Aria
   m_EditorClassIdentifier: 
-  m_username: Aria
   m_history:
-    m_chatLog:
-    - {fileID: 11400000, guid: 289382b7e04b7914c8072fa5168be493, type: 2}
+    Username: Aria
+    History:
+      m_chatLog:
+      - {fileID: 11400000, guid: 289382b7e04b7914c8072fa5168be493, type: 2}

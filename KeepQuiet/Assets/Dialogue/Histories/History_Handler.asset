@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5571d07a5804bbe428d710d512def0c4, type: 3}
   m_Name: History_Handler
   m_EditorClassIdentifier: 
-  m_username: Your Handler
   m_history:
-    m_chatLog:
-    - {fileID: 11400000, guid: 7c8ed4b872331d74f9260891ae136e50, type: 2}
+    Username: Your Handler
+    History:
+      m_chatLog:
+      - {fileID: 11400000, guid: 7c8ed4b872331d74f9260891ae136e50, type: 2}

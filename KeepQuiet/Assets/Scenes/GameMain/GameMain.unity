@@ -2595,7 +2595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a1fdba18c04e4439e01126e085001f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_gameState: {fileID: 0}
+  m_gameState: {fileID: 7138903285013225189}
   m_spawn: {fileID: 1791428171}
   m_toggleAnim: {fileID: 1731752276}
 --- !u!114 &451893990
@@ -11498,6 +11498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_ChatDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 8841568083522563204, guid: 4bc54f11857eb1d4a9888b5e0b6b603a, type: 3}
+      propertyPath: m_save
+      value: 
+      objectReference: {fileID: 7138903285013225189}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bc54f11857eb1d4a9888b5e0b6b603a, type: 3}
@@ -16652,27 +16656,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477850795318479110, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2477850795318479110, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 258420587}
+      objectReference: {fileID: 1152285344}
     - target: {fileID: 2477850795318479110, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2477850795318479110, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Begin
+      value: TriggerTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 2477850795318479110, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GuideDisplay, Assembly-CSharp
+      value: SystemDialoguePlayer, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2477850795318479110, guid: a5f752141284dd844b23698746b03262, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 258420587}
+    - target: {fileID: 2477850795318479110, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: GuideDisplay, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2509594087673186280, guid: a5f752141284dd844b23698746b03262, type: 3}
       propertyPath: m_uiToggle
