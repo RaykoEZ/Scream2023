@@ -89,7 +89,7 @@ public class GuideDisplay : MonoBehaviour
         m_display?.SetContent(step.Content);
         m_display?.Show(step.ShowInstantly, step.Angry);
         step?.OnShow?.TriggerEvent();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         m_inProgress = false;
     }
     IEnumerator Next_Internal() 
@@ -99,9 +99,5 @@ public class GuideDisplay : MonoBehaviour
         {
             yield return ShowCurrent();
         }
-    }
-    public virtual void Refresh(SaveData save)
-    {
-        IsActive = true;
     }
 }

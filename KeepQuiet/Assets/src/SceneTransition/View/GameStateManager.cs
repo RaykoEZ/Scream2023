@@ -8,7 +8,6 @@ using UnityEngine.Rendering;
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] protected AudioTrigger m_audio = default;
-    [SerializeField] protected ScreenFade m_fade = default;
     [SerializeField] protected Volume m_postProcess = default;
     // view states
     [SerializeField] protected ViewState m_outsideCam = default;
@@ -36,7 +35,7 @@ public class GameStateManager : MonoBehaviour
     public void ChangeView(ViewState newView) 
     {
         if (newView == null) return;
-        m_fade?.StartFade(ChangeView_Internal(newView));
+        StartCoroutine(ChangeView_Internal(newView));
     }
     IEnumerator ChangeView_Internal(ViewState newView) 
     {

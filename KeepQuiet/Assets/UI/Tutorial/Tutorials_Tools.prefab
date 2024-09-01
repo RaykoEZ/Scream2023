@@ -152,7 +152,8 @@ MonoBehaviour:
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
-    Content: Drag the icons with the cursor to access the tools to assist your investigationl.
+    Content: Drag the icons with the cursor to access the tools, Right-click to return
+      the tool.
   m_nextDisplay: {fileID: 0}
   m_display: {fileID: 4941927003066501973}
 --- !u!1 &5680943262833493797

@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json.Converters;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json;
 // Contains persistent data for changing game environment
 // and state of quicksaved game state
 [Serializable]
@@ -25,7 +25,6 @@ public class SaveData
         public Ending CurrentEnding;
         public PersistentSave( 
             bool isAriaDead,
-            bool hasSecretKey, 
             int continueCount, Ending previousEnding)
         {
             AriaDead = isAriaDead;

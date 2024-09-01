@@ -8,7 +8,7 @@ using static UnityEngine.InputSystem.InputAction;
 public delegate void OnToolUnlock();
 public class ToolInteractionHandler : MonoBehaviour
 {
-    [SerializeField] ToolBarUIAnimationHandler m_anim = default;
+    [SerializeField] ToggleHandler m_anim = default;
     [SerializeField] ToolAimIcon m_torchAim = default;
     [SerializeField] ToolAimIcon m_specialTorchAim = default;
     //TODO:Coat hanger object, draggable and modifiable

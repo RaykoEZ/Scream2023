@@ -288,9 +288,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3098594875280757632}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &739579493249483841
 MonoBehaviour:
@@ -304,6 +304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713430f9bc770b140afe76052b41f497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onShowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
   m_content: {fileID: 3098594875261018546}
   m_audio: {fileID: 0}
 --- !u!1 &4696833848884987483

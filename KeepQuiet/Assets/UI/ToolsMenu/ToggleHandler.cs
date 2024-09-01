@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace Curry.Explore
 {
@@ -21,17 +21,11 @@ namespace Curry.Explore
     }
 
     // When pointer is in range, show ui, hide if not
-    public class ToolBarUIAnimationHandler : MonoBehaviour
+    public class ToggleHandler : MonoBehaviour
     {
-        [SerializeField] HideableUITrigger m_hidingUI = default;
-        [SerializeField] CanvasGroup m_uiToggle = default;
+        [SerializeField] HideableUITrigger m_ui = default;
         UITransitionBuffer m_buffer = new UITransitionBuffer();
         bool m_isOn = false;
-        public void SetUIToggleActive(bool isActive) 
-        {
-            m_uiToggle.alpha = isActive ? 1f : 0f;
-            m_uiToggle.blocksRaycasts = isActive;
-        }
         public void Toggle()
         {
             if (m_isOn) 
@@ -48,14 +42,14 @@ namespace Curry.Explore
             // Buffer transition to stop unwanted flickers on edges
             if (!m_buffer.Buffering)
             {
-                m_hidingUI.Show();
+                m_ui.Show();
                 StartCoroutine(m_buffer.Buffer());
                 m_isOn = true;
             }
         }
         public void Hide() 
         {
-            m_hidingUI.Hide();
+            m_ui.Hide();
             m_isOn = false;
         }
     }

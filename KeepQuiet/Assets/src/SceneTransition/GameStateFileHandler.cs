@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using UnityEngine;
+﻿using System;
 using System.IO;
+using Newtonsoft.Json;
+using UnityEngine;
 using UnityEngine.Events;
-using System;
 using UnityEngine.SceneManagement;
 // Script for persistent game state loading and saving
 // Loads persistent game state into game state manager in scene
@@ -20,17 +20,24 @@ public class GameStateFileHandler : MonoBehaviour
     public SaveData Current => new SaveData(m_current);
     void Awake()
     {
+        // Setup game states on startup
+#if UNITY_EDITOR
+        SetupNewGame();
+        m_InitSceneCallbacks?.Invoke(Current);
+#else
         int sceneIdx = SceneManager.GetActiveScene().buildIndex;
-        if(sceneIdx == 0)
+        if (sceneIdx == 0)
         {
             // Start game launch, we load save from file
             LoadFromFile();
+            m_InitSceneCallbacks?.Invoke(Current);
         }
         else 
         {
             // If we are in other scenes, load cache from previous scene
             TryLoadFromCache();
         }
+#endif
     }
     // load from SaveDataSource
     void TryLoadFromCache()
@@ -63,7 +70,9 @@ public class GameStateFileHandler : MonoBehaviour
     public void SetupNewGame()
     {
         // copy persisting save from current
-        SaveData.PersistentSave persist = new SaveData.PersistentSave(m_current.Persistent);
+        SaveData.PersistentSave persist = m_current == null?
+            new SaveData.PersistentSave() :
+            new SaveData.PersistentSave(m_current.Persistent);
         // reset game state to new game
         m_current = new SaveData(m_defaultState.State);
         // set persistent save states
