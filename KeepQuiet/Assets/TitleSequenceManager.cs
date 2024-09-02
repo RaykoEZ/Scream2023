@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Playables;
 
-// play sequence for title
+// play sequence for title depending on route/game state
 public class TitleSequenceManager : MonoBehaviour
 {
     [SerializeField] PlayableAsset m_default = default;

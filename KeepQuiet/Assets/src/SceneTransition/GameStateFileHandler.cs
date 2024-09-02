@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Events;
@@ -20,11 +19,12 @@ public class GameStateFileHandler : MonoBehaviour
     public SaveData Current => new SaveData(m_current);
     void Awake()
     {
-        // Setup game states on startup
 #if UNITY_EDITOR
-        SetupNewGame();
-        m_InitSceneCallbacks?.Invoke(Current);
-#else
+        // for editor testing,
+        // reset cache state on awake
+        m_currentCache.SetSaveState(m_defaultState.State);
+#endif
+        // Setup game states on game launch
         int sceneIdx = SceneManager.GetActiveScene().buildIndex;
         if (sceneIdx == 0)
         {
@@ -37,7 +37,6 @@ public class GameStateFileHandler : MonoBehaviour
             // If we are in other scenes, load cache from previous scene
             TryLoadFromCache();
         }
-#endif
     }
     // load from SaveDataSource
     void TryLoadFromCache()
@@ -66,7 +65,7 @@ public class GameStateFileHandler : MonoBehaviour
             SaveToFile(m_current);
         }
     }
-    // Set a new game with persistent kept
+    // Set a new game with persistent states kept
     public void SetupNewGame()
     {
         // copy persisting save from current
@@ -79,8 +78,15 @@ public class GameStateFileHandler : MonoBehaviour
         m_current.Persistent = persist;
         m_currentCache.SetSaveState(m_current);
     }
-
-    #region File Operations
+    // Reset all save data to new game state,
+    // inc. persistent states, current cache copies & previous save file
+    public void ResetAllData() 
+    {
+        m_current = new SaveData(m_defaultState.State);
+        m_currentCache.SetSaveState(m_current);
+        SaveToFile(m_current);
+    }
+#region File Operations
     // Read Meta File states and Locations to update game state
     protected void LoadFromFile() 
     {
@@ -105,5 +111,5 @@ public class GameStateFileHandler : MonoBehaviour
         string json = JsonConvert.SerializeObject(newSave);
         FileUtil.RawTextTo(FileUtil.s_gamestateSavePath, "saves","gamestate.json", new string[] { json });
     }
-    #endregion
+#endregion
 }
