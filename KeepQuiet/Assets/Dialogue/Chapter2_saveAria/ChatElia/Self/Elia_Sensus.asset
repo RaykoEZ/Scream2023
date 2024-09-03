@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Elia_Sensus
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Sensus did not start the riot
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Aria
@@ -21,7 +25,18 @@ MonoBehaviour:
     Content: Sensus did not start the riot
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: 'I DON''T CARE
+
+
+        She was hit by one of those rioters and I
+        need to protect her
+
+
+        We''re done here'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1.1
     TypingDelay: 0.5
     WhoSpoke: Elia
@@ -41,4 +56,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: 95a5c6dc56d466c4db62dbb87d7bea25, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

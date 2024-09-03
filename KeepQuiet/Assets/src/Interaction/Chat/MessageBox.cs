@@ -13,16 +13,16 @@ public class MessageBox : HideableUI
     public virtual void Init(Dialogue content)
     {
         Cleanup();
-        m_content.text = content.Content;
-        m_name.text = content.WhoSpoke;
-        GameObject toSpawn = content.SentPrefabRef;
+        m_content.text = content.ChatLog.Content;
+        m_name.text = content.ChatLog.WhoSpoke;
+        //GameObject toSpawn = content.ChatLog.SentPrefabRef;
         m_audio.mute = !content.HasAudio;
-        bool hasAttachment = toSpawn != null;
-        m_attachment.enabled = hasAttachment;
-        if (hasAttachment) 
-        {
-            m_attachment?.Init(toSpawn.name, toSpawn);
-        }
+        //bool hasAttachment = toSpawn != null;
+        //m_attachment.enabled = hasAttachment;
+        //if (hasAttachment) 
+        //{
+        //    m_attachment?.Init(toSpawn.name, toSpawn);
+        //}
     }
     public void Typing() 
     {

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Relation_F
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Can you tell me about your manager?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,14 @@ MonoBehaviour:
     Content: Can you tell me about your manager?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'Oh Elia?
+
+        He and I got along in school and started a music
+        club'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 3
     TypingDelay: 1
     WhoSpoke: Aria
@@ -31,7 +42,19 @@ MonoBehaviour:
       He and I got along in school and started a music club'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'He''s nice, handles all the dfficult admin stuff for me,
+
+
+        I
+        just hope he doesn''t overwork himself too much
+
+
+        I wouldn''t be
+        here if Elia wasn''t there for me.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 3
     TypingDelay: 5
     WhoSpoke: Aria
@@ -52,4 +75,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

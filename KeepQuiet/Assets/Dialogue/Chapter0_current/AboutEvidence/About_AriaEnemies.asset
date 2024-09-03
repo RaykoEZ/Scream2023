@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: About_AriaEnemies
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'Are there any info on Ms Aria''s social status?
+
+
+        Any potential
+        adversaries who could be involved? '
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -25,7 +33,17 @@ MonoBehaviour:
       adversaries who could be involved? '
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'Why do we need that?
+
+
+        Our evidence points to her quite convincingly
+
+        enough
+        to finish the case on our side.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 4
     TypingDelay: 2
     WhoSpoke: Your Handler
@@ -39,7 +57,15 @@ MonoBehaviour:
       to finish the case on our side.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'Just get her statements and we''re done
+
+
+        she''s toast either
+        way, no need to prolong the session.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 3
     WhoSpoke: Your Handler

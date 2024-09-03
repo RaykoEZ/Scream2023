@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Handler_Respond
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'Hey whats up? '
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Your Handler
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: 'Yo, whats up? '
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: What time is it?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.05
     TypingDelay: 0.2
     WhoSpoke: You
@@ -29,7 +37,14 @@ MonoBehaviour:
     Content: What time is it?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'Just past noon, why?
+
+
+        Are you okay? '
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.2
     WhoSpoke: Your Handler

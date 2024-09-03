@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Ignore_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: No one?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 3
     TypingDelay: 0.5
     WhoSpoke: Aria

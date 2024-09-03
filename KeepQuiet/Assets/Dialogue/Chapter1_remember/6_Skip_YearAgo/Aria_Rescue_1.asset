@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Aria_Rescue_1
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 0
+  - ChatLog:
+      WhoSpoke: 12e1c5_junk
+      Content: c2F2ZSBlbGlhCg
+      AttachmentId: 
+    HasAudio: 0
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: 12e1c5_junk
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: c2F2ZSBlbGlhCg
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 0
+  - ChatLog:
+      WhoSpoke: 12e1c5_junk
+      Content: good luck
+      AttachmentId: 
+    HasAudio: 0
     DelayBeforeTyping: 2
     TypingDelay: 0.7
     WhoSpoke: 12e1c5_junk
@@ -31,4 +39,3 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

@@ -13,36 +13,38 @@ MonoBehaviour:
   m_Name: FToGenOp
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: D002-FGZ1
+      Content: I want to give you some heads up regarding Ms Aria's situation.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.2
     TypingDelay: 1.2
     WhoSpoke: D002-FGZ1
     SentPrefabRef: {fileID: 0}
     Content: I want to give you some heads up regarding Ms Aria's situation.
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.5
-    TypingDelay: 1
-    WhoSpoke: F
-    SentPrefabRef: {fileID: 0}
-    Content: Go on
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: D002-FGZ1
+      Content: "Ms Yanagi is safe but in critical conditions, \nand will likely be
+        hospitalized for 12 months."
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2
     TypingDelay: 2
     WhoSpoke: D002-FGZ1
     SentPrefabRef: {fileID: 0}
     Content: She is safe but in critical conditions, and will likely be hospitalized
       for a long time.
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 2
-    TypingDelay: 2
-    WhoSpoke: F
-    SentPrefabRef: {fileID: 0}
-    Content: "How long will it be? \n\nWill there be any long-term problems?\n"
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: D002-FGZ1
+      Content: "We cannot guarantee a full recovery, this is a difficult \ncase to
+        remedy with our current technology."
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2
     TypingDelay: 5
     WhoSpoke: D002-FGZ1
@@ -50,8 +52,16 @@ MonoBehaviour:
     Content: "It's going to be 12 months at the very least.\n\nI cannot guarantee
       a full recovery, a fatal head injury \nis a difficult case to remedy with our
       current technology."
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: D002-FGZ1
+      Content: "Experiemental procedures are available. \nWe will need to discuss
+        this separately, with the relevant parties.\n\nAs her manager, you are invited
+        to a meetng on this topic\nat Administration District, Block 2, F15\non 12/12/E1C5,
+        1523\n\nRegards, GenOp Health Dpt."
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 5
     WhoSpoke: D002-FGZ1
@@ -59,6 +69,7 @@ MonoBehaviour:
     Content: "Experiemental treatment is available, but we will need to discuss\nthis
       separately, with the relevant parties.\n\nAs her manager, you are invited to
       this discussion \nat Administration District, Block 2, F15\non12/12/E1C5, 1523"
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes: []

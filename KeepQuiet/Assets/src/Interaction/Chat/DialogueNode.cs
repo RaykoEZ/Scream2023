@@ -1,21 +1,24 @@
-﻿using Curry.Events;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 [Serializable]
 public struct Dialogue 
 {
+    public ChatLogEntry ChatLog;
     public bool HasAudio;
     public float DelayBeforeTyping;
     // how much time to stay typing
     public float TypingDelay;
-    public string WhoSpoke;
-    // Can be image, clue, etc
-    public GameObject SentPrefabRef;
-    [TextArea(5, 10)]
-    public string Content;
     public ThoughtBubble ObtainThought;
     public DialogueEventTrigger TriggerAfterThisLine;
+}
+[Serializable]
+public struct ChatLogEntry 
+{
+    public string WhoSpoke;
+    [TextArea(5, 10)]
+    public string Content;
+    public string AttachmentId;
 }
 [Serializable]
 public class ChatOption 
@@ -36,6 +39,21 @@ public class ChatOption
 [CreateAssetMenu(fileName = "Node_", menuName = "Chat/New Dialogue", order = 0)]
 public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
 {
+    [Serializable]
+    // Container class to export into save data
+    public struct DialogueNodeDetail 
+    {
+        // Need Asset Id to reference the SO upon loading
+        public string NodeId;
+        public string ChoiceDescription;
+        // Key: Outcome DialogueNode NodeId
+        // Value: DialogueEventTrigger Id
+        public Dictionary<string, string> ChoiceOutcomeEventIds;
+        // Key: Dropped Thought Detail asset Id
+        // Value: Outcome Dialogue NodeId
+        public Dictionary<string, string> ThoughtOutcomeEventIds;
+
+    }
     [SerializeField] List<Dialogue> m_dialogues = default;
     [SerializeField] List<ChatOption> m_replyOptions = default;
     [SerializeField] List<ThoughtDropResult> m_thoughtOutcomes = default;

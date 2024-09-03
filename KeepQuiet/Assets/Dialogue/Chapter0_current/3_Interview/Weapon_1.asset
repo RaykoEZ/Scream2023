@@ -13,21 +13,30 @@ MonoBehaviour:
   m_Name: Weapon_1
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: So you don't know anything about this weapon?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
     Content: So you don't know anything about this weapon?
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.5
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: Nope
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'If so, we might have a problem.
+
+
+        Our analysis team found
+        your fingerprints on the bat.
+
+
+        Why might that be?'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2
     TypingDelay: 3
     WhoSpoke: You
@@ -40,17 +49,22 @@ MonoBehaviour:
 
 
       Why might that be?'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 3
-    TypingDelay: 0.1
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: WHAT
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
-    DelayBeforeTyping: 2
-    TypingDelay: 5
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'Nope
+
+
+        This is nonsense! I never touch anything like this
+
+
+        Why
+        would I bring a bat anywhere?'
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 5
+    TypingDelay: 3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: 'How
@@ -61,15 +75,29 @@ MonoBehaviour:
 
       Why
       would I bring a bat anywhere?'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: I haven't piss off any baseballers
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.5
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: I haven't piss off any baseballers
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'it must be some of my haters
+
+
+        they''d do anything to ruin
+        me'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.2
     TypingDelay: 0.4
     WhoSpoke: Aria
@@ -78,8 +106,16 @@ MonoBehaviour:
 
 
       they''d do anything to ruin me'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: 2
+      Content: 'You have the wrong person!
+
+
+        I have nothing to do with this!'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 2
     WhoSpoke: Aria
@@ -92,6 +128,7 @@ MonoBehaviour:
 
       I
       have nothing to do with this!'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes: []

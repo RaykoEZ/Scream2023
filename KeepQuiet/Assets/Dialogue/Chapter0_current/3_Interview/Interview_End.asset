@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: Interview_End
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'That is enough for the time being.
+
+
+        We will recovene shortly.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0.3
     WhoSpoke: You
@@ -22,6 +29,7 @@ MonoBehaviour:
 
 
       We will recovene shortly.'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes: []

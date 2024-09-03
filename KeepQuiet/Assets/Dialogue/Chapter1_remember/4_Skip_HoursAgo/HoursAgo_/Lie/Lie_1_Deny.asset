@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Lie_1_Deny
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Nah I'll handle it.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -23,4 +27,3 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 11400000, guid: e7d4e199874ee7140b44cb3a85a92a70, type: 2}
   m_replyOptions: []
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

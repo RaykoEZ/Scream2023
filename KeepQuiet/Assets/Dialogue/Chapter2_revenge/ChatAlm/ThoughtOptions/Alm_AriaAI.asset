@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Alm_AriaAI
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: Well we had to somehow support Ms Aria while she's down
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Al.
@@ -21,7 +25,12 @@ MonoBehaviour:
     Content: Well we had to somehow support Ms Aria while she's down
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: "We would've gone bust without Ms Copycat\n\nit was not my decision
+        to make, her manager made \na deal with the devils"
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.8
     TypingDelay: 2.5
     WhoSpoke: Al.

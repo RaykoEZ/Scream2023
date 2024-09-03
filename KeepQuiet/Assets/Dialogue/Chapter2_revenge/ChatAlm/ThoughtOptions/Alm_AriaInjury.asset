@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Alm_AriaInjury
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'You should know more about this than me.
+
+'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.8
     TypingDelay: 0.4
     WhoSpoke: Al.
@@ -23,7 +29,13 @@ MonoBehaviour:
 '
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'She was hit in the head by some rioters at work.
+
+'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.8
     TypingDelay: 0.4
     WhoSpoke: Al.

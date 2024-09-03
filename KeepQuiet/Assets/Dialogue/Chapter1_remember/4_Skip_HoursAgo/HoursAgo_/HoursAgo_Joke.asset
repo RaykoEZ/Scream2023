@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: HoursAgo_Joke
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: my lunch is coming late.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: my lunch is coming late.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: you have my condolences
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.3
     TypingDelay: 0.1
     WhoSpoke: Your Handler
@@ -29,7 +37,11 @@ MonoBehaviour:
     Content: you have my condolences
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: "I'll be off in a sec\n\ncall tech on 182, \nthey have all the answers"
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 2
     WhoSpoke: Your Handler

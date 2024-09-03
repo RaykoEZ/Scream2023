@@ -63,10 +63,12 @@ public class SaveData
     public WatchDisplay SimulationTime;
     public HashSet<ThoughtDetail> HeldThoughts;
     public List<ChatHistoryItem> ChatHistories;
+    public List<ChatLogEntry> ChatLogs;
     // New save file
     public SaveData()
     {
         ChatHistories = new List<ChatHistoryItem>();
+        ChatLogs = new List<ChatLogEntry>();
         SimulationTime = WatchDisplay.Present;
         InitDate = DateTime.Now;
         InitTime = InitDate.ToString("d").Replace(@"/", string.Empty);
@@ -81,6 +83,7 @@ public class SaveData
     public SaveData(SaveData copy)
     {
         ChatHistories = new List<ChatHistoryItem>(copy.ChatHistories);
+        ChatLogs = new List<ChatLogEntry>(copy.ChatLogs);
         SimulationTime = copy.SimulationTime;
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
         InitDate = copy.InitDate;

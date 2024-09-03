@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: You_Watch
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'Hey, I found a wrist watch
+
+
+        what do you know about this?'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -24,7 +31,13 @@ MonoBehaviour:
       what do you know about this?'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'Sorry can''t give you a price on this relic
+
+'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1.5
     TypingDelay: 2
     WhoSpoke: Aria
@@ -36,4 +49,3 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

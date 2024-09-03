@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: You_CloseCase
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Alright, we can finish the session, get me out of here.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: Alright, we can finish the session, get me out of here.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: "Sweet \n\nJust a sec before I eject you out."
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1.5
     TypingDelay: 0.8
     WhoSpoke: Handler
@@ -31,4 +39,3 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

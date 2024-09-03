@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Relation_A
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: What about backstage technician who was on site?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,15 @@ MonoBehaviour:
     Content: What about backstage technician who was on site?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'Alm keeps to himself for the most part.
+
+
+        But when it comes
+        to tech, he is the Man.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.7
     TypingDelay: 5
     WhoSpoke: Aria
@@ -33,7 +45,11 @@ MonoBehaviour:
       tech, he is the Man.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: He's a wizard. That's all I know really.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2
     TypingDelay: 0.5
     WhoSpoke: Aria
@@ -46,4 +62,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Elia_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Manager Elia, we need to talk
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: Manager Elia, we need to talk
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: Who is this?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2.5
     TypingDelay: 0.8
     WhoSpoke: Elia
@@ -29,7 +37,15 @@ MonoBehaviour:
     Content: Who is this?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'I am an investigator for Ms Aria''s case.
+
+
+        We need a few
+        more details from you.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 0.8
     WhoSpoke: You
@@ -41,7 +57,11 @@ MonoBehaviour:
       details from you.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: I don't have much else to say, please refer to my previous interview.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2.5
     TypingDelay: 0.8
     WhoSpoke: Elia
@@ -49,7 +69,11 @@ MonoBehaviour:
     Content: I don't have much else to say, please refer to my previous interview.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: This conversation concerns Ms Aria's situation.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 1.2
     WhoSpoke: Elia
@@ -62,4 +86,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: da5b2e6dcc918104886cf7db397fe031, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

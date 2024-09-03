@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: 1_FindShelter
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Whereabouts are you?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,14 @@ MonoBehaviour:
     Content: Whereabouts are you?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'Been wandering around.
+
+
+        Everything''s closed.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 3
     TypingDelay: 0.8
     WhoSpoke: Aria
@@ -32,7 +43,11 @@ MonoBehaviour:
       Everything''s closed.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: At a cafe right now
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 0.5
     WhoSpoke: Aria

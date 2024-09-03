@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: 0_Shelter
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'Can I come inside now?
+
+
+        It''s raining out here and I might
+        catch a cold'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.1
     WhoSpoke: Aria
@@ -25,7 +33,11 @@ MonoBehaviour:
       a cold'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: virtually
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.05
     WhoSpoke: Aria

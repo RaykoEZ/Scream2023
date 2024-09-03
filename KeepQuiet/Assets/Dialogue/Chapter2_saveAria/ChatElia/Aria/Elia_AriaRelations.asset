@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: Elia_AriaRelations
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'Your colleague mentioned your intimate relationship with Ms Aria.
+
+
+        Is
+        this correct?'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -25,7 +33,15 @@ MonoBehaviour:
       this correct?'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: 'Was it the technician who told you this?
+
+
+        I''m not here
+        to entertain his gossip.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 0.8
     WhoSpoke: Elia
@@ -37,7 +53,15 @@ MonoBehaviour:
       his gossip.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: 'We were childhood friends and we want to keep it as is
+
+
+        There,
+        that''s it. '
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1.2
     TypingDelay: 1.3
     WhoSpoke: Elia
@@ -58,4 +82,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: e56d74fe8a8358d4fbdca35192298fbd, type: 2}
   - m_toDrop: {fileID: 0}
     m_outcome: {fileID: 11400000, guid: 794416a6b1f9c9e408288b52a59849bb, type: 2}
-  m_hiddenOptions: {fileID: 0}

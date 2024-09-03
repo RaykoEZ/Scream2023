@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: Alm_End
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'Repaying some screwups with restitution
+
+
+        and I need some
+        insider intel'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 1.5
     WhoSpoke: Al.
@@ -27,7 +35,14 @@ MonoBehaviour:
 '
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'Aria''s been MIA, isn''t she?
+
+
+        We need to find her'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.8
     TypingDelay: 0.6
     WhoSpoke: Al.
@@ -38,7 +53,11 @@ MonoBehaviour:
       We need to find her'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: It's your choice to help us
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.2
     TypingDelay: 0.3
     WhoSpoke: Al.

@@ -1,12 +1,8 @@
-﻿using B83.Win32;
-using Curry.Events;
+﻿using Curry.Events;
 using Curry.Explore;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 public delegate void OnChatUpdate();
 // Contains and displays text message boxes for a NPC chat
@@ -142,7 +138,7 @@ public class ChatRoom : HideableUI
     {
         // Instntiate a message box for the message
         MessageBox instance;
-        string who = toDisplay.WhoSpoke;
+        string who = toDisplay.ChatLog.WhoSpoke;
         if(who == DialogueNode.s_player) 
         {
             instance = Instantiate(m_playerBoxPrefab, m_messageParent);
@@ -208,8 +204,8 @@ public class ChatRoom : HideableUI
         foreach (var line in dialogues)
         {
             //skip empty content
-            if (line.Content == null || string.IsNullOrEmpty(line.Content)) continue;
-            isNpc = line.WhoSpoke != DialogueNode.s_player;
+            if (line.ChatLog.Content == null || string.IsNullOrEmpty(line.ChatLog.Content)) continue;
+            isNpc = line.ChatLog.WhoSpoke != DialogueNode.s_player;
             yield return new WaitUntil(() => !m_paused);
             yield return new WaitForSeconds(line.DelayBeforeTyping);
             msg = PrepareMessage(line);

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: 0_Handler_AF_Interview0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: Hey
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Your Handler
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: Yo.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: We made progress on the witnesses.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.2
     TypingDelay: 0.3
     WhoSpoke: Your Handler
@@ -29,7 +37,11 @@ MonoBehaviour:
     Content: We made progress on the witnesses.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: Here
+      AttachmentId: interviewA
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.5
     WhoSpoke: Your Handler
@@ -37,7 +49,11 @@ MonoBehaviour:
     Content: Here
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: And this one
+      AttachmentId: interviewF
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.3
     WhoSpoke: Your Handler
@@ -45,7 +61,12 @@ MonoBehaviour:
     Content: And this one
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: "We probably have enough to close shop, you just need \nto get a few
+        simple answers to set the narrative."
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 1
     WhoSpoke: Your Handler
@@ -54,7 +75,11 @@ MonoBehaviour:
       shop, you just need \nto get a few simple answers to set the narrative."
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: Give me a shout in the chat when you're done
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.05
     TypingDelay: 0.4
     WhoSpoke: Your Handler

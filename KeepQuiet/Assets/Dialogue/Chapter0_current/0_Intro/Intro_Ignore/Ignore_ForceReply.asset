@@ -13,22 +13,32 @@ MonoBehaviour:
   m_Name: Ignore_ForceReply
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 0
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Hey, anyone here?
+      AttachmentId: 
+    HasAudio: 0
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Hey, anyone here?
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 0
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: ' I''ve been waiting here, in the rain.'
+      AttachmentId: 
+    HasAudio: 0
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: ' I''ve been waiting here, in the rain.'
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes: []

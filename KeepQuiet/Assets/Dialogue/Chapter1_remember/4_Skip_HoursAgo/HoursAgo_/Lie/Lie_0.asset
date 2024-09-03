@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Lie_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Had a nap in my dorm, was probably dreaming it all.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: Had a nap in my dorm, was probably dreaming it all.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: mhm
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.3
     TypingDelay: 0.5
     WhoSpoke: Your Handler

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Elia_Self
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: I need to know something about you
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: I need to know something about you
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: And this concerns Aria?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.4
     TypingDelay: 0.8
     WhoSpoke: Elia
@@ -36,4 +44,3 @@ MonoBehaviour:
   m_thoughtOutcomes:
   - m_toDrop: {fileID: 0}
     m_outcome: {fileID: 11400000, guid: 8bd5242b50f8a4f40b4e3b357e8ec421, type: 2}
-  m_hiddenOptions: {fileID: 0}

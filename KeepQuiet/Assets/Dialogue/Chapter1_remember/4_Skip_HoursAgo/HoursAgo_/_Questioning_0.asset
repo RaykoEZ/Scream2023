@@ -13,17 +13,23 @@ MonoBehaviour:
   m_Name: _Questioning_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Anyone on the other side?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
     SentPrefabRef: {fileID: 0}
-    Content: 'This can''t be right
-
-'
+    Content: 
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: I was just questioning Ms. Yanagi a second ago and she's gone.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.05
     TypingDelay: 0.2
     WhoSpoke: You
@@ -31,7 +37,14 @@ MonoBehaviour:
     Content: I was just questioning Ms. Yanagi a second ago and she's gone.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'Who?
+
+
+        I don''t see any Ms Yanagi on our timetable.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 0.7
     WhoSpoke: Your Handler
@@ -42,7 +55,15 @@ MonoBehaviour:
       I don''t see any Ms Yanagi on our timetable.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: '<color=red>We need to go through some questions with you just in
+        case</color>
+
+
+        Where are you right now?'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1.8
     TypingDelay: 0.5
     WhoSpoke: Your Handler

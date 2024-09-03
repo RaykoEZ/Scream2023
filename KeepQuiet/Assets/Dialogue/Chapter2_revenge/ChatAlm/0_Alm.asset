@@ -13,15 +13,14 @@ MonoBehaviour:
   m_Name: 0_Alm
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
-    DelayBeforeTyping: 0
-    TypingDelay: 0
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: Yo what's up
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'No eavesdroppers here
+
+
+        Anything I can help you with?'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2.3
     TypingDelay: 1
     WhoSpoke: Al.

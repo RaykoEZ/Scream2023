@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: Ignore_Final
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Well, keep me posted, I'm all ears
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 3
     WhoSpoke: Aria
     SentPrefabRef: {fileID: 0}
     Content: Well, keep me posted, I'm all ears
+    ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Respond
@@ -27,4 +32,4 @@ MonoBehaviour:
   - m_description: <color=red>Ignore</color>
     m_outcome: {fileID: 0}
     m_triggerAfterChoice: {fileID: 11400000, guid: 036e91749f6487842a42c5a3c6d65df2, type: 2}
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes: []

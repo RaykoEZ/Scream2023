@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Response2_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'Thanks!
+
+        We want to know what happened on stage today'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.5
     WhoSpoke: You
@@ -23,7 +29,14 @@ MonoBehaviour:
       We want to know what happened on stage today'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'mhm
+
+
+        Sure, it''s still fresh in my head.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2.5
     TypingDelay: 0.8
     WhoSpoke: Aria
@@ -36,4 +49,3 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 11400000, guid: 68dcf84614b111e40b140cdec54c9cdc, type: 2}
   m_replyOptions: []
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

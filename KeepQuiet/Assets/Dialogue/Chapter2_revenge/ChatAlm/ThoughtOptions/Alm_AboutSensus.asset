@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: Alm_AboutSensus
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'Sensus? I thought they were gone
+
+
+        Why ask me about old news?'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Al.
@@ -24,7 +31,18 @@ MonoBehaviour:
       Why ask me about old news?'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'You had connections with the group
+
+
+        Look, this is off the
+        record
+
+
+        I want to know your side of the story'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 1.5
     WhoSpoke: You
@@ -39,7 +57,15 @@ MonoBehaviour:
       want to know your side of the story'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'I was a part of it.
+
+
+        But make no mistake we DID NOT start
+        the riot!'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2
     TypingDelay: 1.2
     WhoSpoke: Al.

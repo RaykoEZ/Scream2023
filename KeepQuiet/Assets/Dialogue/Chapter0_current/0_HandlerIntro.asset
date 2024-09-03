@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: 0_HandlerIntro
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 0
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: I will send you more files for the interrogation later
+      AttachmentId: 
+    HasAudio: 0
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Your Handler
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: I will send you more files for the interrogation later
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 0
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: Be on standby before that
+      AttachmentId: 
+    HasAudio: 0
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Your Handler

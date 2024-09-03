@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: Lie_1
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'You have some documents to finish after lunch.
+
+        Do you need
+        some extensions?'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0.5
     WhoSpoke: Your Handler

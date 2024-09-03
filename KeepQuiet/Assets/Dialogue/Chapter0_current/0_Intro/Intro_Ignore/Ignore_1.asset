@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Ignore_1
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Hey, I know someone's on the other side!
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 0.5
     WhoSpoke: Aria

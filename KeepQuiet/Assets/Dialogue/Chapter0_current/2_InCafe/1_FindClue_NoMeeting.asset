@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: 1_FindClue_NoMeeting
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: "We're in a virtual space, your vitals are in good care \n\nno need
+        to worry about food :)"
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.1
     TypingDelay: 0.2
     WhoSpoke: You
@@ -22,7 +27,11 @@ MonoBehaviour:
       to worry about food :)"
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: OTZ
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 0.1
     WhoSpoke: Aria

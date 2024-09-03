@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Elia_AutoMessage
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Manager Elia, we need to talk
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,15 @@ MonoBehaviour:
     Content: Manager Elia, we need to talk
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: 'This is an automated reply, I am not able to respond at the moment.
+
+
+        Please
+        contact me later.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.25
     TypingDelay: 0
     WhoSpoke: Elia
@@ -35,4 +47,3 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

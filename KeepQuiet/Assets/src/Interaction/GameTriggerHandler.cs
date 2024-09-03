@@ -7,7 +7,7 @@ public class GameTriggerHandler : MonoBehaviour
     [SerializeField] PhoneNotificationHandler m_phone = default;
     public void Message(DialogueNode newMessage)
     {
-        m_phone?.MessagePlayer(newMessage, newMessage.Dialogues[0].WhoSpoke);
+        m_phone?.MessagePlayer(newMessage, newMessage.Dialogues[0].ChatLog.WhoSpoke);
     }
     public void Call(DialResult call) 
     {

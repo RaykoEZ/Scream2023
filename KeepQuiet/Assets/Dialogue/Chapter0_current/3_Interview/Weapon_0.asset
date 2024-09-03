@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: Weapon_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: "We found a potential weapon near the scene, \n\nWhat do you know
+        anything about this?"
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -22,7 +27,11 @@ MonoBehaviour:
       about this?"
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: I have no idea.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 3
     TypingDelay: 0.7
     WhoSpoke: Aria
@@ -30,7 +39,11 @@ MonoBehaviour:
     Content: I have no idea.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: To be honest, I'm not sure what I got myself into.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2
     TypingDelay: 1.5
     WhoSpoke: Aria

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Respond0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Hello, who is this?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 0.5
     WhoSpoke: You
@@ -21,7 +25,14 @@ MonoBehaviour:
     Content: Hello, who is this?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'What do you mean?
+
+
+        I don''t see anyone else here'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 3
     TypingDelay: 2
     WhoSpoke: Aria
@@ -32,7 +43,11 @@ MonoBehaviour:
       I don''t see anyone else here'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: You guys put me in here, dont you have my files?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.3
     TypingDelay: 0.7
     WhoSpoke: Aria
@@ -45,4 +60,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: aca0aed420a8b534992c49accf28f2e0, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

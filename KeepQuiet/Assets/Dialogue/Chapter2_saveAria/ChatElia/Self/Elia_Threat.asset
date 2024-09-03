@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Elia_Threat
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Aria is in serious danager, your silence will only make it worse.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -27,4 +31,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: e56d74fe8a8358d4fbdca35192298fbd, type: 2}
   - m_toDrop: {fileID: 0}
     m_outcome: {fileID: 11400000, guid: 68324d3f5973ea940b9a87a35e3a1d6f, type: 2}
-  m_hiddenOptions: {fileID: 0}

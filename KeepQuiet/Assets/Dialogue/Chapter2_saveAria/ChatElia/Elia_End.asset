@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Elia_End
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: ...That is all.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -23,4 +27,3 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

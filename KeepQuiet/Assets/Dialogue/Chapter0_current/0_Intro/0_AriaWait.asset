@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: 0_AriaWait
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Anyone here?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 1
     WhoSpoke: Aria
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: Anyone here?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: ' I''ve been waiting, in the rain.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 1.5
     WhoSpoke: Aria

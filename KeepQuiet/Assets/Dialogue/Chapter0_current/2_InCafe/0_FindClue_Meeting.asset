@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: 0_FindClue_Meeting
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Hey, do you know when I'll be released?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0.3
     WhoSpoke: Aria
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: Hey, do you know when I'll be released?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Not long, we just need to check some facts with you today.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 1
     WhoSpoke: You
@@ -29,7 +37,15 @@ MonoBehaviour:
     Content: Not long, we just need to check some facts with you today.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'feeling a bit lonely n hungry rn
+
+
+        can we meet up and get
+        a snack?'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 2
     TypingDelay: 0.7
     WhoSpoke: Aria

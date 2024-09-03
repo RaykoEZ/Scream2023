@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Elia_YAP_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: Does "YAP" ring any bells?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,15 @@ MonoBehaviour:
     Content: Does "YAP" ring any bells?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: 'Where have you heard this name?
+
+
+        You should not have this
+        in your memory.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 10
     TypingDelay: 0.4
     WhoSpoke: Elia
@@ -43,4 +55,3 @@ MonoBehaviour:
   m_thoughtOutcomes:
   - m_toDrop: {fileID: 0}
     m_outcome: {fileID: 11400000, guid: e56d74fe8a8358d4fbdca35192298fbd, type: 2}
-  m_hiddenOptions: {fileID: 0}

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Alm_YAP
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: You seem to know a lot for a puppet.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 4
     TypingDelay: 2.7
     WhoSpoke: Al.
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: You seem to know a lot for a puppet.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: Okay, I'll give you this
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.3
     TypingDelay: 1.2
     WhoSpoke: Al.
@@ -29,7 +37,11 @@ MonoBehaviour:
     Content: Okay, I'll give you this
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: make of it what you will
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.3
     TypingDelay: 1.2
     WhoSpoke: Al.

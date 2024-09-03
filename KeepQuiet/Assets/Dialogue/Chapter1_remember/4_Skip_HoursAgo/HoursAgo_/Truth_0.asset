@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Truth_0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: I'm in the sandbox
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -21,7 +25,15 @@ MonoBehaviour:
     Content: I'm in the sandbox
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'Right, and you said you were interviewing.
+
+
+        But no one is
+        on our list.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 0.7
     WhoSpoke: Your Handler
@@ -33,7 +45,15 @@ MonoBehaviour:
       our list.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'I''ll get you out after a meeting
+
+
+        it''ll be an hour, please
+        be on standby for now'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.2
     TypingDelay: 1.5
     WhoSpoke: Your Handler
@@ -45,7 +65,14 @@ MonoBehaviour:
       be on standby for now'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'ask 182 if you need anything until then
+
+
+        catch you later'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.2
     TypingDelay: 1.5
     WhoSpoke: Your Handler

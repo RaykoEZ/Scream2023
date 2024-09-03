@@ -13,7 +13,19 @@ MonoBehaviour:
   m_Name: Elia_ExposeYAP
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'I know you are involved in a secret project.
+
+
+        The hidden
+        atrocities will distract the organisation.
+
+
+        We can take this opportunity
+        to locate and save Ms Aria.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -29,7 +41,18 @@ MonoBehaviour:
       take the opportunity to locate and save Ms Aria.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: 'Publish the secret project? How will it save her?
+
+
+        And who
+        will listen to us?
+
+
+        GenOp will off us all by next sunrise.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 1.2
     WhoSpoke: Elia
@@ -44,7 +67,11 @@ MonoBehaviour:
       GenOp will off us all by next sunrise.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: Do whatever you want
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 0.8
     WhoSpoke: Elia
@@ -66,4 +93,3 @@ MonoBehaviour:
   m_thoughtOutcomes:
   - m_toDrop: {fileID: 0}
     m_outcome: {fileID: 11400000, guid: cfac43c1b59dd5842b2821bf4fa1bf19, type: 2}
-  m_hiddenOptions: {fileID: 0}

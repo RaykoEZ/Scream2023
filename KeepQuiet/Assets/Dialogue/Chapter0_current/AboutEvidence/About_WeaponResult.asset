@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: About_WeaponResult
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: 'We got the weapon analysed for prints.
+
+
+        Ms Aria''s prints
+        are at the handle, holding the bat.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 1
     WhoSpoke: Your Handler
@@ -25,7 +33,12 @@ MonoBehaviour:
       at the handle, holding the bat.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: "Smoke n gun\n\ndon't you think? \n\nclose the case now and we have
+        an early break"
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 1.3
     WhoSpoke: Your Handler

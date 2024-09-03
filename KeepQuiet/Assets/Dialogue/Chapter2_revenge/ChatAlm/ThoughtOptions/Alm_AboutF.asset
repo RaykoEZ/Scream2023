@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: Alm_AboutF
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'Elia is walking on a tightrope for his special someone
+
+
+        forced
+        into a collab with those pigs'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Al.
@@ -25,7 +33,17 @@ MonoBehaviour:
       into a collab with those pigs'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'Not gonna give anymore details about the lovebirds
+
+
+        You
+        should ask him
+
+'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 1.2
     WhoSpoke: Al.
@@ -39,7 +57,15 @@ MonoBehaviour:
 '
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: '01294709 message only, don''t let them track the chat
+
+
+        Tell
+        him "Alm said hi and up for anything"'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 1
     TypingDelay: 1.2
     WhoSpoke: Al.

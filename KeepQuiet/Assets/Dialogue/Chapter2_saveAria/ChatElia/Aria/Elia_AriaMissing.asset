@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Elia_AriaMissing
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Ms Aria is currently MIA, we need to find her.
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Aria
@@ -26,4 +30,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: 9b7fe2093c79f1e4896fc4376a3497f5, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

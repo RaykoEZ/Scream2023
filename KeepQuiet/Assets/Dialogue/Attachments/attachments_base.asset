@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1883f5bc07f151646a37590f5df08f24, type: 3}
+  m_Name: attachments_base
+  m_EditorClassIdentifier: 
+  m_attachments:
+  - m_attachmentId: interviewA
+    m_attachmentPrefab: {fileID: 4205283863085066285, guid: 77d6e0c82a9d4b44bbddbe08e0243c85, type: 3}
+  - m_attachmentId: interviewF
+    m_attachmentPrefab: {fileID: 3360706593332240906, guid: 3a6921075da840142b8d1907b463d4c1, type: 3}
+  - m_attachmentId: cafeSelfie
+    m_attachmentPrefab: {fileID: 9220433789127847104, guid: c032643d10539254d93a72e3e483dc86, type: 3}
+  - m_attachmentId: cafeWatch
+    m_attachmentPrefab: {fileID: 9220433789127847104, guid: 7b8a84cd417a6c6468c92b6a9243a236, type: 3}

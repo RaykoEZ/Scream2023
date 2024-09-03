@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: Alm_Riot
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'We were just a small group
+
+
+        Sensus never hurt anyone'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Al.
@@ -24,7 +31,15 @@ MonoBehaviour:
       Sensus never hurt anyone'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Al.
+      Content: 'I don''t care how the news twists us into monsters.
+
+
+        We
+        couldn''t let the dirty pigs hide their laundry.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.4
     TypingDelay: 0.8
     WhoSpoke: Al.

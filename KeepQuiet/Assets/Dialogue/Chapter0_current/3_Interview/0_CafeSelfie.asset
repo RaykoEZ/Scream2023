@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: 0_CafeSelfie
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Yo
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: Aria
@@ -21,7 +25,11 @@ MonoBehaviour:
     Content: Yo
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Check this out
+      AttachmentId: cafeSelfie
+    HasAudio: 1
     DelayBeforeTyping: 0.3
     TypingDelay: 0.2
     WhoSpoke: Aria
@@ -29,7 +37,11 @@ MonoBehaviour:
     Content: Check this out
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Perfect place for an interview, is it not?
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 0.1
     WhoSpoke: Aria
@@ -42,4 +54,3 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}

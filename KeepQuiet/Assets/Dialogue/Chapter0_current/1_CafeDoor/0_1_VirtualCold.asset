@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: 0_1_VirtualCold
   m_EditorClassIdentifier: 
   m_dialogues:
-  - HasAudio: 1
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'Don''t worry, your vitals are monitored.
+
+
+        The rain shouldn''t
+        be an issue.'
+      AttachmentId: 
+    HasAudio: 1
     DelayBeforeTyping: 0
     TypingDelay: 0
     WhoSpoke: You
@@ -25,7 +33,15 @@ MonoBehaviour:
       be an issue.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - HasAudio: 0
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'Easy for you to say
+
+
+        how about YOU come out and enjoy it
+        with me?'
+      AttachmentId: 
+    HasAudio: 0
     DelayBeforeTyping: 0.1
     TypingDelay: 0.5
     WhoSpoke: Aria
