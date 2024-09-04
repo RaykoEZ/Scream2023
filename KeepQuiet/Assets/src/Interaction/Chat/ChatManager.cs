@@ -11,6 +11,11 @@ public class ChatManager : HideableUI
     {
         Shutdown();
     }
+    public void Init(SaveData save) 
+    {
+        List<ChatHistory> savedHistory = save.ChatHistories;
+
+    }
     public void Shutdown()
     {
         // shutdown chat room
@@ -53,13 +58,13 @@ public class ChatManager : HideableUI
         m_chatRoom.OnEnd -= EndDialogue;
         OnEnd?.Invoke();
     }
-    static ChatHistory FindHistory(string name, List<ChatHistoryItem> list)
+    static ChatHistory FindHistory(string name, List<ChatHistory> list)
     {
         if (list == null || string.IsNullOrWhiteSpace(name))
         {
             return null;
         }
         var result = list.Find(x => x.Username == name);
-        return result.History;
+        return result;
     }
 }

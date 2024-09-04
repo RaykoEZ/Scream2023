@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
+
 // Contains persistent data for changing game environment
 // and state of quicksaved game state
 [Serializable]
@@ -62,13 +63,11 @@ public class SaveData
     // time of the simulation, watch displays it
     public WatchDisplay SimulationTime;
     public HashSet<ThoughtDetail> HeldThoughts;
-    public List<ChatHistoryItem> ChatHistories;
-    public List<ChatLogEntry> ChatLogs;
+    public List<ChatHistory> ChatHistories;
     // New save file
     public SaveData()
     {
-        ChatHistories = new List<ChatHistoryItem>();
-        ChatLogs = new List<ChatLogEntry>();
+        ChatHistories = new List<ChatHistory>();
         SimulationTime = WatchDisplay.Present;
         InitDate = DateTime.Now;
         InitTime = InitDate.ToString("d").Replace(@"/", string.Empty);
@@ -82,8 +81,7 @@ public class SaveData
     }
     public SaveData(SaveData copy)
     {
-        ChatHistories = new List<ChatHistoryItem>(copy.ChatHistories);
-        ChatLogs = new List<ChatLogEntry>(copy.ChatLogs);
+        ChatHistories = new List<ChatHistory>(copy.ChatHistories);
         SimulationTime = copy.SimulationTime;
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
         InitDate = copy.InitDate;

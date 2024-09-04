@@ -2,42 +2,53 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityEngine.AddressableAssets;
+// Stores previous an NPC's conversatons in the chat room
 [Serializable]
 public class ChatHistory
 {
-    [SerializeField] List<DialogueNode> m_chatLog = default;
-    public DialogueNode LastDialogue => m_chatLog.Last();
-    public List<DialogueNode> ChatLog { get => m_chatLog; }
-    public ChatHistory() 
+    // whose chat history to assign this to
+    [SerializeField] string m_username = default;
+    // reference to each dialogue scriptableobject, used to save and load game state
+    [SerializeField] List<AssetReference> m_chatLogAssets = default;
+    // loaded chat dialogue nodes, loaded from chat log asset  references
+    [NonSerialized] List<DialogueNode> m_currentChatHistory = new List<DialogueNode>();
+    public string Username => m_username;
+    public List<DialogueNode> ChatLog => m_currentChatHistory;
+    public DialogueNode LastDialogue => m_currentChatHistory.Last();
+    public ChatHistory(string name, List<AssetReference> assetRefs)
     {
-        m_chatLog = null;
+        m_username = name;
+        m_chatLogAssets = assetRefs;
     }
-    public ChatHistory(ChatHistory copy) 
+    public ChatHistory(string name, List<DialogueNode> nodes) 
     {
-        m_chatLog = copy.m_chatLog;
+        m_username = name;
+        m_currentChatHistory = nodes;
     }
-    // get pure string values from chat history 
-    public List<ChatLogEntry> GetChatLogContent() 
+    //Search asset reference index to update chat assets for saving game data
+    public List<AssetReference> UpdateHistoryAssets(DialogueAssetReferenceIndex index) 
     {
-        List<ChatLogEntry> ret = new List<ChatLogEntry>();
-        foreach (var node in m_chatLog)
+        // Clear old list
+        m_chatLogAssets.Clear();
+        AssetReference assetRef;
+        // go through list of current history and collect asset references
+        foreach (var item in m_currentChatHistory)
         {
-            foreach (var line in node.Dialogues)
-            {
-                ret.Add(line.ChatLog);
-            }
+            assetRef = index.Find(item.name);
+            if (assetRef == null) continue;
+            m_chatLogAssets.Add(assetRef);
         }
-        return ret;
+        return m_chatLogAssets;
     }
     // Clear log and overwrite all content
     public void OverwriteLog(DialogueNode lastDialogue) 
     {
-        m_chatLog.Clear();
+        m_currentChatHistory.Clear();
         Append(lastDialogue);
     }
     public void Append(DialogueNode append) 
     {
-        m_chatLog.Add(append);
+        m_currentChatHistory.Add(append);
     }
 }

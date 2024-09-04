@@ -39,21 +39,6 @@ public class ChatOption
 [CreateAssetMenu(fileName = "Node_", menuName = "Chat/New Dialogue", order = 0)]
 public class DialogueNode : ScriptableObject, IEquatable<DialogueNode>
 {
-    [Serializable]
-    // Container class to export into save data
-    public struct DialogueNodeDetail 
-    {
-        // Need Asset Id to reference the SO upon loading
-        public string NodeId;
-        public string ChoiceDescription;
-        // Key: Outcome DialogueNode NodeId
-        // Value: DialogueEventTrigger Id
-        public Dictionary<string, string> ChoiceOutcomeEventIds;
-        // Key: Dropped Thought Detail asset Id
-        // Value: Outcome Dialogue NodeId
-        public Dictionary<string, string> ThoughtOutcomeEventIds;
-
-    }
     [SerializeField] List<Dialogue> m_dialogues = default;
     [SerializeField] List<ChatOption> m_replyOptions = default;
     [SerializeField] List<ThoughtDropResult> m_thoughtOutcomes = default;
