@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: thought
+  m_EditorClassIdentifier: 
+  m_GroupName: thought
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1b56cfbbc74e37347bf93da3ee0a91b8
+  m_SerializeEntries:
+  - m_GUID: 241c113c3ed8a574b82b00c311a31ad3
+    m_Address: Assets/Dialogue/ThoughtTopics
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a8f2599f67c7fa24cbdf4b6dd752ea8e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b32ac87d175053b4087cb5693d9db51d, type: 2}
+    - {fileID: 11400000, guid: b8734af928c214c449a6d7ed6502712e, type: 2}

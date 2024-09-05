@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
+using UnityEngine.AddressableAssets;
 
 // Contains persistent data for changing game environment
 // and state of quicksaved game state
@@ -53,7 +54,6 @@ public class SaveData
     public bool CheckedSubjectProfile;
     // Where is the player looking at
     public string CurrentlyViewing;
-    public string InitTime;
     public DateTime InitDate;
     // Check if player found and dragged out the Jamming device found in secret puzzle 
     // Did player resolve malware overtaking Aria?
@@ -62,20 +62,22 @@ public class SaveData
     public AriaState AriaStatus;
     // time of the simulation, watch displays it
     public WatchDisplay SimulationTime;
-    public HashSet<ThoughtDetail> HeldThoughts;
+    [JsonConverter(typeof(AssetReferenceJsonConverter))]
+    public List<AssetReference> HeldThoughts;
+    [JsonConverter(typeof(ChatHistoryConverter))]
     public List<ChatHistory> ChatHistories;
+    public string InitTime => InitDate.ToString("d").Replace(@"/", string.Empty);
     // New save file
     public SaveData()
     {
         ChatHistories = new List<ChatHistory>();
         SimulationTime = WatchDisplay.Present;
         InitDate = DateTime.Now;
-        InitTime = InitDate.ToString("d").Replace(@"/", string.Empty);
         CheckedSubjectProfile = false;
         FreedomRoute = false;
         WatchState = WatchDisplay.None;
         Persistent = new PersistentSave();
-        HeldThoughts = new HashSet<ThoughtDetail>();
+        HeldThoughts = new List<AssetReference>();
         CurrentlyViewing = "RoomRight";
         AriaStatus = AriaState.Default;
     }
@@ -85,12 +87,11 @@ public class SaveData
         SimulationTime = copy.SimulationTime;
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
         InitDate = copy.InitDate;
-        InitTime = copy.InitTime;
         FreedomRoute = copy.FreedomRoute;
         WatchState = copy.WatchState;
         Persistent = new PersistentSave(copy.Persistent);
         CurrentlyViewing = copy.CurrentlyViewing;
-        HeldThoughts = new HashSet<ThoughtDetail>(copy.HeldThoughts);
+        HeldThoughts = new List<AssetReference>(copy.HeldThoughts);
         AriaStatus = new AriaState(copy.AriaStatus);
     }
 }

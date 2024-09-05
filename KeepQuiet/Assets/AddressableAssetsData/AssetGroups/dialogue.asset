@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: dialogue
+  m_EditorClassIdentifier: 
+  m_GroupName: dialogue
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 43b29db9b565ecb4e959bec1f38399f7
+  m_SerializeEntries:
+  - m_GUID: 73597f736e948bb499d62b45d88d88c5
+    m_Address: Assets/Dialogue/Chapter0_current
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - dialogue
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 212737f38a4b0b747a9ee221ad12965a
+    m_Address: Assets/Dialogue/Chapter2_revenge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - dialogue
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8ae90ed1264f8e47957ec6bdf2b132c
+    m_Address: Assets/Dialogue/Chapter1_remember
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - dialogue
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 777353a00a3786f4fae41db939a681f3
+    m_Address: Assets/Dialogue/Chapter2_saveAria
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - dialogue
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5a161486639b00468ad0388362d6f0c
+    m_Address: Assets/Dialogue/Chapter3_saveAi
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - dialogue
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82d99814a3530f942ab3ffffc525b6eb
+    m_Address: Assets/Dialogue/End_CaseClosed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - dialogue
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a8f2599f67c7fa24cbdf4b6dd752ea8e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 42513b785e40f344ba1fc4d45973940f, type: 2}
+    - {fileID: 11400000, guid: 19b69f4cea070a246b627ec425ab2d50, type: 2}

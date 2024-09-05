@@ -1,10 +1,12 @@
 ﻿using Curry.Explore;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 // Notifies player when message comes
 public class ChatManager : HideableUI 
 {
     [SerializeField] GameSaveSource m_save = default;
+    [SerializeField] DialogueAssetReferenceIndex m_assetIndex = default;
     [SerializeField] ChatRoom m_chatRoom = default;
     public event OnChatUpdate OnEnd;
     private void OnDestroy()
@@ -14,7 +16,18 @@ public class ChatManager : HideableUI
     public void Init(SaveData save) 
     {
         List<ChatHistory> savedHistory = save.ChatHistories;
-
+        foreach (var item in savedHistory)
+        {
+            item.LoadDialogueAsync(true);
+        }
+    }
+    public void UpdateSave()
+    {
+        List<ChatHistory> savedHistory = m_save.Current.ChatHistories;
+        foreach (var item in savedHistory)
+        {
+            item.UpdateAssetReferences(m_assetIndex);
+        }
     }
     public void Shutdown()
     {

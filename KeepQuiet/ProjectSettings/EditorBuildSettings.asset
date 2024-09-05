@@ -18,4 +18,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Tests/BypassMinigame.unity
     guid: 88e56abf344b8d4439755d93bdd4cd67
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 9bbe7ababb3a788468f7bd0ff8c036f6, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 058abd82be462eb44a879eb9a8f31adb, type: 2}

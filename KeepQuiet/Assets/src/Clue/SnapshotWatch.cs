@@ -13,8 +13,9 @@ public enum WatchDisplay
 }
 
 [RequireComponent(typeof(CanvasGroup))]
-public class SnapshotWatch : ExternalDraggableObject, ISaveDataSubscriber
+public class SnapshotWatch : ExternalDraggableObject
 {
+    [SerializeField] GameSaveSource m_save = default;
     [SerializeField] PlayableDirector m_director = default; 
     [SerializeField] PlayableAsset m_presentTime = default;
     [SerializeField] PlayableAsset m_hoursAgo = default;
@@ -27,6 +28,10 @@ public class SnapshotWatch : ExternalDraggableObject, ISaveDataSubscriber
     public void Refresh(SaveData save)
     {
         SetWatchState(save.WatchState);
+    }
+    public void UpdateSave() 
+    {
+        m_save.Current.WatchState = m_currentDisplay;
     }
     public void Show() 
     {

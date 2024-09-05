@@ -2570,6 +2570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32e30ba23c74ab4c88d65225366a99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_save: {fileID: 7138903285013225189}
   m_audio: {fileID: 1189461310}
   m_postProcess: {fileID: 1539457609}
   m_outsideCam: {fileID: 172971999}
@@ -2590,6 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameState: {fileID: 7138903285013225189}
+  m_assetIndex: {fileID: 11400000, guid: 7dad3a6c796162b40b7978897df84c1e, type: 2}
   m_spawn: {fileID: 1791428171}
   m_toggleAnim: {fileID: 1731752276}
 --- !u!114 &451893990
@@ -13306,6 +13308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb5c1b60fce757419d0cb4f0651e329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_save: {fileID: 7138903285013225189}
   m_position:
     m_cafePoses: {fileID: 294059935}
 --- !u!1 &1539457608
@@ -23049,6 +23052,10 @@ PrefabInstance:
       propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7903155702300851469, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
+      propertyPath: m_save
+      value: 
+      objectReference: {fileID: 7138903285013225189}
     - target: {fileID: 8349375383676028255, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -23316,6 +23323,158 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 451893989}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1249785982}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 6087678029144893797}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1526016401}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 451893989}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1249785982}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UpdateSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: UpdateSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThoughtStateManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ChatManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SnapshotWatch, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: AriaStateManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThoughtStateManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ChatManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveGame.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090943919300146738, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
+      propertyPath: m_onSaveCallback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5197947220437692658, guid: d3459d1d2fbbb7f488712c7a12814eec, type: 3}
       propertyPath: m_Name
       value: P_SaveState

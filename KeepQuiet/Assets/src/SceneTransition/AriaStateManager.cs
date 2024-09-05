@@ -4,6 +4,7 @@ using UnityEngine;
 [Serializable]
 public class AriaStateManager : MonoBehaviour
 {
+    [SerializeField] GameSaveSource m_save = default;
     [SerializeField] AriaDisplayController m_position = default;
     AriaState m_current;
     public AriaState Current => m_current;
@@ -11,6 +12,10 @@ public class AriaStateManager : MonoBehaviour
     {
         m_current = change.AriaStatus;
         m_position?.MoveTo(change.AriaStatus.CurrentLocation, AriaPosition.None);
+    }
+    public void UpdateSave() 
+    {
+        m_save.Current.AriaStatus = Current;
     }
     public void Hide()
     {

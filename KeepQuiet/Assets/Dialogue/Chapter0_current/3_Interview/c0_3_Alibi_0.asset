@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: c0_3_Alibi_0
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - ChatLog:
+      WhoSpoke: You
+      Content: Just checking, where were you between noon and 1530 two days ago?
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0.3
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: Just checking, where were you between noon and 1530 two days ago?
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: "Two days ago, that's the day I went to the hospital \nfor a routine
+        checkup and I was free to leave around noon.\n\nthere was also the rehearsal
+        at the studio later in the afternoon too\n\nyou can check with the others"
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 5
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: "Two days ago, that's the day I went to the hospital \nfor a routine
+      checkup and I was free to leave around noon.\n\nthere was also the rehearsal
+      at the studio later in the afternoon too\n\nyou can check with the others"
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions:
+  - m_description: Change the topic
+    m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes: []

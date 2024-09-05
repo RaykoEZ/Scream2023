@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 // Loads saved game state when game scene initializes
 public class GameStateManager : MonoBehaviour
 {
+    [SerializeField] GameSaveSource m_save = default;
     [SerializeField] protected AudioTrigger m_audio = default;
     [SerializeField] protected Volume m_postProcess = default;
     // view states
@@ -31,6 +32,10 @@ public class GameStateManager : MonoBehaviour
             {m_roomRight.Name, m_roomRight}
         };
         StartCoroutine(ChangeView_Internal(m_views[saved.CurrentlyViewing]));
+    }
+    public void UpdateSave() 
+    {
+        m_save.Current.CurrentlyViewing = m_currentView.Name;
     }
     public void ChangeView(ViewState newView) 
     {

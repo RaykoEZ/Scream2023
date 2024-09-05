@@ -678,8 +678,9 @@ MonoBehaviour:
   m_onHideEvent:
     m_PersistentCalls:
       m_Calls: []
+  m_save: {fileID: 0}
+  m_assetIndex: {fileID: 11400000, guid: 4d45dbe80c2148949b99b00346be74f7, type: 2}
   m_chatRoom: {fileID: 801509897093964348}
-  m_histories: {fileID: 11400000, guid: 5c7e6fc7565633d46994ba7ec75d617c, type: 2}
 --- !u!223 &1621687796702700918
 Canvas:
   m_ObjectHideFlags: 0

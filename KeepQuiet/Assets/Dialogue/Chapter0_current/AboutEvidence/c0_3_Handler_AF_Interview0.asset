@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: c0_3_Handler_AF_Interview0
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: Hey
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 0}
+    Content: Yo.
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: We made progress on the witnesses.
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0.2
+    TypingDelay: 0.3
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 0}
+    Content: We made progress on the witnesses.
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: Here
+      AttachmentId: interviewA
+    HasAudio: 1
+    DelayBeforeTyping: 0.1
+    TypingDelay: 0.5
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 4205283863085066285, guid: 77d6e0c82a9d4b44bbddbe08e0243c85, type: 3}
+    Content: Here
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: And this one
+      AttachmentId: interviewF
+    HasAudio: 1
+    DelayBeforeTyping: 0.1
+    TypingDelay: 0.3
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 3360706593332240906, guid: 3a6921075da840142b8d1907b463d4c1, type: 3}
+    Content: And this one
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: "We probably have enough to close shop, you just need \nto get a few
+        simple answers to set the narrative."
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0.1
+    TypingDelay: 1
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 0}
+    Content: "Pretty damning for our Miss here\n\nWe probably have enough to close
+      shop, you just need \nto get a few simple answers to set the narrative."
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: Give me a shout in the chat when you're done
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0.05
+    TypingDelay: 0.4
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 0}
+    Content: Give me a shout in the chat when you're done
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_thoughtOutcomes: []
