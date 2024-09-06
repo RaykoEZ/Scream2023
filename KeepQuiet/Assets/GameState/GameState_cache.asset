@@ -20,34 +20,18 @@ MonoBehaviour:
     FreedomRoute: 0
     CheckedSubjectProfile: 0
     CurrentlyViewing: RoomRight
-    InitTime: 0
     WatchState: 4
     AriaStatus:
       IsMissing: 0
       CurrentLocation: -1
     SimulationTime: 0
+    HeldThoughts: []
     ChatHistories:
     - m_username: Aria
-      m_chatLogAssets:
-      - m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      m_chatLogAssets: []
     - m_username: Your Handler
-      m_chatLogAssets:
-      - m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      m_chatLogAssets: []
     - m_username: Al.
-      m_chatLogAssets:
-      - m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      m_chatLogAssets: []
     - m_username: Elia
-      m_chatLogAssets:
-      - m_AssetGUID: 
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      m_chatLogAssets: []

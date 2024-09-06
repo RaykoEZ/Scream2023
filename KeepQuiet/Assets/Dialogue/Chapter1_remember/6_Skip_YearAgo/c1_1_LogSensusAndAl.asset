@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: c1_1_LogSensusAndAl
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - ChatLog:
+      WhoSpoke: ?z??a1q
+      Content: "Alm you up? \n\nNeed help at Sector 7, some idiots brought fireworks"
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: ?z??a1q
+    SentPrefabRef: {fileID: 0}
+    Content: "Alm you up? \n\nNeed help at Sector 7, some idiots brought fireworks"
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: ??a?1_spA
+      Content: 'Shit seriously?
+
+
+        Thought it was just a peaceful rally'
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0.5
+    TypingDelay: 1
+    WhoSpoke: ??a?1_spA
+    SentPrefabRef: {fileID: 0}
+    Content: 'Shit seriously?
+
+
+      Thought it was just a peaceful rally'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: ?z??a1q
+      Content: 'Rogue party
+
+
+        We need to get indoors before someone gets
+        hurt'
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.2
+    WhoSpoke: ?z??a1q
+    SentPrefabRef: {fileID: 0}
+    Content: 'Rogue party
+
+
+      We need to get indoors before someone gets hurt'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: ??a?1_spA
+      Content: 'I''m going to open a door at the back of Lane A12 Unit104
+
+
+        go
+        behind the building and it''s upstairs
+
+
+        get in the WC, go straight,
+        second left
+
+
+        don''t get tailed'
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 5
+    TypingDelay: 3
+    WhoSpoke: ??a?1_spA
+    SentPrefabRef: {fileID: 0}
+    Content: 'I''m going to open a door at the back of Lane A12 Unit104
+
+
+      go
+      behind the building and it''s upstairs
+
+
+      get in the WC, go straight,
+      second left
+
+
+      don''t get tailed'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: ?z??a1q
+      Content: Got it
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 3
+    TypingDelay: 0.2
+    WhoSpoke: ?z??a1q
+    SentPrefabRef: {fileID: 0}
+    Content: Got it
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_thoughtOutcomes: []

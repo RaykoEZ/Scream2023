@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: c1_0_HandleraChat1
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - ChatLog:
+      WhoSpoke: You
+      Content: my lunch is coming late.
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: my lunch is coming late.
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: you have my condolences
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0.3
+    TypingDelay: 0.1
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 0}
+    Content: you have my condolences
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Your Handler
+      Content: "I'll be off in a sec\n\ncall tech on 182, \nthey have all the answers"
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0.5
+    TypingDelay: 2
+    WhoSpoke: Your Handler
+    SentPrefabRef: {fileID: 0}
+    Content: "I'll be off in a sec\n\ncall tech on 182, \nthey have all the answers"
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_thoughtOutcomes: []

@@ -19,11 +19,12 @@ public class GameStateFileHandler : MonoBehaviour
     public SaveData Current => new SaveData(m_current);
     void Awake()
     {
-#if UNITY_EDITOR
-        // for editor testing,
-        // reset cache state on awake
-        m_currentCache.SetSaveState(m_defaultState.State);
-#endif
+        if (Application.isEditor)
+        {
+            // for editor testing,
+            // reset cache state on awake
+            m_currentCache.SetSaveState(m_defaultState.State);
+        }
         // Setup game states on game launch
         int sceneIdx = SceneManager.GetActiveScene().buildIndex;
         if (sceneIdx == 0)

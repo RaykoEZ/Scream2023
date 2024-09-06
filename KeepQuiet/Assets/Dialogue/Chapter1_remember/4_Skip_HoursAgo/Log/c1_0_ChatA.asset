@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: c1_0_ChatA
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: Hey, Al, I'm gonna be a bit late for our rehearsal today
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: Hey, Al, I'm gonna be a bit late for our rehearsal today
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: 'Mind passing along to Elia?
+
+
+        Can''t reach him on phone rn'
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0.1
+    TypingDelay: 0.5
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: 'Mind passing along to Elia?
+
+
+      Can''t reach him on phone rn'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Alm
+      Content: Sure thing, don't sweat it.
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.1
+    WhoSpoke: Alm
+    SentPrefabRef: {fileID: 0}
+    Content: Sure thing, don't sweat it.
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: "Thanks, will be ~30min late \n\nyou're a lifesaver"
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0.5
+    TypingDelay: 0.1
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: "Thanks, will be ~30min late \n\nyou're a lifesaver"
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_thoughtOutcomes: []

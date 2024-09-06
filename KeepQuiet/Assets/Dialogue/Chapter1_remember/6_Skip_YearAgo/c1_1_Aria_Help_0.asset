@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: c1_1_Aria_Help_0
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: H           e
+      AttachmentId: 
+    HasAudio: 0
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: H           e
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: l
+      AttachmentId: 
+    HasAudio: 0
+    DelayBeforeTyping: 3
+    TypingDelay: 0
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: l
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Aria
+      Content: p
+      AttachmentId: 
+    HasAudio: 0
+    DelayBeforeTyping: 2
+    TypingDelay: 0
+    WhoSpoke: Aria
+    SentPrefabRef: {fileID: 0}
+    Content: p
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_thoughtOutcomes: []

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: c2_0_Elia_ExposeYAP
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - ChatLog:
+      WhoSpoke: You
+      Content: 'I know you are involved in a secret project.
+
+
+        The hidden
+        atrocities will distract the organisation.
+
+
+        We can take this opportunity
+        to locate and save Ms Aria.'
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    WhoSpoke: You
+    SentPrefabRef: {fileID: 0}
+    Content: 'I know you are involved in a secret project involving Ms Aria.
+
+
+      The
+      hidden atrocities will send the GenOp operation into chaos.
+
+
+      We can
+      take the opportunity to locate and save Ms Aria.'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: 'Publish the secret project? How will it save her?
+
+
+        And who
+        will listen to us?
+
+
+        GenOp will off us all by next sunrise.'
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 0
+    TypingDelay: 1.2
+    WhoSpoke: Elia
+    SentPrefabRef: {fileID: 0}
+    Content: 'Publish the secret project? How will it save her?
+
+
+      And who will
+      listen to us?
+
+
+      GenOp will off us all by next sunrise.'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ChatLog:
+      WhoSpoke: Elia
+      Content: Do whatever you want
+      AttachmentId: 
+    HasAudio: 1
+    DelayBeforeTyping: 1
+    TypingDelay: 0.8
+    WhoSpoke: Elia
+    SentPrefabRef: {fileID: 0}
+    Content: 'Do whatever you want
+
+
+      I have an urgent meeting coming up
+
+
+      Do
+      not talk to me again. '
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions:
+  - m_description: End conversation
+    m_outcome: {fileID: 11400000, guid: 95a5c6dc56d466c4db62dbb87d7bea25, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  m_thoughtOutcomes:
+  - m_toDrop: {fileID: 0}
+    m_outcome: {fileID: 11400000, guid: cfac43c1b59dd5842b2821bf4fa1bf19, type: 2}
