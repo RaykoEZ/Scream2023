@@ -25,7 +25,11 @@ MonoBehaviour:
       IsMissing: 0
       CurrentLocation: -1
     SimulationTime: 0
-    HeldThoughts: []
+    HeldThoughts:
+    - m_AssetGUID: b317449047b29eb429d41372fe0ec431
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
     ChatHistories:
     - m_username: Aria
       m_chatLogAssets: []
@@ -39,3 +43,16 @@ MonoBehaviour:
       m_chatLogAssets: []
     - m_username: Elia
       m_chatLogAssets: []
+    ChatLogs:
+    - m_username: Aria
+      m_chatLogAssets:
+      - m_AssetGUID: 411c38fb78b0b7745a1fdecff4c2a20f
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - m_username: Your Handler
+      m_chatLogAssets:
+      - m_AssetGUID: c6a066986d426074384268fd5ea8bf5e
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1

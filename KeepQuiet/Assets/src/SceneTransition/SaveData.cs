@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
 using UnityEngine.AddressableAssets;
-
 // Contains persistent data for changing game environment
 // and state of quicksaved game state
 [Serializable]
@@ -62,28 +61,30 @@ public class SaveData
     public AriaState AriaStatus;
     // time of the simulation, watch displays it
     public WatchDisplay SimulationTime;
-    [JsonConverter(typeof(AssetReferenceJsonConverter))]
+    [JsonConverter(typeof(AssetReferenceListJsonConverter))]
     public List<AssetReference> HeldThoughts;
-    [JsonConverter(typeof(ChatHistoryConverter))]
     public List<ChatHistory> ChatHistories;
+    public List<ChatLog> ChatLogs;
     public string InitTime => InitDate.ToString("d").Replace(@"/", string.Empty);
     // New save file
     public SaveData()
     {
         ChatHistories = new List<ChatHistory>();
+        HeldThoughts = new List<AssetReference>();
         SimulationTime = WatchDisplay.Present;
         InitDate = DateTime.Now;
         CheckedSubjectProfile = false;
         FreedomRoute = false;
         WatchState = WatchDisplay.None;
         Persistent = new PersistentSave();
-        HeldThoughts = new List<AssetReference>();
         CurrentlyViewing = "RoomRight";
         AriaStatus = AriaState.Default;
     }
     public SaveData(SaveData copy)
     {
+        ChatLogs = copy.ChatLogs;
         ChatHistories = new List<ChatHistory>(copy.ChatHistories);
+        HeldThoughts = new List<AssetReference>(copy.HeldThoughts);
         SimulationTime = copy.SimulationTime;
         CheckedSubjectProfile = copy.CheckedSubjectProfile;
         InitDate = copy.InitDate;
@@ -91,7 +92,6 @@ public class SaveData
         WatchState = copy.WatchState;
         Persistent = new PersistentSave(copy.Persistent);
         CurrentlyViewing = copy.CurrentlyViewing;
-        HeldThoughts = new List<AssetReference>(copy.HeldThoughts);
         AriaStatus = new AriaState(copy.AriaStatus);
     }
 }

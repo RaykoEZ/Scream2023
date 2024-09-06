@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed372e5126911e45bc17ae8e64d109d, type: 3}
   m_Name: ThoughtAssetRefs_0
   m_EditorClassIdentifier: 
-  m_thoughtAssetRefs: []
+  m_thoughtAssetRefs:
+  - m_AssetGUID: b317449047b29eb429d41372fe0ec431
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 1

@@ -17,14 +17,12 @@ public class GameStateFileHandler : MonoBehaviour
     static bool s_saveInProgress = false;
     static string s_gamestatePath = "saves/gamestate.json";
     public SaveData Current => new SaveData(m_current);
-    void Awake()
+    void Start()
     {
-        if (Application.isEditor)
-        {
-            // for editor testing,
-            // reset cache state on awake
-            m_currentCache.SetSaveState(m_defaultState.State);
-        }
+        // for editor testing,
+        // reset cache state on awake
+        m_currentCache.SetSaveState(m_defaultState.State);
+        SaveToFile(m_defaultState.State);       
         // Setup game states on game launch
         int sceneIdx = SceneManager.GetActiveScene().buildIndex;
         if (sceneIdx == 0)

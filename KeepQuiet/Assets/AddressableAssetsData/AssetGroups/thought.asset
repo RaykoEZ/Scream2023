@@ -20,7 +20,8 @@ MonoBehaviour:
   - m_GUID: 241c113c3ed8a574b82b00c311a31ad3
     m_Address: Assets/Dialogue/ThoughtTopics
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - thought
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a8f2599f67c7fa24cbdf4b6dd752ea8e, type: 2}

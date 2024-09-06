@@ -39,7 +39,7 @@ public class ChatManager : HideableUI
     {
         ChatHistory result = FindHistory(username, m_save.Current.ChatHistories);
         if (result == null) return;
-        // instantiate history logs and store them here for record keeping if needed
+        //instantiate history logs and store them here for record keeping if needed
         m_chatRoom.SetChatHistory(result);
         m_chatRoom.Hide();
         StartCurrentChat();
