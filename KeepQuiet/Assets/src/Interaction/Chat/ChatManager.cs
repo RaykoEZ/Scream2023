@@ -1,4 +1,5 @@
 ﻿using Curry.Explore;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -9,25 +10,25 @@ public class ChatManager : HideableUI
     [SerializeField] DialogueAssetReferenceIndex m_assetIndex = default;
     [SerializeField] ChatRoom m_chatRoom = default;
     public event OnChatUpdate OnEnd;
+    // loaded chat dialogue nodes, loaded from chat log asset references
+    Dictionary<string, AddressableContainer<DialogueNode>> m_currentChatLogs =
+        new Dictionary<string,AddressableContainer<DialogueNode>>();
     private void OnDestroy()
     {
         Shutdown();
     }
     public void Init(SaveData save) 
     {
-        List<ChatHistory> savedHistory = save.ChatHistories;
-        foreach (var item in savedHistory)
+        m_currentChatLogs?.Clear();
+        foreach (var item in save.ChatHistories)
         {
-            item.LoadDialogueAsync(true);
+            m_currentChatLogs.Add(item.Username, new AddressableContainer<DialogueNode>());
         }
+        LoadDialogueAsync(save, true);
     }
     public void UpdateSave()
     {
-        List<ChatHistory> savedHistory = m_save.Current.ChatHistories;
-        foreach (var item in savedHistory)
-        {
-            item.UpdateAssetReferences(m_assetIndex);
-        }
+        UpdateAssetReferences(m_assetIndex);
     }
     public void Shutdown()
     {
@@ -40,10 +41,26 @@ public class ChatManager : HideableUI
         ChatHistory result = FindHistory(username, m_save.Current.ChatHistories);
         if (result == null) return;
         //instantiate history logs and store them here for record keeping if needed
-        m_chatRoom.SetChatHistory(result);
-        m_chatRoom.Hide();
-        StartCurrentChat();
-        Show();
+        if(m_currentChatLogs.TryGetValue(result.Username, out var log))
+        {
+            m_chatRoom.SetChatLog(log);
+            m_chatRoom.Hide();
+            StartCurrentChat();
+            Show();
+        }
+    }
+    // Redirect to ContactList
+    public void OnNewMessage(DialogueNode newDialogue, string username)
+    {
+        ChatHistory result = FindHistory(username, m_save.Current.ChatHistories);
+        if (result == null) return;
+        if (m_currentChatLogs.TryGetValue(result.Username, out var log))
+        {
+            // instantiate history logs and store them here for record keeping if needed
+            m_chatRoom.SetChatLog(log);
+            m_chatRoom.Hide();
+            m_chatRoom.NewDialogue(newDialogue);
+        }
     }
     void StartCurrentChat()
     {
@@ -52,18 +69,6 @@ public class ChatManager : HideableUI
         // Display the preloaded ui for chatting with this NPC
         m_chatRoom.Show();
         m_chatRoom.StartChat();
-    }
-    // Redirect to ContactList
-    public void OnNewMessage(DialogueNode newDialogue, string username) 
-    {
-        ChatHistory result = FindHistory(username, m_save.Current.ChatHistories);
-        if (result == null) return;
-        // add new dialogue to chat history
-        result.Append(newDialogue);
-        // instantiate history logs and store them here for record keeping if needed
-        m_chatRoom.SetChatHistory(result);
-        m_chatRoom.Hide();
-        m_chatRoom.NewCurrentDialogue(newDialogue);
     }
     void EndDialogue()
     {
@@ -79,5 +84,25 @@ public class ChatManager : HideableUI
         }
         var result = list.Find(x => x.Username == name);
         return result;
+    }
+    // Get asset reference from new dialogues added after initial load
+    protected void UpdateAssetReferences(DialogueAssetReferenceIndex index)
+    {
+        List<ChatHistory> historiesRef = m_save.Current.ChatHistories;
+        List<AssetReference> refs;
+        foreach (var item in historiesRef)
+        {
+            refs = AddressableContainer<DialogueNode>.GetAssetReferenceList(index, m_currentChatLogs[item.Username]);
+            item.ChatLogAssets = refs;
+        }
+    }
+    protected void LoadDialogueAsync(SaveData save, bool overwrite = false, Action<List<DialogueNode>> onFinish = null)
+    {
+        ChatHistory history;
+        foreach (var kvp in m_currentChatLogs)
+        {
+            history = FindHistory(kvp.Key, save.ChatHistories);
+            kvp.Value.LoadAssetAsync(history.ChatLogAssets, overwrite, onFinish);
+        }
     }
 }

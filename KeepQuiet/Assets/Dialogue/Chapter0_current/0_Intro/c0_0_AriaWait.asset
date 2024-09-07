@@ -20,21 +20,6 @@ MonoBehaviour:
     HasAudio: 1
     DelayBeforeTyping: 0.5
     TypingDelay: 1
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: Anyone here?
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
-      WhoSpoke: Aria
-      Content: ' I''ve been waiting, in the rain.'
-      AttachmentId: 
-    HasAudio: 1
-    DelayBeforeTyping: 0.5
-    TypingDelay: 1.5
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: ' I''ve been waiting, in the rain.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:

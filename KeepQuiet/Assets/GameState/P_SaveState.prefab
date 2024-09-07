@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5197947220437692658}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5197947220437692668
 MonoBehaviour:
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6eb3438291e2c4a9976298c6d82a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_testState: {fileID: 11400000, guid: 19aa9ce775b917a47bfaa161fda45f2d, type: 2}
   m_defaultState: {fileID: 11400000, guid: ee06b205f81e38f44b950c42ec469263, type: 2}
   m_currentCache: {fileID: 11400000, guid: 937a93690cc9fdf43b0e337d0bea9130, type: 2}
   m_InitSceneCallbacks:
@@ -75,3 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_saveState: {fileID: 5197947220437692668}
+  m_onSaveGame:
+    m_PersistentCalls:
+      m_Calls: []

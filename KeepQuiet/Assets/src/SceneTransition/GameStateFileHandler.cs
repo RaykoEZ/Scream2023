@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 // Saves updated states coming from game state in scene
 public class GameStateFileHandler : MonoBehaviour
 {
+    [SerializeField] GameStateContainer m_testState = default;
     // State to load upon first load
     [SerializeField] GameStateContainer m_defaultState = default;
     // current save data in SO when changing scenes 
@@ -20,9 +21,6 @@ public class GameStateFileHandler : MonoBehaviour
     void Start()
     {
         // for editor testing,
-        // reset cache state on awake
-        m_currentCache.SetSaveState(m_defaultState.State);
-        SaveToFile(m_defaultState.State);       
         // Setup game states on game launch
         int sceneIdx = SceneManager.GetActiveScene().buildIndex;
         if (sceneIdx == 0)
@@ -31,8 +29,15 @@ public class GameStateFileHandler : MonoBehaviour
             LoadFromFile();
             m_InitSceneCallbacks?.Invoke(Current);
         }
+        else if (Application.isEditor) 
+        {
+            m_currentCache.SetSaveState(m_testState.State);
+            // If we are in other scenes, load cache from previous scene
+            TryLoadFromCache();
+        }
         else 
         {
+
             // If we are in other scenes, load cache from previous scene
             TryLoadFromCache();
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
 using UnityEngine.AddressableAssets;
+using UnityEngine;
 // Contains persistent data for changing game environment
 // and state of quicksaved game state
 [Serializable]
@@ -61,10 +62,11 @@ public class SaveData
     public AriaState AriaStatus;
     // time of the simulation, watch displays it
     public WatchDisplay SimulationTime;
+    [AssetReferenceUILabelRestriction("thought")]
     [JsonConverter(typeof(AssetReferenceListJsonConverter))]
     public List<AssetReference> HeldThoughts;
     public List<ChatHistory> ChatHistories;
-    public List<ChatLog> ChatLogs;
+    [JsonIgnore]
     public string InitTime => InitDate.ToString("d").Replace(@"/", string.Empty);
     // New save file
     public SaveData()
@@ -82,7 +84,6 @@ public class SaveData
     }
     public SaveData(SaveData copy)
     {
-        ChatLogs = copy.ChatLogs;
         ChatHistories = new List<ChatHistory>(copy.ChatHistories);
         HeldThoughts = new List<AssetReference>(copy.HeldThoughts);
         SimulationTime = copy.SimulationTime;

@@ -13,23 +13,41 @@ MonoBehaviour:
   m_Name: GameState_test
   m_EditorClassIdentifier: 
   m_state:
-    RoomLeftDoorState: 1
+    Persistent:
+      AriaDead: 0
+      ContinueCount: 0
+      CurrentEnding: 3
+    FreedomRoute: 0
+    CheckedSubjectProfile: 0
     CurrentlyViewing: RoomLeft
+    WatchState: 4
     AriaStatus:
-      IsPossessed: 0
-      HasPastRunMemory: 0
-      Affection: 1
-      Sanity: 1
+      IsMissing: 0
       CurrentLocation: 1
-    ViewStates:
-    - LocationName: InsideCafe
-      CluesToHide: []
-    - LocationName: OutsideAria
-      CluesToHide: []
-    - LocationName: OutsideCamera
-      CluesToHide: []
-    - LocationName: RoomLeft
-      CluesToHide:
-      - Clock
-    - LocationName: RoomRight
-      CluesToHide: []
+    SimulationTime: 0
+    HeldThoughts:
+    - m_AssetGUID: b317449047b29eb429d41372fe0ec431
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: f5a016e6a3e664d4f92239278b1643a8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 4be064471d302b647a3049534a84d495
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+    ChatHistories:
+    - Username: Aria
+      ChatLogAssets: []
+    - Username: Your Handler
+      ChatLogAssets:
+      - m_AssetGUID: 7c8ed4b872331d74f9260891ae136e50
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Username: Al.
+      ChatLogAssets: []
+    - Username: Elia
+      ChatLogAssets: []

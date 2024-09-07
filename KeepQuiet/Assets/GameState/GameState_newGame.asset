@@ -31,28 +31,19 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 1
     ChatHistories:
-    - m_username: Aria
-      m_chatLogAssets: []
-    - m_username: Your Handler
-      m_chatLogAssets:
+    - Username: Aria
+      ChatLogAssets:
+      - m_AssetGUID: ff64d871b325a58428d4e5d3e619d002
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Username: Your Handler
+      ChatLogAssets:
       - m_AssetGUID: 7c8ed4b872331d74f9260891ae136e50
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 1
-    - m_username: Al.
-      m_chatLogAssets: []
-    - m_username: Elia
-      m_chatLogAssets: []
-    ChatLogs:
-    - m_username: Aria
-      m_chatLogAssets:
-      - m_AssetGUID: 411c38fb78b0b7745a1fdecff4c2a20f
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-    - m_username: Your Handler
-      m_chatLogAssets:
-      - m_AssetGUID: c6a066986d426074384268fd5ea8bf5e
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 1
+    - Username: Al.
+      ChatLogAssets: []
+    - Username: Elia
+      ChatLogAssets: []

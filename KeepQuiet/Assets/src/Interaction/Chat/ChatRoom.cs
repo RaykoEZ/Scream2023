@@ -2,6 +2,7 @@
 using Curry.Explore;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public delegate void OnChatUpdate();
@@ -17,13 +18,14 @@ public class ChatRoom : HideableUI
     [SerializeField] MessageBox m_ariaBoxPrefab = default;
     [SerializeField] MessageBox m_playerBoxPrefab = default;
     List<MessageBox> m_spawnedMessages = new List<MessageBox>();
-    ChatHistory m_history;
+    AddressableContainer<DialogueNode> m_historyRef;
+    public List<DialogueNode> ChatLogRef => m_historyRef.LoadedAssets;
+    public DialogueNode LastDialogue => ChatLogRef.Last();
     DialogueNode m_currentNode;
     Coroutine m_chatting;
     public event OnChatUpdate OnEnd;
     bool m_isDirty = false;
     bool m_paused = false;
-    public ChatHistory History => m_history;
     void OnEnable()
     {
         m_optionPrompt.OnChosen += OnReplyChosen;
@@ -32,17 +34,17 @@ public class ChatRoom : HideableUI
     {
         Shutdown();
     }
-    public void SetChatHistory(ChatHistory history)
+    public void SetChatLog(AddressableContainer<DialogueNode> history)
     {
-        if (m_history != history) 
+        if (m_historyRef != history) 
         {
             // remove all old messages
             ClearChat();
-            m_history = history;
+            m_historyRef = history;
             IReadOnlyList<Dialogue> lines;
             MessageBox msg;
             // Display new chat history messages
-            foreach (DialogueNode log in m_history.ChatLog)
+            foreach (DialogueNode log in ChatLogRef)
             {
                 lines = log.Dialogues;
                 foreach(var l in lines) 
@@ -52,7 +54,7 @@ public class ChatRoom : HideableUI
                 }
             }
         }
-        m_currentNode = m_history.LastDialogue;
+        m_currentNode = LastDialogue;
     }
     public void SetPaused(bool paused)
     {
@@ -77,8 +79,9 @@ public class ChatRoom : HideableUI
             return;
         }
         Shutdown();
-        m_history.OverwriteLog(newChat);
-        SetChatHistory(m_history);
+        m_historyRef.Clear();
+        m_historyRef.LoadedAssets.Add(newChat);
+        SetChatLog(m_historyRef);
         CheckForReplyOptions();
     }
     // When a thought is dropped into the conversation
@@ -130,7 +133,7 @@ public class ChatRoom : HideableUI
     void OnReplyChosen(DialogueNode chosen)
     {
         if (chosen == null) return;
-        NewCurrentDialogue(chosen);
+        NewDialogue(chosen);
         StartChat();
     }
     // Display a new message
@@ -156,10 +159,10 @@ public class ChatRoom : HideableUI
         return instance;
     }
     // Append a dialogue to history
-    public void NewCurrentDialogue(DialogueNode result) 
+    public void NewDialogue(DialogueNode result) 
     {
         m_currentNode = result;
-        m_history.Append(m_currentNode);
+        m_historyRef.LoadedAssets.Append(m_currentNode);
         m_isDirty = true;
     }
     // start displaying dialogues of current node
@@ -185,7 +188,7 @@ public class ChatRoom : HideableUI
     {
         m_optionPrompt?.HideAll();
         // Stop current Dialogue and move to the new dialogue line
-        NewCurrentDialogue(outcome);
+        NewDialogue(outcome);
         // Wat until previous chat finish resolving last line
         yield return new WaitUntil(() => m_chatting == null);
         // trigger thought 
@@ -206,6 +209,7 @@ public class ChatRoom : HideableUI
             //skip empty content
             if (line.ChatLog.Content == null || string.IsNullOrEmpty(line.ChatLog.Content)) continue;
             isNpc = line.ChatLog.WhoSpoke != DialogueNode.s_player;
+            // wait until game is not paused
             yield return new WaitUntil(() => !m_paused);
             yield return new WaitForSeconds(line.DelayBeforeTyping);
             msg = PrepareMessage(line);
