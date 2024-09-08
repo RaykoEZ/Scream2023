@@ -1,14 +1,16 @@
-﻿using Curry.Events;
+﻿using Curry.Explore;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 // onCancel: action to invoke when card activation is cancelled
 public delegate void OnThoughtDrop(ThoughtBubble thought);
 // For deploying any interactable from hand to play zone 
+[RequireComponent(typeof(HideableUI))]
 public class ThoughtDropZone : MonoBehaviour, IDropHandler
 {
     [SerializeField] UnityEvent<ThoughtBubble> m_onDropped = default;
     public event OnThoughtDrop ThoughtDropping;
+    public HideableUI DisplayUI => GetComponent<HideableUI>();
     // Called before the dropped card invokes its OnDragEnd,
     // trigger drop event when drag finishes (drop starts)
     public virtual void OnDrop(PointerEventData eventData)

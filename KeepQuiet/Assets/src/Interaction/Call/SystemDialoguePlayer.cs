@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class SystemDialoguePlayer : MonoBehaviour 
 {
     [SerializeField] Image m_background = default;
-    [SerializeField] InputActionReference m_nextStep = default;
+    [SerializeField] TemporaryInputAction m_next = default;
     GuideDisplay m_current;
     Coroutine m_displayCall;
     public virtual void TriggerTutorial(GuideDisplay col)
@@ -27,11 +27,11 @@ public class SystemDialoguePlayer : MonoBehaviour
         m_background.enabled = col.BlockBackground;
         m_current = col;
         m_current?.Begin();
-        m_nextStep.action.performed += NextStep;
+        m_next?.Enable();
     }
     void EndCurrent()
     {
-        m_nextStep.action.performed -= NextStep;
+        m_next?.Disable();
         m_current?.End();
         StopAllCoroutines();
         m_background.enabled = false;

@@ -36,11 +36,13 @@ public class ChatRoom : HideableUI
     }
     public void SetChatLog(AddressableContainer<DialogueNode> history)
     {
-        if (m_historyRef != history) 
+        // null and dupe check
+        if (history == null || m_historyRef == history) return;
+        // remove all old messages
+        ClearChat();
+        m_historyRef = history;
+        if (m_historyRef.LoadedAssets.Count > 0) 
         {
-            // remove all old messages
-            ClearChat();
-            m_historyRef = history;
             IReadOnlyList<Dialogue> lines;
             MessageBox msg;
             // Display new chat history messages
@@ -53,8 +55,8 @@ public class ChatRoom : HideableUI
                     msg.Show();
                 }
             }
+            m_currentNode = LastDialogue;
         }
-        m_currentNode = LastDialogue;
     }
     public void SetPaused(bool paused)
     {
