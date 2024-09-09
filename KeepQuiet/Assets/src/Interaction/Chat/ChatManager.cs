@@ -102,7 +102,7 @@ public class ChatManager : HideableUI
         foreach (var kvp in m_currentChatLogs)
         {
             history = FindHistory(kvp.Key, save.ChatHistories);
-            kvp.Value.LoadAssetAsync(history.ChatLogAssets, overwrite, onFinish);
+            kvp.Value.LoadAssetAsync(history.ChatLogAssets, onFinish);
         }
     }
 }

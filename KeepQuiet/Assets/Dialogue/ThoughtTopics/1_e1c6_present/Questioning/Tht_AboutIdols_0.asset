@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ce6168675a334fa0b3a735c306984, type: 3}
   m_Name: Tht_AboutIdols_0
   m_EditorClassIdentifier: 
-  m_description: Management rejected Aria's long leave request as upcoming projects
-    require her attention.
+  m_description: Management rejected Aria's extended leave request due to work schedules.

@@ -20,7 +20,7 @@ public class ThoughtStateManager : MonoBehaviour
     {
         if (thoughtToLoad != null) 
         {
-            m_loadedThoughts.LoadAssetAsync(thoughtToLoad, true, OnThoughtsLoaded);
+            m_loadedThoughts.LoadAssetAsync(thoughtToLoad, OnThoughtsLoaded);
         }
     }
     void OnThoughtsLoaded(List<ThoughtDetail> loaded) 

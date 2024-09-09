@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
@@ -9,7 +10,8 @@ public class AddressableContainer<T> where T : UnityEngine.Object
 {
     List<T> m_loaded = new List<T>();
     bool m_inProgress = false;
-    bool m_overwriteOnLoad = false;
+    int m_loadedCount;
+    int m_numToLoad;
     Action<List<T>> onLoadedCallback;
     public List<T> LoadedAssets => m_loaded;
     public static List<AssetReference> GetAssetReferenceList(
@@ -27,14 +29,18 @@ public class AddressableContainer<T> where T : UnityEngine.Object
         }
         return ret;
     }
-    public void LoadAssetAsync(List<AssetReference> toLoad, bool overwrite = false, Action<List<T>> onFinish = null) 
+    public void LoadAssetAsync(List<AssetReference> toLoad, Action<List<T>> onFinish = null)
     {
         if (m_inProgress) return;
         m_inProgress = true;
-        m_overwriteOnLoad = overwrite;
+        m_loadedCount = 0;
+        m_numToLoad = toLoad.Count;
         onLoadedCallback = onFinish;
-        var op = Addressables.LoadResourceLocationsAsync(toLoad, Addressables.MergeMode.Union);
-        op.Completed += OnLocationLoaded;
+        foreach (var item in toLoad)
+        {
+            var op = item.LoadAssetAsync<T>();
+            op.Completed += OnAssetLoaded;
+        }
     }
     public void Clear() 
     {
@@ -44,26 +50,18 @@ public class AddressableContainer<T> where T : UnityEngine.Object
         }
         m_loaded.Clear();
     }
-    void OnLocationLoaded(AsyncOperationHandle<IList<IResourceLocation>> obj) 
+    void OnAssetLoaded(AsyncOperationHandle<T> obj) 
     {
-        var locations = obj.Result;
-        var op = Addressables.LoadAssetsAsync<T>(locations, null);
-        op.Completed += OnAssetLoaded;
-    }
-    void OnAssetLoaded(AsyncOperationHandle<IList<T>> obj) 
-    {
-        var result = obj.Result.ToList();
-        if (m_overwriteOnLoad) 
+        var result = obj.Result;
+        m_loaded.Add(result);
+        // increment in async
+        Interlocked.Increment(ref m_loadedCount);
+        // count to check if we finished loading or not
+        if (m_loadedCount == m_numToLoad) 
         {
-            Clear();
-            m_loaded = result;
+            m_inProgress = false;
+            onLoadedCallback?.Invoke(LoadedAssets);
+            onLoadedCallback = null;
         }
-        else 
-        {
-            m_loaded.AddRange(result);
-        }
-        m_inProgress = false;
-        onLoadedCallback?.Invoke(LoadedAssets);
-        onLoadedCallback = null;
     }
 }
