@@ -39,7 +39,7 @@ public class LevelLoader : MonoBehaviour
         yield return m_loadScreen.FadeIn();
         // transition to new scene when loading and animation are done
         yield return new WaitUntil(() => op.progress >= 0.9f);
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.5f);
         op.allowSceneActivation = true;
         m_inProgress = false;
     }

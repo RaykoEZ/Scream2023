@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceLocations;
 // For loading a list of addressables from a list of asset references in save file
 public class AddressableContainer<T> where T : UnityEngine.Object
 {
@@ -38,6 +36,7 @@ public class AddressableContainer<T> where T : UnityEngine.Object
         onLoadedCallback = onFinish;
         foreach (var item in toLoad)
         {
+            // if already loaded, skip
             var op = item.LoadAssetAsync<T>();
             op.Completed += OnAssetLoaded;
         }

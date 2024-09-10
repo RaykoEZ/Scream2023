@@ -52,6 +52,7 @@ public class SaveData
     // Freedom flag before reaching ending
     public bool FreedomRoute;
     public bool CheckedSubjectProfile;
+    public int ChapterIndex;
     // Where is the player looking at
     public string CurrentlyViewing;
     public DateTime InitDate;
@@ -71,6 +72,7 @@ public class SaveData
     // New save file
     public SaveData()
     {
+        ChapterIndex = 0;
         ChatHistories = new List<ChatHistory>();
         HeldThoughts = new List<AssetReference>();
         SimulationTime = WatchDisplay.Present;
@@ -84,6 +86,7 @@ public class SaveData
     }
     public SaveData(SaveData copy)
     {
+        ChapterIndex = copy.ChapterIndex;
         ChatHistories = new List<ChatHistory>(copy.ChatHistories);
         HeldThoughts = new List<AssetReference>(copy.HeldThoughts);
         SimulationTime = copy.SimulationTime;

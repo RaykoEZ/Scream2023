@@ -7,9 +7,11 @@ using UnityEngine.AddressableAssets;
 public class ChatManager : HideableUI 
 {
     [SerializeField] GameSaveSource m_save = default;
-    [SerializeField] DialogueAssetReferenceIndex m_assetIndex = default;
+    [SerializeField] List<DialogueAssetReferenceIndex> m_chapterAssets = default;
     [SerializeField] ChatRoom m_chatRoom = default;
     public event OnChatUpdate OnEnd;
+    DialogueAssetReferenceIndex m_currentAssetIndex;
+    AddressableContainer<DialogueNode> m_allLoadedAsset = new AddressableContainer<DialogueNode>();
     // loaded chat dialogue nodes, loaded from chat log asset references
     Dictionary<string, AddressableContainer<DialogueNode>> m_currentChatLogs =
         new Dictionary<string,AddressableContainer<DialogueNode>>();
@@ -20,20 +22,48 @@ public class ChatManager : HideableUI
     public void Init(SaveData save) 
     {
         m_currentChatLogs?.Clear();
-        foreach (var item in save.ChatHistories)
+        LoadChapterAssets(save.ChapterIndex);
+    }
+    // load all relevant dialogue assets for the chapter
+    void LoadChapterAssets(int chapterCode) 
+    {
+        if (chapterCode >= m_chapterAssets.Count || chapterCode < 0) return;
+        // setup chat dialogue node database for updating saves later
+        m_currentAssetIndex = m_chapterAssets[chapterCode];
+        m_allLoadedAsset?.LoadAssetAsync(m_currentAssetIndex.AssetReferences, OnChapterLoaded);
+    }
+    void OnChapterLoaded(List<DialogueNode> result) 
+    {
+        foreach (var item in m_save.Current.ChatHistories)
         {
             m_currentChatLogs.Add(item.Username, new AddressableContainer<DialogueNode>());
         }
-        LoadDialogueAsync(save, true);
+        // load current chat history
+        LoadDialogueAsync(m_save.Current);
+    }
+    protected void LoadDialogueAsync(SaveData save, Action<List<DialogueNode>> onFinish = null)
+    {
+        ChatHistory history;
+        foreach (var kvp in m_currentChatLogs)
+        {
+            history = FindHistory(kvp.Key, save.ChatHistories);
+            kvp.Value.LoadAssetAsync(history.ChatLogAssets, onFinish);
+        }
     }
     public void UpdateSave()
     {
-        UpdateAssetReferences(m_assetIndex);
+        UpdateAssetReferences(m_chapterAssets[m_save.Current.ChapterIndex]);
     }
     public void Shutdown()
     {
         // shutdown chat room
         m_chatRoom?.Shutdown();
+        m_allLoadedAsset.Clear();
+        foreach (var item in m_currentChatLogs)
+        {
+            item.Value?.Clear();
+        }
+        m_currentChatLogs.Clear();
     }
     // load chat of the person in question
     public void BeginChat(string username)
@@ -92,17 +122,8 @@ public class ChatManager : HideableUI
         List<AssetReference> refs;
         foreach (var item in historiesRef)
         {
-            refs = AddressableContainer<DialogueNode>.GetAssetReferenceList(index, m_currentChatLogs[item.Username]);
+            refs = AddressableContainer<DialogueNode>.GetAssetReferenceList(m_currentAssetIndex, m_currentChatLogs[item.Username]);
             item.ChatLogAssets = refs;
-        }
-    }
-    protected void LoadDialogueAsync(SaveData save, bool overwrite = false, Action<List<DialogueNode>> onFinish = null)
-    {
-        ChatHistory history;
-        foreach (var kvp in m_currentChatLogs)
-        {
-            history = FindHistory(kvp.Key, save.ChatHistories);
-            kvp.Value.LoadAssetAsync(history.ChatLogAssets, onFinish);
         }
     }
 }

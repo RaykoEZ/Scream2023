@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d58076de14737e4e908562d38970d0b, type: 3}
-  m_Name: DialogueAssetRefs_chpt2
+  m_Name: DialogueAsset_c2
   m_EditorClassIdentifier: 
   m_dialoguesAssetRefs:
   - m_AssetGUID: bfb16f5a621fde24f867716f65dfe15f

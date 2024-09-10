@@ -10,8 +10,12 @@ public class ThoughtStateManager : MonoBehaviour
     [SerializeField] ThoughtAssetReferenceIndex m_assetIndex = default;
     [SerializeField] ThoughtSpawnManager m_spawn = default;
     [SerializeField] ToggleAnimationHandler m_toggleAnim = default;
-    AddressableContainer<ThoughtDetail> m_loadedThoughts = 
-        new AddressableContainer<ThoughtDetail>();
+    AddressableContainer<ThoughtDetail> m_allLoadedAsset = new AddressableContainer<ThoughtDetail>();
+    AddressableContainer<ThoughtDetail> m_heldThoughts = new AddressableContainer<ThoughtDetail>();
+    private void OnDestroy()
+    {
+        Shutdown();
+    }
     public void Refresh(SaveData save)
     {
         Init(save?.HeldThoughts);
@@ -20,13 +24,21 @@ public class ThoughtStateManager : MonoBehaviour
     {
         if (thoughtToLoad != null) 
         {
-            m_loadedThoughts.LoadAssetAsync(thoughtToLoad, OnThoughtsLoaded);
+            // setup database for updating saves later
+            m_allLoadedAsset.LoadAssetAsync(m_assetIndex.AssetReferences);
+            // load held thoughts
+            m_heldThoughts.LoadAssetAsync(m_gameState.Current.HeldThoughts, OnThoughtsLoaded);
         }
+    }
+    void Shutdown() 
+    {
+        m_allLoadedAsset?.Clear();
+        m_heldThoughts?.Clear();
     }
     void OnThoughtsLoaded(List<ThoughtDetail> loaded) 
     {
         // Spawn currently held thoughts
-        foreach (var item in m_loadedThoughts.LoadedAssets)
+        foreach (var item in loaded)
         {
             m_spawn?.SpawnThoughtBubble(item);
         }
@@ -34,17 +46,17 @@ public class ThoughtStateManager : MonoBehaviour
     public void UpdateSave()
     {
         List<AssetReference> refs = AddressableContainer<ThoughtDetail>.
-            GetAssetReferenceList(m_assetIndex, m_loadedThoughts);
+            GetAssetReferenceList(m_assetIndex, m_heldThoughts);
         m_gameState.Current.HeldThoughts = refs;
     }
     void Add(ThoughtDetail newThought) 
     {
         if (newThought == null) return;
-        m_loadedThoughts.LoadedAssets.Add(newThought);
+        m_heldThoughts.LoadedAssets.Add(newThought);
     }
     void Remove(ThoughtDetail toRemove) 
     {
-        m_loadedThoughts.LoadedAssets.Remove(toRemove);
+        m_heldThoughts.LoadedAssets.Remove(toRemove);
         Addressables.Release(toRemove);
     }
     // When thoughts can be dropped into things
@@ -55,7 +67,7 @@ public class ThoughtStateManager : MonoBehaviour
             result is List<ThoughtDetail> toDrop)
         {
             // Check if player has any held thoughts to drop
-            HashSet<ThoughtDetail> check = new HashSet<ThoughtDetail>(m_loadedThoughts.LoadedAssets);
+            HashSet<ThoughtDetail> check = new HashSet<ThoughtDetail>(m_heldThoughts.LoadedAssets);
             check.IntersectWith(toDrop);
             m_toggleAnim?.AnimateAlertIcon(check.Count > 0);
         }
