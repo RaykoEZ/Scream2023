@@ -16,14 +16,15 @@ MonoBehaviour:
     Persistent:
       AriaDead: 0
       ContinueCount: 0
-      CurrentEnding: 3
+      CurrentEnding: 1
     FreedomRoute: 0
     CheckedSubjectProfile: 0
+    ChapterIndex: 0
     CurrentlyViewing: RoomLeft
     WatchState: 4
     AriaStatus:
       IsMissing: 0
-      CurrentLocation: 1
+      CurrentLocation: -1
     SimulationTime: 0
     HeldThoughts:
     - m_AssetGUID: b317449047b29eb429d41372fe0ec431
