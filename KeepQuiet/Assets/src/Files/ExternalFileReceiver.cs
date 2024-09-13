@@ -1,18 +1,29 @@
 ﻿using B83.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 public class ExternalFileDropInfo
 {
     public string content;
     public FileInfo fileInfo;
     public Vector2 pos;
 }
+[Serializable]
+// item in a list to check whenever a file is dragged in
+public class ExternalFileEvent 
+{
+    [SerializeField] DefaultFileValidor m_fileValidator = default;
+    [SerializeField] UnityEvent<ExternalFileDropInfo> m_triggerOnDraggedIn = default;
+    public DefaultFileValidor FileValidator => m_fileValidator;
+    public UnityEvent<ExternalFileDropInfo> TriggerOnDraggedIn => m_triggerOnDraggedIn;
+}
+// Listens to files dragged into game window, trigger events
 public delegate void ExternalFileDropped(ExternalFileDropInfo dropInfo);
 public class ExternalFileReceiver : MonoBehaviour
 {
-    DefaultFileValidor m_isValid = new DefaultFileValidor();
-    protected virtual IFileValidator Validator => m_isValid;
+    [SerializeField] List<ExternalFileEvent> m_fileEvents = default;
     public event ExternalFileDropped FileDropped;
     private void OnEnable()
     {
@@ -22,6 +33,7 @@ public class ExternalFileReceiver : MonoBehaviour
     private void OnDisable()
     {
         UnityDragAndDropHook.UninstallHook();
+        UnityDragAndDropHook.OnDroppedFiles -= OnFiles;
     }
     void OnFiles(List<string> aFiles, Vector2 aPos)
     {
@@ -32,23 +44,33 @@ public class ExternalFileReceiver : MonoBehaviour
             fi = new FileInfo(f);
             string ext = fi.Extension.ToLower();
             // detect file extensions to respond to
-            if (ext == Validator.AcceptedFileExtension)
+            if (string.IsNullOrEmpty(ext))
             {
                 file = f;
                 break;
             }
         }
-        // check if file dropped is what we want
-        if (Validator.Validate(fi, file))
+        // go through event list to trigger valid events
+        ProcessEvents(fi, file, aPos);
+    }
+    void ProcessEvents(FileInfo fileInfo, string content, Vector2 aPos) 
+    {
+        if (fileInfo == null) return;
+        // If the user dropped a supported file, create a DropInfo and pass to other listeners
+        var info = new ExternalFileDropInfo
         {
-            // If the user dropped a supported file, create a DropInfo and pass to other listeners
-            var info = new ExternalFileDropInfo
+            content = content,
+            fileInfo = fileInfo,
+            pos = aPos
+        };
+        foreach (var e in m_fileEvents)
+        {
+            // check if file dropped is what we want
+            if (e.FileValidator.Validate(fileInfo, content))
             {
-                content = file,
-                fileInfo = fi,
-                pos = new Vector2(aPos.x, aPos.y)
-            };
-            FileDropped?.Invoke(info);
+                e.TriggerOnDraggedIn?.Invoke(info);
+            }
         }
+        FileDropped?.Invoke(info);
     }
 }

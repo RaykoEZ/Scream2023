@@ -20,8 +20,7 @@ MonoBehaviour:
   - m_GUID: ae3077227e310014f8f9a54f1d124f46
     m_Address: Assets/Dialogue/Attachments
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - thought
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a8f2599f67c7fa24cbdf4b6dd752ea8e, type: 2}

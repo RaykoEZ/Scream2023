@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Curry.Events;
-using System;
+using TMPro;
+using Curry.Explore;
+
 public class OptionInfo : EventInfo 
 {
     List<ChatOption> m_options;
@@ -12,9 +14,12 @@ public class OptionInfo : EventInfo
     }
 }
 public delegate void OnPlayerChosen(DialogueNode chosen);
+[RequireComponent(typeof(HideableUI))]
 public class ReplyPrompter : MonoBehaviour
 {
     [SerializeField] int m_maxOptions = 3;
+    // Spam repeated question text
+    [SerializeField] List<TextMeshProUGUI> m_questionTextFields = default;
     [SerializeField] DialogueOption m_optionPrefab = default;
     [SerializeField] Transform m_contentParent = default;
     public event OnPlayerChosen OnChosen;
@@ -29,17 +34,23 @@ public class ReplyPrompter : MonoBehaviour
             m_options.Add(instance);
         }
     }
-    public void PromptOption(IReadOnlyList<ChatOption> options) 
+    public void PromptOption(IReadOnlyList<ChatOption> options, string questionText = null) 
     {
         if (options.Count == 0) return;
         HideAll();
         int numOptions = Mathf.Clamp(options.Count, 1, m_maxOptions);
+        // set question text for all displaying fields, used for animating spamming questions
+        foreach (var item in m_questionTextFields)
+        {
+            item.text = questionText != null? questionText : "";
+        }
         for (int i = 0; i < numOptions; ++i) 
         {
             m_options[i].Init(options[i]);
             m_options[i].OnChosen += OnOptionChosen;
             m_options[i].Show();
         }
+        GetComponent<HideableUI>()?.Show();
     }
     void OnOptionChosen(DialogueOption chosen)
     {
@@ -49,6 +60,7 @@ public class ReplyPrompter : MonoBehaviour
     }
     public void HideAll()
     {
+        GetComponent<HideableUI>()?.Hide();
         foreach (var opt in m_options)
         {
             opt.OnChosen -= OnOptionChosen;

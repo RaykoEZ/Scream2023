@@ -17,7 +17,7 @@ public class SaveData
     {
         // If player choose to hit Aria with the bat, we reach Bad End,
         // a different title & New Game & Continue if Aria is dead
-        public bool AriaDead;
+        public bool AriaGone;
         // No. of times player launched this game after first new game
         // Triggers new game tutorial sequences for new game players
         public int ContinueCount;
@@ -29,20 +29,20 @@ public class SaveData
             bool isAriaDead,
             int continueCount, Ending previousEnding)
         {
-            AriaDead = isAriaDead;
+            AriaGone = isAriaDead;
             ContinueCount = continueCount;
             CurrentEnding = previousEnding;
         }
         // Default ctor, for fresh game/clear cache
         public PersistentSave() 
         {
-            AriaDead = false;
+            AriaGone = false;
             ContinueCount = 0;
             CurrentEnding = Ending.None;
         }
         public PersistentSave(PersistentSave persistent)
         {
-            AriaDead = persistent.AriaDead;
+            AriaGone = persistent.AriaGone;
             ContinueCount = persistent.ContinueCount;
             CurrentEnding = persistent.CurrentEnding;
         }

@@ -9,11 +9,11 @@ public class InspectClock : InspectionDisplay
         DateTime init = save.InitDate;
         bool timeCheck = DateTime.Now == init;
         // set clock state
-        if (timeCheck && save.Persistent.AriaDead) 
+        if (timeCheck && save.Persistent.AriaGone) 
         {
             m_anim?.SetTrigger("dead");
         }
-        else if (timeCheck && !save.Persistent.AriaDead) 
+        else if (timeCheck && !save.Persistent.AriaGone) 
         {
             m_anim?.SetTrigger("dateSync");
         }

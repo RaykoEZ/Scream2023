@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_state:
     Persistent:
-      AriaDead: 0
+      AriaGone: 0
       ContinueCount: 0
-      CurrentEnding: 1
-    FreedomRoute: 0
+      CurrentEnding: 3
+    FreedomRoute: 1
     CheckedSubjectProfile: 0
     ChapterIndex: 0
     CurrentlyViewing: RoomLeft
@@ -35,10 +35,6 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    - m_AssetGUID: 4be064471d302b647a3049534a84d495
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 1
     ChatHistories:
     - Username: Aria
       ChatLogAssets: []

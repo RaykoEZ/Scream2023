@@ -10,26 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742dde37021300b42a489ee6473a5654, type: 3}
-  m_Name: file_ariaAiMem
+  m_Name: file_errorAiMem
   m_EditorClassIdentifier: 
-  m_filename: VAI_aria.cogni
+  m_filename: exterror.cogni
   m_rawContent: '#ref=GenoSandboxDBTK_CIV0014
 
-    COGNITION EXTRACTION FAILED:
-    UNKNOWN ERROR
+    COGNITION EXTRACTION FAILED: UNKNOWN
+    ERROR
 
-    PLEASE ENSURE SUBJECT''S SAFETY AND RESTART HANDSHAKE EXTRACTION
-    SEQUENCE
-
-    Please contact the dev team and complete a bug report ASAP.
-
-    Extraction
-    Time: 12/02/E1C6, 1545
-
-    COGNITION EXTRACTION FAILED: UNKNOWN ERROR
-
-    PLEASE
-    ENSURE SUBJECT''S SAFETY AND RESTART HANDSHAKE EXTRACTION SEQUENCE
+    PLEASE ENSURE SUBJECT''S SAFETY AND RESTART HANDSHAKE EXTRACTION SEQUENCE
 
     Please
     contact the dev team and complete a bug report ASAP.
@@ -53,7 +42,18 @@ MonoBehaviour:
     PLEASE ENSURE SUBJECT''S SAFETY AND RESTART
     HANDSHAKE EXTRACTION SEQUENCE
 
-    Please contact the dev team and complete
-    a bug report ASAP.
+    Please contact the dev team and complete a
+    bug report ASAP.
+
+    Extraction Time: 12/02/E1C6, 1545
+
+    COGNITION EXTRACTION
+    FAILED: UNKNOWN ERROR
+
+    PLEASE ENSURE SUBJECT''S SAFETY AND RESTART HANDSHAKE
+    EXTRACTION SEQUENCE
+
+    Please contact the dev team and complete a bug report
+    ASAP.
 
     Extraction Time: 12/02/E1C6, 1546'

@@ -22,7 +22,7 @@ public class TitleSequenceManager : MonoBehaviour
                 toPlay = m_freedomEnd;
                 break;
             default:
-                if (!save.Persistent.AriaDead) 
+                if (!save.Persistent.AriaGone) 
                 {
                     toPlay = m_default;
                 }

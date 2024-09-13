@@ -10,7 +10,7 @@ public class RoomLeftView : ViewState
     {
         // Set door state
         base.InitStateInternal(saveData);
-        SetDeadBody(saveData.Persistent.AriaDead);
+        SetDeadBody(saveData.Persistent.AriaGone);
     }
     protected override void SetVisual(bool isOn)
     {

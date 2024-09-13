@@ -6,6 +6,7 @@ public class ThoughtSpawnManager : MonoBehaviour
     [SerializeField] RangedSpawner m_spawner = default;
     public void SpawnThoughtBubble(ThoughtDetail detail) 
     {
+        if (detail == null) return;
         var instance = m_spawner?.Spawn(m_spawnRef);
         instance?.Init(detail);
     }

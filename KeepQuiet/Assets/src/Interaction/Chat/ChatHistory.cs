@@ -10,8 +10,8 @@ public class ChatHistory
 {
     // whose chat history to assign this to
     public string Username = default;
-    [AssetReferenceUILabelRestriction("dialogue")]
     [JsonConverter(typeof(AssetReferenceListJsonConverter))]
+    [AssetReferenceUILabelRestriction("dialogue")]
     // reference to each dialogue scriptableobject, used to save and load game state
     public List<AssetReference> ChatLogAssets = default;
     public ChatHistory(string name, List<AssetReference> assetRefs)

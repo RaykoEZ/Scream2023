@@ -1,5 +1,4 @@
 ﻿using Curry.Events;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -89,9 +88,13 @@ public class ThoughtStateManager : MonoBehaviour
         if (info.Payload.TryGetValue("thought", out object result) &&
             result is ThoughtDetail detail)
         {
-            Add(detail);
-            m_spawn?.SpawnThoughtBubble(detail);
-            m_toggleAnim?.AnimateAlertIcon(true);
+            ObtainThought(detail);
         }
+    }
+    public void ObtainThought(ThoughtDetail toObtain) 
+    {
+        Add(toObtain);
+        m_spawn?.SpawnThoughtBubble(toObtain);
+        m_toggleAnim?.AnimateAlertIcon(true);
     }
 }

@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 742dde37021300b42a489ee6473a5654, type: 3}
-  m_Name: file_keyYearAgo
+  m_Script: {fileID: 11500000, guid: 681897a2037d001479377fb0d6b81103, type: 3}
+  m_Name: Dial_Elia
   m_EditorClassIdentifier: 
-  m_filename: Recovery_E1C5_12031823.key
-  m_rawContent: 
+  m_sequence: 43391383222
+  m_eventToTrigger:
+    m_playThis: {fileID: 11400000, guid: 847305c371f9aa448b805bf40a9dfce2, type: 2}

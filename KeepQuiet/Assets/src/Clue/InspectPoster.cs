@@ -17,7 +17,7 @@ public class InspectPoster : InspectionDisplay
     {
         //show hidden key
         m_hiddenKey?.gameObject?.SetActive(true);
-        if (save.Persistent.AriaDead) 
+        if (save.Persistent.AriaGone) 
         {
             GlitchState();
         }

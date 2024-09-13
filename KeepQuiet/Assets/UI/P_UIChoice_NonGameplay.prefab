@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 8443389342694203953}
   - component: {fileID: 8443389342694203952}
   m_Layer: 6
-  m_Name: P_Choice_YesNo
+  m_Name: P_UIChoice_NonGameplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -5,7 +5,7 @@ public class InspectDoor : InspectionDisplay
 {
     public override void Init(SaveData save) 
     {
-        bool deadCheck = save.Persistent.AriaDead;
+        bool deadCheck = save.Persistent.AriaGone;
         if (deadCheck) 
         {
             WatchDisplay time = save.SimulationTime;
