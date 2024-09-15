@@ -197,7 +197,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: anim_curious
+  m_Name: anim_default
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -258,7 +258,7 @@ AnimatorStateMachine:
     m_Position: {x: 20, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5340801602578018130}
-    m_Position: {x: 510, y: 260, z: 0}
+    m_Position: {x: 290, y: 160, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 4632522566420898247}
@@ -320,7 +320,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: curious
+  - m_Name: default
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -492,7 +492,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: curious
+    m_ConditionEvent: default
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3537223102546922583}
@@ -570,7 +570,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: curious
+    m_ConditionEvent: default
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: talking

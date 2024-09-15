@@ -3,10 +3,9 @@ using Curry.Explore;
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
-public class DialogueBox : HideableUI 
+public class DialogueBox : HideableUI
 {
     [SerializeField] TextMeshProUGUI m_content = default;
     [SerializeField] AudioSource m_audio = default;
@@ -15,9 +14,10 @@ public class DialogueBox : HideableUI
     {
         m_content.text = toSet;
     }
-    public void Show(bool instant, bool angry) 
+    // Only do angry for dialogue box animation
+    public void Show(bool instant, NpcEmotion emote) 
     {
-        GetAnim?.SetBool("Angry", angry);
+        GetAnim?.SetBool("Angry", emote == NpcEmotion.Angry);
         GetAnim?.SetBool("Instant", instant);
         base.Show();
     }
@@ -29,20 +29,22 @@ public class DialogueBox : HideableUI
         base.Hide();
     }
 }
+// A used for non-chat related dialogue
 [Serializable]
-public class GuideStep 
+public class DialogueStep : IStepDisplayContent
 {
     public bool ShowInstantly;
-    public bool Angry;
+    public NpcEmotion Emotion;
     public AudioClip PlaySound;
     [SerializeField] CurryGameEventTrigger m_onShow = default;
     [TextArea(5, 10)]
     public string Content;
-    public CurryGameEventTrigger OnShow { get => m_onShow; }
-    public virtual void SetContent(GuideStep content) 
+    public CurryGameEventTrigger OnShowTrigger { get => m_onShow; }
+    public string DisplayContent => Content;
+    public virtual void SetContent(DialogueStep content) 
     {
         ShowInstantly = content.ShowInstantly;
-        Angry = content.Angry;
+        Emotion = content.Emotion;
         PlaySound = content.PlaySound;
         Content = content.Content;
         m_onShow = content.m_onShow;

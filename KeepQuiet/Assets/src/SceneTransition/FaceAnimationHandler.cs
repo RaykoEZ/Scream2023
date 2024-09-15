@@ -1,4 +1,10 @@
 ﻿using Curry.Explore;
+public enum NpcEmotion 
+{ 
+    Default,
+    Angry,
+    Smug
+}
 public class FaceAnimationHandler : HideableUI 
 {
     public void EnterScene()
@@ -14,17 +20,24 @@ public class FaceAnimationHandler : HideableUI
         GetAnim?.SetBool("talking", talking);
     }
     #region facial expressions
-    public void Curious()
+    public void SetEmotion(NpcEmotion emote) 
     {
-        GetAnim?.SetTrigger("curious");
-    }
-    public void Angry()
-    {
-        GetAnim?.SetTrigger("angry");
-    }
-    public void Smug()
-    {
-        GetAnim?.SetTrigger("smug");
+        var anim = GetAnim;
+        switch (emote)
+        {
+            case NpcEmotion.Default:
+                anim?.SetTrigger("default");
+                break;
+            case NpcEmotion.Angry:
+                anim?.SetTrigger("angry");
+                break;
+            case NpcEmotion.Smug:
+                anim?.SetTrigger("smug");
+                break;
+            default:
+                anim?.SetTrigger("default");
+                break;
+        }
     }
     #endregion
 }

@@ -4908,13 +4908,13 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 1107036363}
   m_steps:
   - ShowInstantly: 0
-    Angry: 0
+    Emotion: 0
     PlaySound: {fileID: 0}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
     Content: Ignoring isn't helping our cause at this stage of the investigation.
   - ShowInstantly: 1
-    Angry: 0
+    Emotion: 0
     PlaySound: {fileID: 0}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
@@ -5124,7 +5124,7 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 274647153}
   m_steps:
   - ShowInstantly: 1
-    Angry: 0
+    Emotion: 0
     PlaySound: {fileID: 0}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
@@ -9715,20 +9715,20 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 1602202495}
   m_steps:
   - ShowInstantly: 0
-    Angry: 1
+    Emotion: 0
     PlaySound: {fileID: 0}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
     Content: <color=red>We getting nowhere with this!</color>
   - ShowInstantly: 0
-    Angry: 1
+    Emotion: 0
     PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
     Content: <color=red>Begin the questioning</color> or I'll have to <color=red>report</color>
       this misconduct to your superiors!
   - ShowInstantly: 1
-    Angry: 0
+    Emotion: 0
     PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
@@ -10827,7 +10827,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1228148511
@@ -13290,6 +13290,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1966327969}
     m_Modifications:
+    - target: {fileID: 479214101667018365, guid: 0ab082daf12e4844888500bbdfec5eb8, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8443389341848020435, guid: 0ab082daf12e4844888500bbdfec5eb8, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -21756,19 +21760,19 @@ MonoBehaviour:
   ScreenHighlight: {fileID: 7712070707087821935}
   m_steps:
   - ShowInstantly: 0
-    Angry: 0
+    Emotion: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
     Content: This is our <color=yellow>prime suspect</color>.
   - ShowInstantly: 0
-    Angry: 0
+    Emotion: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     m_onShow:
       m_eventToTrigger: {fileID: 0}
     Content: She has been quarantined inside this sandbox.
   - ShowInstantly: 0
-    Angry: 0
+    Emotion: 0
     PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
     m_onShow:
       m_eventToTrigger: {fileID: 0}

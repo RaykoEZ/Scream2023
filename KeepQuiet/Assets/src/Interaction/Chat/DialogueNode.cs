@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [Serializable]
-public struct Dialogue 
+public struct Dialogue
 {
     public ChatLogEntry ChatLog;
     public bool HasAudio;
@@ -13,7 +13,7 @@ public struct Dialogue
     public DialogueEventTrigger TriggerAfterThisLine;
 }
 [Serializable]
-public struct ChatLogEntry 
+public struct ChatLogEntry
 {
     public string WhoSpoke;
     [TextArea(5, 10)]

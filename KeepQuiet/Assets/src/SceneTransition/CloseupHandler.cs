@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 // Displays aria talking & entrtance/exit
-public class AriaCloseupHandler : MonoBehaviour 
+public class CloseupHandler : MonoBehaviour 
 {
     [SerializeField] HideableUI m_message = default;
     [SerializeField] FaceAnimationHandler m_face = default;
@@ -17,15 +17,17 @@ public class AriaCloseupHandler : MonoBehaviour
         m_face?.ExitScene();
     }
     // Start a line of speech
-    public void StartTalk(string content) 
+    public void StartTalk(string content, NpcEmotion emote) 
     {
         m_message?.Hide();
         StopAllCoroutines();
-        StartCoroutine(Talk_Internal(content));
+        StartCoroutine(Talk_Internal(content, emote));
     }
-    IEnumerator Talk_Internal(string content) 
+    IEnumerator Talk_Internal(string content, NpcEmotion emote) 
     {
         m_content.text = content;
+        m_face?.SetEmotion(emote);
+        yield return new WaitForSeconds(0.05f);
         m_face?.SetTalking(true);
         yield return new WaitForSeconds(0.05f);
         m_message?.Show();
