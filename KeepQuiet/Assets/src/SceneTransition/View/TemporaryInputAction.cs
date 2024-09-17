@@ -11,7 +11,6 @@ public class TemporaryInputAction
     [SerializeField] InputActionReference m_inputTarget = default;
     [SerializeField] UnityEvent<InputAction.CallbackContext> m_triggerOnAction;
     bool m_enabled = false;
-    public bool AutoDisable { get => m_autoDisable; set => m_autoDisable = value; }
     public virtual void Enable()
     {
         if (m_enabled) return;

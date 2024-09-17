@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+// contains description for displaying
+// dialogue on phone/face-to-face
 [Serializable]
-public struct Dialogue
+public class Dialogue : IStepDisplayContent
 {
+    public bool ShowInstantly;
     public ChatLogEntry ChatLog;
+    public NpcEmotion Emotion;
     public bool HasAudio;
+    public AudioClip PlaySound;
     public float DelayBeforeTyping;
     // how much time to stay typing
     public float TypingDelay;
     public ThoughtBubble ObtainThought;
     public DialogueEventTrigger TriggerAfterThisLine;
+    public string DisplayContent => ChatLog.Content;
 }
 [Serializable]
 public struct ChatLogEntry

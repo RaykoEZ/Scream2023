@@ -16,7 +16,7 @@ public class DialogueTrigger : MonoBehaviour
         if (info is DialogueInfo dialogue)
         {
             display.ReplaceStep(dialogue.Content);
-            m_playback?.TriggerTutorial(display, true);
+            m_playback?.TriggerDialogue(display, true);
         }
     }
 }

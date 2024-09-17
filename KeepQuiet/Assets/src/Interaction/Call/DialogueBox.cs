@@ -29,24 +29,3 @@ public class DialogueBox : HideableUI
         base.Hide();
     }
 }
-// A used for non-chat related dialogue
-[Serializable]
-public class DialogueStep : IStepDisplayContent
-{
-    public bool ShowInstantly;
-    public NpcEmotion Emotion;
-    public AudioClip PlaySound;
-    [SerializeField] CurryGameEventTrigger m_onShow = default;
-    [TextArea(5, 10)]
-    public string Content;
-    public CurryGameEventTrigger OnShowTrigger { get => m_onShow; }
-    public string DisplayContent => Content;
-    public virtual void SetContent(DialogueStep content) 
-    {
-        ShowInstantly = content.ShowInstantly;
-        Emotion = content.Emotion;
-        PlaySound = content.PlaySound;
-        Content = content.Content;
-        m_onShow = content.m_onShow;
-    }
-}

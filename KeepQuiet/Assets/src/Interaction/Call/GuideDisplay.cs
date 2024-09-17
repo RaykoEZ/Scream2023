@@ -6,18 +6,10 @@ using UnityEngine;
 // handles screen animation and text boxes in a tutorial sequence
 public class GuideDisplay : StepDisplayHandler
 {
-    [SerializeField] protected bool m_blockBackground = default;
     [SerializeField] protected HideableUI ScreenHighlight;
-    [SerializeField] protected List<DialogueStep> m_steps = default;
-    [SerializeField] GuideDisplay m_nextDisplay = default;
+    [SerializeField] protected List<Dialogue> m_toDisplay = default;
     [SerializeField] protected DialogueBox m_display = default;
-    protected bool isActive = true;
-    protected bool m_hasTriggeredOnce = false;
-    public bool IsActive { get => isActive; private set => isActive = value; }
-    public bool HasTriggeredOnce { get => m_hasTriggeredOnce; }
-    public bool BlockBackground { get => m_blockBackground; }
-    public GuideDisplay NextDisplay { get => m_nextDisplay; }
-    protected override IReadOnlyList<IStepDisplayContent> Steps => m_steps;
+    protected override IReadOnlyList<IStepDisplayContent> Steps => m_toDisplay;
     public override void Begin()
     {
         if (m_displaying != null) return;
@@ -31,30 +23,30 @@ public class GuideDisplay : StepDisplayHandler
         ScreenHighlight?.Hide();
         m_current = 0;
         m_hasTriggeredOnce = true;
-        IsActive = false;
+        m_isActive = false;
     }
-    public void AppendStep(List<DialogueStep> toAdd) 
+    public void AppendStep(List<Dialogue> toAdd) 
     {
-        m_steps.AddRange(toAdd);
+        m_toDisplay.AddRange(toAdd);
     }
     // overwrite all steps starting from the current step index
-    public void ReplaceStep(List<DialogueStep> toReplace) 
+    public void ReplaceStep(List<Dialogue> toReplace) 
     {
         // replace all
         if (m_current == 0) 
         {
-            m_steps = toReplace;
+            m_toDisplay = toReplace;
         }
         else 
         {
             // remove and replace all steps starting from current step
-            m_steps.RemoveRange(m_current, m_steps.Count - m_current);
-            m_steps.AddRange(toReplace);
+            m_toDisplay.RemoveRange(m_current, m_toDisplay.Count - m_current);
+            m_toDisplay.AddRange(toReplace);
         }
     }
     protected override void Display()
     {
-        var step = m_steps[m_current];
+        var step = m_toDisplay[m_current];
         // default
         if(step == null) 
         {
@@ -71,20 +63,20 @@ public class GuideDisplay : StepDisplayHandler
     }
     protected override void OnStepFinish()
     {
-        m_steps[m_current]?.OnShowTrigger?.TriggerEvent();
+        m_toDisplay[m_current]?.TriggerAfterThisLine?.Trigger();
     }
     public override bool Next() 
     {
         int next = ++m_current;
         //end this tutorial sequence if current index is at the end
-        bool hasStepsLeft = next < m_steps.Count;
+        bool hasStepsLeft = next < m_toDisplay.Count;
         // ignore spamming
         if (!hasStepsLeft || m_displaying != null) 
         {
             return hasStepsLeft;
         }
         // increment sequence
-        var nextStep = m_steps[next];
+        var nextStep = m_toDisplay[next];
         // transition not needed if we show next step instantly
         if (!nextStep.ShowInstantly)
         {

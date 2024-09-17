@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 public interface IStepDisplayContent
 {
@@ -8,36 +7,30 @@ public interface IStepDisplayContent
 public class TalkDisplay : StepDisplayHandler
 {
     [SerializeField] CloseupHandler m_closeupHandle = default;
-    [SerializeField] TemporaryInputAction m_nextLine = default;
-    protected override IReadOnlyList<IStepDisplayContent> Steps => m_currentStepRef;
-    List<DialogueStep> m_currentStepRef;
-    public void SetContent(List<DialogueStep> toTalk, bool startTalkngNow = true)
+    protected override IReadOnlyList<IStepDisplayContent> Steps => m_currentDialogueRef.Dialogues;
+    DialogueNode m_currentDialogueRef;
+    public void Init(DialogueNode toTalk)
     {
         if (m_displaying != null) return;
-        m_currentStepRef = toTalk;
-        if (startTalkngNow) 
-        {
-            Begin();
-        }
+        m_currentDialogueRef = toTalk;
+        Begin();
     }
     public override void Begin()
     {
-        if (m_currentStepRef == null || m_displaying != null) return;
+        if (m_currentDialogueRef == null || m_displaying != null) return;
         m_current = 0;
         m_closeupHandle?.EnterScene();
         m_displaying = StartCoroutine(ShowCurrent());
-        m_nextLine?.Enable();
     }
     public override void End()
     {
         m_current = 0;
         m_closeupHandle?.ExitScene();
-        m_nextLine?.Disable();
-        m_currentStepRef = null;
+        m_currentDialogueRef = null;
     }
     protected override void Display()
     {
-        DialogueStep step = m_currentStepRef[m_current];
+        Dialogue step = m_currentDialogueRef.Dialogues[m_current];
         // default
         if (step == null)
         {

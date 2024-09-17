@@ -1,8 +1,30 @@
 ﻿using Curry.Events;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
+[Serializable]
+public class TestObject 
+{
+    public InputAction InputTrigger = default;
+    public UnityEvent<CallbackContext> TestCalls = default;
+    public void Init() 
+    {
+        InputTrigger.Enable();
+        InputTrigger.performed += StartTest;
+    }
+    public void Shutdown() 
+    {
+        InputTrigger.Disable();
+        InputTrigger.performed -= StartTest;
+    }
+    void StartTest(CallbackContext c) 
+    {
+        TestCalls?.Invoke(c);
+    }
+}
 public class ThoughtTester : MonoBehaviour 
 {
     [SerializeField] InputAction m_obtainThought = default;

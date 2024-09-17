@@ -578,6 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 103466081}
   - component: {fileID: 103466080}
+  - component: {fileID: 103466082}
   m_Layer: 0
   m_Name: tests
   m_TagString: Untagged
@@ -654,6 +655,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &103466082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103466079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f57acfba9db9e4594ede33a8967805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tests:
+  - InputTrigger:
+      m_Name: Input Trigger
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 9f02a5ab-7728-4d2c-972e-18958ef46baf
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: d7e94f52-c77a-4ca6-bf4d-9d5db46c4922
+        m_Path: <Keyboard>/l
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input Trigger
+        m_Flags: 0
+      m_Flags: 0
+    TestCalls:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1254071862}
+          m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
+          m_MethodName: TriggerDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 473942149176119279}
+            m_ObjectArgumentAssemblyTypeName: StepDisplayHandler, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1784176664}
+          m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
+          m_MethodName: TriggerDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 473942149176119279}
+            m_ObjectArgumentAssemblyTypeName: StepDisplayHandler, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &107169118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3958,11 +4016,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1152285344}
           m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
-          m_MethodName: TriggerTutorial
+          m_MethodName: TriggerDialogue
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1748522811}
-            m_ObjectArgumentAssemblyTypeName: GuideDisplay, Assembly-CSharp
+            m_ObjectArgumentAssemblyTypeName: StepDisplayHandler, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3972,11 +4030,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1152285344}
           m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
-          m_MethodName: TriggerTutorial
+          m_MethodName: TriggerDialogue
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1052211090}
-            m_ObjectArgumentAssemblyTypeName: GuideDisplay, Assembly-CSharp
+            m_ObjectArgumentAssemblyTypeName: StepDisplayHandler, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3986,11 +4044,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1152285344}
           m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
-          m_MethodName: TriggerTutorial
+          m_MethodName: TriggerDialogue
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 438629021}
-            m_ObjectArgumentAssemblyTypeName: GuideDisplay, Assembly-CSharp
+            m_ObjectArgumentAssemblyTypeName: StepDisplayHandler, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4905,6 +4963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_blockBackground: 0
+  m_nextDisplay: {fileID: 0}
   ScreenHighlight: {fileID: 1107036363}
   m_steps:
   - ShowInstantly: 0
@@ -4920,7 +4979,7 @@ MonoBehaviour:
       m_eventToTrigger: {fileID: 0}
     Content: I would suggest you ask some basic questions to verify this individual's
       identity.
-  m_nextDisplay: {fileID: 0}
+  m_toDisplay: []
   m_display: {fileID: 1544671088}
 --- !u!1 &767480359
 GameObject:
@@ -5121,6 +5180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_blockBackground: 0
+  m_nextDisplay: {fileID: 0}
   ScreenHighlight: {fileID: 274647153}
   m_steps:
   - ShowInstantly: 1
@@ -5129,7 +5189,7 @@ MonoBehaviour:
     m_onShow:
       m_eventToTrigger: {fileID: 0}
     Content: It is advisable to take extra care in exchanges with an unknown entity.
-  m_nextDisplay: {fileID: 0}
+  m_toDisplay: []
   m_display: {fileID: 609150687}
 --- !u!1 &787367830
 GameObject:
@@ -7203,6 +7263,34 @@ PrefabInstance:
       propertyPath: m_nextDisplay
       value: 
       objectReference: {fileID: 438629021}
+    - target: {fileID: 6026416092571164032, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026416092571164032, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].HasAudio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026416092571164032, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[1].HasAudio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026416092571164032, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].PlaySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    - target: {fileID: 6026416092571164032, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[1].PlaySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    - target: {fileID: 6026416092571164032, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].ChatLog.Content
+      value: The files you need are at your desk.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026416092571164032, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[1].ChatLog.Content
+      value: Clicking here to inspect, good luck on your mission.
+      objectReference: {fileID: 0}
     - target: {fileID: 6372547512745807460, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
       propertyPath: m_Name
       value: Tutorials_Newgame
@@ -7300,6 +7388,10 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7707543183353628602, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707543183353628602, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
       propertyPath: m_steps.Array.data[2].Content
       value: 
       objectReference: {fileID: 0}
@@ -7307,6 +7399,30 @@ PrefabInstance:
       propertyPath: m_steps.Array.data[2].Display
       value: 
       objectReference: {fileID: 1063365844}
+    - target: {fileID: 7707543183353628602, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].HasAudio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707543183353628602, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[1].HasAudio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707543183353628602, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].PlaySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    - target: {fileID: 7707543183353628602, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[1].PlaySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    - target: {fileID: 7707543183353628602, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].ChatLog.Content
+      value: Welcome back to the Virtual Sandbox.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707543183353628602, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
+      propertyPath: m_toDisplay.Array.data[1].ChatLog.Content
+      value: A new <color=orange><b>urgent task</b></color> has been sent to you.
+      objectReference: {fileID: 0}
     - target: {fileID: 8188257816118209951, guid: d2f69562e18329d449baa60add46ac4f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9569,6 +9685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a62f3c9f08dab4e835117393571497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_defaultRepeat: 0
   m_background: {fileID: 1987416169}
   m_next:
     m_autoDisable: 0
@@ -9712,6 +9829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_blockBackground: 0
+  m_nextDisplay: {fileID: 0}
   ScreenHighlight: {fileID: 1602202495}
   m_steps:
   - ShowInstantly: 0
@@ -9737,7 +9855,7 @@ MonoBehaviour:
 
       <color=red><b>Conduct
       your questioning at once.</b></color>'
-  m_nextDisplay: {fileID: 0}
+  m_toDisplay: []
   m_display: {fileID: 1362229430}
 --- !u!114 &1169064671
 MonoBehaviour:
@@ -10751,6 +10869,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a64767dac2e4974cbcac7d6576b5ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1254071862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 473942149775057535, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
+  m_PrefabInstance: {fileID: 473942149176119278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1256618964
 GameObject:
   m_ObjectHideFlags: 0
@@ -15328,6 +15451,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1784176663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784176665}
+  - component: {fileID: 1784176664}
+  m_Layer: 5
+  m_Name: TalkToNpc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1784176664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784176663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a62f3c9f08dab4e835117393571497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultRepeat: 1
+  m_background: {fileID: 1987416169}
+  m_next:
+    m_autoDisable: 0
+    m_inputTarget: {fileID: 6476768578074826707, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+    m_triggerOnAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1784176664}
+          m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
+          m_MethodName: NextStep
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!224 &1784176665
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784176663}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791428171 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6670728044096788214, guid: d4b2d86ec875368409a1b95cf1034993, type: 3}
@@ -18750,6 +18941,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1865920670}
     m_Modifications:
+    - target: {fileID: 473942149775057528, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 473942149775057532, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -18923,6 +19118,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
+--- !u!114 &473942149176119279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5760131136226406782, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
+  m_PrefabInstance: {fileID: 473942149176119278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254071862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da929b9d05a7804ba06ac3d41878438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &576470049154035104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20873,6 +21079,39 @@ PrefabInstance:
       propertyPath: m_nextDisplay
       value: 
       objectReference: {fileID: 1052211090}
+    - target: {fileID: 3389000690025469521, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
+      propertyPath: m_toDisplay.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389000690025469521, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].HasAudio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389000690025469521, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].PlaySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    - target: {fileID: 3389000690025469521, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].ChatLog.Content
+      value: Your can access your tools to help with your investigations.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680943262187842218, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
+      propertyPath: m_toDisplay.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680943262187842218, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].HasAudio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680943262187842218, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].PlaySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    - target: {fileID: 5680943262187842218, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].ChatLog.Content
+      value: Drag the icons with the cursor to access the tools, Right-click to return
+        the tool.
+      objectReference: {fileID: 0}
     - target: {fileID: 5680943262948579702, guid: e7b4f41f938c7c5498eb231c5b59b714, type: 3}
       propertyPath: m_Name
       value: Tutorials_Tools
@@ -21757,6 +21996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_blockBackground: 1
+  m_nextDisplay: {fileID: 0}
   ScreenHighlight: {fileID: 7712070707087821935}
   m_steps:
   - ShowInstantly: 0
@@ -21777,7 +22017,7 @@ MonoBehaviour:
     m_onShow:
       m_eventToTrigger: {fileID: 0}
     Content: We need to find her.
-  m_nextDisplay: {fileID: 0}
+  m_toDisplay: []
   m_display: {fileID: 4411118123954679489}
 --- !u!114 &7712070707087821935
 MonoBehaviour:
@@ -22358,6 +22598,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5831495133475729552, guid: 2e0b99e072a2c3246af523c32aae8150, type: 3}
+      propertyPath: m_toDisplay.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831495133475729552, guid: 2e0b99e072a2c3246af523c32aae8150, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].HasAudio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831495133475729552, guid: 2e0b99e072a2c3246af523c32aae8150, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].PlaySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
+    - target: {fileID: 5831495133475729552, guid: 2e0b99e072a2c3246af523c32aae8150, type: 3}
+      propertyPath: m_toDisplay.Array.data[0].ChatLog.Content
+      value: You can use the arrows on the sides to look around the room.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22367,8 +22623,10 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 103466081}
   - {fileID: 344873573}
   - {fileID: 1152285343}
+  - {fileID: 1784176665}
   - {fileID: 1456654550}
   - {fileID: 7138903285013225187}
   - {fileID: 451893987}
@@ -22378,4 +22636,3 @@ SceneRoots:
   - {fileID: 823697926}
   - {fileID: 708370053}
   - {fileID: 1569776800}
-  - {fileID: 103466081}
