@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
+public class TalkToNpc : SystemDialoguePlayer 
+{
+
+}
 public class SystemDialoguePlayer : MonoBehaviour 
 {
-    [SerializeField] bool m_defaultRepeat = default;
-    [SerializeField] Image m_background = default;
-    [SerializeField] TemporaryInputAction m_next = default;
-    StepDisplayHandler m_current;
-    Coroutine m_displayCall;
+    [SerializeField] protected bool m_defaultRepeat = default;
+    [SerializeField] protected Image m_background = default;
+    [SerializeField] protected TemporaryInputAction m_next = default;
+    protected StepDisplayHandler m_current;
+    protected Coroutine m_displayCall;
     public virtual void TriggerDialogue(StepDisplayHandler col)
     {
         if (m_displayCall != null) return;
@@ -30,23 +33,19 @@ public class SystemDialoguePlayer : MonoBehaviour
         m_current?.Begin();
         m_next?.Enable();
     }
-    void EndCurrent()
+    protected virtual void EndCurrent()
     {
         m_next?.Disable();
         m_current?.End();
         StopAllCoroutines();
         m_background.enabled = false;
     }
-    public void NextStep()
+    public virtual void NextStep()
     {
         if (m_displayCall != null) return;
         m_displayCall = StartCoroutine(Next_Internal());
     }
-    public void NextStep(InputAction.CallbackContext c) 
-    {
-        NextStep();
-    }
-    IEnumerator Next_Internal() 
+    protected virtual IEnumerator Next_Internal() 
     {
         yield return new WaitForEndOfFrame();
         bool stepsLeft = m_current.Next();

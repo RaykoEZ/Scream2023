@@ -688,13 +688,13 @@ MonoBehaviour:
     TestCalls:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1254071862}
-          m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
-          m_MethodName: TriggerDialogue
+        - m_Target: {fileID: 473942149176119279}
+          m_TargetAssemblyTypeName: TalkDisplay, Assembly-CSharp
+          m_MethodName: Init
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 473942149176119279}
-            m_ObjectArgumentAssemblyTypeName: StepDisplayHandler, Assembly-CSharp
+            m_ObjectArgument: {fileID: 11400000, guid: ff64d871b325a58428d4e5d3e619d002, type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueNode, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1809,6 +1809,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5bdb395d-82cb-4b1f-86be-8c95ebb3cb88
     m_ActionName: Options/Toggle[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0ce9f680-763b-44d6-b6c7-c0e7abb3ce2c
+    m_ActionName: UI/TalkToNpc[/Keyboard/space,/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Options
@@ -4965,20 +4969,6 @@ MonoBehaviour:
   m_blockBackground: 0
   m_nextDisplay: {fileID: 0}
   ScreenHighlight: {fileID: 1107036363}
-  m_steps:
-  - ShowInstantly: 0
-    Emotion: 0
-    PlaySound: {fileID: 0}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: Ignoring isn't helping our cause at this stage of the investigation.
-  - ShowInstantly: 1
-    Emotion: 0
-    PlaySound: {fileID: 0}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: I would suggest you ask some basic questions to verify this individual's
-      identity.
   m_toDisplay: []
   m_display: {fileID: 1544671088}
 --- !u!1 &767480359
@@ -5182,13 +5172,6 @@ MonoBehaviour:
   m_blockBackground: 0
   m_nextDisplay: {fileID: 0}
   ScreenHighlight: {fileID: 274647153}
-  m_steps:
-  - ShowInstantly: 1
-    Emotion: 0
-    PlaySound: {fileID: 0}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: It is advisable to take extra care in exchanges with an unknown entity.
   m_toDisplay: []
   m_display: {fileID: 609150687}
 --- !u!1 &787367830
@@ -9696,7 +9679,7 @@ MonoBehaviour:
         - m_Target: {fileID: 1152285344}
           m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
           m_MethodName: NextStep
-          m_Mode: 0
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9831,30 +9814,6 @@ MonoBehaviour:
   m_blockBackground: 0
   m_nextDisplay: {fileID: 0}
   ScreenHighlight: {fileID: 1602202495}
-  m_steps:
-  - ShowInstantly: 0
-    Emotion: 0
-    PlaySound: {fileID: 0}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: <color=red>We getting nowhere with this!</color>
-  - ShowInstantly: 0
-    Emotion: 0
-    PlaySound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: <color=red>Begin the questioning</color> or I'll have to <color=red>report</color>
-      this misconduct to your superiors!
-  - ShowInstantly: 1
-    Emotion: 0
-    PlaySound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: '<color=yellow>This is your final warning.</color>
-
-
-      <color=red><b>Conduct
-      your questioning at once.</b></color>'
   m_toDisplay: []
   m_display: {fileID: 1362229430}
 --- !u!114 &1169064671
@@ -10869,11 +10828,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a64767dac2e4974cbcac7d6576b5ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1254071862 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 473942149775057535, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
-  m_PrefabInstance: {fileID: 473942149176119278}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1256618964
 GameObject:
   m_ObjectHideFlags: 0
@@ -15491,7 +15445,7 @@ MonoBehaviour:
         - m_Target: {fileID: 1784176664}
           m_TargetAssemblyTypeName: SystemDialoguePlayer, Assembly-CSharp
           m_MethodName: NextStep
-          m_Mode: 0
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19123,7 +19077,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5760131136226406782, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
   m_PrefabInstance: {fileID: 473942149176119278}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254071862}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7da929b9d05a7804ba06ac3d41878438, type: 3}
@@ -21998,25 +21952,6 @@ MonoBehaviour:
   m_blockBackground: 1
   m_nextDisplay: {fileID: 0}
   ScreenHighlight: {fileID: 7712070707087821935}
-  m_steps:
-  - ShowInstantly: 0
-    Emotion: 0
-    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: This is our <color=yellow>prime suspect</color>.
-  - ShowInstantly: 0
-    Emotion: 0
-    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: She has been quarantined inside this sandbox.
-  - ShowInstantly: 0
-    Emotion: 0
-    PlaySound: {fileID: 8300000, guid: 04ffcdd5160670f4eb09350bcc2a72f5, type: 3}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: We need to find her.
   m_toDisplay: []
   m_display: {fileID: 4411118123954679489}
 --- !u!114 &7712070707087821935

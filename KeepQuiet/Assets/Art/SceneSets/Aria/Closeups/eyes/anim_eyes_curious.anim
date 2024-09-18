@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: anim_angry
+  m_Name: anim_eyes_curious
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0.016666668
-      value: {fileID: 21300000, guid: d6d76ecbcbe40394aa081068b2a89c0f, type: 3}
+      value: {fileID: 21300000, guid: f1ae7a22be7de3f47938e644153911d7, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -41,7 +41,7 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: d6d76ecbcbe40394aa081068b2a89c0f, type: 3}
+    - {fileID: 21300000, guid: f1ae7a22be7de3f47938e644153911d7, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

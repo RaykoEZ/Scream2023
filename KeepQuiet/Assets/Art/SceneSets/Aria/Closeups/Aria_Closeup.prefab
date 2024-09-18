@@ -38,7 +38,6 @@ RectTransform:
   - {fileID: 2795011246972766013}
   - {fileID: 4731814118092737372}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -55,7 +54,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &473942149775057531
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -72,7 +71,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &473942149775057533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d6d76ecbcbe40394aa081068b2a89c0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1ae7a22be7de3f47938e644153911d7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da929b9d05a7804ba06ac3d41878438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_blockBackground: 0
+  m_nextDisplay: {fileID: 0}
   m_closeupHandle: {fileID: 1469220324450292217}
 --- !u!114 &1469220324450292217
 MonoBehaviour:
@@ -192,7 +194,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 473942149775057532}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -268,7 +269,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6199509574808154676}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -407,7 +407,6 @@ RectTransform:
   m_Children:
   - {fileID: 2526518342675725182}
   m_Father: {fileID: 2795011246972766013}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -514,7 +513,6 @@ RectTransform:
   m_Children:
   - {fileID: 6199509574808154676}
   m_Father: {fileID: 473942149775057532}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -549,7 +547,7 @@ MonoBehaviour:
   m_ReverseArrangement: 1
 --- !u!95 &131591121625385456
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -566,7 +564,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!225 &1422318095315585178
 CanvasGroup:
   m_ObjectHideFlags: 0

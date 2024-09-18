@@ -49,7 +49,6 @@ public class TalkDisplay : StepDisplayHandler
         // ignore spamming
         if (!hasStepsLeft)
         {
-            End();
             return hasStepsLeft;
         }
         // increment sequence

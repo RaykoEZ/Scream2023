@@ -27,11 +27,10 @@ public class CloseupHandler : MonoBehaviour
     {
         m_content.text = content;
         m_face?.SetEmotion(emote);
-        yield return new WaitForSeconds(0.05f);
-        m_face?.SetTalking(true);
+        m_face?.SetTalking(emote, true);
         yield return new WaitForSeconds(0.05f);
         m_message?.Show();
-        yield return new WaitForSeconds(1f + (content.Length * 0.1f));
-        m_face?.SetTalking(false);
+        yield return new WaitForSeconds((content.Length * 0.1f));
+        m_face?.SetTalking(emote, false);
     }
 }

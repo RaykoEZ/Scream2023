@@ -3,7 +3,8 @@ public enum NpcEmotion
 { 
     Default,
     Angry,
-    Smug
+    Smug,
+    Surprise
 }
 public class FaceAnimationHandler : HideableUI 
 {
@@ -15,9 +16,27 @@ public class FaceAnimationHandler : HideableUI
     {
         GetAnim?.SetTrigger("exit");
     }
-    public void SetTalking(bool talking)
+    public void SetTalking(NpcEmotion emote, bool talking)
     {
-        GetAnim?.SetBool("talking", talking);
+        // switch off talking
+        if (!talking) 
+        {
+            GetAnim?.SetBool("talk_default", talking);
+            GetAnim?.SetBool("talk_happy", talking);
+            return;
+        }
+        // Switch on talk animation, smiling for smug face
+        switch (emote)
+        {
+            case NpcEmotion.Smug:
+                GetAnim?.SetBool("talk_default", false);
+                GetAnim?.SetBool("talk_happy", talking);
+                break;
+            default:
+                GetAnim?.SetBool("talk_default", talking);
+                GetAnim?.SetBool("talk_happy", false);
+                break;
+        }
     }
     #region facial expressions
     public void SetEmotion(NpcEmotion emote) 
@@ -25,14 +44,14 @@ public class FaceAnimationHandler : HideableUI
         var anim = GetAnim;
         switch (emote)
         {
-            case NpcEmotion.Default:
-                anim?.SetTrigger("default");
-                break;
             case NpcEmotion.Angry:
                 anim?.SetTrigger("angry");
                 break;
             case NpcEmotion.Smug:
                 anim?.SetTrigger("smug");
+                break;
+            case NpcEmotion.Surprise:
+                anim?.SetTrigger("surprise");
                 break;
             default:
                 anim?.SetTrigger("default");

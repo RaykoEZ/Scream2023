@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: c0_0_AriaWait
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
       Content: Anyone here?
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.5
     TypingDelay: 1
     ObtainThought: {fileID: 0}
