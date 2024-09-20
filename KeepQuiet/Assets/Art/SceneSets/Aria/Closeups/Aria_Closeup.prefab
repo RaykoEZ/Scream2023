@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da929b9d05a7804ba06ac3d41878438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_blockBackground: 0
+  m_blockBackground: 1
   m_nextDisplay: {fileID: 0}
   m_closeupHandle: {fileID: 1469220324450292217}
 --- !u!114 &1469220324450292217

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public interface IStepDisplayContent
 {
@@ -7,14 +8,10 @@ public interface IStepDisplayContent
 public class TalkDisplay : StepDisplayHandler
 {
     [SerializeField] CloseupHandler m_closeupHandle = default;
-    protected override IReadOnlyList<IStepDisplayContent> Steps => m_currentDialogueRef.Dialogues;
     DialogueNode m_currentDialogueRef;
-    public void Init(DialogueNode toTalk)
-    {
-        if (m_displaying != null) return;
-        m_currentDialogueRef = toTalk;
-        Begin();
-    }
+    public event OnOptionPrompt OnPrompt;
+    protected override IReadOnlyList<IStepDisplayContent> Steps => m_currentDialogueRef.Dialogues;
+    public DialogueNode CurrentDialogueRef { get => m_currentDialogueRef; set => m_currentDialogueRef = value; }
     public override void Begin()
     {
         if (m_currentDialogueRef == null || m_displaying != null) return;
@@ -22,11 +19,17 @@ public class TalkDisplay : StepDisplayHandler
         m_closeupHandle?.EnterScene();
         m_displaying = StartCoroutine(ShowCurrent());
     }
-    public override void End()
+    public void ResetConversation() 
     {
         m_current = 0;
-        m_closeupHandle?.ExitScene();
         m_currentDialogueRef = null;
+        StopAllCoroutines();
+        m_displaying = null;
+    }
+    public override void End()
+    {
+        ResetConversation();
+        m_closeupHandle?.ExitScene();
     }
     protected override void Display()
     {
@@ -58,5 +61,19 @@ public class TalkDisplay : StepDisplayHandler
             m_displaying = StartCoroutine(Next_Internal());
         }
         return hasStepsLeft;
+    }
+    protected override IEnumerator Next_Internal()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (m_current < Steps.Count)
+        {
+            yield return ShowCurrent();
+        }
+        // if we reached the end and have options
+        else if (CurrentDialogueRef.Options.Count > 0) 
+        {
+            OnPrompt?.Invoke(CurrentDialogueRef.Options as List<ChatOption>);
+        }
+        m_displaying = null;
     }
 }

@@ -1,14 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using Newtonsoft.Json;
 using UnityEngine.AddressableAssets;
 using Newtonsoft.Json.Linq;
+public class AssetReferenceJsonConverter : JsonConverter
+{
+    public override bool CanConvert(Type objectType)
+    {
+        return typeof(AssetReference).IsAssignableFrom(objectType);
+    }
+
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    {
+        string assetGuid = (string)reader.Value;
+        AssetReference assetRef = new AssetReference(assetGuid);
+        return assetRef;
+    }
+
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        AssetReference assetRef = value as AssetReference;
+        writer.WriteValue(assetRef.AssetGUID);
+    }
+}
 public class AssetReferenceListJsonConverter : JsonConverter
 {
-    public AssetReferenceListJsonConverter() : base()
-    {
-    }
     public override bool CanConvert(Type objectType)
     {
         return objectType == typeof(List<string>);

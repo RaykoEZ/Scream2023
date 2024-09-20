@@ -4,7 +4,8 @@ public enum NpcEmotion
     Default,
     Angry,
     Smug,
-    Surprise
+    Surprise,
+    Happy
 }
 public class FaceAnimationHandler : HideableUI 
 {
@@ -28,7 +29,7 @@ public class FaceAnimationHandler : HideableUI
         // Switch on talk animation, smiling for smug face
         switch (emote)
         {
-            case NpcEmotion.Smug:
+            case NpcEmotion.Smug | NpcEmotion.Happy:
                 GetAnim?.SetBool("talk_default", false);
                 GetAnim?.SetBool("talk_happy", talking);
                 break;

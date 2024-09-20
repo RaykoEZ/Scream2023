@@ -14,6 +14,7 @@ public class OptionInfo : EventInfo
     }
 }
 public delegate void OnPlayerChosen(DialogueNode chosen);
+public delegate void OnOptionPrompt(List<ChatOption> options);
 [RequireComponent(typeof(HideableUI))]
 public class ReplyPrompter : MonoBehaviour
 {

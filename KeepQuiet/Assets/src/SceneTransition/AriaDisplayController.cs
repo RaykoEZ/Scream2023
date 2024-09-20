@@ -8,6 +8,7 @@ public class AriaDisplayController
     public void MoveTo(AriaPosition newLocation, AriaPosition previous) 
     {
         if (!m_cafePoses.isActiveAndEnabled) return;
+        Hide();
         switch (newLocation)
         {
             case AriaPosition.InsideCafe_Counter:
@@ -23,7 +24,6 @@ public class AriaDisplayController
                 }
                 break;
             default:
-                Hide();
                 break;
         }
     }

@@ -34,6 +34,11 @@ public class ChatRoom : HideableUI
     {
         Shutdown();
     }
+    public void Shutdown()
+    {
+        m_optionPrompt.OnChosen -= OnReplyChosen;
+        ClearChat();
+    }
     public void SetChatLog(AddressableContainer<DialogueNode> history)
     {
         // null and dupe check
@@ -100,11 +105,7 @@ public class ChatRoom : HideableUI
             StartCoroutine(ResolveThought(outcome, thought));
         }
     }
-    public void Shutdown() 
-    {
-        m_optionPrompt.OnChosen -= OnReplyChosen;
-        ClearChat();
-    }
+
     void ClearChat() 
     {
         m_optionPrompt?.HideAll();

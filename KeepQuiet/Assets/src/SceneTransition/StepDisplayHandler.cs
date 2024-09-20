@@ -37,9 +37,8 @@ public abstract class StepDisplayHandler : MonoBehaviour
         }
         return hasStepsLeft;
     }
-    protected IEnumerator ShowCurrent()
+    protected virtual IEnumerator ShowCurrent()
     {
-        var step = Steps[m_current];
         Display();
         yield return new WaitForSeconds(HoldAfterDisplay);
         OnStepFinish();
