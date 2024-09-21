@@ -26,7 +26,7 @@ public class TemporaryInputAction
     {
         if (m_autoDisable) 
         {
-            m_inputTarget.action.performed -= Trigger;
+            Disable();
         }
         m_triggerOnAction?.Invoke(c);
     }

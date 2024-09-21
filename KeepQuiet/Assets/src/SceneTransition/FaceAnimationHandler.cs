@@ -1,63 +1,31 @@
 ﻿using Curry.Explore;
 public enum NpcEmotion 
 { 
-    Default,
-    Angry,
-    Smug,
-    Surprise,
-    Happy
+    Default = 0,
+    Angry = 1,
+    Smug = 2,
+    Surprise = 3,
+    Happy = 4
 }
 public class FaceAnimationHandler : HideableUI 
 {
     public void EnterScene()
     {
-        GetAnim?.SetTrigger("enter");
+        GetAnim?.SetBool("enterScene", true);
     }
     public void ExitScene()
     {
-        GetAnim?.SetTrigger("exit");
+        GetAnim?.SetBool("enterScene", false);
     }
-    public void SetTalking(NpcEmotion emote, bool talking)
+    public void SetTalking(bool talking)
     {
-        // switch off talking
-        if (!talking) 
-        {
-            GetAnim?.SetBool("talk_default", talking);
-            GetAnim?.SetBool("talk_happy", talking);
-            return;
-        }
-        // Switch on talk animation, smiling for smug face
-        switch (emote)
-        {
-            case NpcEmotion.Smug | NpcEmotion.Happy:
-                GetAnim?.SetBool("talk_default", false);
-                GetAnim?.SetBool("talk_happy", talking);
-                break;
-            default:
-                GetAnim?.SetBool("talk_default", talking);
-                GetAnim?.SetBool("talk_happy", false);
-                break;
-        }
+        GetAnim?.SetBool("talking", talking);
     }
     #region facial expressions
     public void SetEmotion(NpcEmotion emote) 
     {
         var anim = GetAnim;
-        switch (emote)
-        {
-            case NpcEmotion.Angry:
-                anim?.SetTrigger("angry");
-                break;
-            case NpcEmotion.Smug:
-                anim?.SetTrigger("smug");
-                break;
-            case NpcEmotion.Surprise:
-                anim?.SetTrigger("surprise");
-                break;
-            default:
-                anim?.SetTrigger("default");
-                break;
-        }
+        anim?.SetInteger("emoteValue", (int)emote);
     }
     #endregion
 }

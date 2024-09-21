@@ -69,9 +69,18 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Toggle",
+                    "type": "Button",
+                    "id": "7fbbee6e-afd7-4fe9-b4b3-724c86032ac5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "TalkToNpc",
                     "type": "Button",
-                    "id": "0ce9f680-763b-44d6-b6c7-c0e7abb3ce2c",
+                    "id": "856a3607-e226-466c-9f89-a0795b5422bf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -466,51 +475,34 @@
                 },
                 {
                     "name": "",
-                    "id": "7cb02029-81bc-4e2e-9da3-245c47f7f109",
+                    "id": "cae7ffbb-021d-4906-b19d-6d006743c8c5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0e7327f2-9923-4840-80ca-51e3c2b14c7f",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "TalkToNpc",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "9c6515a1-f11e-440e-90f6-24b5df75d259",
+                    "id": "b14d52d0-ff8f-427c-bb81-473853d1be76",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "TalkToNpc",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Options",
-            "id": "0bee09b0-c7b9-4676-9c5e-8fc5d06af3cd",
-            "actions": [
-                {
-                    "name": "Toggle",
-                    "type": "Button",
-                    "id": "5bdb395d-82cb-4b1f-86be-8c95ebb3cb88",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "1c890253-bfee-491f-854b-d626878c1bba",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Toggle",
+                    "action": "TalkToNpc",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

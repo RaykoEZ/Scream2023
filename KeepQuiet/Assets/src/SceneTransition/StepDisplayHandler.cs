@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class StepDisplayHandler : MonoBehaviour
 {
     [SerializeField] protected bool m_blockBackground = default;
-    [SerializeField] StepDisplayHandler m_nextDisplay = default;
+    [SerializeField] protected StepDisplayHandler m_nextDisplay = default;
     protected bool m_isActive = true;
     protected bool m_hasTriggeredOnce = false;
     protected int m_current = 0;
@@ -14,7 +14,6 @@ public abstract class StepDisplayHandler : MonoBehaviour
     protected Coroutine m_displaying;
     public bool IsActive { get => m_isActive; private set => m_isActive = value; }
     public bool HasTriggeredOnce { get => m_hasTriggeredOnce; }
-    public bool BlockBackground { get => m_blockBackground; }
     public virtual StepDisplayHandler NextDisplay { get => m_nextDisplay; }
     public abstract void Begin();
     public abstract void End();

@@ -7,6 +7,7 @@ using UnityEngine;
 public class GuideDisplay : StepDisplayHandler
 {
     [SerializeField] protected HideableUI ScreenHighlight;
+    [SerializeField] protected UnityEngine.UI.Image m_backdrop = default;
     [SerializeField] protected List<Dialogue> m_toDisplay = default;
     [SerializeField] protected DialogueBox m_display = default;
     protected override IReadOnlyList<IStepDisplayContent> Steps => m_toDisplay;
@@ -14,6 +15,7 @@ public class GuideDisplay : StepDisplayHandler
     {
         if (m_displaying != null) return;
         m_current = 0;
+        m_backdrop.enabled = true;
         ScreenHighlight?.Show();
         m_displaying = StartCoroutine(ShowCurrent());
     }
@@ -22,6 +24,7 @@ public class GuideDisplay : StepDisplayHandler
         m_display?.Hide();
         ScreenHighlight?.Hide();
         m_current = 0;
+        m_backdrop.enabled = false;
         m_hasTriggeredOnce = true;
         m_isActive = false;
     }

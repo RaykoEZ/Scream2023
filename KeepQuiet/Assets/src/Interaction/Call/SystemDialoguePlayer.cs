@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 public class SystemDialoguePlayer : MonoBehaviour 
 {
     [SerializeField] protected bool m_defaultRepeat = default;
-    [SerializeField] protected Image m_background = default;
     [SerializeField] protected TemporaryInputAction m_next = default;
     protected StepDisplayHandler m_current;
     protected Coroutine m_displayCall;
@@ -24,7 +22,6 @@ public class SystemDialoguePlayer : MonoBehaviour
         if (m_displayCall != null) return;
         if ((!col.IsActive || col.HasTriggeredOnce) && !forceRepeat) return;
         EndCurrent();
-        m_background.enabled = col.BlockBackground;
         m_current = col;
         m_current?.Begin();
         m_next?.Enable();
@@ -34,7 +31,7 @@ public class SystemDialoguePlayer : MonoBehaviour
         m_next?.Disable();
         m_current?.End();
         StopAllCoroutines();
-        m_background.enabled = false;
+        m_displayCall = null;
     }
     public virtual void NextStep()
     {
