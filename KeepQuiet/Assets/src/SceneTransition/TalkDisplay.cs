@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 public interface IStepDisplayContent
 {
@@ -8,6 +9,7 @@ public interface IStepDisplayContent
 public class TalkDisplay : StepDisplayHandler
 {
     [SerializeField] CloseupHandler m_closeupHandle = default;
+    [SerializeField] TextMeshProUGUI m_nextButtonLabel = default;
     DialogueNode m_currentDialogueRef;
     public event OnOptionPrompt OnPrompt;
     protected override IReadOnlyList<IStepDisplayContent> Steps => m_currentDialogueRef.Dialogues;
@@ -41,6 +43,9 @@ public class TalkDisplay : StepDisplayHandler
             Next();
             return;
         }
+        // If current step is the last step
+        m_nextButtonLabel.text = m_current < Steps.Count - 1 || 
+            CurrentDialogueRef.Options.Count > 0? ">>" : "END";
         m_closeupHandle?.StartTalk(step.DisplayContent, step.Emotion);
     }
     public override bool Next()
@@ -49,31 +54,23 @@ public class TalkDisplay : StepDisplayHandler
         //end this tutorial sequence if current index is at the end
         bool hasStepsLeft = next < Steps.Count;
         if (m_displaying != null) return hasStepsLeft;
-        // ignore spamming
-        if (!hasStepsLeft)
+        // ignore spamming/at the end of the conversation
+        if (!hasStepsLeft && CurrentDialogueRef.Options.Count == 0)
         {
             return hasStepsLeft;
+        }        // if we reached the end and have options
+        else if (!hasStepsLeft && CurrentDialogueRef.Options.Count > 0)
+        {
+            // Display options prompt and continue current node
+            OnPrompt?.Invoke(CurrentDialogueRef.Options as List<ChatOption>);
+            return true;
         }
         // increment sequence
         else
-        {
+        {   
             // transition not needed if we show next step instantly
             m_displaying = StartCoroutine(Next_Internal());
         }
         return hasStepsLeft;
-    }
-    protected override IEnumerator Next_Internal()
-    {
-        yield return new WaitForSeconds(0.1f);
-        if (m_current < Steps.Count)
-        {
-            yield return ShowCurrent();
-        }
-        // if we reached the end and have options
-        else if (CurrentDialogueRef.Options.Count > 0) 
-        {
-            OnPrompt?.Invoke(CurrentDialogueRef.Options as List<ChatOption>);
-        }
-        m_displaying = null;
     }
 }

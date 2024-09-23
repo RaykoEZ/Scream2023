@@ -21,7 +21,7 @@ public class AddressableContainer<T> where T : UnityEngine.Object
         // go through list of current history and collect asset references
         foreach (var item in container.LoadedAssets)
         {
-            i = index.Find(item.name);
+            i = index.FindByAssetName(item.name);
             if (i == null) continue;
             ret.Add(i);
         }
