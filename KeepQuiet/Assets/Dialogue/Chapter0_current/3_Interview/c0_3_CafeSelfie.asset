@@ -13,23 +13,29 @@ MonoBehaviour:
   m_Name: c0_3_CafeSelfie
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
       Content: Yo
       AttachmentId: cafeSelfie
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.3
     TypingDelay: 0.2
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: 'Nice and cozy, I''m ready!
+      Content: 'Finally, somewhere nice and cozy.
 
 
-        Ask away'
+        Ask away, I''m ready.'
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.5
     TypingDelay: 0.1
     ObtainThought: {fileID: 0}

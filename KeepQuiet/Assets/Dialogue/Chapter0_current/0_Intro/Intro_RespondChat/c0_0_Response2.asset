@@ -13,38 +13,28 @@ MonoBehaviour:
   m_Name: c0_0_Response2
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: You
-      Content: 'Thanks!
-
-        We want to know what happened on stage today'
+      Content: We want to know what happened on stage today
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.1
     TypingDelay: 0.5
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: 'Thanks!
-
-      We want to know what happened on stage today'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: 'mhm
-
-
-        Sure, it''s still fresh in my head.'
+      Content: Sure, whatever it takes to get out of here.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 2.5
     TypingDelay: 0.8
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'mhm
-
-
-      Sure, it''s still fresh in my head.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 11400000, guid: 68dcf84614b111e40b140cdec54c9cdc, type: 2}
   m_replyOptions: []

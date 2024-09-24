@@ -51,15 +51,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ScrollWheel",
-                    "type": "PassThrough",
-                    "id": "bc8f62ca-0ae4-49d4-8b8a-4c05b07d6861",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "RightClick",
                     "type": "Button",
                     "id": "19d05403-57de-4eff-a2f9-cccace9c74f4",
@@ -69,18 +60,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Toggle",
+                    "name": "TalkToNpc",
                     "type": "Button",
-                    "id": "7fbbee6e-afd7-4fe9-b4b3-724c86032ac5",
+                    "id": "856a3607-e226-466c-9f89-a0795b5422bf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TalkToNpc",
+                    "name": "PauseGame",
                     "type": "Button",
-                    "id": "856a3607-e226-466c-9f89-a0795b5422bf",
+                    "id": "50bd7fbb-94e5-4a85-a07c-6c7a9ec05943",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -453,34 +444,12 @@
                 },
                 {
                     "name": "",
-                    "id": "38c99815-14ea-4617-8627-164d27641299",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "ScrollWheel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "4c191405-5738-4d4b-a523-c6a301dbf754",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "RightClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cae7ffbb-021d-4906-b19d-6d006743c8c5",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Toggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -503,6 +472,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "TalkToNpc",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7cff9ee-310b-4c6b-8419-9e67bc7dc17e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

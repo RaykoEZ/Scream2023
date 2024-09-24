@@ -13,38 +13,33 @@ MonoBehaviour:
   m_Name: c0_1_FindShelter0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: 'Can I come inside now?
+      Content: 'Can I come indoors?
 
-
-        It''s raining out here and I might
-        catch a cold'
+'
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.1
     TypingDelay: 0.1
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'Can I come inside now?
-
-
-      It''s raining out here and I might catch
-      a cold'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: virtually
+      Content: Been wandering around in the rain, you guys never told me where to
+        go.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.1
     TypingDelay: 0.05
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: virtually
     ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 11400000, guid: f6b51fa36ff28ea49824b5823b7678a7, type: 2}
+    TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
   - m_description: Where are you right now?
     m_outcome: {fileID: 11400000, guid: 676fbd38d4bd68c4c839128dd08d3450, type: 2}

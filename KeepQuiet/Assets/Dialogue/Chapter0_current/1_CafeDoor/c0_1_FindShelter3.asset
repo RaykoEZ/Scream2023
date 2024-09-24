@@ -13,40 +13,41 @@ MonoBehaviour:
   m_Name: c0_1_FindShelter3
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: You
       Content: Where are you right now?
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: Where are you right now?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: On the streets, near a lit bar, nothing's open, no food...all wet
+      Content: On the streets, near a bar, nothing', all wet for the last system
+        hour
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 3
     TypingDelay: 0.8
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: On the streets, near a lit bar, nothing's open, no food...all wet
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: No wonder those riots happened.
+      Content: This is abuse! No wonder the riots happened.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.2
     TypingDelay: 0.4
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: No wonder those riots happened.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []

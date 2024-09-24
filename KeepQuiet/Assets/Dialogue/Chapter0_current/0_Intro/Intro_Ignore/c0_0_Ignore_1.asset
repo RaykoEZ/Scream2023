@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: c0_0_Ignore_1
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: Hey, I know someone's on the other side!
+      Content: I know you're there.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.5
     TypingDelay: 0.5
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: Hey, I know someone's on the other side!
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:

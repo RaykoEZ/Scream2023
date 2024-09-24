@@ -1538,6 +1538,8 @@ GameObject:
   m_Component:
   - component: {fileID: 293819708}
   - component: {fileID: 293819709}
+  - component: {fileID: 293819711}
+  - component: {fileID: 293819710}
   m_Layer: 8
   m_Name: TalkToAria
   m_TagString: Untagged
@@ -1599,6 +1601,46 @@ MonoBehaviour:
           m_CallState: 2
   m_talkDisplay: {fileID: 473942149176119279}
   m_optionPrompt: {fileID: 1572134629}
+--- !u!114 &293819710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293819707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &293819711
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293819707}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &294059933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,20 +1888,28 @@ MonoBehaviour:
     m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: bc8f62ca-0ae4-49d4-8b8a-4c05b07d6861
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 19d05403-57de-4eff-a2f9-cccace9c74f4
     m_ActionName: UI/RightClick[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 7fbbee6e-afd7-4fe9-b4b3-724c86032ac5
-    m_ActionName: UI/Toggle[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 856a3607-e226-466c-9f89-a0795b5422bf
     m_ActionName: UI/TalkToNpc[/Keyboard/space,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1609999832}
+        m_TargetAssemblyTypeName: Curry.Explore.HideableUI, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 50bd7fbb-94e5-4a85-a07c-6c7a9ec05943
+    m_ActionName: UI/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: UI
@@ -13938,6 +13988,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602202493}
   m_CullTransparentMesh: 1
+--- !u!114 &1609999832 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8892957357779844438, guid: 9e9e26a6cbdb2504ea1f0f58dd161cac, type: 3}
+  m_PrefabInstance: {fileID: 8892957358624702925}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae27ca3a93a36240b0b7f9bd4fd50e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1610518089
 GameObject:
   m_ObjectHideFlags: 0

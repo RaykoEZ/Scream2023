@@ -17,20 +17,14 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 43b29db9b565ecb4e959bec1f38399f7
   m_SerializeEntries:
-  - m_GUID: 73597f736e948bb499d62b45d88d88c5
-    m_Address: Assets/Dialogue/Chapter0_current
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - dialogue
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 212737f38a4b0b747a9ee221ad12965a
     m_Address: Assets/Dialogue/Chapter2_revenge
     m_ReadOnly: 0
     m_SerializedLabels:
     - dialogue
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f8ae90ed1264f8e47957ec6bdf2b132c
-    m_Address: Assets/Dialogue/Chapter1_remember
+  - m_GUID: 73597f736e948bb499d62b45d88d88c5
+    m_Address: Assets/Dialogue/Chapter0_current
     m_ReadOnly: 0
     m_SerializedLabels:
     - dialogue
@@ -41,14 +35,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - dialogue
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82d99814a3530f942ab3ffffc525b6eb
+    m_Address: Assets/Dialogue/End_CaseClosed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - dialogue
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f5a161486639b00468ad0388362d6f0c
     m_Address: Assets/Dialogue/Chapter3_saveAi
     m_ReadOnly: 0
     m_SerializedLabels:
     - dialogue
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 82d99814a3530f942ab3ffffc525b6eb
-    m_Address: Assets/Dialogue/End_CaseClosed
+  - m_GUID: f8ae90ed1264f8e47957ec6bdf2b132c
+    m_Address: Assets/Dialogue/Chapter1_remember
     m_ReadOnly: 0
     m_SerializedLabels:
     - dialogue

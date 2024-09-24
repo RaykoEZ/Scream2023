@@ -13,99 +13,77 @@ MonoBehaviour:
   m_Name: c1_1_LogSensusAndAl
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: ?z??a1q
       Content: "Alm you up? \n\nNeed help at Sector 7, some idiots brought fireworks"
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: ?z??a1q
-    SentPrefabRef: {fileID: 0}
-    Content: "Alm you up? \n\nNeed help at Sector 7, some idiots brought fireworks"
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: ??a?1_spA
       Content: 'Shit seriously?
 
 
-        Thought it was just a peaceful rally'
+        Thought it was just the usual rally'
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.5
     TypingDelay: 1
-    WhoSpoke: ??a?1_spA
-    SentPrefabRef: {fileID: 0}
-    Content: 'Shit seriously?
-
-
-      Thought it was just a peaceful rally'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: ?z??a1q
-      Content: 'Rogue party
-
-
-        We need to get indoors before someone gets
-        hurt'
+      Content: We need to get indoors before someone gets hurt
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 1
     TypingDelay: 0.2
-    WhoSpoke: ?z??a1q
-    SentPrefabRef: {fileID: 0}
-    Content: 'Rogue party
-
-
-      We need to get indoors before someone gets hurt'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: ??a?1_spA
-      Content: 'I''m going to open a door at the back of Lane A12 Unit104
+      Content: 'I''m going to open a door at Lane A12 Unit104
 
 
-        go
-        behind the building and it''s upstairs
+        take the
+        stairs from the back
 
 
-        get in the WC, go straight,
-        second left
+        go straight, second left
 
 
-        don''t get tailed'
+        good luck'
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 5
     TypingDelay: 3
-    WhoSpoke: ??a?1_spA
-    SentPrefabRef: {fileID: 0}
-    Content: 'I''m going to open a door at the back of Lane A12 Unit104
-
-
-      go
-      behind the building and it''s upstairs
-
-
-      get in the WC, go straight,
-      second left
-
-
-      don''t get tailed'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: ?z??a1q
       Content: Got it
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 3
     TypingDelay: 0.2
-    WhoSpoke: ?z??a1q
-    SentPrefabRef: {fileID: 0}
-    Content: Got it
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []

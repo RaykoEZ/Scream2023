@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: c0_0_Ignore_2
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: Well, keep me posted, I'm all ears
+      Content: How long do I have to wait here?
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 1
     TypingDelay: 3
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: Well, keep me posted, I'm all ears
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
