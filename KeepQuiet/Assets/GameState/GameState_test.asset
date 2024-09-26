@@ -20,7 +20,7 @@ MonoBehaviour:
     FreedomRoute: 1
     CheckedSubjectProfile: 0
     ChapterIndex: 0
-    CurrentlyViewing: RoomLeft
+    CurrentlyViewing: RoomRight
     WatchState: 4
     AriaStatus:
       IsMissing: 0
