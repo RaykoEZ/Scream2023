@@ -29,6 +29,4 @@ MonoBehaviour:
   - m_description: End the interview for now.
     m_outcome: {fileID: 11400000, guid: aa6cddd49dc1b2741b0b356885f5c647, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  m_thoughtOutcomes:
-  - m_toDrop: {fileID: 0}
-    m_outcome: {fileID: 0}
+  m_thoughtOutcomes: []

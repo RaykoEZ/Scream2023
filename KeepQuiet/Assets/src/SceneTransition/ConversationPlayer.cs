@@ -20,6 +20,13 @@ public class ConversationPlayer : SystemDialoguePlayer
         m_talkDisplay.CurrentDialogueRef = talkingPoint;
         StartDialogue(m_talkDisplay, true);
     }
+    public void InterceptDialogue(DialogueNode newPoint) 
+    {
+        StopAllCoroutines();
+        m_displayCall = null;
+        m_optionPrompt.HideAll();
+        m_talkDisplay?.OverrideDisplay(newPoint);
+    }
     void OnOptionChosen(DialogueNode outcome) 
     {
         StopAllCoroutines();

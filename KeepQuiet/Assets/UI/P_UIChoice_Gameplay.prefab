@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e38af72354eaae43b6327192083c40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxOptions: 3
+  m_maxOptions: 5
   m_questionTextFields:
   - {fileID: 8443389343545111913}
   m_optionPrefab: {fileID: 909323856928667931, guid: c7029e8700ac6f34aa3baa52af0c02ac, type: 3}

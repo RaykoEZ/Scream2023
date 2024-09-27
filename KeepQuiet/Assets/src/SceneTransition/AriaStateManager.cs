@@ -10,7 +10,7 @@ public class AriaStateManager : MonoBehaviour
     [SerializeField] AriaDisplayController m_position = default;
     [SerializeField] ConversationPlayer m_conversationPlayer = default;
     AriaState m_current;
-    DialogueNode m_loadedTalkingPoint;
+    DialogueNode m_currentTalkingPoint;
     AssetReference m_currentDialogueAssetRef;
     public AriaState Current => m_current;
     public void InitState(SaveData change) 
@@ -18,16 +18,30 @@ public class AriaStateManager : MonoBehaviour
         m_current = change.AriaStatus;
         m_position?.MoveTo(change.AriaStatus.CurrentLocation, AriaPosition.None);
     }
+    public void OnThoughtDropOnTalk(ThoughtBubble dropped)
+    {
+        DialogueNode outcome = m_currentTalkingPoint?.FindThoughtOutcome(dropped.DetailRef);
+        bool reject = dropped == null || dropped.DetailRef == null || outcome == null;
+        // if dropped thought was not valid, cancel and return thought back
+        if (reject) { return; }
+        // Find a dialogue outcome from dropping the thought
+        else if (outcome != null)
+        {
+            // Stop current Dialogue and move to the new dialogue line
+            m_currentTalkingPoint = outcome;
+            m_conversationPlayer?.InterceptDialogue(m_currentTalkingPoint);
+        }
+    }
     public void SetTalkingPoint(AssetReference newPoint) 
     {
         if (newPoint == null) return;
         m_currentDialogueAssetRef = 
             m_dialogueContainer.CurrentAssetIndex.FindByAssetRefPath(newPoint);
-        m_loadedTalkingPoint = m_currentDialogueAssetRef.Asset as DialogueNode;
+        m_currentTalkingPoint = m_currentDialogueAssetRef.Asset as DialogueNode;
     }
     public void UpdateSave() 
     {
-        if (m_loadedTalkingPoint != null) 
+        if (m_currentTalkingPoint != null) 
         {
             Current.CurrentTalkingPoint = m_currentDialogueAssetRef;
         }
@@ -36,7 +50,7 @@ public class AriaStateManager : MonoBehaviour
     public void InitiateTalk()
     {
         SetTalkingPoint(Current.CurrentTalkingPoint);
-        m_conversationPlayer?.TriggerDialogue(m_loadedTalkingPoint);
+        m_conversationPlayer?.TriggerDialogue(m_currentTalkingPoint);
     }
     public void HideAria()
     {

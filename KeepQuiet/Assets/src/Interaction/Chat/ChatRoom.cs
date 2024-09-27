@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
 public delegate void OnChatUpdate();
 // Contains and displays text message boxes for a NPC chat
 public class ChatRoom : HideableUI

@@ -40,6 +40,10 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+    - m_AssetGUID: 1ae2c8164039da34b8c2a0c0c688e0de
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
     ChatHistories:
     - Username: Aria
       ChatLogAssets: []
