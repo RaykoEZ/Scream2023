@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: c2_0_Elia_Aria
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: You
       Content: I need to know more about Ms Aria
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: I need to know more about Ms Aria
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Elia
-      Content: What do you want to know?
+      Content: What do you want?
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.2
     TypingDelay: 0.8
-    WhoSpoke: Elia
-    SentPrefabRef: {fileID: 0}
-    Content: What do you want to know?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
@@ -42,7 +42,5 @@ MonoBehaviour:
     m_outcome: {fileID: 11400000, guid: da5b2e6dcc918104886cf7db397fe031, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes:
-  - m_toDrop: {fileID: 0}
-    m_outcome: {fileID: 11400000, guid: e56d74fe8a8358d4fbdca35192298fbd, type: 2}
   - m_toDrop: {fileID: 0}
     m_outcome: {fileID: 11400000, guid: f67635c3a5a36214c9710706e3731cb5, type: 2}

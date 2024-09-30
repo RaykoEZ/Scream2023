@@ -28,7 +28,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: I don't see anyone else here
+      Content: I don't see anyone else here, you guys have my records, right?
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -40,17 +40,17 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: You guys have my records, right?
+      Content: Okay, my name is Aria Yanagi.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
     PlaySound: {fileID: 0}
-    DelayBeforeTyping: 0.3
-    TypingDelay: 0.7
+    DelayBeforeTyping: 3
+    TypingDelay: 0.8
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: <i>*Continue.</i>
-    m_outcome: {fileID: 11400000, guid: aca0aed420a8b534992c49accf28f2e0, type: 2}
+  - m_description: Introduce
+    m_outcome: {fileID: 11400000, guid: 972710f115ff86b4687edf40f04d1cdb, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []

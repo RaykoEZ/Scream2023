@@ -13,20 +13,21 @@ MonoBehaviour:
   m_Name: c2_0_Elia_AriaMissing
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: Ms Aria is currently MIA, we need to find her.
+      Content: Ms Aria is injuried and currently MIA, you must cooperate with me
+        before it's too late.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: Ms Aria is currently MIA, we need to find her.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: You need to rescue her.
+  - m_description: We need to rescue her.
     m_outcome: {fileID: 11400000, guid: 9b7fe2093c79f1e4896fc4376a3497f5, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []

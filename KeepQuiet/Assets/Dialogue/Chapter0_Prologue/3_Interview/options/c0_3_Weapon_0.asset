@@ -10,32 +10,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: c0_0_Response2
+  m_Name: c0_3_Weapon_0
   m_EditorClassIdentifier: 
   m_dialogues:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: You
-      Content: We want to know what happened on stage today
+      Content: 'We found a weapon on the scene.
+
+
+        What do you know about
+        a metal bat?'
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
     PlaySound: {fileID: 0}
-    DelayBeforeTyping: 0.1
-    TypingDelay: 0.5
+    DelayBeforeTyping: 0
+    TypingDelay: 0
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: Sure, whatever it takes to get out of here.
+      Content: I have no idea.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
     PlaySound: {fileID: 0}
-    DelayBeforeTyping: 2.5
-    TypingDelay: 0.8
+    DelayBeforeTyping: 3
+    TypingDelay: 0.7
     ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 11400000, guid: 68dcf84614b111e40b140cdec54c9cdc, type: 2}
-  m_replyOptions: []
+    TriggerAfterThisLine: {fileID: 0}
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: Aria
+      Content: To be honest, I'm not sure what I got myself into.
+      AttachmentId: 
+    Emotion: 0
+    HasAudio: 1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 2
+    TypingDelay: 1.5
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions:
+  - m_description: Change the topic
+    m_outcome: {fileID: 11400000, guid: ef99c677dca2c9f44ac7faa592a60493, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []

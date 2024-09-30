@@ -47,10 +47,18 @@ public class AriaStateManager : MonoBehaviour
         }
         m_save.Current.AriaStatus = Current;
     }
-    public void InitiateTalk()
+    public void Talk()
     {
         SetTalkingPoint(Current.CurrentTalkingPoint);
         m_conversationPlayer?.TriggerDialogue(m_currentTalkingPoint);
+    }
+    // Change npc starting talking node, used when progressing through chatting
+    public void ChangeTalkingState(DialogueNode newState) 
+    {
+        AssetReference newRef = m_dialogueContainer.CurrentAssetIndex.
+            FindByAssetName(newState.name);
+        if (newRef == null) return;
+        Current.CurrentTalkingPoint = newRef;
     }
     public void HideAria()
     {

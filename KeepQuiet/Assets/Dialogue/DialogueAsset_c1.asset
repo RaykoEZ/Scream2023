@@ -13,22 +13,6 @@ MonoBehaviour:
   m_Name: DialogueAsset_c1
   m_EditorClassIdentifier: 
   m_dialoguesAssetRefs:
-  - m_AssetGUID: 2b5a15d98421c63448d1ef13ab921e87
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 1
-  - m_AssetGUID: 88c43f120036fde46a6c86de40054f86
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 1
-  - m_AssetGUID: 3f54c1701adc07a47a6085f8ec3af6d1
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 541cafd67f62fe644933b00797f06952
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
   - m_AssetGUID: 56423da21c989074fbe32236f8709d54
     m_SubObjectName: 
     m_SubObjectType: 

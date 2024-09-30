@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: c2_0_Elia_Rescue
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
       Content: We need to find a way to get Aria to safety
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: We need to find a way to get Aria to safety
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Elia
       Content: And you have any ideas?
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 1.4
     TypingDelay: 0.8
-    WhoSpoke: Elia
-    SentPrefabRef: {fileID: 0}
-    Content: And you have any ideas?
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
@@ -43,4 +43,4 @@ MonoBehaviour:
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes:
   - m_toDrop: {fileID: 0}
-    m_outcome: {fileID: 11400000, guid: 7be6ab191d0060940a5eecdbe3a89659, type: 2}
+    m_outcome: {fileID: 11400000, guid: 8bd5242b50f8a4f40b4e3b357e8ec421, type: 2}

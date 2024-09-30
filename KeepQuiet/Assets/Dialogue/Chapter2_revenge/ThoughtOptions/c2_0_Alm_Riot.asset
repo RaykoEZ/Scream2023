@@ -13,42 +13,29 @@ MonoBehaviour:
   m_Name: c2_0_Alm_Riot
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Al.
-      Content: 'We were just a small group
-
-
-        Sensus never hurt anyone'
+      Content: I was at work, those bandits snuck in and started swinging at anyone
+        they see.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: 'We were just a small group
-
-
-      Sensus never hurt anyone'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Al.
-      Content: 'I don''t care how the news twists us into monsters.
-
-
-        We
-        couldn''t let the dirty pigs hide their laundry.'
+      Content: It's taking the whole year to have Ms Aria back, and now this.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.4
     TypingDelay: 0.8
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: 'I don''t care how the news twists us into monsters.
-
-
-      We couldn''t
-      let the dirty pigs hide their laundry.'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:

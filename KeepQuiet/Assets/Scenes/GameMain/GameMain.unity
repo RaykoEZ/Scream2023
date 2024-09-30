@@ -690,7 +690,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1526016401}
           m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
-          m_MethodName: InitiateTalk
+          m_MethodName: Talk
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2024,6 +2024,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4748660915690350624, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 03aae7e5bc79e6345a385b091bc41449, type: 2}
+    - target: {fileID: 4748660915690350624, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
       propertyPath: m_SceneBindings.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -2032,6 +2036,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4454802397115965250, guid: 03aae7e5bc79e6345a385b091bc41449, type: 2}
     - target: {fileID: 4748660915690350624, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].value
+      value: 
+      objectReference: {fileID: 1714940367}
+    - target: {fileID: 4748660915690350624, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].value
+      value: 
+      objectReference: {fileID: 1714940367}
+    - target: {fileID: 4748660915690350624, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
       propertyPath: m_SceneBindings.Array.data[4].value
       value: 
       objectReference: {fileID: 840146905}
@@ -2039,6 +2051,38 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[5].value
       value: 
       objectReference: {fileID: 1714940367}
+    - target: {fileID: 5355122698789602268, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_toListen.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355122698789602268, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_toListen.Array.data[0].m_eventToListen
+      value: 
+      objectReference: {fileID: 11400000, guid: f2c6edfa5fffdeb4988290af94caa04d, type: 2}
+    - target: {fileID: 5355122698789602268, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_toListen.Array.data[0].m_responses.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355122698789602268, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_toListen.Array.data[0].m_responses.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1064925353}
+    - target: {fileID: 5355122698789602268, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_toListen.Array.data[0].m_responses.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355122698789602268, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_toListen.Array.data[0].m_responses.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355122698789602268, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_toListen.Array.data[0].m_responses.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 03aae7e5bc79e6345a385b091bc41449, type: 2}
+    - target: {fileID: 5355122698789602268, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+      propertyPath: m_toListen.Array.data[0].m_responses.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Playables.PlayableAsset, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6577874823744045217, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
       propertyPath: m_fontColor.a
       value: 0.23921569
@@ -7627,6 +7671,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713430f9bc770b140afe76052b41f497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!320 &1064925353 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 4748660915690350624, guid: 7b7a7254c61efb14ea09c6f2b54f7ace, type: 3}
+  m_PrefabInstance: {fileID: 360093317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1067075809
 GameObject:
   m_ObjectHideFlags: 0
@@ -10563,7 +10612,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1526016401}
         m_TargetAssemblyTypeName: AriaStateManager, Assembly-CSharp
-        m_MethodName: InitiateTalk
+        m_MethodName: Talk
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21719,6 +21768,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8846048831781782279, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 20eb22285269b5a4ca6f88818c29a3dd, type: 2}
     - target: {fileID: 8846048831781782279, guid: 5e9c09e455f3a9244b4aeab6ce7451a9, type: 3}
       propertyPath: m_SceneBindings.Array.data[8].key
       value: 

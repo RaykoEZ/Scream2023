@@ -13,45 +13,55 @@ MonoBehaviour:
   m_Name: c1_1_LogGenOpToElia
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 1
+    ChatLog:
       WhoSpoke: D002-FGZ1
-      Content: I want to give you some heads up regarding the injured miss' situation.
+      Content: Regarding Ms Yanagi's situation.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 1.2
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0
+    TypingDelay: 0
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 1
+    ChatLog:
       WhoSpoke: D002-FGZ1
-      Content: "Ms Y is safe but in critical conditions, \nand will likely be hospitalized
-        for 12 months."
+      Content: "Ms Y is still in a critical condition, \nand will likely be hospitalized
+        for the next 12 months."
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
-    DelayBeforeTyping: 2
-    TypingDelay: 2
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0
+    TypingDelay: 0
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 1
+    ChatLog:
       WhoSpoke: D002-FGZ1
       Content: "We cannot guarantee a full recovery, this is a difficult \ncase to
         remedy with our current technology."
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
-    DelayBeforeTyping: 2
-    TypingDelay: 5
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0
+    TypingDelay: 0
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 1
+    ChatLog:
       WhoSpoke: D002-FGZ1
-      Content: "Experiemental procedures are available. \nWe will need to discuss
-        this separately, with the relevant parties.\n\nAs her manager, you are invited
-        to a meetng on this topic\nat Administration District, Block 2, F15\non 12/12/E1C5,
-        1523\n\nRegards, GenOp Health Dpt."
+      Content: Experiemental medical procedures are available. As her manager, you
+        will attend a meetng on this topic at a later date.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
-    DelayBeforeTyping: 0.1
-    TypingDelay: 5
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0
+    TypingDelay: 0
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []

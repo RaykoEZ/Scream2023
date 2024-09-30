@@ -16,7 +16,8 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: ?z??a1q
-      Content: "Alm you up? \n\nNeed help at Sector 7, some idiots brought fireworks"
+      Content: "Al you up? \n\nWe're stuck in a party at 7, some idiots snuck hot
+        sauce in our drinks"
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -27,11 +28,8 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   - ShowInstantly: 0
     ChatLog:
-      WhoSpoke: ??a?1_spA
-      Content: 'Shit seriously?
-
-
-        Thought it was just the usual rally'
+      WhoSpoke: Al
+      Content: wtf
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -43,7 +41,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: ?z??a1q
-      Content: We need to get indoors before someone gets hurt
+      Content: We're going home before things get heated, what about you?
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -54,18 +52,15 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   - ShowInstantly: 0
     ChatLog:
-      WhoSpoke: ??a?1_spA
-      Content: 'I''m going to open a door at Lane A12 Unit104
+      WhoSpoke: Al
+      Content: 'At my usual place, bring me some cold brews if you''re up for another
+        round.
 
 
-        take the
-        stairs from the back
+        Key''s in the poster
 
 
-        go straight, second left
-
-
-        good luck'
+        Safe travels'
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -77,7 +72,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: ?z??a1q
-      Content: Got it
+      Content: Yes
       AttachmentId: 
     Emotion: 0
     HasAudio: 1

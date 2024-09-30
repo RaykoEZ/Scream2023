@@ -10,49 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: c2_0_Elia_Sensus
+  m_Name: c0_1_FindShelter0
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: Sensus did not start the riot
+      Content: 'Can I come indoors?
+
+'
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
-    DelayBeforeTyping: 0
-    TypingDelay: 0
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: Sensus did not start the riot
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0.1
+    TypingDelay: 0.1
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
-      WhoSpoke: Elia
-      Content: 'I DON''T CARE
-
-
-        She was hit by one of those rioters and I
-        need to protect her
-
-
-        We''re done here'
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: Aria
+      Content: I've been in the rain for awhile, you guys left me out to soak.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
-    DelayBeforeTyping: 1.1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0.1
     TypingDelay: 0.5
-    WhoSpoke: Elia
-    SentPrefabRef: {fileID: 0}
-    Content: 'I DON''T CARE
-
-
-      She was hit by one of those rioters and I need
-      to protect her
-
-
-      We''re done here'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: End conversation
-    m_outcome: {fileID: 11400000, guid: 95a5c6dc56d466c4db62dbb87d7bea25, type: 2}
+  - m_description: Sure, I'll open the doors
+    m_outcome: {fileID: 11400000, guid: 676fbd38d4bd68c4c839128dd08d3450, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: You'll be fine.
+    m_outcome: {fileID: 11400000, guid: 0228afbd2e9628b499f91a7420ef8a6b, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []

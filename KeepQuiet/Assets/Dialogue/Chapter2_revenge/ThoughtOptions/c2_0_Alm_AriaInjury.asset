@@ -13,36 +13,29 @@ MonoBehaviour:
   m_Name: c2_0_Alm_AriaInjury
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Al.
-      Content: 'You should know more about this than me.
-
-'
+      Content: "You should know more about this than me. \n\nIt was a servere head
+        injury.\n"
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.8
-    TypingDelay: 0.4
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: 'You should know more about this than me.
-
-'
+    TypingDelay: 0.8
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Al.
-      Content: 'She was hit in the head by some rioters at work.
-
-'
+      Content: Struck with a metal bat when the rioters got themselves into our studio.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
-    DelayBeforeTyping: 0.8
-    TypingDelay: 0.4
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: 'She was hit in the head by some rioters at work.
-
-'
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0.3
+    TypingDelay: 1
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:

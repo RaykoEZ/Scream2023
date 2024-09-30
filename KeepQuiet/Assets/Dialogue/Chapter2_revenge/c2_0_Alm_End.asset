@@ -13,56 +13,29 @@ MonoBehaviour:
   m_Name: c2_0_Alm_End
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Al.
-      Content: 'Repaying some screwups with restitution
-
-
-        and I need some
-        insider intel'
+      Content: "Your suspect's gone missing, right?\n \nYou'll find her if you follow
+        me"
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
     TypingDelay: 1.5
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: 'Repaying some screwups with restitution
-
-
-      and I need some insider
-      intel
-
-'
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Al.
-      Content: 'Aria''s been MIA, isn''t she?
-
-
-        We need to find her'
+      Content: It's your choice to trust me on this.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0.8
     TypingDelay: 0.6
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: 'Aria''s been MIA, isn''t she?
-
-
-      We need to find her'
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
-      WhoSpoke: Al.
-      Content: It's your choice to help us
-      AttachmentId: 
-    HasAudio: 1
-    DelayBeforeTyping: 0.2
-    TypingDelay: 0.3
-    WhoSpoke: Al.
-    SentPrefabRef: {fileID: 0}
-    Content: It's your choice to help us
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []

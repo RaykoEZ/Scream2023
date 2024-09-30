@@ -10,32 +10,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: c0_1_FindShelter1
+  m_Name: c0_0_Response2
   m_EditorClassIdentifier: 
   m_dialogues:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: You
-      Content: Whereabouts are you?
+      Content: Hi, Ms Yanagi, I will be your interviewer for today.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
     PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
-    TypingDelay: 0
+    TypingDelay: 1
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 11400000, guid: 68dcf84614b111e40b140cdec54c9cdc, type: 2}
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: You
+      Content: A lot happened today, we want to know what happened on stage from
+        your side.
+      AttachmentId: 
+    Emotion: 0
+    HasAudio: 1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0.1
+    TypingDelay: 0.5
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: At a cafe right now
+      Content: Sure, whatever it takes to get out of here.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
     PlaySound: {fileID: 0}
-    DelayBeforeTyping: 1
-    TypingDelay: 0.5
+    DelayBeforeTyping: 2.5
+    TypingDelay: 1.2
     ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 11400000, guid: 68dcf84614b111e40b140cdec54c9cdc, type: 2}
   m_replyOptions: []
   m_thoughtOutcomes: []

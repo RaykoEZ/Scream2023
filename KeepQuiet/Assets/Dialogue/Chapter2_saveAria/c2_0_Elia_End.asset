@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: c2_0_Elia_End
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: You
-      Content: ...That is all.
+      Content: That is all.
       AttachmentId: 
+    Emotion: 0
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
     TypingDelay: 0
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: ...That is all.
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []
