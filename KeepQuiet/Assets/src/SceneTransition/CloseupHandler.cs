@@ -26,11 +26,12 @@ public class CloseupHandler : MonoBehaviour
     IEnumerator Talk_Internal(string content, NpcEmotion emote) 
     {
         m_content.text = content;
+        bool isTalking = !GameUtil.TextHasNoAlphaNumeric(content);
         m_face?.SetEmotion(emote);
-        m_face?.SetTalking(true);
+        m_face?.SetTalking(isTalking);
         yield return new WaitForSeconds(0.05f);
         m_message?.Show();
-        yield return new WaitForSeconds(content.Length * 0.1f);
+        yield return new WaitForSeconds(content.Length * 0.05f);
         m_face?.SetTalking(false);
     }
 }

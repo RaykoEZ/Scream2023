@@ -13,38 +13,28 @@ MonoBehaviour:
   m_Name: c1_0_You_Watch
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
-      WhoSpoke: You
-      Content: 'Hey, I found a wrist watch
-
-
-        what do you know about this?'
-      AttachmentId: 
-    HasAudio: 1
-    DelayBeforeTyping: 0
-    TypingDelay: 0
-    WhoSpoke: You
-    SentPrefabRef: {fileID: 0}
-    Content: 'Hey, I found a wrist watch
-
-
-      what do you know about this?'
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: 'Sorry can''t give you a price on this relic
-
-'
+      Content: ...
       AttachmentId: 
+    Emotion: 3
     HasAudio: 1
+    PlaySound: {fileID: 0}
     DelayBeforeTyping: 1.5
     TypingDelay: 2
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: 'Sorry can''t give you a price on this relic
-
-'
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: Aria
+      Content: 
+      AttachmentId: 
+    Emotion: 0
+    HasAudio: 1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0
+    TypingDelay: 0
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions: []

@@ -16,6 +16,7 @@ MonoBehaviour:
     Persistent:
       AriaGone: 0
       ContinueCount: 0
+      PlayerID: TEST_ID123
       CurrentEnding: 3
     FreedomRoute: 1
     CheckedSubjectProfile: 0

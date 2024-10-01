@@ -21,15 +21,18 @@ public class SaveData
         // No. of times player launched this game after first new game
         // Triggers new game tutorial sequences for new game players
         public int ContinueCount;
+        public string PlayerID;
         // display slightly different title/continue/new game sequences
         // depending on ending
         [JsonConverter(typeof(StringEnumConverter))]
         public Ending CurrentEnding;
         public PersistentSave( 
             bool isAriaDead,
+            string id,
             int continueCount, Ending previousEnding)
         {
             AriaGone = isAriaDead;
+            PlayerID = id;
             ContinueCount = continueCount;
             CurrentEnding = previousEnding;
         }
@@ -37,12 +40,14 @@ public class SaveData
         public PersistentSave() 
         {
             AriaGone = false;
+            PlayerID = "05127899";
             ContinueCount = 0;
             CurrentEnding = Ending.None;
         }
         public PersistentSave(PersistentSave persistent)
         {
             AriaGone = persistent.AriaGone;
+            PlayerID = persistent.PlayerID;
             ContinueCount = persistent.ContinueCount;
             CurrentEnding = persistent.CurrentEnding;
         }

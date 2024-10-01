@@ -66,7 +66,7 @@ internal static class FileUtil
             Directory.CreateDirectory(resultPath);
             return true;
         }
-        return false;
+        return true;
     }
 }
 

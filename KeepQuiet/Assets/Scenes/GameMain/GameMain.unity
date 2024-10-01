@@ -19196,6 +19196,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 131591121625385456, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 18af625f6bdfeba40a19a1e656235e8f, type: 2}
     - target: {fileID: 398374156528651310, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
       propertyPath: m_ChildControlWidth
       value: 1
@@ -19444,6 +19448,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7695808985521771155, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
+      propertyPath: m_onShowEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7867475362991206922, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -19496,7 +19504,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9055140552905194387, guid: c8f9d2c3212dddb499c49a2c37b8e088, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

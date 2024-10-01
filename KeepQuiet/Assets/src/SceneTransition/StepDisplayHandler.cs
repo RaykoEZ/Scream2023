@@ -10,7 +10,7 @@ public abstract class StepDisplayHandler : MonoBehaviour
     protected bool m_hasTriggeredOnce = false;
     protected int m_current = 0;
     protected abstract IReadOnlyList<IStepDisplayContent> Steps { get; }
-    protected virtual float HoldAfterDisplay => Steps.Count == 0? 0.1f : Steps[m_current].DisplayContent.Length * 0.01f;
+    protected virtual float HoldAfterDisplay => 0.5f;
     protected Coroutine m_displaying;
     public bool IsActive { get => m_isActive; private set => m_isActive = value; }
     public bool HasTriggeredOnce { get => m_hasTriggeredOnce; }

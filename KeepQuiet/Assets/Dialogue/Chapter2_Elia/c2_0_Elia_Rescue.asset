@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: c0_3_Handler_AriaEnemies
+  m_Name: c2_0_Elia_Rescue
   m_EditorClassIdentifier: 
   m_dialogues:
   - ShowInstantly: 0
     ChatLog:
-      WhoSpoke: You
-      Content: 'Are there any info on Ms Aria''s social status?
-
-
-        Any potential
-        adversaries who could be involved? '
+      WhoSpoke: Aria
+      Content: We need to find a way to get Aria to safety
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -31,37 +27,21 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   - ShowInstantly: 0
     ChatLog:
-      WhoSpoke: Your Handler
-      Content: 'Why do we need that?
-
-
-        Our evidence points to her quite convincingly
-
-        enough
-        to finish the case on our side.'
+      WhoSpoke: Elia
+      Content: You have any ideas?
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
     PlaySound: {fileID: 0}
-    DelayBeforeTyping: 4
-    TypingDelay: 2
+    DelayBeforeTyping: 1.4
+    TypingDelay: 0.8
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  - ShowInstantly: 0
-    ChatLog:
-      WhoSpoke: Your Handler
-      Content: 'Just get her statements and we''re done
-
-
-        she''s toast either
-        way, no need to prolong the interview.'
-      AttachmentId: 
-    Emotion: 0
-    HasAudio: 1
-    PlaySound: {fileID: 0}
-    DelayBeforeTyping: 0.5
-    TypingDelay: 3
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions: []
+  m_replyOptions:
+  - m_description: Change topic
+    m_outcome: {fileID: 11400000, guid: da5b2e6dcc918104886cf7db397fe031, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: Change topic
+    m_outcome: {fileID: 11400000, guid: da5b2e6dcc918104886cf7db397fe031, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []

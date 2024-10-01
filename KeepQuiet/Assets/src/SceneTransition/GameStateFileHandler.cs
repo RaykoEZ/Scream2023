@@ -37,7 +37,6 @@ public class GameStateFileHandler : MonoBehaviour
         }
         else 
         {
-
             // If we are in other scenes, load cache from previous scene
             TryLoadFromCache();
         }
@@ -73,14 +72,23 @@ public class GameStateFileHandler : MonoBehaviour
     public void SetupNewGame()
     {
         // copy persisting save from current
-        SaveData.PersistentSave persist = m_current == null?
-            new SaveData.PersistentSave() :
-            new SaveData.PersistentSave(m_current.Persistent);
+        SaveData.PersistentSave persist;
+        if (m_current == null) 
+        {
+            persist = new SaveData.PersistentSave();
+            // assign new ID
+            persist.PlayerID = GameUtil.RandomNumberID();
+        }
+        else 
+        {
+            persist = new SaveData.PersistentSave(m_current.Persistent);
+        }
         // reset game state to new game
         m_current = new SaveData(m_defaultState.State);
         // set persistent save states
         m_current.Persistent = persist;
         m_currentCache.SetSaveState(m_current);
+        SaveToFile(m_current);
     }
     // Reset all save data to new game state,
     // inc. persistent states, current cache copies & previous save file
@@ -98,7 +106,7 @@ public class GameStateFileHandler : MonoBehaviour
         if (s_saveInProgress) return;
         if (!File.Exists($"{FileUtil.s_gamestateSavePath}/{s_gamestatePath}")) 
         {
-            m_current = new SaveData(m_defaultState.State);
+            SetupNewGame();
             return;
         }
         using (StreamReader r = new StreamReader($"{FileUtil.s_gamestateSavePath}/{s_gamestatePath}"))
@@ -106,7 +114,9 @@ public class GameStateFileHandler : MonoBehaviour
             string json = r.ReadToEnd();
             SaveData loaded = JsonConvert.DeserializeObject<SaveData>(json);
             m_current = loaded;
-        }       
+        }
+        // set cache for future scenes
+        m_currentCache.SetSaveState(m_current);
     }
     protected void SaveToFile(SaveData save) 
     {

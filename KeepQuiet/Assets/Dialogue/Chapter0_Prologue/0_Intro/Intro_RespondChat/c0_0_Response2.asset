@@ -16,7 +16,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: You
-      Content: Hi, Ms Yanagi, I will be your interviewer for today.
+      Content: Ms Yanagi, I will be your interviewer.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: Sure, whatever it takes to get out of here.
+      Content: Sure whatever, make it quick
       AttachmentId: 
     Emotion: 0
     HasAudio: 1

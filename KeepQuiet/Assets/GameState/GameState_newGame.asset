@@ -14,16 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_state:
     Persistent:
-      AriaDead: 0
+      AriaGone: 0
       ContinueCount: 0
+      PlayerID: 
       CurrentEnding: 3
     FreedomRoute: 0
     CheckedSubjectProfile: 0
+    ChapterIndex: 0
     CurrentlyViewing: RoomRight
     WatchState: 4
     AriaStatus:
       IsMissing: 0
       CurrentLocation: -1
+      CurrentTalkingPoint:
+        m_AssetGUID: ff64d871b325a58428d4e5d3e619d002
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
     SimulationTime: 0
     HeldThoughts:
     - m_AssetGUID: b317449047b29eb429d41372fe0ec431

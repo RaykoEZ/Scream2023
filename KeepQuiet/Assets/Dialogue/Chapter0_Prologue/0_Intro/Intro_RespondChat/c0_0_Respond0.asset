@@ -40,7 +40,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: Okay, my name is Aria Yanagi.
+      Content: Okay, this is Aria Yanagi.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -50,7 +50,7 @@ MonoBehaviour:
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: Introduce
+  - m_description: <i>Introduce yourself</i>
     m_outcome: {fileID: 11400000, guid: 972710f115ff86b4687edf40f04d1cdb, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []

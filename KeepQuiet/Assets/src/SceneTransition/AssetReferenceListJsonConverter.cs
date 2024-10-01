@@ -32,10 +32,10 @@ public class AssetReferenceListJsonConverter : JsonConverter
     public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
     {
         List<AssetReference> ret = new List<AssetReference>();
-        JObject obj = JObject.Load(reader);
+        JArray obj = JArray.Load(reader);
         foreach (var guid in obj)
         {
-            ret.Add(new AssetReference(guid.Value.ToString()));
+            ret.Add(new AssetReference(guid.Value<string>()));
         }
         return ret;
     }

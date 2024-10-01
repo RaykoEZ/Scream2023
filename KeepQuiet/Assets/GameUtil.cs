@@ -1,8 +1,15 @@
 ﻿using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 using UnityEngine;
 public static class GameUtil 
 {
+    static Regex s_regexNoAlphaNumeric = new Regex(@"^[^a-zA-Z0-9]*$");
+    // Check if text has no pronouncing needed for npc anim
+    public static bool TextHasNoAlphaNumeric(string toCheck) 
+    {
+        return s_regexNoAlphaNumeric.IsMatch(toCheck);
+    }
     // Spawn a gameobject a prefab reference (preferrably)
     public static T SpawnObject<T>(T spawnRef, Vector3 position, Transform parent = null) where T : MonoBehaviour
     {
@@ -34,6 +41,15 @@ public static class GameUtil
             t--;
         }
         onFinish?.Invoke();
+    }
+    public static string RandomNumberID(int length = 8) 
+    {
+        string ret = "";
+        for (int i = 0; i < length; i++)
+        {
+            ret += UnityEngine.Random.Range(0, 10).ToString();
+        }
+        return ret;
     }
     // Get min and max of a angle with range thresholds
     public static FloatRange SignedAngleThresholdRange(float threshold, float margin)

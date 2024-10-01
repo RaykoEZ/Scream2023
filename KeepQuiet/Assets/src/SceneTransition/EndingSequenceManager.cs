@@ -19,7 +19,6 @@ public class EndingSequenceManager : MonoBehaviour
     void OnCreditFinish() 
     {
         // Determine a post credit sequence for ending
-
     }
     public void PlayCredit() 
     {

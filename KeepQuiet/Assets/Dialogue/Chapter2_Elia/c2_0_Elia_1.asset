@@ -17,11 +17,9 @@ MonoBehaviour:
   - m_description: About Aria
     m_outcome: {fileID: 11400000, guid: 54d3864aedf778e43aceb0a5729424c8, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  - m_description: About yourself
-    m_outcome: {fileID: 11400000, guid: 69561ecf8d53e934eaae4cbbacd8e5ef, type: 2}
-    m_triggerAfterChoice: {fileID: 0}
   - m_description: End conversation
     m_outcome: {fileID: 11400000, guid: 95a5c6dc56d466c4db62dbb87d7bea25, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  m_thoughtOutcomes: []
-  m_hiddenOptions: {fileID: 0}
+  m_thoughtOutcomes:
+  - m_toDrop: {fileID: 0}
+    m_outcome: {fileID: 11400000, guid: 8bd5242b50f8a4f40b4e3b357e8ec421, type: 2}
