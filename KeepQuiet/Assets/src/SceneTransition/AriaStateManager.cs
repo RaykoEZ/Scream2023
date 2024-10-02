@@ -36,7 +36,8 @@ public class AriaStateManager : MonoBehaviour
     {
         if (newPoint == null) return;
         m_currentDialogueAssetRef = 
-            m_dialogueContainer.CurrentAssetIndex.FindByAssetRefPath(newPoint);
+            m_dialogueContainer.
+            AllLoadedAsset.AssetRefs.Find(t => t.AssetGUID == newPoint.AssetGUID);
         m_currentTalkingPoint = m_currentDialogueAssetRef.Asset as DialogueNode;
     }
     public void UpdateSave() 
@@ -55,8 +56,8 @@ public class AriaStateManager : MonoBehaviour
     // Change npc starting talking node, used when progressing through chatting
     public void ChangeTalkingState(DialogueNode newState) 
     {
-        AssetReference newRef = m_dialogueContainer.CurrentAssetIndex.
-            FindByAssetName(newState.name);
+        AssetReference newRef = m_dialogueContainer.AllLoadedAsset.
+            AssetRefs.Find(t => t.Asset.name == newState.name);
         if (newRef == null) return;
         Current.CurrentTalkingPoint = newRef;
     }

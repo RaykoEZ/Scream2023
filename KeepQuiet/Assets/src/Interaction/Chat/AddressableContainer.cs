@@ -6,32 +6,20 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 // For loading a list of addressables from a list of asset references in save file
 public class AddressableContainer<T> where T : UnityEngine.Object
 {
-    List<T> m_loaded = new List<T>();
     bool m_inProgress = false;
     int m_loadedCount;
     int m_numToLoad;
     Action<List<T>> onLoadedCallback;
+    List<AssetReference> m_assetRefs = new List<AssetReference>();
+    List<T> m_loaded = new List<T>();
     public List<T> LoadedAssets => m_loaded;
-    public static List<AssetReference> GetAssetReferenceList(
-        AssetReferenceIndex index, AddressableContainer<T> container)
-    {
-        List<AssetReference> ret = new List<AssetReference>();
-        AssetReference i;
-        // Clear old list
-        // go through list of current history and collect asset references
-        foreach (var item in container.LoadedAssets)
-        {
-            i = index.FindByAssetName(item.name);
-            if (i == null) continue;
-            ret.Add(i);
-        }
-        return ret;
-    }
+    public List<AssetReference> AssetRefs => m_assetRefs;
     public void LoadAssetAsync(List<AssetReference> toLoad, Action<List<T>> onFinish = null)
     {
         if (m_inProgress) return;
         m_inProgress = true;
         m_loadedCount = 0;
+        m_assetRefs.AddRange(toLoad);
         m_numToLoad = toLoad.Count;
         onLoadedCallback = onFinish;
         foreach (var item in toLoad)
@@ -43,9 +31,9 @@ public class AddressableContainer<T> where T : UnityEngine.Object
     }
     public void Clear() 
     {
-        foreach (var item in m_loaded)
+        foreach (var item in m_assetRefs)
         {
-            Addressables.Release(item);
+            item.ReleaseAsset();
         }
         m_loaded.Clear();
     }

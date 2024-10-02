@@ -345,7 +345,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2428198137579126724}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -709,8 +709,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278234810
-  m_fontColor: {r: 0.73, g: 0.6813334, b: 0, a: 1}
+    rgba: 855682746
+  m_fontColor: {r: 0.73, g: 0.6813334, b: 0, a: 0.2}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1324,6 +1324,10 @@ PrefabInstance:
     - target: {fileID: 4156278841426684616, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384626892246132106, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
+      propertyPath: m_fastforwardSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5949643186441500324, guid: 12220ffeb62d10b42a1b65bc9f054993, type: 3}
       propertyPath: m_Alpha

@@ -44,9 +44,7 @@ public class ThoughtStateManager : MonoBehaviour
     }
     public void UpdateSave()
     {
-        List<AssetReference> refs = AddressableContainer<ThoughtDetail>.
-            GetAssetReferenceList(m_assetIndex, m_heldThoughts);
-        m_gameState.Current.HeldThoughts = refs;
+        m_gameState.Current.HeldThoughts = m_heldThoughts.AssetRefs;
     }
     void Add(ThoughtDetail newThought) 
     {

@@ -12,11 +12,10 @@ public class DialogueContainer : MonoBehaviour
     // loaded chat dialogue nodes, loaded from chat log asset references
     Dictionary<string, AddressableContainer<DialogueNode>> m_currentChatLogs =
         new Dictionary<string, AddressableContainer<DialogueNode>>();
-    private bool m_loadFinished = false;
-    public DialogueAssetReferenceIndex CurrentAssetIndex => m_currentAssetIndex;
+    private bool m_loading = false;
     public Dictionary<string, AddressableContainer<DialogueNode>> CurrentChatLogs => m_currentChatLogs;
     public AddressableContainer<DialogueNode> AllLoadedAsset => m_allLoadedAsset;
-    public bool LoadFinished { get => m_loadFinished; private set => m_loadFinished = value; }
+    public bool Loading { get => m_loading; private set => m_loading = value; }
     private void OnDestroy()
     {
         AllLoadedAsset.Clear();
@@ -24,7 +23,6 @@ public class DialogueContainer : MonoBehaviour
         {
             item.Value?.Clear();
         }
-        CurrentChatLogs.Clear();
     }
     public void Init(SaveData save)
     {
@@ -33,7 +31,8 @@ public class DialogueContainer : MonoBehaviour
     }
     void LoadChapterAssets(int chapterCode)
     {
-        if (chapterCode >= m_chapterAssets.Count || chapterCode < 0) return;
+        if (m_loading || chapterCode >= m_chapterAssets.Count || chapterCode < 0) return;
+        m_loading = true;
         // setup chat dialogue node database for updating saves later
         m_currentAssetIndex = m_chapterAssets[chapterCode];
         m_allLoadedAsset?.LoadAssetAsync(m_currentAssetIndex.AssetReferences, OnChapterLoaded);
@@ -49,7 +48,7 @@ public class DialogueContainer : MonoBehaviour
     }
     void OnLoaded(List<DialogueNode> _)
     {
-        m_loadFinished = true;
+        m_loading = false;
     }
     protected void LoadDialogueAsync(SaveData save, Action<List<DialogueNode>> onFinish = null)
     {
@@ -67,13 +66,9 @@ public class DialogueContainer : MonoBehaviour
     // Get asset reference from new dialogues added after initial load
     protected void UpdateAssetReferences()
     {
-        List<ChatHistory> historiesRef = m_save.Current.ChatHistories;
-        List<AssetReference> refs;
-        foreach (var item in historiesRef)
+        foreach (var item in m_save.Current.ChatHistories)
         {
-            refs = AddressableContainer<DialogueNode>.GetAssetReferenceList(
-                m_currentAssetIndex, m_currentChatLogs[item.Username]);
-            item.ChatLogAssets = refs;
+            item.ChatLogAssets = CurrentChatLogs[item.Username].AssetRefs;
         }
     }
 }
