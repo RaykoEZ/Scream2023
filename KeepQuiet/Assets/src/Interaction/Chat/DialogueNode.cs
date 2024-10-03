@@ -11,8 +11,10 @@ public class Dialogue : IStepDisplayContent
     public NpcEmotion Emotion;
     public bool HasAudio;
     public AudioClip PlaySound;
+    [Range(0f, 10f)]
     public float DelayBeforeTyping;
     // how much time to stay typing
+    [Range(0f, 10f)]
     public float TypingDelay;
     public ThoughtBubble ObtainThought;
     public DialogueEventTrigger TriggerAfterThisLine;

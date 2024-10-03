@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
+  m_Name: c1_1_Riot_0
+  m_EditorClassIdentifier: 
+  m_dialogues:
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: ?z??a1q
+      Content: "Al you up? \n\nWe're stuck in a party at 7, some idiots snuck hot
+        sauce in our drinks"
+      AttachmentId: 
+    Emotion: 0
+    HasAudio: 1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0
+    TypingDelay: 0
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: Al
+      Content: wtf
+      AttachmentId: 
+    Emotion: 0
+    HasAudio: 1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0.5
+    TypingDelay: 1
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: ?z??a1q
+      Content: We're going home before things get heated, what about you?
+      AttachmentId: 
+    Emotion: 0
+    HasAudio: 1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 1
+    TypingDelay: 0.2
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: Al
+      Content: 'At my usual place, bring me some cold brews if you''re up for another
+        round.
+
+
+        Key''s in the poster
+
+
+        Safe travels'
+      AttachmentId: 
+    Emotion: 0
+    HasAudio: 1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 5
+    TypingDelay: 3
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  - ShowInstantly: 0
+    ChatLog:
+      WhoSpoke: ?z??a1q
+      Content: Yes
+      AttachmentId: 
+    Emotion: 0
+    HasAudio: 1
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 3
+    TypingDelay: 0.2
+    ObtainThought: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 0}
+  m_replyOptions: []
+  m_thoughtOutcomes: []
