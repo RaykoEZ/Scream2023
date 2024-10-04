@@ -19,13 +19,13 @@ MonoBehaviour:
       Content: 'Finally, somewhere nice and cozy.
 
 
-        Ask away, I''m ready.'
+        Ready when you are!'
       AttachmentId: 
     Emotion: 4
     HasAudio: 1
     PlaySound: {fileID: 0}
     DelayBeforeTyping: 0
-    TypingDelay: 0.1
+    TypingDelay: 0.22
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:

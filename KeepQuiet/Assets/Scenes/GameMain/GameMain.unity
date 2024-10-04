@@ -11832,11 +11832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08704b06050c8274b9236a998e3dbc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_toListen:
-  - m_eventToListen: {fileID: 11400000, guid: 9dc0535e93879f0499f260e298c6c6ee, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls: []
+  m_toListen: []
 --- !u!1001 &1362229428
 PrefabInstance:
   m_ObjectHideFlags: 0

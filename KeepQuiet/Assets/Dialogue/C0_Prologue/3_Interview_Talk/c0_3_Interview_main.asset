@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dialogues: []
   m_replyOptions:
-  - m_description: The weapon
+  - m_description: About the weapon
     m_outcome: {fileID: 11400000, guid: 5a9f2f8d38e70b4499a71652d0c640df, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  - m_description: About her manager
+  - m_description: About Aria's manager
     m_outcome: {fileID: 11400000, guid: d46d60f1a940f5c48b599b887b438459, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   - m_description: About the technician

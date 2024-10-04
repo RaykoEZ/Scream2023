@@ -16,7 +16,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Your Handler
-      Content: Here's more progress.
+      Content: We got some updates
       AttachmentId: 
     Emotion: 0
     HasAudio: 0
@@ -40,8 +40,8 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Your Handler
-      Content: "We probably have enough, you just need \nto get a few simple answers
-        to set the narrative."
+      Content: "Probably have enough for our case already, feel free to finish up.
+        \n"
       AttachmentId: 
     Emotion: 0
     HasAudio: 1

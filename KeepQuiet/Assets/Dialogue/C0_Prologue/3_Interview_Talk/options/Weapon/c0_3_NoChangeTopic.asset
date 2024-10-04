@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: c0_0_Ignore_0
+  m_Name: c0_3_NoChangeTopic
   m_EditorClassIdentifier: 
   m_dialogues:
-  - ChatLog:
+  - ShowInstantly: 0
+    ChatLog:
       WhoSpoke: Aria
-      Content: No one?
+      Content: Answer me.
       AttachmentId: 
-    HasAudio: 1
-    DelayBeforeTyping: 3
-    TypingDelay: 0.5
-    WhoSpoke: Aria
-    SentPrefabRef: {fileID: 0}
-    Content: No one?
+    Emotion: 3
+    HasAudio: 0
+    PlaySound: {fileID: 0}
+    DelayBeforeTyping: 0
+    TypingDelay: 0
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: Respond
-    m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
+  - m_description: Yes, we suspect.
+    m_outcome: {fileID: 11400000, guid: 33ecbd5951806de45a61586ab439f746, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  - m_description: Ignore
-    m_outcome: {fileID: 11400000, guid: 3d7af8a8a9ce0f542a441d91ee2b66ff, type: 2}
-    m_triggerAfterChoice: {fileID: 11400000, guid: f4ce946bce289af41a892cd785c898de, type: 2}
+  - m_description: It's too soon to judge.
+    m_outcome: {fileID: 11400000, guid: 1ef6a8bf7efeaf24f85e8451e1712d99, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []

@@ -16,7 +16,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: 
+      Content: So, you think I did it?
       AttachmentId: 
     Emotion: 3
     HasAudio: 0
@@ -25,5 +25,14 @@ MonoBehaviour:
     TypingDelay: 0
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
-  m_replyOptions: []
+  m_replyOptions:
+  - m_description: Yes.
+    m_outcome: {fileID: 11400000, guid: 33ecbd5951806de45a61586ab439f746, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: No, it's too soon to judge.
+    m_outcome: {fileID: 11400000, guid: 1ef6a8bf7efeaf24f85e8451e1712d99, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
+  - m_description: Change the topic
+    m_outcome: {fileID: 11400000, guid: ef3fae60c4ef8fc48be5e95fb09a2573, type: 2}
+    m_triggerAfterChoice: {fileID: 0}
   m_thoughtOutcomes: []

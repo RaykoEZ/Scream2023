@@ -16,7 +16,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: You
-      Content: Sure, I'll open the cafe door, it's by the street.
+      Content: Sure, I'll open the cafe door by the street, come in.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
     Emotion: 0
     HasAudio: 1
     PlaySound: {fileID: 0}
-    DelayBeforeTyping: 1
+    DelayBeforeTyping: 0.27
     TypingDelay: 0.5
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}

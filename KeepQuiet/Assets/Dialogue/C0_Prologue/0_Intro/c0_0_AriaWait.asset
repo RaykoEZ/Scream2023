@@ -26,12 +26,7 @@ MonoBehaviour:
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: Ignore
-    m_outcome: {fileID: 11400000, guid: c6a066986d426074384268fd5ea8bf5e, type: 2}
-    m_triggerAfterChoice: {fileID: 11400000, guid: 45cdfa22ec991cb4bb534d4172ff2a8a, type: 2}
   - m_description: Respond
     m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  m_thoughtOutcomes:
-  - m_toDrop: {fileID: 11400000, guid: 1ae2c8164039da34b8c2a0c0c688e0de, type: 2}
-    m_outcome: {fileID: 11400000, guid: ef88ee26f449f7f45866c4063fcd0c4c, type: 2}
+  m_thoughtOutcomes: []

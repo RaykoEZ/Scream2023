@@ -43,25 +43,13 @@ MonoBehaviour:
     TriggerAfterThisLine: {fileID: 0}
   - ShowInstantly: 0
     ChatLog:
-      WhoSpoke: You
-      Content: Let's get this interview done quickly and get out of here asap.
-      AttachmentId: 
-    Emotion: 0
-    HasAudio: 0
-    PlaySound: {fileID: 0}
-    DelayBeforeTyping: 0.3
-    TypingDelay: 0.5
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - ShowInstantly: 0
-    ChatLog:
       WhoSpoke: Aria
       Content: Is this even legal?
       AttachmentId: 
     Emotion: 0
     HasAudio: 0
     PlaySound: {fileID: 0}
-    DelayBeforeTyping: 1
+    DelayBeforeTyping: 0.63
     TypingDelay: 0.5
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}

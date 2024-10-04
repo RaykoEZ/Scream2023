@@ -16,12 +16,11 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: 'Can I come inside now?
+      Content: 'Anyway, can I come inside now?
 
 
-        you guys left me out to soak.
-
-'
+        you guys left me out to
+        soak.'
       AttachmentId: 
     Emotion: 0
     HasAudio: 1

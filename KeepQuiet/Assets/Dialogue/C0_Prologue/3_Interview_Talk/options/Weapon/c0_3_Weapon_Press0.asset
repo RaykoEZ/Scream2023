@@ -16,7 +16,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: .
+      Content: 
       AttachmentId: 
     Emotion: 3
     HasAudio: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: ' I never heard about anyone getting hurt until you guys showed up!'
+      Content: ' I never heard about people getting hurt until you guys!'
       AttachmentId: 
     Emotion: 1
     HasAudio: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: No eveidence is coroborating with this.
+  - m_description: What you said doesn't add up.
     m_outcome: {fileID: 11400000, guid: 94f5b8a3e8ab226408fbf9589b8bdbe2, type: 2}
     m_triggerAfterChoice: {fileID: 0}
   - m_description: Change the topic

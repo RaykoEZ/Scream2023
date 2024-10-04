@@ -10,26 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3599f2d4d0955ff4e838c88551c18ddf, type: 3}
-  m_Name: c0_0_Ignore_1
+  m_Name: c0_3_CloseCase_Later
   m_EditorClassIdentifier: 
   m_dialogues:
   - ShowInstantly: 0
     ChatLog:
-      WhoSpoke: Aria
-      Content: I know you're there.
+      WhoSpoke: Your Handler
+      Content: Let me know when you're done, I'll keep the channels open here.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1
     PlaySound: {fileID: 0}
-    DelayBeforeTyping: 0.5
-    TypingDelay: 0.5
+    DelayBeforeTyping: 0
+    TypingDelay: 1
     ObtainThought: {fileID: 0}
     TriggerAfterThisLine: {fileID: 0}
   m_replyOptions:
-  - m_description: Respond
-    m_outcome: {fileID: 11400000, guid: d640d614773c9904b9b31d18c4713187, type: 2}
+  - m_description: Done here, let me out.
+    m_outcome: {fileID: 11400000, guid: 8d1b7e8dcb4eb134a8f4edbdd8a87636, type: 2}
     m_triggerAfterChoice: {fileID: 0}
-  - m_description: Continue to ignore
-    m_outcome: {fileID: 11400000, guid: 5e10f23224d3b4147afa88299b975b57, type: 2}
-    m_triggerAfterChoice: {fileID: 11400000, guid: 4cb49e9d1ddbe734d930e1503f04217a, type: 2}
   m_thoughtOutcomes: []
