@@ -15,8 +15,8 @@ public enum Ending
 public class EndingPlayer : SequencePlayer 
 {
     [SerializeField] PlayableAsset m_dismissSeq = default;
-    [SerializeField] PlayableAsset m_badEndSeq = default;
-    [SerializeField] PlayableAsset m_normalEndSeq = default;
+    [SerializeField] PlayableAsset m_badEnd = default;
+    [SerializeField] PlayableAsset m_closeCase = default;
     [SerializeField] PlayableAsset m_secretEndSeq = default;
     PlayableAsset m_endToPlay;
     public override void PlaySequence() 
@@ -38,17 +38,16 @@ public class EndingPlayer : SequencePlayer
         switch (ending)
         {
             case Ending.Normal_CaseClosed:
-                m_endToPlay = m_normalEndSeq;
+                m_endToPlay = m_closeCase;
                 break;
             case Ending.Bad_Delusion:
-                m_endToPlay = m_badEndSeq;
-
+                m_endToPlay = m_badEnd;
                 break;
             case Ending.Secret_Freedom:
                 m_endToPlay = m_secretEndSeq;
                 break;
             default:
-                m_endToPlay = m_normalEndSeq;
+                m_endToPlay = m_closeCase;
                 break;
         }
     }

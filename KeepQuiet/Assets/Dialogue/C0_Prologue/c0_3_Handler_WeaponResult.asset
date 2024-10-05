@@ -32,7 +32,8 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Your Handler
-      Content: "Pretty decisive don't you think? \n\nwe can wrap it up now"
+      Content: Pretty decisive stuff, wrap things up on your side and we're done
+        for today.
       AttachmentId: 
     Emotion: 0
     HasAudio: 1

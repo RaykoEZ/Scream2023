@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5197947220437692659}
   - component: {fileID: 5197947220437692668}
   - component: {fileID: 4090943919300146738}
+  - component: {fileID: 6999643286921726285}
+  - component: {fileID: 5746646742301820920}
   m_Layer: 0
   m_Name: P_SaveState
   m_TagString: Untagged
@@ -79,3 +81,77 @@ MonoBehaviour:
   m_onSaveGame:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6999643286921726285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197947220437692658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87884352e1bc78b43a0401353e1c7747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_save: {fileID: 4090943919300146738}
+--- !u!114 &5746646742301820920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197947220437692658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08704b06050c8274b9236a998e3dbc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toListen:
+  - m_eventToListen: {fileID: 11400000, guid: ef7bce68786a88447a8d28f01bc19342, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6999643286921726285}
+          m_TargetAssemblyTypeName: EndingFlagHandler, Assembly-CSharp
+          m_MethodName: OnCaseClose
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - m_eventToListen: {fileID: 11400000, guid: 0afb7a32ada22aa418ff5d7fb5325a33, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6999643286921726285}
+          m_TargetAssemblyTypeName: EndingFlagHandler, Assembly-CSharp
+          m_MethodName: OnFreedom
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - m_eventToListen: {fileID: 11400000, guid: f8a95edd6c97e6845a7ccbbeaa0b13ff, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6999643286921726285}
+          m_TargetAssemblyTypeName: EndingFlagHandler, Assembly-CSharp
+          m_MethodName: OnBadEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

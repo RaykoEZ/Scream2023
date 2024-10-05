@@ -4,6 +4,7 @@ using UnityEngine;
 // Listens to saved game states and affect game behaviour
 public class EndingSequenceManager : MonoBehaviour 
 {
+    [SerializeField] LevelEventHandler m_level = default;
     // sequences to trigger
     [SerializeField] SkippableSequencePlayer m_credits = default;
     // post credit
@@ -16,28 +17,30 @@ public class EndingSequenceManager : MonoBehaviour
     {
         m_credits.OnFinish -= OnCreditFinish;
     }
+    public void CloseCaseSequence() 
+    {
+        m_ending.SetEnding(Ending.Normal_CaseClosed);
+        m_ending.PlaySequence();
+    }
+    public void BadEndSequence()
+    {
+        m_ending.SetEnding(Ending.Bad_Delusion);
+        m_ending.PlaySequence();
+    }
+    public void FreedomEndSequence()
+    {
+        m_ending.SetEnding(Ending.Secret_Freedom);
+        m_ending.PlaySequence();
+    }
     void OnCreditFinish() 
     {
         // Determine a post credit sequence for ending
+        m_credits.OnFinish -= OnCreditFinish;
+        m_level?.ReturnToTitle();
     }
     public void PlayCredit() 
     {
+        m_credits.OnFinish += OnCreditFinish;
         m_credits?.PlaySequence();
-    }
-    public void OnNewGame() 
-    { 
-        // if player killed Aria on the previous load
-        // (leading to a game crash), new game soft locks into bloody scene
-        // need to clear cache reset
-
-        // aria possessed, disable new game
-        // glitch + scary when choosing & spamming new game 
-
-    }
-    public void OnContinue() 
-    { 
-        // if player killed Aria on the previous load, soft lock as well
-
-        // Continue increment
     }
 }

@@ -10,16 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8414539f8de499542869ffd4508f2705, type: 3}
-  m_Name: Trigger_BeginQuestion
+  m_Name: Trigger_EndCase
   m_EditorClassIdentifier: 
-  m_monologue:
-  - ShowInstantly: 0
-    Angry: 0
-    PlaySound: {fileID: 0}
-    m_onShow:
-      m_eventToTrigger: {fileID: 0}
-    Content: Good, let's begin the questioning.
+  m_monologue: []
   m_displayToTrigger:
-    m_eventToTrigger: {fileID: 11400000, guid: 069992d332a16b740a44bbf651969f87, type: 2}
-  m_stateToTrigger:
     m_eventToTrigger: {fileID: 0}
+  m_stateToTrigger:
+    m_eventToTrigger: {fileID: 11400000, guid: ef7bce68786a88447a8d28f01bc19342, type: 2}

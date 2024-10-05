@@ -24,18 +24,6 @@ MonoBehaviour:
     DelayBeforeTyping: 0
     TypingDelay: 0
     ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
-  - ShowInstantly: 0
-    ChatLog:
-      WhoSpoke: Your Handler
-      Content: "Sweet \n\nJust a sec before I eject you out."
-      AttachmentId: 
-    Emotion: 0
-    HasAudio: 1
-    PlaySound: {fileID: 0}
-    DelayBeforeTyping: 1.5
-    TypingDelay: 0.8
-    ObtainThought: {fileID: 0}
-    TriggerAfterThisLine: {fileID: 0}
+    TriggerAfterThisLine: {fileID: 11400000, guid: 28b6fe671f859114fa9370fa98c49134, type: 2}
   m_replyOptions: []
   m_thoughtOutcomes: []
