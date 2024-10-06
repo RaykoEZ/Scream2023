@@ -1,6 +1,4 @@
-﻿using Curry.Events;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 // Listens to saved game states and affect game behaviour
 public class EndingSequenceManager : MonoBehaviour 
 {
@@ -12,35 +10,30 @@ public class EndingSequenceManager : MonoBehaviour
     void OnEnable()
     {
         m_credits.OnFinish += OnCreditFinish;
+        m_ending.OnFinish += OnEndingFinish;
     }
     void OnDisable()
     {
         m_credits.OnFinish -= OnCreditFinish;
+        m_ending.OnFinish -= OnEndingFinish;
     }
-    public void CloseCaseSequence() 
+    public void InitEnding(SaveData save) 
     {
-        m_ending.SetEnding(Ending.Normal_CaseClosed);
+        m_ending.SetEnding(save.Persistent.CurrentEnding);
         m_ending.PlaySequence();
     }
-    public void BadEndSequence()
+    void OnEndingFinish()
     {
-        m_ending.SetEnding(Ending.Bad_Delusion);
-        m_ending.PlaySequence();
-    }
-    public void FreedomEndSequence()
-    {
-        m_ending.SetEnding(Ending.Secret_Freedom);
-        m_ending.PlaySequence();
+        // Play credit after ending sequence
+        PlayCredit();
     }
     void OnCreditFinish() 
     {
-        // Determine a post credit sequence for ending
-        m_credits.OnFinish -= OnCreditFinish;
+        // Return to title after credit
         m_level?.ReturnToTitle();
     }
     public void PlayCredit() 
     {
-        m_credits.OnFinish += OnCreditFinish;
         m_credits?.PlaySequence();
     }
 }

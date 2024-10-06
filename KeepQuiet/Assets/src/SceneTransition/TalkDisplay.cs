@@ -64,6 +64,9 @@ public class TalkDisplay : StepDisplayHandler
     }
     public override bool Next()
     {
+        // Trigger previous step event
+        Dialogue step = m_currentDialogueRef.Dialogues[m_current];
+        step?.TriggerAfterThisLine?.Trigger();
         int next = ++m_current;
         //end this tutorial sequence if current index is at the end
         bool hasStepsLeft = next < Steps.Count;

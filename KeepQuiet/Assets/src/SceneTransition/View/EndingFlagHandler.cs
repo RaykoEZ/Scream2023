@@ -3,6 +3,7 @@
 public class EndingFlagHandler : MonoBehaviour 
 {
     [SerializeField] GameSaveSource m_save = default;
+    [SerializeField] LevelLoader m_level = default;
     public void OnCaseClose() 
     {
         SetEndingFlag(Ending.Normal_CaseClosed);
@@ -18,5 +19,7 @@ public class EndingFlagHandler : MonoBehaviour
     public void SetEndingFlag(Ending flag) 
     {
         m_save.Current.Persistent.CurrentEnding = flag;
+        m_save.UpdateSave();
+        m_level?.LoadScene(3);
     }
 }

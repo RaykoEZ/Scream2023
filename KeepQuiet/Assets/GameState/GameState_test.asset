@@ -27,7 +27,7 @@ MonoBehaviour:
       IsMissing: 0
       CurrentLocation: -1
       CurrentTalkingPoint:
-        m_AssetGUID: ff64d871b325a58428d4e5d3e619d002
+        m_AssetGUID: 31f1eddbc9ca8a840ab9488c053d2f36
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0

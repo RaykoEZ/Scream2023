@@ -16,7 +16,7 @@ MonoBehaviour:
   - ShowInstantly: 0
     ChatLog:
       WhoSpoke: Aria
-      Content: 
+      Content: ...
       AttachmentId: 
     Emotion: 3
     HasAudio: 0

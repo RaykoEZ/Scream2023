@@ -24,7 +24,7 @@ public class EndingPlayer : SequencePlayer
         if (m_endToPlay == null) 
         {
             Debug.LogWarning("Ending sequebce not set when trying to play an ending.");
-            return;
+            SetEnding(Ending.None);
         }
         base.PlaySequence();
     }

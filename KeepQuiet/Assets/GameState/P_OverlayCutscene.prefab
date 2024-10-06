@@ -345,7 +345,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2428198137579126724}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -941,7 +941,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8514409657471475518}
-  - component: {fileID: 8514409657471475516}
   - component: {fileID: 8514409657471475517}
   - component: {fileID: 8863135205904823484}
   - component: {fileID: 4626273072566431095}
@@ -970,18 +969,6 @@ Transform:
   - {fileID: 4363797710283099871}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8514409657471475516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8514409657471475519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1609eb67b5b3649a31a3b546af02ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8514409657471475517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,7 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3258ee1108dfe47971f78d5865c02b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_level: {fileID: 0}
+  m_level: {fileID: 154426339368183105}
   m_credits: {fileID: 5399834186622748946}
   m_ending: {fileID: 8863135205904823484}
 --- !u!114 &8863135205904823484
@@ -1009,7 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6807bc92415990c44bbc7c950fce5328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_waitAfterSequenceFinishes: 0.5
+  m_waitAfterSequenceFinishes: 1
   m_director: {fileID: 6446043414805001120}
   m_dismissSeq: {fileID: 11400000, guid: 930b550c4623dee46be7464188cd54ed, type: 2}
   m_badEnd: {fileID: 11400000, guid: f1d6ba8e3131a5944ab8b155a95f82e7, type: 2}
@@ -1067,6 +1054,22 @@ MonoBehaviour:
         - m_Target: {fileID: 8514409657471475517}
           m_TargetAssemblyTypeName: EndingSequenceManager, Assembly-CSharp
           m_MethodName: FreedomEndSequence
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - m_eventToListen: {fileID: 11400000, guid: d3d82519921dee147a6c7fafe52d3119, type: 2}
+    m_responses:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8514409657471475517}
+          m_TargetAssemblyTypeName: EndingSequenceManager, Assembly-CSharp
+          m_MethodName: PlayEnding
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1299,6 +1302,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43226a31a1546bb46b28e40272cc17da, type: 3}
+--- !u!114 &154426339368183105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2457883914855737599, guid: 43226a31a1546bb46b28e40272cc17da, type: 3}
+  m_PrefabInstance: {fileID: 2321756834011958718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2510ced2c555243bfb797dce4f5b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4363797710283099871 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2069363826725749601, guid: 43226a31a1546bb46b28e40272cc17da, type: 3}
