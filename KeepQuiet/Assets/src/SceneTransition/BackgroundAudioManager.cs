@@ -35,6 +35,10 @@ public class BackgroundAudioManager : MonoBehaviour
         StartCoroutine(FadeIn());
         m_bgmSource?.Play();
     }
+    public void ChangeBGM(AudioClip toPlay)
+    {
+        ChangeTrack(toPlay, false);
+    }
     public void Stop()
     {
         StartCoroutine(FadeOut());

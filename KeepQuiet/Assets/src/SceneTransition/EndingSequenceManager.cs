@@ -17,10 +17,9 @@ public class EndingSequenceManager : MonoBehaviour
         m_credits.OnFinish -= OnCreditFinish;
         m_ending.OnFinish -= OnEndingFinish;
     }
-    public void InitEnding(SaveData save) 
+    public void PlayEnding(Ending flag) 
     {
-        m_ending.SetEnding(save.Persistent.CurrentEnding);
-        m_ending.PlaySequence();
+        m_ending.PlayEnding(flag);
     }
     void OnEndingFinish()
     {

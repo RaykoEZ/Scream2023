@@ -29,10 +29,6 @@ public class LevelEventHandler : MonoBehaviour
     {
         Loader?.LoadScene(1);
     }
-    public void GoToEnding() 
-    {
-        Loader?.LoadScene(3);
-    }
     void GoToGameScene() 
     {
         Loader?.LoadScene(2);

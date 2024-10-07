@@ -15,20 +15,25 @@ public class SequencePlayer : MonoBehaviour
     // Start is called before the first frame update
     public virtual void PlaySequence() 
     {
-        StartCoroutine(PlaySequence_Internal());
+        if (m_director.playableAsset == null) 
+        {
+            Debug.LogWarning("SequencePlayer: PlayableAsset is not set, cannot play sequence.");
+            return;
+        }
+        StartCoroutine(PlaySequence_Internal(m_director.playableAsset));
     }
     public void PlaySequence(PlayableAsset toPlay)
     {
         if (toPlay == null) return;
-        m_director?.Play(toPlay);
+        StartCoroutine(PlaySequence_Internal(toPlay));
     }
     protected void OnFinishCallback() 
     {
         OnFinish?.Invoke();
     }
-    protected virtual IEnumerator PlaySequence_Internal() 
-    {      
-        m_director?.Play();
+    protected virtual IEnumerator PlaySequence_Internal(PlayableAsset toPlay) 
+    {
+        m_director.Play(toPlay);
         yield return new WaitForSeconds((float)m_director.playableAsset.duration);
         yield return new WaitForSeconds(m_waitAfterSequenceFinishes);
         OnFinish?.Invoke();

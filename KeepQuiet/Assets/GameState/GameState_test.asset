@@ -30,7 +30,7 @@ MonoBehaviour:
         m_AssetGUID: 31f1eddbc9ca8a840ab9488c053d2f36
         m_SubObjectName: 
         m_SubObjectType: 
-        m_EditorAssetChanged: 0
+        m_EditorAssetChanged: 1
     SimulationTime: 0
     HeldThoughts:
     - m_AssetGUID: b317449047b29eb429d41372fe0ec431

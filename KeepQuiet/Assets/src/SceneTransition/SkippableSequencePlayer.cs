@@ -7,10 +7,10 @@ public class SkippableSequencePlayer : SequencePlayer
     [Range(1f, 10f)]
     [SerializeField] float m_fastforwardSpeed = default;
     bool m_isPlaying = false;
-    protected override IEnumerator PlaySequence_Internal() 
+    protected override IEnumerator PlaySequence_Internal(PlayableAsset toPlay) 
     {
         m_isPlaying = true;
-        yield return base.PlaySequence_Internal();
+        yield return base.PlaySequence_Internal(toPlay);
         m_isPlaying = false;
     }
     public void FastForward() 
