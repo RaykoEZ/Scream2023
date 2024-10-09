@@ -196,9 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb3072db73c83e488539734ca9e8bd6, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  TextColour: {r: 0.089953184, g: 1, b: 0, a: 0}
-  SubtitleText: 'The prime suspect will be transported to <color=yellow>Containment
-    Zone F</color> immediately.
+  TextColour: {r: 1, g: 1, b: 1, a: 0}
+  SubtitleText: 'Our prime suspect will be transported to <color=yellow>Zone F</color>
+    shortly.
 
 '
 --- !u!114 &-5776791071698474088
@@ -213,9 +213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb3072db73c83e488539734ca9e8bd6, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  TextColour: {r: 0.089953184, g: 1, b: 0, a: 0}
-  SubtitleText: "<size=48><b>Evidence Retrieved</b></size>\n\nThank you for your
-    service, detective. \n"
+  TextColour: {r: 1, g: 1, b: 1, a: 0}
+  SubtitleText: '<size=48><b>Investigation Complete</b></size>
+
+'
 --- !u!114 &-5416726860118998585
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,33 +407,6 @@ MonoBehaviour:
     m_DisplayName: SubtitleClip
   m_Markers:
     m_Objects: []
---- !u!114 &-398703062045160316
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b22792c3b570444eb18cb78c2af3a74, type: 3}
-  m_Name: Audio Track
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
-  m_TrackProperties:
-    volume: 1
-    stereoPan: 0
-    spatialBlend: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,14 +417,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: Seq_EndCaseClosed
+  m_Name: NormalEnd_CaseClosed
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
   - {fileID: -759203339952722012}
   - {fileID: -8845484963566101559}
   - {fileID: -8610303712464581911}
-  - {fileID: -398703062045160316}
   - {fileID: 7375368630077833032}
   m_FixedDuration: 0
   m_EditorSettings:
@@ -503,7 +476,8 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   TextColour: {r: 0.089953184, g: 1, b: 0, a: 0}
-  SubtitleText: "<size=54><b>Session Complete</b></size>\n\nScore: +10.59 \n\n"
+  SubtitleText: "<size=54><b>Session Complete</b></size>\n\nThank you for your service.
+    \n"
 --- !u!114 &7375368630077833032
 MonoBehaviour:
   m_ObjectHideFlags: 1

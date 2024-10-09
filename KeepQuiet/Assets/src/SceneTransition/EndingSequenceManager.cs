@@ -2,37 +2,47 @@
 // Listens to saved game states and affect game behaviour
 public class EndingSequenceManager : MonoBehaviour 
 {
-    [SerializeField] LevelEventHandler m_level = default;
     // sequences to trigger
     [SerializeField] SkippableSequencePlayer m_credits = default;
     // post credit
     [SerializeField] EndingPlayer m_ending = default;
+    Ending m_currentlyPlaying = Ending.None;
+    bool m_playingEnding = false;
     void OnEnable()
     {
         m_credits.OnFinish += OnCreditFinish;
-        m_ending.OnFinish += OnEndingFinish;
     }
     void OnDisable()
     {
         m_credits.OnFinish -= OnCreditFinish;
-        m_ending.OnFinish -= OnEndingFinish;
     }
     public void PlayEnding(Ending flag) 
     {
+        if (m_playingEnding) return;
+        m_playingEnding = true;
+        m_ending.OnFinish += OnEndingFinish;
+        m_currentlyPlaying = flag;
         m_ending.PlayEnding(flag);
+    }
+    public void PlayCredit()
+    {
+        m_credits?.PlaySequence();
     }
     void OnEndingFinish()
     {
+        m_ending.OnFinish -= OnEndingFinish;
         // Play credit after ending sequence
         PlayCredit();
     }
     void OnCreditFinish() 
     {
-        // Return to title after credit
-        m_level?.ReturnToTitle();
+        // Post Credit
+        m_ending.OnFinish += PostCreditFinish;
+        m_ending.PostCredit(m_currentlyPlaying);
     }
-    public void PlayCredit() 
+    void PostCreditFinish()
     {
-        m_credits?.PlaySequence();
+        m_ending.OnFinish -= PostCreditFinish;
+        m_playingEnding = false;
     }
 }
