@@ -14,17 +14,14 @@ public enum Ending
 public class EndingPlayer : SequencePlayer 
 {
     // ending sequence before credits
-    [SerializeField] PlayableAsset m_bad = default;
-    [SerializeField] PlayableAsset m_normal = default;
-    [SerializeField] PlayableAsset m_secret = default;
+    [SerializeField] PlayableAsset m_endingIntro = default;
     // play after credit
     [SerializeField] PlayableAsset m_badPostCredit = default;
     [SerializeField] PlayableAsset m_normalPostCredit = default;
     [SerializeField] PlayableAsset m_secretPostCredit = default;
     public void PlayEnding(Ending ending) 
     {
-        var toPlay = GetEnding(ending);
-        PlaySequence(toPlay);
+        PlaySequence(m_endingIntro);
     }
     public void PostCredit(Ending ending) 
     {
@@ -43,20 +40,6 @@ public class EndingPlayer : SequencePlayer
                 return m_secretPostCredit;
             default:
                 return m_normalPostCredit;
-        }
-    }
-    protected PlayableAsset GetEnding(Ending ending)
-    {
-        switch (ending)
-        {
-            case Ending.Normal_CaseClosed:
-               return m_normal;
-            case Ending.Bad_Delusion:
-                return m_bad;
-            case Ending.Secret_Freedom:
-                return m_secret;
-            default:
-                return m_normal;
         }
     }
 }
