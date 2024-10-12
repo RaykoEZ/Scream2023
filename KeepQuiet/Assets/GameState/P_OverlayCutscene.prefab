@@ -283,7 +283,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 0425f1487c874134ba2fcd946a132726, type: 2}
   m_InitialState: 0
-  m_WrapMode: 2
+  m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -365,6 +365,16 @@ PlayableDirector:
     value: {fileID: 9047481442444857199}
   - key: {fileID: 7990179166882502572, guid: 0425f1487c874134ba2fcd946a132726, type: 2}
     value: {fileID: 2857427272262959256}
+  - key: {fileID: 3107488022916502149, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
+    value: {fileID: 3672171385647440232}
+  - key: {fileID: -1359702308981489530, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
+    value: {fileID: 565321538471890752}
+  - key: {fileID: 5892021093761510890, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
+    value: {fileID: 9047481442444857199}
+  - key: {fileID: 8684240626650590445, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
+    value: {fileID: 2857427272262959256}
+  - key: {fileID: -3435024654451871388, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
+    value: {fileID: 6999692130604320595}
   m_ExposedReferences:
     m_References: []
 --- !u!225 &565321538471890752
@@ -375,9 +385,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2428198137579126724}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!82 &5937475767177195679
 AudioSource:
@@ -730,7 +740,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "Target location recorded, contactng field unit...\nField Unit-X03 assigned
+    to new mission.\n\nMission Brief:\nVIP Target: Aria Yanagi (AYA08...401)\nMission
+    Type: Insurgency Capture\nLocation: \u2591\u2580\u2588\u2580\u2592\u2588\u2588\u2580 
+    \u2580\u2584\u2580\u2591\u2580\u2588\u2580\n<color=red>Use of lethal force granted</color>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
