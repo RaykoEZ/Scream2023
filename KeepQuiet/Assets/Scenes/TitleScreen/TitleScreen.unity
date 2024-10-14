@@ -5061,6 +5061,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 565321538471890752, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 565321538471890752, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 565321538471890752, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.data[45].key
+      value: 
+      objectReference: {fileID: 5758869967769060468, guid: 0425f1487c874134ba2fcd946a132726, type: 2}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.data[45].value
+      value: 
+      objectReference: {fileID: 1872167402}
     - target: {fileID: 8514409657471475518, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5114,6 +5138,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+--- !u!82 &1872167402 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6999692130604320595, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+  m_PrefabInstance: {fileID: 1872167401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1973132265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6089,7 +6118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8443389343339018602, guid: a2c3bd1a47cfc9b49b36a891932d0a39, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 810.00006
+      value: 810
       objectReference: {fileID: 0}
     - target: {fileID: 8443389343339018602, guid: a2c3bd1a47cfc9b49b36a891932d0a39, type: 3}
       propertyPath: m_AnchoredPosition.y
