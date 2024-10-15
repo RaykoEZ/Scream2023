@@ -15,6 +15,7 @@ public class TemporaryInputAction
     {
         if (m_enabled) return;
         m_enabled = true;
+        Debug.Log("on");
         m_inputTarget.action.performed += Trigger;
     }
     public virtual void Disable()

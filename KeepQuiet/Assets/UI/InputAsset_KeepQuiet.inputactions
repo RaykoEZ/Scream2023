@@ -1,5 +1,5 @@
 {
-    "name": "InputAsset",
+    "name": "InputAsset_KeepQuiet",
     "maps": [
         {
             "name": "UI",
@@ -83,7 +83,7 @@
                     "id": "9f344045-e5a8-497a-8005-ead9cf30900a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": true
                 }
             ],
@@ -499,7 +499,7 @@
                     "name": "Prompt_Reconnect",
                     "id": "07732208-a2d1-4385-81a8-139a7b4c6be9",
                     "path": "1DAxis",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "SecretConsoleCommand",
@@ -507,7 +507,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
+                    "name": "Negative",
                     "id": "5957b33b-c4fc-4009-8acd-6f5f4923c2be",
                     "path": "<Keyboard>/n",
                     "interactions": "",
@@ -518,7 +518,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
+                    "name": "Positive",
                     "id": "9db782cc-c3fc-4704-80b9-b7af408f0374",
                     "path": "<Keyboard>/y",
                     "interactions": "",

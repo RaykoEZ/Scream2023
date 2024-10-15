@@ -74,7 +74,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190335
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -230,6 +230,94 @@ MonoBehaviour:
   blendDistance: 0
   weight: 0
   sharedProfile: {fileID: 11400000, guid: f54c6c1fb4d7ef94ca18ed14fbff39bd, type: 2}
+--- !u!1 &2085120157116672837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7429397747876512873}
+  - component: {fileID: 8891267608441754850}
+  - component: {fileID: 2242010997571277209}
+  - component: {fileID: 8156983889924823868}
+  m_Layer: 6
+  m_Name: Image_aria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7429397747876512873
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085120157116672837}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3435192523955949220}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1600}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8891267608441754850
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085120157116672837}
+  m_CullTransparentMesh: 1
+--- !u!114 &2242010997571277209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085120157116672837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 09b6381939a3f4442a5b27c75cbe5430, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!225 &8156983889924823868
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085120157116672837}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2428198137579126724
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +331,6 @@ GameObject:
   - component: {fileID: 565321538471890752}
   - component: {fileID: 5937475767177195679}
   - component: {fileID: 494613976047731240}
-  - component: {fileID: 8823303854020035590}
   m_Layer: 6
   m_Name: P_EndDisplay
   m_TagString: Untagged
@@ -264,6 +351,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7796390502812288318}
+  - {fileID: 7429397747876512873}
   - {fileID: 8057166316726951972}
   - {fileID: 2631557403884726799}
   - {fileID: 1517486877970706848}
@@ -283,7 +371,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2428198137579126724}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -371,8 +459,6 @@ PlayableDirector:
     value: {fileID: 3672171385647440232}
   - key: {fileID: -1359702308981489530, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
     value: {fileID: 565321538471890752}
-  - key: {fileID: 5892021093761510890, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
-    value: {fileID: 9047481442444857199}
   - key: {fileID: 8684240626650590445, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
     value: {fileID: 2857427272262959256}
   - key: {fileID: -3435024654451871388, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
@@ -387,6 +473,36 @@ PlayableDirector:
     value: {fileID: 6999692130604320595}
   - key: {fileID: 6730846609354772487, guid: 7197239830f0b624990946e4014e9192, type: 2}
     value: {fileID: 6999692130604320595}
+  - key: {fileID: 901061735725190951, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
+    value: {fileID: 5410142827078396361}
+  - key: {fileID: 975261207081584396, guid: c9b04ab8c73f40b46bda3af75ac4f5fc, type: 2}
+    value: {fileID: 3672171385647440232}
+  - key: {fileID: 4069491625639302465, guid: c9b04ab8c73f40b46bda3af75ac4f5fc, type: 2}
+    value: {fileID: 565321538471890752}
+  - key: {fileID: 7560376327121621044, guid: c9b04ab8c73f40b46bda3af75ac4f5fc, type: 2}
+    value: {fileID: 2857427272262959256}
+  - key: {fileID: 5162146740334131143, guid: c9b04ab8c73f40b46bda3af75ac4f5fc, type: 2}
+    value: {fileID: 8809111202775184861}
+  - key: {fileID: -3058907331783092071, guid: c9b04ab8c73f40b46bda3af75ac4f5fc, type: 2}
+    value: {fileID: 6999692130604320595}
+  - key: {fileID: 6772330588457530004, guid: c9b04ab8c73f40b46bda3af75ac4f5fc, type: 2}
+    value: {fileID: 5410142827078396361}
+  - key: {fileID: 4069491625639302465, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 565321538471890752}
+  - key: {fileID: -3058907331783092071, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 6999692130604320595}
+  - key: {fileID: 9195757436561590167, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 200972031905349378}
+  - key: {fileID: -9018914167221202710, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 8156983889924823868}
+  - key: {fileID: 7837776999968864393, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 8809111202775184861}
+  - key: {fileID: -5489233854190947906, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 7213360312723065859}
+  - key: {fileID: -1811624681139573810, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 7849120150149801994}
+  - key: {fileID: -4536508118479335838, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 9047481442444857199}
   m_ExposedReferences:
     m_References: []
 --- !u!225 &565321538471890752
@@ -511,66 +627,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerNamePrefix: Ver=vai_f_beta.E1C6
   m_playerIdLabel: {fileID: 6497627589048189065}
---- !u!114 &8823303854020035590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2428198137579126724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e82914a20537b489a9c5eab7ed918b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_secretInput:
-    m_autoDisable: 1
-    m_inputTarget: {fileID: -5627205615925799603, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
-    m_triggerOnAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8823303854020035590}
-          m_TargetAssemblyTypeName: SecretPrompt, Assembly-CSharp
-          m_MethodName: OnPromptTrigger
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  m_reconnect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_disconnect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &3428872831189855619
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +790,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -946,17 +1002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Connection lost, attempt to reconnect
-
-    Result: <color=red>Failure</color>
-
-    Error:
-    102, No response from agent.
-
-    <color=yellow>WARNING! Please contact admin
-    ASAP</color>
-
-    Try again? (y/n)'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -965,8 +1011,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1200,6 +1246,8 @@ GameObject:
   - component: {fileID: 8514409657471475517}
   - component: {fileID: 8863135205904823484}
   - component: {fileID: 4626273072566431095}
+  - component: {fileID: 1636918645763484413}
+  - component: {fileID: 5410142827078396361}
   m_Layer: 0
   m_Name: P_OverlayCutscene
   m_TagString: Untagged
@@ -1325,6 +1373,96 @@ MonoBehaviour:
         - m_Target: {fileID: 8514409657471475517}
           m_TargetAssemblyTypeName: EndingSequenceManager, Assembly-CSharp
           m_MethodName: PlayEnding
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1636918645763484413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514409657471475519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e82914a20537b489a9c5eab7ed918b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_secretInput:
+    m_autoDisable: 1
+    m_inputTarget: {fileID: -5627205615925799603, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+    m_triggerOnAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1636918645763484413}
+          m_TargetAssemblyTypeName: SecretPrompt, Assembly-CSharp
+          m_MethodName: OnPromptTrigger
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  m_reconnect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_disconnect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5410142827078396361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514409657471475519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: bb7e8a2d441a98342bbc53e72774ebcf, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1636918645763484413}
+          m_TargetAssemblyTypeName: SecretPrompt, Assembly-CSharp
+          m_MethodName: ActivatePrompt
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

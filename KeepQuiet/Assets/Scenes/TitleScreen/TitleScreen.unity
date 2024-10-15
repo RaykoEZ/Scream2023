@@ -2388,6 +2388,7 @@ GameObject:
   - component: {fileID: 1182380939}
   - component: {fileID: 1182380938}
   - component: {fileID: 1182380940}
+  - component: {fileID: 1182380941}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2441,20 +2442,86 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_PointAction: {fileID: -5626216597241335650, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_MoveAction: {fileID: 5225536802405617760, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_SubmitAction: {fileID: -7039189752227687788, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_CancelAction: {fileID: -4390562195185887283, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_LeftClickAction: {fileID: -4545737277320005836, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 2291439758075416680, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &1182380941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182380936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 3ba6f2bcaa877e24ea26afb058368903, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 1182380940}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2ecf0225-13e9-4a0f-9fae-38bce54ed679
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2677af24-7d17-444e-a197-5aa2ee06d53a
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f756e07a-45c8-4366-8600-5753dc335c4f
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2d081036-0fc2-42c9-97db-2ea86890affe
+    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bfd19608-992e-43ec-8f0c-754b6c520459
+    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 19d05403-57de-4eff-a2f9-cccace9c74f4
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 856a3607-e226-466c-9f89-a0795b5422bf
+    m_ActionName: UI/TalkToNpc[/Keyboard/space,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 50bd7fbb-94e5-4a85-a07c-6c7a9ec05943
+    m_ActionName: UI/PauseGame[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f344045-e5a8-497a-8005-ead9cf30900a
+    m_ActionName: UI/SecretConsoleCommand[/Keyboard/n,/Keyboard/y]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 1035244608}
 --- !u!1 &1240231019
 GameObject:
   m_ObjectHideFlags: 0
@@ -5073,18 +5140,6 @@ PrefabInstance:
       propertyPath: m_BlocksRaycasts
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
-      propertyPath: m_SceneBindings.Array.size
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
-      propertyPath: m_SceneBindings.Array.data[45].key
-      value: 
-      objectReference: {fileID: 5758869967769060468, guid: 0425f1487c874134ba2fcd946a132726, type: 2}
-    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
-      propertyPath: m_SceneBindings.Array.data[45].value
-      value: 
-      objectReference: {fileID: 1872167402}
     - target: {fileID: 8514409657471475518, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5129,20 +5184,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_OverlayCutscene
       objectReference: {fileID: 0}
-    - target: {fileID: 8514409657950997310, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
---- !u!82 &1872167402 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6999692130604320595, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
-  m_PrefabInstance: {fileID: 1872167401}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1973132265
 PrefabInstance:
   m_ObjectHideFlags: 0

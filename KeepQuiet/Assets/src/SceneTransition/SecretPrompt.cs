@@ -6,11 +6,20 @@ public class SecretPrompt : MonoBehaviour
     [SerializeField] TemporaryInputAction m_secretInput = default;
     [SerializeField] UnityEvent m_reconnect = default;
     [SerializeField] UnityEvent m_disconnect = default;
+
+    void Start()
+    {
+        m_secretInput?.Disable();
+    }
+    public void ActivatePrompt()
+    {
+        m_secretInput?.Enable();
+    }
     public void OnPromptTrigger(InputAction.CallbackContext c) 
     {
         // did player press n/y?
-        bool reconnect = c.action.ReadValue<bool>();
-        if (reconnect) 
+        float reconnect = c.action.ReadValue<float>();
+        if (reconnect > 0f) 
         {
             m_reconnect?.Invoke();
         }
@@ -18,13 +27,5 @@ public class SecretPrompt : MonoBehaviour
         {
             m_disconnect?.Invoke();
         }
-    }
-    public void ActivatePrompt() 
-    {
-        m_secretInput?.Enable();
-    }
-    void Start()
-    {
-        m_secretInput?.Disable();
     }
 }
