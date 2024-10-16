@@ -25,13 +25,6 @@ public class SceneTransitionTrigger : MonoBehaviour
     }
     public void QuitGame()
     {
-        if (Application.isEditor)
-        {
-            EditorApplication.ExitPlaymode();
-        }
-        else 
-        {
-            Application.Quit();
-        }
+        m_level.QuitGame();
     }
 }

@@ -371,7 +371,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2428198137579126724}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 109dab1376e54994eb70c08c2df78723, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -502,6 +502,12 @@ PlayableDirector:
   - key: {fileID: -1811624681139573810, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
     value: {fileID: 7849120150149801994}
   - key: {fileID: -4536508118479335838, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 9047481442444857199}
+  - key: {fileID: 5627859528375013774, guid: 109dab1376e54994eb70c08c2df78723, type: 2}
+    value: {fileID: 565321538471890752}
+  - key: {fileID: -4509059704844149762, guid: 109dab1376e54994eb70c08c2df78723, type: 2}
+    value: {fileID: 3672171385647440232}
+  - key: {fileID: -1524569744977249983, guid: 109dab1376e54994eb70c08c2df78723, type: 2}
     value: {fileID: 9047481442444857199}
   m_ExposedReferences:
     m_References: []
@@ -1002,7 +1008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Connection canceled, exiting virtual sandbox...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1011,8 +1017,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1729,12 +1735,27 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: d428ed6a15824314e81cf083e56a3326, type: 2}
+    - {fileID: 11400000, guid: dd9761abeeedb0e46b664793af84b6d0, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 154426339368183105}
           m_TargetAssemblyTypeName: LevelEventHandler, Assembly-CSharp
           m_MethodName: ReturnToTitle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 154426339368183105}
+          m_TargetAssemblyTypeName: LevelEventHandler, Assembly-CSharp
+          m_MethodName: QuitGame
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
