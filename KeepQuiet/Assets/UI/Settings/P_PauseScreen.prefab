@@ -33,7 +33,6 @@ RectTransform:
   m_Children:
   - {fileID: 718495372}
   m_Father: {fileID: 1567135144}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -165,7 +164,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 356601747}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -300,7 +298,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1896036251}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -441,7 +438,6 @@ RectTransform:
   - {fileID: 356601747}
   - {fileID: 4947571318351986998}
   m_Father: {fileID: 8892957357779844442}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -500,17 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810e9de234d4acd43b886276a7c7dbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_saveData: {fileID: 0}
-  m_resetSave:
-    m_eventToTrigger: {fileID: 11400000, guid: 017ebddf7d247de4099e4578cb95bb3a, type: 2}
-  m_toTile:
-    m_eventToTrigger: {fileID: 11400000, guid: 121d7104f7a41f244981ab02303c66ea, type: 2}
-  m_continue:
-    m_eventToTrigger: {fileID: 11400000, guid: c18e1bfd0e80628439af36ed14f88874, type: 2}
-  m_newGame:
-    m_eventToTrigger: {fileID: 11400000, guid: eb1df2b084c7b364a884278d411f2257, type: 2}
-  m_quit:
-    m_eventToTrigger: {fileID: 11400000, guid: e3df2d70be6172c4296d6f4526e8fa8d, type: 2}
+  m_save: {fileID: 0}
+  m_level: {fileID: 0}
 --- !u!223 &1567135147
 Canvas:
   m_ObjectHideFlags: 0
@@ -528,6 +515,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -583,7 +571,6 @@ RectTransform:
   m_Children:
   - {fileID: 743825689}
   m_Father: {fileID: 1567135144}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -715,7 +702,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4947571318351986998}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -852,7 +838,6 @@ RectTransform:
   m_Children:
   - {fileID: 5375406266644533795}
   m_Father: {fileID: 1567135144}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -944,7 +929,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1567135145}
         m_TargetAssemblyTypeName: SceneTransitionTrigger, Assembly-CSharp
         m_MethodName: QuitGame
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -990,7 +975,6 @@ RectTransform:
   - {fileID: 8892957358053140941}
   - {fileID: 1567135144}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1037,7 +1021,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!95 &8892957357779844433
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1054,7 +1038,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8892957357779844438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,7 +1087,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1228148511
   m_SortingOrder: 8
@@ -1138,7 +1124,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8892957357779844442}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}

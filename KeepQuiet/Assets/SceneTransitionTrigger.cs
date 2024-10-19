@@ -3,6 +3,7 @@ using System;
 using UnityEditor;
 #endif
 using UnityEngine;
+using UnityEngine.Playables;
 public class SceneTransitionTrigger : MonoBehaviour
 {
     [SerializeField] GameSaveSource m_save = default;
@@ -23,8 +24,12 @@ public class SceneTransitionTrigger : MonoBehaviour
         m_save?.NewGame();
         m_level?.NewGame();
     }
-    public void QuitGame()
+    public void QuitGame(bool save = false)
     {
+        if (save) 
+        {
+            m_save?.UpdateSave();
+        }
         m_level.QuitGame();
     }
 }

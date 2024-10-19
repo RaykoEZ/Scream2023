@@ -15,8 +15,7 @@ public class SaveData
     [Serializable]
     public class PersistentSave
     {
-        // If player choose to hit Aria with the bat, we reach Bad End,
-        // a different title & New Game & Continue if Aria is dead
+        // If Ai Aria is captured and you reconnect into sandbox
         public bool AriaGone;
         // No. of times player launched this game after first new game
         // Triggers new game tutorial sequences for new game players

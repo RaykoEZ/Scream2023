@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 5937475767177195679}
   - component: {fileID: 494613976047731240}
   m_Layer: 6
-  m_Name: P_EndDisplay
+  m_Name: P_ConsoleDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,7 +371,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2428198137579126724}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 109dab1376e54994eb70c08c2df78723, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -509,6 +509,10 @@ PlayableDirector:
     value: {fileID: 3672171385647440232}
   - key: {fileID: -1524569744977249983, guid: 109dab1376e54994eb70c08c2df78723, type: 2}
     value: {fileID: 9047481442444857199}
+  - key: {fileID: -5682290581578765226, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2838040902658248782, guid: 0e60a1eb74b15cf44a5584bd671abaea, type: 2}
+    value: {fileID: 3672171385647440232}
   m_ExposedReferences:
     m_References: []
 --- !u!225 &565321538471890752
@@ -1008,7 +1012,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Connection canceled, exiting virtual sandbox...
+  m_text: 'Connection lost, attempt to reconnect
+
+    Result: <color=red>Failure</color>
+
+    Error:
+    102, No response from agent.
+
+    <color=yellow>WARNING! Please contact admin
+    ASAP</color>
+
+    Attempt to reconnect..'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1251,7 +1265,6 @@ GameObject:
   - component: {fileID: 8514409657471475518}
   - component: {fileID: 8514409657471475517}
   - component: {fileID: 8863135205904823484}
-  - component: {fileID: 4626273072566431095}
   - component: {fileID: 1636918645763484413}
   - component: {fileID: 5410142827078396361}
   m_Layer: 0
@@ -1311,83 +1324,6 @@ MonoBehaviour:
   m_badPostCredit: {fileID: 11400000, guid: 0425f1487c874134ba2fcd946a132726, type: 2}
   m_normalPostCredit: {fileID: 11400000, guid: 7197239830f0b624990946e4014e9192, type: 2}
   m_secretPostCredit: {fileID: 11400000, guid: 82861b95b51c8c7498b49bfdd7c14477, type: 2}
---- !u!114 &4626273072566431095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8514409657471475519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08704b06050c8274b9236a998e3dbc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_toListen:
-  - m_eventToListen: {fileID: 11400000, guid: ef7bce68786a88447a8d28f01bc19342, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8514409657471475517}
-          m_TargetAssemblyTypeName: EndingSequenceManager, Assembly-CSharp
-          m_MethodName: CloseCaseSequence
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - m_eventToListen: {fileID: 11400000, guid: f8a95edd6c97e6845a7ccbbeaa0b13ff, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8514409657471475517}
-          m_TargetAssemblyTypeName: EndingSequenceManager, Assembly-CSharp
-          m_MethodName: BadEndSequence
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - m_eventToListen: {fileID: 11400000, guid: 0afb7a32ada22aa418ff5d7fb5325a33, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8514409657471475517}
-          m_TargetAssemblyTypeName: EndingSequenceManager, Assembly-CSharp
-          m_MethodName: FreedomEndSequence
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - m_eventToListen: {fileID: 11400000, guid: d3d82519921dee147a6c7fafe52d3119, type: 2}
-    m_responses:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8514409657471475517}
-          m_TargetAssemblyTypeName: EndingSequenceManager, Assembly-CSharp
-          m_MethodName: PlayEnding
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1636918645763484413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,13 +1357,14 @@ MonoBehaviour:
   m_reconnect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 6446043414805001120}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 11400000, guid: c9b04ab8c73f40b46bda3af75ac4f5fc, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Playables.PlayableAsset,
+            UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1436,13 +1373,14 @@ MonoBehaviour:
   m_disconnect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 6446043414805001120}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 11400000, guid: 109dab1376e54994eb70c08c2df78723, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Playables.PlayableAsset,
+            UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

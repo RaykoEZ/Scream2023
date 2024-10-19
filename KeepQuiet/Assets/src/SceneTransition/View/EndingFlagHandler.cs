@@ -16,6 +16,11 @@ public class EndingFlagHandler : MonoBehaviour
     {
         SetEndingFlag(Ending.Bad_Delusion);
     }
+    public void FreedomRouteFlag() 
+    {
+        m_save.Current.FreedomRoute = true;
+        m_save.UpdateSave();
+    }
     public void SetEndingFlag(Ending flag) 
     {
         m_save.Current.Persistent.CurrentEnding = flag;
