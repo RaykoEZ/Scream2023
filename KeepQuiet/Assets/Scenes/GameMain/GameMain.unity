@@ -1731,10 +1731,10 @@ PrefabInstance:
     - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
       propertyPath: m_PlayableAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 7197239830f0b624990946e4014e9192, type: 2}
+      objectReference: {fileID: 11400000, guid: 72fb87eba5c4d5f4384af5f12931488b, type: 2}
     - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 68
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
       propertyPath: m_SceneBindings.Array.data[66].key
@@ -1744,6 +1744,18 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[67].key
       value: 
       objectReference: {fileID: 6600522278049063571, guid: 7197239830f0b624990946e4014e9192, type: 2}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.data[68].key
+      value: 
+      objectReference: {fileID: 7389115452303214741, guid: 72fb87eba5c4d5f4384af5f12931488b, type: 2}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.data[69].key
+      value: 
+      objectReference: {fileID: -5318247342721392744, guid: 72fb87eba5c4d5f4384af5f12931488b, type: 2}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.data[70].key
+      value: 
+      objectReference: {fileID: 1559614747775968166, guid: 72fb87eba5c4d5f4384af5f12931488b, type: 2}
     - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
       propertyPath: m_SceneBindings.Array.data[65].value
       value: 
@@ -1756,6 +1768,18 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[67].value
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.data[68].value
+      value: 
+      objectReference: {fileID: 286173394}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.data[69].value
+      value: 
+      objectReference: {fileID: 286173396}
+    - target: {fileID: 6446043414805001120, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_SceneBindings.Array.data[70].value
+      value: 
+      objectReference: {fileID: 286173395}
     - target: {fileID: 7415176402306374816, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
       propertyPath: m_fadeInDuration
       value: 3
@@ -1970,7 +1994,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8514409657471475519, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514409657950997305, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514409657950997305, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1986,6 +2018,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be3258ee1108dfe47971f78d5865c02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &286173394 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 565321538471890752, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+  m_PrefabInstance: {fileID: 286173392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &286173395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3672171385647440232, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+  m_PrefabInstance: {fileID: 286173392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &286173396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 200972031905349378, guid: 85a9b72b5cffb2e46b1f8d57324d120d, type: 3}
+  m_PrefabInstance: {fileID: 286173392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &293819707
@@ -2370,6 +2429,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 50bd7fbb-94e5-4a85-a07c-6c7a9ec05943
     m_ActionName: UI/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f344045-e5a8-497a-8005-ead9cf30900a
+    m_ActionName: UI/SecretConsoleCommand[/Keyboard/n,/Keyboard/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: UI
@@ -3281,6 +3344,7 @@ GameObject:
   - component: {fileID: 451962452}
   - component: {fileID: 451962451}
   - component: {fileID: 451962455}
+  - component: {fileID: 451962456}
   m_Layer: 5
   m_Name: IdleDisplay
   m_TagString: Untagged
@@ -3316,9 +3380,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451962449}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &451962452
 MonoBehaviour:
@@ -3381,7 +3445,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &451962455
 MonoBehaviour:
@@ -3395,8 +3459,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f080d6bc95b59945bc310281f2def5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_secondsBeforeIdle: 3
+  m_secondsBeforeIdle: 1
   m_idlePanel: {fileID: 451962451}
+  m_hiddenInputSequence: {fileID: 451962456}
+--- !u!114 &451962456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451962449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf806dc6728f694ea2af0cd34a6ded4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sequenceToMatch: test
+  m_secondsBeforeTimeout: 5
+  m_onSequenceMatched:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &453729572
 GameObject:
   m_ObjectHideFlags: 0

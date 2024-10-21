@@ -5,6 +5,7 @@ public class GameIdleDisplay : MonoBehaviour
 {
     [SerializeField] float m_secondsBeforeIdle = default;
     [SerializeField] CanvasGroup m_idlePanel = default;
+    [SerializeField] InputSequenceMatch m_hiddenInputSequence = default;
     bool m_focus = true;
     Coroutine m_showIdleInProgress;
     void Start()
@@ -29,6 +30,7 @@ public class GameIdleDisplay : MonoBehaviour
     IEnumerator IdleTimer() 
     {
         yield return new WaitForSeconds(m_secondsBeforeIdle);
+        m_hiddenInputSequence.Enable();
         m_focus = false;
         SetDisplay();
         m_showIdleInProgress = null;
@@ -40,9 +42,10 @@ public class GameIdleDisplay : MonoBehaviour
         m_idlePanel.blocksRaycasts = !m_focus;
     }
     // Unhides idle UI
-    public void IdleOff() 
+    public void IdleOff()
     {
         m_focus = true;
+        m_hiddenInputSequence.Disable();
         SetDisplay();
     }
 }
