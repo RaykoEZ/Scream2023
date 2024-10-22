@@ -5,7 +5,7 @@ public class EndingSequenceManager : MonoBehaviour
     // sequences to trigger
     [SerializeField] SkippableSequencePlayer m_credits = default;
     // post credit
-    [SerializeField] EndingPlayer m_ending = default;
+    [SerializeField] RouteSequencePlayer m_ending = default;
     Ending m_currentlyPlaying = Ending.None;
     bool m_playingEnding = false;
     void OnEnable()
@@ -16,13 +16,13 @@ public class EndingSequenceManager : MonoBehaviour
     {
         m_credits.OnFinish -= OnCreditFinish;
     }
-    public void PlayEnding(Ending flag) 
+    public void PlayRouteSequence(Ending flag) 
     {
         if (m_playingEnding) return;
         m_playingEnding = true;
         m_ending.OnFinish += OnEndingFinish;
         m_currentlyPlaying = flag;
-        m_ending.PlayEnding(flag);
+        m_ending.RouteSequence(flag);
     }
     public void PlayCredit()
     {
@@ -32,13 +32,12 @@ public class EndingSequenceManager : MonoBehaviour
     {
         m_ending.OnFinish -= OnEndingFinish;
         // Play credit after ending sequence
-        PlayCredit();
     }
     void OnCreditFinish() 
     {
         // Post Credit
         m_ending.OnFinish += PostCreditFinish;
-        m_ending.PostCredit(m_currentlyPlaying);
+        m_ending.RouteSequence(m_currentlyPlaying);
     }
     void PostCreditFinish()
     {

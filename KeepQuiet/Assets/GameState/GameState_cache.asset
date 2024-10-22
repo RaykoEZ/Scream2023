@@ -14,24 +14,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_state:
     Persistent:
-      AriaDead: 0
+      AriaGone: 0
       ContinueCount: 0
-      CurrentEnding: 3
+      PlayerID: 77092558
+      CurrentEnding: 2
     FreedomRoute: 0
     CheckedSubjectProfile: 0
+    ChapterIndex: 0
     CurrentlyViewing: RoomRight
     WatchState: 4
     AriaStatus:
       IsMissing: 0
       CurrentLocation: -1
+      CurrentTalkingPoint:
+        m_AssetGUID: ff64d871b325a58428d4e5d3e619d002
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
     SimulationTime: 0
-    HeldThoughts: []
+    HeldThoughts:
+    - m_AssetGUID: '"b317449047b29eb429d41372fe0ec431"'
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
     ChatHistories:
-    - m_username: Aria
-      m_chatLogAssets: []
-    - m_username: Your Handler
-      m_chatLogAssets: []
-    - m_username: Al.
-      m_chatLogAssets: []
-    - m_username: Elia
-      m_chatLogAssets: []
+    - Username: Aria
+      ChatLogAssets:
+      - m_AssetGUID: '"ff64d871b325a58428d4e5d3e619d002"'
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Username: Your Handler
+      ChatLogAssets:
+      - m_AssetGUID: '"7c8ed4b872331d74f9260891ae136e50"'
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+    - Username: Al.
+      ChatLogAssets: []
+    - Username: Elia
+      ChatLogAssets: []

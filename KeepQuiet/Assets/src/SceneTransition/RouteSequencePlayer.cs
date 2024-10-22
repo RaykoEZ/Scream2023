@@ -11,35 +11,36 @@ public enum Ending
 }
 // Handle ending sequence after credit roll
 // ending must be picked before playing, normal ending sequence by default
-public class EndingPlayer : SequencePlayer 
+public class RouteSequencePlayer : SequencePlayer
 {
     // ending sequence before credits
     [SerializeField] PlayableAsset m_endingIntro = default;
-    // play after credit
-    [SerializeField] PlayableAsset m_badPostCredit = default;
-    [SerializeField] PlayableAsset m_normalPostCredit = default;
-    [SerializeField] PlayableAsset m_secretPostCredit = default;
-    public void PlayEnding(Ending ending) 
+    // play launch route
+    [SerializeField] PlayableAsset m_defaultRoute = default;
+    [SerializeField] PlayableAsset m_badRoute = default;
+    [SerializeField] PlayableAsset m_normalRoute = default;
+    [SerializeField] PlayableAsset m_secretRoute = default;
+    public void PlayEnding() 
     {
         PlaySequence(m_endingIntro);
     }
-    public void PostCredit(Ending ending) 
+    public void RouteSequence(Ending ending) 
     {
-        var toPlay = GetPostCredit(ending);
+        var toPlay = GetRouteSequence(ending);
         PlaySequence(toPlay);
     }
-    protected PlayableAsset GetPostCredit(Ending ending)
+    protected PlayableAsset GetRouteSequence(Ending ending)
     {
         switch (ending)
         {
             case Ending.Normal_CaseClosed:
-                return m_normalPostCredit;
+                return m_normalRoute;
             case Ending.Bad_Delusion:
-                return m_badPostCredit;
+                return m_badRoute;
             case Ending.Secret_Freedom:
-                return m_secretPostCredit;
+                return m_secretRoute;
             default:
-                return m_normalPostCredit;
+                return m_defaultRoute;
         }
     }
 }

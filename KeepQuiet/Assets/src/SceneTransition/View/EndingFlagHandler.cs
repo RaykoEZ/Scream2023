@@ -4,28 +4,33 @@ public class EndingFlagHandler : MonoBehaviour
 {
     [SerializeField] GameSaveSource m_save = default;
     [SerializeField] EndingSequenceManager m_endingSequence = default;
+    public void PlayRouteLaunchSequence() 
+    {
+        m_save.UpdateSave();
+        m_endingSequence.PlayRouteSequence(m_save.Current.Persistent.CurrentEnding);
+    }
     public void OnCaseClose() 
     {
-        SetEndingFlag(Ending.Normal_CaseClosed);
+        PlayEnding(Ending.Normal_CaseClosed);
     }
     public void OnFreedom()
     {
-        SetEndingFlag(Ending.Secret_Freedom);
+        PlayEnding(Ending.Secret_Freedom);
     }
     public void OnBadEnd() 
     {
-        SetEndingFlag(Ending.Bad_Delusion);
+        PlayEnding(Ending.Bad_Delusion);
     }
     public void FreedomRouteFlag() 
     {
         m_save.Current.FreedomRoute = true;
         m_save.UpdateSave();
     }
-    public void SetEndingFlag(Ending flag) 
+    public void PlayEnding(Ending flag) 
     {
         m_save.Current.Persistent.CurrentEnding = flag;
-        // save game for ending
+        // save game before ending credit
         m_save.UpdateSave();
-        m_endingSequence?.PlayEnding(flag);
+        m_endingSequence?.PlayCredit();
     }
 }
