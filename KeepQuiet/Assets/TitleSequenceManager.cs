@@ -6,8 +6,6 @@ public class TitleSequenceManager : MonoBehaviour
 {
     [SerializeField] PlayableAsset m_default = default;
     [SerializeField] PlayableAsset m_freedomRoute = default;
-    [SerializeField] PlayableAsset m_freedomEnd = default;
-    [SerializeField] PlayableAsset m_deadEnd = default;
     [SerializeField] SequencePlayer m_title = default;
     public void InitTitleState(SaveData save) 
     {
@@ -19,18 +17,10 @@ public class TitleSequenceManager : MonoBehaviour
         switch (ending)
         {
             case Ending.Secret_Freedom:
-                toPlay = m_freedomEnd;
+                toPlay = m_freedomRoute;
                 break;
             default:
-                if (!save.Persistent.AriaGone) 
-                {
-                    toPlay = m_default;
-                }
-                else 
-                {
-                    // Dead End happens before Freedom End
-                    toPlay = save.FreedomRoute ? m_freedomRoute : m_deadEnd;
-                }
+                toPlay = m_default;
                 break;
         }
         m_title.PlaySequence(toPlay);

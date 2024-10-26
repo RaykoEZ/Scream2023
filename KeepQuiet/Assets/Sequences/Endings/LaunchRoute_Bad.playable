@@ -1111,14 +1111,14 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: 702399__ienba__generic-footsteps
   - m_Version: 1
-    m_Start: 24.05
-    m_ClipIn: 0.13333333333333297
+    m_Start: 23.983333333332663
+    m_ClipIn: 0.8999999999999992
     m_Asset: {fileID: 7475876992402268614}
-    m_Duration: 5.349999999999998
+    m_Duration: 3.533333333333335
     m_TimeScale: 1.0000000000000009
     m_ParentTrack: {fileID: -7966253731517436989}
-    m_EaseInDuration: 0.32
-    m_EaseOutDuration: 4.69
+    m_EaseInDuration: 0.1978844
+    m_EaseOutDuration: 3.24
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -1248,14 +1248,14 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 23.366666666666667
-    m_ClipIn: 45.08333333333333
+    m_Start: 23.333333333333332
+    m_ClipIn: 44.849999999999994
     m_Asset: {fileID: 8281784252662089067}
-    m_Duration: 6.033333333333331
+    m_Duration: 3.7666666666666693
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7178934737820554146}
-    m_EaseInDuration: 0.34
-    m_EaseOutDuration: 2.16
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 3
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_Markers:
     m_Objects: []
   m_TrackProperties:
-    volume: 0.574
+    volume: 0.789
     stereoPan: 0
     spatialBlend: 0
 --- !u!114 &-6031702165236050741
@@ -1382,7 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter(Clone)(Clone)
   m_EditorClassIdentifier: 
-  m_Time: 32.36666666666667
+  m_Time: 27.1
   m_Retroactive: 0
   m_EmitOnce: 1
   m_Asset: {fileID: 11400000, guid: d428ed6a15824314e81cf083e56a3326, type: 2}
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Loop: 0
   m_bufferingTime: 0.1
   m_ClipProperties:
-    volume: 0.495
+    volume: 0.33
 --- !u!114 &-2959713571242970953
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1510,7 +1510,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 4767789313983091294}
-    m_Duration: 32.86666666666667
+    m_Duration: 27.516666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: -2959713571242970953}
     m_EaseInDuration: 0.2
@@ -2413,7 +2413,7 @@ MonoBehaviour:
     m_Start: 23.05
     m_ClipIn: 0
     m_Asset: {fileID: 3066175246897872075}
-    m_Duration: 2.1629478458049887
+    m_Duration: 2.1629478458049896
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5758869967769060468}
     m_EaseInDuration: 0
@@ -2619,7 +2619,7 @@ MonoBehaviour:
   m_Loop: 0
   m_bufferingTime: 0.1
   m_ClipProperties:
-    volume: 0.192
+    volume: 0.1
 --- !u!114 &7579825640867705137
 MonoBehaviour:
   m_ObjectHideFlags: 1

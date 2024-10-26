@@ -3,7 +3,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
 // Switches and handling for a Clue UI
 public class Clue : MonoBehaviour
 {
@@ -13,7 +12,6 @@ public class Clue : MonoBehaviour
     [SerializeField] HideableUI m_clueImage = default;
     [SerializeField] InspectionDisplay m_toInspect = default;
     public HideableUI ClueImage => m_clueImage;
-    public TextMeshProUGUI HoverLabel => m_hoverLabel;
     public virtual InspectionDisplay GetInspectionDisplay(SaveData state) 
     {
         return m_toInspect;
