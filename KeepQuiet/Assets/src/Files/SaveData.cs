@@ -36,7 +36,7 @@ public class SaveData
             CurrentEnding = previousEnding;
         }
         // Default ctor, for fresh game/clear cache
-        public PersistentSave() 
+        public PersistentSave()
         {
             AriaGone = false;
             PlayerID = "05127899";

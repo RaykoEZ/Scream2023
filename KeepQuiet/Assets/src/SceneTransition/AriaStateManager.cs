@@ -6,6 +6,7 @@ using UnityEngine.AddressableAssets;
 public class AriaStateManager : MonoBehaviour
 {
     [SerializeField] GameSaveSource m_save = default;
+    [SerializeField] CafeLock m_cafeDoor = default;
     [SerializeField] DialogueContainer m_dialogueContainer = default;
     [SerializeField] AriaDisplayController m_position = default;
     [SerializeField] ConversationPlayer m_conversationPlayer = default;
